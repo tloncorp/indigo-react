@@ -16,6 +16,7 @@ import {
   StyledH5,
   StyledH6
 } from './components/primitives/StyledH'
+import theme from './theme'
 
 export {
   StyledP,
@@ -33,5 +34,6 @@ export {
   StyledA,
   StyledUl,
   StyledLi,
-  StyledSpan
+  StyledSpan,
+  theme
 }

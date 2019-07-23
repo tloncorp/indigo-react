@@ -24,7 +24,8 @@
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": "^15.0.0 || ^16.0.0",
+    "styled-components": ">= 3"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -61,8 +62,6 @@
   "dependencies": {
     "grid-styled": "^5.0.2",
     "prop-types": "^15.7.2",
-    "react-router-dom": "^5.0.1",
-    "styled-components": "^4.3.2",
     "styled-system": "^5.0.12"
   }
 }
