@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import {
-  borders,
+  border,
   color,
   display,
   fontFamily,
@@ -12,26 +12,20 @@ import {
   maxWidth,
   opacity,
   space,
-  textAlign,
-  width
+  width,
+  typography,
+  compose
 } from 'styled-system'
 
 const StyledP = styled.p`
-  ${borders};
-  ${color};
-  ${display};
-  ${fontFamily};
-  ${fontSize};
-  ${fontWeight};
-  ${height};
-  ${lineHeight};
-  ${maxWidth};
-  ${opacity};
-  ${space};
-  ${textAlign};
-  ${width};
+  ${compose(
+    border,
+    color,
+    display,
+    typography,
+    opacity,
+    space
+  )}
 `
-
-StyledP.displayName = 'StyledP'
 
 export default StyledP

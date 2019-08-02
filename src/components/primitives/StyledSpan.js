@@ -23,6 +23,5 @@ const StyledSpan = styled.span`
   ${lineHeight};
   ${display};
 `
-StyledSpan.displayName = 'StyledSpan'
 
 export default StyledSpan

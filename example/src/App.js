@@ -4,7 +4,7 @@ import IndexPage from "./pages/IndexPage";
 import PrimitivesPage from "./pages/PrimitivesPage";
 import DesignTokensPage from "./pages/DesignTokensPage";
 import { ThemeProvider } from "styled-components";
-import { theme } from "indigo-react";
+import theme from "indigo-tokens";
 
 export default class App extends Component {
   render() {

@@ -1,31 +1,24 @@
 const theme = {
   colors: {
-    black: '#000e1a',
-    white: '#fff',
-    blue: '#007ce0',
-    navy: '#004175',
-    green: '#33cc77'
+    black: '#000000',
+    white: '#ffffff',
+    gray: ['#333333', '#4d4d4d', '#7f7f7f', '#b1b2b3', '#e6e6e6', '#f9f9f9'],
+    blue: ['#ecf6ff', '#b0c7ff', '#4330fc', '#190d7b'],
+    red: ['#f9d6ce', '#ffa073', '#ee5432', '#c10d30'],
+    green: ['#bdebcc', '#2ed196', '#2aa779', '#286e55'],
+    yellow: ['#ffefc5', '#ffd972', '#fcc440', '#ee892b']
   },
   fonts: {
     body: 'system-ui, sans-serif',
     monospace: 'Menlo, monospace'
   },
-  space: [
-    // margin and padding
-    0,
-    4,
-    8,
-    16,
-    32,
-    64,
-    128,
-    256
-  ],
+  space: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
   fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints: ['550px', '750px', '960px'],
   lineHeights: {
-    body: 1.75,
-    heading: 1.25
+    short: 1.333333,
+    regular: 1.5,
+    tall: 1.666666
   },
   sizes: []
 }

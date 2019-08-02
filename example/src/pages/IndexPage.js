@@ -6,38 +6,38 @@ export default class IndexPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <StyledDiv p="50px" bg="black">
-          <StyledP color="#fff">
+        <StyledDiv p={[8]} bg="black">
+          <StyledP color="white">
             indigo-react is a React component library for Urbit's design
             language.
           </StyledP>
-          <StyledP color="#fff" mt="40px" maxWidth="38em" lineHeight="22px">
+          <StyledP color="white" mt={[6]} maxWidth="38em" lineHeight="regular">
             This example site is built with our pritmitive components. We build
             the library with{" "}
-            <StyledA href="https://styled-system.com" color="green">
+            <StyledA href="https://styled-system.com" color="blue.2">
               styled-system
             </StyledA>{" "}
             and our{" "}
-            <StyledA href="#" color="green">
+            <StyledA href="#" color="blue.2">
               design tokens
             </StyledA>
             .
           </StyledP>
         </StyledDiv>
-        <StyledDiv p="50px">
+        <StyledDiv p={[8]}>
           <StyledUl m="0" p="0">
-            <StyledLi mb="20px">
-              <StyledA as={Link} to="/design-tokens" color="green">
+            <StyledLi mb={[7]}>
+              <StyledA as={Link} to="/design-tokens" color="blue.2">
                 Design Tokens
               </StyledA>
             </StyledLi>
-            <StyledLi mb="20px">
-              <StyledA as={Link} to="/primitives" color="green">
+            <StyledLi mb={[7]}>
+              <StyledA as={Link} to="/primitives" color="blue.2">
                 Primitives
               </StyledA>
             </StyledLi>
-            <StyledLi mb="20px">
-              <StyledA as={Link} to="/components" color="green">
+            <StyledLi mb={[7]}>
+              <StyledA as={Link} to="/components" color="blue.2">
                 Writing your first components
               </StyledA>
             </StyledLi>

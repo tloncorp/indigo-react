@@ -1,6 +1,4 @@
 import {
-  borderColor,
-  borderRadius,
   borders,
   color,
   display,
@@ -28,8 +26,7 @@ const StyledBox = styled(Box)`
   ${width};
   ${height};
   ${borders};
-  ${borderColor};
-  ${borderRadius};
+
   ${position};
   ${opacity};
 `
