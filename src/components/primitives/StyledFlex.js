@@ -1,22 +1,14 @@
 import styled from 'styled-components'
 import { Flex } from 'grid-styled'
-
-import {
-  display,
-  flexBasis,
-  height,
-  overflow,
-  position,
-  space
-} from 'styled-system'
+import { layout, overflow, position, space, compose } from 'styled-system'
 
 const StyledFlex = styled(Flex)`
-  ${display};
-  ${flexBasis};
-  ${height};
-  ${overflow};
-  ${position};
-  ${space};
+  ${compose(
+    laout,
+    space,
+    overflow,
+    position
+  )}
 `
 
 export default StyledFlex

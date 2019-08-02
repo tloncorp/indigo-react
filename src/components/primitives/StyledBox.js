@@ -1,34 +1,15 @@
-import {
-  borders,
-  color,
-  display,
-  height,
-  maxWidth,
-  minHeight,
-  minWidth,
-  opacity,
-  position,
-  space,
-  textAlign,
-  width
-} from 'styled-system'
+import { color, space, flexbox, layout } from 'styled-system'
 import styled from 'styled-components'
-import { Box } from 'grid-styled'
 
-const StyledBox = styled(Box)`
-  ${color};
-  ${display};
-  ${maxWidth};
-  ${minWidth};
-  ${minHeight};
-  ${textAlign};
-  ${space};
-  ${width};
-  ${height};
-  ${borders};
+const Box = styled.div(
+  {
+    boxSizing: 'border-box',
+    minWidth: 0
+  },
+  space,
+  color,
+  layout,
+  flexbox
+)
 
-  ${position};
-  ${opacity};
-`
-
-export default StyledBox
+export default Box

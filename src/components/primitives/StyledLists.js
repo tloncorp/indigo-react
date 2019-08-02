@@ -1,54 +1,27 @@
 import styled from 'styled-components'
 
-import {
-  borders,
-  bottom,
-  color,
-  display,
-  flexWrap,
-  fontSize,
-  fontWeight,
-  height,
-  left,
-  maxWidth,
-  opacity,
-  right,
-  space,
-  top,
-  width
-} from 'styled-system'
+import { border, layout, space, typography, compose } from 'styled-system'
 
 export const StyledUl = styled.ul`
-  ${height};
-  ${width};
-  ${space};
-  ${maxWidth};
-  ${display};
-  ${color};
-  ${fontSize};
-  ${borders};
-  ${top};
-  ${left};
-  ${bottom};
-  ${right};
+  ${compose(
+    space,
+    layout
+  )}
 `
 
 export const StyledOl = styled.ol`
-  ${height};
-  ${width};
-  ${space};
-  ${display};
-  ${flexWrap};
+  ${compose(
+    space,
+    layout
+  )}
 `
 
 export const StyledLi = styled.li`
   list-style: none;
-  ${height};
-  ${space};
-  ${display};
-  ${borders};
-  ${fontSize};
-  ${fontWeight};
-  ${width};
-  ${opacity};
+  ${compose(
+    space,
+    layout,
+    border,
+    typography
+  )}
 `

@@ -2,11 +2,10 @@ import styled from 'styled-components'
 
 import {
   alignSelf,
-  display,
+  layout,
   opacity,
   position,
   space,
-  layout,
   background,
   border,
   compose
@@ -16,7 +15,6 @@ const StyledDiv = styled('div')(
   compose(
     layout,
     background,
-    display,
     border,
     space,
     alignSelf,

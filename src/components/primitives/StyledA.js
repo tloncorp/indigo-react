@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {
   color,
-  display,
+  layout,
   opacity,
   space,
   typography,
@@ -16,7 +16,7 @@ const StyledA = styled.a`
     space,
     color,
     typography,
-    display,
+    layout,
     opacity
   )}
 `

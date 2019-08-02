@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
-import { space } from 'styled-system'
+import { space, layout, compose } from 'styled-system'
 
 const StyledImg = styled.img`
-  ${space};
+  ${compose(
+    space,
+    layout
+  )};
 `
 export default StyledImg
