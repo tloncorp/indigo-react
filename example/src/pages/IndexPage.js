@@ -36,11 +36,6 @@ export default class IndexPage extends React.Component {
                 Primitives
               </StyledA>
             </StyledLi>
-            <StyledLi mb={[7]}>
-              <StyledA as={Link} to="/components" color="blue.2">
-                Writing your first components
-              </StyledA>
-            </StyledLi>
           </StyledUl>
         </StyledDiv>
       </React.Fragment>

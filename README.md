@@ -27,14 +27,3 @@ class Example extends Component {
 ## License
 
 MIT © [urbit](https://github.com/urbit)
-
-- Design Tokens
-  - Colors
-  - Spacing
-  - Type
-- Components
-  - Buttons
-  - Inputs
-
-* Import Design Tokens
-  - Publish to NPM
