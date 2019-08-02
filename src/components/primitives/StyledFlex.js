@@ -4,7 +4,7 @@ import { layout, overflow, position, space, compose } from 'styled-system'
 
 const StyledFlex = styled(Flex)`
   ${compose(
-    laout,
+    layout,
     space,
     overflow,
     position

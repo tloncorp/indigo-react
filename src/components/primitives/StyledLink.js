@@ -4,10 +4,10 @@ import {
   color,
   layout,
   opacity,
-  position,
   space,
   compose,
-  typography
+  typography,
+  position
 } from 'styled-system'
 
 const StyledLink = styled(Link)`
@@ -19,10 +19,8 @@ const StyledLink = styled(Link)`
     layout,
     typography,
     space,
-    opacity
-    position,
+    opacity,
+    position
   )}
-
-
 `
 export default StyledLink
