@@ -7,6 +7,7 @@ import StyledImg from './components/primitives/StyledImg'
 import StyledP from './components/primitives/StyledP'
 import StyledFlex from './components/primitives/StyledFlex'
 import StyledSpan from './components/primitives/StyledSpan'
+import StyledInput from './components/primitives/StyledInput'
 import { StyledUl, StyledLi } from './components/primitives/StyledLists'
 import {
   StyledH1,
@@ -35,5 +36,6 @@ export {
   StyledUl,
   StyledLi,
   StyledSpan,
-  theme
+  theme,
+  StyledInput
 }

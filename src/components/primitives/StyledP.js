@@ -11,14 +11,15 @@ import {
 } from 'styled-system'
 
 const StyledP = styled.p`
-  ${compose(
-    border,
-    color,
-    layout,
-    typography,
-    opacity,
-    space
-  )}
+  ${color}
+  ${space}
+  ${layout}
+  ${typography}
+    ${border}
+
+
+
+
 `
 
 export default StyledP

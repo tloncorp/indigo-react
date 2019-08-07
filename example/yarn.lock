@@ -4068,10 +4068,10 @@ indexes-of@^1.0.1:
   version "0.0.0"
   uid ""
 
-indigo-tokens@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/indigo-tokens/-/indigo-tokens-1.0.0.tgz#fc73b7f7605652947a67ea62d48e269299633f1b"
-  integrity sha512-Gyf2d3jjGiiHG/UZu9PYT+7/sOnOKeOugVRWarBWohno83J56ZnOpXRVICY2Se6yIizBEYUQzidipun14Tynlg==
+indigo-tokens@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/indigo-tokens/-/indigo-tokens-1.1.0.tgz#5790350dd87ad8e460748481ccbde31f7bc2b488"
+  integrity sha512-jCTJ1drb8vODQ+xEGUP0PN70KfV+cYmUISzkFWzngClBnm2GvG2Oz048+xdLED9GYPTulU52oKuGtlNZVXZG/g==
 
 inflight@^1.0.4:
   version "1.0.6"
