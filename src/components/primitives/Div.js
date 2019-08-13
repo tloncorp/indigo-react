@@ -3,24 +3,20 @@ import styled from 'styled-components'
 import {
   alignSelf,
   layout,
-  opacity,
-  position,
   space,
   background,
   border,
   compose
 } from 'styled-system'
 
-const StyledDiv = styled('div')(
+const Div = styled('div')(
   compose(
     layout,
     background,
     border,
     space,
-    alignSelf,
-    position,
-    opacity
+    alignSelf
   )
 )
 
-export default StyledDiv
+export default Div

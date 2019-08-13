@@ -1,41 +1,37 @@
 // Primitives
-import StyledA from './components/primitives/StyledA'
-import StyledBox from './components/primitives/StyledBox'
-import StyledDiv from './components/primitives/StyledDiv'
-import StyledLink from './components/primitives/StyledLink'
-import StyledImg from './components/primitives/StyledImg'
-import StyledP from './components/primitives/StyledP'
-import StyledFlex from './components/primitives/StyledFlex'
-import StyledSpan from './components/primitives/StyledSpan'
-import StyledInput from './components/primitives/StyledInput'
-import { StyledUl, StyledLi } from './components/primitives/StyledLists'
-import {
-  StyledH1,
-  StyledH2,
-  StyledH3,
-  StyledH4,
-  StyledH5,
-  StyledH6
-} from './components/primitives/StyledH'
+import Box from './components/primitives/Box'
+import P from './components/primitives/P'
+import Span from './components/primitives/Span'
+import Div from './components/primitives/Div'
+import Flex from './components/primitives/Flex'
+import Img from './components/primitives/Img'
+import { Ul, Ol, Li } from './components/primitives/Lists'
+import { H1, H2, H3, H4, H5, H6 } from './components/primitives/StyledH'
+// Theme (dev purposes)
 import theme from './theme'
 
+import StyledA from './components/primitives/StyledA'
+import StyledLink from './components/primitives/StyledLink'
+import StyledInput from './components/primitives/StyledInput'
+
 export {
-  StyledP,
-  StyledBox,
-  StyledDiv,
-  StyledLink,
-  StyledFlex,
-  StyledImg,
-  StyledH1,
-  StyledH2,
-  StyledH3,
-  StyledH4,
-  StyledH5,
-  StyledH6,
-  StyledA,
-  StyledUl,
-  StyledLi,
-  StyledSpan,
+  P,
+  Box,
+  Span,
+  Div,
+  Flex,
+  Img,
+  Ul,
+  Ol,
+  Li,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
   theme,
+  StyledA,
+  StyledLink,
   StyledInput
 }

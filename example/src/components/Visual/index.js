@@ -1,11 +1,11 @@
 import React from "react";
-import { StyledP, StyledDiv, StyledH2 } from "indigo-react";
+import { P, Div, H2 } from "indigo-react";
 
 const Visual = () => (
-  <StyledDiv maxWidth="800px">
-    <StyledH2>Visual</StyledH2>
-    <StyledP>This is the Visual section</StyledP>
-  </StyledDiv>
+  <Div maxWidth="800px">
+    <H2>Visual</H2>
+    <P>This is the Visual section</P>
+  </Div>
 );
 
 export default Visual;

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import {
-  border,
   color,
   layout,
   opacity,
@@ -10,9 +9,8 @@ import {
   compose
 } from 'styled-system'
 
-const StyledP = styled.p`
+const P = styled.p`
   ${compose(
-    border,
     color,
     layout,
     opacity,
@@ -21,4 +19,9 @@ const StyledP = styled.p`
   )}
 `
 
-export default StyledP
+export default P
+
+P.defaultProps = {
+  fontSize: 2,
+  lineHeight: 'regular'
+}
