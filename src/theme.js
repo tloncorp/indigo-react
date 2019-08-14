@@ -9,18 +9,20 @@ const theme = {
     yellow: ['#ffefc5', '#ffd972', '#fcc440', '#ee892b']
   },
   fonts: {
-    body: 'system-ui, sans-serif',
-    monospace: 'Menlo, monospace'
+    sans: '"Inter", Helvetica, Arial, sans-serif',
+    mono: '"Source Code Pro", monospace'
   },
   space: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
-  fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
+  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],
   breakpoints: ['550px', '750px', '960px'],
   lineHeights: {
     short: 1.333333,
     regular: 1.5,
     tall: 1.666666
   },
-  sizes: []
+  radii: [0, 4],
+  sizes: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
+  zIndices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 }
 
 theme.breakpoints.small = theme.breakpoints[0]

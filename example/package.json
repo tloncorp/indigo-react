@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "indigo-react": "link:..",
-    "indigo-tokens": "^1.0.0",
+    "indigo-tokens": "^1.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
