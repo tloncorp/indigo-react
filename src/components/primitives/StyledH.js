@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { color, opacity, space, compose, typography } from 'styled-system'
 
 const defaults = {
-  fontFamily: `"Inter UI", - apple - system, BlinkMacSystemFont, Roboto, Helvetica,
+  fontFamily: `"Inter UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji"`,
   fontWeight: 400
 }
