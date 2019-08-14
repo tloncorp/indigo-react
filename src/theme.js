@@ -9,8 +9,8 @@ const theme = {
     yellow: ['#ffefc5', '#ffd972', '#fcc440', '#ee892b']
   },
   fonts: {
-    sans: '"Inter", Helvetica, Arial, sans-serif',
-    mono: '"Source Code Pro", monospace'
+    sans: `"Inter UI", sans-serif`,
+    mono: `"Source Code Pro", "Roboto mono", "Courier New", monospace`
   },
   space: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72],

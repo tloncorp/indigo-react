@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Box, H3, StyledA, Ul, H1, Flex, Li } from "indigo-react";
+import { Div, Box, H3, StyledA, Ul, Flex, Li } from "indigo-react";
 
 import Color from "../components/Color";
 import Typescale from "../components/Typescale";
