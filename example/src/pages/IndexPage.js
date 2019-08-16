@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Box, H3, StyledA, Ul, Flex, Li } from "indigo-react";
+import { Div, Box, H4, P, StyledA, Ul, Flex, Li } from "indigo-react";
 
 import Color from "../components/Color";
 import Typescale from "../components/Typescale";
@@ -10,112 +10,16 @@ export default class IndexPage extends React.Component {
   render() {
     return (
       <Div pb={[12]}>
-        <Box p={[5, 8, 9]} bg="blue.2" minHeight="100vh">
-          <Flex
-            justifyContent="space-between"
-            alignItems="top"
-            maxWidth="700px"
-          >
-            <Div>
-              <H3 color="white" mb={[7]}>
-                Indigo
-              </H3>
-              <Ul p="0">
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#Approach">
-                    Approach
-                  </StyledA>
-                </Li>
-
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#Visual">
-                    Elements
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#Typescale">
-                    Typescale
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#Color">
-                    Color
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#Layout">
-                    Layout
-                  </StyledA>
-                </Li>
-              </Ul>
-            </Div>
-            <Div>
-              <H3 color="white" mb={[7]}>
-                Reference
-              </H3>
-              <Ul p="0">
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#">
-                    HTML
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#">
-                    React
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA color="white" href="#">
-                    Utilities
-                  </StyledA>
-                </Li>
-              </Ul>
-            </Div>
-            <Div>
-              <H3 color="white" mb={[7]}>
-                Downloads
-              </H3>
-              <Ul p="0">
-                <Li mb={[3]}>
-                  <StyledA
-                    color="white"
-                    href="https://www.npmjs.com/package/indigo-react"
-                  >
-                    indigo-react
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA
-                    color="white"
-                    href="https://www.npmjs.com/package/indigo-tokens"
-                  >
-                    indigo-tokens
-                  </StyledA>
-                </Li>
-              </Ul>
-            </Div>
-            <Div>
-              <H3 color="white" mb={[7]}>
-                Sources
-              </H3>
-              <Ul p="0">
-                <Li mb={[3]}>
-                  <StyledA
-                    color="white"
-                    href="https://github.com/urbit/indigo-react"
-                  >
-                    Github
-                  </StyledA>
-                </Li>
-                <Li mb={[3]}>
-                  <StyledA color="white" href="https://unpkg.com/indigo-react">
-                    CDN
-                  </StyledA>
-                </Li>
-              </Ul>
-            </Div>
-          </Flex>
+        <Box p={[5, 8, 9]}>
+          <H4>●◆▲</H4>
+          <H4 pt={[4]}>Indigo</H4>
+          <H4>This is our styleguide for Urbit’s interfaces </H4>
         </Box>
+        <Box p={[5,8,9]}>
+          <H4>Getting Started</H4>
+          <P fontFamily="mono">indigo-tokens</P>
+        </Box>
+
 
         <Div p={[5, 8, 9]} id="Approach">
           <Approach />
