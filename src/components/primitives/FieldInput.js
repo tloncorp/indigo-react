@@ -46,30 +46,3 @@ export const FieldInput = styled.input`
 
 
 `;
-
-// export const InlineSubmit = styled.button`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   font-weight: 500;
-//   font-size: ${theme.fontSizes.xs};
-//   border: 0;
-//   color: white;
-//   background: ${theme.colors.azure};
-
-//   padding: 12px ${theme.sizes.sm};
-//   border-radius: 0 4px 4px 0;
-//   text-decoration: none;
-//   text-align: center;
-//   height: 100%;
-//   cursor: pointer;
-//   transition-property: background;
-//   transition-duration: 0.3s;
-//   transition-timing-function: ease-in-out;
-
-//   &:focus:enabled,
-//   &:hover:enabled {
-//     outline: 0;
-//     background: ${theme.colors.navy};
-//   }
-// `;
