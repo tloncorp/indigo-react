@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-
 import { color, opacity, space, compose, typography } from 'styled-system'
 
 const defaults = {
-  fontFamily: `"Inter UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
-  Arial, sans-serif, "Apple Color Emoji"`,
+  // fontFamily: 'sans',
   fontWeight: 400
 }
 
@@ -34,6 +32,7 @@ export const H2 = styled.h2`
 
 H2.defaultProps = {
   ...defaults,
+
   fontSize: 6,
   lineHeight: 'regular'
 }
@@ -64,6 +63,7 @@ export const H4 = styled.h4`
 
 H4.defaultProps = {
   ...defaults,
+  fontFamily: 'brand',
   fontSize: 4,
   lineHeight: 'short'
 }
