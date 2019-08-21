@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { color, opacity, space, compose, typography } from 'styled-system'
 
 const defaults = {
-  // fontFamily: 'sans',
+  fontFamily: 'sans',
   fontWeight: 400
 }
 
@@ -49,7 +49,7 @@ export const H3 = styled.h3`
 H3.defaultProps = {
   ...defaults,
   fontSize: 5,
-  lineHeight: 'regular'
+  lineHeight: 'short'
 }
 
 export const H4 = styled.h4`
@@ -63,7 +63,6 @@ export const H4 = styled.h4`
 
 H4.defaultProps = {
   ...defaults,
-  fontFamily: 'brand',
   fontSize: 4,
   lineHeight: 'short'
 }

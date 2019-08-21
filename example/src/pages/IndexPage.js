@@ -1,5 +1,5 @@
 import React from 'react'
-import { Div, Box, H4, P, StyledA, StyledLink, Ul, Flex, Li } from 'indigo-react'
+import { Div, Box, H4, P, StyledA, StyledLink, StyledCode, Flex, Li } from 'indigo-react'
 import theme from 'indigo-tokens'
 
 import Color from '../components/Color'
@@ -16,11 +16,11 @@ export default class IndexPage extends React.Component {
           <H4 pt={[4]}>Indigo</H4>
           <H4>This is our styleguide for Urbit’s interfaces </H4>
         </Box>
-        <Div p={[5, 8, 9]}>
+        <Div p={[5, 8, 9]} mb={[10]}>
           <H4>Getting Started</H4>
           <Flex>
             <Div>
-              <P>indigo-tokens</P>
+              <StyledCode>indigo-tokens</StyledCode>
               <P>Named style attributes we use to maintain a consistent and scalable system</P>
               <StyledLink underline pr={[2]}>NPM</StyledLink>
               <StyledLink underline>Github</StyledLink>

@@ -11,6 +11,7 @@ import { H1, H2, H3, H4, H5, H6 } from './components/primitives/StyledH'
 import theme from './theme'
 
 import StyledA from './components/primitives/StyledA'
+import StyledCode from './components/primitives/StyledCode'
 import StyledLink from './components/primitives/StyledLink'
 import StyledInput from './components/primitives/StyledInput'
 
@@ -32,6 +33,7 @@ export {
   H6,
   theme,
   StyledA,
+  StyledCode,
   StyledLink,
   StyledInput
 }
