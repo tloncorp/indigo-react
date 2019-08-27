@@ -18,16 +18,16 @@ export default class IndexPage extends React.Component {
         </Box>
         <Div p={[5, 8, 9]} mb={[10]}>
           <H4>Getting Started</H4>
-          <Flex>
-            <Div>
+          <Flex flexWrap="wrap">
+            <Div flexBasis="{[100%,30%,20%]}">
               <StyledCode>indigo-tokens</StyledCode>
               <P>Named style attributes we use to maintain a consistent and scalable system</P>
               <StyledLink underline pr={[2]}>NPM</StyledLink>
               <StyledLink underline>Github</StyledLink>
             </Div>
 
-            <Div>
-              <P>indigo-react</P>
+            <Div flexBasis="30%">
+              <StyledCode>indigo-react</StyledCode>
               <P>Component library we use to prototype and build our interfaces. Style attributes from indigo-tokens.</P>
             </Div>
           </Flex>
