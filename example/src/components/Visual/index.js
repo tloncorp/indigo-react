@@ -5,8 +5,20 @@ import {
   FieldError,
   FieldInput,
   FieldSuccess,
-  Span
+  Span,
+  Dropdown
 } from "indigo-react";
+
+const OPTIONS = [
+  {
+    text: "Option 1",
+    value: "option1"
+  },
+  {
+    text: "Option 2",
+    value: "option2"
+  }
+];
 
 const Visual = () => (
   <React.Fragment>
@@ -88,6 +100,20 @@ const Visual = () => (
           name="textarea"
           disabled
         />
+      </Div>
+
+      <Div mt={[8]} maxWidth="800px">
+        <H2>Dropdown</H2>
+        <Div my={[3]} maxWidth={[12]}>
+          <Dropdown options={OPTIONS} setOption={x => console.log(x)} />
+        </Div>
+        <Div my={[3]} maxWidth={[12]}>
+          <Dropdown
+            options={OPTIONS}
+            disabled
+            setOption={x => console.log(x)}
+          />
+        </Div>
       </Div>
     </Div>
   </React.Fragment>
