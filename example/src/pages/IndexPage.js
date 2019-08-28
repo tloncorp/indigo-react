@@ -10,31 +10,32 @@ import Visual from '../components/Visual'
 export default class IndexPage extends React.Component {
   render() {
     return (
-      <Div pb={[12]}>
-        <Box p={[5, 8, 9]}>
-          <H4>●◆▲</H4>
-          <H4 pt={[4]}>Indigo</H4>
-          <H4>This is our styleguide for Urbit’s interfaces </H4>
-        </Box>
-        <Div p={[5, 8, 9]} mb={[10]}>
-          <H4>Getting Started</H4>
-          <Flex flexWrap="wrap">
-            <Div flexBasis="{[100%,30%,20%]}">
-              <StyledCode>indigo-tokens</StyledCode>
-              <P>Named style attributes we use to maintain a consistent and scalable system</P>
-              <StyledLink underline pr={[2]}>NPM</StyledLink>
-              <StyledLink underline>Github</StyledLink>
-            </Div>
+      <Div maxWidth={1024} m={"0 auto"}>
+        <Flex>
+          <Div flexBasis="100%">
+            <H4>●◆▲</H4>
+            <H4 pt={[4]}>Indigo</H4>
+            <H4>This is our styleguide for Urbit’s interfaces </H4>
+            <H4 mt={[8]} mb={[4]}>Getting Started</H4>
+          </Div>
+          <Div flexBasis="40%">
+            <StyledCode>indigo-tokens</StyledCode>
+            <P my={[2]}>Named style attributes we use to maintain a consistent and scalable system</P>
+            <StyledLink underline pr={[2]}>NPM</StyledLink>
+            <StyledLink underline>Github</StyledLink>
+          </Div>
+          <Div flexBasis="40%">
+            <StyledCode>indigo-react</StyledCode>
+            <P my={[2]}>Component library we use to prototype and build our interfaces. Style attributes from indigo-tokens.</P>
+            <StyledLink underline pr={[2]}>NPM</StyledLink>
+            <StyledLink underline>Github</StyledLink>
+          </Div>
+        </Flex>
 
-            <Div flexBasis="30%">
-              <StyledCode>indigo-react</StyledCode>
-              <P>Component library we use to prototype and build our interfaces. Style attributes from indigo-tokens.</P>
-            </Div>
+        <Div mt={[9]} id='Spacing'>
+          <Flex>
+            <Spacing />
           </Flex>
-        </Div>
-
-        <Div p={[5, 8, 9]} id='Spacing'>
-          <Spacing />
         </Div>
 
         <Div p={[5, 8, 9]} id='Visual'>

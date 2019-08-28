@@ -10,3 +10,9 @@ const Flex = styled.div`
   )}
 `
 export default Flex
+
+Flex.defaultProps = {
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-start'
+}

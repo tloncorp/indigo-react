@@ -1,15 +1,17 @@
 import React from 'react'
-import { Flex, P, H3, H4 } from 'indigo-react'
+import { Div, Flex, P, H3, H4 } from 'indigo-react'
 
 const Spacing = () => (
   <React.Fragment>
-    <Flex justifyContent='space-between'>
-      <H3>Spacing</H3>
-      <H4>Value</H4>
-      <H4>Example</H4>
-    </Flex>
-    <Flex />
-
+      <Div flexBasis="40%">
+        <H3>Spacing</H3>
+      </Div>
+      <Div flex="1">
+        <H4>Value</H4>
+      </Div>
+      <Div flex="1">
+        <H4>Example</H4>
+      </Div>
   </React.Fragment>
 )
 
