@@ -27,7 +27,7 @@ export default class App extends Component {
       <ThemeProvider theme={theme}>
         <Root>
           <Style />
-          <Router>
+          <Router basename="/indigo-react">
             <div>
               <Route exact path="/" component={IndexPage} />
             </div>
