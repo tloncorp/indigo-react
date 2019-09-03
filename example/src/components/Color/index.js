@@ -1,97 +1,88 @@
 import React from "react";
-import { H3, Li, Span, H2, P } from "indigo-react";
-import styled from "styled-components";
+import { Div, H3, H4, Ul, Li, Span, H2, P } from "indigo-react";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-gap: 30px;
-`;
 
 const Color = () => (
-  <div>
-    <H2 mb={[5]}>Color</H2>
-    <P mb={[8]}>Colors in the app are as follows:</P>
-    <Grid>
-      <div>
-        <H3 mb={[7]}>Color</H3>
-        <ul>
-          <Li height={[6]} mb={[4]}>
-            white
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.4
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.5
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            black
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.3
-          </Li>
-        </ul>
-      </div>
-      <div>
-        <H3 mb={[7]}>Value</H3>
+  <React.Fragment>
+      <Div flexBasis="40%">
+        <P mb={[5]}>Token</P>
+        <Ul fontFamily="mono">
+        <Li height={[6]} mb={[4]}>
+          white
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          gray.0
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          gray.1
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          gray.2
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          gray.3
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          gray.4
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          gray.5
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          black
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          blue.0
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          blue.1
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          blue.2
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          blue.3
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          green.0
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          green.1
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          green.2
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          green.3
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          red.0
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          red.1
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          red.2
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          red.3
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          yellow.0
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          yellow.1
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          yellow.2
+        </Li>
+        <Li height={[6]} mb={[4]}>
+          yellow.3
+        </Li>
+        </Ul>
+      </Div>
+      <Div flex="30%">
+        <P mb={[7]}>Value</P>
         <ul>
           <Li height={[6]} mb={[4]} fontFamily="mono">
             #ffffff
@@ -166,9 +157,9 @@ const Color = () => (
             #ee892b
           </Li>
         </ul>
-      </div>
-      <div>
-        <H3 mb={[7]}>Example</H3>
+      </Div>
+      <Div flex="30%">
+        <P mb={[7]}>Example</P>
         <ul>
           <Li height={[6]} mb={[4]}>
             <Span
@@ -177,7 +168,6 @@ const Color = () => (
               bg="white"
               height={[6]}
               mb={[4]}
-              width={[9]}
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -186,7 +176,7 @@ const Color = () => (
               bg="gray.0"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -195,7 +185,7 @@ const Color = () => (
               bg="gray.1"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -204,7 +194,7 @@ const Color = () => (
               bg="gray.2"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -213,7 +203,7 @@ const Color = () => (
               bg="gray.3"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -222,7 +212,7 @@ const Color = () => (
               bg="gray.4"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -231,7 +221,7 @@ const Color = () => (
               bg="gray.5"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -240,7 +230,7 @@ const Color = () => (
               bg="black"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -249,7 +239,7 @@ const Color = () => (
               bg="blue.0"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -258,7 +248,7 @@ const Color = () => (
               bg="blue.1"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -267,7 +257,7 @@ const Color = () => (
               bg="blue.2"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -276,7 +266,7 @@ const Color = () => (
               bg="blue.3"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -285,7 +275,7 @@ const Color = () => (
               bg="green.0"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -294,7 +284,7 @@ const Color = () => (
               bg="green.1"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -303,7 +293,7 @@ const Color = () => (
               bg="green.2"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -312,7 +302,7 @@ const Color = () => (
               bg="green.3"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -321,7 +311,7 @@ const Color = () => (
               bg="red.0"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -330,7 +320,7 @@ const Color = () => (
               bg="red.1"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -339,7 +329,7 @@ const Color = () => (
               bg="red.2"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -348,7 +338,7 @@ const Color = () => (
               bg="red.3"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -357,7 +347,7 @@ const Color = () => (
               bg="yellow.0"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -366,7 +356,7 @@ const Color = () => (
               bg="yellow.1"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -375,7 +365,7 @@ const Color = () => (
               bg="yellow.2"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
           <Li height={[6]} mb={[4]}>
@@ -384,13 +374,12 @@ const Color = () => (
               bg="yellow.3"
               height={[6]}
               mb={[4]}
-              width={[9]}
+
             />
           </Li>
         </ul>
-      </div>
-    </Grid>
-  </div>
+      </Div>
+  </React.Fragment>
 );
 
 export default Color;
