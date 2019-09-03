@@ -6,6 +6,7 @@ import {
   space,
   background,
   border,
+  color,
   compose
 } from 'styled-system'
 
@@ -15,6 +16,7 @@ const Div = styled('div')(
     background,
     border,
     space,
+    color,
     alignSelf
   )
 )

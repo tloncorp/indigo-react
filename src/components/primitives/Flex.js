@@ -3,6 +3,7 @@ import { flexbox, space, layout, compose } from 'styled-system'
 
 const Flex = styled.div`
   display: flex;
+  flex-wrap: wrap;
   ${compose(
     flexbox,
     space,
@@ -10,9 +11,3 @@ const Flex = styled.div`
   )}
 `
 export default Flex
-
-Flex.defaultProps = {
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'flex-start'
-}
