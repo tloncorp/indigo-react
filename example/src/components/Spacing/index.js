@@ -1,24 +1,24 @@
 import React from 'react'
-import { Div, Flex, P, H4, H5, Ul, Li } from 'indigo-react'
+import { Div, Flex, P, Ul, Li } from 'indigo-react'
 
 const Spacing = () => (
   <React.Fragment>
       <Div flexBasis="40%">
         <P mb={[5]}>Token</P>
         <Ul fontFamily="mono">
-          <Li height={[6]} mb={[4]}>s0</Li>
-          <Li height={[6]} mb={[4]}>s1</Li>
-          <Li height={[6]} mb={[4]}>s2</Li>
-          <Li height={[6]} mb={[4]}>s3</Li>
-          <Li height={[6]} mb={[4]}>s4</Li>
-          <Li height={[6]} mb={[4]}>s5</Li>
-          <Li height={[6]} mb={[4]}>s6</Li>
-          <Li height={[7]} mb={[4]}>s7</Li>
-          <Li height={[8]} mb={[4]}>s8</Li>
-          <Li height={[9]} mb={[4]}>s9</Li>
-          <Li height={[10]} mb={[4]}>s10</Li>
-          <Li height={[11]} mb={[4]}>s11</Li>
-          <Li height={[12]} mb={[4]}>s12</Li>
+          <Li height={[6]} mb={[4]}>size.0</Li>
+          <Li height={[6]} mb={[4]}>size.1</Li>
+          <Li height={[6]} mb={[4]}>size.2</Li>
+          <Li height={[6]} mb={[4]}>size.3</Li>
+          <Li height={[6]} mb={[4]}>size.4</Li>
+          <Li height={[6]} mb={[4]}>size.5</Li>
+          <Li height={[6]} mb={[4]}>size.6</Li>
+          <Li height={[7]} mb={[4]}>size.7</Li>
+          <Li height={[8]} mb={[4]}>size.8</Li>
+          <Li height={[9]} mb={[4]}>size.9</Li>
+          <Li height={[10]} mb={[4]}>size.10</Li>
+          <Li height={[11]} mb={[4]}>size.11</Li>
+          <Li height={[12]} mb={[4]}>size.12</Li>
         </Ul>
       </Div>
       <Div flex="30%">

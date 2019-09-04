@@ -1,14 +1,16 @@
 import React from 'react'
-import { Div, Box, H4, P, StyledA, StyledLink, StyledCode, Flex, Li } from 'indigo-react'
+import { Div, H4, P, StyledLink, StyledCode, Flex} from 'indigo-react'
 import theme from 'indigo-tokens'
 
+import Spacing from '../components/Spacing'
 import Color from '../components/Color'
 import FontSize from '../components/FontSize'
 import FontFamily from '../components/FontFamily'
 import FontWeight from '../components/FontWeight'
 import LineHeight from '../components/LineHeight'
-import Spacing from '../components/Spacing'
-import Visual from '../components/Visual'
+import Border from '../components/Border'
+import BorderRadius from '../components/BorderRadius'
+import ZIndices from '../components/ZIndices'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -71,6 +73,24 @@ export default class IndexPage extends React.Component {
           <H4 mb={[5]}>Line Height</H4>
           <Flex>
             <LineHeight />
+          </Flex>
+        </Div>
+        <Div mt={[9]} id='Border'>
+          <H4 mb={[5]}>Border</H4>
+          <Flex>
+            <Border />
+          </Flex>
+        </Div>
+        <Div mt={[9]} id='BorderRadius'>
+          <H4 mb={[5]}>Border Radius</H4>
+          <Flex>
+            <BorderRadius />
+          </Flex>
+        </Div>
+        <Div my={[9]} id='zIndices'>
+          <H4 mb={[5]}>Z Index</H4>
+          <Flex>
+            <ZIndices />
           </Flex>
         </Div>
       </Div>

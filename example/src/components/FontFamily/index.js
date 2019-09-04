@@ -1,5 +1,5 @@
 import React from "react";
-import {Div, P, Ul, Li, StyledA } from "indigo-react";
+import {Div, P, Ul, Li } from "indigo-react";
 
 const FontFamily = () => (
   <React.Fragment>

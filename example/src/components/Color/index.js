@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, H3, H4, Ul, Li, Span, H2, P } from "indigo-react";
+import { Div, Ul, Li, Span, P } from "indigo-react";
 
 
 const Color = () => (
