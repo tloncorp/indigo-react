@@ -1,14 +1,13 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import {
   space,
   layout,
   color,
   border,
-  position,
   shadow,
   flexbox,
   compose
-} from 'styled-system'
+} from "styled-system";
 
 export default styled.div`
   box-sizing: border-box;
@@ -19,8 +18,7 @@ export default styled.div`
     layout,
     color,
     border,
-    position,
     shadow,
     flexbox
   )}
-`
+`;
