@@ -12,6 +12,7 @@ import {
   FieldError,
   FieldInput
 } from "./components/primitives/FieldInput";
+import Dropdown from "./components/primitives/Dropdown";
 // Theme (dev purposes)
 import theme from "./theme";
 
@@ -38,6 +39,7 @@ export {
   FieldSuccess,
   FieldError,
   FieldInput,
+  Dropdown,
   StyledA,
   StyledLink
 };
