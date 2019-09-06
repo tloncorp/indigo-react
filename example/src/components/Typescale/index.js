@@ -1,5 +1,5 @@
 import React from "react";
-import { H2, Div, P, StyledA } from "indigo-react";
+import { H2, Box, P, StyledA } from "indigo-react";
 
 const Typescale = () => (
   <React.Fragment>
@@ -12,7 +12,7 @@ const Typescale = () => (
       </StyledA>
       .
     </P>
-    <Div maxWidth="800px" m border="1px solid black">
+    <Box maxWidth="800px" m border="1px solid black">
       <H2 mb={[3]} fontSize={[0]}>
         ~zod is your neighbor
       </H2>
@@ -40,7 +40,7 @@ const Typescale = () => (
       <H2 mb={[3]} fontSize={[8]}>
         ~zod is your neighbor
       </H2>
-    </Div>
+    </Box>
   </React.Fragment>
 );
 

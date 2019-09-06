@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Box, H4, P, Button, Span, H2 } from "indigo-react";
+import { Box, H4, P, Button, Span, H2 } from "indigo-react";
 
 import Color from "../components/Color";
 import Typescale from "../components/Typescale";
@@ -9,7 +9,7 @@ import Visual from "../components/Visual";
 export default class IndexPage extends React.Component {
   render() {
     return (
-      <Div pb={[12]}>
+      <Box pb={[12]}>
         <Box p={[5, 8, 9]}>
           <H4>●◆▲</H4>
           <H4 pt={[4]}>Indigo</H4>
@@ -20,32 +20,32 @@ export default class IndexPage extends React.Component {
           <P fontFamily="mono">indigo-tokens</P>
         </Box>
 
-        <Div p={[5, 8, 9]} id="Approach">
+        <Box p={[5, 8, 9]} id="Approach">
           <Approach />
-        </Div>
+        </Box>
 
-        <Div p={[5, 8, 9]} id="Visual">
+        <Box p={[5, 8, 9]} id="Visual">
           <Visual />
-        </Div>
+        </Box>
 
-        <Div p={[5, 8, 9]} id="Typescale">
+        <Box p={[5, 8, 9]} id="Typescale">
           <Typescale />
-        </Div>
+        </Box>
 
-        <Div p={[5, 8, 9]} id="Color">
+        <Box p={[5, 8, 9]} id="Color">
           <Color />
-        </Div>
+        </Box>
 
-        <Div p={[5, 8, 9]} id="Buttons">
+        <Box p={[5, 8, 9]} id="Buttons">
           <H2 mb={[5]}>Buttons</H2>
-          <Div mb="4">
+          <Box mb="4">
             <Button onClick={() => console.log("Downloading...")}>
               <Span>Download Passport</Span>
               <Span>↓</Span>
             </Button>
-          </Div>
+          </Box>
 
-          <Div mb="4">
+          <Box mb="4">
             <Button onClick={() => console.log("Downloading...")} loading>
               <Span>Loading...</Span>
               <Span display="flex" justifyContent="center" alignItems="center">
@@ -63,24 +63,24 @@ export default class IndexPage extends React.Component {
                 </svg>
               </Span>
             </Button>
-          </Div>
+          </Box>
 
-          <Div mb="4">
+          <Box mb="4">
             <Button onClick={() => console.log("Downloading...")} disabled>
               <Span>Go</Span>
               <Span>→</Span>
             </Button>
-          </Div>
-          <Div mb="4">
+          </Box>
+          <Box mb="4">
             <Button onClick={() => console.log("Downloading...")} error>
               <Span>Error</Span>
               <span role="img" aria-label="Error">
                 ⚠️
               </span>
             </Button>
-          </Div>
-        </Div>
-      </Div>
+          </Box>
+        </Box>
+      </Box>
     );
   }
 }
