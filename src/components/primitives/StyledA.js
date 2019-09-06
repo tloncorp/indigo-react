@@ -1,12 +1,5 @@
-import styled from 'styled-components'
-import {
-  color,
-  layout,
-  opacity,
-  space,
-  typography,
-  compose
-} from 'styled-system'
+import styled from "styled-components";
+import { color, layout, space, typography, compose } from "styled-system";
 
 const StyledA = styled.a`
   text-decoration: none;
@@ -16,9 +9,8 @@ const StyledA = styled.a`
     space,
     color,
     typography,
-    layout,
-    opacity
+    layout
   )}
-`
+`;
 
-export default StyledA
+export default StyledA;

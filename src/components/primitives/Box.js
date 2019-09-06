@@ -1,26 +1,32 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import {
-  space,
-  layout,
-  color,
+  background,
   border,
+  color,
+  flexbox,
+  grid,
+  layout,
   position,
   shadow,
-  flexbox,
+  space,
+  typography,
   compose
-} from 'styled-system'
+} from "styled-system";
 
 export default styled.div`
   box-sizing: border-box;
   min-width: 0;
 
   ${compose(
-    space,
-    layout,
-    color,
+    background,
     border,
+    color,
+    flexbox,
+    grid,
+    layout,
     position,
     shadow,
-    flexbox
+    space,
+    typography
   )}
-`
+`;

@@ -12,7 +12,7 @@ const theme = {
     sans: `"Inter UI", -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif`,
     mono: `"Source Code Pro", "Roboto mono", "Courier New", monospace`
   },
-  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48],
   fontWeights: [400, 600],
   lineHeights: {
     short: 1.333333,
