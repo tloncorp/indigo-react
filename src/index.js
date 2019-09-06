@@ -18,6 +18,7 @@ import theme from "./theme";
 
 import StyledA from "./components/primitives/StyledA";
 import StyledLink from "./components/primitives/StyledLink";
+import Button from "./components/primitives/Button";
 
 export {
   P,
@@ -41,5 +42,6 @@ export {
   FieldInput,
   Dropdown,
   StyledA,
-  StyledLink
+  StyledLink,
+  Button
 };
