@@ -1,5 +1,6 @@
 // Primitives
 import Box from "./components/primitives/Box";
+import Flex from "./components/primitives/Flex";
 import P from "./components/primitives/P";
 import Span from "./components/primitives/Span";
 import Img from "./components/primitives/Img";
@@ -14,7 +15,6 @@ import Dropdown from "./components/primitives/Dropdown";
 // Theme (dev purposes)
 import theme from "./theme";
 
-import StyledLink from "./components/primitives/StyledLink";
 import StyledCode from "./components/primitives/StyledCode";
 import StyledA from "./components/primitives/StyledA";
 import Button from "./components/primitives/Button";
@@ -23,6 +23,7 @@ import Container from "./components/primitives/Container";
 export {
   P,
   Box,
+  Flex,
   Span,
   Img,
   Ul,
@@ -40,7 +41,6 @@ export {
   FieldInput,
   Dropdown,
   StyledA,
-  StyledLink,
   StyledCode,
   Button,
   Container

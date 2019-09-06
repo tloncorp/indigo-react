@@ -18,7 +18,7 @@ export const H1 = styled.h1`
 H1.defaultProps = {
   ...defaults,
   fontSize: 7,
-  lineHeight: "short"
+  lineHeight: 'short'
 };
 
 export const H2 = styled.h2`
@@ -33,7 +33,7 @@ H2.defaultProps = {
   ...defaults,
 
   fontSize: 6,
-  lineHeight: "regular"
+  lineHeight: 'regular'
 };
 
 export const H3 = styled.h3`
@@ -61,7 +61,7 @@ export const H4 = styled.h4`
 H4.defaultProps = {
   ...defaults,
   fontSize: 4,
-  lineHeight: "short"
+  lineHeight: 'tall'
 };
 
 export const H5 = styled.h5`
@@ -75,7 +75,7 @@ export const H5 = styled.h5`
 H5.defaultProps = {
   ...defaults,
   fontSize: 2,
-  lineHeight: "regular"
+  lineHeight: 'regular'
 };
 
 export const H6 = styled.h6`
@@ -89,5 +89,5 @@ export const H6 = styled.h6`
 H6.defaultProps = {
   ...defaults,
   fontSize: 0,
-  lineHeight: "short"
+  lineHeight: 'short'
 };
