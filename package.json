@@ -22,6 +22,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
+    "@reach/menu-button": "^0.1.18",
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
@@ -60,7 +61,6 @@
     "dist"
   ],
   "dependencies": {
-    "@reach/menu-button": "^0.1.18",
     "grid-styled": "^5.0.2",
     "prop-types": "^15.7.2",
     "styled-system": "^5.0.12"
