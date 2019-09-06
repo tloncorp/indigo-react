@@ -1,5 +1,5 @@
 import React from "react";
-import { Span, Div } from "indigo-react";
+import { Span, Box } from "indigo-react";
 import styled, { createGlobalStyle } from "styled-components";
 // css warning not included in production
 import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
@@ -78,7 +78,7 @@ class Dropdown extends React.Component {
   }
   render() {
     return (
-      <Div
+      <Box
         css={`
           :root {
             --reach-dialog: 1;
@@ -105,7 +105,7 @@ class Dropdown extends React.Component {
             ))}
           </StyledMenuList>
         </Menu>
-      </Div>
+      </Box>
     );
   }
 }
