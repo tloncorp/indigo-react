@@ -17,6 +17,7 @@ import theme from "./theme";
 
 import StyledA from "./components/primitives/StyledA";
 import StyledLink from "./components/primitives/StyledLink";
+import StyledCode from "./components/primitives/StyledCode";
 
 export {
   P,
@@ -39,5 +40,6 @@ export {
   FieldError,
   FieldInput,
   StyledA,
-  StyledLink
+  StyledLink,
+  StyledCode
 };
