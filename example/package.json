@@ -2,6 +2,7 @@
   "name": "indigo-react-example",
   "version": "0.0.0",
   "license": "MIT",
+  "homepage": "https://urbit.github.io/indigo-react",
   "private": true,
   "dependencies": {
     "indigo-react": "link:..",

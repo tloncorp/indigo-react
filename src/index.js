@@ -1,19 +1,22 @@
 // Primitives
-import Box from './components/primitives/Box'
-import P from './components/primitives/P'
-import Span from './components/primitives/Span'
-import Div from './components/primitives/Div'
-import Flex from './components/primitives/Flex'
-import Img from './components/primitives/Img'
-import { Ul, Ol, Li } from './components/primitives/Lists'
-import { H1, H2, H3, H4, H5, H6 } from './components/primitives/StyledH'
+import Box from "./components/primitives/Box";
+import P from "./components/primitives/P";
+import Span from "./components/primitives/Span";
+import Div from "./components/primitives/Div";
+import Flex from "./components/primitives/Flex";
+import Img from "./components/primitives/Img";
+import { Ul, Ol, Li } from "./components/primitives/Lists";
+import { H1, H2, H3, H4, H5, H6 } from "./components/primitives/StyledH";
+import {
+  FieldSuccess,
+  FieldError,
+  FieldInput
+} from "./components/primitives/FieldInput";
 // Theme (dev purposes)
-import theme from './theme'
+import theme from "./theme";
 
-import StyledA from './components/primitives/StyledA'
-import StyledCode from './components/primitives/StyledCode'
-import StyledLink from './components/primitives/StyledLink'
-import StyledInput from './components/primitives/StyledInput'
+import StyledA from "./components/primitives/StyledA";
+import StyledLink from "./components/primitives/StyledLink";
 
 export {
   P,
@@ -32,8 +35,9 @@ export {
   H5,
   H6,
   theme,
+  FieldSuccess,
+  FieldError,
+  FieldInput,
   StyledA,
-  StyledCode,
-  StyledLink,
-  StyledInput
-}
+  StyledLink
+};
