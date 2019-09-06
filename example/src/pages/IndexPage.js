@@ -46,7 +46,10 @@ export default class IndexPage extends React.Component {
           </Box>
 
           <Box mb="4">
-            <Button onClick={() => console.log("Downloading...")} loading>
+            <Button
+              onClick={() => console.log("Downloading...")}
+              isLoading={true}
+            >
               <Span>Loading...</Span>
               <Span display="flex" justifyContent="center" alignItems="center">
                 <svg

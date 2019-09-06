@@ -10,7 +10,7 @@ import {
   typography
 } from "styled-system";
 
-const Button = styled("button")`
+const Button = styled.button`
   ${compose(
     space,
     layout,
@@ -25,29 +25,27 @@ const Button = styled("button")`
   cursor: pointer;
 
   &:disabled {
-    background-color: gray;
+    background-color: #b1b2b3;
     cursor: not-allowed;
   }
 
-    ${props => {
-      if (props.error) {
-        return `background: #EE892B;`;
-      } else if (props.loading) {
-        return `background: linear-gradient(to right, #000 40%, #B1B2B3 40%);`;
-      }
-    }}
-
-  background: ${props => props.error && "orange"};
+  ${props => {
+    if (props.error) {
+      return `background: #EE892B;`;
+    } else if (props.isLoading) {
+      return `background: linear-gradient(to right, #000 40%, #B1B2B3 40%);`;
+    }
+  }}
 `;
 
 Button.defaultProps = {
   color: "white",
   backgroundColor: "black",
   borderRadius: 0,
-  fontSize: "16px",
-  lineHeight: "24px",
-  py: "12px",
-  px: "16px",
+  fontSize: 2,
+  lineHeight: "regular",
+  py: 3,
+  px: 4,
   fontFamily: "inherit",
   display: "flex",
   justifyContent: "space-between",

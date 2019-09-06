@@ -1,5 +1,6 @@
 import React from "react";
-import { Span, Box } from "indigo-react";
+import Span from "./Span";
+import Box from "./Box";
 import styled, { createGlobalStyle } from "styled-components";
 // css warning not included in production
 import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
