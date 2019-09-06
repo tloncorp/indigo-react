@@ -1,9 +1,9 @@
 import React from "react";
-import {Div, P, Ul, Li } from "indigo-react";
+import {Box, P, Ul, Li } from "indigo-react";
 
 const FontSize = () => (
   <React.Fragment>
-      <Div flexBasis="40%">
+      <Box flexBasis="40%">
         <P mb={[5]}>Token</P>
         <Ul fontFamily="mono">
           <Li height={[6]} mb={[4]}>fontSize.1</Li>
@@ -14,8 +14,8 @@ const FontSize = () => (
           <Li height={[6]} mb={[8]}>fontSize.6</Li>
           <Li height={[6]} mb={[7]}>fontSize.7</Li>
         </Ul>
-      </Div>
-      <Div flex="30%">
+      </Box>
+      <Box flex="30%">
         <P mb={[5]}>Value</P>
         <Ul fontFamily="mono">
           <Li height={[6]} mb={[4]}>12px</Li>
@@ -26,8 +26,8 @@ const FontSize = () => (
           <Li height={[6]} mb={[8]}>32px</Li>
           <Li height={[6]} mb={[7]}>48px</Li>
         </Ul>
-      </Div>
-      <Div flex="30%">
+      </Box>
+      <Box flex="30%">
         <P mb={[5]}>Example</P>
         <P fontSize={[1]} mb={[4]}>Handgloves</P>
         <P fontSize={[2]} mb={[4]}>Handgloves</P>
@@ -36,7 +36,7 @@ const FontSize = () => (
         <P fontSize={[5]} mb={[5]}>Handgloves</P>
         <P fontSize={[6]} mb={[5]}>Handgloves</P>
         <P fontSize={[7]} mb={[0]}>Handgloves</P>
-      </Div>
+      </Box>
   </React.Fragment>
 );
 

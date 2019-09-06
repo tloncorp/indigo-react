@@ -1,10 +1,10 @@
 import React from "react";
-import { Div, Ul, Li, Span, P } from "indigo-react";
+import { Box, Ul, Li, Span, P } from "indigo-react";
 
 
 const Color = () => (
   <React.Fragment>
-      <Div flexBasis="40%">
+      <Box flexBasis="40%">
         <P mb={[5]}>Token</P>
         <Ul fontFamily="mono">
         <Li height={[6]} mb={[4]}>
@@ -80,8 +80,8 @@ const Color = () => (
           yellow.3
         </Li>
         </Ul>
-      </Div>
-      <Div flex="30%">
+      </Box>
+      <Box flex="30%">
         <P mb={[7]}>Value</P>
         <ul>
           <Li height={[6]} mb={[4]} fontFamily="mono">
@@ -157,8 +157,8 @@ const Color = () => (
             #ee892b
           </Li>
         </ul>
-      </Div>
-      <Div flex="30%">
+      </Box>
+      <Box flex="30%">
         <P mb={[7]}>Example</P>
         <ul>
           <Li height={[6]} mb={[4]}>
@@ -378,7 +378,7 @@ const Color = () => (
             />
           </Li>
         </ul>
-      </Div>
+      </Box>
   </React.Fragment>
 );
 

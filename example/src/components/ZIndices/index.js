@@ -1,9 +1,9 @@
 import React from "react";
-import {Div, P, Ul, Li } from "indigo-react";
+import {Box, P, Ul, Li } from "indigo-react";
 
 const zIndices = () => (
   <React.Fragment>
-      <Div flexBasis="40%">
+      <Box flexBasis="40%">
         <P mb={[5]}>Token</P>
         <Ul fontFamily="mono">
           <Li height={[6]} mb={[4]}>zIndices.0</Li>
@@ -19,8 +19,8 @@ const zIndices = () => (
           <Li height={[6]} mb={[4]}>zIndices.10</Li>
 
         </Ul>
-      </Div>
-      <Div flex="30%">
+      </Box>
+      <Box flex="30%">
         <P mb={[5]}>Value</P>
         <Ul fontFamily="mono">
           <Li height={[6]} mb={[4]}>0</Li>
@@ -35,7 +35,7 @@ const zIndices = () => (
           <Li height={[6]} mb={[4]}>9</Li>
           <Li height={[6]} mb={[4]}>10</Li>
         </Ul>
-      </Div>
+      </Box>
   </React.Fragment>
 );
 
