@@ -3,7 +3,7 @@ import { Box, Flex, P, Ul, Li } from 'indigo-react'
 
 const Spacing = () => (
   <React.Fragment>
-      <Box flexBasis="40%">
+      <Box width={3/12}>
         <P mb={[5]}>Token</P>
         <Ul fontFamily="mono">
           <Li height={[6]} mb={[4]}>size.0</Li>
@@ -21,7 +21,7 @@ const Spacing = () => (
           <Li height={[12]} mb={[4]}>size.12</Li>
         </Ul>
       </Box>
-      <Box flex="30%">
+      <Box width={3/12}>
         <P mb={[5]}>Value</P>
         <Ul fontFamily="mono">
           <Li height={[6]} mb={[4]}>0px</Li>
@@ -39,7 +39,7 @@ const Spacing = () => (
           <Li height={[12]} mb={[4]}>288px</Li>
         </Ul>
       </Box>
-      <Box flex="30%">
+      <Box width={3/12}>
         <P mb={[5]}>Example</P>
         <Box height={[6]} mb={[4]}></Box>
         <Flex alignItems="center" height={[6]} mb={[4]}>

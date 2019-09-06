@@ -12,10 +12,11 @@ const theme = {
     sans: `"Inter UI", -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif`,
     mono: `"Source Code Pro", "Roboto mono", "Courier New", monospace`
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48],
+  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48],
   fontWeights: {
     regular: 400,
-    bold: 600},
+    bold: 600
+  },
   lineHeights: {
     short: 1.333333,
     regular: 1.5,
@@ -24,9 +25,9 @@ const theme = {
   borders: [0, '1px solid'],
   space: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
   radii: [0, 4],
-  sizes: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
+  // sizes: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
   zIndices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-  breakpoints: ['320px', '640px', '960px']
+  breakpoints: ['768px', '960px', '1440px']
 }
 
 theme.breakpoints.small = theme.breakpoints[0]

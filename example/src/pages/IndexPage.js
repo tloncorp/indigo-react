@@ -16,7 +16,7 @@ export default class IndexPage extends React.Component {
     return (
       <Container>
         <Flex>
-          <Box flex="1" mt={[10]}>
+          <Box width={[1, "1/3"]} mt={[10]}>
             <H4>●◆▲</H4>
             <H4 pt={[4]}>Indigo</H4>
             <H4>This is our styleguide for Urbit’s interfaces </H4>
@@ -40,7 +40,7 @@ export default class IndexPage extends React.Component {
 
         <Box mt={[9]} id='Spacing'>
           <H4 mb={[5]}>Spacing</H4>
-          <Flex>
+          <Flex justifyContent="space-between">
             <Spacing />
           </Flex>
         </Box>
