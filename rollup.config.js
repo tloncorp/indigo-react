@@ -10,7 +10,7 @@ import pkg from "./package.json";
 
 export default {
   input: "src/index.js",
-  external: ["styled-components"],
+  external: ["styled-components", "@reach/menu-button"],
   output: [
     {
       file: pkg.main,
