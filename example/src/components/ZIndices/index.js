@@ -1,41 +1,58 @@
 import React from "react";
-import {Box, P, Ul, Li } from "indigo-react";
+import {Box, Flex} from "indigo-react";
 
 const zIndices = () => (
   <React.Fragment>
-      <Box flexBasis="40%">
-        <P mb={[5]}>Token</P>
-        <Ul fontFamily="mono">
-          <Li height={[6]} mb={[4]}>zIndices.0</Li>
-          <Li height={[6]} mb={[4]}>zIndices.1</Li>
-          <Li height={[6]} mb={[4]}>zIndices.2</Li>
-          <Li height={[6]} mb={[4]}>zIndices.3</Li>
-          <Li height={[6]} mb={[4]}>zIndices.4</Li>
-          <Li height={[6]} mb={[4]}>zIndices.5</Li>
-          <Li height={[6]} mb={[4]}>zIndices.6</Li>
-          <Li height={[6]} mb={[4]}>zIndices.7</Li>
-          <Li height={[6]} mb={[4]}>zIndices.8</Li>
-          <Li height={[6]} mb={[4]}>zIndices.9</Li>
-          <Li height={[6]} mb={[4]}>zIndices.10</Li>
-
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Value</P>
-        <Ul fontFamily="mono">
-          <Li height={[6]} mb={[4]}>0</Li>
-          <Li height={[6]} mb={[4]}>1</Li>
-          <Li height={[6]} mb={[4]}>2</Li>
-          <Li height={[6]} mb={[4]}>3</Li>
-          <Li height={[6]} mb={[4]}>4</Li>
-          <Li height={[6]} mb={[4]}>5</Li>
-          <Li height={[6]} mb={[4]}>6</Li>
-          <Li height={[6]} mb={[4]}>7</Li>
-          <Li height={[6]} mb={[4]}>8</Li>
-          <Li height={[6]} mb={[4]}>9</Li>
-          <Li height={[6]} mb={[4]}>10</Li>
-        </Ul>
-      </Box>
+    <Flex mb={[5]}>
+      <Box width={6/12}>Token</Box>
+      <Box width={3/12}>Value</Box>
+    </Flex>
+    <Box fontFamily="mono">
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.0</Box>
+        <Box width={3/12}>0</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.1</Box>
+        <Box width={3/12}>1</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.2</Box>
+        <Box width={3/12}>2</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.3</Box>
+        <Box width={3/12}>3</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.4</Box>
+        <Box width={3/12}>4</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.5</Box>
+        <Box width={3/12}>5</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.6</Box>
+        <Box width={3/12}>6</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.7</Box>
+        <Box width={3/12}>7</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.8</Box>
+        <Box width={3/12}>8</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.9</Box>
+        <Box width={3/12}>9</Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>ZIndices.10</Box>
+        <Box width={3/12}>10</Box>
+      </Flex>
+    </Box>
   </React.Fragment>
 );
 

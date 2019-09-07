@@ -1,25 +1,27 @@
 import React from "react";
-import {Box, P, Ul, Li } from "indigo-react";
+import {Box, Flex} from "indigo-react";
 
 const BorderRadius = () => (
   <React.Fragment>
-      <Box flexBasis="40%">
-        <P mb={[5]}>Token</P>
-        <Ul fontFamily="mono">
-          <Li height={[6]} mb={[8]}>radius.1</Li>
-
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Value</P>
-        <Ul fontFamily="mono">
-          <Li height={[6]} mb={[8]}>4px</Li>
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Example</P>
-        <Box border="0" bg="gray.4" p={[2]} mb={[4]} borderRadius="4px">No Border</Box>
-      </Box>
+    <Flex mb={[5]}>
+      <Box width={6/12}>Token</Box>
+      <Box width={3/12}>Value</Box>
+      <Box width={3/12}>Example</Box>
+    </Flex>
+    <Box fontFamily="mono">
+      <Flex mb={[5]} alignItems="baseline" >
+        <Box width={6/12}>borderRadius.0</Box>
+        <Box width={3/12}>0</Box>
+        <Box width={3/12} bg="gray.4" p={[2]} borderRadius="0" fontFamily="sans">No Border Radius
+        </Box>
+      </Flex>
+      <Flex mb={[5]} alignItems="baseline" >
+        <Box width={6/12}>borderRadius.1</Box>
+        <Box width={3/12}>1</Box>
+        <Box width={3/12} bg="gray.4" p={[2]} borderRadius="1" fontFamily="sans">Border Radius
+        </Box>
+      </Flex>
+    </Box>
   </React.Fragment>
 );
 

@@ -1,28 +1,25 @@
 import React from "react";
-import {Box, P, Ul, Li } from "indigo-react";
+import {Box, Flex} from "indigo-react";
 
 const FontWeight = () => (
   <React.Fragment>
-      <Box flexBasis="40%">
-        <P mb={[5]}>Token</P>
-        <Ul fontFamily="mono">
-          <Li mb={[4]}>fontWeight.1</Li>
-          <Li mb={[4]}>fontWeight.2</Li>
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Value</P>
-        <Ul fontFamily="mono">
-          <Li mb={[4]}>400</Li>
-          <Li mb={[4]}>600</Li>
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Example</P>
-        <P fontWeight={[0]} mb={[4]}>Handgloves</P>
-        <P fontWeight={[1]}>Handgloves</P>
-
-      </Box>
+  <Flex mb={[5]}>
+    <Box width={6/12}>Token</Box>
+    <Box width={3/12}>Value</Box>
+    <Box width={3/12}>Example</Box>
+  </Flex>
+    <Box fontFamily="mono">
+      <Flex mb={[5]} alignItems="baseline">
+        <Box width={6/12}>regular</Box>
+        <Box width={3/12}>400</Box>
+        <Box width={3/12} fontSize="3" fontFamily="sans" fontWeight="regular">Handgloves</Box>
+      </Flex>
+      <Flex mb={[5]} alignItems="baseline">
+        <Box width={6/12}>bold</Box>
+        <Box width={3/12}>600</Box>
+        <Box width={3/12} fontSize="3" fontFamily="sans" fontWeight="bold">Handgloves</Box>
+      </Flex>
+    </Box>
   </React.Fragment>
 );
 

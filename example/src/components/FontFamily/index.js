@@ -1,27 +1,24 @@
 import React from "react";
-import {Box, P, Ul, Li } from "indigo-react";
+import {Box, Flex } from "indigo-react";
 
 const FontFamily = () => (
   <React.Fragment>
-      <Box flexBasis="40%">
-        <P mb={[5]}>Token</P>
-        <Ul fontFamily="mono">
-          <Li mb={[10]}>sans</Li>
-          <Li mb={[4]}>mono</Li>
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Value</P>
-        <Ul fontFamily="mono">
-          <Li mb={[6]}>‘Inter’,-apple-system, BlinkMacSystemFont, 'San Francisco', Roboto, 'Segoe UI', 'Helvetica Neue', sans-serif</Li>
-          <Li>‘Source Code Pro’, monospace, sans-serif</Li>
-        </Ul>
-      </Box>
-      <Box flex="30%">
-        <P mb={[5]}>Example</P>
-        <P fontFamily="sans" mb={[10]}>Handgloves</P>
-        <P fontFamily="mono">Handgloves</P>
-
+    <Flex mb={[5]}>
+      <Box width={6/12}>Token</Box>
+      <Box width={3/12}>Value</Box>
+      <Box width={3/12}>Example</Box>
+    </Flex>
+      <Box fontFamily="mono">
+        <Flex mb={[5]}>
+          <Box width={6/12}>sans</Box>
+          <Box width={3/12} fontSize="1">'Inter',-apple-system, BlinkMacSystemFont, 'San Francisco', Roboto, 'Segoe UI', 'Helvetica Neue', sans-serif</Box>
+          <Box width={3/12} fontSize="3" fontFamily="sans">Handgloves</Box>
+        </Flex>
+        <Flex mb={[5]}>
+          <Box width={6/12}>mono</Box>
+          <Box width={3/12} fontSize="1">'Source Code Pro', monospace, Arial</Box>
+          <Box width={3/12} fontSize="3" fontFamily="mono">Handgloves</Box>
+        </Flex>
       </Box>
   </React.Fragment>
 );
