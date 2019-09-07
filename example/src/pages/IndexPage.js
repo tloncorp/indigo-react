@@ -27,12 +27,11 @@ export default class IndexPage extends React.Component {
               <H4>Indigo</H4>
             </Box>
           </Flex>
-          <H4 mt={[11]} mb={[8]}>Getting Started</H4>
-          <Flex mb={[8]}>
+          <Flex  mt={[11]} mb={[8]}>
             <Box width={[1,1/2]}>
               <StyledCode>indigo-tokens</StyledCode>
-                <StyledA href="https:/github.com/urbit/indigo-tokens" px={[2]}>NPM</StyledA>
-                <StyledA>Github</StyledA>
+                <StyledA href="https://npmjs.com/indigo-tokens" target="_blank" px={[2]}>NPM</StyledA>
+                <StyledA href="https://github.com/urbit/indigo-tokens" target="_blank">Github</StyledA>
               <P width={10/12} my={[2]}>Named style attributes we use to maintain a consistent and scalable system</P>
               <Box mb={[2]}>
               <StyledA mr={[2]} href="#Spacing">Spacing</StyledA>
@@ -47,21 +46,20 @@ export default class IndexPage extends React.Component {
               <StyledA mr={[2]} href="#LineHeight">Line Height</StyledA>
               <StyledA mr={[2]} href="#Border">Border</StyledA>
               <StyledA mr={[2]} href="#BorderRadius">Border Radius</StyledA>
-              <StyledA mr={[2]} href="#zIndices">Z Index</StyledA>
+              <StyledA mr={[2]} href="#zIndices">Z-Index</StyledA>
               </Box>
             </Box>
           </Flex>
           <Flex>
             <Box width={[1,6/12]}>
               <StyledCode>indigo-react</StyledCode>
-              <StyledA px={[2]}>NPM</StyledA>
-              <StyledA href="https:/github.com/urbit/indigo-react">Github</StyledA>
+              <StyledA href="https://npmjs.com/indigo-react" target="_blank" px={[2]}>NPM</StyledA>
+              <StyledA href="https://github.com/urbit/indigo-react">Github</StyledA>
               <P width={10/12} my={[2]}>React component library for prototyping and building interfaces. </P>
             </Box>
             <Box width={[1,6/12]}>
               <StyledCode>indigo-static</StyledCode>
-              <StyledA px={[2]}>NPM</StyledA>
-              <StyledA href="https:/github.com/urbit/indigo-static">Github</StyledA>
+              <StyledA href="https:/github.com/urbit/indigo-static" target="_blank" ml="2">Github</StyledA>
               <P width={10/12} my={[2]}>Tachyons CSS library for building static pages</P>
             </Box>
           </Flex>
