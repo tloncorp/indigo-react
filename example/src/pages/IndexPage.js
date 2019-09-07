@@ -17,7 +17,7 @@ export default class IndexPage extends React.Component {
     return (
       <Container>
         <Box height="95vh">
-          <Flex>
+          <Flex mt={[10]}>
             <Box>
               <Box fontSize="4">
               <Span color="blue.2">●</Span>
@@ -27,9 +27,9 @@ export default class IndexPage extends React.Component {
               <H4>Indigo</H4>
             </Box>
           </Flex>
-          <H4 mb={[4]}>Getting Started</H4>
-          <Flex>
-            <Box width={[1,1/2]} mb={[8]}>
+          <H4 mt={[11]} mb={[8]}>Getting Started</H4>
+          <Flex mb={[8]}>
+            <Box width={[1,1/2]}>
               <StyledCode>indigo-tokens</StyledCode>
                 <StyledA href="https:/github.com/urbit/indigo-tokens" px={[2]}>NPM</StyledA>
                 <StyledA>Github</StyledA>
