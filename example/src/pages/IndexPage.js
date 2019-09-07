@@ -59,7 +59,7 @@ export default class IndexPage extends React.Component {
             </Box>
             <Box width={[1,6/12]}>
               <StyledCode>indigo-static</StyledCode>
-              <StyledA href="https:/github.com/urbit/indigo-static" target="_blank" ml="2">Github</StyledA>
+              <StyledA href="https://github.com/urbit/indigo-static" target="_blank" ml="2">Github</StyledA>
               <P width={10/12} my={[2]}>Tachyons CSS library for building static pages</P>
             </Box>
           </Flex>
