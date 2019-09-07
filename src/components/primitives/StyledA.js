@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { color, layout, space, typography, compose } from "styled-system";
 
 const StyledA = styled.a`
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 
   ${compose(
@@ -14,3 +14,7 @@ const StyledA = styled.a`
 `;
 
 export default StyledA;
+
+StyledA.defaultProps = {
+  color: 'black'
+}

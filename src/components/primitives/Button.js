@@ -41,7 +41,6 @@ const Button = styled.button`
 Button.defaultProps = {
   color: "white",
   backgroundColor: "black",
-  borderRadius: 0,
   fontSize: 2,
   lineHeight: "regular",
   py: 3,
@@ -50,7 +49,7 @@ Button.defaultProps = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  width: "12"
+  width: "50%"
 };
 
 export default Button;

@@ -1,396 +1,137 @@
 import React from "react";
-import { H3, Li, Span, H2, P } from "indigo-react";
-import styled from "styled-components";
+import { Box, Flex } from "indigo-react";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-gap: 30px;
-`;
 
 const Color = () => (
-  <div>
-    <H2 mb={[5]}>Color</H2>
-    <P mb={[8]}>Colors in the app are as follows:</P>
-    <Grid>
-      <div>
-        <H3 mb={[7]}>Color</H3>
-        <ul>
-          <Li height={[6]} mb={[4]}>
-            white
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.4
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            gray.5
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            black
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            blue.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            green.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            red.3
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.0
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.1
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.2
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            yellow.3
-          </Li>
-        </ul>
-      </div>
-      <div>
-        <H3 mb={[7]}>Value</H3>
-        <ul>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ffffff
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #333333
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #4d4d4d
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #7f7f7f
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #b1b2b3
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #e6e6e6
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #f9f9f9
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #000000
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ecf6ff
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #b0c7ff
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #4330fc
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #190d7b
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #bdebcc
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #2ed196
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #2aa779
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #286e55
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #f9d6ce
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ffa073
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ee5432
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #c10d30
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ffefc5
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ffd972
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #fcc440
-          </Li>
-          <Li height={[6]} mb={[4]} fontFamily="mono">
-            #ee892b
-          </Li>
-        </ul>
-      </div>
-      <div>
-        <H3 mb={[7]}>Example</H3>
-        <ul>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              border="1px solid #b1b2b3"
-              display="block"
-              bg="white"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="gray.0"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="gray.1"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="gray.2"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="gray.3"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="gray.4"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="gray.5"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="black"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="blue.0"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="blue.1"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="blue.2"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="blue.3"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="green.0"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="green.1"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="green.2"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="green.3"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="red.0"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="red.1"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="red.2"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="red.3"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="yellow.0"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="yellow.1"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="yellow.2"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-          <Li height={[6]} mb={[4]}>
-            <Span
-              display="block"
-              bg="yellow.3"
-              height={[6]}
-              mb={[4]}
-              width={[9]}
-            />
-          </Li>
-        </ul>
-      </div>
-    </Grid>
-  </div>
+  <React.Fragment>
+    <Flex mb={[5]}>
+      <Box width={6/12}>Token</Box>
+      <Box width={3/12}>Value</Box>
+      <Box width={3/12}>Example</Box>
+    </Flex>
+    <Box fontFamily="mono">
+      <Flex mb={[5]}>
+        <Box width={6/12}>white</Box>
+        <Box width={3/12}>#ffffff</Box>
+        <Box width={3/12} border={1} bg="white"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={6/12}>gray.0</Box>
+        <Box width={3/12}>#333333</Box>
+        <Box width={3/12} border={1} bg="gray.0"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>gray.1</Box>
+        <Box width={[3/12]}>#4d4d4d</Box>
+        <Box width={3/12} bg="gray.1"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>gray.2</Box>
+        <Box width={[3/12]}>#7f7f7f</Box>
+        <Box width={3/12} bg="gray.2"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>gray.3</Box>
+        <Box width={[3/12]}>#b1b2b3</Box>
+        <Box width={3/12} bg="gray.3"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>gray.4</Box>
+        <Box width={[3/12]}>#e6e6e6</Box>
+        <Box width={3/12} bg="gray.4"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>gray.5</Box>
+        <Box width={[3/12]}>#f9f9f9</Box>
+        <Box width={3/12} bg="gray.5"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>black</Box>
+        <Box width={[3/12]}>#000000</Box>
+        <Box width={3/12} bg="black"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>blue.0</Box>
+        <Box width={[3/12]}>#4d4d4d</Box>
+        <Box width={3/12} bg="blue.0"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>blue.1</Box>
+        <Box width={[3/12]}>#b0c7ff</Box>
+        <Box width={3/12} bg="blue.1"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>blue.2</Box>
+        <Box width={[3/12]}>#4330fc</Box>
+        <Box width={3/12} bg="blue.2"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>blue.3</Box>
+        <Box width={[3/12]}>#190d7b</Box>
+        <Box width={3/12} bg="blue.3"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>green.0</Box>
+        <Box width={[3/12]}>#bdebcc</Box>
+        <Box width={[3/12]} bg="green.0"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>green.1</Box>
+        <Box width={[3/12]}>#2ed196</Box>
+        <Box width={3/12} bg="green.1"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>green.2</Box>
+        <Box width={[3/12]}>#2aa779</Box>
+        <Box width={3/12} bg="green.2"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>green.3</Box>
+        <Box width={[3/12]}>#286e55</Box>
+        <Box width={3/12} bg="green.3"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>red.0</Box>
+        <Box width={[3/12]}>#f9d6ce</Box>
+        <Box width={3/12} bg="red.0"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>red.1</Box>
+        <Box width={[3/12]}>#ffa073</Box>
+        <Box width={3/12} bg="red.1"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>red.2</Box>
+        <Box width={[3/12]}>#ee5432</Box>
+        <Box width={3/12} bg="red.2"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>red.3</Box>
+        <Box width={[3/12]}>#c10d30</Box>
+        <Box width={3/12} bg="red.3"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>yellow.0</Box>
+        <Box width={[3/12]}>#ffefc5</Box>
+        <Box width={3/12} bg="yellow.0"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>yellow.1</Box>
+        <Box width={[3/12]}>#ffd972</Box>
+        <Box width={3/12} bg="yellow.1"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>yellow.2</Box>
+        <Box width={[3/12]}>#fcc440</Box>
+        <Box width={3/12} bg="yellow.2"></Box>
+      </Flex>
+      <Flex mb={[5]}>
+        <Box width={[6/12]}>yellow.3</Box>
+        <Box width={[3/12]}>#ee892b</Box>
+        <Box width={3/12} bg="yellow.3"></Box>
+      </Flex>
+    </Box>
+  </React.Fragment>
 );
 
 export default Color;

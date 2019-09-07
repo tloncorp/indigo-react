@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import theme from "indigo-tokens";
-// import { theme as localTheme } from "indigo-react";
+// import theme from "indigo-tokens";
+import { theme as localTheme } from "indigo-react";
 
 const Style = createGlobalStyle`
   html { box-sizing: border-box }
@@ -24,7 +24,7 @@ const Root = styled.div`
 export default class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={localTheme}>
         <Root>
           <Style />
           <Router basename="/indigo-react">

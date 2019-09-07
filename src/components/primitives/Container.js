@@ -9,8 +9,8 @@ const Box = styled.div`
   )}
 `;
 
-const Container = ({ children, maxWidth = "800px", ...props }) => (
-  <Box mx="auto" maxWidth={maxWidth} {...props}>
+const Container = ({ children, maxWidth = "1024px", ...props }) => (
+  <Box mx={[6,7,8,"auto"]} maxWidth={maxWidth} {...props}>
     {children}
   </Box>
 );

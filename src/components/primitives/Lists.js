@@ -5,14 +5,16 @@ import { border, layout, space, typography, compose } from 'styled-system'
 export const Ul = styled.ul`
   ${compose(
     space,
-    layout
+    layout,
+    typography
   )}
 `
 
 export const Ol = styled.ol`
   ${compose(
     space,
-    layout
+    layout,
+    typography
   )}
 `
 
