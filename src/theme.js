@@ -9,7 +9,7 @@ const theme = {
     yellow: ['#ffefc5', '#ffd972', '#fcc440', '#ee892b']
   },
   fonts: {
-    sans: `"Inter UI", -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif`,
+    sans: `"Inter", "Inter UI", -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Arial, sans-serif`,
     mono: `"Source Code Pro", "Roboto mono", "Courier New", monospace`
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 32, 48],
