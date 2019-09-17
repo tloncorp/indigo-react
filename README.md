@@ -4,13 +4,15 @@
 
 [![NPM](https://img.shields.io/npm/v/indigo-react.svg)](https://www.npmjs.com/package/indigo-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
 
-```bash
+
+**Install**
+
+```
 npm install --save indigo-react
 ```
 
-## Usage
+**React**
 
 ```jsx
 import React, { Component } from "react";
@@ -23,6 +25,23 @@ class Example extends Component {
   }
 }
 ```
+
+## Setup
+The main directories are `src` and `demo`
+`src` is where the ```indigo-react``` styles live(primitives & components).
+`demo` is the site you want to build using `indigo-react`.
+````
+#download yarn if you don't have it
+$ brew install yarn
+
+#build and watch your src directory
+/indigo-react
+$ yarn start
+
+#build and watch your demo directory
+/indigo-react/demo
+$ yarn start
+````
 
 ## License
 
