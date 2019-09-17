@@ -28,7 +28,7 @@ export default class IndexPage extends React.Component {
             </Box>
           </Flex>
           <Flex  mt={[11]} mb={[8]}>
-            <Box width={[1,1/2]}>
+            <Box width={1,1,1/2}>
               <StyledCode>indigo-tokens</StyledCode>
                 <StyledA href="https://npmjs.com/indigo-tokens" target="_blank" px={[2]}>NPM</StyledA>
                 <StyledA href="https://github.com/urbit/indigo-tokens" target="_blank">Github</StyledA>
