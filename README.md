@@ -6,8 +6,7 @@
 
 
 
-### Install
-
+## Install
 ```
 npm install --save indigo-react
 ```
