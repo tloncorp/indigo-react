@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@reach/menu-button": "^0.1.18",
-    "indigo-react": "link:..",
+    "indigo-react": "file:..",
     "indigo-tokens": "^1.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.9.0",
