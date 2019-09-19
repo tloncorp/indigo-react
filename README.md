@@ -30,16 +30,14 @@ The main directories are `src` and `demo`
 `src` is where the ```indigo-react``` styles live(primitives & components).
 `demo` is the site you want to build using `indigo-react`.
 ````
-#download yarn if you don't have it
-$ brew install yarn
 
 #build and watch your src directory
 /indigo-react
-$ yarn start
+$ npm run start
 
 #build and watch your demo directory
 /indigo-react/demo
-$ yarn start
+$ npm run start
 ````
 
 ## License
