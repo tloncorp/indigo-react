@@ -13,16 +13,26 @@ npm install --save indigo-react
 
 **React**
 
-```jsx
+`App.js`
+
+```
 import React, { Component } from "react";
+import { H1 } from 'indigo-react';
+import theme from 'indigo-tokens';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { Test } from './test.js';
 
-import { StyledH1 } from "indigo-react";
-
-class Example extends Component {
+class App extends React.Component {
   render() {
-    return <StyledH1>Urbit</StyledH1>;
+    return (
+      <ThemeProvider theme={theme}>
+        <H1>Urbit</H1>
+        <Test/>
+      </ThemeProvider>
+    );
   }
 }
+export default App;
 ```
 
 ## Setup
