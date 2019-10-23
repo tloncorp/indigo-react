@@ -20,7 +20,6 @@ import React, { Component } from "react";
 import { H1 } from 'indigo-react';
 import theme from 'indigo-tokens';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { Test } from './test.js';
 
 class App extends React.Component {
   render() {
