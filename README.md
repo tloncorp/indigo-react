@@ -1,6 +1,6 @@
 # indigo-react
 
-> Tlon&#x27;s design language
+Indigo is built with styled-components, styled-system, and reach-ui.
 
 [![NPM](https://img.shields.io/npm/v/indigo-react.svg)](https://www.npmjs.com/package/indigo-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
