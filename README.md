@@ -13,7 +13,7 @@ npm install --save indigo-react
 
 **React**
 
-`App.js`
+
 
 ```
 import React, { Component } from "react";
