@@ -16,7 +16,6 @@ Install peer dependencies
 
 ```
 npm install --save styled-components && @reach/menu-button
-
 ```
 
 **React**
