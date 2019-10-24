@@ -23,7 +23,7 @@ export default StyledCode
 
 StyledCode.defaultProps = {
   fontFamily: 'mono',
-  bg:'gray.4',
+  bg:'grayLight',
   fontSize: 2,
   lineHeight: 'regular'
 }

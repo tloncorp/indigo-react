@@ -20,9 +20,9 @@ export default class IndexPage extends React.Component {
           <Flex mt={[10]}>
             <Box>
               <Box fontSize="4">
-              <Span color="blue.2">●</Span>
-              <Span color="green.2">◆</Span>
-              <Span color="yellow.2">▲</Span>
+              <Span color="blue">●</Span>
+              <Span color="green">◆</Span>
+              <Span color="yellow">▲</Span>
               </Box>
               <H4>Indigo</H4>
             </Box>
