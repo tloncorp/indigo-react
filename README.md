@@ -15,7 +15,7 @@ npm install --save indigo-react
 Install peer dependencies
 
 ```
-npm install --save styled-components && @reach/menu-button
+npm install --save styled-components @reach/menu-button
 ```
 
 **React**
