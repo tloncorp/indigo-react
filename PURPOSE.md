@@ -12,6 +12,18 @@ New, useful components that were created through project work were tough to inte
 
 1. Separate the projects – build tooling, publishing, and project structure are pretty different for static css, react component libraries, and design tokens. We have separated the projects. The common denominator is that they are all now part of the Javascript ecosystem (more below).
 
+   - indigo-tokens is where our design tokens live. These are theme constants to be used within indigo-react and indigo-static. They serve as our source of truth for the design system.
+
+   - indigo-react is our React component library. Within a react project, you import our tokens `import theme from "indigo-tokens";` and use the `theme` alongside styled-component's `ThemeProvider`. In a top-level component:
+
+     ```
+       <ThemeProvider theme={theme}>
+         ...
+       </ThemeProvider>
+     ```
+
+   - indigo-static is our Tachyons-based static css library. It uses indigo-tokens at compilation to inject our theme values into the Tachyons system. You will not need to import indigo-tokens for your static site project.
+
 2. Publish the packages to NPM – now all developers can import versioned components to their projects.
 
 3. Make maintainence easier – the react library comes with an example site (create-react-app) where your components are available _as you develop_. You can use this as a playground for new ideas, a documentation site, or a learning resource for other developers.
