@@ -11,14 +11,7 @@ import {
 } from "styled-system";
 
 const Button = styled.button`
-  ${compose(
-    space,
-    layout,
-    color,
-    border,
-    flexbox,
-    typography
-  )};
+  ${compose(space, layout, color, border, flexbox, typography)};
 
   border: 0;
   outline: none;
@@ -33,7 +26,7 @@ const Button = styled.button`
     if (props.error) {
       return `background: #EE892B;`;
     } else if (props.isLoading) {
-      return `background: linear-gradient(to right, #000 40%, #B1B2B3 40%);`;
+      return `background: linear-gradient(to right, #000 40%, #B1B2B3 40%); cursor: progress;`;
     }
   }}
 `;
