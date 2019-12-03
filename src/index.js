@@ -19,6 +19,7 @@ import StyledCode from "./components/primitives/StyledCode";
 import StyledA from "./components/primitives/StyledA";
 import Button from "./components/primitives/Button";
 import Container from "./components/primitives/Container";
+import Loading from "./components/icons/Loading";
 
 export {
   P,
@@ -43,5 +44,6 @@ export {
   StyledA,
   StyledCode,
   Button,
-  Container
+  Container,
+  Loading
 };
