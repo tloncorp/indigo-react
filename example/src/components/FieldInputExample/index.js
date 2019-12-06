@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Span, Loading, Flex, P, FieldInput } from "indigo-react";
+import { Box, Span, Flex, P, FieldInput } from "indigo-react";
 import CodeBlock from "../CodeBlock";
 
 const standardExample = `<Span fontSize={1} as="label" htmlFor="standard">Label</Span>
