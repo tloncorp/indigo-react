@@ -9,7 +9,7 @@ const Style = createGlobalStyle`
   html { box-sizing: border-box }
   *, *:before, *:after { box-sizing: inherit; }
   body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul, pre {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -24,7 +24,7 @@ const Root = styled.div`
 export default class App extends Component {
   render() {
     return (
-    <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <Root>
           <Style />
           <Router basename="/indigo-react">
