@@ -30,7 +30,6 @@ const ButtonsExample = () => (
           width={[1, 1 / 2, 1 / 3]}
           flexDirection="column"
           justifyContent="center"
-          pt={4}
         >
           <P mb={2}>Left Button</P>
           <Button
@@ -51,7 +50,6 @@ const ButtonsExample = () => (
           width={[1, 1 / 2, 1 / 3]}
           flexDirection="column"
           justifyContent="center"
-          pt={4}
         >
           <P mb={2}>Left Button – Loading</P>
           <Button
@@ -73,7 +71,6 @@ const ButtonsExample = () => (
           width={[1, 1 / 2, 1 / 3]}
           flexDirection="column"
           justifyContent="center"
-          pt={4}
         >
           <P mb={2}>Left Button – Disabled</P>
           <Button
@@ -95,7 +92,6 @@ const ButtonsExample = () => (
           width={[1, 1 / 2, 1 / 3]}
           flexDirection="column"
           justifyContent="center"
-          pt={4}
         >
           <P mb={2}>Left Button – Error </P>
           <Button

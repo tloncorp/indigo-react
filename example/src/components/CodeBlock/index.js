@@ -27,7 +27,7 @@ const CodeBlock = ({ codeExample }) => (
       </Highlight>
     </Box>
     <CopyToClipboard text={codeExample}>
-      <Span borderBottom="1px solid" style={{ cursor: "pointer" }}>
+      <Span fontSize={1} borderBottom="1px solid" style={{ cursor: "pointer" }}>
         Copy
       </Span>
     </CopyToClipboard>
