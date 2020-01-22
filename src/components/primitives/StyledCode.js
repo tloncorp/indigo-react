@@ -10,20 +10,14 @@ import {
 } from 'styled-system'
 
 const StyledCode = styled.code`
-  ${compose(
-    color,
-    layout,
-    opacity,
-    space,
-    typography
-  )}
+  ${compose(color, layout, opacity, space, typography)}
 `
 
 export default StyledCode
 
 StyledCode.defaultProps = {
   fontFamily: 'mono',
-  bg:'grayLight',
+  bg: 'grayLight',
   fontSize: 2,
   lineHeight: 'regular'
 }

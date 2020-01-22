@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import {
   space,
   compose,
@@ -7,18 +7,11 @@ import {
   border,
   shadow,
   layout
-} from "styled-system";
+} from 'styled-system'
 
 const Span = styled.span`
-  text-decoration: ${p => (p.underline ? "underline" : "none")};
-  ${compose(
-    space,
-    color,
-    typography,
-    shadow,
-    border,
-    layout
-  )}
+  text-decoration: ${p => (p.underline ? 'underline' : 'none')};
+  ${compose(space, color, typography, shadow, border, layout)}
 `;
 
 export default Span;

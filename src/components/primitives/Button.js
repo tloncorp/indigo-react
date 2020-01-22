@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 import {
   flexbox,
@@ -8,7 +8,7 @@ import {
   border,
   compose,
   typography
-} from "styled-system";
+} from 'styled-system'
 
 const Button = styled.button`
   ${compose(space, layout, color, border, flexbox, typography)};
@@ -32,17 +32,17 @@ const Button = styled.button`
 `;
 
 Button.defaultProps = {
-  color: "white",
-  backgroundColor: "black",
+  color: 'white',
+  backgroundColor: 'black',
   fontSize: 2,
-  lineHeight: "regular",
+  lineHeight: 'regular',
   py: 3,
   px: 4,
-  fontFamily: "inherit",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  width: "50%"
+  fontFamily: 'inherit',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '50%'
 };
 
 export default Button;

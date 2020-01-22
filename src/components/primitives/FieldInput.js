@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Span from "./Span";
-import theme from "../../theme";
+import styled from 'styled-components'
+import Span from './Span'
+import theme from '../../theme'
 
 export const FieldSuccess = styled(Span)`
   color: ${theme.colors.green[1]};
@@ -36,11 +36,11 @@ export const FieldInput = styled.input`
     ${props => {
       if (props.hasError) {
         return `border-color: ${theme.colors.red[1]}`;
-      } else if (props.hasSuccess) {
+    } else if (props.hasSuccess) {
         return `border-color: ${theme.colors.green[1]}`;
-      } else {
+    } else {
         return `border-color: ${theme.colors.black}`;
-      }
+    }
     }}
   }
 

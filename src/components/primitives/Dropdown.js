@@ -1,9 +1,9 @@
-import React from "react";
-import Span from "./Span";
-import Box from "./Box";
-import styled, { createGlobalStyle } from "styled-components";
+import React from 'react'
+import Span from './Span'
+import Box from './Box'
+import styled, { createGlobalStyle } from 'styled-components'
 // css warning not included in production
-import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
+import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button'
 
 const Style = createGlobalStyle`
 [data-reach-menu] {
@@ -63,7 +63,7 @@ const StyledMenuList = styled(MenuList)`
   padding: 0;
 
   > * {
-    font-family: "Inter UI";
+    font-family: 'Inter UI';
   }
 `;
 
@@ -90,7 +90,7 @@ class Dropdown extends React.Component {
         <Menu>
           <StyledMenuButton disabled={this.props.disabled}>
             <Span>
-              {this.state.selectedText ? this.state.selectedText : "Options"}
+              {this.state.selectedText ? this.state.selectedText : 'Options'}
             </Span>
             <span aria-hidden>▼</span>
           </StyledMenuButton>

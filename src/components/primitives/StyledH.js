@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { color, space, compose, typography } from "styled-system";
+import { color, space, compose, typography } from 'styled-system'
 
 const defaults = {
   fontFamily: 'sans',
@@ -8,11 +8,7 @@ const defaults = {
 };
 
 export const H1 = styled.h1`
-  ${compose(
-    color,
-    typography,
-    space
-  )}
+  ${compose(color, typography, space)}
 `;
 
 H1.defaultProps = {
@@ -22,11 +18,7 @@ H1.defaultProps = {
 };
 
 export const H2 = styled.h2`
-  ${compose(
-    color,
-    typography,
-    space
-  )}
+  ${compose(color, typography, space)}
 `;
 
 H2.defaultProps = {
@@ -37,11 +29,7 @@ H2.defaultProps = {
 };
 
 export const H3 = styled.h3`
-  ${compose(
-    color,
-    typography,
-    space
-  )}
+  ${compose(color, typography, space)}
 `;
 
 H3.defaultProps = {
@@ -51,11 +39,7 @@ H3.defaultProps = {
 }
 
 export const H4 = styled.h4`
-  ${compose(
-    color,
-    typography,
-    space
-  )}
+  ${compose(color, typography, space)}
 `;
 
 H4.defaultProps = {
@@ -65,11 +49,7 @@ H4.defaultProps = {
 };
 
 export const H5 = styled.h5`
-  ${compose(
-    color,
-    typography,
-    space
-  )}
+  ${compose(color, typography, space)}
 `;
 
 H5.defaultProps = {
@@ -79,11 +59,7 @@ H5.defaultProps = {
 };
 
 export const H6 = styled.h6`
-  ${compose(
-    color,
-    typography,
-    space
-  )}
+  ${compose(color, typography, space)}
 `;
 
 H6.defaultProps = {

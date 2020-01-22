@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import {
   background,
   border,
@@ -11,7 +11,7 @@ import {
   space,
   typography,
   compose
-} from "styled-system";
+} from 'styled-system'
 
 export default styled.div`
   box-sizing: border-box;
