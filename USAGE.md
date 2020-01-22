@@ -153,3 +153,11 @@ Consult a designer.
 ## Default Props
 
 Some components have default props (seen above), these can be overridden by specifying a new prop value.
+
+## Components vs Primitives
+
+`indigo-react` aims to mainly to provide primitive building blocks for component-based design systems. We can think of "primitives" as the lowest level element of our design system. 
+
+Within `indigo-react`, these are usually correlated to DOM elements. By combining these "primitives" (P, H1, H2, Box, etc etc), we can create something that can't be modeled in one element or may be beneficial for as one group to keep our code DRY. 
+
+One example might be a `Card` component, made up of multiple primitives like `Box`, `H1`, `P`. 
