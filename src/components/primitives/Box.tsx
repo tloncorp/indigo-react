@@ -3,7 +3,7 @@ import {
   background, BackgroundProps,
   border, BorderProps,
   color, ColorProps,
-  flexbox, FlexProps,
+  flexbox, FlexboxProps,
   grid, GridProps,
   layout, LayoutProps,
   position, PositionProps,
@@ -13,7 +13,7 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends BackgroundProps, BorderProps, ColorProps, FlexProps, GridProps, LayoutProps, PositionProps, ShadowProps, SpaceProps, TypographyProps {}
+interface Props extends BackgroundProps, BorderProps, ColorProps, FlexboxProps, GridProps, LayoutProps, PositionProps, ShadowProps, SpaceProps, TypographyProps {}
 
 export default styled.div<Props>`
   box-sizing: border-box;

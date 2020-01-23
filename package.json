@@ -5,9 +5,9 @@
   "author": "tlon",
   "license": "MIT",
   "repository": "urbit/indigo-react",
-  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "module": "dist/indigo-ts.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/indigo-react.esm.js",
   "files": [
     "dist"
   ],
@@ -27,8 +27,8 @@
   "peerDependencies": {
     "@reach/menu-button": "^0.1.18",
     "prop-types": "^15.5.4",
-    "react": ">=16",
-    "react-dom": "^15.0.0 || ^16.0.0",
+    "react": ">= 16",
+    "react-dom": ">= 16",
     "styled-components": ">= 4"
   },
   "devDependencies": {
@@ -58,6 +58,7 @@
     "@reach/menu-button": "^0.7.3",
     "@types/styled-components": "^4.4.2",
     "@types/styled-system": "^5.1.4",
+    "formik": "^2.1.2",
     "grid-styled": "^5.0.2",
     "prop-types": "^15.7.2",
     "styled-components": "^5.0.0",

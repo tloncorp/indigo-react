@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Span, Loading } from "indigo-react";
+import { Box, Button, Span } from "indigo-react";
 
 const Buttons = () => (
   <React.Fragment>
@@ -12,13 +12,14 @@ const Buttons = () => (
         <Span>Download Passport</Span>
         <Span>↓</Span>
       </Button>
-
-      <Box mb="4">
-        <Button onClick={() => console.log("Downloading...")} isLoading={true}>
-          <Span>Loading...</Span>
-          <Loading />
-        </Button>
-      </Box>
+      {
+        // <Box mb="4">
+        //   <Button onClick={() => console.log("Downloading...")} isLoading={true}>
+        //     <Span>Loading...</Span>
+        //     <Loading />
+        //   </Button>
+        // </Box>
+      }
 
       <Box mb="4">
         <Button onClick={() => console.log("Downloading...")} disabled>

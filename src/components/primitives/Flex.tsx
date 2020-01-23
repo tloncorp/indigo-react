@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import {
-  flexbox, FlexProps,
+  flexbox, FlexboxProps,
   layout, LayoutProps,
   space, SpaceProps,
   typography, TypographyProps,
   compose
 } from 'styled-system'
 
-interface Props extends FlexProps, LayoutProps, SpaceProps, TypographyProps {}
+interface Props extends FlexboxProps, LayoutProps, SpaceProps, TypographyProps {}
 
 const Flex = styled.div<Props>`
   display: flex;

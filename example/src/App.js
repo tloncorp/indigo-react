@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
+import Sandbox from "./pages/Sandbox";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "indigo-tokens";
 // import { theme as localTheme } from "indigo-react";
@@ -29,7 +30,7 @@ export default class App extends Component {
           <Style />
           <Router basename="/indigo-react">
             <div>
-              <Route exact path="/" component={IndexPage} />
+              <Route exact path="/" component={Sandbox} />
             </div>
           </Router>
         </Root>
