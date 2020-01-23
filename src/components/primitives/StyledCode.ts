@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 
 import {
-  color,
-  layout,
-  opacity,
-  space,
-  typography,
+  space,  SpaceProps,
+  typography, TypographyProps,
+  color, ColorProps,
+  layout, LayoutProps,
+  opacity, OpacityProps,
   compose
 } from 'styled-system'
 
-const StyledCode = styled.code`
+interface StyledCodeProps extends ColorProps, LayoutProps, SpaceProps, TypographyProps, OpacityProps {}
+
+const StyledCode = styled.code<StyledCodeProps>`
   ${compose(color, layout, opacity, space, typography)}
 `
 

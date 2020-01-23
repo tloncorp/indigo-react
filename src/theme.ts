@@ -1,4 +1,6 @@
-const theme = {
+import { DefaultTheme } from 'styled-components'
+
+const theme: DefaultTheme = {
   colors: {
     black: '#000000',
     white: '#ffffff',
@@ -24,14 +26,14 @@ const theme = {
   },
   borders: ['none', '1px solid'],
   space: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
-  radii: [0, 4],
+  radii: [0, 4, 8, 12],
   sizes: [0, 4, 8, 12, 16, 20, 24, 32, 48, 64, 96, 160, 288],
   zIndices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   breakpoints: ['768px', '1024px', '1440px']
 }
 
-theme.breakpoints.small = theme.breakpoints[0]
-theme.breakpoints.medium = theme.breakpoints[1]
-theme.breakpoints.large = theme.breakpoints[2]
+// theme.breakpoints.small = theme.breakpoints[0]
+// theme.breakpoints.medium = theme.breakpoints[1]
+// theme.breakpoints.large = theme.breakpoints[2]
 
 export default theme

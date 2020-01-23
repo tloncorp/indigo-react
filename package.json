@@ -37,13 +37,7 @@
     "@types/jest": "^24.9.0",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
-    "gh-pages": "^1.2.0",
-    "husky": "^4.2.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "tsdx": "^0.12.3",
-    "tslib": "^1.10.0",
-    "typescript": "^3.7.5",
+    "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
@@ -51,11 +45,22 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "gh-pages": "^1.2.0",
+    "husky": "^4.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@reach/menu-button": "^0.7.3",
+    "@types/styled-components": "^4.4.2",
+    "@types/styled-system": "^5.1.4",
     "grid-styled": "^5.0.2",
     "prop-types": "^15.7.2",
+    "styled-components": "^5.0.0",
     "styled-system": "^5.0.12"
   },
   "husky": {
