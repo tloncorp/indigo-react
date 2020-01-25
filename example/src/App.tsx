@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
 import Sandbox from "./pages/Sandbox";
@@ -22,10 +22,11 @@ const Root = styled.div`
   line-height: 1.5;
 `;
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
+    console.log(theme)
     return (
-    <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <Root>
           <Style />
           <Router basename="/indigo-react">

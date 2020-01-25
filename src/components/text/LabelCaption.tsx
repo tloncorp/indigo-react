@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import theme from "../../theme";
 import {
   color, ColorProps,
   layout, LayoutProps,
@@ -10,13 +10,15 @@ import {
 
 interface Props extends ColorProps, LayoutProps, SpaceProps, TypographyProps {}
 
-const P = styled.p<Props>`
+const LabelCaption = styled.p<Props>`
+  color: ${theme.colors.gray[2]};
+  margin-top: ${theme.space[1]};
   ${compose(color, layout, space, typography)}
 `;
 
-export default P;
+export default LabelCaption;
 
-P.defaultProps = {
+LabelCaption.defaultProps = {
   fontSize: 0,
   lineHeight: 'regular'
 };

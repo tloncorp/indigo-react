@@ -10,13 +10,14 @@ import {
 
 interface Props extends ColorProps, LayoutProps, SpaceProps, TypographyProps {}
 
-const P = styled.p<Props>`
+const Title = styled.p<Props>`
   ${compose(color, layout, space, typography)}
 `;
 
-export default P;
+export default Title;
 
-P.defaultProps = {
+Title.defaultProps = {
+  margin: 2,
   fontSize: 0,
   lineHeight: 'regular'
 };

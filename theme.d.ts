@@ -32,5 +32,8 @@ declare module 'styled-components' {
     sizes: number[],
     zIndices: number[],
     breakpoints: string[]
+    global: {
+      borderRadius: string,
+    }
   }
 }

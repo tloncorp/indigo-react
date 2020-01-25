@@ -25,6 +25,15 @@ import Button from './components/primitives/Button'
 import Container from './components/primitives/Container'
 // import Loading from './components/icons/Loading'
 
+import Input from './components/form/Input'
+
+// Text
+import Title from './components/text/Title'
+import Label from './components/text/Label'
+import LabelCaption from './components/text/LabelCaption'
+
+import InputGroup from './components/form/InputGroup'
+
 export {
   P,
   Box,
@@ -51,4 +60,10 @@ export {
   Container,
   // Loading
   TextInput,
+  Input,
+  InputGroup,
+
+  Title,
+  Label,
+  LabelCaption,
 };
