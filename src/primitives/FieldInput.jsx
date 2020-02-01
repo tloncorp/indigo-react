@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Span from "./Span";
-import theme from "../../theme";
+import theme from "../theme";
 
 export const FieldSuccess = styled(Span)`
   color: ${theme.colors.green[1]};

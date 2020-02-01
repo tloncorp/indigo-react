@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 import {
   background, BackgroundProps,
   border, BorderProps,
@@ -17,8 +18,9 @@ interface Props extends BackgroundProps, BorderProps, ColorProps, FlexboxProps, 
 
 export default styled.div<Props>`
   box-sizing: border-box;
+  margin: 0;
   min-width: 0;
-
+  display: flex;
   ${compose(
     background,
     border,

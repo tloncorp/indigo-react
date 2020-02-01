@@ -28,7 +28,6 @@ const Input = styled.input`
   width: 100%;
   font-size: ${theme.fontSizes[0]}px;
   line-height: ${theme.lineHeights.regular};
-  border-radius: ${theme.global.borderRadius}
   &:focus {
       border-color: ${theme.colors.black};
     }

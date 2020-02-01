@@ -12,6 +12,7 @@ import {
   Label,
   InputGroup,
   LabelCaption,
+  Button
   // Title,
   // Subtitles
 } from "indigo-react";
@@ -65,6 +66,10 @@ const Sandbox: React.FC<{}> = () => {
           </Form>
         )}
       />
+
+      <Button>Settings...</Button>
+      <Button disabled>I am disabled</Button>
+
     </Container>
   );
 };

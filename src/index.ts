@@ -1,28 +1,28 @@
 // Primitives
-import Box from './components/primitives/Box'
-import Flex from './components/primitives/Flex'
-import P from './components/primitives/P'
-import Span from './components/primitives/Span'
-import Img from './components/primitives/Img'
-import { Ul, Ol, Li } from './components/primitives/Lists'
-import { H1, H2, H3, H4, H5, H6 } from './components/primitives/StyledH'
+import Box from './primitives/Box'
+import Flex from './primitives/Flex'
+import P from './primitives/P'
+import Span from './primitives/Span'
+import Img from './primitives/Img'
+import { Ul, Ol, Li } from './primitives/Lists'
+import { H1, H2, H3, H4, H5, H6 } from './primitives/StyledH'
 // @ts-ignore
 import {
   FieldSuccess,
   FieldError,
   FieldInput
   // @ts-ignore
-} from './components/primitives/FieldInput'
+} from './primitives/FieldInput'
 // @ts-ignore
-import Dropdown from './components/primitives/Dropdown'
+import Dropdown from './primitives/Dropdown'
 // Theme (dev purposes)
 import theme from './theme'
 
-import StyledCode from './components/primitives/StyledCode'
-import StyledA from './components/primitives/StyledA'
-import TextInput from './components/form/TextInput'
-import Button from './components/primitives/Button'
-import Container from './components/primitives/Container'
+import StyledCode from './primitives/StyledCode'
+import StyledA from './primitives/StyledA'
+
+import Button from './components/buttons/Button'
+import Container from './primitives/Container'
 // import Loading from './components/icons/Loading'
 
 import Input from './components/form/Input'
@@ -59,7 +59,7 @@ export {
   Button,
   Container,
   // Loading
-  TextInput,
+
   Input,
   InputGroup,
 
