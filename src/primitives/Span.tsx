@@ -9,7 +9,14 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends ColorProps, LayoutProps, SpaceProps, TypographyProps, BorderProps, ShadowProps {}
+type Props =
+  BorderProps &
+  ColorProps &
+  LayoutProps &
+  ShadowProps &
+  SpaceProps &
+  TypographyProps &
+  {}
 
 
 const Span = styled.span<Props>`

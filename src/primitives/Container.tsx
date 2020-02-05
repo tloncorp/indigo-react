@@ -6,7 +6,7 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends LayoutProps, SpaceProps {
+type Props = LayoutProps & SpaceProps & {
   children: any,
 }
 

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import theme from "../../theme";
+import xt from "../../extendedTheme"
+
 // import {
 //   Field,
 //   // FieldProps,
@@ -19,13 +21,18 @@ import theme from "../../theme";
 
 const Input = styled.input`
   outline: none;
-  border-color: ${theme.colors.gray[3]};
+
+  border-color: ${theme.colors.gray[4]};
   border-width: 1px;
   border-style: solid;
+  border-radius: ${xt.borderRadiusMinor}px;
+
   margin-top: ${theme.space[1]}px;
   padding-left: ${theme.space[2]}px;
+
   height: ${theme.sizes[7]}px;
   width: 100%;
+
   font-size: ${theme.fontSizes[0]}px;
   line-height: ${theme.lineHeights.regular};
   &:focus {

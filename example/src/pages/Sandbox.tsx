@@ -4,6 +4,7 @@ import {
   Flex,
   Container,
   H4,
+  H1,
   P,
   Span,
   StyledA,
@@ -12,9 +13,14 @@ import {
   Label,
   InputGroup,
   LabelCaption,
-  Button
-  // Title,
-  // Subtitles
+  Button,
+  IconButton,
+  Icon,
+  Pad,
+  Title,
+  Subtitle,
+  DividerBox,
+  Hr,
 } from "indigo-react";
 
 import { Formik, Form, Field } from 'formik'
@@ -30,21 +36,23 @@ import { Formik, Form, Field } from 'formik'
 // import ZIndices from '../components/ZIndices'
 // import Buttons from '../components/Buttons'
 
-interface MyFormValues {
+interface FormValues {
   firstName: string;
   lastName: string;
 }
 
 
 const Sandbox: React.FC<{}> = () => {
-  const initialValues: MyFormValues = {
+  const initialValues: FormValues = {
     firstName: '',
     lastName: '',
   };
 
   return (
     <Container>
-      <h1>My Example</h1>
+      <Title>Urbit 101</Title>
+      <Subtitle>Intro to Cryptography</Subtitle>
+
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
@@ -52,23 +60,51 @@ const Sandbox: React.FC<{}> = () => {
           alert(JSON.stringify(values, null, 2));
           actions.setSubmitting(false);
         }}
-        render={formikBag => (
-          <Form>
-            <InputGroup>
-              <Label>First Name</Label>
-              <LabelCaption>Supplementary information goes here.</LabelCaption>
-              <Field name="firstname" component={Input} />
-            </InputGroup>
-            <InputGroup>
-              <Label>Last Name</Label>
-              <Field name="lastname" component={Input} />
-            </InputGroup>
-          </Form>
-        )}
-      />
+      >
+      {(props) => (
+        <Form>
+          <InputGroup>
+            <Label>First Name</Label>
+            <LabelCaption>Supplementary information goes here.</LabelCaption>
+            <Field name="firstname" component={Input} />
+          </InputGroup>
+          <InputGroup>
+            <Label>Last Name</Label>
+            <Field name="lastname" component={Input} />
+          </InputGroup>
+        </Form>
+      )}
+      </Formik>
+      <Pad>
+        <Button mt="2">Settings...</Button>
 
-      <Button>Settings...</Button>
-      <Button disabled>I am disabled</Button>
+        <Button disabled mt="2">I am disabled</Button>
+
+        <Button md mt="2">Medium</Button>
+
+        <Button sm mt="2">Small</Button>
+
+        <IconButton
+          mt="2"
+          iconRight='ChevronSouth'
+          onClick={() => {alert('HELLO');}}>
+          Icon
+        </IconButton>
+
+        <IconButton mt="2" sm icon='ChevronSouth'> </IconButton>
+
+        <Icon mt="2" />
+
+      </Pad>
+
+      <DividerBox>
+        <Title>Urbit 101</Title>
+        <Subtitle>Intro to Cryptography</Subtitle>
+        <Hr />
+        <Pad>
+          <Button>Settings...</Button>
+        </Pad>
+      </DividerBox>
 
     </Container>
   );

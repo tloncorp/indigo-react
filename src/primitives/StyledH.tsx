@@ -7,7 +7,11 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends ColorProps, SpaceProps, TypographyProps {}
+type Props =
+  ColorProps &
+  SpaceProps &
+  TypographyProps &
+  {}
 
 const defaults = {
   fontFamily: 'sans',

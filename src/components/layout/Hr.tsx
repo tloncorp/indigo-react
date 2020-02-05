@@ -1,56 +1,45 @@
 import styled from 'styled-components';
+import theme from '../../theme'
 
 import {
-  background,
   border,
-  color,
   flexbox,
-  grid,
   layout,
   position,
-  shadow,
   space,
-  typography,
   compose,
-  BackgroundProps,
   BorderProps,
   ColorProps,
   FlexboxProps,
-  GridProps,
   LayoutProps,
   PositionProps,
-  ShadowProps,
   SpaceProps,
-  TypographyProps
 } from 'styled-system'
 
 type Props =
-  BackgroundProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
-  GridProps &
   LayoutProps &
   PositionProps &
-  ShadowProps &
   SpaceProps &
-  TypographyProps &
   {}
 
 export default styled.div<Props>`
   box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
+
+  height: 0px;
+  width: 100%
+
+  border-top-color: ${theme.colors.gray[4]};
+  border-top-width: 1px;
+  border-top-style: solid;
+
   ${compose(
-    background,
     border,
-    color,
     flexbox,
-    grid,
     layout,
     position,
-    shadow,
     space,
-    typography
   )}
 `;

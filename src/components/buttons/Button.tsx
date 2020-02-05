@@ -3,68 +3,77 @@ import theme from "../../theme"
 import xt from "../../extendedTheme"
 
 import {
-  border, BorderProps,
-  color, ColorProps,
-  flexbox, FlexboxProps,
-  layout, LayoutProps,
-  space, SpaceProps,
-  typography, TypographyProps,
+  color,
+  space,
+  layout,
   compose
 } from "styled-system";
 
-interface Props extends BorderProps, ColorProps, FlexboxProps, LayoutProps, SpaceProps, TypographyProps {}
+import { ButtonProps } from '../../types'
 
-const Button32BorderedText = styled.button<Props>`
+const Button = styled.button<ButtonProps>`
   border: 0;
   outline: none;
   cursor: pointer;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: ${theme.fontSizes[0]}px;
 
-  height: ${theme.sizes[7]}px;
+  height: ${props => {
+    if (props.sm) return theme.sizes[5] + 'px'
+    if (props.md) return theme.sizes[6] + 'px'
+    return theme.sizes[7] + 'px'
+  }};
 
-  padding-right: ${theme.sizes[3]}px;
-  padding-left: ${theme.sizes[3]}px;
+  min-width: ${props => {
+    if (props.sm) return theme.sizes[5] + 'px'
+    if (props.md) return theme.sizes[6] + 'px'
+    return theme.sizes[7] + 'px'
+  }};
 
-  border-radius: ${xt.global.borderRadiusMinor}px;
+  padding: ${props => {
+    if (props.sm) return 0 + ' ' + theme.space[0] + 'px'
+    if (props.md) return 0 + ' ' + theme.space[2] + 'px'
+    return 0 + ' ' + theme.space[3] + 'px'
+  }};
 
-  color: ${xt.buttons.default.color};
-  border: ${xt.buttons.default.border};
-  background-color: ${xt.buttons.default.backgroundColor};
+  border-radius: ${xt.borderRadiusMinor}px;
 
-  &:focus {
-    color: ${xt.buttons.focus.color};
-    border: ${xt.buttons.focus.border};
-    background-color: ${xt.buttons.focus.backgroundColor};
-  }
+  color: ${theme.colors.black};
+  border: ${theme.borders[1] + theme.colors.gray[4]};
+  background-color: ${theme.colors.white};
 
   &:hover {
-    color: ${xt.buttons.hover.color};
-    border: ${xt.buttons.hover.border};
-    background-color: ${xt.buttons.hover.backgroundColor};
+    color: ${theme.colors.black};
+    border: ${theme.borders[1] + theme.colors.black};
+    background-color: ${theme.colors.white};
+  }
+
+  &:focus {
+    color: ${theme.colors.black};
+    border: ${theme.borders[1] + theme.colors.black};
+    background-color: ${theme.colors.white};
   }
 
   &:active {
-    color: ${xt.buttons.active.color};
-    border: ${xt.buttons.active.border};
-    background-color: ${xt.buttons.active.backgroundColor};
+    color: ${theme.colors.gray[3]};
+    border: ${theme.borders[1] + theme.colors.gray[3]};
+    background-color: ${theme.colors.white};
   }
 
   &:disabled {
-    color: ${xt.buttons.disabled.color};
-    border: ${xt.buttons.disabled.border};
-    background-color: ${xt.buttons.disabled.backgroundColor};
+    color: ${theme.colors.gray[3]};
+    border: ${theme.borders[1] + theme.colors.gray[3]};
+    background-color: ${theme.colors.gray[4]};
     cursor: not-allowed;
   }
 
-  ${compose(
-    space,
-    layout,
-    color,
-    border,
-    flexbox,
-    typography
-  )};
+  ${ compose (color, layout, space) }
 `;
 
-export default Button32BorderedText
+
+
+export default Button

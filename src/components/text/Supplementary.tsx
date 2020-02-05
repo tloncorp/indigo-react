@@ -11,11 +11,12 @@ import {
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {}
 
-const Title = styled.h1<Props>`
+const Supplementary = styled.p<Props>`
   padding: ${theme.space[2]}px;
   font-size: ${theme.fontSizes[0]}px;
   line-height: ${theme.lineHeights.regular};
+  color: ${theme.colors.gray[2]};
   ${compose(color, layout, space, typography)}
 `;
 
-export default Title;
+export default Supplementary;

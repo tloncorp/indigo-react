@@ -9,9 +9,15 @@ import {
   compose
 } from 'styled-system'
 
-interface StyledCodeProps extends ColorProps, LayoutProps, SpaceProps, TypographyProps, OpacityProps {}
+type Props =
+  ColorProps &
+  LayoutProps &
+  SpaceProps &
+  TypographyProps &
+  OpacityProps &
+  {}
 
-const StyledCode = styled.code<StyledCodeProps>`
+const StyledCode = styled.code<Props>`
   ${compose(color, layout, opacity, space, typography)}
 `
 

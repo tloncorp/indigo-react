@@ -8,7 +8,12 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends BorderProps, LayoutProps, SpaceProps, TypographyProps {}
+type Props =
+  BorderProps &
+  LayoutProps &
+  SpaceProps &
+  TypographyProps &
+  {}
 
 export const Ul = styled.ul<Props>`
   ${compose(space, layout, typography)}

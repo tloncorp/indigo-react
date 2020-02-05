@@ -14,8 +14,18 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends BackgroundProps, BorderProps, ColorProps, FlexboxProps, GridProps, LayoutProps, PositionProps, ShadowProps, SpaceProps, TypographyProps {}
-
+type Props =
+  BackgroundProps &
+  BorderProps &
+  ColorProps &
+  FlexboxProps &
+  GridProps &
+  LayoutProps &
+  PositionProps &
+  ShadowProps &
+  SpaceProps &
+  TypographyProps &
+  {}
 export default styled.div<Props>`
   box-sizing: border-box;
   margin: 0;

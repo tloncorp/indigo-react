@@ -8,7 +8,7 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends ColorProps, LayoutProps, SpaceProps, TypographyProps {}
+type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {}
 
 const LabelCaption = styled.p<Props>`
   color: ${theme.colors.gray[2]};

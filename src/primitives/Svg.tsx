@@ -11,7 +11,8 @@ type Props =
   SpaceProps &
   {}
 
-const Img = styled.img<Props>`
+const Svg = styled.svg<Props>`
   ${compose(space, layout)};
 `
-export default Img
+
+export default Svg

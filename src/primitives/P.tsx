@@ -8,7 +8,12 @@ import {
   compose
 } from 'styled-system'
 
-interface Props extends ColorProps, LayoutProps, SpaceProps, TypographyProps {}
+type Props =
+  ColorProps &
+  LayoutProps &
+  SpaceProps &
+  TypographyProps &
+  {}
 
 const P = styled.p<Props>`
   ${compose(color, layout, space, typography)}
