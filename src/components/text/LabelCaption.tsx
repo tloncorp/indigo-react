@@ -10,15 +10,15 @@ import {
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {}
 
-const LabelCaption = styled.p<Props>`
+const ValidationMessage = styled.p<Props>`
   color: ${theme.colors.gray[2]};
   margin-top: ${theme.space[1]};
   ${compose(color, layout, space, typography)}
 `;
 
-export default LabelCaption;
+export default ValidationMessage;
 
-LabelCaption.defaultProps = {
+ValidationMessage.defaultProps = {
   fontSize: 0,
   lineHeight: 'regular'
 };

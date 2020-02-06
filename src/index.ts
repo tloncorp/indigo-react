@@ -28,6 +28,7 @@ import Container from './primitives/Container'
 // import Loading from './components/icons/Loading'
 
 import Input from './components/form/Input'
+import ValidationMessage from './components/form/ValidationMessage'
 
 // Text
 import Title from './components/text/Title'
@@ -70,6 +71,7 @@ export {
 
   Input,
   InputGroup,
+  ValidationMessage,
 
   Title,
   Subtitle,

@@ -62,7 +62,8 @@
     "formik": "^2.1.2",
     "grid-styled": "^5.0.2",
     "prop-types": "^15.7.2",
-    "styled-system": "^5.0.12"
+    "styled-system": "^5.0.12",
+    "yup": "^0.28.1"
   },
   "husky": {
     "hooks": {

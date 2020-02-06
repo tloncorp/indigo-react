@@ -20,9 +20,10 @@ import {
   Title,
   Subtitle,
   DividerBox,
+  ValidationMessage,
   Hr,
 } from "indigo-react";
-
+import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik'
 
 // import Spacing from '../components/Spacing'
@@ -39,13 +40,29 @@ import { Formik, Form, Field } from 'formik'
 interface FormValues {
   firstName: string;
   lastName: string;
+  email: string;
 }
+
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  lastName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Required'),
+});
 
 
 const Sandbox: React.FC<{}> = () => {
   const initialValues: FormValues = {
-    firstName: '',
+    firstName: 'First Name',
     lastName: '',
+    email: '',
   };
 
   return (
@@ -55,6 +72,7 @@ const Sandbox: React.FC<{}> = () => {
 
       <Formik
         initialValues={initialValues}
+        validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
           console.log({ values, actions });
           alert(JSON.stringify(values, null, 2));
@@ -66,12 +84,48 @@ const Sandbox: React.FC<{}> = () => {
           <InputGroup>
             <Label>First Name</Label>
             <LabelCaption>Supplementary information goes here.</LabelCaption>
-            <Field name="firstname" component={Input} />
+            <Field
+              onChange={props.handleChange}
+              id="firstName"
+              name="firstName"
+              hasError={props.errors.firstName && props.touched.firstName}
+              component={Input} />
+            <ValidationMessage
+              error={props.errors.firstName}
+              touched={props.touched.firstName}
+            />
           </InputGroup>
+
           <InputGroup>
             <Label>Last Name</Label>
-            <Field name="lastname" component={Input} />
+            <Field
+              onChange={props.handleChange}
+              id="lastName"
+              name="lastName"
+              hasError={props.errors.lastName && props.touched.lastName}
+              component={Input} />
+            <ValidationMessage
+              error={props.errors.lastName}
+              touched={props.touched.lastName}
+            />
           </InputGroup>
+
+          <InputGroup>
+            <Label>Email</Label>
+            <Field
+              onChange={props.handleChange}
+              id="email"
+              name="email"
+              hasError={props.errors.email && props.touched.email}
+              component={Input} />
+            <ValidationMessage
+              error={props.errors.email}
+              touched={props.touched.email}
+            />
+          </InputGroup>
+
+
+          <Button type="submit" mt="2">Submit</Button>
         </Form>
       )}
       </Formik>

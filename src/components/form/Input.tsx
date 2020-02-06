@@ -19,10 +19,26 @@ import xt from "../../extendedTheme"
 //   hasSuccess: boolean,
 // }
 
-const Input = styled.input`
+type Props = {
+  hasError?: boolean
+  hasSuccess?: boolean
+  touched?: boolean
+}
+
+const Input = styled.input<Props>`
   outline: none;
 
-  border-color: ${theme.colors.gray[4]};
+  border-color: ${props => {
+    console.log('Input', props)
+    if (props.hasError) return theme.colors.red[2]
+    // if (props.hasSuccess) return theme.colors.green[2]
+    return theme.colors.gray[4]
+  }};
+  color: ${props => {
+    if (props.hasError) return theme.colors.red[2]
+    // if (props.hasSuccess) return theme.colors.green[2]
+    return theme.colors.black
+  }};
   border-width: 1px;
   border-style: solid;
   border-radius: ${xt.borderRadiusMinor}px;
@@ -35,9 +51,13 @@ const Input = styled.input`
 
   font-size: ${theme.fontSizes[0]}px;
   line-height: ${theme.lineHeights.regular};
+
   &:focus {
-      border-color: ${theme.colors.black};
-    }
+    border-color: ${props => {
+      if (props.hasError) return theme.colors.red[2]
+      // if (props.hasSuccess) return theme.colors.green[2]
+      return theme.colors.black
+    }};
   }
 `;
 
