@@ -1,30 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import {
-  layout, LayoutProps,
-  space, SpaceProps,
-  compose
-} from 'styled-system'
+import React from 'react';
+import styled from 'styled-components';
+import { layout, LayoutProps, space, SpaceProps, compose } from 'styled-system';
 
-type Props = LayoutProps & SpaceProps & {
-  children: any,
-}
+type Props = LayoutProps &
+  SpaceProps & {
+    children: any;
+  };
 
 const Box = styled.div`
-  ${compose(
-    space,
-    layout
-  )}
+  ${compose(space, layout)}
 `;
 
-const Container = (props:Props) => (
-  <Box mx={[6,7,8,"auto"]} {...props}>
+const Container = (props: Props) => (
+  <Box mx={[6, 7, 8, 'auto']} {...props}>
     {props.children}
   </Box>
 );
 
 Container.defaultProps = {
-  maxWidth: "1024px"
+  maxWidth: '800px',
 };
 
 export default Container;

@@ -1,18 +1,17 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {
-  space,  SpaceProps,
-  typography, TypographyProps,
-  color, ColorProps,
-  layout, LayoutProps,
-  compose
-} from 'styled-system'
+  space,
+  SpaceProps,
+  typography,
+  TypographyProps,
+  color,
+  ColorProps,
+  layout,
+  LayoutProps,
+  compose,
+} from 'styled-system';
 
-type Props =
-  ColorProps &
-  LayoutProps &
-  SpaceProps &
-  TypographyProps &
-  {}
+type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 const StyledA = styled.a<Props>`
   text-decoration: underline;
   cursor: pointer;
@@ -23,5 +22,5 @@ const StyledA = styled.a<Props>`
 export default StyledA;
 
 StyledA.defaultProps = {
-  color: 'black'
-}
+  color: 'black',
+};

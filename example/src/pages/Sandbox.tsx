@@ -81,7 +81,7 @@ const Sandbox: React.FC<{}> = () => {
       >
       {(props) => (
         <Form>
-          <InputGroup>
+          <Pad>
             <Label>First Name</Label>
             <LabelCaption>Supplementary information goes here.</LabelCaption>
             <Field
@@ -94,9 +94,9 @@ const Sandbox: React.FC<{}> = () => {
               error={props.errors.firstName}
               touched={props.touched.firstName}
             />
-          </InputGroup>
+          </Pad>
 
-          <InputGroup>
+          <Pad>
             <Label>Last Name</Label>
             <Field
               onChange={props.handleChange}
@@ -108,9 +108,9 @@ const Sandbox: React.FC<{}> = () => {
               error={props.errors.lastName}
               touched={props.touched.lastName}
             />
-          </InputGroup>
+          </Pad>
 
-          <InputGroup>
+          <Pad>
             <Label>Email</Label>
             <Field
               onChange={props.handleChange}
@@ -122,43 +122,48 @@ const Sandbox: React.FC<{}> = () => {
               error={props.errors.email}
               touched={props.touched.email}
             />
-          </InputGroup>
+          </Pad>
 
-
-          <Button type="submit" mt="2">Submit</Button>
+          <Pad>
+            <Button type="submit">Submit</Button>
+          </Pad>
         </Form>
       )}
       </Formik>
-      <Pad>
-        <Button mt="2">Settings...</Button>
 
-        <Button disabled mt="2">I am disabled</Button>
+      {
+        // <Pad>
+        //   <Button mt="2">Settings...</Button>
+        //
+        //   <Button disabled mt="2">I am disabled</Button>
+        //
+        //   <Button md mt="2">Medium</Button>
+        //
+        //   <Button sm mt="2">Small</Button>
+        //
+        //   <IconButton
+        //     mt="2"
+        //     iconRight='ChevronSouth'
+        //     onClick={() => {alert('HELLO');}}>
+        //     Icon
+        //   </IconButton>
+        //
+        //   <IconButton mt="2" sm icon='ChevronSouth'> </IconButton>
+        //
+        //   <Icon mt="2" />
+        //
+        // </Pad>
+        //
+        // <DividerBox>
+        //   <Title>Urbit 101</Title>
+        //   <Subtitle>Intro to Cryptography</Subtitle>
+        //   <Hr />
+        //   <Pad>
+        //     <Button>Settings...</Button>
+        //   </Pad>
+        // </DividerBox>
+      }
 
-        <Button md mt="2">Medium</Button>
-
-        <Button sm mt="2">Small</Button>
-
-        <IconButton
-          mt="2"
-          iconRight='ChevronSouth'
-          onClick={() => {alert('HELLO');}}>
-          Icon
-        </IconButton>
-
-        <IconButton mt="2" sm icon='ChevronSouth'> </IconButton>
-
-        <Icon mt="2" />
-
-      </Pad>
-
-      <DividerBox>
-        <Title>Urbit 101</Title>
-        <Subtitle>Intro to Cryptography</Subtitle>
-        <Hr />
-        <Pad>
-          <Button>Settings...</Button>
-        </Pad>
-      </DividerBox>
 
     </Container>
   );

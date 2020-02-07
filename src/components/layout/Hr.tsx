@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../theme'
+import theme from '../../theme';
 
 import {
   border,
@@ -14,16 +14,14 @@ import {
   LayoutProps,
   PositionProps,
   SpaceProps,
-} from 'styled-system'
+} from 'styled-system';
 
-type Props =
-  BorderProps &
+type Props = BorderProps &
   ColorProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps &
-  {}
+  SpaceProps & {};
 
 export default styled.div<Props>`
   box-sizing: border-box;
@@ -35,11 +33,5 @@ export default styled.div<Props>`
   border-top-width: 1px;
   border-top-style: solid;
 
-  ${compose(
-    border,
-    flexbox,
-    layout,
-    position,
-    space,
-  )}
+  ${compose(border, flexbox, layout, position, space)}
 `;

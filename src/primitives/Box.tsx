@@ -21,11 +21,10 @@ import {
   PositionProps,
   ShadowProps,
   SpaceProps,
-  TypographyProps
-} from 'styled-system'
+  TypographyProps,
+} from 'styled-system';
 
-type Props =
-  BackgroundProps &
+type Props = BackgroundProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
@@ -34,8 +33,7 @@ type Props =
   PositionProps &
   ShadowProps &
   SpaceProps &
-  TypographyProps &
-  {}
+  TypographyProps & {};
 
 export default styled.div<Props>`
   box-sizing: border-box;

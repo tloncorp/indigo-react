@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import theme from '../../theme'
-import xt from '../../extendedTheme'
+import theme from '../../theme';
+import xt from '../../extendedTheme';
 
 import {
   border,
@@ -15,16 +15,14 @@ import {
   LayoutProps,
   PositionProps,
   SpaceProps,
-} from 'styled-system'
+} from 'styled-system';
 
-type Props =
-  BorderProps &
+type Props = BorderProps &
   ColorProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps &
-  {}
+  SpaceProps & {};
 
 export default styled.div<Props>`
   box-sizing: border-box;
@@ -38,11 +36,5 @@ export default styled.div<Props>`
 
   margin: ${theme.space[2]}px;
 
-  ${compose(
-    border,
-    flexbox,
-    layout,
-    position,
-    space,
-  )}
+  ${compose(border, flexbox, layout, position, space)}
 `;

@@ -1,29 +1,28 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 import {
-  border, BorderProps,
-  layout, LayoutProps,
-  space, SpaceProps,
-  typography, TypographyProps,
-  compose
-} from 'styled-system'
+  border,
+  BorderProps,
+  layout,
+  LayoutProps,
+  space,
+  SpaceProps,
+  typography,
+  TypographyProps,
+  compose,
+} from 'styled-system';
 
-type Props =
-  BorderProps &
-  LayoutProps &
-  SpaceProps &
-  TypographyProps &
-  {}
+type Props = BorderProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 export const Ul = styled.ul<Props>`
   ${compose(space, layout, typography)}
-`
+`;
 
 export const Ol = styled.ol<Props>`
   ${compose(space, layout, typography)}
-`
+`;
 
 export const Li = styled.li<Props>`
   list-style: none;
   ${compose(space, layout, border, typography)}
-`
+`;

@@ -1,21 +1,30 @@
 import styled from 'styled-components';
 
 import {
-  background, BackgroundProps,
-  border, BorderProps,
-  color, ColorProps,
-  flexbox, FlexboxProps,
-  grid, GridProps,
-  layout, LayoutProps,
-  position, PositionProps,
-  shadow, ShadowProps,
-  space, SpaceProps,
-  typography, TypographyProps,
-  compose
-} from 'styled-system'
+  background,
+  BackgroundProps,
+  border,
+  BorderProps,
+  color,
+  ColorProps,
+  flexbox,
+  FlexboxProps,
+  grid,
+  GridProps,
+  layout,
+  LayoutProps,
+  position,
+  PositionProps,
+  shadow,
+  ShadowProps,
+  space,
+  SpaceProps,
+  typography,
+  TypographyProps,
+  compose,
+} from 'styled-system';
 
-type Props =
-  BackgroundProps &
+type Props = BackgroundProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
@@ -24,8 +33,7 @@ type Props =
   PositionProps &
   ShadowProps &
   SpaceProps &
-  TypographyProps &
-  {}
+  TypographyProps & {};
 export default styled.div<Props>`
   box-sizing: border-box;
   margin: 0;

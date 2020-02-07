@@ -1,15 +1,19 @@
-import styled from 'styled-components'
-import theme from '../../theme'
+import styled from 'styled-components';
+import theme from '../../theme';
 
 import {
-  color, ColorProps,
-  layout, LayoutProps,
-  space, SpaceProps,
-  typography, TypographyProps,
-  compose
-} from 'styled-system'
+  color,
+  ColorProps,
+  layout,
+  LayoutProps,
+  space,
+  SpaceProps,
+  typography,
+  TypographyProps,
+  compose,
+} from 'styled-system';
 
-type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {}
+type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const Supplementary = styled.p<Props>`
   padding: ${theme.space[2]}px;

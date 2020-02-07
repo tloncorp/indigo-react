@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import theme from "../../theme";
-import xt from "../../extendedTheme"
+import styled from 'styled-components';
+import theme from '../../theme';
+import xt from '../../extendedTheme';
 
 // import {
 //   Field,
@@ -20,24 +20,24 @@ import xt from "../../extendedTheme"
 // }
 
 type Props = {
-  hasError?: boolean
-  hasSuccess?: boolean
-  touched?: boolean
-}
+  hasError?: boolean;
+  hasSuccess?: boolean;
+  touched?: boolean;
+};
 
 const Input = styled.input<Props>`
   outline: none;
 
   border-color: ${props => {
-    console.log('Input', props)
-    if (props.hasError) return theme.colors.red[2]
+    console.log('Input', props);
+    if (props.hasError) return theme.colors.red[2];
     // if (props.hasSuccess) return theme.colors.green[2]
-    return theme.colors.gray[4]
+    return theme.colors.gray[4];
   }};
   color: ${props => {
-    if (props.hasError) return theme.colors.red[2]
+    if (props.hasError) return theme.colors.red[2];
     // if (props.hasSuccess) return theme.colors.green[2]
-    return theme.colors.black
+    return theme.colors.black;
   }};
   border-width: 1px;
   border-style: solid;
@@ -54,13 +54,12 @@ const Input = styled.input<Props>`
 
   &:focus {
     border-color: ${props => {
-      if (props.hasError) return theme.colors.red[2]
+      if (props.hasError) return theme.colors.red[2];
       // if (props.hasSuccess) return theme.colors.green[2]
-      return theme.colors.black
+      return theme.colors.black;
     }};
   }
 `;
-
 
 // ${props => {
 //   if (props.hasError) {
@@ -85,4 +84,4 @@ const Input = styled.input<Props>`
 //     }
 //   }}
 
-export default Input
+export default Input;

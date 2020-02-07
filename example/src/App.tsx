@@ -31,7 +31,8 @@ export default class App extends React.Component {
           <Style />
           <Router basename="/indigo-react">
             <div>
-              <Route exact path="/" component={Sandbox} />
+              <Route exact path="/" component={IndexPage} />
+              <Route exact path="/sandbox" component={Sandbox} />
             </div>
           </Router>
         </Root>
