@@ -15,7 +15,12 @@ npm install --save indigo-react
 Install peer dependencies
 
 ```
-npm install --save styled-components @reach/menu-button
+npm install --save indigo-tokens styled-components @reach/menu-button prop-types styled-components styled-system react react-dom
+```
+
+We also recommend you use `formik` and `yup` for forms and validation.
+```
+npm install --save formik yup
 ```
 
 **React**

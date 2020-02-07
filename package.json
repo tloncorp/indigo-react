@@ -29,9 +29,13 @@
     "prop-types": "^15.5.4",
     "react": ">= 16",
     "react-dom": ">= 16",
-    "styled-components": ">= 4"
+    "styled-components": ">= 4",
+    "styled-system": ">=5"
   },
   "devDependencies": {
+    "@types/styled-components": "^4.4.2",
+    "@types/styled-system": "^5.1.4",
+    "@types/yup": "^0.26.30",
     "@types/jest": "^24.9.0",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
@@ -42,17 +46,6 @@
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
     "typescript": "^3.7.5"
-  },
-  "dependencies": {
-    "@reach/menu-button": "^0.7.3",
-    "@types/styled-components": "^4.4.2",
-    "@types/styled-system": "^5.1.4",
-    "@types/yup": "^0.26.30",
-    "formik": "^2.1.2",
-    "grid-styled": "^5.0.2",
-    "prop-types": "^15.7.2",
-    "styled-system": "^5.0.12",
-    "yup": "^0.28.1"
   },
   "husky": {
     "hooks": {
