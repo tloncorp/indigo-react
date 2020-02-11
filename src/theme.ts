@@ -5,7 +5,14 @@ const theme = {
   colors: {
     black: '#000000',
     white: '#ffffff',
-    gray: ['#333333', '#4d4d4d', '#7f7f7f', '#b1b1b1', '#d6d6d6', '#f9f9f9'],
+    gray: [
+      '#333333', // 0
+      '#4d4d4d', // 1
+      '#7f7f7f', // 2
+      '#b1b1b1', // 3
+      '#d6d6d6', // 4
+      '#f9f9f9', // 5
+    ],
     blue: ['#ecf6ff', '#b0c7ff', '#4330fc', '#190d7b'],
     red: ['#f9d6ce', '#ffa073', '#ee5432', '#c10d30'],
     green: ['#bdebcc', '#2ed196', '#2aa779', '#286e55'],

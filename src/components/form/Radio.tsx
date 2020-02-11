@@ -19,8 +19,10 @@ type Props = {
 
 type StyledProps = {
   checked?: boolean;
+  disabled?: boolean;
 };
 
+// Hide this input completely
 const StyledInput = styled.input`
   position: absolute;
   opacity: 0;
@@ -29,15 +31,20 @@ const StyledInput = styled.input`
   width: 0;
 `;
 
-const Container = styled.label`
+const Container = styled.label<StyledProps>`
   margin-top: ${theme.space[2]}px;
   display: block;
   position: relative;
   padding-left: ${theme.space[6]}px;
-  cursor: pointer;
-  pointer-events: all;
+  cursor: ${props => {
+    if (props.disabled) return 'not-allowed';
+    return 'pointer';
+  }};
   user-select: none;
   font-size: 12px;
+  ${StyledInput}:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 const RadioButton = styled.span<StyledProps>`
@@ -47,16 +54,17 @@ const RadioButton = styled.span<StyledProps>`
   height: ${theme.sizes[4]}px;
   width: ${theme.sizes[4]}px;
   border-radius: 50%;
+
   border-width: 1px;
   border-style: solid;
-  border-color: ${theme.colors.gray[4]};
-
-  ${Container}:hover & {
-    border-color: ${theme.colors.gray[1]};
-  }
+  border-color: ${props => {
+    if (props.disabled) return theme.colors.gray[3];
+    return theme.colors.gray[4];
+  }};
 
   background-color: ${props => {
     if (props.checked) return theme.colors.white;
+    if (props.disabled) return theme.colors.gray[5];
     return theme.colors.white;
   }};
 
@@ -68,6 +76,10 @@ const RadioButton = styled.span<StyledProps>`
 
   ${StyledInput}:checked ~ &:after {
     display: block;
+  }
+
+  ${StyledInput}:focus ~ & {
+    border: 1px solid black;
   }
 
   &:after {
@@ -88,11 +100,11 @@ const Radio = ({ label, caption, ...props }: Props) => {
   console.log(field, meta);
   return (
     <>
-      <Container htmlFor={props.id || props.name}>
+      <Container disabled={props.disabled} htmlFor={props.id || props.name}>
         <InputLabel>{label}</InputLabel>
         {caption ? <InputCaption>{caption}</InputCaption> : null}
         <StyledInput {...field} {...props} value={props.id} type="radio" />
-        <RadioButton checked={field.checked} />
+        <RadioButton disabled={props.disabled} checked={field.checked} />
       </Container>
     </>
   );

@@ -108,9 +108,7 @@ const Sandbox: React.FC<{}> = () => {
           </Pad>
 
           <Pad marginBottom="16px">
-            <InputLabel>
-              Favorite Color
-            </InputLabel>
+            <InputLabel>Favorite Color</InputLabel>
             <Radio
               type="radio"
               label="Green"
@@ -124,6 +122,14 @@ const Sandbox: React.FC<{}> = () => {
               id="blue"
               name="color"
               caption="Select if your favorite color is blue."
+            />
+            <Radio
+              type="radio"
+              label="Dog"
+              id="dog"
+              name="color"
+              caption="Dog is not a color"
+              disabled
             />
           </Pad>
 
