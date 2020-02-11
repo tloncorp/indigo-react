@@ -1,11 +1,4 @@
-import {
-  // BorderProps,
-  ColorProps,
-  // FlexboxProps,
-  LayoutProps,
-  SpaceProps,
-  // TypographyProps,
-} from 'styled-system';
+import { ColorProps, LayoutProps, SpaceProps } from 'styled-system';
 
 type Xt = {
   borderRadiusMinor: number;
@@ -35,30 +28,22 @@ type ButtonProps = LayoutProps &
 //   iconRight?: string
 // }
 
-type IconProps = ColorProps &
-  SpaceProps & {
-    icon?: string;
-  };
+// type IconProps = LayoutProps & ColorProps &
+//   SpaceProps & {
+//     icon?: string;
+//   };
 
 // interface IconSvgProps extends
 //   ColorProps,
 //   SpaceProps
 //   {}
 
-type IconInnerSVGProps = {
-  color: string;
-};
-
-type IconList = {
-  [key: string]: (props: IconInnerSVGProps) => JSX.Element;
-};
-
 export {
   Xt,
   ButtonProps,
   // IconButtonProps,
-  IconProps,
+  // IconProps,
   // IconSvgProps,
-  IconInnerSVGProps,
-  IconList,
+  // IconInnerSVGProps,
+  // IconList,
 };

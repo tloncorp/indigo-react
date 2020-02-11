@@ -5,7 +5,7 @@ const theme = {
   colors: {
     black: '#000000',
     white: '#ffffff',
-    gray: ['#333333', '#4d4d4d', '#7f7f7f', '#b1b1b1', '#e6e6e6', '#f9f9f9'],
+    gray: ['#333333', '#4d4d4d', '#7f7f7f', '#b1b1b1', '#d6d6d6', '#f9f9f9'],
     blue: ['#ecf6ff', '#b0c7ff', '#4330fc', '#190d7b'],
     red: ['#f9d6ce', '#ffa073', '#ee5432', '#c10d30'],
     green: ['#bdebcc', '#2ed196', '#2aa779', '#286e55'],
@@ -18,7 +18,7 @@ const theme = {
   },
   // font-size
   fontSizes: [
-    16, // 0
+    12, // 0
     14, // 1
     16, // 2
     20, // 3
@@ -33,7 +33,7 @@ const theme = {
   },
   // line-height
   lineHeights: {
-    short: 1.333333,
+    short: 1.333334,
     regular: 1.5,
     tall: 1.6,
   },

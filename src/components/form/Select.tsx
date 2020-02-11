@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styled from 'styled-components';
 import theme from '../../theme';
 import {
@@ -22,21 +22,16 @@ type Props = LayoutProps &
     className?: string;
   };
 
-const __LabelCaption = (props: Props) => {
-  return (
-    <p className={props.className}>
-      {props.touched && props.error ? props.error : ' '}
-    </p>
-  );
-};
+// const __Select = (props: Props) => {
+//   return (
+//     <input type="select" className={props.className}>
+//     </input>
+//   );
+// };
 
-const LabelCaption = styled(__LabelCaption)<Props>`
-  color: ${theme.colors.red[2]};
-  margin-top: ${theme.space[1]}px;
+const Select = styled.select<Props>`
   font-size: ${theme.fontSizes[0]}px;
-  min-height: ${theme.lineHeights.regular * theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.regular};
   ${compose(color, layout, space, typography)}
 `;
 
-export default LabelCaption;
+export default Select;

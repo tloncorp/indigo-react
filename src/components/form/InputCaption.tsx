@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import theme from '../../theme';
-
 import {
   color,
   ColorProps,
@@ -15,12 +14,14 @@ import {
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
-const Title = styled.h1<Props>`
-  padding: ${theme.space[2]}px;
+const InputCaption = styled.label<Props>`
+  color: ${theme.colors.gray[2]};
   font-size: ${theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.regular};
-  font-weight: 600;
+  line-height: ${theme.lineHeights.short};
+  width: 100%;
+  display: block;
+  pointer-events: none;
   ${compose(color, layout, space, typography)}
 `;
 
-export default Title;
+export default InputCaption;

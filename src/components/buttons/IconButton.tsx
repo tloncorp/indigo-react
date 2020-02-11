@@ -15,17 +15,17 @@ const IconButton = (props: Props) => {
   return (
     <Button {...props}>
       {props.iconLeft ? (
-        <Icon mr="2" color={props.color} icon={props.iconLeft} />
+        <Icon marginRight="2" fill={props.color} icon={props.iconLeft} />
       ) : (
         ''
       )}
       {props.children}
       {props.iconRight ? (
-        <Icon ml="2" color={props.color} icon={props.iconRight} />
+        <Icon marginLeft="2" fill={props.color} icon={props.iconRight} />
       ) : (
         ''
       )}
-      {props.icon ? <Icon color={props.color} icon={props.icon} /> : ''}
+      {props.icon ? <Icon fill={props.color} icon={props.icon} /> : ''}
     </Button>
   );
 };

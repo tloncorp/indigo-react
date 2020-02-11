@@ -1,6 +1,6 @@
+// import React from 'react';
 import styled from 'styled-components';
 import theme from '../../theme';
-
 import {
   color,
   ColorProps,
@@ -13,14 +13,17 @@ import {
   compose,
 } from 'styled-system';
 
-type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
+type Props = LayoutProps & ColorProps & SpaceProps & TypographyProps;
 
-const Title = styled.h1<Props>`
-  padding: ${theme.space[2]}px;
+const ErrorMessage = styled.p<Props>`
+  color: ${theme.colors.red[2]};
   font-size: ${theme.fontSizes[0]}px;
   line-height: ${theme.lineHeights.regular};
-  font-weight: 600;
+  margin-top: ${theme.space[1]}px;
+  min-height: ${theme.sizes[4]}px;
   ${compose(color, layout, space, typography)}
 `;
 
-export default Title;
+export default ErrorMessage;
+
+// min-height: ${theme.lineHeights.regular * theme.fontSizes[0]}px;

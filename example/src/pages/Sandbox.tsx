@@ -11,7 +11,6 @@ import {
   StyledCode,
   Input,
   Label,
-  InputGroup,
   LabelCaption,
   Button,
   IconButton,
@@ -20,27 +19,23 @@ import {
   Title,
   Subtitle,
   DividerBox,
-  ValidationMessage,
+  ErrorMessage,
+  Select,
   Hr,
+  Radio,
+  InputLabel,
+  InputCaption
 } from "indigo-react";
 import * as Yup from 'yup';
-import { Formik, Form, Field } from 'formik'
-
-// import Spacing from '../components/Spacing'
-// import Color from '../components/Color'
-// import FontSize from '../components/FontSize'
-// import FontFamily from '../components/FontFamily'
-// import FontWeight from '../components/FontWeight'
-// import LineHeight from '../components/LineHeight'
-// import Border from '../components/Border'
-// import BorderRadius from '../components/BorderRadius'
-// import ZIndices from '../components/ZIndices'
-// import Buttons from '../components/Buttons'
+import { Formik, Form, FormikProps } from 'formik'
+import ob from 'urbit-ob'
 
 interface FormValues {
   firstName: string;
   lastName: string;
-  email: string;
+  color: string;
+  urbitid: string;
+  disabledfield: string;
 }
 
 const SignupSchema = Yup.object().shape({
@@ -52,117 +47,147 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Required'),
+  color: Yup.string()
+    .oneOf(['blue', 'green']),
+  urbitid: Yup.string()
+    .test(
+      'is-patp',
+      'Not a valid Urbit ID',
+      (value) => {
+        if (value) return ob.isValidPatp(value)
+        return
+      })
+    .required('An Urbit ID is Required'),
+  disabledfield: Yup.string(),
 });
 
 
 const Sandbox: React.FC<{}> = () => {
+
   const initialValues: FormValues = {
-    firstName: 'First Name',
+    firstName: 'Gavin',
     lastName: '',
-    email: '',
+    color: 'green',
+    urbitid: '',
+    disabledfield: '',
   };
 
   return (
-    <Container>
-      <Title>Urbit 101</Title>
-      <Subtitle>Intro to Cryptography</Subtitle>
+    <Container maxWidth='400px'>
+      <Title>Form Example</Title>
+      <Subtitle>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</Subtitle>
 
       <Formik
         initialValues={initialValues}
         validationSchema={SignupSchema}
-        onSubmit={(values, actions) => {
-          console.log({ values, actions });
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }}
-      >
-      {(props) => (
+        onSubmit={(values, { setSubmitting }) => {
+          console.log(values)
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 400);
+        }}>
         <Form>
           <Pad>
-            <Label>First Name</Label>
-            <LabelCaption>Supplementary information goes here.</LabelCaption>
-            <Field
-              onChange={props.handleChange}
-              id="firstName"
+            <Input
+              type="text"
+              label="First Name"
               name="firstName"
-              hasError={props.errors.firstName && props.touched.firstName}
-              component={Input} />
-            <ValidationMessage
-              error={props.errors.firstName}
-              touched={props.touched.firstName}
+              caption="Please enter your first name."
+              placeholder="Felicia"
             />
           </Pad>
 
           <Pad>
-            <Label>Last Name</Label>
-            <Field
-              onChange={props.handleChange}
-              id="lastName"
+            <Input
+              type="text"
+              label="Last Name"
               name="lastName"
-              hasError={props.errors.lastName && props.touched.lastName}
-              component={Input} />
-            <ValidationMessage
-              error={props.errors.lastName}
-              touched={props.touched.lastName}
+              placeholder="Atkinson"
+            />
+          </Pad>
+
+          <Pad marginBottom="16px">
+            <InputLabel>
+              Favorite Color
+            </InputLabel>
+            <Radio
+              type="radio"
+              label="Green"
+              id="green"
+              name="color"
+              caption="Select if your favorite color is green."
+            />
+            <Radio
+              type="radio"
+              label="Blue"
+              id="blue"
+              name="color"
+              caption="Select if your favorite color is blue."
             />
           </Pad>
 
           <Pad>
-            <Label>Email</Label>
-            <Field
-              onChange={props.handleChange}
-              id="email"
-              name="email"
-              hasError={props.errors.email && props.touched.email}
-              component={Input} />
-            <ValidationMessage
-              error={props.errors.email}
-              touched={props.touched.email}
+            <Input
+              type="text"
+              label="Urbit ID"
+              name="urbitid"
+              placeholder="~"
+            />
+          </Pad>
+
+          <Pad>
+            <Input
+              type="text"
+              label="Disabled Field"
+              name="disabledfield"
+              placeholder=""
+              disabled
             />
           </Pad>
 
           <Pad>
             <Button type="submit">Submit</Button>
           </Pad>
-        </Form>
-      )}
-      </Formik>
+      </Form>
+    </Formik>
 
-      {
-        // <Pad>
-        //   <Button mt="2">Settings...</Button>
-        //
-        //   <Button disabled mt="2">I am disabled</Button>
-        //
-        //   <Button md mt="2">Medium</Button>
-        //
-        //   <Button sm mt="2">Small</Button>
-        //
-        //   <IconButton
-        //     mt="2"
-        //     iconRight='ChevronSouth'
-        //     onClick={() => {alert('HELLO');}}>
-        //     Icon
-        //   </IconButton>
-        //
-        //   <IconButton mt="2" sm icon='ChevronSouth'> </IconButton>
-        //
-        //   <Icon mt="2" />
-        //
-        // </Pad>
-        //
-        // <DividerBox>
-        //   <Title>Urbit 101</Title>
-        //   <Subtitle>Intro to Cryptography</Subtitle>
-        //   <Hr />
-        //   <Pad>
-        //     <Button>Settings...</Button>
-        //   </Pad>
-        // </DividerBox>
-      }
+    <Pad>
+      <Hr />
+    </Pad>
+
+    <Title>Buttons</Title>
+
+    <Pad>
+      <Button mt="2">Settings...</Button>
+
+      <Button disabled mt="2">I am disabled</Button>
+
+      <Button md mt="2">Medium</Button>
+
+      <IconButton
+        mt="2"
+        iconRight='ChevronSouth'
+        onClick={() => {alert('HELLO');}}>
+        Icon
+      </IconButton>
+
+      <IconButton mt="2" sm icon='ChevronSouth'> </IconButton>
+
+      <Icon mt="2" />
+
+    </Pad>
+
+
+
+    <DividerBox>
+      <Title>Urbit 101</Title>
+      <Subtitle>Intro to Cryptography</Subtitle>
+      <Hr />
+      <Pad>
+        <Button>Settings...</Button>
+      </Pad>
+    </DividerBox>
 
 
     </Container>

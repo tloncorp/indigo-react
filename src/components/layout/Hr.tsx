@@ -27,7 +27,7 @@ export default styled.div<Props>`
   box-sizing: border-box;
 
   height: 0px;
-  width: 100%
+  width: 100%;
 
   border-top-color: ${theme.colors.gray[4]};
   border-top-width: 1px;

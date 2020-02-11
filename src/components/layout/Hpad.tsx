@@ -7,5 +7,6 @@ type Props = SpaceProps & {};
 export default styled.div<Props>`
   box-sizing: border-box;
   min-width: 0;
-  padding: ${theme.space[2]}px ${space};
+  padding: 0 ${theme.space[2]}px;
+  ${space}
 `;
