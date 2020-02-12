@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 
 import {
   border,
@@ -29,7 +28,10 @@ export default styled.div<Props>`
   height: 0px;
   width: 100%;
 
-  border-top-color: ${theme.colors.gray[4]};
+  border-top-color: ${p => {
+    if (p.theme.dark) return p.theme.colors.grayDark;
+    return p.theme.colors.grayLight;
+  }};
   border-top-width: 1px;
   border-top-style: solid;
 

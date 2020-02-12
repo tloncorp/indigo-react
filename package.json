@@ -22,7 +22,7 @@
     "lint": "tsdx lint",
     "lint:fix": "tsdx lint src --fix",
     "prepare": "tsdx build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/dist"
   },
   "peerDependencies": {
     "@reach/menu-button": "^0.1.18",

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 
 import {
   color,
@@ -15,11 +14,12 @@ import {
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
-const Subtitle = styled.p<Props>`
-  padding: ${theme.space[2]}px;
-  font-size: ${theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.regular};
-  color: ${theme.colors.gray[2]};
+const Subtitle = styled.h2<Props>`
+  margin: 0;
+  padding: ${p => p.theme.space[2]}px;
+  font-size: ${p => p.theme.fontSizes[0]}px;
+  line-height: ${p => p.theme.lineHeights.short};
+  color: ${p => p.theme.colors.gray};
   ${compose(color, layout, space, typography)}
 `;
 

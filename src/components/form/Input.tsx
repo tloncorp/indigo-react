@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import ErrorMessage from './ErrorMessage';
-import theme from '../../theme';
 import xt from '../../extendedTheme';
 
 type Props = {
@@ -26,38 +25,38 @@ type StyledProps = {
 const StyledInput = styled.input<StyledProps>`
   outline: none;
 
-  border-color: ${props => {
-    if (props.hasError) return theme.colors.red[2];
-    return theme.colors.gray[4];
-  }};
-  color: ${props => {
-    if (props.hasError) return theme.colors.red[2];
-    return theme.colors.black;
+  color: ${p => {
+    if (p.hasError) return p.theme.colors.red;
+    return p.theme.colors.black;
   }};
   border-width: 1px;
   border-style: solid;
+  border-color: ${p => {
+    if (p.hasError) return p.theme.colors.red;
+    return p.theme.colors.grayLight;
+  }};
   border-radius: ${xt.borderRadiusMinor}px;
 
-  padding-left: ${theme.space[2]}px;
-  margin-top: ${theme.space[1]}px;
+  padding-left: ${p => p.theme.space[2]}px;
+  margin-top: ${p => p.theme.space[1]}px;
 
-  height: ${theme.sizes[7]}px;
+  height: ${p => p.theme.sizes[7]}px;
   width: 100%;
 
-  font-size: ${theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.regular};
+  font-size: ${p => p.theme.fontSizes[0]}px;
+  line-height: ${p => p.theme.lineHeights.short};
 
   &:focus {
-    border-color: ${props => {
-      if (props.hasError) return theme.colors.red[2];
-      return theme.colors.black;
+    border-color: ${p => {
+      if (p.hasError) return p.theme.colors.red;
+      return p.theme.colors.black;
     }};
   }
 
   &:disabled {
-    color: ${theme.colors.gray[3]};
-    border: ${theme.borders[1] + theme.colors.gray[4]};
-    background-color: ${theme.colors.gray[5]};
+    color: ${p => p.theme.colors.grayMid};
+    border-color: ${p => p.theme.colors.grayLight};
+    background-color: ${p => p.theme.colors.grayLightest};
     cursor: not-allowed;
   }
 `;

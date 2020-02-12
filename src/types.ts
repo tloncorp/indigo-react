@@ -1,4 +1,4 @@
-import { ColorProps, LayoutProps, SpaceProps } from 'styled-system';
+import { LayoutProps, SpaceProps } from 'styled-system';
 
 type Xt = {
   borderRadiusMinor: number;
@@ -19,6 +19,7 @@ type ButtonProps = LayoutProps &
     sm?: boolean;
     md?: boolean;
     lg?: boolean;
+    onClick?: Function;
   };
 
 // interface IconButtonProps extends

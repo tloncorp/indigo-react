@@ -14,13 +14,13 @@ import {
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
-const Label = styled.p<Props>`
+const Text = styled.div<Props>`
   ${compose(color, layout, space, typography)}
 `;
 
-export default Label;
+export default Text;
 
-Label.defaultProps = {
+Text.defaultProps = {
   fontSize: 0,
-  lineHeight: 'regular',
+  lineHeight: 'short',
 };

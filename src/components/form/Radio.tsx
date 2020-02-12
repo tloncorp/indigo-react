@@ -1,11 +1,8 @@
 import React from 'react';
-
 import styled from 'styled-components';
 import { useField } from 'formik';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
-
-import theme from '../../theme';
 
 type Props = {
   caption?: string;
@@ -32,12 +29,12 @@ const StyledInput = styled.input`
 `;
 
 const Container = styled.label<StyledProps>`
-  margin-top: ${theme.space[2]}px;
+  margin-top: ${p => p.theme.space[2]}px;
   display: block;
   position: relative;
-  padding-left: ${theme.space[6]}px;
-  cursor: ${props => {
-    if (props.disabled) return 'not-allowed';
+  padding-left: ${p => p.theme.space[6]}px;
+  cursor: ${p => {
+    if (p.disabled) return 'not-allowed';
     return 'pointer';
   }};
   user-select: none;
@@ -51,21 +48,21 @@ const RadioButton = styled.span<StyledProps>`
   position: absolute;
   top: 0px;
   left: 0px;
-  height: ${theme.sizes[4]}px;
-  width: ${theme.sizes[4]}px;
+  height: ${p => p.theme.sizes[4]}px;
+  width: ${p => p.theme.sizes[4]}px;
   border-radius: 50%;
 
   border-width: 1px;
   border-style: solid;
-  border-color: ${props => {
-    if (props.disabled) return theme.colors.gray[3];
-    return theme.colors.gray[4];
+  border-color: ${p => {
+    if (p.disabled) return p => p.theme.colors.grayMid;
+    return p => p.theme.colors.grayLight;
   }};
 
-  background-color: ${props => {
-    if (props.checked) return theme.colors.white;
-    if (props.disabled) return theme.colors.gray[5];
-    return theme.colors.white;
+  background-color: ${p => {
+    if (p.checked) return p => p.theme.colors.white;
+    if (p.disabled) return p => p.theme.colors.grayLightest;
+    return p => p.theme.colors.white;
   }};
 
   &:after {
@@ -88,9 +85,9 @@ const RadioButton = styled.span<StyledProps>`
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: ${props => {
-      if (props.checked) return theme.colors.black;
-      return theme.colors.white;
+    background: ${p => {
+      if (p.checked) return p => p.theme.colors.black;
+      return p => p.theme.colors.white;
     }};
   }
 `;

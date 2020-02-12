@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 
 import {
   color,
@@ -16,9 +15,14 @@ import {
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const Title = styled.h1<Props>`
-  padding: ${theme.space[2]}px;
-  font-size: ${theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.regular};
+  margin: 0;
+  padding: ${p => p.theme.space[2]}px;
+  font-size: ${p => p.theme.fontSizes[0]}px;
+  line-height: ${p => p.theme.lineHeights.short};
+  color: ${p => {
+    if (p.theme.dark) return p.theme.colors.white;
+    return p.theme.colors.black;
+  }};
   font-weight: 600;
   ${compose(color, layout, space, typography)}
 `;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 import {
   color,
   ColorProps,
@@ -15,9 +14,9 @@ import {
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const InputLabel = styled.label<Props>`
-  color: ${theme.colors.black};
-  font-size: ${theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.short};
+  color: ${p => p.theme.colors.black};
+  font-size: ${p => p.theme.fontSizes[0]}px;
+  line-height: ${p => p.theme.lineHeights.short};
   width: 100%;
   display: block;
   pointer-events: none;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 import xt from '../../extendedTheme';
 
 import {
@@ -29,12 +28,15 @@ export default styled.div<Props>`
   margin: 0;
   min-width: 0;
 
-  border-color: ${theme.colors.gray[4]};
+  border-color: ${p => {
+    if (p.theme.dark) return p.theme.colors.grayDark;
+    return p.theme.colors.grayLight;
+  }};
   border-width: 1px;
   border-style: solid;
   border-radius: ${xt.borderRadiusMid}px;
 
-  margin: ${theme.space[2]}px;
+  margin: ${p => p.theme.space[2]}px;
 
   ${compose(border, flexbox, layout, position, space)}
 `;

@@ -13,10 +13,10 @@ import { H1, H2, H3, H4, H5, H6 } from './primitives/StyledH';
 import Svg from './primitives/Svg';
 import StyledCode from './primitives/StyledCode';
 import StyledA from './primitives/StyledA';
+import Text from './primitives/Text';
 
 // Buttons
 import Button from './components/buttons/Button';
-import IconButton from './components/buttons/IconButton';
 
 // Form
 import Input from './components/form/Input';
@@ -28,7 +28,7 @@ import InputLabel from './components/form/InputLabel';
 import InputCaption from './components/form/InputCaption';
 
 // Icon
-import { Icon } from './components/icon/Icon';
+import Icon from './components/icon/Icon';
 
 // Layout
 import Container from './primitives/Container';
@@ -36,7 +36,8 @@ import Pad from './components/layout/Pad';
 import DividerBox from './components/layout/DividerBox';
 import Hr from './components/layout/Hr';
 import Vr from './components/layout/Vr';
-import Hpad from './components/layout/Hpad';
+import Frame from './components/layout/Frame';
+import SourceListView from './components/layout/SourceListView';
 
 // Text
 import Title from './components/text/Title';
@@ -66,9 +67,9 @@ export {
   Svg,
   StyledCode,
   StyledA,
+  Text,
   // Buttons
   Button,
-  IconButton,
   // Form
   Input,
   Radio,
@@ -76,6 +77,7 @@ export {
   ErrorMessage,
   InputLabel,
   InputCaption,
+  SourceListView,
   // Icon
   Icon,
   // Layout
@@ -84,7 +86,7 @@ export {
   DividerBox,
   Hr,
   Vr,
-  Hpad,
+  Frame,
   // Text
   Title,
   Subtitle,

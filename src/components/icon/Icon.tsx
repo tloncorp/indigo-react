@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../../theme';
 
 import { space, SpaceProps, compose } from 'styled-system';
 
@@ -18,8 +17,8 @@ type Props = SpaceProps & {
 };
 
 const Svg = styled.svg`
-  width: ${theme.sizes[4]}px;
-  height: ${theme.sizes[4]}px;
+  width: ${p => p.theme.sizes[4]}px;
+  height: ${p => p.theme.sizes[4]}px;
   ${compose(space)};
 `;
 
@@ -41,9 +40,29 @@ const ChevronSouth = (props: IconInnerSVGProps) => (
   />
 );
 
+const ChevronWest = (props: IconInnerSVGProps) => (
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M9.64641 3.64648L10.3535 4.35359L6.70707 8.00004L10.3535 11.6465L9.64641 12.3536L5.29286 8.00004L9.64641 3.64648Z"
+    fill={props.fill}
+  />
+);
+
+const ChevronEast = (props: IconInnerSVGProps) => (
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M6.35359 12.3535L5.64648 11.6464L9.29293 7.99996L5.64648 4.35352L6.35359 3.64641L10.7071 7.99996L6.35359 12.3535Z"
+    fill={props.fill}
+  />
+);
+
 const iconList: IconList = {
   NullIcon,
   ChevronSouth,
+  ChevronWest,
+  ChevronEast,
 };
 
 const defaultProps = {
@@ -65,4 +84,4 @@ const Icon = (props: Props) => {
 
 Icon.defaultProps = defaultProps;
 
-export { Icon };
+export default Icon;

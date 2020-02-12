@@ -1,6 +1,5 @@
 // import React from 'react';
 import styled from 'styled-components';
-import theme from '../../theme';
 import {
   color,
   ColorProps,
@@ -16,11 +15,11 @@ import {
 type Props = LayoutProps & ColorProps & SpaceProps & TypographyProps;
 
 const ErrorMessage = styled.p<Props>`
-  color: ${theme.colors.red[2]};
-  font-size: ${theme.fontSizes[0]}px;
-  line-height: ${theme.lineHeights.regular};
-  margin-top: ${theme.space[1]}px;
-  min-height: ${theme.sizes[4]}px;
+  color: ${p => p.theme.colors.red};
+  font-size: ${p => p.theme.fontSizes[0]}px;
+  line-height: ${p => p.theme.lineHeights.regular};
+  margin-top: ${p => p.theme.space[1]}px;
+  min-height: ${p => p.theme.sizes[4]}px;
   ${compose(color, layout, space, typography)}
 `;
 

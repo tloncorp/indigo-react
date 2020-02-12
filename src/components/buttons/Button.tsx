@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 import xt from '../../extendedTheme';
 
 import { color, space, layout, compose } from 'styled-system';
@@ -15,54 +14,84 @@ const Button = styled.button<ButtonProps>`
   align-items: center;
   justify-content: center;
 
-  font-size: ${theme.fontSizes[0]}px;
+  * {
+    fill: ${p => {
+      if (p.theme.dark) return p.theme.colors.white;
+      return p.theme.colors.black;
+    }};
+  }
 
-  height: ${props => {
-    if (props.sm) return theme.sizes[5] + 'px';
-    if (props.md) return theme.sizes[6] + 'px';
-    return theme.sizes[7] + 'px';
+  font-size: ${p => p.theme.fontSizes[0]}px;
+
+  height: ${p => {
+    if (p.sm) return p.theme.sizes[5] + 'px';
+    if (p.md) return p.theme.sizes[6] + 'px';
+    return p.theme.sizes[7] + 'px';
   }};
 
-  min-width: ${props => {
-    if (props.sm) return theme.sizes[5] + 'px';
-    if (props.md) return theme.sizes[6] + 'px';
-    return theme.sizes[7] + 'px';
+  min-width: ${p => {
+    if (p.sm) return p.theme.sizes[5] + 'px';
+    if (p.md) return p.theme.sizes[6] + 'px';
+    return p.theme.sizes[7] + 'px';
   }};
 
-  padding: ${props => {
-    if (props.sm) return 0 + ' ' + theme.space[0] + 'px';
-    if (props.md) return 0 + ' ' + theme.space[2] + 'px';
-    return 0 + ' ' + theme.space[3] + 'px';
+  padding: ${p => {
+    if (p.sm) return 0 + ' ' + p.theme.space[0] + 'px';
+    if (p.md) return 0 + ' ' + p.theme.space[2] + 'px';
+    return 0 + ' ' + p.theme.space[3] + 'px';
   }};
 
   border-radius: ${xt.borderRadiusMinor}px;
 
-  color: ${theme.colors.black};
-  border: ${theme.borders[1] + theme.colors.gray[4]};
-  background-color: ${theme.colors.white};
+  color: ${p => {
+    if (p.theme.dark) return p.theme.colors.white;
+    return p.theme.colors.black;
+  }};
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${p => {
+    if (p.theme.dark) return p.theme.colors.grayDarkest;
+    return p.theme.colors.grayLight;
+  }};
+
+  background-color: ${p => {
+    if (p.theme.dark) return p.theme.colors.black;
+    return p.theme.colors.white;
+  }};
 
   &:hover {
-    color: ${theme.colors.black};
-    border: ${theme.borders[1] + theme.colors.black};
-    background-color: ${theme.colors.white};
+    border-color: ${p => {
+      if (p.theme.dark) return p.theme.colors.white;
+      return p.theme.colors.black;
+    }};
   }
 
   &:focus {
-    color: ${theme.colors.black};
-    border: ${theme.borders[1] + theme.colors.black};
-    background-color: ${theme.colors.white};
+    border-color: ${p => {
+      if (p.theme.dark) return p.theme.colors.white;
+      return p.theme.colors.black;
+    }};
+    background-color: ${p => {
+      if (p.theme.dark) return p.theme.colors.black;
+      return p.theme.colors.white;
+    }};
   }
 
   &:active {
-    color: ${theme.colors.gray[3]};
-    border: ${theme.borders[1] + theme.colors.gray[3]};
-    background-color: ${theme.colors.white};
+    border-color: ${p => {
+      if (p.theme.dark) return p.theme.colors.white;
+      return p.theme.colors.black;
+    }};
   }
 
   &:disabled {
-    color: ${theme.colors.gray[3]};
-    border: ${theme.borders[1] + theme.colors.gray[3]};
-    background-color: ${theme.colors.gray[5]};
+    color: ${p => p.theme.colors.grayMid};
+    border-color: ${p => p.theme.colors.grayMid};
+    background-color: ${p => {
+      if (p.theme.dark) return p.theme.colors.grayMid;
+      return p.theme.colors.grayLightest;
+    }};
     cursor: not-allowed;
   }
 

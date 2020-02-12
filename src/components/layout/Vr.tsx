@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../theme';
 
 import {
   border,
@@ -25,11 +24,14 @@ type Props = BorderProps &
 
 export default styled.div<Props>`
   box-sizing: border-box;
-  
+
   width: 0px;
   height: 100%
 
-  border-left-color: ${theme.colors.gray[4]};
+  border-left-color: ${p => {
+    if (p.theme.dark) return p.theme.colors.grayDark;
+    return p.theme.colors.grayLight;
+  }};
   border-left-width: 1px;
   border-left-style: solid;
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import IndexPage from "./pages/IndexPage";
+import IndexPage from "./pages/IndexPageNew";
 import Sandbox from "./pages/Sandbox";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "indigo-tokens";
@@ -24,9 +24,8 @@ const Root = styled.div`
 
 export default class App extends React.Component {
   render() {
-    console.log(theme)
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={{dark:true, ...theme}}>
         <Root>
           <Style />
           <Router basename="/indigo-react">
