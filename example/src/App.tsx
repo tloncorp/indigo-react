@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import IndexPage from "./pages/IndexPageNew";
 import Sandbox from "./pages/Sandbox";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import theme from "indigo-tokens";
+import theme from "@tlon/indigo-tokens";
 // import { theme as localTheme } from "indigo-react";
 
 const Style = createGlobalStyle`
