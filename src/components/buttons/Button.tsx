@@ -1,9 +1,24 @@
 import styled from 'styled-components';
 import xt from '../../extendedTheme';
 
-import { color, space, layout, compose } from 'styled-system';
+import {
+  ColorProps,
+  color,
+  space,
+  SpaceProps,
+  LayoutProps,
+  layout,
+  compose,
+} from 'styled-system';
 
-import { ButtonProps } from '../../types';
+type ButtonProps = ColorProps &
+  LayoutProps &
+  SpaceProps & {
+    sm?: boolean;
+    md?: boolean;
+    lg?: boolean;
+    onClick?: Function;
+  };
 
 const Button = styled.button<ButtonProps>`
   border: 0;

@@ -13,7 +13,6 @@ import {
   Label,
   LabelCaption,
   Button,
-  IconButton,
   Icon,
   Pad,
   Title,
@@ -170,15 +169,6 @@ const Sandbox: React.FC<{}> = () => {
       <Button disabled mt="2">I am disabled</Button>
 
       <Button md mt="2">Medium</Button>
-
-      <IconButton
-        mt="2"
-        iconRight='ChevronSouth'
-        onClick={() => {alert('HELLO');}}>
-        Icon
-      </IconButton>
-
-      <IconButton mt="2" sm icon='ChevronSouth'> </IconButton>
 
       <Icon mt="2" />
 

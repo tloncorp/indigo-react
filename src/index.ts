@@ -42,8 +42,6 @@ import SourceListView from './components/layout/SourceListView';
 // Text
 import Title from './components/text/Title';
 import Subtitle from './components/text/Subtitle';
-import Label from './components/text/Label';
-import LabelCaption from './components/text/LabelCaption';
 
 export {
   // Theme (dev purposes)
@@ -90,6 +88,4 @@ export {
   // Text
   Title,
   Subtitle,
-  Label,
-  LabelCaption,
 };

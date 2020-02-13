@@ -1,5 +1,6 @@
 import baseStyled, { ThemedStyledInterface } from 'styled-components';
 
+// DEV PURPOSES ONLY
 const theme = {
   // color, background-color, border-color
   colors: {

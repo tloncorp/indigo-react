@@ -1,7 +1,7 @@
 {
-  "name": "indigo-react",
+  "name": "@tlon/indigo-react",
   "version": "1.1.2",
-  "description": "Tlon&#x27;s design language",
+  "description": "Tlon's design language",
   "author": "tlon",
   "license": "MIT",
   "repository": "urbit/indigo-react",
