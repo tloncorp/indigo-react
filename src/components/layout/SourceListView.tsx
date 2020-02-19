@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { LayoutProps, SpaceProps } from 'styled-system';
 import Box from '../../primitives/Box';
-import Flex from '../../primitives/Flex';
-import Text from '../../primitives/Text';
+import Row from '../../primitives/Row';
+import P from '../../primitives/P';
 import Button from '../buttons/Button';
 import Icon from '../icon/Icon';
-// import Flex from '../../primitives/Flex'
 
 type Props = LayoutProps &
   SpaceProps & {
@@ -58,15 +57,15 @@ class SourceListView extends React.Component<Props, State> {
     return (
       <Background {...this.props}>
         <SideBar display={this.state.open ? '' : 'none'}>
-          <Flex flexDirection="row-reverse">
+          <Row flexDirection="row-reverse">
             <Button sm m="2" onClick={this.closeSourceList}>
               <Icon icon="ChevronWest" />
             </Button>
-          </Flex>
-          <Text>source list</Text>
+          </Row>
+          <P>source list</P>
         </SideBar>
         <Box height="100%" width="100%">
-          <Flex>
+          <Row>
             <Button
               sm
               m="2"
@@ -75,8 +74,8 @@ class SourceListView extends React.Component<Props, State> {
             >
               <Icon icon="ChevronEast" />
             </Button>
-          </Flex>
-          <Text>view</Text>
+          </Row>
+          <P>view</P>
         </Box>
       </Background>
     );

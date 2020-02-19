@@ -20,21 +20,41 @@ type Props = BorderProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps & {};
+  SpaceProps & {
+    vertical?: boolean;
+  };
 
 export default styled.div<Props>`
   box-sizing: border-box;
 
-  width: 0px;
-  height: auto;
+  height: ${p => {
+    if (p.vertical) return 'auto';
+    return '0px';
+  }};
 
-  border-left-color: ${p => {
+  width: ${p => {
+    if (p.vertical) return '0px';
+    return '100%';
+  }};
+
+  border-color: ${p => {
     if (p.theme.dark) return p.theme.colors.grayDark;
     return p.theme.colors.grayLight;
   }};
 
-  border-left-width: 1px;
-  border-left-style: solid;
+  border-width: 0px;
+
+  border-style: solid;
+
+  border-top-width: ${p => {
+    if (p.vertical) return '0px';
+    return '1px';
+  }};
+
+  border-left-width: ${p => {
+    if (p.vertical) return '1px';
+    return '0px';
+  }};
 
   ${compose(border, flexbox, layout, position, space)}
 `;

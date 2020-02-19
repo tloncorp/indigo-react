@@ -39,6 +39,11 @@ const StyledInput = styled.input<StyledProps>`
   }};
   border-radius: ${xt.borderRadiusMinor}px;
 
+  background-color: ${p => {
+    if (p.theme.dark) return p.theme.colors.black;
+    return p.theme.colors.white;
+  }};
+
   padding-left: ${p => p.theme.space[2]}px;
   margin-top: ${p => p.theme.space[1]}px;
 

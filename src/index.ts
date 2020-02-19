@@ -4,8 +4,11 @@ import extendedTheme from './extendedTheme';
 
 // Primitives
 import Box from './primitives/Box';
-import Flex from './primitives/Flex';
+import Row from './primitives/Row';
+import Col from './primitives/Col';
 import P from './primitives/P';
+import Caption from './primitives/Caption';
+import ItemRow from './primitives/ItemRow';
 import Span from './primitives/Span';
 import Img from './primitives/Img';
 import { Ul, Ol, Li } from './primitives/Lists';
@@ -13,7 +16,6 @@ import { H1, H2, H3, H4, H5, H6 } from './primitives/StyledH';
 import Svg from './primitives/Svg';
 import StyledCode from './primitives/StyledCode';
 import StyledA from './primitives/StyledA';
-import Text from './primitives/Text';
 
 // Buttons
 import Button from './components/buttons/Button';
@@ -23,7 +25,6 @@ import Input from './components/form/Input';
 import Radio from './components/form/Radio';
 import Select from './components/form/Select';
 import ErrorMessage from './components/form/ErrorMessage';
-
 import InputLabel from './components/form/InputLabel';
 import InputCaption from './components/form/InputCaption';
 
@@ -31,13 +32,12 @@ import InputCaption from './components/form/InputCaption';
 import Icon from './components/icon/Icon';
 
 // Layout
-import Container from './primitives/Container';
 import Pad from './components/layout/Pad';
 import DividerBox from './components/layout/DividerBox';
-import Hr from './components/layout/Hr';
-import Vr from './components/layout/Vr';
+import Rule from './components/layout/Rule';
 import Frame from './components/layout/Frame';
 import SourceListView from './components/layout/SourceListView';
+import Center from './components/layout/Center';
 
 // Text
 import Title from './components/text/Title';
@@ -49,7 +49,7 @@ export {
   extendedTheme,
   // Primitives
   Box,
-  Flex,
+  Row,
   P,
   Span,
   Img,
@@ -65,7 +65,8 @@ export {
   Svg,
   StyledCode,
   StyledA,
-  Text,
+  Caption,
+  ItemRow,
   // Buttons
   Button,
   // Form
@@ -79,12 +80,12 @@ export {
   // Icon
   Icon,
   // Layout
-  Container,
   Pad,
   DividerBox,
-  Hr,
-  Vr,
+  Rule,
   Frame,
+  Col,
+  Center,
   // Text
   Title,
   Subtitle,

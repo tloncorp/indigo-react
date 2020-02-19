@@ -1,36 +1,24 @@
 import * as React from "react";
 import {
-  Box,
-  Flex,
-  Container,
-  H4,
-  H1,
-  P,
-  Span,
-  StyledA,
-  StyledCode,
   Input,
-  Label,
-  LabelCaption,
   Button,
   Icon,
   Pad,
   Title,
   Subtitle,
   DividerBox,
-  ErrorMessage,
-  Select,
-  Hr,
+  Rule,
   Radio,
   InputLabel,
-  InputCaption
+  Box,
 } from "indigo-react";
 import * as Yup from 'yup';
-import { Formik, Form, FormikProps } from 'formik'
+import { Formik, Form } from 'formik'
 import ob from 'urbit-ob'
 
 interface FormValues {
   firstName: string;
+  middleName: string;
   lastName: string;
   color: string;
   urbitid: string;
@@ -43,6 +31,10 @@ const SignupSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   lastName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  middleName: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
@@ -64,7 +56,8 @@ const SignupSchema = Yup.object().shape({
 const Sandbox: React.FC<{}> = () => {
 
   const initialValues: FormValues = {
-    firstName: 'Gavin',
+    firstName: '',
+    middleName: '',
     lastName: '',
     color: 'green',
     urbitid: '',
@@ -72,7 +65,7 @@ const Sandbox: React.FC<{}> = () => {
   };
 
   return (
-    <Container maxWidth='400px'>
+    <Box maxWidth='400px'>
       <Title>Form Example</Title>
       <Subtitle>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</Subtitle>
 
@@ -80,7 +73,6 @@ const Sandbox: React.FC<{}> = () => {
         initialValues={initialValues}
         validationSchema={SignupSchema}
         onSubmit={(values, { setSubmitting }) => {
-          console.log(values)
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
@@ -94,6 +86,15 @@ const Sandbox: React.FC<{}> = () => {
               name="firstName"
               caption="Please enter your first name."
               placeholder="Felicia"
+            />
+          </Pad>
+
+          <Pad>
+            <Input
+              type="text"
+              label="Middle Name"
+              name="middleName"
+              placeholder="Nancy"
             />
           </Pad>
 
@@ -158,7 +159,7 @@ const Sandbox: React.FC<{}> = () => {
     </Formik>
 
     <Pad>
-      <Hr />
+      <Rule />
     </Pad>
 
     <Title>Buttons</Title>
@@ -179,14 +180,14 @@ const Sandbox: React.FC<{}> = () => {
     <DividerBox>
       <Title>Urbit 101</Title>
       <Subtitle>Intro to Cryptography</Subtitle>
-      <Hr />
+      <Rule />
       <Pad>
         <Button>Settings...</Button>
       </Pad>
     </DividerBox>
 
 
-    </Container>
+    </Box>
   );
 };
 

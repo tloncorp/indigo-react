@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { LayoutProps, SpaceProps } from 'styled-system';
 import Box from '../../primitives/Box';
-import Text from '../../primitives/Text';
-import Flex from '../../primitives/Flex';
+import Row from '../../primitives/Row';
 
 import Pad from './Pad';
 
@@ -37,10 +36,9 @@ const Frame = (props: Props) => {
   console.log('Frame:', props);
   return (
     <Background {...props}>
-      <Flex p="3" width="100%">
-        <Text>[•]</Text>
+      <Row p="3" width="100%">
         <Pad>Home</Pad>
-      </Flex>
+      </Row>
       <Box height="100%" px="4" pb="4">
         <Window>{props.children}</Window>
       </Box>

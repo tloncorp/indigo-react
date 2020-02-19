@@ -24,10 +24,13 @@ type Props = BorderProps &
   TypographyProps & {};
 
 const Button = styled.button<Props>`
-  ${compose(space, layout, color, border, flexbox, typography)};
   border: 0;
   outline: none;
   cursor: pointer;
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  ${compose(space, layout, color, border, flexbox, typography)};
 `;
 
 export default Button;

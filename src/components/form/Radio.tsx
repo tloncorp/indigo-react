@@ -11,7 +11,7 @@ type Props = {
   name: string;
   id?: string;
   disabled?: boolean;
-  type: string;
+  type?: string;
 };
 
 type StyledProps = {
@@ -55,14 +55,21 @@ const RadioButton = styled.span<StyledProps>`
   border-width: 1px;
   border-style: solid;
   border-color: ${p => {
-    if (p.disabled) return p => p.theme.colors.grayMid;
-    return p => p.theme.colors.grayLight;
+    if (p.disabled) {
+      if (p.theme.dark) return p.theme.colors.grayDarkest;
+      return p.theme.colors.grayLight;
+    }
+    if (p.theme.dark) return p => p.theme.colors.grayDark;
+    return p.theme.colors.grayLight;
   }};
 
   background-color: ${p => {
-    if (p.checked) return p => p.theme.colors.white;
-    if (p.disabled) return p => p.theme.colors.grayLightest;
-    return p => p.theme.colors.white;
+    if (p.disabled) {
+      if (p.theme.dark) return p.theme.colors.grayDark;
+      return p.theme.colors.grayLightest;
+    }
+    if (p.theme.dark) return p => p.theme.colors.black;
+    return p.theme.colors.white;
   }};
 
   &:after {
@@ -76,7 +83,10 @@ const RadioButton = styled.span<StyledProps>`
   }
 
   ${StyledInput}:focus ~ & {
-    border: 1px solid black;
+    border-color: ${p => {
+      if (p.theme.dark) return p => p.theme.colors.white;
+      return p.theme.colors.black;
+    }};
   }
 
   &:after {
@@ -86,15 +96,18 @@ const RadioButton = styled.span<StyledProps>`
     height: 6px;
     border-radius: 50%;
     background: ${p => {
-      if (p.checked) return p => p.theme.colors.black;
-      return p => p.theme.colors.white;
+      if (p.checked) {
+        if (p.theme.dark) return p.theme.colors.white;
+        return p.theme.colors.black;
+      }
+      if (p.theme.dark) return p.theme.colors.black;
+      return p.theme.colors.white;
     }};
   }
 `;
 
 const Radio = ({ label, caption, ...props }: Props) => {
-  const [field, meta] = useField({ ...props, value: props.id, type: 'radio' });
-  console.log(field, meta);
+  const [field] = useField({ ...props, value: props.id, type: 'radio' });
   return (
     <>
       <Container disabled={props.disabled} htmlFor={props.id || props.name}>

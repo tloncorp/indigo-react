@@ -21,14 +21,14 @@ type Props = ColorProps &
     thin?: boolean;
   };
 
-const P = styled.p<Props>`
+const Caption = styled.p<Props>`
   font-size: ${p => p.theme.fontSizes[0]};
   line-height: ${p => p.theme.lineHeights.regular};
 
   color: ${p => {
-    if (p.color === undefined) {
-      if (p.theme.dark) return p.theme.colors.white;
-      return p.theme.colors.black;
+    if (typeof p.color === 'undefined') {
+      if (p.theme.dark) return p.theme.colors.gray;
+      return p.theme.colors.gray;
     }
   }};
 
@@ -46,4 +46,4 @@ const P = styled.p<Props>`
   ${compose(color, layout, space, typography)}
 `;
 
-export default P;
+export default Caption;

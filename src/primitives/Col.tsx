@@ -2,17 +2,18 @@ import styled from 'styled-components';
 
 import {
   border,
-  flexbox,
-  layout,
-  position,
-  space,
-  compose,
   BorderProps,
+  color,
   ColorProps,
+  flexbox,
   FlexboxProps,
+  layout,
   LayoutProps,
+  position,
   PositionProps,
+  space,
   SpaceProps,
+  compose,
 } from 'styled-system';
 
 type Props = BorderProps &
@@ -24,17 +25,9 @@ type Props = BorderProps &
 
 export default styled.div<Props>`
   box-sizing: border-box;
-
-  width: 0px;
-  height: auto;
-
-  border-left-color: ${p => {
-    if (p.theme.dark) return p.theme.colors.grayDark;
-    return p.theme.colors.grayLight;
-  }};
-
-  border-left-width: 1px;
-  border-left-style: solid;
-
-  ${compose(border, flexbox, layout, position, space)}
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  ${compose(border, color, flexbox, layout, position, space)}
 `;
