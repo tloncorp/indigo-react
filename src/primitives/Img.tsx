@@ -7,4 +7,9 @@ type Props = LayoutProps & SpaceProps & {};
 const Img = styled.img<Props>`
   ${compose(space, layout)};
 `;
+
+Img.defaultProps = {
+  height: 'auto',
+};
+
 export default Img;

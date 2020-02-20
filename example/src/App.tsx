@@ -6,15 +6,18 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import theme from "@tlon/indigo-tokens";
 import { theme as localTheme } from "indigo-react";
 
-const Style = createGlobalStyle`${localTheme.cssReset}`
+const Style = createGlobalStyle`
+${localTheme.cssReset}
+`
 
 const Root = styled.div`
   font-family: ${p => theme.fonts.sans};
   line-height: ${p => theme.lineHeights.regular};
-  background-color:${p => {
+
+  background-color: ${p => {
     if (p.theme.dark) return theme.colors.black
     return theme.colors.white
-  }}
+  }};
 `;
 
 export default class App extends React.Component {

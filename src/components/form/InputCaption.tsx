@@ -14,13 +14,21 @@ import {
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const InputCaption = styled.label<Props>`
-  color: ${p => p.theme.colors.gray};
-  font-size: ${p => p.theme.fontSizes[0]}px;
-  line-height: ${p => p.theme.lineHeights.short};
+  color: ${p => {
+    if (p.theme.dark) return p.theme.colors.grayMid;
+    return p.theme.colors.gray;
+  }};
   width: 100%;
   display: block;
   pointer-events: none;
   ${compose(color, layout, space, typography)}
 `;
+
+InputCaption.defaultProps = {
+  lineHeight: 'short',
+  fontSize: 2,
+  margin: 0,
+  fontWeight: 400,
+};
 
 export default InputCaption;

@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { LayoutProps, SpaceProps } from 'styled-system';
 import Box from '../../primitives/Box';
-import Row from '../../primitives/Row';
-import P from '../../primitives/P';
+import Row from './Row';
 import Button from '../buttons/Button';
 import Icon from '../icon/Icon';
 
@@ -62,7 +61,6 @@ class SourceListView extends React.Component<Props, State> {
               <Icon icon="ChevronWest" />
             </Button>
           </Row>
-          <P>source list</P>
         </SideBar>
         <Box height="100%" width="100%">
           <Row>
@@ -75,7 +73,6 @@ class SourceListView extends React.Component<Props, State> {
               <Icon icon="ChevronEast" />
             </Button>
           </Row>
-          <P>view</P>
         </Box>
       </Background>
     );

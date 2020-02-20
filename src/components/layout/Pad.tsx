@@ -3,9 +3,14 @@ import { space, SpaceProps } from 'styled-system';
 
 type Props = SpaceProps & {};
 
-export default styled.div<Props>`
+const Pad = styled.div<Props>`
   box-sizing: border-box;
   min-width: 0;
-  padding: ${p => p.theme.space[2]}px;
   ${space}
 `;
+
+Pad.defaultProps = {
+  padding: 2,
+};
+
+export default Pad;

@@ -22,13 +22,6 @@ type Props = LayoutProps &
     className?: string;
   };
 
-// const __Select = (props: Props) => {
-//   return (
-//     <input type="select" className={props.className}>
-//     </input>
-//   );
-// };
-
 const Select = styled.select<Props>`
   font-size: ${theme.fontSizes[0]}px;
   ${compose(color, layout, space, typography)}

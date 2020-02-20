@@ -50,7 +50,7 @@ const StyledInput = styled.input<StyledProps>`
   height: ${p => p.theme.sizes[7]}px;
   width: 100%;
 
-  font-size: ${p => p.theme.fontSizes[0]}px;
+  font-size: ${p => p.theme.fontSizes[2]}px;
   line-height: ${p => p.theme.lineHeights.short};
 
   &:focus {

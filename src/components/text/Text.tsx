@@ -18,22 +18,20 @@ type Props = ColorProps &
   TypographyProps & {
     bold?: boolean;
     mono?: boolean;
-    thin?: boolean;
+    gray?: boolean;
   };
 
-const P = styled.p<Props>`
-  font-size: ${p => p.theme.fontSizes[0]};
-  line-height: ${p => p.theme.lineHeights.regular};
-
+const Text = styled.p<Props>`
   color: ${p => {
-    if (p.color === undefined) {
-      if (p.theme.dark) return p.theme.colors.white;
-      return p.theme.colors.black;
+    if (p.theme.dark) {
+      if (p.gray) return p.theme.colors.grayMid;
+      return p.theme.colors.white;
     }
+    if (p.gray) return p.theme.colors.gray;
+    return p.theme.colors.black;
   }};
 
   font-weight: ${p => {
-    if (p.thin) return p.theme.fontWeights.thin;
     if (p.bold) return p.theme.fontWeights.bold;
     return p.theme.fontWeights.regular;
   }};
@@ -46,4 +44,11 @@ const P = styled.p<Props>`
   ${compose(color, layout, space, typography)}
 `;
 
-export default P;
+Text.defaultProps = {
+  lineHeight: 'regular',
+  fontSize: 0,
+  margin: 0,
+  fontWeight: 400,
+};
+
+export default Text;

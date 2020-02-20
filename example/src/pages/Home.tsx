@@ -3,6 +3,7 @@ import {
   color,
   space,
   typography,
+  layout,
   compose,
 } from 'styled-system';
 import styled from 'styled-components'
@@ -10,34 +11,54 @@ import {
   Box,
   Row,
   Rule,
-  P,
+  T2,
   Col,
   Center,
-  Caption,
   ItemRow,
+  T3,
+  T1,
+  Text,
 } from "indigo-react";
 
 import { Link } from 'react-router-dom'
 
 const StyledLink = styled(Link)`
-  font-weight: 400;
-  ${compose(color, typography, space)}
+  color: ${p => {
+    if (p.theme.dark) {
+      if (p.gray) return p.theme.colors.grayMid;
+      return p.theme.colors.white;
+    }
+    if (p.gray) return p.theme.colors.gray;
+    return p.theme.colors.black;
+  }};
+  font-weight: ${p => {
+    if (p.bold) return p.theme.fontWeights.bold;
+    return p.theme.fontWeights.regular;
+  }};
+  ${compose(color, layout, space, typography)};
 `
 
+StyledLink.defaultProps = {
+  lineHeight: 'short',
+  fontSize: 2,
+  margin: 0,
+  fontWeight: 400,
+}
+
 const Item = props => (
-  <Box minHeight={[10, 11, 12]} p='7'>
+  <Box  p='7'>
     <Row alignItems='baseline' pb='2' flexWrap='wrap'>
-      <P pr='2' fontSize='1'>{props.title}</P>
-      <Caption pr='2' fontSize='1' mono>{props.package}</Caption>
-      <Caption fontSize='1' mono >{props.version}</Caption>
+      <T2 pr='2'>{props.title}</T2>
+      <T2 gray pr='2' mono>{props.package}</T2>
+      <T2 gray mono >{props.version}</T2>
     </Row>
-
-    <Caption fontSize='1' py='1'>{props.description}</Caption>
-
+    <T3 gray py='1'>{props.description}</T3>
     <Col>
       {
         props.links.map(link => (
-          <StyledLink fontSize='1' py='1' color="gray" to={link[1]}>{link[0]}</StyledLink>
+          <StyledLink gray fontSize='2' py='1' to={link[1]}>
+            {link[0]}
+          </StyledLink>
         ))
       }
     </Col>
@@ -50,10 +71,10 @@ export default class Home extends React.Component {
       <Box>
         <Center p='7' height={[12, 13, 14]}>
           <Row alignItems="center">
-            <P fontSize='5' color='blue'>●</P>
-            <P fontSize='5' color='red'>◆</P>
-            <P fontSize='5' color='green'>▲</P>
-            <P pl='4' fontSize='4'>Indigo</P>
+            <Text fontSize='8' color='blue'>●</Text>
+            <Text fontSize='8' color='red'>◆</Text>
+            <Text fontSize='8' color='green'>▲</Text>
+            <Text pl='4' fontSize='7'>Indigo</Text>
           </Row>
         </Center>
         <Rule />
@@ -87,7 +108,7 @@ export default class Home extends React.Component {
               ['↗ NPM', ''],
               ['↗ Github', ''],
             ]}
-            description="A styled-system compliant index of ratios, colors, type and other design tokens upon which Indigo is based."/>
+            description="A styled-system compliant index of ratios, colors, type and other design tokens upon which Indigo is based." />
 
           <Item
             title="CSS Library"
@@ -103,52 +124,28 @@ export default class Home extends React.Component {
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <P textAlign='center' maxWidth="544px">
+          <T1 textAlign='center' maxWidth="544px">
             Indigo is a design system maintained by Tlon, the company behind the platform for a new, peer-to-peer internet, Urbit.
-          </P>
+          </T1>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <P textAlign='center' maxWidth="544px">
+          <T1 textAlign='center' maxWidth="544px">
             It is designed for maximum consistency, simplicity and legibility.
-          </P>
+          </T1>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <P textAlign='center' maxWidth="544px">
+          <T1 textAlign='center' maxWidth="544px">
             It is 100% open source and licensed under MIT.
-          </P>
+          </T1>
         </Center>
-        
-        <Rule/>
-        <ItemRow columns={[1, 2, 4]}>
-        <Box minHeight={[10, 11, 12]} display={['none', 'none', 'block']} p='7' />
-          <Box minHeight={[10, 11, 12]} p='7'>
-            <P fontSize='1'>Tlon</P>
-            <Caption fontSize='1'>Tlon is building the platform for a new peer to peer internet. We make things that are technically excellent, architecturally sound, and aesthetically beautiful.</Caption>
-          </Box>
-
-          <Box minHeight={[10, 11, 12]} p='7'>
-            <P  fontSize='1'>Urbit</P>
-            <Caption fontSize='1'>Urbit is two new pieces of technology:
-              Urbit OS + Urbit ID.
-
-              Urbit OS is a clean slate reimagining of the operating system as an 'overlay OS'. It runs on any Unix machine with an internet connection. Urbit OS is a compact system for an individual to run their own permanent personal server.
-
-              Urbit ID is a decentralized digital identity system. Your Urbit ID is a username, network address and crypto wallet designed for Urbit OS.
-
-            </Caption>
-          </Box>
-          <Box minHeight={[10, 11, 12]} display={['none', 'none', 'block']} p='7' />
-        </ItemRow>
-
-
-
+    
         <Rule/>
         <Row p='7'>
-          <P>Tlon (c) 2020</P>
+          <T3>Footer</T3>
         </Row>
       </Box>
     )

@@ -36,7 +36,7 @@ const Button = styled.button<ButtonProps>`
     }};
   }
 
-  font-size: ${p => p.theme.fontSizes[0]}px;
+  font-size: ${p => p.theme.fontSizes[2]}px;
 
   height: ${p => {
     if (p.sm) return p.theme.sizes[5] + 'px';

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { LayoutProps, SpaceProps } from 'styled-system';
 import Box from '../../primitives/Box';
-import Row from '../../primitives/Row';
+import Row from './Row';
 
 import Pad from './Pad';
 

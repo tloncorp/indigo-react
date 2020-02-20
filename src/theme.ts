@@ -32,13 +32,15 @@ const theme = {
   },
   // font-size
   fontSizes: [
-    12, // 0
-    14, // 1
-    16, // 2
-    20, // 3
-    24, // 4
-    32, // 5
-    48, // 6
+    10, // 0
+    11, // 1
+    12, // 2
+    14, // 3
+    16, // 4
+    20, // 5
+    24, // 6
+    32, // 7
+    48, // 8
   ],
   // 	font-weight
   fontWeights: {
@@ -50,7 +52,7 @@ const theme = {
   lineHeights: {
     short: 1.333334,
     regular: 1.5,
-    tall: 1.6,
+    tall: 1.666667,
   },
   // border, border-top, border-right, border-bottom, border-left
   borders: ['none', '1px solid'],

@@ -4,8 +4,7 @@ import {
   Button,
   Icon,
   Pad,
-  Title,
-  Subtitle,
+  T3,
   DividerBox,
   Rule,
   Radio,
@@ -66,8 +65,9 @@ const Sandbox: React.FC<{}> = () => {
 
   return (
     <Box maxWidth='400px'>
-      <Title>Form Example</Title>
-      <Subtitle>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</Subtitle>
+      <Pad><T3>Form Example</T3></Pad>
+      
+      <Pad><T3 gray>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</T3></Pad>
 
       <Formik
         initialValues={initialValues}
@@ -162,7 +162,7 @@ const Sandbox: React.FC<{}> = () => {
       <Rule />
     </Pad>
 
-    <Title>Buttons</Title>
+    <Pad><T3>Buttons</T3></Pad>
 
     <Pad>
       <Button mt="2">Settings...</Button>
@@ -172,14 +172,13 @@ const Sandbox: React.FC<{}> = () => {
       <Button md mt="2">Medium</Button>
 
       <Icon mt="2" />
-
     </Pad>
 
 
 
     <DividerBox>
-      <Title>Urbit 101</Title>
-      <Subtitle>Intro to Cryptography</Subtitle>
+      <Pad><T3>Urbit 101</T3></Pad>
+      <Pad><T3 gray>Intro to Cryptography</T3></Pad>
       <Rule />
       <Pad>
         <Button>Settings...</Button>

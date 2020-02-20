@@ -17,9 +17,11 @@ type Props = ColorProps &
   SpaceProps &
   TypographyProps & {
     gray?: boolean;
+    bold?: boolean;
+    mono?: boolean;
   };
 
-const Body = styled.p<Props>`
+const T3 = styled.h3<Props>`
   color: ${p => {
     if (p.theme.dark) {
       if (p.gray) return p.theme.colors.grayMid;
@@ -28,15 +30,18 @@ const Body = styled.p<Props>`
     if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};
+  font-weight: ${p => {
+    if (p.bold) return p.theme.fontWeights.bold;
+    return p.theme.fontWeights.regular;
+  }};
   ${compose(color, layout, space, typography)};
 `;
 
-Body.defaultProps = {
+T3.defaultProps = {
   lineHeight: 'short',
-  padding: 2,
-  fontSize: 0,
+  fontSize: 2,
   margin: 0,
   fontWeight: 400,
 };
 
-export default Body;
+export default T3;

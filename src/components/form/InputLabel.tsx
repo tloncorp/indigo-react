@@ -18,12 +18,17 @@ const InputLabel = styled.label<Props>`
     if (p.theme.dark) return p.theme.colors.white;
     return p.theme.colors.black;
   }};
-  font-size: ${p => p.theme.fontSizes[0]}px;
-  line-height: ${p => p.theme.lineHeights.short};
   width: 100%;
   display: block;
   pointer-events: none;
   ${compose(color, layout, space, typography)}
 `;
+
+InputLabel.defaultProps = {
+  lineHeight: 'short',
+  fontSize: 2,
+  margin: 0,
+  fontWeight: 400,
+};
 
 export default InputLabel;

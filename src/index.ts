@@ -4,18 +4,9 @@ import extendedTheme from './extendedTheme';
 
 // Primitives
 import Box from './primitives/Box';
-import Row from './primitives/Row';
-import Col from './primitives/Col';
-import P from './primitives/P';
-import Caption from './primitives/Caption';
-import ItemRow from './primitives/ItemRow';
-import Span from './primitives/Span';
 import Img from './primitives/Img';
 import { Ul, Ol, Li } from './primitives/Lists';
-import { H1, H2, H3, H4, H5, H6 } from './primitives/StyledH';
 import Svg from './primitives/Svg';
-import StyledCode from './primitives/StyledCode';
-import StyledA from './primitives/StyledA';
 
 // Buttons
 import Button from './components/buttons/Button';
@@ -38,10 +29,20 @@ import Rule from './components/layout/Rule';
 import Frame from './components/layout/Frame';
 import SourceListView from './components/layout/SourceListView';
 import Center from './components/layout/Center';
+import ItemRow from './components/layout/ItemRow';
+import Row from './components/layout/Row';
+import Col from './components/layout/Col';
 
 // Text
-import Title from './components/text/Title';
-import Subtitle from './components/text/Subtitle';
+import T1 from './components/text/T1';
+import T2 from './components/text/T2';
+import T3 from './components/text/T3';
+import T4 from './components/text/T4';
+import T5 from './components/text/T5';
+import Body from './components/text/Body';
+import Text from './components/text/Text';
+import StyledCode from './components/text/StyledCode';
+import StyledA from './components/text/StyledA';
 
 export {
   // Theme (dev purposes)
@@ -49,24 +50,13 @@ export {
   extendedTheme,
   // Primitives
   Box,
-  Row,
-  P,
-  Span,
   Img,
   Ul,
   Ol,
   Li,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
   Svg,
   StyledCode,
   StyledA,
-  Caption,
-  ItemRow,
   // Buttons
   Button,
   // Form
@@ -86,7 +76,14 @@ export {
   Frame,
   Col,
   Center,
+  Row,
+  ItemRow,
   // Text
-  Title,
-  Subtitle,
+  T1,
+  T2,
+  T3,
+  T4,
+  T5,
+  Body,
+  Text,
 };

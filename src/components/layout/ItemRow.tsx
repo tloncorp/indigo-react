@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Box from './Box';
+import Box from '../../primitives/Box';
 
 import {
   BackgroundProps,
@@ -22,9 +22,23 @@ type Props = BackgroundProps &
   SpaceProps &
   GridProps & {
     columns: GTC;
+    width?: GTC;
     gap?: number;
     children?: JSX.Element | JSX.Element[];
   };
+
+const px = (n: string | number | null) =>
+  typeof n === 'number' ? n + 'px' : n;
+
+const widthToColumns = (p: GTC): GTC => {
+  if (Array.isArray(p)) {
+    return p.map(v => {
+      if (v === null) return null;
+      return `repeat(auto-fit, minmax(${px(v)}, 1fr))`;
+    });
+  }
+  return `repeat(auto-fit, minmax(${px(p)}, 1fr))`;
+};
 
 const countToColumns = (p: GTC): GTC => {
   if (Array.isArray(p)) {
@@ -36,13 +50,17 @@ const countToColumns = (p: GTC): GTC => {
   return `repeat(${p}, 1fr)`;
 };
 
-const ItemRow = ({ columns, gap = 0, ...props }: Props) => {
-  const gridTemplateColumns = countToColumns(columns);
+const ItemRow = (props: Props) => {
+  const gtc =
+    typeof props.width === 'undefined'
+      ? countToColumns(props.columns)
+      : widthToColumns(props.width);
+
   return (
     <Box
       display="grid"
-      gridGap={gap}
-      gridTemplateColumns={gridTemplateColumns}
+      gridGap={props.gap}
+      gridTemplateColumns={gtc}
       {...props}
     />
   );
