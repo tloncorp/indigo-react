@@ -15,7 +15,6 @@ type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const InputCaption = styled.label<Props>`
   color: ${p => {
-    if (p.theme.dark) return p.theme.colors.grayMid;
     return p.theme.colors.gray;
   }};
   width: 100%;

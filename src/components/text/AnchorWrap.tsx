@@ -12,15 +12,18 @@ import {
 } from 'styled-system';
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
-const StyledA = styled.a<Props>`
-  text-decoration: underline;
+const AnchorWrap = styled.a<Props>`
+  text-decoration: none;
   cursor: pointer;
+  &:visited {
+    color: black;
+  }
 
-  ${compose(space, color, typography, layout)}
+  ${compose(space, color, typography, layout)};
 `;
 
-export default StyledA;
+export default AnchorWrap;
 
-StyledA.defaultProps = {
+AnchorWrap.defaultProps = {
   color: 'black',
 };

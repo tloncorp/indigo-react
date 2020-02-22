@@ -21,10 +21,6 @@ type Props = ColorProps &
 
 const Body = styled.p<Props>`
   color: ${p => {
-    if (p.theme.dark) {
-      if (p.gray) return p.theme.colors.grayMid;
-      return p.theme.colors.white;
-    }
     if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};

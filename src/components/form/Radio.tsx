@@ -56,19 +56,15 @@ const RadioButton = styled.span<StyledProps>`
   border-style: solid;
   border-color: ${p => {
     if (p.disabled) {
-      if (p.theme.dark) return p.theme.colors.grayDarkest;
-      return p.theme.colors.grayLight;
+      return p.theme.colors.lightGray;
     }
-    if (p.theme.dark) return p => p.theme.colors.grayDark;
-    return p.theme.colors.grayLight;
+    return p.theme.colors.lightGray;
   }};
 
   background-color: ${p => {
     if (p.disabled) {
-      if (p.theme.dark) return p.theme.colors.grayDark;
-      return p.theme.colors.grayLightest;
+      return p.theme.colors.nearWhite;
     }
-    if (p.theme.dark) return p => p.theme.colors.black;
     return p.theme.colors.white;
   }};
 
@@ -84,7 +80,6 @@ const RadioButton = styled.span<StyledProps>`
 
   ${StyledInput}:focus ~ & {
     border-color: ${p => {
-      if (p.theme.dark) return p => p.theme.colors.white;
       return p.theme.colors.black;
     }};
   }
@@ -97,10 +92,8 @@ const RadioButton = styled.span<StyledProps>`
     border-radius: 50%;
     background: ${p => {
       if (p.checked) {
-        if (p.theme.dark) return p.theme.colors.white;
         return p.theme.colors.black;
       }
-      if (p.theme.dark) return p.theme.colors.black;
       return p.theme.colors.white;
     }};
   }

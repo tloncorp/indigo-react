@@ -17,10 +17,13 @@ type Props = SpaceProps & {
 };
 
 const Svg = styled.svg`
-  width: ${p => p.theme.sizes[4]}px;
-  height: ${p => p.theme.sizes[4]}px;
   ${compose(space)};
 `;
+
+Svg.defaultProps = {
+  width: 4,
+  height: 4,
+};
 
 const NullIcon = ({ fill }: InnerSVGProps) => (
   <path

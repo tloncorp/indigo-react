@@ -30,10 +30,7 @@ const Button = styled.button<ButtonProps>`
   justify-content: center;
 
   * {
-    fill: ${p => {
-      if (p.theme.dark) return p.theme.colors.white;
-      return p.theme.colors.black;
-    }};
+    fill: ${p => p.theme.colors.black};
   }
 
   font-size: ${p => p.theme.fontSizes[2]}px;
@@ -58,55 +55,31 @@ const Button = styled.button<ButtonProps>`
 
   border-radius: ${xt.borderRadiusMinor}px;
 
-  color: ${p => {
-    if (p.theme.dark) return p.theme.colors.white;
-    return p.theme.colors.black;
-  }};
+  color: ${p => p.theme.colors.black};
 
   border-width: 1px;
   border-style: solid;
-  border-color: ${p => {
-    if (p.theme.dark) return p.theme.colors.grayDarkest;
-    return p.theme.colors.grayLight;
-  }};
+  border-color: ${p => p.theme.colors.lightGray};
 
-  background-color: ${p => {
-    if (p.theme.dark) return p.theme.colors.black;
-    return p.theme.colors.white;
-  }};
+  background-color: ${p => p.theme.colors.white};
 
   &:hover {
-    border-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.white;
-      return p.theme.colors.black;
-    }};
+    border-color: ${p => p.theme.colors.black};
   }
 
   &:focus {
-    border-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.white;
-      return p.theme.colors.black;
-    }};
-    background-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.black;
-      return p.theme.colors.white;
-    }};
+    border-color: ${p => p.theme.colors.black};
+    background-color: ${p => p.theme.colors.white};
   }
 
   &:active {
-    border-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.white;
-      return p.theme.colors.black;
-    }};
+    border-color: ${p => p.theme.colors.black};
   }
 
   &:disabled {
-    color: ${p => p.theme.colors.grayMid};
-    border-color: ${p => p.theme.colors.grayMid};
-    background-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.grayMid;
-      return p.theme.colors.grayLightest;
-    }};
+    color: ${p => p.theme.colors.silver};
+    border-color: ${p => p.theme.colors.silver};
+    background-color: ${p => p.theme.colors.nearWhite};
     cursor: not-allowed;
   }
 

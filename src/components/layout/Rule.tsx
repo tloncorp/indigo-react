@@ -38,8 +38,7 @@ export default styled.div<Props>`
   }};
 
   border-color: ${p => {
-    if (p.theme.dark) return p.theme.colors.grayDark;
-    return p.theme.colors.grayLight;
+    return p.theme.colors.lightGray;
   }};
 
   border-width: 0px;

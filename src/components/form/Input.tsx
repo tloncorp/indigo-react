@@ -27,20 +27,17 @@ const StyledInput = styled.input<StyledProps>`
 
   color: ${p => {
     if (p.hasError) return p.theme.colors.red;
-    if (p.theme.dark) return p.theme.colors.white;
     return p.theme.colors.black;
   }};
   border-width: 1px;
   border-style: solid;
   border-color: ${p => {
     if (p.hasError) return p.theme.colors.red;
-    if (p.theme.dark) return p.theme.colors.grayDark;
-    return p.theme.colors.grayLight;
+    return p.theme.colors.lightGray;
   }};
   border-radius: ${xt.borderRadiusMinor}px;
 
   background-color: ${p => {
-    if (p.theme.dark) return p.theme.colors.black;
     return p.theme.colors.white;
   }};
 
@@ -56,23 +53,19 @@ const StyledInput = styled.input<StyledProps>`
   &:focus {
     border-color: ${p => {
       if (p.hasError) return p.theme.colors.red;
-      if (p.theme.dark) return p.theme.colors.white;
       return p.theme.colors.black;
     }};
   }
 
   &:disabled {
     color: ${p => {
-      if (p.theme.dark) return p.theme.colors.gray;
-      return p.theme.colors.grayMid;
+      return p.theme.colors.silver;
     }};
     border-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.grayDark;
-      return p.theme.colors.grayLight;
+      return p.theme.colors.lightGray;
     }};
     background-color: ${p => {
-      if (p.theme.dark) return p.theme.colors.grayDarkest;
-      return p.theme.colors.grayLightest;
+      return p.theme.colors.nearWhite;
     }};
     cursor: not-allowed;
   }

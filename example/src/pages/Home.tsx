@@ -25,7 +25,7 @@ import { Link } from 'react-router-dom'
 const StyledLink = styled(Link)`
   color: ${p => {
     if (p.theme.dark) {
-      if (p.gray) return p.theme.colors.grayMid;
+      if (p.gray) return p.theme.colors.silver;
       return p.theme.colors.white;
     }
     if (p.gray) return p.theme.colors.gray;

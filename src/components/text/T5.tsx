@@ -23,10 +23,6 @@ type Props = ColorProps &
 
 const T5 = styled.h5<Props>`
   color: ${p => {
-    if (p.theme.dark) {
-      if (p.gray) return p.theme.colors.grayMid;
-      return p.theme.colors.white;
-    }
     if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};

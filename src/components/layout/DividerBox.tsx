@@ -26,11 +26,10 @@ type Props = BorderProps &
 export default styled.div<Props>`
   box-sizing: border-box;
   margin: 0;
-  min-width: 0;
+  min-width: 0
 
   border-color: ${p => {
-    if (p.theme.dark) return p.theme.colors.grayDark;
-    return p.theme.colors.grayLight;
+    return p.theme.colors.lightGray;
   }};
   border-width: 1px;
   border-style: solid;

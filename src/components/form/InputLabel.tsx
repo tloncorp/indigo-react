@@ -15,7 +15,6 @@ type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const InputLabel = styled.label<Props>`
   color: ${p => {
-    if (p.theme.dark) return p.theme.colors.white;
     return p.theme.colors.black;
   }};
   width: 100%;
