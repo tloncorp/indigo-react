@@ -1,12 +1,5 @@
 import * as React from "react";
-import {
-  color,
-  space,
-  typography,
-  layout,
-  compose,
-} from 'styled-system';
-import styled from 'styled-components'
+
 import {
   Box,
   Row,
