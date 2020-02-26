@@ -35,17 +35,16 @@ class App extends React.Component {
 }
 export default App;
 ```
-
 ## Component Docs
-[Buttons](https://github.com/urbit/indigo-react/src/components/buttons)
+[Buttons](https://github.com/urbit/indigo-react/tree/master/src/components/buttons)
 
-[Form](https://github.com/urbit/indigo-react/src/components/form)
+[Form](https://github.com/urbit/indigo-react/tree/master/src/components/form)
 
-[Icon](https://github.com/urbit/indigo-react/src/components/icon)
+[Icon](https://github.com/urbit/indigo-react/tree/master/src/components/icon)
 
-[Layout](https://github.com/urbit/indigo-react/src/components/layout)
+[Layout](https://github.com/urbit/indigo-react/tree/master/src/components/layout)
 
-[Text](https://github.com/urbit/indigo-react/src/components/text)
+[Text](https://github.com/urbit/indigo-react/tree/master/src/components/text)
 
 ## Development
 The main directories are `src` and `demo`
