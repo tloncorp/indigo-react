@@ -5,42 +5,41 @@ const theme = {
   // color, background-color, border-color
   colors: {
     util: '#FFFF00',
-    black: '#FFFFFF',
-    nearBlack: '#F4F4F4',
-    darkGray: '#EEEEEE',
-    midGray: '#CCCCCC',
-    gray: '#AAAAAA',
-    silver: '#999999',
-    lightSilver: '#777777',
-    moonGray: '#555555',
-    lightGray: '#333333',
-    nearWhite: '#111111',
     white: '#000000',
-    darkRed: '#E7040F',
-    red: '#FF4136',
-    lightRed: '#FF725C',
-    washedRed: '#FFDFDF',
-    orange: '#FF6300',
-    gold: '#FFB700',
-    yellow: '#FFD700',
-    lightYellow: '#FBF1A9',
-    washedYellow: '#FFFCEB',
-    purple: '#5E2CA5',
-    lightPurple: '#A463F2',
-    darkPink: '#D5008F',
-    hotPink: '#FF41B4',
-    pink: '#FF80CC',
-    lightPink: '#FFA3D7',
-    darkGreen: '#137752',
-    green: '#19A974',
-    lightGreen: '#9EEBCF',
-    washedGreen: '#E8FDF5',
-    navy: '#001B44',
-    darkBlue: '#00449E',
-    blue: '#357EDD',
-    lightBlue: '#96CCFF',
-    lightestBLue: '#CDECFF',
-    washedBlue: '#F6FFFE',
+    gray1: '#111111',
+    gray2: '#333333',
+    gray3: '#555555',
+    gray4: '#777777',
+    gray5: '#999999',
+    gray6: '#AAAAAA',
+    gray7: '#CCCCCC',
+    gray8: '#EEEEEE',
+    gray9: '#F4F4F4',
+    black: '#FFFFFF',
+    // Red
+    red1: '#550400',
+    red2: '#AA160D',
+    red3: '#FF4136',
+    red4: '#FF9D97',
+    red5: '#FFD0CD',
+    // Yellow
+    yellow5: '#553700',
+    yellow4: '#FFB700',
+    yellow3: '#FFD700',
+    yellow2: '#FBF1A9',
+    yellow1: '#FFFCEB',
+    // Green
+    green5: '#033827',
+    green4: '#0B714D',
+    green3: '#19A974',
+    green2: '#9EEBCF',
+    green1: '#E8FDF5',
+    // Blue
+    blue5: '#001B44',
+    blue4: '#00449E',
+    blue3: '#357EDD',
+    blue2: '#96CCFF',
+    blue1: '#CDECFF',
   },
   // font-family
   fonts: {
@@ -146,6 +145,8 @@ const theme = {
     }
     body {
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     ol, ul {
       list-style: none;

@@ -38,7 +38,7 @@ export default styled.div<Props>`
   }};
 
   border-color: ${p => {
-    return p.theme.colors.lightGray;
+    return p.theme.colors.gray2;
   }};
 
   border-width: 0px;

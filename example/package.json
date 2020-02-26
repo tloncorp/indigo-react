@@ -7,7 +7,7 @@
   "main": "index.js",
   "dependencies": {
     "@reach/menu-button": "^0.1.18",
-    "@tlon/indigo-tokens": "^1.2.4",
+    "@tlon/indigo-tokens": "^1.2.6",
     "@types/jest": "^24.9.1",
     "@types/node": "^13.5.0",
     "@types/react": "^16.9.19",

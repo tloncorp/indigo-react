@@ -23,7 +23,7 @@ type Props = ColorProps &
     fs?: number | string;
   };
 
-const Anchor = styled.div<Props>`
+const styleAnchor = (elem: any) => styled(elem)<Props>`
   text-decoration: underline;
   cursor: pointer;
 
@@ -48,4 +48,4 @@ const Anchor = styled.div<Props>`
   ${compose(color, layout, space, typography)};
 `;
 
-export default Anchor;
+export default styleAnchor;

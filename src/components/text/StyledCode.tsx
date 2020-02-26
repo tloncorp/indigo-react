@@ -28,7 +28,7 @@ export default StyledCode;
 
 StyledCode.defaultProps = {
   fontFamily: 'mono',
-  bg: 'lightGray',
+  bg: 'gray1',
   fontSize: 2,
   lineHeight: 'regular',
 };

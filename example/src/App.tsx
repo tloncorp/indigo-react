@@ -3,43 +3,48 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Sandbox from "./pages/Sandbox";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-// import theme from "@tlon/indigo-tokens";
-import { theme, themeBlack, themeDark } from "indigo-react";
+import {light, dark} from "@tlon/indigo-tokens";
+// import { theme, themeBlack, themeDark } from "indigo-react";
 import {
   color,
   ColorProps
 } from 'styled-system';
+
 const Style = createGlobalStyle`
-  ${theme.cssReset}
+    ${p => p.theme.reset}
+    html {
+      background-color: ${p => p.theme.colors.white};
+    }
 `
+
 type RootProps = ColorProps & {}
 
 const Root = styled.div<RootProps>`
-  font-family: ${p => theme.fonts.sans};
-  line-height: ${p => theme.lineHeights.regular};
+  font-family: ${p => p.theme.fonts.sans};
+  line-height: ${p => p.theme.lineHeights.regular};
   ${color};
 `;
 
 Root.defaultProps = {
-  backgroundColor:'white'
+  // backgroundColor:'white'
 }
 
 export default class App extends React.Component {
   state = {
     dark: false,
-    theme: theme,
+    theme: light,
   }
 
   toggleDark() {
     this.setState({ dark: !this.state.dark })
   }
 
-  setTheme(name) {
-    if (name === 'light') this.setState({ theme: theme })
-    if (name === 'dark') this.setState({ theme: themeDark })
-    if (name === 'black') this.setState({ theme: themeBlack })
+  setTheme(name:string) {
+    if (name === 'light') this.setState({ theme: light })
+    if (name === 'dark') this.setState({ theme: dark })
+    // if (name === 'black') this.setState({ theme: themeBlack })
   }
-  
+
   render() {
     const { state } = this
     return (

@@ -10,41 +10,35 @@ import {
   typography,
   TypographyProps,
   compose,
+  system,
 } from 'styled-system';
 
 type Props = ColorProps &
   LayoutProps &
   SpaceProps &
   TypographyProps & {
+    gray?: boolean;
     bold?: boolean;
     mono?: boolean;
-    gray?: boolean;
+    fs?: number | string;
   };
 
-const Text = styled.p<Props>`
-  color: ${p => {
-    if (p.gray) return p.theme.colors.gray;
-    return p.theme.colors.black;
-  }};
+const Text = styled.div<Props>`
+  color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
 
-  font-weight: ${p => {
-    if (p.bold) return p.theme.fontWeights.bold;
-    return p.theme.fontWeights.regular;
-  }};
+  font-weight: ${p =>
+    p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};
 
-  font-family: ${p => {
-    if (p.mono) return p.theme.fonts.mono;
-    return p.theme.fonts.sans;
-  }};
+  font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 
-  ${compose(color, layout, space, typography)}
+  ${system({
+    fs: {
+      property: 'fontSize',
+      scale: 'fontSizes',
+    },
+  })}
+
+  ${compose(color, layout, space, typography)};
 `;
-
-Text.defaultProps = {
-  lineHeight: 'regular',
-  fontSize: 0,
-  margin: 0,
-  fontWeight: 400,
-};
 
 export default Text;

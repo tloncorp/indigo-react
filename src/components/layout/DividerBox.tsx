@@ -29,7 +29,7 @@ export default styled.div<Props>`
   min-width: 0
 
   border-color: ${p => {
-    return p.theme.colors.lightGray;
+    return p.theme.colors.gray2;
   }};
   border-width: 1px;
   border-style: solid;

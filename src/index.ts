@@ -26,7 +26,7 @@ import InputCaption from './components/form/InputCaption';
 import Icon from './components/icon/Icon';
 
 // Layout
-import Pad from './components/layout/Pad';
+import Space from './components/layout/Space';
 import DividerBox from './components/layout/DividerBox';
 import Rule from './components/layout/Rule';
 import Center from './components/layout/Center';
@@ -40,11 +40,11 @@ import T2 from './components/text/T2';
 import T3 from './components/text/T3';
 import T4 from './components/text/T4';
 import T5 from './components/text/T5';
-import Body from './components/text/Body';
 import Text from './components/text/Text';
 import StyledCode from './components/text/StyledCode';
 import Anchor from './components/text/Anchor';
 import AnchorWrap from './components/text/AnchorWrap';
+import styleAnchor from './components/text/styleAnchor';
 
 export {
   // Theme (dev purposes)
@@ -72,19 +72,19 @@ export {
   // Icon
   Icon,
   // Layout
-  Pad,
   DividerBox,
   Rule,
   Col,
   Center,
   Row,
   ItemRow,
+  Space,
   // Text
   T1,
   T2,
   T3,
   T4,
   T5,
-  Body,
   Text,
+  styleAnchor,
 };

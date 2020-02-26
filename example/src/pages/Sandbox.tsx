@@ -3,13 +3,14 @@ import {
   Input,
   Button,
   Icon,
-  Pad,
   T3,
   DividerBox,
   Rule,
   Radio,
   InputLabel,
   Box,
+  Space,
+  T2,
 } from "indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -64,11 +65,12 @@ const Sandbox: React.FC<{}> = () => {
   };
 
   return (
-    <Box maxWidth='400px'>
-      <Pad><T3>Form Example</T3></Pad>
-      
-      <Pad><T3 gray>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</T3></Pad>
+    <Box maxWidth='400px' m='8'>
+      <Space py='2'>
+        <T2>Form Example</T2>
 
+        <T3 gray>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</T3>
+      </ Space>
       <Formik
         initialValues={initialValues}
         validationSchema={SignupSchema}
@@ -79,92 +81,73 @@ const Sandbox: React.FC<{}> = () => {
           }, 400);
         }}>
         <Form>
-          <Pad>
+          <Space py='2'>
             <Input
-              type="text"
               label="First Name"
-              name="firstName"
+              id="firstName"
               caption="Please enter your first name."
               placeholder="Felicia"
             />
-          </Pad>
 
-          <Pad>
             <Input
-              type="text"
               label="Middle Name"
-              name="middleName"
+              id="middleName"
               placeholder="Nancy"
             />
-          </Pad>
 
-          <Pad>
             <Input
-              type="text"
               label="Last Name"
-              name="lastName"
+              id="lastName"
               placeholder="Atkinson"
             />
-          </Pad>
 
-          <Pad marginBottom="16px">
-            <InputLabel>Favorite Color</InputLabel>
-            <Radio
-              type="radio"
-              label="Green"
-              id="green"
-              name="color"
-              caption="Select if your favorite color is green."
-            />
-            <Radio
-              type="radio"
-              label="Blue"
-              id="blue"
-              name="color"
-              caption="Select if your favorite color is blue."
-            />
-            <Radio
-              type="radio"
-              label="Dog"
-              id="dog"
-              name="color"
-              caption="Dog is not a color"
-              disabled
-            />
-          </Pad>
 
-          <Pad>
+            <Box>
+              <InputLabel>Favorite Color</InputLabel>
+              <Radio
+                label="Green"
+                id="green"
+                name="color"
+                caption="Select if your favorite color is green."
+              />
+              <Radio
+                label="Blue"
+                id="blue"
+                name="color"
+                caption="Select if your favorite color is blue."
+              />
+              <Radio
+                id="dog"
+                name="color"
+                label="Dog"
+                caption="Dog is not a color"
+                disabled
+              />
+            </Box>
+
             <Input
-              type="text"
               label="Urbit ID"
-              name="urbitid"
+              id="urbitid"
               placeholder="~"
             />
-          </Pad>
 
-          <Pad>
             <Input
-              type="text"
               label="Disabled Field"
-              name="disabledfield"
+              id="disabledfield"
               placeholder=""
               disabled
             />
-          </Pad>
 
-          <Pad>
             <Button type="submit">Submit</Button>
-          </Pad>
-      </Form>
+          </Space>
+        </Form>
     </Formik>
 
-    <Pad>
       <Rule />
-    </Pad>
 
-    <Pad><T3>Buttons</T3></Pad>
+    <T3>Buttons</T3>
 
-    <Pad>
+
       <Button mt="2">Settings...</Button>
 
       <Button disabled mt="2">I am disabled</Button>
@@ -172,18 +155,10 @@ const Sandbox: React.FC<{}> = () => {
       <Button md mt="2">Medium</Button>
 
       <Icon mt="2" />
-    </Pad>
 
 
 
-    <DividerBox>
-      <Pad><T3>Urbit 101</T3></Pad>
-      <Pad><T3 gray>Intro to Cryptography</T3></Pad>
-      <Rule />
-      <Pad>
-        <Button>Settings...</Button>
-      </Pad>
-    </DividerBox>
+
 
 
     </Box>

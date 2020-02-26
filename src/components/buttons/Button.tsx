@@ -59,7 +59,7 @@ const Button = styled.button<ButtonProps>`
 
   border-width: 1px;
   border-style: solid;
-  border-color: ${p => p.theme.colors.lightGray};
+  border-color: ${p => p.theme.colors.gray2};
 
   background-color: ${p => p.theme.colors.white};
 
@@ -77,9 +77,9 @@ const Button = styled.button<ButtonProps>`
   }
 
   &:disabled {
-    color: ${p => p.theme.colors.silver};
-    border-color: ${p => p.theme.colors.silver};
-    background-color: ${p => p.theme.colors.nearWhite};
+    color: ${p => p.theme.colors.gray5};
+    border-color: ${p => p.theme.colors.gray5};
+    background-color: ${p => p.theme.colors.gray1};
     cursor: not-allowed;
   }
 

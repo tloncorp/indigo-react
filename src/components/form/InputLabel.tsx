@@ -14,12 +14,8 @@ import {
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const InputLabel = styled.label<Props>`
-  color: ${p => {
-    return p.theme.colors.black;
-  }};
   width: 100%;
   display: block;
-  pointer-events: none;
   ${compose(color, layout, space, typography)}
 `;
 
@@ -28,6 +24,7 @@ InputLabel.defaultProps = {
   fontSize: 2,
   margin: 0,
   fontWeight: 400,
+  color: 'black',
 };
 
 export default InputLabel;

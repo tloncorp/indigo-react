@@ -15,14 +15,15 @@ import {
 type Props = LayoutProps & ColorProps & SpaceProps & TypographyProps;
 
 const ErrorMessage = styled.p<Props>`
-  color: ${p => p.theme.colors.red};
-  font-size: ${p => p.theme.fontSizes[2]}px;
-  line-height: ${p => p.theme.lineHeights.regular};
-  margin-top: ${p => p.theme.space[1]}px;
-  min-height: ${p => p.theme.sizes[4]}px;
   ${compose(color, layout, space, typography)}
 `;
 
-export default ErrorMessage;
+ErrorMessage.defaultProps = {
+  color: 'red2',
+  fontSize: 2,
+  lineHeight: 'short',
+  marginTop: 1,
+  minHeight: 4,
+};
 
-// min-height: ${theme.lineHeights.regular * theme.fontSizes[0]}px;
+export default ErrorMessage;

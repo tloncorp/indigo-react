@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 import Text from './Text';
 
-const T2 = styled(Text)``;
+const T5 = styled(Text)``;
 
-T2.defaultProps = {
+T5.defaultProps = {
   lineHeight: 'short',
-  fontSize: 2,
+  fontSize: 7,
   margin: 0,
   fontWeight: 400,
 };
 
-export default T2;
+export default T5;

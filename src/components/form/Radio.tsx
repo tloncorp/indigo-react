@@ -26,9 +26,10 @@ const StyledInput = styled.input`
   cursor: pointer;
   height: 0;
   width: 0;
+  margin: 1px;
 `;
 
-const Container = styled.label<StyledProps>`
+const Wrap = styled.label<StyledProps>`
   margin-top: ${p => p.theme.space[2]}px;
   display: block;
   position: relative;
@@ -56,14 +57,14 @@ const RadioButton = styled.span<StyledProps>`
   border-style: solid;
   border-color: ${p => {
     if (p.disabled) {
-      return p.theme.colors.lightGray;
+      return p.theme.colors.gray5;
     }
-    return p.theme.colors.lightGray;
+    return p.theme.colors.gray2;
   }};
 
   background-color: ${p => {
     if (p.disabled) {
-      return p.theme.colors.nearWhite;
+      return p.theme.colors.gray0;
     }
     return p.theme.colors.white;
   }};
@@ -79,8 +80,17 @@ const RadioButton = styled.span<StyledProps>`
   }
 
   ${StyledInput}:focus ~ & {
+    background-color: ${p => {
+      if (p.disabled) {
+        return p.theme.colors.gray0;
+      }
+      return p.theme.colors.white;
+    }};
     border-color: ${p => {
       return p.theme.colors.black;
+    }};
+    box-shadow: ${p => {
+      return `0px 0px 0px 4px ${p.theme.colors.gray1}`;
     }};
   }
 
@@ -102,14 +112,12 @@ const RadioButton = styled.span<StyledProps>`
 const Radio = ({ label, caption, ...props }: Props) => {
   const [field] = useField({ ...props, value: props.id, type: 'radio' });
   return (
-    <>
-      <Container disabled={props.disabled} htmlFor={props.id || props.name}>
-        <InputLabel>{label}</InputLabel>
-        {caption ? <InputCaption>{caption}</InputCaption> : null}
-        <StyledInput {...field} {...props} value={props.id} type="radio" />
-        <RadioButton disabled={props.disabled} checked={field.checked} />
-      </Container>
-    </>
+    <Wrap disabled={props.disabled} htmlFor={props.id || props.name}>
+      <InputLabel>{label}</InputLabel>
+      {caption ? <InputCaption>{caption}</InputCaption> : null}
+      <StyledInput {...field} {...props} value={props.id} type="radio" />
+      <RadioButton disabled={props.disabled} checked={field.checked} />
+    </Wrap>
   );
 };
 

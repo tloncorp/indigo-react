@@ -18,52 +18,36 @@ import {
   T3,
   T1,
   Text,
+  T4,
+  Space,
+  styleAnchor,
 } from "indigo-react";
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const StyledLink = styled(Link)`
-  color: ${p => {
-    if (p.theme.dark) {
-      if (p.gray) return p.theme.colors.silver;
-      return p.theme.colors.white;
-    }
-    if (p.gray) return p.theme.colors.gray;
-    return p.theme.colors.black;
-  }};
-  font-weight: ${p => {
-    if (p.bold) return p.theme.fontWeights.bold;
-    return p.theme.fontWeights.regular;
-  }};
-  ${compose(color, layout, space, typography)};
-`
-
-StyledLink.defaultProps = {
-  lineHeight: 'short',
-  fontSize: 2,
-  margin: 0,
-  fontWeight: 400,
-}
+const StyledLink = styleAnchor(Link);
 
 const Item = props => (
-  <Box  p='7'>
-    <Row alignItems='baseline' pb='2' flexWrap='wrap'>
-      <T2 pr='2'>{props.title}</T2>
-      <T2 gray pr='2' mono>{props.package}</T2>
-      <T2 gray mono >{props.version}</T2>
-    </Row>
-    <T3 gray py='1'>{props.description}</T3>
-    <Col>
-      {
-        props.links.map(link => (
-          <StyledLink gray fontSize='2' py='1' to={link[1]}>
-            {link[0]}
-          </StyledLink>
-        ))
-      }
-    </Col>
+  <Box p='7'>
+    <Space pb='2'>
+      <T3>{props.title}</T3>
+      <Row alignItems='baseline' pb='2' flexWrap='wrap'>
+        <T2 gray pr='2' mono>{props.package}</T2>
+        <T2 gray mono >{props.version}</T2>
+      </Row>
+      <T2 gray>{props.description}</T2>
+      <Col>
+        {
+          props.links.map(link => (
+            <StyledLink gray fs='2' py='1' to={link[1]}>
+              {link[0]}
+            </StyledLink>
+          ))
+        }
+      </Col>
+    </Space>
   </Box>
-)
+);
 
 export default class Home extends React.Component {
   render() {
@@ -71,10 +55,10 @@ export default class Home extends React.Component {
       <Box>
         <Center p='7' height={[12, 13, 14]}>
           <Row alignItems="center">
-            <Text fontSize='8' color='blue'>●</Text>
-            <Text fontSize='8' color='red'>◆</Text>
-            <Text fontSize='8' color='green'>▲</Text>
-            <Text pl='4' fontSize='7'>Indigo</Text>
+            <Text fs='8' color='blue2'>●</Text>
+            <Text fs='8' color='red2'>◆</Text>
+            <Text fs='8' color='green2'>▲</Text>
+            <Text fs='7' pl='4'>Indigo</Text>
           </Row>
         </Center>
         <Rule />
@@ -124,25 +108,25 @@ export default class Home extends React.Component {
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <T1 textAlign='center' maxWidth="544px">
+          <T4 textAlign='center' maxWidth="544px">
             Indigo is a design system maintained by Tlon, the company behind the platform for a new, peer-to-peer internet, Urbit.
-          </T1>
+          </T4>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <T1 textAlign='center' maxWidth="544px">
+          <T4 textAlign='center' maxWidth="544px">
             It is designed for maximum consistency, simplicity and legibility.
-          </T1>
+          </T4>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <T1 textAlign='center' maxWidth="544px">
+          <T4 textAlign='center' maxWidth="544px">
             It is 100% open source and licensed under MIT.
-          </T1>
+          </T4>
         </Center>
-    
+
         <Rule/>
         <Row p='7'>
           <T3>Footer</T3>
