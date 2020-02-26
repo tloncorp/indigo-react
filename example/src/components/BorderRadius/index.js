@@ -12,13 +12,13 @@ const BorderRadius = () => (
       <Flex mb={[5]} alignItems="baseline" >
         <Box width={6/12}>borderRadius.0</Box>
         <Box width={3/12}>0</Box>
-        <Box width={3/12} bg="grayLight" p={[2]} borderRadius="0" fontFamily="sans">No Border Radius
+        <Box width={3/12} bg="gray2" p={[2]} borderRadius="0" fontFamily="sans">No Border Radius
         </Box>
       </Flex>
       <Flex mb={[5]} alignItems="baseline" >
         <Box width={6/12}>borderRadius.1</Box>
         <Box width={3/12}>1</Box>
-        <Box width={3/12} bg="grayLight" p={[2]} borderRadius="1" fontFamily="sans">Border Radius
+        <Box width={3/12} bg="gray2" p={[2]} borderRadius="1" fontFamily="sans">Border Radius
         </Box>
       </Flex>
     </Box>

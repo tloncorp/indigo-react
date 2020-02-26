@@ -21,14 +21,14 @@ const Color = () => (
         <Box width={3/12} bg="black"></Box>
       </Flex>
       <Flex mb={[5]}>
-        <Box width={6/12}>grayDarkest</Box>
+        <Box width={6/12}>midGrayest</Box>
         <Box width={3/12}>#333333</Box>
-        <Box width={3/12} border={1} bg="grayDarkest"></Box>
+        <Box width={3/12} border={1} bg="midGrayest"></Box>
       </Flex>
       <Flex mb={[5]}>
-        <Box width={[6/12]}>grayDark</Box>
+        <Box width={[6/12]}>gray7</Box>
         <Box width={[3/12]}>#4d4d4d</Box>
-        <Box width={3/12} bg="grayDark"></Box>
+        <Box width={3/12} bg="gray7"></Box>
       </Flex>
       <Flex mb={[5]}>
         <Box width={[6/12]}>gray</Box>
@@ -36,19 +36,19 @@ const Color = () => (
         <Box width={3/12} bg="gray"></Box>
       </Flex>
       <Flex mb={[5]}>
-        <Box width={[6/12]}>grayMid</Box>
+        <Box width={[6/12]}>gray5</Box>
         <Box width={[3/12]}>#b1b2b3</Box>
-        <Box width={3/12} bg="grayMid"></Box>
+        <Box width={3/12} bg="gray5"></Box>
       </Flex>
       <Flex mb={[5]}>
-        <Box width={[6/12]}>grayLight</Box>
+        <Box width={[6/12]}>gray2</Box>
         <Box width={[3/12]}>#e6e6e6</Box>
-        <Box width={3/12} bg="grayLight"></Box>
+        <Box width={3/12} bg="gray2"></Box>
       </Flex>
       <Flex mb={[5]}>
-        <Box width={[6/12]}>grayLightest</Box>
+        <Box width={[6/12]}>gray1</Box>
         <Box width={[3/12]}>#f9f9f9</Box>
-        <Box width={3/12} bg="grayLightest"></Box>
+        <Box width={3/12} bg="gray1"></Box>
       </Flex>
       <Flex mb={[5]}>
         <Box width={[6/12]}>blueLight</Box>
@@ -86,9 +86,9 @@ const Color = () => (
         <Box width={3/12} bg="redLight"></Box>
       </Flex>
       <Flex mb={[5]}>
-        <Box width={[6/12]}>red</Box>
+        <Box width={[6/12]}>red3</Box>
         <Box width={[3/12]}>#ee5432</Box>
-        <Box width={3/12} bg="red"></Box>
+        <Box width={3/12} bg="red3"></Box>
       </Flex>
       <Flex mb={[5]}>
         <Box width={[6/12]}>redDark</Box>

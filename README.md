@@ -1,12 +1,10 @@
 # indigo-react
 
-Indigo is built with styled-components, styled-system, and reach-ui.
+Indigo is built with [styled-components](https://styled-components.com/), [styled-system](https://styled-system.com/) and [formik](https://jaredpalmer.com/formik/docs/overview).
 
 [![NPM](https://img.shields.io/npm/v/indigo-react.svg)](https://www.npmjs.com/package/indigo-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-
-
-## Install
+## Quick Start
 
 ```
 npm install --save indigo-react
@@ -15,14 +13,11 @@ npm install --save indigo-react
 Install peer dependencies
 
 ```
-npm install --save styled-components @reach/menu-button
+npm install --save indigo-tokens styled-components @reach/menu-button prop-types styled-components styled-system react react-dom
 ```
 
-**React**
-
-
-
-```
+**Example**
+```js
 import React, { Component } from "react";
 import { H1 } from 'indigo-react';
 import theme from 'indigo-tokens';
@@ -41,7 +36,18 @@ class App extends React.Component {
 export default App;
 ```
 
-## Setup
+## Component Docs
+[Buttons](https://github.com/urbit/indigo-react/src/components/buttons)
+
+[Form](https://github.com/urbit/indigo-react/src/components/form)
+
+[Icon](https://github.com/urbit/indigo-react/src/components/icon)
+
+[Layout](https://github.com/urbit/indigo-react/src/components/layout)
+
+[Text](https://github.com/urbit/indigo-react/src/components/text)
+
+## Development
 The main directories are `src` and `demo`
 `src` is where the ```indigo-react``` styles live(primitives & components).
 `demo` is the site you want to build using `indigo-react`.
@@ -55,6 +61,8 @@ $ npm run start
 /indigo-react/demo
 $ npm run start
 ````
+
+[Indigo Tokens](https://github.com/urbit/indigo-tokens)
 
 ## License
 
