@@ -39,3 +39,5 @@ export default styled.div<Props>`
 
   ${compose(border, flexbox, layout, position, space)}
 `;
+
+export {Props};

@@ -9,19 +9,13 @@ import {
   ColorProps,
   layout,
   LayoutProps,
-  opacity,
-  OpacityProps,
   compose,
 } from 'styled-system';
 
-type Props = ColorProps &
-  LayoutProps &
-  SpaceProps &
-  TypographyProps &
-  OpacityProps & {};
+type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const StyledCode = styled.code<Props>`
-  ${compose(color, layout, opacity, space, typography)}
+  ${compose(color, layout, space, typography)}
 `;
 
 export default StyledCode;
@@ -30,5 +24,7 @@ StyledCode.defaultProps = {
   fontFamily: 'mono',
   bg: 'gray1',
   fontSize: 2,
+  padding: 2,
   lineHeight: 'regular',
 };
+export {Props};

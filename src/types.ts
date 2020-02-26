@@ -4,4 +4,4 @@ type Xt = {
   borderRadiusMajor: number;
 };
 
-export { Xt };
+export {Xt};

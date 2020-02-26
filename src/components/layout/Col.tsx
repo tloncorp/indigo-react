@@ -31,3 +31,5 @@ export default styled.div<Props>`
   flex-direction: column;
   ${compose(border, color, flexbox, layout, position, space)}
 `;
+
+export {Props};

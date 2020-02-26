@@ -1,5 +1,5 @@
 import React from 'react';
-import { useField } from 'formik';
+import {useField} from 'formik';
 import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
@@ -77,15 +77,7 @@ const StyledInput = styled.input<StyledProps>`
   }
 `;
 
-const Input = ({
-  label,
-  caption,
-  type,
-  disabled,
-  id,
-  placeholder,
-  ...props
-}: Props) => {
+const Input = ({label, caption, type, disabled, id, placeholder, ...props}: Props) => {
   const [field, meta] = useField(id);
   return (
     <Box {...props}>
@@ -98,9 +90,7 @@ const Input = ({
         placeholder={placeholder}
         {...field}
       />
-      <ErrorMessage>
-        {meta.touched && meta.error ? meta.error : null}
-      </ErrorMessage>
+      <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
     </Box>
   );
 };

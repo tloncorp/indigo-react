@@ -30,3 +30,5 @@ export default styled.div<Props>`
   display: flex;
   ${compose(border, color, flexbox, layout, position, space)}
 `;
+
+export {Props};

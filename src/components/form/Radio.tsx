@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useField } from 'formik';
+import {useField} from 'formik';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 
@@ -109,8 +109,8 @@ const RadioButton = styled.span<StyledProps>`
   }
 `;
 
-const Radio = ({ label, caption, ...props }: Props) => {
-  const [field] = useField({ ...props, value: props.id, type: 'radio' });
+const Radio = ({label, caption, ...props}: Props) => {
+  const [field] = useField({...props, value: props.id, type: 'radio'});
   return (
     <Wrap disabled={props.disabled} htmlFor={props.id || props.name}>
       <InputLabel>{label}</InputLabel>

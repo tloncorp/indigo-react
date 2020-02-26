@@ -27,8 +27,7 @@ type Props = BackgroundProps &
     children?: JSX.Element | JSX.Element[];
   };
 
-const px = (n: string | number | null) =>
-  typeof n === 'number' ? n + 'px' : n;
+const px = (n: string | number | null) => (typeof n === 'number' ? n + 'px' : n);
 
 const widthToColumns = (p: GTC): GTC => {
   if (Array.isArray(p)) {
@@ -56,14 +55,8 @@ const ItemRow = (props: Props) => {
       ? countToColumns(props.columns)
       : widthToColumns(props.width);
 
-  return (
-    <Box
-      display="grid"
-      gridGap={props.gap}
-      gridTemplateColumns={gtc}
-      {...props}
-    />
-  );
+  return <Box display="grid" gridGap={props.gap} gridTemplateColumns={gtc} {...props} />;
 };
 
 export default ItemRow;
+export {Props};

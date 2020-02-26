@@ -32,3 +32,5 @@ export default styled.div<Props>`
   justify-content: center;
   ${compose(border, color, flexbox, layout, position, space)}
 `;
+
+export {Props};

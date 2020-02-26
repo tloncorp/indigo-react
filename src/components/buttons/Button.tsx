@@ -1,15 +1,7 @@
 import styled from 'styled-components';
 import xt from '../../extendedTheme';
 
-import {
-  ColorProps,
-  color,
-  space,
-  SpaceProps,
-  LayoutProps,
-  layout,
-  compose,
-} from 'styled-system';
+import {ColorProps, color, space, SpaceProps, LayoutProps, layout, compose} from 'styled-system';
 
 type ButtonProps = ColorProps &
   LayoutProps &

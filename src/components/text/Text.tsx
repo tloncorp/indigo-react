@@ -26,8 +26,7 @@ type Props = ColorProps &
 const Text = styled.div<Props>`
   color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
 
-  font-weight: ${p =>
-    p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};
+  font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
 
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 
@@ -42,3 +41,4 @@ const Text = styled.div<Props>`
 `;
 
 export default Text;
+export {Props};

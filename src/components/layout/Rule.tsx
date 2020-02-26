@@ -24,6 +24,9 @@ type Props = BorderProps &
     vertical?: boolean;
   };
 
+/**
+ * Return the application / root component instance.
+ */
 export default styled.div<Props>`
   box-sizing: border-box;
 
@@ -57,3 +60,5 @@ export default styled.div<Props>`
 
   ${compose(border, flexbox, layout, position, space)}
 `;
+
+export {Props};

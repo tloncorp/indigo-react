@@ -1,4 +1,4 @@
-import baseStyled, { ThemedStyledInterface } from 'styled-components';
+import baseStyled, {ThemedStyledInterface} from 'styled-components';
 
 // DEV PURPOSES ONLY
 const theme = {

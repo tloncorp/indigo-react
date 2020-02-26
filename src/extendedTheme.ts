@@ -1,5 +1,5 @@
 import theme from './theme';
-import { Xt } from './types';
+import {Xt} from './types';
 
 const xt: Xt = {
   borderRadiusMinor: theme.radii[1], // theme.radii[1],

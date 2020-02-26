@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { space, SpaceProps } from 'styled-system';
+import {space, SpaceProps} from 'styled-system';
 
 type Props = SpaceProps & {
   className?: string;
@@ -15,7 +15,7 @@ const getClassName = (el: JSX.Element) => {
   return (el.props && el.props.className) || '';
 };
 
-export const StyledChildren = ({ className, children }: Props) => {
+export const StyledChildren = ({className, children}: Props) => {
   const styledChildren = React.Children.map(children, child => {
     return React.cloneElement(child, {
       className: classnames(getClassName(child), className || ''),
@@ -27,3 +27,4 @@ export const StyledChildren = ({ className, children }: Props) => {
 const Space = styled(StyledChildren)(space);
 
 export default Space;
+export {Props};

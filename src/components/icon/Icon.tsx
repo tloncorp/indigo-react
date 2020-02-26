@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { space, SpaceProps, compose } from 'styled-system';
+import {space, SpaceProps, compose} from 'styled-system';
 
 type InnerSVGProps = {
   fill: string;
@@ -25,7 +25,7 @@ Svg.defaultProps = {
   height: 4,
 };
 
-const NullIcon = ({ fill }: InnerSVGProps) => (
+const NullIcon = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -34,7 +34,7 @@ const NullIcon = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ChevronSouth = ({ fill }: InnerSVGProps) => (
+const ChevronSouth = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -43,7 +43,7 @@ const ChevronSouth = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ChevronWest = ({ fill }: InnerSVGProps) => (
+const ChevronWest = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -52,7 +52,7 @@ const ChevronWest = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ChevronEast = ({ fill }: InnerSVGProps) => (
+const ChevronEast = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -61,7 +61,7 @@ const ChevronEast = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ChevronNorth = ({ fill }: InnerSVGProps) => (
+const ChevronNorth = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -70,7 +70,7 @@ const ChevronNorth = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowRefresh = ({ fill }: InnerSVGProps) => (
+const ArrowRefresh = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -79,7 +79,7 @@ const ArrowRefresh = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowExpand = ({ fill }: InnerSVGProps) => (
+const ArrowExpand = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -88,7 +88,7 @@ const ArrowExpand = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowExternal = ({ fill }: InnerSVGProps) => (
+const ArrowExternal = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -97,7 +97,7 @@ const ArrowExternal = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowEast = ({ fill }: InnerSVGProps) => (
+const ArrowEast = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -106,7 +106,7 @@ const ArrowEast = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowSouth = ({ fill }: InnerSVGProps) => (
+const ArrowSouth = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -115,7 +115,7 @@ const ArrowSouth = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowWest = ({ fill }: InnerSVGProps) => (
+const ArrowWest = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -124,7 +124,7 @@ const ArrowWest = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowNorth = ({ fill }: InnerSVGProps) => (
+const ArrowNorth = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -133,7 +133,7 @@ const ArrowNorth = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowNorthEast = ({ fill }: InnerSVGProps) => (
+const ArrowNorthEast = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -142,7 +142,7 @@ const ArrowNorthEast = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowSouthEast = ({ fill }: InnerSVGProps) => (
+const ArrowSouthEast = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -151,7 +151,7 @@ const ArrowSouthEast = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowSouthWest = ({ fill }: InnerSVGProps) => (
+const ArrowSouthWest = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -160,7 +160,7 @@ const ArrowSouthWest = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ArrowNorthWest = ({ fill }: InnerSVGProps) => (
+const ArrowNorthWest = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -169,7 +169,7 @@ const ArrowNorthWest = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Locked = ({ fill }: InnerSVGProps) => (
+const Locked = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -178,7 +178,7 @@ const Locked = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Unlocked = ({ fill }: InnerSVGProps) => (
+const Unlocked = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -187,7 +187,7 @@ const Unlocked = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Mail = ({ fill }: InnerSVGProps) => (
+const Mail = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -196,7 +196,7 @@ const Mail = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Copy = ({ fill }: InnerSVGProps) => (
+const Copy = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -205,7 +205,7 @@ const Copy = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const MagnifyingGlass = ({ fill }: InnerSVGProps) => (
+const MagnifyingGlass = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -214,7 +214,7 @@ const MagnifyingGlass = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ChevronDouble = ({ fill }: InnerSVGProps) => (
+const ChevronDouble = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -223,7 +223,7 @@ const ChevronDouble = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ChevronDoubleSmall = ({ fill }: InnerSVGProps) => (
+const ChevronDoubleSmall = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -232,7 +232,7 @@ const ChevronDoubleSmall = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Plus = ({ fill }: InnerSVGProps) => (
+const Plus = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -241,7 +241,7 @@ const Plus = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Checkmark = ({ fill }: InnerSVGProps) => (
+const Checkmark = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -250,16 +250,11 @@ const Checkmark = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Minus = ({ fill }: InnerSVGProps) => (
-  <path
-    fillRule="evenodd"
-    clipRule="evenodd"
-    d="M13.5 8.5H2.5V7.5H13.5V8.5Z"
-    fill={fill}
-  />
+const Minus = ({fill}: InnerSVGProps) => (
+  <path fillRule="evenodd" clipRule="evenodd" d="M13.5 8.5H2.5V7.5H13.5V8.5Z" fill={fill} />
 );
 
-const X = ({ fill }: InnerSVGProps) => (
+const X = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -268,18 +263,16 @@ const X = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const ExclaimationMark = ({ fill }: InnerSVGProps) => (
+const ExclaimationMark = ({fill}: InnerSVGProps) => (
   <path
     d="M8.58008 3.27273L8.49485 9.54545H7.50621L7.42099 3.27273H8.58008ZM8.00053 12.0682C7.79031 12.0682 7.60991 11.9929 7.45934 11.8423C7.30877 11.6918 7.23349 11.5114 7.23349 11.3011C7.23349 11.0909 7.30877 10.9105 7.45934 10.7599C7.60991 10.6094 7.79031 10.5341 8.00053 10.5341C8.21076 10.5341 8.39116 10.6094 8.54173 10.7599C8.69229 10.9105 8.76758 11.0909 8.76758 11.3011C8.76758 11.5114 8.69229 11.6918 8.54173 11.8423C8.39116 11.9929 8.21076 12.0682 8.00053 12.0682Z"
     fill={fill}
   />
 );
 
-const Bullet = ({ fill }: InnerSVGProps) => (
-  <circle cx="8" cy="8" r="3" fill={fill} />
-);
+const Bullet = ({fill}: InnerSVGProps) => <circle cx="8" cy="8" r="3" fill={fill} />;
 
-const Circle = ({ fill }: InnerSVGProps) => (
+const Circle = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -288,7 +281,7 @@ const Circle = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Ellipsis = ({ fill }: InnerSVGProps) => (
+const Ellipsis = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -297,30 +290,30 @@ const Ellipsis = ({ fill }: InnerSVGProps) => (
   />
 );
 
-const Star = ({ fill }: InnerSVGProps) => (
+const Star = ({fill}: InnerSVGProps) => (
   <path
     d="M8 3L9.46946 5.97746L12.7553 6.45492L10.3776 8.77254L10.9389 12.0451L8 10.5L5.06107 12.0451L5.62236 8.77254L3.24472 6.45492L6.53054 5.97746L8 3Z"
     fill={fill}
   />
 );
 
-const TriangleEast = ({ fill }: InnerSVGProps) => (
+const TriangleEast = ({fill}: InnerSVGProps) => (
   <path d="M12 8L6 11.4641L6 4.5359L12 8Z" fill={fill} />
 );
 
-const TriangleSouth = ({ fill }: InnerSVGProps) => (
+const TriangleSouth = ({fill}: InnerSVGProps) => (
   <path d="M8 12L4.5359 6L11.4641 6L8 12Z" fill={fill} />
 );
 
-const TriangleWest = ({ fill }: InnerSVGProps) => (
+const TriangleWest = ({fill}: InnerSVGProps) => (
   <path d="M4 8L10 4.5359L10 11.4641L4 8Z" fill={fill} />
 );
 
-const TriangleNorth = ({ fill }: InnerSVGProps) => (
+const TriangleNorth = ({fill}: InnerSVGProps) => (
   <path d="M8 4L11.4641 10H4.5359L8 4Z" fill={fill} />
 );
 
-const CreateGroup = ({ fill }: InnerSVGProps) => (
+const CreateGroup = ({fill}: InnerSVGProps) => (
   <path
     fillRule="evenodd"
     clipRule="evenodd"
@@ -375,7 +368,7 @@ const defaultProps = {
 };
 
 const Icon = (props: Props) => {
-  const { icon, fill, ...rest } = props;
+  const {icon, fill, ...rest} = props;
 
   const IconComponent = iconList[props.icon];
 
