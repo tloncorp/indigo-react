@@ -25,7 +25,6 @@ type Props = BorderProps &
 
 const Col = styled.div<Props>`
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   ${compose(border, color, flexbox, layout, position, space)}
