@@ -11,14 +11,10 @@ import {
   Box,
   Row,
   Rule,
-  T2,
+  Text,
   Col,
   Center,
   ItemRow,
-  T3,
-  T1,
-  Text,
-  T4,
   Space,
   styleAnchor,
 } from "indigo-react";
@@ -30,16 +26,16 @@ const StyledLink = styleAnchor(Link);
 const Item = props => (
   <Box p='7'>
     <Space pb='2'>
-      <T3>{props.title}</T3>
+      <Text>{props.title}</Text>
       <Row alignItems='baseline' pb='2' flexWrap='wrap'>
-        <T2 gray pr='2' mono>{props.package}</T2>
-        <T2 gray mono >{props.version}</T2>
+        <Text gray pr='2' mono>{props.package}</Text>
+        <Text gray mono >{props.version}</Text>
       </Row>
-      <T2 gray>{props.description}</T2>
+      <Text gray>{props.description}</Text>
       <Col>
         {
           props.links.map(link => (
-            <StyledLink gray fs='2' py='1' to={link[1]}>
+            <StyledLink gray fontSize='2' py='1' to={link[1]}>
               {link[0]}
             </StyledLink>
           ))
@@ -55,10 +51,10 @@ export default class Home extends React.Component {
       <Box>
         <Center p='7' height={[12, 13, 14]}>
           <Row alignItems="center">
-            <Text fs='8' color='blue2'>●</Text>
-            <Text fs='8' color='red2'>◆</Text>
-            <Text fs='8' color='green2'>▲</Text>
-            <Text fs='7' pl='4'>Indigo</Text>
+            <Text fontSize='8' color='blue2'>●</Text>
+            <Text fontSize='8' color='red2'>◆</Text>
+            <Text fontSize='8' color='green2'>▲</Text>
+            <Text fontSize='7' pl='4'>Indigo</Text>
           </Row>
         </Center>
         <Rule />
@@ -78,8 +74,8 @@ export default class Home extends React.Component {
             version="v1.1.3"
             links={[
               ['-> Docs', '/indigo-react/docs'],
-              ['↗ NPM', ''],
-              ['↗ Github', ''],
+              ['↗ NPM', 'https://www.npmjs.com/package/@tlon/indigo-react'],
+              ['↗ Github', 'https://www.github.com/urbit/indigo-react'],
             ]}
             description="A React implementation of Indigo. Includes UI primtivies and components for forms, buttons, layout and much more."/>
 
@@ -89,8 +85,8 @@ export default class Home extends React.Component {
             version="v1.2.4"
             links={[
               ['-> Docs', '/indigo-tokens/docs'],
-              ['↗ NPM', ''],
-              ['↗ Github', ''],
+              ['↗ NPM', 'https://www.npmjs.com/package/@tlon/indigo-tokens'],
+              ['↗ Github', 'https://www.github.com/urbit/indigo-tokens'],
             ]}
             description="A styled-system compliant index of ratios, colors, type and other design tokens upon which Indigo is based." />
 
@@ -108,28 +104,28 @@ export default class Home extends React.Component {
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <T4 textAlign='center' maxWidth="544px">
+          <Text textAlign='center' maxWidth="544px">
             Indigo is a design system maintained by Tlon, the company behind the platform for a new, peer-to-peer internet, Urbit.
-          </T4>
+          </Text>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <T4 textAlign='center' maxWidth="544px">
+          <Text textAlign='center' maxWidth="544px">
             It is designed for maximum consistency, simplicity and legibility.
-          </T4>
+          </Text>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <T4 textAlign='center' maxWidth="544px">
+          <Text textAlign='center' maxWidth="544px">
             It is 100% open source and licensed under MIT.
-          </T4>
+          </Text>
         </Center>
 
         <Rule/>
         <Row p='7'>
-          <T3>Footer</T3>
+          <Text>Footer</Text>
         </Row>
       </Box>
     )

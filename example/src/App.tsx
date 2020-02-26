@@ -10,6 +10,8 @@ import {
   ColorProps
 } from 'styled-system';
 
+console.log(light)
+
 const Style = createGlobalStyle`
     ${p => p.theme.reset}
     html {

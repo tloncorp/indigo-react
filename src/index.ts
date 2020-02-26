@@ -35,15 +35,18 @@ import Row from './components/layout/Row';
 import Col from './components/layout/Col';
 
 // Text
-import T1 from './components/text/T1';
-import T2 from './components/text/T2';
-import T3 from './components/text/T3';
-import T4 from './components/text/T4';
-import T5 from './components/text/T5';
+// import T1 from './components/text/T1';
+// import T2 from './components/text/T2';
+// import T3 from './components/text/T3';
+// import T4 from './components/text/T4';
+// import T5 from './components/text/T5';
+// import T6 from './components/text/T6';
+// import T7 from './components/text/T7';
+// import T8 from './components/text/T8';
+
 import Text from './components/text/Text';
-import StyledCode from './components/text/StyledCode';
+import Code from './components/text/Code';
 import Anchor from './components/text/Anchor';
-import AnchorWrap from './components/text/AnchorWrap';
 import styleAnchor from './components/text/styleAnchor';
 
 export {
@@ -56,8 +59,7 @@ export {
   Box,
   Img,
   Svg,
-  StyledCode,
-  AnchorWrap,
+  Code,
   Anchor,
   // Buttons
   Button,
@@ -80,11 +82,6 @@ export {
   ItemRow,
   Space,
   // Text
-  T1,
-  T2,
-  T3,
-  T4,
-  T5,
   Text,
   styleAnchor,
 };

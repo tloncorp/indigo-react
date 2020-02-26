@@ -10,7 +10,6 @@ import {
   typography,
   TypographyProps,
   compose,
-  system,
 } from 'styled-system';
 
 type Props = ColorProps &
@@ -20,7 +19,6 @@ type Props = ColorProps &
     gray?: boolean;
     bold?: boolean;
     mono?: boolean;
-    fs?: number | string;
   };
 
 const Text = styled.div<Props>`
@@ -30,15 +28,14 @@ const Text = styled.div<Props>`
 
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 
-  ${system({
-    fs: {
-      property: 'fontSize',
-      scale: 'fontSizes',
-    },
-  })}
-
   ${compose(color, layout, space, typography)};
 `;
+
+Text.defaultProps = {
+  lineHeight: 'short',
+  fontWeight: 400,
+  fontSize: 2,
+};
 
 export default Text;
 export {Props};

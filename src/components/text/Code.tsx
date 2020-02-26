@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import {
   space,
   SpaceProps,
@@ -12,18 +13,18 @@ import {
 } from 'styled-system';
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
-const AnchorWrap = styled.a<Props>`
-  text-decoration: none;
-  cursor: pointer;
-  &:visited {
-    color: black;
-  }
 
-  ${compose(space, color, typography, layout)};
+const Code = styled.code<Props>`
+  ${compose(color, layout, space, typography)}
 `;
 
-export default AnchorWrap;
-
-AnchorWrap.defaultProps = {
-  color: 'black',
+Code.defaultProps = {
+  fontFamily: 'mono',
+  bg: 'gray1',
+  fontSize: 2,
+  padding: 2,
+  lineHeight: 'regular',
 };
+
+export default Code;
+export {Props};

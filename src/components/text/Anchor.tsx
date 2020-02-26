@@ -20,31 +20,28 @@ type Props = ColorProps &
     gray?: boolean;
     bold?: boolean;
     mono?: boolean;
-    fs?: number | string;
+    textDecoration?: string;
   };
 
-const Anchor = styled.div<Props>`
-  text-decoration: underline;
+const Anchor = styled.a<Props>`
   cursor: pointer;
-
   &:visited {
     color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
   }
-
   color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
-
   font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
-
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
-
   ${system({
-    fs: {
-      property: 'fontSize',
-      scale: 'fontSizes',
+    textDecoration: {
+      property: 'textDecoration',
     },
   })}
 
   ${compose(color, layout, space, typography)};
 `;
+
+Anchor.defaultProps = {
+  textDecoration: 'underline',
+};
 
 export default Anchor;

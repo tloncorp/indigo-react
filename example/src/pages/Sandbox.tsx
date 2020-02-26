@@ -3,14 +3,13 @@ import {
   Input,
   Button,
   Icon,
-  T3,
+  Text,
   DividerBox,
   Rule,
   Radio,
   InputLabel,
   Box,
   Space,
-  T2,
 } from "indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -67,9 +66,9 @@ const Sandbox: React.FC<{}> = () => {
   return (
     <Box maxWidth='400px' m='8'>
       <Space py='2'>
-        <T2>Form Example</T2>
+        <Text>Form Example</Text>
 
-        <T3 gray>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</T3>
+        <Text gray>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</Text>
       </ Space>
       <Formik
         initialValues={initialValues}
@@ -145,7 +144,7 @@ const Sandbox: React.FC<{}> = () => {
 
       <Rule />
 
-    <T3>Buttons</T3>
+    <Text>Buttons</Text>
 
 
       <Button mt="2">Settings...</Button>
