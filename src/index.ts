@@ -27,7 +27,6 @@ import Icon from './components/icon/Icon';
 
 // Layout
 import Space from './components/layout/Space';
-import DividerBox from './components/layout/DividerBox';
 import Rule from './components/layout/Rule';
 import Center from './components/layout/Center';
 import ItemRow from './components/layout/ItemRow';
@@ -74,7 +73,6 @@ export {
   // Icon
   Icon,
   // Layout
-  DividerBox,
   Rule,
   Col,
   Center,

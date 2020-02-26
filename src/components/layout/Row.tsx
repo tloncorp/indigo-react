@@ -23,12 +23,16 @@ type Props = BorderProps &
   PositionProps &
   SpaceProps & {};
 
-export default styled.div<Props>`
+const Row = styled.div<Props>`
   box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
   display: flex;
   ${compose(border, color, flexbox, layout, position, space)}
 `;
 
+Row.defaultProps = {
+  margin: 0,
+  minWidth: 0,
+};
+
+export default Row;
 export {Props};

@@ -2,7 +2,6 @@ import * as React from 'react';
 import Box from '../../primitives/Box';
 
 import {
-  BackgroundProps,
   BorderProps,
   FlexboxProps,
   LayoutProps,
@@ -14,8 +13,7 @@ import {
 // GridTemplateColumns, GTC for short
 type GTC = string | number | (string | number | null)[];
 
-type Props = BackgroundProps &
-  BorderProps &
+type Props = BorderProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &

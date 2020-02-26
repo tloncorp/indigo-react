@@ -8,7 +8,6 @@ import {
   space,
   compose,
   BorderProps,
-  ColorProps,
   FlexboxProps,
   LayoutProps,
   PositionProps,
@@ -16,7 +15,6 @@ import {
 } from 'styled-system';
 
 type Props = BorderProps &
-  ColorProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &
@@ -27,7 +25,7 @@ type Props = BorderProps &
 /**
  * Return the application / root component instance.
  */
-export default styled.div<Props>`
+const Rule = styled.div<Props>`
   box-sizing: border-box;
 
   height: ${p => {
@@ -38,10 +36,6 @@ export default styled.div<Props>`
   width: ${p => {
     if (p.vertical) return '0px';
     return '100%';
-  }};
-
-  border-color: ${p => {
-    return p.theme.colors.gray2;
   }};
 
   border-width: 0px;
@@ -61,4 +55,10 @@ export default styled.div<Props>`
   ${compose(border, flexbox, layout, position, space)}
 `;
 
+Rule.defaultProps = {
+  borderColor: 'gray2',
+  vertical: false,
+};
+
+export default Rule;
 export {Props};

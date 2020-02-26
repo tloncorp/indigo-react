@@ -1,5 +1,5 @@
 # Text Components
-___
+
 ## `<Anchor />`
 
 #### Outer HTML Tag
@@ -26,19 +26,13 @@ TypographyProps & {
 }
 ```
 
-#### Styled System Reference
-
-[ColorProps](https://styled-system.com/table#color),
-[LayoutProps](https://styled-system.com/table#layout),
-[SpaceProps](https://styled-system.com/table#space),
-[TypographyProps](https://styled-system.com/table#typography)
 #### Usage
 ```tsx
 <StyledLink gray fontSize='2' py='1' href='http://urbit.org'>
   Urbit
 </StyledLink>
 ```
-___
+
 ## `<Code />`
 
 #### Outer HTML Tag
@@ -61,12 +55,6 @@ ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 }
 ```
 
-#### Styled System Reference
-[ColorProps](https://styled-system.com/table#color),
-[LayoutProps](https://styled-system.com/table#layout),
-[SpaceProps](https://styled-system.com/table#space),
-[TypographyProps](https://styled-system.com/table#typography)
-
 #### Usage
 ```tsx
 <Code>
@@ -75,7 +63,7 @@ ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 </Code>
 ```
 
-___
+
 ## `<Text />`
 
 #### Outer HTML Tag
@@ -103,15 +91,30 @@ TypographyProps & {
 }
 ```
 
-#### Styled System Reference
-[ColorProps](https://styled-system.com/table#color),
-[LayoutProps](https://styled-system.com/table#layout),
-[SpaceProps](https://styled-system.com/table#space),
-[TypographyProps](https://styled-system.com/table#typography)
-
 #### Usage
 ```tsx
 <Text fontSize='8' gray bold mono>
   ~zod
 </Text>
 ```
+
+## Styled System Reference
+[SpaceProps](https://styled-system.com/table#space)
+
+[ColorProps](https://styled-system.com/table#color)
+
+[TypographyProps](https://styled-system.com/table#typography)
+
+[LayoutProps](https://styled-system.com/table#layout)
+
+[FlexboxProps](https://styled-system.com/table#flexbox)
+
+[GridProps](https://styled-system.com/table#grid-layout)
+
+[BackgroundProps](https://styled-system.com/table#background)
+
+[BorderProps](https://styled-system.com/table#border)
+
+[PositionProps](https://styled-system.com/table#position)
+
+[ShadowProps](https://styled-system.com/table#shadow)
