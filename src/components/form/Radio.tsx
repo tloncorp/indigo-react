@@ -6,7 +6,6 @@ import InputCaption from './InputCaption';
 
 type Props = {
   caption?: string;
-  placeholder?: string;
   label: string;
   name: string;
   id?: string;

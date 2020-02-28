@@ -1,4 +1,40 @@
-Coming Soon
+# Button Components
+
+## `<Button />`
+
+#### Outer HTML Tag
+
+`<button />`
+
+#### Props
+```ts
+ColorProps &
+LayoutProps &
+SpaceProps & {
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  wide?: boolean;
+  red?: boolean;
+  green?: boolean;
+  blue?: boolean;
+  onClick?: Function;
+};
+```
+
+#### Default Props
+```js
+{
+  lg: true,
+}
+```
+
+#### Usage
+```tsx
+<Button wide md onClick={props.handleCancelAction}>
+  Cancel
+</Button>
+```
 
 ## Styled System Reference
 [SpaceProps](https://styled-system.com/table#space)

@@ -41,17 +41,20 @@ TypographyProps & {
 
 #### Props
 ```ts
-ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
+ColorProps & LayoutProps & SpaceProps & TypographyProps & BorderProps &  {};
 ```
 
 #### Default Props
 ```js
 {
   fontFamily: 'mono',
-  bg: 'gray1',
+  bg: 'gray0',
+  color: 'black',
   fontSize: 2,
-  padding: 2,
-  lineHeight: 'regular',
+  padding: 1,
+  paddingTop: '2px',
+  paddingBottom: '2px',
+  lineHeight: 'short',
 }
 ```
 

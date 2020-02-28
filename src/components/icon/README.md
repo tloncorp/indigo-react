@@ -3,6 +3,7 @@ Displays an icon.
 
 #### Props
 ```ts
+Layout &
 SpaceProps & {
   icon: string;
   fill: string;
@@ -22,6 +23,46 @@ SpaceProps & {
 <Icon icon='ChevronWest' />
 ```
 
+#### Icon Options
+
+NullIcon,
+ChevronNorth,
+ChevronSouth,
+ChevronWest,
+ChevronEast,
+ArrowRefresh,
+ArrowExpand,
+ArrowExternal,
+ArrowEast,
+ArrowSouth,
+ArrowWest,
+ArrowNorth,
+ArrowNorthEast,
+ArrowSouthEast,
+ArrowSouthWest,
+ArrowNorthWest,
+Locked,
+Unlocked,
+Mail,
+Copy,
+MagnifyingGlass,
+ChevronDouble,
+ChevronDoubleSmall,
+Plus,
+Checkmark,
+Minus,
+ExclaimationMark,
+Bullet,
+Circle,
+Ellipsis,
+Star,
+TriangleEast,
+TriangleSouth,
+TriangleWest,
+TriangleNorth,
+CreateGroup,
+X,
+Color,
 
 ## Styled System Reference
 [SpaceProps](https://styled-system.com/table#space)

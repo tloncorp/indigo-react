@@ -25,6 +25,7 @@ type Props = ColorProps &
 
 const Anchor = styled.a<Props>`
   cursor: pointer;
+  display: flex;
   &:visited {
     color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
   }
@@ -36,6 +37,19 @@ const Anchor = styled.a<Props>`
       property: 'textDecoration',
     },
   })}
+  outline: none;
+
+  border-radius: 4px;
+
+  &:hover {
+    color: ${p => p.theme.colors.black};
+  }
+
+  &:focus {
+    background-color: ${p => p.theme.colors.gray0};
+    box-shadow: ${p => `0px 0px 0px 2px ${p.theme.colors.gray0}`};
+    color: ${p => p.theme.colors.black};
+  }
 
   ${compose(color, layout, space, typography)};
 `;
