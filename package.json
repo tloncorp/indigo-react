@@ -72,5 +72,8 @@
     "trailingComma": "es5",
     "useTabs": false
   },
-  "dependencies": {}
+  "dependencies": {
+    "@styled-system/css": "^5.1.5",
+    "@types/styled-system__css": "^5.0.5"
+  }
 }

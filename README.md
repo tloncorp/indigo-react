@@ -1,8 +1,10 @@
 # indigo-react
 
-Indigo is built with [styled-components](https://styled-components.com/), [styled-system](https://styled-system.com/) and [formik](https://jaredpalmer.com/formik/docs/overview).
-
 [![NPM](https://img.shields.io/npm/v/indigo-react.svg)](https://www.npmjs.com/package/indigo-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+### Related
+[Indigo Tokens](https://www.github.com/urbit/indigo-tokens)
+[Indigo React (this library)](https://www.github.com/urbit/indigo-react)
 
 ## Quick Start
 
@@ -36,6 +38,8 @@ class App extends React.Component {
 export default App;
 ```
 ## Component Docs
+Indigo is built with [styled-components](https://styled-components.com/), [styled-system](https://styled-system.com/) and [formik](https://jaredpalmer.com/formik/docs/overview).
+
 [Buttons](https://github.com/urbit/indigo-react/tree/master/src/components/buttons)
 
 [Form](https://github.com/urbit/indigo-react/tree/master/src/components/form)
@@ -62,6 +66,13 @@ $ npm run start
 ````
 
 [Indigo Tokens](https://github.com/urbit/indigo-tokens)
+
+### Styled Components and Styled System
+They sound similar and thats annoying. They are different but related libraries and what they do is as follows.
+
+Syled Components
+-
+
 
 ## License
 

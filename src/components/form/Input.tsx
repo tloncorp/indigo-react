@@ -1,47 +1,77 @@
 import React from 'react';
 import {useField} from 'formik';
 import styled from 'styled-components';
-
+import {LayoutProps, SpaceProps} from 'styled-system';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import ErrorMessage from './ErrorMessage';
 import Box from '../../primitives/Box';
-import xt from '../../extendedTheme';
+import {Theme} from '../../theme/index';
 
-type Props = {
-  caption?: string;
-  placeholder?: string;
-  label?: string;
-  id: string;
-  disabled?: boolean;
-  type: string;
-};
+type Props = LayoutProps &
+  SpaceProps & {
+    caption?: string;
+    placeholder?: string;
+    label?: string;
+    id: string;
+    disabled?: boolean;
+    type: string;
+  };
 
 type StyledProps = {
   hasError?: boolean;
   hasSuccess?: boolean;
 };
 
+type ColorOptions = 'default' | 'disabled' | 'red' | 'blue' | 'green';
+type innerProps = StyledProps & {theme: Theme};
+
+const styledBox = (k: ColorOptions, p: innerProps) => {
+  const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
+  return `
+  border-color: ${borderColor[k].default};
+  background-color: ${backgroundColor[k].default};
+  color: ${textColor[k].default};
+  box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].default}`};
+  * {
+    fill:  ${textColor[k].active};
+  }
+
+  &:hover {
+    border-color: ${borderColor[k].hover};
+    color: ${textColor[k].hover};
+    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].hover}`};
+    * {
+      fill:  ${textColor[k].active};
+    }
+  }
+
+  &:focus {
+    border-color: ${borderColor[k].focus};
+    color: ${textColor[k].focus};
+    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].focus}`};
+    * {
+      fill:  ${textColor[k].active};
+    }
+  }
+
+  &:active {
+    border-color: ${borderColor[k].active};
+    color: ${textColor[k].active};
+    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].active}`};
+    * {
+      fill:  ${textColor[k].active};
+    }
+  }
+  `;
+};
+
 const StyledInput = styled.input<StyledProps>`
   outline: none;
   box-sizing: border-box;
 
-  color: ${p => {
-    if (p.hasError) return p.theme.colors.red2;
-    return p.theme.colors.black;
-  }};
-
-  background-color: ${p => {
-    return p.theme.colors.white;
-  }};
-
   border-width: 1px;
   border-style: solid;
-  border-color: ${p => {
-    if (p.hasError) return p.theme.colors.red2;
-    return p.theme.colors.gray3;
-  }};
-  border-radius: ${xt.borderRadiusMinor}px;
 
   padding-left: ${p => p.theme.space[2]}px;
   margin-top: ${p => p.theme.space[1]}px;
@@ -52,27 +82,15 @@ const StyledInput = styled.input<StyledProps>`
   font-size: ${p => p.theme.fontSizes[2]}px;
   line-height: ${p => p.theme.lineHeights.short};
 
-  &:focus {
-    border-color: ${p => {
-      if (p.hasError) return p.theme.colors.red2;
-      return p.theme.colors.black;
-    }};
-    box-shadow: ${p => {
-      if (p.hasError) return `0px 0px 0px 4px  ${p.theme.colors.red0}`;
-      return `0px 0px 0px 4px ${p.theme.colors.gray1}`;
-    }};
-  }
+  border-radius: ${p => p.theme.boxRadii.minor}px;
+
+  ${p => {
+    if (p.disabled) return styledBox('disabled', p);
+    if (p.hasError) return styledBox('red', p);
+    return styledBox('default', p);
+  }};
 
   &:disabled {
-    color: ${p => {
-      return p.theme.colors.gray5;
-    }};
-    border-color: ${p => {
-      return p.theme.colors.gray2;
-    }};
-    background-color: ${p => {
-      return p.theme.colors.gray1;
-    }};
     cursor: not-allowed;
   }
 `;

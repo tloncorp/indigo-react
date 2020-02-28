@@ -9,34 +9,45 @@ import {
   Center,
   ItemRow,
   Space,
+  Code,
+  Icon,
+  Anchor,
   styleAnchor,
 } from "indigo-react";
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-const StyledLink = styleAnchor(Link);
+// const StyledLink = styleAnchor(Link);
 
 const Item = props => (
   <Box p='7'>
     <Space pb='2'>
-      <Text>{props.title}</Text>
-      <Row alignItems='baseline' pb='2' flexWrap='wrap'>
-        <Text gray pr='2' mono>{props.package}</Text>
-        <Text gray mono >{props.version}</Text>
+      <Row alignItems='baseline'>
+        <Text fontSize='3'>{props.title}</Text>
+        <Code borderRadius='1' ml='2' fontSize='3'>{props.version}</Code>
       </Row>
-      <Text gray>{props.description}</Text>
+      <Text fontSize='3' gray>{props.description}</Text>
       <Col>
         {
           props.links.map(link => (
-            <StyledLink gray fontSize='2' py='1' to={link[1]}>
-              {link[0]}
-            </StyledLink>
+            <Anchor target='_blank' gray fontSize='3' my='1' href={link[1]}>
+              <Row alignItems='center'>
+                <Icon icon='ChevronEast' fill='gray5' mr='1'/>
+                {link[0]}
+              </Row>
+            </Anchor>
           ))
         }
       </Col>
     </Space>
   </Box>
 );
+
+const Footer = () => (
+  <Row p='7'>
+    <Text gray fontSize='3'>Copyright © 2020 Tlon Inc.</Text>
+  </Row>
+)
 
 export default class Home extends React.Component {
   render() {
@@ -55,71 +66,66 @@ export default class Home extends React.Component {
           <Item
             title="Figma Component Library"
             package=""
-            version="v1.2"
+            version="1.2.0"
             links={[
-              ['↗ Figma', ''],
+              ['Figma', 'https://www.figma.com/file/H1RAHV4KscSTnvrIiL0z8C/Indigo-1.1?node-id=1%3A6'],
             ]}
             description="Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations."/>
 
           <Item
             title="React Components"
             package="@tlon/indigo-react"
-            version="v1.1.3"
+            version="1.1.3"
             links={[
-              ['-> Docs', '/indigo-react/docs'],
-              ['↗ NPM', 'https://www.npmjs.com/package/@tlon/indigo-react'],
-              ['↗ Github', 'https://www.github.com/urbit/indigo-react'],
+              ['NPM', 'https://www.npmjs.com/package/@tlon/indigo-react'],
+              ['Github', 'https://www.github.com/urbit/indigo-react'],
             ]}
-            description="A React implementation of Indigo. Includes UI primtivies and components for forms, buttons, layout and much more."/>
+            description="A React implementation of Indigo. Includes components for forms, buttons, layout and more."/>
 
           <Item
             title="Design Tokens"
             package="@tlon/indigo-tokens"
-            version="v1.2.4"
+            version="1.2.4"
             links={[
-              ['-> Docs', '/indigo-tokens/docs'],
-              ['↗ NPM', 'https://www.npmjs.com/package/@tlon/indigo-tokens'],
-              ['↗ Github', 'https://www.github.com/urbit/indigo-tokens'],
+              ['NPM', 'https://www.npmjs.com/package/@tlon/indigo-tokens'],
+              ['Github', 'https://www.github.com/urbit/indigo-tokens'],
             ]}
             description="A styled-system compliant index of ratios, colors, type and other design tokens upon which Indigo is based." />
 
           <Item
             title="CSS Library"
             package="@tlon/indigo-css"
-            version="v1.2.4"
+            version="1.2.4"
             links={[
-              ['-> Docs', '/indigo-css/docs'],
-              ['↗ NPM', ''],
-              ['↗ Github', ''],
+              ['NPM', ''],
+              ['Github', ''],
             ]}
-            description="A modified version of Techyons that uses Indigo design tokens."/>
+            description="A modified version of Tachyons that uses Indigo design tokens."/>
         </ItemRow>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <Text textAlign='center' maxWidth="544px">
-            Indigo is a design system maintained by Tlon, the company behind the platform for a new, peer-to-peer internet, Urbit.
+          <Text fontSize='4' textAlign='center' maxWidth="544px">
+            Indigo is a design system maintained by Tlon, the company creating Urbit, an operating system that powers a new, peer-to-peer internet.
           </Text>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <Text textAlign='center' maxWidth="544px">
+          <Text fontSize='4' textAlign='center' maxWidth="544px">
             It is designed for maximum consistency, simplicity and legibility.
           </Text>
         </Center>
 
         <Rule/>
         <Center height={[12, 13, 14]} p='7'>
-          <Text textAlign='center' maxWidth="544px">
-            It is 100% open source and licensed under MIT.
+          <Text fontSize='4' textAlign='center' maxWidth="544px">
+            100% open source and licensed under MIT.
           </Text>
         </Center>
 
         <Rule/>
-        <Row p='7'>
-          <Text>Footer</Text>
-        </Row>
+        <Footer/>
       </Box>
     )
   }

@@ -9,21 +9,28 @@ import {
   ColorProps,
   layout,
   LayoutProps,
+  border,
+  BorderProps,
   compose,
 } from 'styled-system';
 
-type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
+type Props = BorderProps & ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const Code = styled.code<Props>`
-  ${compose(color, layout, space, typography)}
+  ${compose(color, layout, space, typography, border)}
 `;
 
 Code.defaultProps = {
   fontFamily: 'mono',
-  bg: 'gray1',
+  bg: 'white',
+  border: '1px solid',
+  borderColor: 'gray1',
+  color: 'black',
   fontSize: 2,
-  padding: 2,
-  lineHeight: 'regular',
+  padding: 1,
+  paddingTop: '2px',
+  paddingBottom: '2px',
+  lineHeight: 'short',
 };
 
 export default Code;

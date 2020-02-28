@@ -1,10 +1,4 @@
-// Theme (dev purposes)
-import theme from './theme';
-import themeDark from './themeDark';
-import themeBlack from './themeBlack';
-
-import extendedTheme from './extendedTheme';
-
+import {light, dark} from './theme/index';
 // Primitives
 import Box from './primitives/Box';
 import Img from './primitives/Img';
@@ -17,7 +11,6 @@ import ButtonWrap from './components/buttons/ButtonWrap';
 // Form
 import Input from './components/form/Input';
 import Radio from './components/form/Radio';
-import Select from './components/form/Select';
 import ErrorMessage from './components/form/ErrorMessage';
 import InputLabel from './components/form/InputLabel';
 import InputCaption from './components/form/InputCaption';
@@ -49,11 +42,8 @@ import Anchor from './components/text/Anchor';
 import styleAnchor from './components/text/styleAnchor';
 
 export {
-  // Theme (dev purposes)
-  theme,
-  themeDark,
-  themeBlack,
-  extendedTheme,
+  light,
+  dark,
   // Primitives
   Box,
   Img,
@@ -66,7 +56,6 @@ export {
   // Form
   Input,
   Radio,
-  Select,
   ErrorMessage,
   InputLabel,
   InputCaption,

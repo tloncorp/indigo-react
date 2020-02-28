@@ -2,15 +2,16 @@ import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Sandbox from "./pages/Sandbox";
+import Buttons from "./pages/Buttons";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import {light, dark} from "@tlon/indigo-tokens";
-// import { theme, themeBlack, themeDark } from "indigo-react";
+// import {light, dark} from "@tlon/indigo-tokens";
+// import {light, dark} from "../theme/index";
+
+import { light, dark, Button, Box, Icon } from "indigo-react";
 import {
   color,
   ColorProps
 } from 'styled-system';
-
-console.log(light)
 
 const Style = createGlobalStyle`
     ${p => p.theme.reset}
@@ -27,9 +28,6 @@ const Root = styled.div<RootProps>`
   ${color};
 `;
 
-Root.defaultProps = {
-  // backgroundColor:'white'
-}
 
 export default class App extends React.Component {
   state = {
@@ -51,16 +49,20 @@ export default class App extends React.Component {
     const { state } = this
     return (
       <ThemeProvider
-        theme={state.theme}>
+        theme={this.state.dark ? dark : light }>
         <Style/>
         <Root>
-          <button onClick={() => this.setTheme('dark')}>Dark</button>
-          <button onClick={() => this.setTheme('light')}>Light</button>
-          <button onClick={() => this.setTheme('black')}>Black</button>
+          <Box position='absolute' top='4' left='4'>
+            <Button lg p='0' onClick={() => this.toggleDark()}>
+              <Icon icon='Color' />
+            </Button>
+          </Box>
           <Router basename="/indigo-react">
             <div>
               <Route exact path="/" component={Home} />
               <Route exact path="/sandbox" component={Sandbox} />
+              <Route exact path="/buttons" component={Buttons} />
+
             </div>
           </Router>
         </Root>
