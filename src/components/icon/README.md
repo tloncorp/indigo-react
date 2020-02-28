@@ -1,3 +1,7 @@
+# Icons Components
+
+[Top](https://www.github.com/urbit/indigo-react)
+
 ## `<Icon />`
 Displays an icon.
 

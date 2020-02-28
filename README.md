@@ -4,6 +4,7 @@
 
 ### Related
 [Indigo Tokens](https://www.github.com/urbit/indigo-tokens)
+
 [Indigo React (this library)](https://www.github.com/urbit/indigo-react)
 
 ## Quick Start
@@ -48,7 +49,11 @@ Indigo is built with [styled-components](https://styled-components.com/), [style
 
 [Layout](https://github.com/urbit/indigo-react/tree/master/src/components/layout)
 
+[Navigation (coming soon)](https://github.com/urbit/indigo-react/tree/master/src/components/navigation)
+
 [Text](https://github.com/urbit/indigo-react/tree/master/src/components/text)
+
+[View (coming soon)](https://github.com/urbit/indigo-react/tree/master/src/components/view)
 
 ## Development
 The main directories are `src` and `demo`
@@ -68,10 +73,36 @@ $ npm run start
 [Indigo Tokens](https://github.com/urbit/indigo-tokens)
 
 ### Styled Components and Styled System
-They sound similar and thats annoying. They are different but related libraries and what they do is as follows.
+They sound similar and thats annoying, but they are separate yet related libraries. Here is what each does.
 
-Syled Components
--
+Styled Components
+- Allows writing 'CSS' in JS with template string via `styled.div` etc.
+- Transforms these strings into classNames.
+
+Styled System
+- Provides notion of a 'Theme' in the form of theme.js or indig-tokens.
+- Knows how to take a prop named `p` or `padding` and look for a relevant value in the `theme`. Knows how to differentiate a value like `p='4'` (targets theme) vs `p='4px'` (uses 4px).
+
+### Styled System Reference
+[SpaceProps](https://styled-system.com/table#space)
+
+[ColorProps](https://styled-system.com/table#color)
+
+[TypographyProps](https://styled-system.com/table#typography)
+
+[LayoutProps](https://styled-system.com/table#layout)
+
+[FlexboxProps](https://styled-system.com/table#flexbox)
+
+[GridProps](https://styled-system.com/table#grid-layout)
+
+[BackgroundProps](https://styled-system.com/table#background)
+
+[BorderProps](https://styled-system.com/table#border)
+
+[PositionProps](https://styled-system.com/table#position)
+
+[ShadowProps](https://styled-system.com/table#shadow)
 
 
 ## License

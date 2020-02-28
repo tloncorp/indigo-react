@@ -1,5 +1,7 @@
 # Text Components
 
+[Top](https://www.github.com/urbit/indigo-react)
+
 ## `<Anchor />`
 
 #### Outer HTML Tag
