@@ -8,6 +8,7 @@
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
   "module": "dist/indigo-react.esm.js",
+  "private": false,
   "files": [
     "dist"
   ],

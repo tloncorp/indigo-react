@@ -1,22 +1,28 @@
 # indigo-react
+![npm (scoped)](https://img.shields.io/npm/v/@tlon/indigo-react?style=plastic)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@tlon/indigo-react?style=plastic)
+![NPM](https://img.shields.io/npm/l/@tlon/indigo-react?style=plastic)
 
-[![NPM](https://img.shields.io/npm/v/indigo-react.svg)](https://www.npmjs.com/package/indigo-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[Github Repo](https://www.github.com/urbit/indigo-tokens)
 
-### Related
-[Indigo Tokens](https://www.github.com/urbit/indigo-tokens)
+---
+##### Related
+[Indigo Tokens on GitHub](https://www.github.com/urbit/indigo-tokens)
 
-[Indigo React (this library)](https://www.github.com/urbit/indigo-react)
+[indigo-static on GitHub](https://www.github.com/urbit/indigo-static)
+
+---
 
 ## Quick Start
 
 ```
-npm install --save indigo-react
+npm install --save @tlon/indigo-react
 ```
 
 Install peer dependencies
 
 ```
-npm install --save indigo-tokens styled-components @reach/menu-button prop-types styled-components styled-system react react-dom
+npm install --save @tlon/indigo-tokens styled-components styled-system react react-dom
 ```
 
 **Example**
@@ -56,34 +62,24 @@ Indigo is built with [styled-components](https://styled-components.com/), [style
 [View (coming soon)](https://github.com/urbit/indigo-react/tree/master/src/components/view)
 
 ## Development
-The main directories are `src` and `demo`
-`src` is where the ```indigo-react``` styles live(primitives & components).
-`demo` is the site you want to build using `indigo-react`.
-````
 
-#build and watch your src directory
-/indigo-react
+```
+$ npm run install
 $ npm run start
+```
 
-#build and watch your demo directory
-/indigo-react/demo
-$ npm run start
-````
-
-[Indigo Tokens](https://github.com/urbit/indigo-tokens)
-
-### Styled Components and Styled System
-They sound similar and thats annoying, but they are separate yet related libraries. Here is what each does.
+#### Styled Components and Styled System
+Styled Components and Styled System are separate but related libraries. Here is what each does.
 
 Styled Components
 - Allows writing 'CSS' in JS with template string via `styled.div` etc.
-- Transforms these strings into classNames.
+- Transforms these strings into class names.
 
 Styled System
-- Provides notion of a 'Theme' in the form of theme.js or indig-tokens.
-- Knows how to take a prop named `p` or `padding` and look for a relevant value in the `theme`. Knows how to differentiate a value like `p='4'` (targets theme) vs `p='4px'` (uses 4px).
+- Provides notion of a 'Theme' if given a `theme.js` or `indigo-tokens`.
+- Knows how to take a prop named `p` or `padding` and look for a relevant value in the `theme`. Knows how to differentiate a value like `p='4'` (targets the theme) vs `p='4px'` (uses 4px).
 
-### Styled System Reference
+#### Styled System Reference
 [SpaceProps](https://styled-system.com/table#space)
 
 [ColorProps](https://styled-system.com/table#color)
