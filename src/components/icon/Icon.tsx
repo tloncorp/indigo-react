@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {space, layout, LayoutProps, SpaceProps} from 'styled-system';
+import {space, layout, position, LayoutProps, SpaceProps, PositionProps} from 'styled-system';
 // import Box from '../../primitives/Box'
 
 const NullIcon = () => (
@@ -254,14 +254,16 @@ const CreateGroup = () => (
 const Color = () => (
   <>
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M8 14C10.7614 14 13 11.7614 13 9C13 6.91443 11.7433 5.16289 10.3243 3.86215C9.62771 3.22364 8.92699 2.72683 8.39911 2.38957C8.25008 2.29436 8.11566 2.21239 8 2.14404C7.88434 2.21239 7.74992 2.29436 7.60089 2.38957C7.07301 2.72683 6.37229 3.22364 5.67572 3.86215C4.25674 5.16289 3 6.91443 3 9C3 11.7614 5.23858 14 8 14ZM7.55158 1.89382L7.55154 1.8938ZM14 9C14 12.3137 11.3137 15 8 15C4.68629 15 2 12.3137 2 9C2 4 8 1 8 1C8 1 14 4 14 9Z"
       fill="black"
     />
     <path d="M14 9C14 12.3137 11.3137 15 8 15V1C8 1 14 4 14 9Z" fill="black" />
   </>
 );
+
+const Blank = () => <path />;
 
 type IconList = {
   [key: string]: () => JSX.Element;
@@ -306,9 +308,11 @@ const iconList: IconList = {
   CreateGroup,
   X,
   Color,
+  Blank,
 };
 
-type InnerProps = LayoutProps &
+type InnerProps = PositionProps &
+  LayoutProps &
   SpaceProps & {
     fill: string;
   };
@@ -323,6 +327,7 @@ const Svg = styled.svg<InnerProps>`
   }
   ${layout};
   ${space};
+  ${position};
 `;
 
 const Icon = ({icon, fill = 'black', ...rest}: Props) => {
@@ -338,8 +343,7 @@ const Icon = ({icon, fill = 'black', ...rest}: Props) => {
 Icon.defaultProps = {
   icon: 'NullIcon',
   fill: 'black',
-  height: 4,
-  width: 4,
+  size: 4,
 };
 
 export default Icon;

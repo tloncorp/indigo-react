@@ -7,6 +7,7 @@ Displays an icon.
 
 #### Props
 ```ts
+PositionProps &
 Layout &
 SpaceProps & {
   icon: string;
@@ -67,6 +68,7 @@ TriangleNorth,
 CreateGroup,
 X,
 Color,
+Blank,
 
 ## Styled System Reference
 [SpaceProps](https://styled-system.com/table#space)

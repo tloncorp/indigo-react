@@ -4,7 +4,7 @@
 [![npm bundle size](https://img.shields.io/bundlephobia/min/@tlon/indigo-react?style=plastic)](https://www.npmjs.com/package/@tlon/indigo-react)
 ![NPM](https://img.shields.io/npm/l/@tlon/indigo-react?style=plastic)
 
-**Related**: [indigo-tokens](https://www.github.com/urbit/indigo-tokens),
+Related: [indigo-tokens](https://www.github.com/urbit/indigo-tokens),
 [indigo-static](https://www.github.com/urbit/indigo-static)
 
 ## Quick Start
@@ -132,38 +132,7 @@ Each one of the above props can pull values from our theme for design consistenc
 In `<Text>`, you might have noticed the `defaultProps` for `fontSize` was set to `2`.:
 
 ```ts
-import styled from 'styled-components';
-
-import {
-  color,
-  ColorProps,
-  layout,
-  LayoutProps,
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-  compose,
-} from 'styled-system';
-
-type Props = ColorProps &
-  LayoutProps &
-  SpaceProps &
-  TypographyProps & {
-    gray?: boolean;
-    bold?: boolean;
-    mono?: boolean;
-  };
-
-const Text = styled.div<Props>`
-  color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
-
-  font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
-
-  font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
-
-  ${compose(color, layout, space, typography)};
-`;
+...
 
 Text.defaultProps = {
   lineHeight: 'short',

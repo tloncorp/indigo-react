@@ -10,6 +10,8 @@ import {
   InputLabel,
   Box,
   Space,
+  Checkbox,
+  Row,
 } from "indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -22,6 +24,7 @@ interface FormValues {
   color: string;
   urbitid: string;
   disabledfield: string;
+  iagree: boolean;
 }
 
 const SignupSchema = Yup.object().shape({
@@ -49,6 +52,7 @@ const SignupSchema = Yup.object().shape({
       })
     .required('An Urbit ID is Required'),
   disabledfield: Yup.string(),
+  iagree: Yup.boolean().test('isTrue', 'You must agree to the TOS before proceeding', v => !!v)
 });
 
 
@@ -61,6 +65,7 @@ const Sandbox: React.FC<{}> = () => {
     color: 'green',
     urbitid: '',
     disabledfield: '',
+    iagree: false,
   };
 
   return (
@@ -80,7 +85,7 @@ const Sandbox: React.FC<{}> = () => {
           }, 400);
         }}>
         <Form>
-          <Space py='2'>
+          <Space my='2'>
             <Input
               label="First Name"
               id="firstName"
@@ -137,7 +142,16 @@ const Sandbox: React.FC<{}> = () => {
               disabled
             />
 
-            <Button type="submit">Submit</Button>
+            <Checkbox
+              label='I agree'
+              caption="Responsibility or liability for the frequency of provision and accuracy of the BBA LIBOR rate or any use made of the BBA LIBOR rate by the subscriber, whether or not arising from the negligence of any of BBAE or the Suppliers."
+              id='iagree'
+            />
+
+            <Row>
+              <Button mr='4' wide lg red >Cancel</Button>
+              <Button wide lg type="submit">Submit</Button>
+            </Row>
           </Space>
         </Form>
     </Formik>

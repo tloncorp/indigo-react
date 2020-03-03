@@ -88,7 +88,7 @@ const Outline = styled.div<InternalProps>`
   left: 0px;
   height: 16px;
   width: 16px;
-  border-radius: 50%;
+  border-radius: ${p => p.theme.boxRadii.minor}px;
   border-width: 1px;
   border-style: solid;
   ${p => {
@@ -98,20 +98,20 @@ const Outline = styled.div<InternalProps>`
   }};
 `;
 
-const Radio = ({label, caption, name, id, disabled, ...props}: Props) => {
-  const [field, meta] = useField({name, id, value: id, type: 'radio'});
+const Checkbox = ({label, caption, name, id, disabled, ...props}: Props) => {
+  const [field, meta] = useField({name: id, type: 'checkbox'});
   return (
     <Label disabled={disabled} htmlFor={id} {...props}>
       <InputLabel>{label}</InputLabel>
       {caption ? <InputCaption>{caption}</InputCaption> : null}
-      <HiddenInput {...field} value={id} name={name} id={id} disabled={disabled} type="radio" />
+      <HiddenInput {...field} value={id} name={id} id={id} disabled={disabled} type="checkbox" />
       <Outline
         hasError={meta.touched && meta.error !== undefined}
         checked={field.checked}
         disabled={disabled}
       >
         {field.checked ? (
-          <Icon position="absolute" top="0px" left="0px" size="14px" icon="Bullet" />
+          <Icon position="absolute" top="0px" left="0px" size="14px" icon="Checkmark" />
         ) : null}
       </Outline>
       <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
@@ -119,4 +119,4 @@ const Radio = ({label, caption, name, id, disabled, ...props}: Props) => {
   );
 };
 
-export default Radio;
+export default Checkbox;

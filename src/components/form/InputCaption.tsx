@@ -16,6 +16,8 @@ type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 const InputCaption = styled.label<Props>`
   width: 100%;
   display: block;
+  pointer-events: none;
+  user-select: none;
   ${compose(color, layout, space, typography)}
 `;
 

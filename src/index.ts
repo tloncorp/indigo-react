@@ -11,6 +11,7 @@ import ButtonWrap from './components/buttons/ButtonWrap';
 // Form
 import Input from './components/form/Input';
 import Radio from './components/form/Radio';
+import Checkbox from './components/form/Checkbox';
 import ErrorMessage from './components/form/ErrorMessage';
 import InputLabel from './components/form/InputLabel';
 import InputCaption from './components/form/InputCaption';
@@ -56,6 +57,7 @@ export {
   // Form
   Input,
   Radio,
+  Checkbox,
   ErrorMessage,
   InputLabel,
   InputCaption,
