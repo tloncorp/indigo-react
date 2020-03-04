@@ -53,7 +53,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <Box>
-        <Center p='7' height={[12, 13, 14]}>
+        <Center p='7' height={[11, 13, 14]}>
           <Row alignItems="center">
             <Text fontSize='8' color='blue2'>●</Text>
             <Text fontSize='8' color='red2'>◆</Text>

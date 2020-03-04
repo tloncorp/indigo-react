@@ -27,6 +27,10 @@ import ItemRow from './components/layout/ItemRow';
 import Row from './components/layout/Row';
 import Col from './components/layout/Col';
 
+// View
+import Frame from './components/view/Frame';
+import View from './components/view/View';
+
 // Text
 // import T1 from './components/text/T1';
 // import T2 from './components/text/T2';
@@ -70,6 +74,9 @@ export {
   Row,
   ItemRow,
   Space,
+  // View
+  View,
+  Frame,
   // Text
   Text,
   styleAnchor,

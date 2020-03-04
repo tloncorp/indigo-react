@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Sandbox from "./pages/Sandbox";
 import Buttons from "./pages/Buttons";
+import ViewTest from "./pages/ViewTest";
+
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 // import {light, dark} from "@tlon/indigo-tokens";
 // import {light, dark} from "../theme/index";
@@ -62,7 +64,7 @@ export default class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/sandbox" component={Sandbox} />
               <Route exact path="/buttons" component={Buttons} />
-
+              <Route exact path='/viewtest' component={ViewTest} />
             </div>
           </Router>
         </Root>

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-
 import {ColorProps, color, space, SpaceProps, LayoutProps, layout, compose} from 'styled-system';
-
 import {Theme} from '../../theme/index';
 
 type ColorOptions = 'default' | 'disabled' | 'red' | 'blue' | 'green';
