@@ -16,29 +16,22 @@ const colors = {
   gray0: _colors.gray8,
   white: _colors.black,
   // Red
-  red4: _colors.red0,
-  red3: _colors.red1,
-  red2: _colors.red2,
-  red1: _colors.red3,
-  red0: _colors.red4,
+
+  red2: _colors.red0,
+  red1: _colors.red1,
+  red0: _colors.red2,
   // Yellow
-  yellow4: _colors.yellow0,
-  yellow3: _colors.yellow1,
-  yellow2: _colors.yellow2,
-  yellow1: _colors.yellow3,
-  yellow0: _colors.yellow4,
+  yellow2: _colors.yellow0,
+  yellow1: _colors.yellow1,
+  yellow0: _colors.yellow2,
   // Green
-  green4: _colors.green0,
-  green3: _colors.green1,
-  green2: _colors.green2,
-  green1: _colors.green3,
-  green0: _colors.green4,
+  green2: _colors.green0,
+  green1: _colors.green1,
+  green0: _colors.green2,
   // Blue
-  blue4: _colors.blue0,
-  blue3: _colors.blue1,
-  blue2: _colors.blue2,
-  blue1: _colors.blue3,
-  blue0: _colors.blue4,
+  blue2: _colors.blue0,
+  blue1: _colors.blue1,
+  blue0: _colors.blue2,
 };
 
 export default colors;

@@ -13,6 +13,8 @@ import {
   system,
 } from 'styled-system';
 
+import {isDef} from '../../util';
+
 type Props = ColorProps &
   LayoutProps &
   SpaceProps &
@@ -25,11 +27,15 @@ type Props = ColorProps &
 
 const Anchor = styled.a<Props>`
   cursor: pointer;
-  display: flex;
+  display: inline-block;
   &:visited {
     color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
   }
-  color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
+  color: ${p => {
+    if (isDef(p.color)) return p.color;
+    if (p.gray) return p.theme.colors.gray5;
+    return p.theme.colors.black;
+  }};
   font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
   ${system({

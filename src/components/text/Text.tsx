@@ -12,6 +12,8 @@ import {
   compose,
 } from 'styled-system';
 
+import {isDef} from '../../util';
+
 type Props = ColorProps &
   LayoutProps &
   SpaceProps &
@@ -22,7 +24,11 @@ type Props = ColorProps &
   };
 
 const Text = styled.div<Props>`
-  color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
+  color: ${p => {
+    if (isDef(p.color)) return p.color;
+    if (p.gray) return p.theme.colors.gray5;
+    return p.theme.colors.black;
+  }};
 
   font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
 

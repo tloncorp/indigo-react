@@ -7,6 +7,7 @@ import InputCaption from './InputCaption';
 import Icon from '../icon/Icon';
 import ErrorMessage from './ErrorMessage';
 import {Theme} from '../../theme/index';
+import Box from '../../primitives/Box';
 
 type Props = LayoutProps &
   SpaceProps & {
@@ -23,7 +24,7 @@ type InternalProps = {
   hasError?: boolean;
 };
 
-type ColorOptions = 'default' | 'disabled' | 'red';
+type ColorOptions = 'default' | 'disabled' | 'caution';
 
 const styledBox = (k: ColorOptions, p: InternalProps & {theme: Theme}) => {
   const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
@@ -93,7 +94,7 @@ const Outline = styled.div<InternalProps>`
   border-style: solid;
   ${p => {
     if (p.disabled) return styledBox('disabled', p);
-    if (p.hasError) return styledBox('red', p);
+    if (p.hasError) return styledBox('caution', p);
     return styledBox('default', p);
   }};
 `;
@@ -101,21 +102,23 @@ const Outline = styled.div<InternalProps>`
 const Radio = ({label, caption, name, id, disabled, ...props}: Props) => {
   const [field, meta] = useField({name, id, value: id, type: 'radio'});
   return (
-    <Label disabled={disabled} htmlFor={id} {...props}>
-      <InputLabel>{label}</InputLabel>
-      {caption ? <InputCaption>{caption}</InputCaption> : null}
-      <HiddenInput {...field} value={id} name={name} id={id} disabled={disabled} type="radio" />
-      <Outline
-        hasError={meta.touched && meta.error !== undefined}
-        checked={field.checked}
-        disabled={disabled}
-      >
-        {field.checked ? (
-          <Icon position="absolute" top="0px" left="0px" size="14px" icon="Bullet" />
-        ) : null}
-      </Outline>
-      <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
-    </Label>
+    <Box {...props}>
+      <Label disabled={disabled} htmlFor={id} {...props}>
+        <InputLabel>{label}</InputLabel>
+        {caption ? <InputCaption>{caption}</InputCaption> : null}
+        <HiddenInput {...field} value={id} name={name} id={id} disabled={disabled} type="radio" />
+        <Outline
+          hasError={meta.touched && meta.error !== undefined}
+          checked={field.checked}
+          disabled={disabled}
+        >
+          {field.checked ? (
+            <Icon position="absolute" top="0px" left="0px" size="14px" icon="Bullet" />
+          ) : null}
+        </Outline>
+        <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
+      </Label>
+    </Box>
   );
 };
 

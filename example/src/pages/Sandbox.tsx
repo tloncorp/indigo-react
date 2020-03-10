@@ -12,6 +12,8 @@ import {
   Space,
   Checkbox,
   Row,
+  Indefinite,
+  AsyncButton,
 } from "indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -55,8 +57,12 @@ const SignupSchema = Yup.object().shape({
   iagree: Yup.boolean().test('isTrue', 'You must agree to the TOS before proceeding', v => !!v)
 });
 
+type Props = {
+  loading:boolean
+  toggleLoading:Function
+}
 
-const Sandbox: React.FC<{}> = () => {
+const Sandbox: React.FC<Props> = (props) => {
 
   const initialValues: FormValues = {
     firstName: '',
@@ -69,7 +75,8 @@ const Sandbox: React.FC<{}> = () => {
   };
 
   return (
-    <Box maxWidth='400px' m='8'>
+    <Box maxWidth='400px' m='9'>
+
       <Space py='2'>
         <Text>Form Example</Text>
 
@@ -79,6 +86,7 @@ const Sandbox: React.FC<{}> = () => {
         initialValues={initialValues}
         validationSchema={SignupSchema}
         onSubmit={(values, { setSubmitting }) => {
+          props.toggleLoading()
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
@@ -149,8 +157,13 @@ const Sandbox: React.FC<{}> = () => {
             />
 
             <Row>
-              <Button mr='4' wide lg red >Cancel</Button>
-              <Button wide lg type="submit">Submit</Button>
+              <Button mr='4' caution>Cancel</Button>
+              <AsyncButton
+                type="submit"
+                primary
+                loading={props.loading}>
+                Submit
+              </AsyncButton>
             </Row>
           </Space>
         </Form>
@@ -163,13 +176,14 @@ const Sandbox: React.FC<{}> = () => {
 
       <Button mt="2">Settings...</Button>
 
-      <Button disabled mt="2">I am disabled</Button>
+      <Button disabled mt="2">Disabled</Button>
 
-      <Button md mt="2">Medium</Button>
+      <Button sm mt="2">sm</Button>
 
       <Icon mt="2" />
 
 
+      <Indefinite loading={true} />
 
 
 

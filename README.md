@@ -219,6 +219,16 @@ The react library comes with an example site (create-react-app) where your compo
 
 [Benefits of CSS-in-JS](https://www.robinwieruch.de/react-styled-components)
 
+#### Multiple Versions of styled-components
+If there are two versions of styled-components installed, you may have to add the react-indigo version as an alias in package.json, depending on your build system
+
+
+#### lint:fix
+There is a git hook which will not allow you to commit changes without passing a linting test. You can fix most linting 'errors' by running `npm run lint:fix`.
+
+
+#### Semicolons in styled-components
+You must ensure the CSS properties in template strings are terminated with `;`, like valid CSS. Can't tell you how many times this has tripped me up.
 
 ### License
 MIT © [urbit](https://github.com/urbit)

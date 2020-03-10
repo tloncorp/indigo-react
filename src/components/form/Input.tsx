@@ -23,7 +23,7 @@ type StyledProps = {
   hasSuccess?: boolean;
 };
 
-type ColorOptions = 'default' | 'disabled' | 'red' | 'blue' | 'green';
+type ColorOptions = 'default' | 'disabled' | 'caution' | 'primary';
 type innerProps = StyledProps & {theme: Theme};
 
 const styledBox = (k: ColorOptions, p: innerProps) => {
@@ -86,7 +86,7 @@ const StyledInput = styled.input<StyledProps>`
 
   ${p => {
     if (p.disabled) return styledBox('disabled', p);
-    if (p.hasError) return styledBox('red', p);
+    if (p.hasError) return styledBox('caution', p);
     return styledBox('default', p);
   }};
 

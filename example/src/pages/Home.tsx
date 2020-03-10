@@ -55,9 +55,9 @@ export default class Home extends React.Component {
       <Box>
         <Center p='7' height={[11, 13, 14]}>
           <Row alignItems="center">
-            <Text fontSize='8' color='blue2'>●</Text>
-            <Text fontSize='8' color='red2'>◆</Text>
-            <Text fontSize='8' color='green2'>▲</Text>
+            <Text fontSize='8' color='blue1'>●</Text>
+            <Text fontSize='8' color='red1'>◆</Text>
+            <Text fontSize='8' color='green1'>▲</Text>
             <Text fontSize='7' pl='4'>Indigo</Text>
           </Row>
         </Center>

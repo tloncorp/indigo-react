@@ -7,21 +7,15 @@ const backgroundColor = (colors: Colors) => ({
     focus: colors.white,
     default: colors.white,
   },
-  red: {
+  caution: {
     hover: colors.red0,
     active: colors.red0,
     focus: colors.white,
     default: colors.white,
   },
-  blue: {
+  primary: {
     hover: colors.blue0,
     active: colors.blue0,
-    focus: colors.white,
-    default: colors.white,
-  },
-  green: {
-    hover: colors.green0,
-    active: colors.green0,
     focus: colors.white,
     default: colors.white,
   },
