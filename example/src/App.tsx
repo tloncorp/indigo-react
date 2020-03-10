@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Sandbox from "./pages/Sandbox";
 import Buttons from "./pages/Buttons";
+import ViewTest from "./pages/ViewTest";
+
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 // import {light, dark} from "@tlon/indigo-tokens";
 // import {light, dark} from "../theme/index";
 
-import { light, dark, Button, Box, Icon } from "indigo-react";
+import { light, dark, Box, IconButton, Row,Text } from "indigo-react";
 import {
   color,
   ColorProps
@@ -33,10 +35,15 @@ export default class App extends React.Component {
   state = {
     dark: false,
     theme: light,
+    loading: false
   }
 
   toggleDark() {
     this.setState({ dark: !this.state.dark })
+  }
+
+  toggleLoading() {
+    this.setState({ loading: !this.state.loading })
   }
 
   setTheme(name:string) {
@@ -52,17 +59,17 @@ export default class App extends React.Component {
         theme={this.state.dark ? dark : light }>
         <Style/>
         <Root>
-          <Box position='absolute' top='4' left='4'>
-            <Button lg p='0' onClick={() => this.toggleDark()}>
-              <Icon icon='Color' />
-            </Button>
-          </Box>
+          <Row alignItems='center' position='absolute' top='4' left='4'>
+            <IconButton icon='Color' md p='0' onClick={() => this.toggleDark()}/>
+          </Row>
           <Router basename="/indigo-react">
             <div>
               <Route exact path="/" component={Home} />
-              <Route exact path="/sandbox" component={Sandbox} />
+              <Route exact path="/sandbox" render={
+                p => <Sandbox toggleLoading={() => this.toggleLoading()} loading={state.loading} {...p} />
+              } />
               <Route exact path="/buttons" component={Buttons} />
-
+              <Route exact path='/viewtest' component={ViewTest} />
             </div>
           </Router>
         </Root>

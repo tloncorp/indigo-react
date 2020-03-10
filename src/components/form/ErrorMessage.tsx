@@ -19,7 +19,7 @@ const ErrorMessage = styled.p<Props>`
 `;
 
 ErrorMessage.defaultProps = {
-  color: 'red2',
+  color: 'red1',
   fontSize: 2,
   lineHeight: 'short',
   marginTop: 1,

@@ -7,23 +7,17 @@ const borderColor = (colors: Colors) => ({
     focus: colors.gray2,
     default: colors.gray2,
   },
-  red: {
-    hover: colors.red2,
-    active: colors.red2,
-    focus: colors.red2,
-    default: colors.red2,
+  caution: {
+    hover: colors.red1,
+    active: colors.red1,
+    focus: colors.red1,
+    default: colors.red1,
   },
-  blue: {
-    hover: colors.blue2,
-    active: colors.blue2,
-    focus: colors.blue2,
-    default: colors.blue2,
-  },
-  green: {
-    hover: colors.green2,
-    active: colors.green2,
-    focus: colors.green2,
-    default: colors.green2,
+  primary: {
+    hover: colors.blue1,
+    active: colors.blue1,
+    focus: colors.blue1,
+    default: colors.blue1,
   },
   disabled: {
     hover: colors.gray3,

@@ -7,6 +7,8 @@ import Svg from './primitives/Svg';
 // Buttons
 import Button from './components/buttons/Button';
 import ButtonWrap from './components/buttons/ButtonWrap';
+import IconButton from './components/buttons/IconButton';
+import AsyncButton from './components/buttons/AsyncButton';
 
 // Form
 import Input from './components/form/Input';
@@ -26,6 +28,13 @@ import Center from './components/layout/Center';
 import ItemRow from './components/layout/ItemRow';
 import Row from './components/layout/Row';
 import Col from './components/layout/Col';
+
+// View
+import Frame from './components/view/Frame';
+import View from './components/view/View';
+
+// Status
+import Indefinite from './components/status/Indefinite';
 
 // Text
 // import T1 from './components/text/T1';
@@ -53,7 +62,9 @@ export {
   Anchor,
   // Buttons
   Button,
+  IconButton,
   ButtonWrap,
+  AsyncButton,
   // Form
   Input,
   Radio,
@@ -70,6 +81,11 @@ export {
   Row,
   ItemRow,
   Space,
+  // View
+  View,
+  Frame,
+  // Status
+  Indefinite,
   // Text
   Text,
   styleAnchor,

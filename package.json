@@ -1,6 +1,6 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Tlon's design language",
   "author": "tlon",
   "license": "MIT",
@@ -22,7 +22,6 @@
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "lint:fix": "tsdx lint src --fix",
-    "prepare": "tsdx build",
     "deploy": "gh-pages -d example/dist"
   },
   "peerDependencies": {
