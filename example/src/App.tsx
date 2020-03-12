@@ -9,7 +9,7 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 // import {light, dark} from "@tlon/indigo-tokens";
 // import {light, dark} from "../theme/index";
 
-import { light, dark, Box, IconButton, Row,Text } from "indigo-react";
+import { light, dark, Box, IconButton, Row, Text } from "indigo-react";
 import {
   color,
   ColorProps

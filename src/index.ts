@@ -17,6 +17,7 @@ import Checkbox from './components/form/Checkbox';
 import ErrorMessage from './components/form/ErrorMessage';
 import InputLabel from './components/form/InputLabel';
 import InputCaption from './components/form/InputCaption';
+import TextArea from './components/form/TextArea';
 
 // Icon
 import Icon from './components/icon/Icon';
@@ -72,6 +73,7 @@ export {
   ErrorMessage,
   InputLabel,
   InputCaption,
+  TextArea,
   // Icon
   Icon,
   // Layout

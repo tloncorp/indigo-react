@@ -2,6 +2,10 @@
 
 [Top](https://www.github.com/urbit/indigo-react)
 
+
+**Placeholder Props**
+Placeholders should only be used to show an example of the type of data that should be entered into a form; they are not a substitute for a proper label.
+
 ## `<Input />`
 
 #### Outer HTML Tag

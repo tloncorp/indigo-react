@@ -14,6 +14,7 @@ import {
   Row,
   Indefinite,
   AsyncButton,
+  TextArea,
 } from "indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -27,6 +28,7 @@ interface FormValues {
   urbitid: string;
   disabledfield: string;
   iagree: boolean;
+  about: string;
 }
 
 const SignupSchema = Yup.object().shape({
@@ -38,6 +40,7 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
+  about: Yup.string(),
   middleName: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
@@ -72,6 +75,7 @@ const Sandbox: React.FC<Props> = (props) => {
     urbitid: '',
     disabledfield: '',
     iagree: false,
+    about: ''
   };
 
   return (
@@ -111,6 +115,11 @@ const Sandbox: React.FC<Props> = (props) => {
               label="Last Name"
               id="lastName"
               placeholder="Atkinson"
+            />
+
+            <TextArea
+              label="Tell us about yourself"
+              id='about'
             />
 
 

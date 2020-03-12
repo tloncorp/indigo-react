@@ -15,7 +15,8 @@ type Props = LayoutProps &
     label?: string;
     id: string;
     disabled?: boolean;
-    type: string;
+    rows?: number;
+    cols?: number;
   };
 
 type StyledProps = {
@@ -54,18 +55,19 @@ const styledBox = (k: ColorOptions, p: innerProps) => {
   `;
 };
 
-const StyledInput = styled.input<StyledProps>`
+const StyledTextArea = styled.textarea<StyledProps>`
   outline: none;
   box-sizing: border-box;
 
   border-width: 1px;
   border-style: solid;
 
-  padding-left: ${p => p.theme.space[2]}px;
+  padding: ${p => p.theme.space[2]}px;
   margin-top: ${p => p.theme.space[1]}px;
 
-  height: ${p => p.theme.sizes[7]}px;
   width: 100%;
+  resize: vertical;
+  min-height: ${p => p.theme.sizes[7]}px;
 
   font-size: ${p => p.theme.fontSizes[2]}px;
   line-height: ${p => p.theme.lineHeights.short};
@@ -83,15 +85,17 @@ const StyledInput = styled.input<StyledProps>`
   }
 `;
 
-const Input = ({label, caption, type, disabled, id, placeholder, ...props}: Props) => {
+const TextArea = ({label, rows, cols, caption, disabled, id, placeholder, ...props}: Props) => {
   const [field, meta] = useField(id);
   return (
     <Box {...props}>
       <InputLabel htmlFor={id}>{label}</InputLabel>
       {caption ? <InputCaption>{caption}</InputCaption> : null}
-      <StyledInput
+      <StyledTextArea
+        rows={rows}
+        cols={cols}
+        spellCheck={false}
         hasError={meta.touched && meta.error !== undefined}
-        type={type}
         disabled={disabled}
         placeholder={placeholder}
         {...field}
@@ -101,8 +105,8 @@ const Input = ({label, caption, type, disabled, id, placeholder, ...props}: Prop
   );
 };
 
-Input.defaultProps = {
-  type: 'text',
+TextArea.defaultProps = {
+  rows: 8,
 };
 
-export default Input;
+export default TextArea;
