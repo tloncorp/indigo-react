@@ -10,6 +10,7 @@ const Img = styled.img<Props>`
 
 Img.defaultProps = {
   height: 'auto',
+  width: '100%',
 };
 
 export default Img;

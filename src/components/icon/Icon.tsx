@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {space, layout, position, LayoutProps, SpaceProps, PositionProps} from 'styled-system';
-// import Box from '../../primitives/Box'
 
 const NullIcon = () => (
   <path

@@ -219,6 +219,9 @@ The react library comes with an example site (create-react-app) where your compo
 
 [Benefits of CSS-in-JS](https://www.robinwieruch.de/react-styled-components)
 
+#### Peer Deps
+Since this is a module that will be consumed by an application that may already use certain dependancies - react, formik, etc - certain deps need to be install as peer dependancies AND dev dependancies in the library, and as normal deps in the example site.
+
 #### Multiple Versions of styled-components
 If there are two versions of styled-components installed, you may have to add the react-indigo version as an alias in package.json, depending on your build system
 

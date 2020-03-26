@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Sandbox from "./pages/Sandbox";
 import Buttons from "./pages/Buttons";
 import ViewTest from "./pages/ViewTest";
+import Editor from "./pages/Editor";
 
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 // import {light, dark} from "@tlon/indigo-tokens";
@@ -70,6 +71,7 @@ export default class App extends React.Component {
               } />
               <Route exact path="/buttons" component={Buttons} />
               <Route exact path='/viewtest' component={ViewTest} />
+              <Route exact path='/editor' component={Editor} />
             </div>
           </Router>
         </Root>

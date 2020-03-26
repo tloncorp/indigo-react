@@ -30,6 +30,9 @@ import ItemRow from './components/layout/ItemRow';
 import Row from './components/layout/Row';
 import Col from './components/layout/Col';
 
+// Meta
+import Tile from './components/meta/Tile';
+
 // View
 import Frame from './components/view/Frame';
 import View from './components/view/View';
@@ -51,6 +54,10 @@ import Text from './components/text/Text';
 import Code from './components/text/Code';
 import Anchor from './components/text/Anchor';
 import styleAnchor from './components/text/styleAnchor';
+
+// Widgets
+import MarkdownEditor from './components/widgets/MarkdownEditor';
+import MarkdownRenderer from './components/widgets/MarkdownRenderer';
 
 export {
   light,
@@ -83,6 +90,8 @@ export {
   Row,
   ItemRow,
   Space,
+  // Meta
+  Tile,
   // View
   View,
   Frame,
@@ -91,4 +100,7 @@ export {
   // Text
   Text,
   styleAnchor,
+  // Widgets
+  MarkdownEditor,
+  MarkdownRenderer,
 };

@@ -23,7 +23,7 @@ type StyledProps = {
   hasSuccess?: boolean;
 };
 
-type ColorOptions = 'default' | 'disabled' | 'caution' | 'primary';
+type ColorOptions = 'default' | 'disabled' | 'caution';
 type innerProps = StyledProps & {theme: Theme};
 
 const styledBox = (k: ColorOptions, p: innerProps) => {
