@@ -1,14 +1,12 @@
 import {light, dark} from './theme/index';
 // Primitives
 import Box from './primitives/Box';
-import Img from './primitives/Img';
-import Svg from './primitives/Svg';
 
 // Buttons
-import Button from './components/buttons/Button';
-import ButtonWrap from './components/buttons/ButtonWrap';
-import IconButton from './components/buttons/IconButton';
-import AsyncButton from './components/buttons/AsyncButton';
+import Button from './components/button/Button';
+import ButtonWrap from './components/button/ButtonWrap';
+import IconButton from './components/button/IconButton';
+import AsyncButton from './components/button/AsyncButton';
 
 // Form
 import Input from './components/form/Input';
@@ -22,6 +20,11 @@ import TextArea from './components/form/TextArea';
 // Icon
 import Icon from './components/icon/Icon';
 
+// Image
+import Img from './components/image/Img';
+import Svg from './components/image/Svg';
+import BackgroundImage from './components/image/BackgroundImage';
+
 // Layout
 import Space from './components/layout/Space';
 import Rule from './components/layout/Rule';
@@ -33,31 +36,27 @@ import Col from './components/layout/Col';
 // Meta
 import Tile from './components/meta/Tile';
 
+// Navigation
+import Tab from './components/navigation/Tab';
+import TabGroup from './components/navigation/TabGroup';
+
 // View
 import Frame from './components/view/Frame';
 import View from './components/view/View';
 
 // Status
-import Indefinite from './components/status/Indefinite';
+import Spinner from './components/status/Spinner';
 
 // Text
-// import T1 from './components/text/T1';
-// import T2 from './components/text/T2';
-// import T3 from './components/text/T3';
-// import T4 from './components/text/T4';
-// import T5 from './components/text/T5';
-// import T6 from './components/text/T6';
-// import T7 from './components/text/T7';
-// import T8 from './components/text/T8';
-
 import Text from './components/text/Text';
 import Code from './components/text/Code';
 import Anchor from './components/text/Anchor';
 import styleAnchor from './components/text/styleAnchor';
 
 // Widgets
-import MarkdownEditor from './components/widgets/MarkdownEditor';
-import MarkdownRenderer from './components/widgets/MarkdownRenderer';
+import MarkdownEditor from './components/widget/MarkdownEditor';
+import MarkdownRenderer from './components/widget/MarkdownRenderer';
+console.log(Img, Space, ItemRow);
 
 export {
   light,
@@ -66,6 +65,7 @@ export {
   Box,
   Img,
   Svg,
+  BackgroundImage,
   Code,
   Anchor,
   // Buttons
@@ -92,11 +92,14 @@ export {
   Space,
   // Meta
   Tile,
+  // Navigation
+  Tab,
+  TabGroup,
   // View
   View,
   Frame,
   // Status
-  Indefinite,
+  Spinner,
   // Text
   Text,
   styleAnchor,

@@ -38,22 +38,31 @@ const MarkdownRenderer = styled(ReactMarkdown)`
   }
 
   h1 {
+    padding-top: 72px;
+    padding-bottom: 8px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
   }
 
   h2 {
+    padding-top: 48px;
+    padding-bottom: 8px;
     font-weight: 600;
     font-size: 12px;
   }
 
   h3 {
+    padding-top: 32px;
+    padding-bottom: 8px;
     font-weight: 600;
     font-size: 12px;
+    color: ${p => p.theme.colors.gray5};
   }
 
   h4 {
-    font-weight: 400;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    font-weight: 600;
     font-size: 12px;
     color: ${p => p.theme.colors.gray5};
   }
@@ -105,9 +114,9 @@ const MarkdownRenderer = styled(ReactMarkdown)`
 
   hr {
     border: none;
-    border-top-width: 1px;
-    border-top-color: ${p => p.theme.colors.gray2};
-    border-top-style: solid;
+    height: 1px;
+    background-color: ${p => p.theme.colors.gray2};
+    margin: 8px 0px;
   }
 
   strong,

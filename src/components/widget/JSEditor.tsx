@@ -1,10 +1,12 @@
 // import * as React from 'react'
-import {Controlled as CodeMirror} from 'react-codemirror2';
+import {Controlled as CodeMirror, IControlledCodeMirror} from 'react-codemirror2';
 import styled from 'styled-components';
 import 'codemirror/mode/markdown/markdown';
 import 'codemirror/lib/codemirror.css';
 
-const MarkdownEditor = styled(CodeMirror)`
+type Props = IControlledCodeMirror;
+
+const MarkdownEditor = styled(CodeMirror)<Props>`
   padding: 12px;
   height: 100% !important;
   width: 100% !important;
@@ -120,3 +122,4 @@ MarkdownEditor.defaultProps = {
 };
 
 export default MarkdownEditor;
+export {Props};

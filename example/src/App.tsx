@@ -21,7 +21,29 @@ const Style = createGlobalStyle`
     html {
       background-color: ${p => p.theme.colors.white};
     }
+
+    strong {
+      font-weight: 600;
+    }
 `
+
+// const Style = createGlobalStyle`
+//     ${p => p.theme.reset}
+//     html {
+//       background-color: ${p => p.theme.colors.white};
+//       max-height: 100vh;
+//       min-height: 100vh;
+//       overflow: hidden;
+//       position: fixed;
+//     }
+//
+//     body {
+//       max-height: 100vh;
+//       min-height: 100vh;
+//       overflow: hidden;
+//       position: fixed;
+//     }
+// `
 
 type RootProps = ColorProps & {}
 
@@ -34,9 +56,16 @@ const Root = styled.div<RootProps>`
 
 export default class App extends React.Component {
   state = {
-    dark: false,
+    dark: true,
     theme: light,
     loading: false
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 68) this.toggleDark()
+      return
+    })
   }
 
   toggleDark() {
@@ -53,6 +82,7 @@ export default class App extends React.Component {
     // if (name === 'black') this.setState({ theme: themeBlack })
   }
 
+
   render() {
     const { state } = this
     return (
@@ -60,15 +90,16 @@ export default class App extends React.Component {
         theme={this.state.dark ? dark : light }>
         <Style/>
         <Root>
-          <Row alignItems='center' position='absolute' top='4' left='4'>
-            <IconButton icon='Color' md p='0' onClick={() => this.toggleDark()}/>
-          </Row>
+          {
+            // <Row alignItems='center' position='absolute' top='4' left='4'>
+            //   <IconButton icon='Color' md p='0' onClick={() => this.toggleDark()}/>
+            //  </Row>
+          }
+
           <Router basename="/indigo-react">
             <div>
               <Route exact path="/" component={Home} />
-              <Route exact path="/sandbox" render={
-                p => <Sandbox toggleLoading={() => this.toggleLoading()} loading={state.loading} {...p} />
-              } />
+              <Route exact path="/sandbox" component={Sandbox} />
               <Route exact path="/buttons" component={Buttons} />
               <Route exact path='/viewtest' component={ViewTest} />
               <Route exact path='/editor' component={Editor} />

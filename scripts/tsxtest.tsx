@@ -2,21 +2,27 @@ import * as React from 'react';
 import {SpaceProps} from 'styled-system';
 
 import Button from './Button';
-import Indefinite from '../status/Indefinite';
+import Spinner from '../status/Spinner';
 
 type Props = SpaceProps & {
   sm?: boolean;
   wide?: boolean;
   caution?: boolean;
   primary?: boolean;
-  onClick?: Function;
+  onClick: Function;
   loading?: boolean;
-  children?: JSX.Element | JSX.Element[] | string;
+  children?: JSX.Element | JSX.Element[] | string | (string|JSX.Element)[];
 };
 
 const AsyncButton = ({loading, children, ...props}: Props) => (
   // @ts-ignore
-  <Button {...props}>{loading ? <Indefinite loading={loading} /> : children}</Button>
+  <Button {...props}>{loading ? <Spinner loading={loading} /> : children}</Button>
 );
 
+
+AsyncButton.propTypes = {
+    loading:false,
+}
+
 export default AsyncButton;
+export { Props };

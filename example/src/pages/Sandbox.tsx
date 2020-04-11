@@ -4,7 +4,6 @@ import {
   Button,
   Icon,
   Text,
-  DividerBox,
   Rule,
   Radio,
   InputLabel,
@@ -12,10 +11,12 @@ import {
   Space,
   Checkbox,
   Row,
-  Indefinite,
+  Spinner,
   AsyncButton,
   TextArea,
   Tile,
+  Tab,
+  TabGroup,
 } from "indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -68,6 +69,8 @@ type Props = {
 
 const Sandbox: React.FC<Props> = (props) => {
 
+  const [tab, setTab] = React.useState(0);
+
   const initialValues: FormValues = {
     firstName: '',
     middleName: '',
@@ -81,6 +84,13 @@ const Sandbox: React.FC<Props> = (props) => {
 
   return (
     <Box maxWidth='400px' m='9'>
+    <TabGroup>
+      <Tab selected={tab === 0} title='Chat' onClick={() => setTab(0)}/>
+      <Tab selected={tab === 1} title='About' onClick={() => setTab(1)}/>
+      <Tab selected={tab === 2} title='Settings' onClick={() => setTab(2)}/>
+    </TabGroup>
+
+
 
       <Space py='2'>
         <Text>Form Example</Text>
@@ -193,7 +203,7 @@ const Sandbox: React.FC<Props> = (props) => {
       <Icon mt="2" />
 
 
-      <Indefinite loading={true} />
+      <Spinner loading={true} />
 
 
 

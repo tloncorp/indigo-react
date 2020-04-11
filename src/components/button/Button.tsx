@@ -9,7 +9,8 @@ type Props = SpaceProps & {
   wide?: boolean;
   caution?: boolean;
   primary?: boolean;
-  onClick?: Function;
+  onClick: (e: React.MouseEvent<HTMLElement>) => void;
+  children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
 };
 
 type innerProps = Props & {theme: Theme};

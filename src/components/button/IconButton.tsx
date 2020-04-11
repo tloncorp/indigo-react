@@ -8,7 +8,6 @@ type ColorOptions = 'default' | 'disabled' | 'caution' | 'primary';
 
 type Props = SpaceProps & {
   sm?: boolean;
-  md?: boolean;
   lg?: boolean;
   icon?: string;
   caution?: boolean;
@@ -20,9 +19,9 @@ type Props = SpaceProps & {
 type innerProps = Props & {theme: Theme};
 
 const styledBox = (k: ColorOptions, p: innerProps) => {
-  const {backgroundColor, textColor, outlineColor} = p.theme;
+  const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
   return `
-
+  border-color: ${borderColor[k].default};
   background-color: ${backgroundColor[k].default};
   color: ${textColor[k].default};
   box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].default}`};
@@ -71,8 +70,9 @@ const Button = styled.button<Props>`
   text-align: center;
   vertical-align: middle;
   line-height: 1.33334;
-
   font-size: ${p => p.theme.fontSizes[2]}px;
+
+  padding: 0px;
 
   height: ${p => {
     if (p.sm) return p.theme.sizes[6] + 'px';

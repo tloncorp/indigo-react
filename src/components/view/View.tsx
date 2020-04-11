@@ -13,9 +13,26 @@ const SideBar = styled.div<Props>`
   border-right-style: solid;
   border-right-color: ${p => p.theme.colors.gray2};
   width: ${p => p.theme.space[12]}px;
+  min-width: ${p => p.theme.space[12]}px;
   height: 100%;
   display: ${(p: Props) => (p.sideBarOpen ? 'block' : 'none')};
-  overflowy: scroll;
+  max-height: calc(100vh - 48px);
+  overflow-y: scroll;
+
+  @media only screen and (max-width: ${p => p.theme.breakpoints[0]}) {
+    width: 100%;
+    border-right-width: 0px;
+    border-right-style: none;
+  }
+`;
+
+const Main = styled.div<Props>`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  @media only screen and (max-width: ${p => p.theme.breakpoints[0]}) {
+    display: ${p => (p.sideBarOpen ? 'flex' : 'none')};
+  }
 `;
 
 const View = (props: Props) => {
@@ -24,7 +41,7 @@ const View = (props: Props) => {
       {typeof props.sideBarContents !== 'undefined' ? (
         <SideBar sideBarOpen={props.sideBarOpen}>{props.sideBarContents}</SideBar>
       ) : null}
-      {props.children}
+      <Main>{props.children}</Main>
     </Row>
   );
 };

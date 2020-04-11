@@ -1,13 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Row from '../layout/Row';
-import Col from '../layout/Col';
-
 type Props = {
   children?: JSX.Element | JSX.Element[];
   topBarContents?: JSX.Element | JSX.Element[];
 };
+
+const Root = styled.div`
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 16px;
+  padding-top: 0px;
+  padding-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Outline = styled.div`
   width: 100%;
@@ -20,12 +30,10 @@ const Outline = styled.div`
 
 const Frame = (props: Props) => {
   return (
-    <Col width="100vw" height="100vh" px="4" pb="4">
-      <Row p="2" px="4">
-        {props.topBarContents}
-      </Row>
+    <Root>
+      {props.topBarContents}
       <Outline>{props.children}</Outline>
-    </Col>
+    </Root>
   );
 };
 

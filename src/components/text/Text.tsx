@@ -39,7 +39,6 @@ const Text = styled.div<Props>`
 
 Text.defaultProps = {
   lineHeight: 'short',
-  fontWeight: 400,
   fontSize: 2,
 };
 
