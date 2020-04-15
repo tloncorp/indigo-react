@@ -56,7 +56,7 @@ import styleAnchor from './components/text/styleAnchor';
 // Widgets
 import MarkdownEditor from './components/widget/MarkdownEditor';
 import MarkdownRenderer from './components/widget/MarkdownRenderer';
-console.log(Img, Space, ItemRow);
+import JSEditor from './components/widget/JSEditor';
 
 export {
   light,
@@ -106,4 +106,5 @@ export {
   // Widgets
   MarkdownEditor,
   MarkdownRenderer,
+  JSEditor,
 };

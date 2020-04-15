@@ -1,12 +1,13 @@
 // import * as React from 'react'
 import {Controlled as CodeMirror, IControlledCodeMirror} from 'react-codemirror2';
 import styled from 'styled-components';
-import 'codemirror/mode/markdown/markdown';
+import 'codemirror/mode/jsx/jsx';
 import 'codemirror/lib/codemirror.css';
+import 'codemirror/addon/edit/closebrackets';
 
 type Props = IControlledCodeMirror;
 
-const MarkdownEditor = styled(CodeMirror)<Props>`
+const JSEditor = styled(CodeMirror)<Props>`
   padding: 12px;
   height: 100% !important;
   width: 100% !important;
@@ -24,61 +25,145 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
     height: 100%;
   }
 
-  .CodeMirror-selected { background:${p => p.theme.colors.blue0} !important; }
+  .cm-s-u.CodeMirror {
+    background-color: #000000;
+    color: #f4f4f4;
+  }
 
-  .cm-s-u span { font-family: "Source Code Pro"}
-  .cm-s-u span.cm-meta { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-number { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-keyword { line-height: 1em; font-weight: bold; color: ${p =>
-    p.theme.colors.gray5}; }
-  .cm-s-u span.cm-atom { font-weight: bold; color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-def { color: ${p => p.theme.colors.black}; }
-  .cm-s-u span.cm-variable { color: ${p => p.theme.colors.black}; }
-  .cm-s-u span.cm-variable-2 { color: ${p => p.theme.colors.black}; }
-  .cm-s-u span.cm-variable-3, .cm-s-tlon span.cm-type { color: ${p => p.theme.colors.black}; }
-  .cm-s-u span.cm-property { color: ${p => p.theme.colors.black}; }
-  .cm-s-u span.cm-operator { color: ${p => p.theme.colors.black}; }
-  .cm-s-u span.cm-comment { color: ${p => p.theme.colors.black}; background-color: ${p =>
-  p.theme.colors.gray0}; padding: 2px; border-radius: 2px;}
-  .cm-s-u span.cm-string { color: ${p => p.theme.colors.gray7} }
-  .cm-s-u span.cm-string-2 { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-qualifier { color: ${p => p.theme.colors.gray7} }
-  .cm-s-u span.cm-error { color: ${p => p.theme.colors.red} }
-  .cm-s-u span.cm-attribute { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-tag { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-link { color: ${p => p.theme.colors.gray7}; text-decoration: none;}
-  .cm-s-u .CodeMirror-activeline-background { background: ${p => p.theme.colors.gray5}; }
+  .cm-s-u .CodeMirror-gutters {
+    background: #000000;
+    color: #555555;
+    border: none;
+  }
+
+  .cm-s-u .CodeMirror-guttermarker,
+  .cm-s-u .CodeMirror-guttermarker-subtle,
+  .cm-s-u .CodeMirror-linenumber {
+    color: #555555;
+  }
+
   .cm-s-u .CodeMirror-cursor {
-    border-left: 2px solid ${p => p.theme.colors.blue1};
+    border-left: 1px solid #ffcc00;
   }
 
-  .cm-s-u span.cm-builtin { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-bracket { color: ${p => p.theme.colors.gray5}; }
-
-  .cm-s-u .CodeMirror-matchingbracket { outline:1px solid ${p => p.theme.colors.gray5}; color:${p =>
-  p.theme.colors.black}; !important; }
-
-  .CodeMirror-hints.u {
-    color: ${p => p.theme.colors.gray7};;
-    background-color: ${p => p.theme.colors.blue0}; !important;
+  .cm-s-u div.CodeMirror-selected {
+    background: rgba(97, 97, 97, 0.2);
   }
 
-  .CodeMirror-hints.u .CodeMirror-hint-active {
-    background-color: ${p => p.theme.colors.blue}; !important;
-    color: ${p => p.theme.colors.gray7}; !important;
+  .cm-s-u.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(97, 97, 97, 0.2);
   }
 
+  .cm-s-u .CodeMirror-line::selection,
+  .cm-s-u .CodeMirror-line > span::selection,
+  .cm-s-u .CodeMirror-line > span > span::selection {
+    background: rgba(128, 203, 196, 0.2);
+  }
+
+  .cm-s-u .CodeMirror-line::-moz-selection,
+  .cm-s-u .CodeMirror-line > span::-moz-selection,
+  .cm-s-u .CodeMirror-line > span > span::-moz-selection {
+    background: rgba(128, 203, 196, 0.2);
+  }
+
+  .cm-s-u .CodeMirror-activeline-background {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .cm-s-u .cm-keyword {
+    color: #c792ea;
+  }
+
+  .cm-s-u .cm-operator {
+    color: #88c6ff;
+  }
+
+  .cm-s-u .cm-variable-2 {
+    color: #e1f1ff;
+  }
+
+  .cm-s-u .cm-variable-3,
+  .cm-s-u .cm-type {
+    color: #f59b9b;
+  }
+
+  .cm-s-u .cm-builtin {
+    color: #ffc700;
+  }
+
+  .cm-s-u .cm-atom {
+    color: #f59b9b;
+  }
+
+  .cm-s-u .cm-number {
+    color: #f59b9b;
+  }
+
+  .cm-s-u .cm-def {
+    color: #88c6ff;
+  }
+
+  .cm-s-u .cm-string {
+    color: #97d6b6;
+  }
+
+  .cm-s-u .cm-string-2 {
+    color: #f59b9b;
+  }
+
+  .cm-s-u .cm-comment {
+    color: #555555;
+  }
+
+  .cm-s-u .cm-variable {
+    color: #f59b9b;
+  }
+
+  .cm-s-u .cm-tag {
+    color: #ff4136;
+  }
+
+  .cm-s-u .cm-meta {
+    color: #ffc700;
+  }
+
+  .cm-s-u .cm-attribute {
+    color: #c792ea;
+  }
+
+  .cm-s-u .cm-property {
+    color: #f59b9b;
+  }
+
+  .cm-s-u .cm-qualifier {
+    color: #ffc700;
+  }
+
+  .cm-s-u .cm-variable-3,
+  .cm-s-u .cm-type {
+    color: #ffdf7b;
+  }
+
+  .cm-s-u .cm-error {
+    color: rgba(255, 255, 255, 1);
+    background-color: #f59b9b;
+  }
+
+  .cm-s-u .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+  }
 `;
 
-MarkdownEditor.defaultProps = {
+JSEditor.defaultProps = {
   value: '',
   options: {
     value: '',
-    mode: 'markdown',
+    mode: 'jsx',
     theme: 'u',
-    lineNumbers: false,
+    lineNumbers: true,
     lineSeparators: null,
-    indentUnit: 2,
+    indentUnit: 1,
     smartIndent: true,
     tabSize: 4,
     indentWithTabs: false,
@@ -118,8 +203,9 @@ MarkdownEditor.defaultProps = {
     spellcheck: true,
     autocorrect: false,
     autocapitalize: false,
+    autoCloseBrackets: true,
   },
 };
 
-export default MarkdownEditor;
+export default JSEditor;
 export {Props};

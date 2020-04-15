@@ -7,6 +7,7 @@ import {
   Icon,
   MarkdownEditor,
   MarkdownRenderer,
+  JSEditor,
   Rule,
 } from "indigo-react";
 
@@ -123,6 +124,9 @@ export default class Home extends React.Component {
   render() {
     return (
       <Row height='50vh' flexWrap='wrap' p='8'>
+        <JSEditor
+          onBeforeChange={(e, d, v) => this.onBeforeChange(e, d, v)}
+          value={this.state.value} />
         <MarkdownEditor
           onBeforeChange={(e, d, v) => this.onBeforeChange(e, d, v)}
           value={this.state.value}

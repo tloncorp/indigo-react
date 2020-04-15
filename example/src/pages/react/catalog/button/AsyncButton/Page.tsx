@@ -21,7 +21,7 @@ const code = `
 
 `
 
-export default class Hom\e extends React.Component {
+export default class Home extends React.Component {
   state = {
     code: code
   }

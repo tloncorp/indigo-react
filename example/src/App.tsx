@@ -62,10 +62,10 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', (e) => {
-      if (e.keyCode === 68) this.toggleDark()
-      return
-    })
+    // window.addEventListener('keydown', (e) => {
+    //   if (e.keyCode === 68) this.toggleDark()
+    //   return
+    // })
   }
 
   toggleDark() {
