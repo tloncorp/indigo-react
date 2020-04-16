@@ -5,17 +5,11 @@
   "homepage": "https://urbit.github.io/indigo-react",
   "main": "index.js",
   "dependencies": {
-    "@tlon/indigo-react": "^1.1.5",
     "codemirror": "^5.52.2",
-    "components": "^0.1.0",
-    "formik": "^2.1.4",
     "indigo-react": "file:..",
     "prop-types": "^15.6.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
-    "styled": "^1.0.0",
     "styled-system": "^5.1.5",
     "urbit-ob": "^4.1.4",
     "yup": "^0.28.1"

@@ -1,10 +1,13 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Sandbox from "./pages/Sandbox";
-import Buttons from "./pages/Buttons";
-import ViewTest from "./pages/ViewTest";
-import Editor from "./pages/Editor";
+import Catalog from "./pages/Catalog"
+import CatalogPage from "./pages/CatalogPage"
+// import Sandbox from "./pages/Sandbox";
+// import Buttons from "./pages/Buttons";
+// import ViewTest from "./pages/ViewTest";
+// import Editor from "./pages/Editor";
+
 
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 // import {light, dark} from "@tlon/indigo-tokens";
@@ -96,13 +99,18 @@ export default class App extends React.Component {
             //  </Row>
           }
 
-          <Router basename="/indigo-react">
+          <Router>
             <div>
               <Route exact path="/" component={Home} />
-              <Route exact path="/sandbox" component={Sandbox} />
-              <Route exact path="/buttons" component={Buttons} />
-              <Route exact path='/viewtest' component={ViewTest} />
-              <Route exact path='/editor' component={Editor} />
+              <Route exact path="/catalog" component={Catalog} />
+              <Route path={`/catalog/:componentId`} component={CatalogPage}/>
+              {
+                // <Route exact path="/sandbox" component={Sandbox} />
+                // <Route exact path="/buttons" component={Buttons} />
+                // <Route exact path='/viewtest' component={ViewTest} />
+                // <Route exact path='/editor' component={Editor} />
+              }
+
             </div>
           </Router>
         </Root>
