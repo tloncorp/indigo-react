@@ -1,23 +1,16 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Catalog from "./pages/Catalog"
-import CatalogPage from "./pages/CatalogPage"
-// import Sandbox from "./pages/Sandbox";
-// import Buttons from "./pages/Buttons";
-// import ViewTest from "./pages/ViewTest";
-// import Editor from "./pages/Editor";
-
-
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-// import {light, dark} from "@tlon/indigo-tokens";
-// import {light, dark} from "../theme/index";
-
-import { light, dark, Box, IconButton, Row, Text } from "indigo-react";
 import {
   color,
   ColorProps
 } from 'styled-system';
+import { light, dark, darkAlt, Box, IconButton, Row, Text } from "indigo-react";
+
+import Home from "./pages/Home";
+import Catalog from "./pages/Catalog"
+import CatalogPage from "./pages/CatalogPage"
+import Header from './components/Header'
 
 const Style = createGlobalStyle`
     ${p => p.theme.reset}
@@ -58,11 +51,18 @@ const Root = styled.div<RootProps>`
 
 
 export default class App extends React.Component {
-  state = {
-    dark: true,
-    theme: light,
-    loading: false
+  constructor(props) {
+    super(props);
+    // Don't call this.setState() here!
+    this.state = {
+      theme: light,
+      themeName: 'Light',
+      menuOpen: false,
+      loading: false
+    };
+    this.setTheme = this.setTheme.bind(this);
   }
+
 
   componentDidMount() {
     // window.addEventListener('keydown', (e) => {
@@ -80,17 +80,40 @@ export default class App extends React.Component {
   }
 
   setTheme(name:string) {
-    if (name === 'light') this.setState({ theme: light })
-    if (name === 'dark') this.setState({ theme: dark })
-    // if (name === 'black') this.setState({ theme: themeBlack })
+    if (name === 'light') this.setState({
+      theme: light,
+      themeName: 'Light'
+    })
+    if (name === 'dark') this.setState({
+      theme: dark,
+      themeName: 'Dark'
+    })
+    if (name === 'darkAlt') this.setState({
+      theme: darkAlt,
+      themeName: 'Dark Alt'
+    })
+  }
+
+  toggleMenu() {
+    this.setState({ menuOpen: !this.state.menuOpen })
   }
 
 
   render() {
     const { state } = this
+
+    const actions = {
+      setTheme: this.setTheme,
+      toggleMenu: this.toggleMenu,
+    }
+
+    const data = {
+      themeName: this.state.themeName
+    }
+
     return (
       <ThemeProvider
-        theme={this.state.dark ? dark : light }>
+        theme={this.state.theme }>
         <Style/>
         <Root>
           {
@@ -98,6 +121,7 @@ export default class App extends React.Component {
             //   <IconButton icon='Color' md p='0' onClick={() => this.toggleDark()}/>
             //  </Row>
           }
+          <Header actions={actions} data={data} />
 
           <Router>
             <div>

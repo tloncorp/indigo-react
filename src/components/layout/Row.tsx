@@ -21,16 +21,19 @@ type Props = BorderProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps & {};
+  SpaceProps & {
+    expand?: boolean;
+  };
 
 const Row = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
+  width: ${p => (p.expand ? '100%' : 'auto')};
   ${compose(border, color, flexbox, layout, position, space)}
 `;
 
 Row.defaultProps = {
-  margin: 0,
+  // margin: 0,
   minWidth: 0,
 };
 

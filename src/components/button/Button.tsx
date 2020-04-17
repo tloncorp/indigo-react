@@ -1,50 +1,84 @@
 import styled from 'styled-components';
-import {space, SpaceProps} from 'styled-system';
+import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
 import {Theme} from '../../theme/index';
 
-type ColorOptions = 'default' | 'disabled' | 'caution' | 'primary';
+type Props = SpaceProps &
+  TypographyProps & {
+    sm?: boolean;
+    wide?: boolean;
+    narrow?: boolean;
+    border?: boolean;
+    caution?: boolean;
+    primary?: boolean;
+    onClick: (e: React.MouseEvent<HTMLElement>) => void;
+    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
+  };
 
-type Props = SpaceProps & {
-  sm?: boolean;
-  wide?: boolean;
-  caution?: boolean;
-  primary?: boolean;
-  onClick: (e: React.MouseEvent<HTMLElement>) => void;
-  children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
-};
+type BoxInput = Props & {theme: Theme};
 
-type innerProps = Props & {theme: Theme};
-
-const styledBox = (k: ColorOptions, p: innerProps) => {
-  const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
-  return `
-  border-color: ${borderColor[k].default};
-  background-color: ${backgroundColor[k].default};
-  color: ${textColor[k].default};
-  box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].default}`};
+const defaultBox = (p: BoxInput) => `
+  border-color: ${p.border ? p.theme.colors.black : p.theme.colors.white};
+  background-color: ${p.border ? p.theme.colors.white : p.theme.colors.white};
+  color: ${p.theme.colors.black};
 
   &:hover {
-    border-color: ${borderColor[k].hover};
-    background-color: ${backgroundColor[k].hover};
-    color: ${textColor[k].hover};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].hover}`};
+    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
+    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.gray0};
+    color: ${p.theme.colors.black};
   }
 
   &:focus {
-    border-color: ${borderColor[k].focus};
-    background-color: ${backgroundColor[k].focus};
-    color: ${textColor[k].focus};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].focus}`};
+    border-color: ${p.theme.colors.blue1};
+    background-color: ${p.theme.colors.white};
+    color: ${p.theme.colors.black};
   }
 
   &:active {
-    border-color: ${borderColor[k].active};
-    background-color: ${backgroundColor[k].active};
-    color: ${textColor[k].active};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].active}`};
+    border-color: ${p.theme.colors.blue1};
+    background-color: ${p.theme.colors.blue1};
+    color: ${p.theme.colors.white};
+    * {
+      fill: ${p.theme.colors.white};
+    }
   }
-  `;
-};
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
+    background-color: ${p.theme.colors.gray0};
+    color: ${p.theme.colors.gray5};
+    * {
+      fill: ${p.theme.colors.gray5};
+    }
+  }
+`;
+
+const cautionBox = (p: BoxInput) => `
+  &:hover {
+    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
+    background-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.gray0};
+    color: ${p.theme.colors.black};
+  }
+
+  &:focus {
+    border-color: ${p.theme.colors.blue1};
+    background-color: ${p.theme.colors.white};
+    color: ${p.theme.colors.black};
+  }
+
+  &:active {
+    border-color: ${p.theme.colors.blue1};
+    background-color: ${p.theme.colors.blue1};
+    color: ${p.theme.colors.white};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
+    background-color: ${p.theme.colors.gray0};
+    color: ${p.theme.colors.gray5};
+  }
+`;
 
 const Button = styled.button<Props>`
   border: 0;
@@ -59,36 +93,30 @@ const Button = styled.button<Props>`
   vertical-align: middle;
   line-height: 1.33334;
 
-  font-size: ${p => p.theme.fontSizes[2]}px;
-
-  height: ${p => {
-    if (p.sm) return p.theme.sizes[6] + 'px';
-    return p.theme.sizes[7] + 'px';
-  }};
-
-  min-width: ${p => p.theme.sizes[10]}px;
+  min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
 
   padding: ${p => {
-    if (p.sm) return 0 + ' ' + p.theme.space[2] + 'px';
-    return 0 + ' ' + p.theme.space[3] + 'px';
+    if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
   }};
 
-  border-radius: ${p => p.theme.boxRadii.minor}px;
+  border-radius: ${p => p.theme.boxRadii.mid}px;
   border-width: 1px;
   border-style: solid;
 
-  ${p => {
-    if (p.disabled) return styledBox('disabled', p);
-    if (p.caution) return styledBox('caution', p);
-    if (p.primary) return styledBox('primary', p);
-    return styledBox('default', p);
-  }};
+  border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
+  background-color: ${p => p.theme.white};
+  color: ${p => p.theme.black};
 
-  &:disabled {
-    cursor: not-allowed;
-  }
+  ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
 
   ${space}
+  ${typography}
 `;
 
+Button.defaultProps = {
+  fontSize: 2,
+};
+
 export default Button;
+export {Props, BoxInput};

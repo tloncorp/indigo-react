@@ -56,7 +56,7 @@ const Rule = styled.div<Props>`
 `;
 
 Rule.defaultProps = {
-  borderColor: 'gray2',
+  borderColor: 'gray1',
   vertical: false,
 };
 

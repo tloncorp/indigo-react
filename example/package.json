@@ -8,6 +8,7 @@
     "codemirror": "^5.52.2",
     "indigo-react": "file:..",
     "prop-types": "^15.6.2",
+    "react-hexagon-grid": "^1.1.1",
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
     "styled-system": "^5.1.5",
@@ -19,7 +20,8 @@
     "formik": "../node_modules/formik",
     "react": "../node_modules/react",
     "react-dom": "../node_modules/react-dom/profiling",
-    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling",
+    "@reach/menu-button": "../node_modules/@reach/menu-button"
   },
   "scripts": {
     "start": "parcel ./public/index.html",

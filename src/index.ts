@@ -1,4 +1,4 @@
-import {light, dark} from './theme/index';
+import {light, dark, darkAlt} from './theme/index';
 // Primitives
 import Box from './primitives/Box';
 
@@ -7,6 +7,12 @@ import Button from './components/button/Button';
 import ButtonWrap from './components/button/ButtonWrap';
 import IconButton from './components/button/IconButton';
 import AsyncButton from './components/button/AsyncButton';
+
+// Control
+import Menu from './components/control/Menu';
+import MenuButton from './components/control/MenuButton';
+import MenuList from './components/control/MenuList';
+import MenuItem from './components/control/MenuItem';
 
 // Form
 import Input from './components/form/Input';
@@ -61,6 +67,7 @@ import JSEditor from './components/widget/JSEditor';
 export {
   light,
   dark,
+  darkAlt,
   // Primitives
   Box,
   Img,
@@ -73,6 +80,11 @@ export {
   IconButton,
   ButtonWrap,
   AsyncButton,
+  // Control
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
   // Form
   Input,
   Radio,

@@ -1,20 +1,21 @@
-import * as React from 'react';
+// import * as React from 'react';
+// import { SpaceProps } from 'styled-system';
 import styled from 'styled-components';
-import {space, SpaceProps} from 'styled-system';
+import {MenuButton} from '@reach/menu-button';
+import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
 import {Theme} from '../../theme/index';
-import Icon from '../icon/Icon';
 
-type Props = SpaceProps & {
-  sm?: boolean;
-  size?: number | string;
-  lg?: boolean;
-  icon?: string;
-  border?: boolean;
-  caution?: boolean;
-  primary?: boolean;
-  disabled?: boolean;
-  onClick?: Function;
-};
+type Props = SpaceProps &
+  TypographyProps & {
+    sm?: boolean;
+    wide?: boolean;
+    narrow?: boolean;
+    border?: boolean;
+    caution?: boolean;
+    primary?: boolean;
+    onClick: (e: React.MouseEvent<HTMLElement>) => void;
+    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
+  };
 
 type BoxInput = Props & {theme: Theme};
 
@@ -82,7 +83,7 @@ const cautionBox = (p: BoxInput) => `
   }
 `;
 
-const Button = styled.button<Props>`
+const StyledMenuButton = styled(MenuButton)<Props>`
   border: 0;
   outline: none;
   cursor: pointer;
@@ -95,27 +96,29 @@ const Button = styled.button<Props>`
   vertical-align: middle;
   line-height: 1.33334;
 
+  min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
+
   padding: ${p => {
-    if (p.sm) return `${p.theme.space[1]}px`;
-    return `${p.theme.space[2]}px`;
+    if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
   }};
 
-  border-radius: ${p => p.theme.boxRadii.minor}px;
+  border-radius: ${p => p.theme.boxRadii.mid}px;
+  border-width: 1px;
+  border-style: solid;
+
+  border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
+  background-color: ${p => p.theme.white};
+  color: ${p => p.theme.black};
 
   ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
 
   ${space}
+  ${typography}
 `;
 
-const IconButton = ({icon, size, ...props}: Props) => (
-  // @ts-ignore
-  <Button {...props}>
-    <Icon icon={icon} size={size} />
-  </Button>
-);
-
-IconButton.defaultProps = {
-  onClick: () => {},
+StyledMenuButton.defaultProps = {
+  fontSize: '2',
 };
 
-export default IconButton;
+export default StyledMenuButton;

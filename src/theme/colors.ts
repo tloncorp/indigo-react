@@ -27,7 +27,7 @@ const colors = {
   green0: '#E0FFE7',
   // Blue
   blue2: '#001A46',
-  blue1: '#219DFF',
+  blue1: '#008EFF',
   blue0: '#E1F1FF',
 };
 

@@ -34,6 +34,8 @@ const Text = styled.div<Props>`
 
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 
+  display: inline;
+
   ${compose(color, layout, space, typography)};
 `;
 
