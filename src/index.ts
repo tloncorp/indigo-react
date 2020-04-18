@@ -1,4 +1,4 @@
-import {light, dark, darkAlt} from './theme/index';
+import {light, dark, inverted} from './theme/index';
 // Primitives
 import Box from './primitives/Box';
 
@@ -67,7 +67,7 @@ import JSEditor from './components/widget/JSEditor';
 export {
   light,
   dark,
-  darkAlt,
+  inverted,
   // Primitives
   Box,
   Img,

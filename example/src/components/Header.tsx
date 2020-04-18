@@ -28,17 +28,28 @@ const Header = ({ actions, data }) => (
       <Text mr='2' fontSize='4' gray>Theme:</Text>
       <Menu>
         <MenuButton narrow fontSize='4'>
-          {data.themeName}
+          { data.themeName }
           <Icon ml='2' size='5' icon='ChevronSouth' />
         </MenuButton>
         <MenuList>
-          <MenuItem onSelect={() => actions.setTheme('dark')} fontSize='4'>Dark</MenuItem>
-          <MenuItem onSelect={() => actions.setTheme('darkAlt')} fontSize='4'>Dark Alt</MenuItem>
-          <MenuItem onSelect={() => actions.setTheme('light')} fontSize='4'>Light</MenuItem>
+          <MenuItem
+            onSelect={() => actions.setTheme('dark')}
+            fontSize='4'>
+            Dark
+          </MenuItem>
+          <MenuItem
+            onSelect={() => actions.setTheme('inverted')}
+            fontSize='4'>
+            Inverted
+          </MenuItem>
+          <MenuItem
+            onSelect={() => actions.setTheme('light')}
+            fontSize='4'>
+            Light
+          </MenuItem>
         </MenuList>
       </Menu>
     </Row>
-
   </Row>
 )
 

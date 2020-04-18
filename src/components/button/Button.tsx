@@ -17,70 +17,157 @@ type Props = SpaceProps &
 type BoxInput = Props & {theme: Theme};
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.border ? p.theme.colors.black : p.theme.colors.white};
-  background-color: ${p.border ? p.theme.colors.white : p.theme.colors.white};
+  border-color: ${p.theme.colors.white};
+  background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
+  * {
+    fill: ${p.theme.colors.gray5};
+  }
 
   &:hover {
-    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.gray0};
-    color: ${p.theme.colors.black};
+    border-color: ${p.theme.colors.gray0};
+    background-color: ${p.theme.colors.gray0};
+    * {
+      fill: ${p.theme.colors.black};
+    }
   }
 
   &:focus {
-    border-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.black};
+    * {
+      fill: ${p.theme.colors.black};
+    }
   }
 
   &:active {
-    border-color: ${p.theme.colors.blue1};
-    background-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
+    background-color: ${p.theme.colors.primary};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
     }
   }
+`;
 
-  &:disabled {
-    cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
+const cautionBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.white};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red1};
+  * {
+    fill: ${p.theme.colors.red1};
+  }
+
+  &:hover {
+    border-color: ${p.theme.colors.red0};
+    background-color: ${p.theme.colors.red0};
     * {
-      fill: ${p.theme.colors.gray5};
+      fill: ${p.theme.colors.red1};
+    }
+  }
+
+  &:focus {
+    border-color: ${p.theme.colors.red1};
+    * {
+      fill: ${p.theme.colors.red1};
+    }
+  }
+
+  &:active {
+    border-color: ${p.theme.colors.red1};
+    background-color: ${p.theme.colors.red1};
+    color: ${p.theme.colors.white};
+    * {
+      fill: ${p.theme.colors.white};
     }
   }
 `;
 
-const cautionBox = (p: BoxInput) => `
+const disabledBox = (p: BoxInput) => `
+  &:disabled {
+    cursor: not-allowed;
+    border-color: ${p.theme.colors.gray0};
+    background-color: ${p.theme.colors.gray0};
+    color: ${p.theme.colors.gray5};
+  }
+`;
+
+// Bordered
+
+const defaultBoxBordered = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.black};
+  * {
+    fill: ${p.theme.colors.gray5};
+  }
+
   &:hover {
-    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.gray0};
-    color: ${p.theme.colors.black};
+    background-color: ${p.theme.colors.gray0};
+    * {
+      fill: ${p.theme.colors.black};
+    }
   }
 
   &:focus {
-    border-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.black};
+    * {
+      fill: ${p.theme.colors.black};
+    }
   }
 
   &:active {
-    border-color: ${p.theme.colors.blue1};
-    background-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
+    background-color: ${p.theme.colors.primary};
     color: ${p.theme.colors.white};
+    * {
+      fill: ${p.theme.colors.white};
+    }
+  }
+`;
+
+const cautionBoxBordered = (p: BoxInput) => `
+  border-color: ${p.theme.colors.red1};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red1};
+  * {
+    fill: ${p.theme.colors.red1};
   }
 
+  &:hover {
+    background-color: ${p.theme.colors.red0};
+    * {
+      fill: ${p.theme.colors.red1};
+    }
+  }
+
+  &:focus {
+    * {
+      fill: ${p.theme.colors.red1};
+    }
+  }
+
+  &:active {
+    background-color: ${p.theme.colors.red1};
+    color: ${p.theme.colors.white};
+    * {
+      fill: ${p.theme.colors.white};
+    }
+  }
+`;
+
+const disabledBoxBordered = (p: BoxInput) => `
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
+    border-color: ${p.theme.colors.gray2};
     background-color: ${p.theme.colors.gray0};
     color: ${p.theme.colors.gray5};
   }
 `;
 
 const Button = styled.button<Props>`
+  box-style: border
   border: 0;
   outline: none;
   cursor: pointer;
@@ -91,16 +178,18 @@ const Button = styled.button<Props>`
   justify-content: center;
   text-align: center;
   vertical-align: middle;
-  line-height: 1.33334;
+  line-height: 1.2;
 
   min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
+
+  width: ${p => (p.wide ? '100%' : 'auto')};
 
   padding: ${p => {
     if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
     return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
   }};
 
-  border-radius: ${p => p.theme.boxRadii.mid}px;
+  border-radius: ${p => p.theme.boxRadii.minor}px;
   border-width: 1px;
   border-style: solid;
 
@@ -108,7 +197,17 @@ const Button = styled.button<Props>`
   background-color: ${p => p.theme.white};
   color: ${p => p.theme.black};
 
-  ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
+  ${p => {
+    if (p.border) {
+      if (p.disabled) return disabledBoxBordered(p);
+      if (p.caution) return cautionBoxBordered(p);
+      return defaultBoxBordered(p);
+    } else {
+      if (p.disabled) return disabledBox(p);
+      if (p.caution) return cautionBox(p);
+      return defaultBox(p);
+    }
+  }}
 
   ${space}
   ${typography}

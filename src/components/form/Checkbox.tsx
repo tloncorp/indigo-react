@@ -23,47 +23,66 @@ type InternalProps = {
   hasError?: boolean;
 };
 
-type ColorOptions = 'default' | 'disabled' | 'caution';
+type BoxInput = InternalProps & {theme: Theme};
 
-const styledBox = (k: ColorOptions, p: InternalProps & {theme: Theme}) => {
-  const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
-  return `
-  border-color: ${borderColor[k].default};
-  background-color: ${backgroundColor[k].default};
-  color: ${textColor[k].default};
-  box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].default}`};
+const offBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.white};
   * {
-    fill:  ${textColor[k].active};
+    fill:  ${p.theme.colors.white};
   }
 
   &:hover {
-    border-color: ${borderColor[k].hover};
-    color: ${textColor[k].hover};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].hover}`};
-    * {
-      fill:  ${textColor[k].active};
-    }
+    border-color: ${p.theme.colors.gray5};
   }
 
   ${HiddenInput}:focus ~ & {
-    border-color: ${borderColor[k].focus};
-    color: ${textColor[k].focus};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].focus}`};
-    * {
-      fill:  ${textColor[k].active};
-    }
+    border-color: ${p.theme.colors.primary};
+  }
+`;
+
+const onBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.primary};
+  background-color: ${p.theme.colors.primary};
+  * {
+    fill:  ${p.theme.colors.white};
+  }
+`;
+
+const offBoxCaution = (p: BoxInput) => `
+  border-color: ${p.theme.colors.red1};
+  background-color: ${p.theme.colors.red0};
+  * {
+    fill:  ${p.theme.colors.white};
   }
 
-  &:active {
-    border-color: ${borderColor[k].active};
-    color: ${textColor[k].active};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].active}`};
+  &:hover {
+    border-color: ${p.theme.colors.red1};
+  }
+
+  ${HiddenInput}:focus ~ & {
+    background-color: ${p.theme.colors.white};
     * {
-      fill:  ${textColor[k].active};
+      fill:  ${p.theme.colors.red1};
     }
   }
-  `;
-};
+`;
+
+const onBoxCaution = (p: BoxInput) => `
+  border-color: ${p.theme.colors.red1};
+  background-color: ${p.theme.colors.red1};
+  * {
+    fill:  ${p.theme.colors.white};
+  }
+`;
+
+const disabledBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.gray0};
+  * {
+    fill:  ${p.theme.colors.gray5};
+  }
+`;
 
 // Hide this input completely
 const HiddenInput = styled.input`
@@ -82,19 +101,22 @@ const Label = styled.label<InternalProps>`
   cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')}};
 `;
 
-const Outline = styled.div<InternalProps>`
+const Indicator = styled.div<InternalProps>`
   position: absolute;
-  top: 0px;
+  top: ${p => (p.theme.fontSizes[2] - 12) / 2}px;
   left: 0px;
   height: 16px;
   width: 16px;
   border-radius: ${p => p.theme.boxRadii.minor}px;
   border-width: 1px;
   border-style: solid;
+
   ${p => {
-    if (p.disabled) return styledBox('disabled', p);
-    if (p.hasError) return styledBox('caution', p);
-    return styledBox('default', p);
+    if (p.disabled) return disabledBox(p);
+    if (p.checked) return onBox(p);
+    if (p.hasError && !p.checked) return offBoxCaution(p);
+    if (p.hasError && p.checked) return onBoxCaution(p);
+    return offBox(p);
   }};
 `;
 
@@ -104,17 +126,17 @@ const Checkbox = ({label, caption, id, disabled, ...props}: Props) => {
     <Box {...props}>
       <Label disabled={disabled} htmlFor={id}>
         <InputLabel>{label}</InputLabel>
-        {caption ? <InputCaption>{caption}</InputCaption> : null}
+        {caption ? <InputCaption pt="1">{caption}</InputCaption> : null}
         <HiddenInput {...field} value={id} name={id} id={id} disabled={disabled} type="checkbox" />
-        <Outline
+        <Indicator
           hasError={meta.touched && meta.error !== undefined}
           checked={field.checked}
           disabled={disabled}
         >
           {field.checked ? (
-            <Icon position="absolute" top="0px" left="0px" size="14px" icon="Checkmark" />
+            <Icon position="absolute" top="0px" left="0px" size="14px" icon="CheckmarkBold" />
           ) : null}
-        </Outline>
+        </Indicator>
         <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
       </Label>
     </Box>

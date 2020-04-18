@@ -5,12 +5,14 @@ import {
   color,
   ColorProps
 } from 'styled-system';
-import { light, dark, darkAlt, Box, IconButton, Row, Text } from "indigo-react";
+import { light, dark, inverted, Box, IconButton, Row, Text } from "indigo-react";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
 import Header from './components/Header'
+
+import Sandbox from './pages/Sandbox'
 
 const Style = createGlobalStyle`
     ${p => p.theme.reset}
@@ -88,9 +90,9 @@ export default class App extends React.Component {
       theme: dark,
       themeName: 'Dark'
     })
-    if (name === 'darkAlt') this.setState({
-      theme: darkAlt,
-      themeName: 'Dark Alt'
+    if (name === 'inverted') this.setState({
+      theme: inverted,
+      themeName: 'Inverted'
     })
   }
 
@@ -126,6 +128,7 @@ export default class App extends React.Component {
           <Router>
             <div>
               <Route exact path="/" component={Home} />
+              <Route exact path="/sandbox" component={Sandbox} />
               <Route exact path="/catalog" component={Catalog} />
               <Route path={`/catalog/:componentId`} component={CatalogPage}/>
               {

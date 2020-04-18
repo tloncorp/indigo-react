@@ -20,102 +20,201 @@ type Props = SpaceProps &
 type BoxInput = Props & {theme: Theme};
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.border ? p.theme.colors.black : p.theme.colors.white};
-  background-color: ${p.border ? p.theme.colors.white : p.theme.colors.white};
-  color: ${p.theme.colors.black};
-
-  &:hover {
-    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.gray0};
-    color: ${p.theme.colors.black};
-  }
-
-  &:focus {
-    border-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.white};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
-  }
-
-  &:active {
-    border-color: ${p.theme.colors.blue1};
-    background-color: ${p.theme.colors.blue1};
-    color: ${p.theme.colors.white};
-    * {
-      fill: ${p.theme.colors.white};
-    }
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
     * {
       fill: ${p.theme.colors.gray5};
     }
-  }
-`;
+
+    &:hover {
+      border-color: ${p.theme.colors.gray0};
+      background-color: ${p.theme.colors.gray0};
+      * {
+        fill: ${p.theme.colors.black};
+      }
+    }
+
+    &:focus {
+      border-color: ${p.theme.colors.primary};
+      background-color: ${p.theme.colors.white};
+      * {
+        fill: ${p.theme.colors.black};
+      }
+    }
+
+    &:active {
+      border-color: ${p.theme.colors.primary};
+      background-color: ${p.theme.colors.primary};
+      color: ${p.theme.colors.white};
+      * {
+        fill: ${p.theme.colors.white};
+      }
+    }
+  `;
 
 const cautionBox = (p: BoxInput) => `
-  &:hover {
-    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.gray0};
-    color: ${p.theme.colors.black};
-  }
+    border-color: ${p.theme.colors.white};
+    background-color: ${p.theme.colors.white};
+    color: ${p.theme.colors.red1};
+    * {
+      fill: ${p.theme.colors.red1};
+    }
 
-  &:focus {
-    border-color: ${p.theme.colors.blue1};
+    &:hover {
+      border-color: ${p.theme.colors.red0};
+      background-color: ${p.theme.colors.red0};
+      * {
+        fill: ${p.theme.colors.red1};
+      }
+    }
+
+    &:focus {
+      border-color: ${p.theme.colors.red1};
+      * {
+        fill: ${p.theme.colors.red1};
+      }
+    }
+
+    &:active {
+      border-color: ${p.theme.colors.red1};
+      background-color: ${p.theme.colors.red1};
+      color: ${p.theme.colors.white};
+      * {
+        fill: ${p.theme.colors.white};
+      }
+    }
+  `;
+
+const disabledBox = (p: BoxInput) => `
+    &:disabled {
+      cursor: not-allowed;
+      border-color: ${p.theme.colors.gray0};
+      background-color: ${p.theme.colors.gray0};
+      color: ${p.theme.colors.gray5};
+    }
+  `;
+
+// Bordered
+
+const defaultBoxBordered = (p: BoxInput) => `
+    border-color: ${p.theme.colors.gray2};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
-  }
+    * {
+      fill: ${p.theme.colors.gray5};
+    }
 
-  &:active {
-    border-color: ${p.theme.colors.blue1};
-    background-color: ${p.theme.colors.blue1};
-    color: ${p.theme.colors.white};
-  }
+    &:hover {
+      background-color: ${p.theme.colors.gray0};
+      * {
+        fill: ${p.theme.colors.black};
+      }
+    }
 
-  &:disabled {
-    cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
-  }
-`;
+    &:focus {
+      border-color: ${p.theme.colors.primary};
+      background-color: ${p.theme.colors.white};
+      * {
+        fill: ${p.theme.colors.black};
+      }
+    }
+
+    &:active {
+      border-color: ${p.theme.colors.primary};
+      background-color: ${p.theme.colors.primary};
+      color: ${p.theme.colors.white};
+      * {
+        fill: ${p.theme.colors.white};
+      }
+    }
+  `;
+
+const cautionBoxBordered = (p: BoxInput) => `
+    border-color: ${p.theme.colors.red1};
+    background-color: ${p.theme.colors.white};
+    color: ${p.theme.colors.red1};
+    * {
+      fill: ${p.theme.colors.red1};
+    }
+
+    &:hover {
+      background-color: ${p.theme.colors.red0};
+      * {
+        fill: ${p.theme.colors.red1};
+      }
+    }
+
+    &:focus {
+      * {
+        fill: ${p.theme.colors.red1};
+      }
+    }
+
+    &:active {
+      background-color: ${p.theme.colors.red1};
+      color: ${p.theme.colors.white};
+      * {
+        fill: ${p.theme.colors.white};
+      }
+    }
+  `;
+
+const disabledBoxBordered = (p: BoxInput) => `
+    &:disabled {
+      cursor: not-allowed;
+      border-color: ${p.theme.colors.gray2};
+      background-color: ${p.theme.colors.gray0};
+      color: ${p.theme.colors.gray5};
+    }
+  `;
 
 const StyledMenuButton = styled(MenuButton)<Props>`
-  border: 0;
-  outline: none;
-  cursor: pointer;
-  user-select: none;
+    box-style: border
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1.33334;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.2;
 
-  min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
+    min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
 
-  padding: ${p => {
-    if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
-    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
-  }};
+    width: ${p => (p.wide ? '100%' : 'auto')};
 
-  border-radius: ${p => p.theme.boxRadii.mid}px;
-  border-width: 1px;
-  border-style: solid;
+    padding: ${p => {
+      if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+      return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+    }};
 
-  border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
-  background-color: ${p => p.theme.white};
-  color: ${p => p.theme.black};
+    border-radius: ${p => p.theme.boxRadii.minor}px;
+    border-width: 1px;
+    border-style: solid;
 
-  ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
+    border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
+    background-color: ${p => p.theme.white};
+    color: ${p => p.theme.black};
 
-  ${space}
-  ${typography}
-`;
+    ${p => {
+      if (p.border) {
+        if (p.disabled) return disabledBoxBordered(p);
+        if (p.caution) return cautionBoxBordered(p);
+        return defaultBoxBordered(p);
+      } else {
+        if (p.disabled) return disabledBox(p);
+        if (p.caution) return cautionBox(p);
+        return defaultBox(p);
+      }
+    }}
+
+    ${space}
+    ${typography}
+  `;
 
 StyledMenuButton.defaultProps = {
   fontSize: '2',

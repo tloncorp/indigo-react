@@ -177,8 +177,9 @@ const Sandbox: React.FC<Props> = (props) => {
             />
 
             <Row>
-              <Button mr='4' caution>Cancel</Button>
+              <Button wide mr='4' caution>Cancel</Button>
               <AsyncButton
+                wide 
                 type="submit"
                 primary
                 loading={props.loading}>

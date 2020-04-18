@@ -202,6 +202,14 @@ const Checkmark = () => (
   />
 );
 
+const CheckmarkBold = () => (
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M12.5304 5.53039L6.50006 11.5607L3.46973 8.53039L4.53039 7.46973L6.50006 9.4394L11.4697 4.46973L12.5304 5.53039Z"
+  />
+);
+
 const Minus = () => <path fillRule="evenodd" clipRule="evenodd" d="M13.5 8.5H2.5V7.5H13.5V8.5Z" />;
 
 const X = () => (
@@ -294,6 +302,7 @@ const iconList: IconList = {
   ChevronDoubleSmall,
   Plus,
   Checkmark,
+  CheckmarkBold,
   Minus,
   ExclaimationMark,
   Bullet,
