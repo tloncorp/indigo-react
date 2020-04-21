@@ -10,4 +10,10 @@ const isNull = (v: any) => v === null;
 
 const notNull = (v: any) => !isNull(v);
 
-export {isUndef, isDef, isFalse, isTrue, notNull};
+const isOdd = (n: number) => Math.abs(n % 2) === 1;
+
+const isEven = (n: number) => n % 2 === 0;
+
+const sequence = (num: number) => Array.from(Array(num), (_, i) => i);
+
+export {isUndef, isDef, isFalse, isTrue, notNull, isOdd, isEven, sequence};

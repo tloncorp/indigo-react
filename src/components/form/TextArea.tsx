@@ -24,36 +24,45 @@ type StyledProps = {
   hasSuccess?: boolean;
 };
 
-type ColorOptions = 'default' | 'disabled' | 'caution';
-type innerProps = StyledProps & {theme: Theme};
+type BoxInput = StyledProps & {theme: Theme};
 
-const styledBox = (k: ColorOptions, p: innerProps) => {
-  const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
-  return `
-  border-color: ${borderColor[k].default};
-  background-color: ${backgroundColor[k].default};
-  color: ${textColor[k].default};
-  box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].default}`};
+const defaultBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.black};
 
-  &:hover {
-    border-color: ${borderColor[k].hover};
-    color: ${textColor[k].hover};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].hover}`};
-  }
+  caret-color: ${p.theme.colors.blue1};
+
+  &:hover {}
 
   &:focus {
-    border-color: ${borderColor[k].focus};
-    color: ${textColor[k].focus};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].focus}`};
+    border-color: ${p.theme.colors.blue1};
   }
+`;
 
-  &:active {
-    border-color: ${borderColor[k].active};
-    color: ${textColor[k].active};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].active}`};
+const errorBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.red1};
+  background-color: ${p.theme.colors.red0};
+  color: ${p.theme.colors.red1};
+
+  caret-color: ${p.theme.colors.red1};
+
+  &:hover {}
+
+  &:focus {
+    background-color: ${p.theme.colors.white};
   }
-  `;
-};
+`;
+
+const disabledBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.gray0};
+  color: ${p.theme.colors.gray5};
+
+  &:hover {}
+
+  &:focus {}
+`;
 
 const StyledTextArea = styled.textarea<StyledProps>`
   outline: none;
@@ -75,9 +84,9 @@ const StyledTextArea = styled.textarea<StyledProps>`
   border-radius: ${p => p.theme.boxRadii.minor}px;
 
   ${p => {
-    if (p.disabled) return styledBox('disabled', p);
-    if (p.hasError) return styledBox('caution', p);
-    return styledBox('default', p);
+    if (p.disabled) return disabledBox(p);
+    if (p.hasError) return errorBox(p);
+    return defaultBox(p);
   }};
 
   &:disabled {

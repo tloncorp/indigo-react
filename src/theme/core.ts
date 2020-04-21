@@ -19,11 +19,11 @@ const core = {
   fontWeights: {
     thin: 300,
     regular: 400,
-    bold: 500,
+    bold: 600,
   },
   // line-height
   lineHeights: {
-    short: 1.333334,
+    short: 1.333333,
     regular: 1.5,
     tall: 1.666667,
   },
@@ -50,11 +50,11 @@ const core = {
   // border-radius
   radii: [
     0, // 0
-    4, // 1
-    8, // 2
-    12, // 3
-    16, // 4
-    20, // 5
+    2, // 1
+    4, // 2
+    8, // 3
+    12, // 4
+    16, // 5
     24, // 6
     32, // 7
   ],

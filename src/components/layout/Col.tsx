@@ -21,17 +21,20 @@ type Props = BorderProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps & {};
+  SpaceProps & {
+    expand?: boolean;
+  };
 
 const Col = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  width: ${p => (p.expand ? '100%' : 'auto')};
   ${compose(border, color, flexbox, layout, position, space)}
 `;
 
 Col.defaultProps = {
-  margin: 0,
+  // margin: 0,
   minWidth: 0,
 };
 

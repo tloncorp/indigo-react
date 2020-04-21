@@ -34,12 +34,13 @@ const Text = styled.div<Props>`
 
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 
+  display: inline;
+
   ${compose(color, layout, space, typography)};
 `;
 
 Text.defaultProps = {
   lineHeight: 'short',
-  fontWeight: 400,
   fontSize: 2,
 };
 

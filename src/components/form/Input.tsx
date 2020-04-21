@@ -23,36 +23,53 @@ type StyledProps = {
   hasSuccess?: boolean;
 };
 
-type ColorOptions = 'default' | 'disabled' | 'caution';
-type innerProps = StyledProps & {theme: Theme};
+type BoxInput = StyledProps & {theme: Theme};
 
-const styledBox = (k: ColorOptions, p: innerProps) => {
-  const {borderColor, backgroundColor, textColor, outlineColor} = p.theme;
-  return `
-  border-color: ${borderColor[k].default};
-  background-color: ${backgroundColor[k].default};
-  color: ${textColor[k].default};
-  box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].default}`};
+const defaultBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.black};
 
-  &:hover {
-    border-color: ${borderColor[k].hover};
-    color: ${textColor[k].hover};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].hover}`};
+  caret-color: ${p.theme.colors.blue1};
+
+  &:hover {}
+
+  ::selection {
+    background-color: ${p.theme.colors.blue0};
   }
 
   &:focus {
-    border-color: ${borderColor[k].focus};
-    color: ${textColor[k].focus};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].focus}`};
+    border-color: ${p.theme.colors.blue1};
+  }
+`;
+
+const errorBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.red1};
+  background-color: ${p.theme.colors.red0};
+  color: ${p.theme.colors.red1};
+
+  caret-color: ${p.theme.colors.red1};
+
+  &:hover {}
+
+  ::selection {
+    background-color: ${p.theme.colors.red0};
   }
 
-  &:active {
-    border-color: ${borderColor[k].active};
-    color: ${textColor[k].active};
-    box-shadow: ${`0px 0px 0px 4px ${outlineColor[k].active}`};
+  &:focus {
+    background-color: ${p.theme.colors.white};
   }
-  `;
-};
+`;
+
+const disabledBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.gray2};
+  background-color: ${p.theme.colors.gray0};
+  color: ${p.theme.colors.gray5};
+
+  &:hover {}
+
+  &:focus {}
+`;
 
 const StyledInput = styled.input<StyledProps>`
   outline: none;
@@ -61,21 +78,23 @@ const StyledInput = styled.input<StyledProps>`
   border-width: 1px;
   border-style: solid;
 
-  padding-left: ${p => p.theme.space[2]}px;
   margin-top: ${p => p.theme.space[1]}px;
 
-  height: ${p => p.theme.sizes[7]}px;
+  padding: ${p => {
+    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+  }};
+
   width: 100%;
 
   font-size: ${p => p.theme.fontSizes[2]}px;
-  line-height: ${p => p.theme.lineHeights.short};
+  line-height: 1.2;
 
   border-radius: ${p => p.theme.boxRadii.minor}px;
 
   ${p => {
-    if (p.disabled) return styledBox('disabled', p);
-    if (p.hasError) return styledBox('caution', p);
-    return styledBox('default', p);
+    if (p.disabled) return disabledBox(p);
+    if (p.hasError) return errorBox(p);
+    return defaultBox(p);
   }};
 
   &:disabled {
