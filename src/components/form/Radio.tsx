@@ -6,8 +6,8 @@ import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import Icon from '../icon/Icon';
 import ErrorMessage from './ErrorMessage';
-import {Theme} from '../../theme/index';
-import Box from '../../primitives/Box';
+import {Theme} from '../_internal/theme/index';
+import Box from '../core/Box';
 
 type Props = LayoutProps &
   SpaceProps & {

@@ -2,7 +2,7 @@
 import {Controlled as CodeMirror, IControlledCodeMirror} from 'react-codemirror2';
 import styled from 'styled-components';
 import 'codemirror/mode/jsx/jsx';
-import 'codemirror/lib/codemirror.css';
+// import 'codemirror/lib/codemirror.css';
 import 'codemirror/addon/edit/closebrackets';
 
 type Props = IControlledCodeMirror;

@@ -47,6 +47,16 @@ const Header = ({ actions, data }) => (
             fontSize='4'>
             Light
           </MenuItem>
+          <MenuItem
+            onSelect={() => actions.setTheme('paperLight')}
+            fontSize='4'>
+            Paper Light
+          </MenuItem>
+          <MenuItem
+            onSelect={() => actions.setTheme('paperDark')}
+            fontSize='4'>
+            Paper Dark
+          </MenuItem>
         </MenuList>
       </Menu>
     </Row>

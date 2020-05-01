@@ -1,4 +1,5 @@
-import {light, dark, inverted} from './theme/index';
+import {light, dark, paperLight, paperDark, inverted} from './theme/index';
+import cssReset from './cssReset';
 // Primitives
 import Box from './primitives/Box';
 
@@ -68,6 +69,9 @@ export {
   light,
   dark,
   inverted,
+  paperLight,
+  paperDark,
+  cssReset,
   // Primitives
   Box,
   Img,

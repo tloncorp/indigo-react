@@ -5,7 +5,7 @@ import {
   color,
   ColorProps
 } from 'styled-system';
-import { light, dark, inverted, Box, IconButton, Row, Text } from "indigo-react";
+import { cssReset, light, dark, inverted, paperLight, paperDark, Box, IconButton, Row, Text } from "indigo-react";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
@@ -15,14 +15,14 @@ import Header from './components/Header'
 import Sandbox from './pages/Sandbox'
 
 const Style = createGlobalStyle`
-    ${p => p.theme.reset}
-    html {
-      background-color: ${p => p.theme.colors.white};
-    }
+  ${cssReset}
+  html {
+    background-color: ${p => p.theme.colors.white};
+  }
 
-    strong {
-      font-weight: 600;
-    }
+  strong {
+    font-weight: 600;
+  }
 `
 
 // const Style = createGlobalStyle`
@@ -55,7 +55,6 @@ const Root = styled.div<RootProps>`
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    // Don't call this.setState() here!
     this.state = {
       theme: light,
       themeName: 'Light',
@@ -93,6 +92,14 @@ export default class App extends React.Component {
     if (name === 'inverted') this.setState({
       theme: inverted,
       themeName: 'Inverted'
+    })
+    if (name === 'paperLight') this.setState({
+      theme: paperLight,
+      themeName: 'Paper Light'
+    })
+    if (name === 'paperDark') this.setState({
+      theme: paperDark,
+      themeName: 'Paper Dark'
     })
   }
 

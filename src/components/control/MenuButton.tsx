@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import {MenuButton} from '@reach/menu-button';
 import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
-import {Theme} from '../../theme/index';
+import {Theme} from '../_internal/theme/index';
 
 type Props = SpaceProps &
   TypographyProps & {
@@ -192,7 +192,7 @@ const StyledMenuButton = styled(MenuButton)<Props>`
       return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
     }};
 
-    border-radius: ${p => p.theme.boxRadii.minor}px;
+    border-radius: ${p => p.theme.radii[2]}px;
     border-width: 1px;
     border-style: solid;
 

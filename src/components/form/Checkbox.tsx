@@ -6,8 +6,8 @@ import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import Icon from '../icon/Icon';
 import ErrorMessage from './ErrorMessage';
-import {Theme} from '../../theme/index';
-import Box from '../../primitives/Box';
+import {Theme} from '../_internal/theme/index';
+import Box from '../core/Box';
 
 type Props = LayoutProps &
   SpaceProps & {
@@ -107,7 +107,7 @@ const Indicator = styled.div<InternalProps>`
   left: 0px;
   height: 16px;
   width: 16px;
-  border-radius: ${p => p.theme.boxRadii.minor}px;
+  border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
   border-style: solid;
 

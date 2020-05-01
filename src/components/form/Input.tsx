@@ -5,8 +5,8 @@ import {LayoutProps, SpaceProps} from 'styled-system';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import ErrorMessage from './ErrorMessage';
-import Box from '../../primitives/Box';
-import {Theme} from '../../theme/index';
+import Box from '../core/Box';
+import {Theme} from '../_internal/theme/index';
 
 type Props = LayoutProps &
   SpaceProps & {
@@ -89,7 +89,7 @@ const StyledInput = styled.input<StyledProps>`
   font-size: ${p => p.theme.fontSizes[2]}px;
   line-height: 1.2;
 
-  border-radius: ${p => p.theme.boxRadii.minor}px;
+  border-radius: ${p => p.theme.radii[2]}px;
 
   ${p => {
     if (p.disabled) return disabledBox(p);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import {space, SpaceProps} from 'styled-system';
-import {Theme} from '../../theme/index';
+import {Theme} from '../_internal/theme/index';
 import Icon from '../icon/Icon';
 
 type Props = SpaceProps & {
@@ -100,7 +100,7 @@ const Button = styled.button<Props>`
     return `${p.theme.space[2]}px`;
   }};
 
-  border-radius: ${p => p.theme.boxRadii.minor}px;
+  border-radius: ${p => p.theme.radii[2]}px;
 
   ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
 

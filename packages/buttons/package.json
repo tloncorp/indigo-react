@@ -1,0 +1,16 @@
+{
+  "name": "@tlon/indigo-buttons",
+  "description": "",
+  "main": "dist/_index.js",
+  "scripts": {
+    "build": "tsdx build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": ">= 16",
+    "styled-components": ">= 4",
+    "styled-system": ">=5"
+  },
+  "author": "",
+  "license": "MIT"
+}
