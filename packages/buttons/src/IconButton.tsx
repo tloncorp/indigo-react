@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import {space, SpaceProps} from 'styled-system';
-import {Theme} from '../../../internal/theme/index';
-import Icon from '../../core/Icon';
+import {Theme} from '../../../shared/theme/index';
+import Icon from '../../core/src/Icon';
 
 type Props = SpaceProps & {
   sm?: boolean;

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {SpaceProps} from 'styled-system';
-
 import Button from './Button';
-import Spinner from '../../core/Spinner';
+import Spinner from '../../core/src/Spinner';
 
 type Props = SpaceProps & {
   sm?: boolean;

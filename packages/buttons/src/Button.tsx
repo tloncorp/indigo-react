@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
-import {Theme} from '../../../internal/theme/index';
+import {Theme} from '../../../shared/theme/index';
 
 type Props = SpaceProps &
   TypographyProps & {
