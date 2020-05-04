@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import {useField} from 'formik';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
-import Icon from '../core/Icon';
+import Icon from '../../core/src//Icon';
 import ErrorMessage from './ErrorMessage';
-import {Theme} from '../_internal/theme/index';
-import Box from '../core/Box';
+import {Theme} from '../../../shared/theme/index';
+import Box from '../../core/src/Box';
 
 type Props = LayoutProps &
   SpaceProps & {

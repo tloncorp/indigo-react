@@ -1,5 +1,6 @@
 {
   "name": "@tlon/indigo-forms",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/_index.js",
   "scripts": {
@@ -13,5 +14,8 @@
     "formik": ">=2"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "formik": "^2.1.4"
+  }
 }

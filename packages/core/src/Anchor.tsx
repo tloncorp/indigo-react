@@ -13,7 +13,7 @@ import {
   system,
 } from 'styled-system';
 
-import {isDef} from '../_internal/util';
+import {isDef} from '../../../shared/util';
 
 type Props = ColorProps &
   LayoutProps &

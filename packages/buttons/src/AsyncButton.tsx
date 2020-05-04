@@ -2,6 +2,7 @@ import * as React from 'react';
 import {SpaceProps} from 'styled-system';
 import Button from './Button';
 import Spinner from '../../core/src/Spinner';
+// import Spinner from '@tlon/indigo-core';
 
 type Props = SpaceProps & {
   sm?: boolean;

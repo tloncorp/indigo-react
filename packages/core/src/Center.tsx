@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
 import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
   flexbox,
   FlexboxProps,
   layout,
@@ -16,19 +12,19 @@ import {
   compose,
 } from 'styled-system';
 
-type Props = BorderProps &
-  ColorProps &
+type Props =
   FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps & {};
+  SpaceProps & {expand?: boolean};
 
 const Center = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  ${compose(border, color, flexbox, layout, position, space)}
+  width: ${p => (p.expand ? '100%' : 'auto')};
+  ${compose(flexbox, layout, position, space)}
 `;
 
 Center.defaultProps = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Box from '../core/Box';
+import Box from './Box';
 
 import {
   BorderProps,

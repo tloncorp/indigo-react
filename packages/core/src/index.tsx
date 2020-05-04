@@ -5,7 +5,6 @@ import Center from './Center';
 import Code from './Code';
 import Col from './Col';
 import Icon from './Icon';
-import Img from './Img';
 import ItemRow from './ItemRow';
 import Row from './Row';
 import Rule from './Rule';
@@ -24,7 +23,6 @@ export {
   Code,
   Col,
   Icon,
-  Img,
   ItemRow,
   Row,
   Rule,

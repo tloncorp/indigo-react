@@ -33,7 +33,6 @@ const Row = styled.div<Props>`
 `;
 
 Row.defaultProps = {
-  // margin: 0,
   minWidth: 0,
 };
 

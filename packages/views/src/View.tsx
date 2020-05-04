@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Row from '../layout/Row';
+import Row from '../../core/src/Row';
 
 type Props = {
   children?: JSX.Element | JSX.Element[];

@@ -1,7 +1,11 @@
 {
   "name": "@tlon/indigo-core",
+  "version": "1.0.0",
   "description": "",
-  "main": "dist/_index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsdx build",
     "test": "echo \"Error: no test specified\" && exit 1"

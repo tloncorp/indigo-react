@@ -5,8 +5,8 @@ import {LayoutProps, SpaceProps} from 'styled-system';
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import ErrorMessage from './ErrorMessage';
-import Box from '../core/Box';
-import {Theme} from '../_internal/theme/index';
+import Box from '../../core/src/Box';
+import {Theme} from '../../../shared/theme/index';
 
 type Props = LayoutProps &
   SpaceProps & {
