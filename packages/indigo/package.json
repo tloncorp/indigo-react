@@ -1,5 +1,6 @@
 {
-  "name": "@tlon/indigo-controls",
+  "name": "@tlon/indigo-react",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -15,16 +16,20 @@
     "react": ">= 16",
     "styled-components": ">= 4",
     "styled-system": ">=5",
-    "@reach/menu-button": "^0.1.18"
-  },
-  "devDependencies": {
-    "@reach/menu-button": "^0.1.18",
-    "@types/reach__menu-button": "^0.1.0",
-    "react-dom": "^16.13.1"
+    "formik": ">=2"
   },
   "dependencies": {
-    "@tlon/indigo-core": ">= 1"
+    "@tlon/indigo-buttons": ">= 1",
+    "@tlon/indigo-controls": ">= 1",
+    "@tlon/indigo-core": ">= 1",
+    "@tlon/indigo-forms": ">= 1",
+    "@tlon/indigo-layouts": ">= 1",
+    "@tlon/indigo-textEditor": ">= 1",
+    "@tlon/indigo-views": ">= 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "formik": "^2.1.4"
+  }
 }

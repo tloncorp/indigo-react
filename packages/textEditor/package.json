@@ -1,8 +1,13 @@
 {
   "name": "@tlon/indigo-textEditor",
   "description": "",
-  "main": "dist/_index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
     "build": "tsdx build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

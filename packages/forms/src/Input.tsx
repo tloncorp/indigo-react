@@ -2,11 +2,13 @@ import * as React from 'react';
 import {useField} from 'formik';
 import styled from 'styled-components';
 import {LayoutProps, SpaceProps} from 'styled-system';
+import {Theme} from '@tlon/indigo-tokens';
+
 import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import ErrorMessage from './ErrorMessage';
-import Box from '../../core/src/Box';
-import {Theme} from '../../../shared/theme/index';
+
+import {Box} from '@tlon/indigo-core';
 
 type Props = LayoutProps &
   SpaceProps & {

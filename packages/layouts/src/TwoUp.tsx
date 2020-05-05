@@ -6,18 +6,24 @@ import {
   SpaceProps,
 } from 'styled-system';
 
-import Row from '../../core/src/Row';
-import Col from '../../core/src/Col';
+import {Row, Col} from '@tlon/indigo-core'
 
 type Props =
   FlexboxProps &
   LayoutProps &
   PositionProps &
   SpaceProps & {
-    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
+    children: JSX.Element[] | (string | JSX.Element)[];
   };
 
-const C = ({ children, ...props }:Props) => (
+type InnerProps = FlexboxProps &
+  LayoutProps &
+  PositionProps &
+  SpaceProps & {
+  children: JSX.Element | string ;
+}
+
+const C = ({ children, ...props }:InnerProps) => (
   <Col width={["100%", "100%", "50%"]} {...props}>
     {children || <div />}
   </Col>

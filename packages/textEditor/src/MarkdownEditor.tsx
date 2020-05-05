@@ -1,4 +1,3 @@
-// import * as React from 'react'
 import {Controlled as CodeMirror, IControlledCodeMirror} from 'react-codemirror2';
 import styled from 'styled-components';
 import 'codemirror/mode/markdown/markdown';

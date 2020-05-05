@@ -1,7 +1,7 @@
 {
   "workspaces": [
     "packages/*",
-    "example/*"
+    "docs/*"
   ],
   "name": "@tlon/indigo-react",
   "description": "Tlon's design language",
@@ -18,18 +18,31 @@
     "npm": ">=5"
   },
   "scripts": {
-    "init": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "force-bootstrap": "lerna exec npm install",
     "build": "lerna run build",
+    "esbuild": "lerna run esbuild",
+    "esbuild:prod": "lerna run esbuild:prod",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
     "lint:fix": "tsdx lint src --fix",
-    "deploy": "gh-pages -d example/dist"
+    "deploy": "gh-pages -d docs/dist"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@tlon/indigo-tokens": "^1.2.11",
     "@types/jest": "^24.9.0",
     "@types/react": "^16.9.34",
     "@types/styled-components": "^5.1.0",
     "@types/styled-system": "^5.1.9",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "esbuild": "^0.1.26",
     "eslint": "^6.8.0",
     "gh-pages": "^1.2.0",
     "husky": "^4.2.0",
@@ -39,7 +52,10 @@
     "styled-system": "^5.1.5",
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
   },
   "husky": {
     "hooks": {

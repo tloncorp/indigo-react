@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {MenuButton} from '@reach/menu-button';
 import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
-import {Theme} from '../../_internal/theme/index';
+import {Theme} from '@tlon/indigo-tokens';
 
 type Props = SpaceProps &
   TypographyProps & {

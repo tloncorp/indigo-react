@@ -21,9 +21,15 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": "./packages",
     "paths": {
-      "*": ["src/*", "node_modules/*"]
+      "@tlon/indigo-buttons": ["buttons/src"],
+      "@tlon/indigo-controls": ["controls/src"],
+      "@tlon/indigo-core": ["core/src"],
+      "@tlon/indigo-forms": ["forms/src"],
+      "@tlon/indigo-layouts": ["layouts/src"],
+      "@tlon/indigo-textEditor": ["textEditor/src"],
+      "@tlon/indigo-utils": ["utils/src"]
     },
     "jsx": "react",
     "esModuleInterop": true

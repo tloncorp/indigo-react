@@ -6,6 +6,9 @@
     "dist"
   ],
   "scripts": {
+    "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
+    "webpack:prod": "webpack --config ../../webpack.prod.js",
     "build": "tsdx build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +17,8 @@
     "styled-components": ">= 4",
     "styled-system": ">=5"
   },
-  "dependencies": {
-    "@tlon/indigo-core": "1.0.0"
+  "dependancies": {
+    "@tlon/indigo-core": ">= 1"
   },
   "author": "",
   "license": "MIT"

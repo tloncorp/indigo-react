@@ -13,7 +13,6 @@ import {
   system,
 } from 'styled-system';
 
-import {isDef} from '../../../shared/util';
 
 type Props = ColorProps &
   LayoutProps &
@@ -32,7 +31,7 @@ const Anchor = styled.a<Props>`
     color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
   }
   color: ${p => {
-    if (isDef(p.color)) return p.color;
+    if (typeof p.color !== 'undefined') return p.color;
     if (p.gray) return p.theme.colors.gray5;
     return p.theme.colors.black;
   }};

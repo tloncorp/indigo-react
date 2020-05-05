@@ -1,6 +1,5 @@
 {
-  "name": "@tlon/indigo-core",
-  "version": "1.0.0",
+  "name": "@tlon/indigo-utils",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -9,14 +8,8 @@
   "scripts": {
     "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
     "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
-    "webpack:prod": "webpack --config ../../webpack.prod.js",
     "build": "tsdx build",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "peerDependencies": {
-    "react": ">= 16",
-    "styled-components": ">= 4",
-    "styled-system": ">=5"
   },
   "author": "",
   "license": "MIT"

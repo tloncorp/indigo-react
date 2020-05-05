@@ -1,8 +1,13 @@
 {
   "name": "@tlon/indigo-layouts",
   "description": "",
-  "main": "dist/_index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
     "build": "tsdx build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +15,9 @@
     "react": ">= 16",
     "styled-components": ">= 4",
     "styled-system": ">=5"
+  },
+  "dependencies": {
+    "@tlon/indigo-core": ">= 1"
   },
   "author": "",
   "license": "MIT"

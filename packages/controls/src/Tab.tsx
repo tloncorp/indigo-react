@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Text from '../../core/Text';
+import {Text} from '@tlon/indigo-core';
 
 type OuterProps = {
   selected?: boolean;

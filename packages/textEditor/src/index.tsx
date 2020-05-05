@@ -1,9 +1,9 @@
-import JSEditor from './JSEditor'
+// import JSEditor from './JSEditor'
 import MarkdownEditor from './MarkdownEditor'
-import MarkdownRenderer from './MarkdownRenderer'
+// import MarkdownRenderer from './MarkdownRenderer'
 
 export {
-  JSEditor,
+  // JSEditor,
   MarkdownEditor,
-  MarkdownRenderer,
+  // MarkdownRenderer,
 }

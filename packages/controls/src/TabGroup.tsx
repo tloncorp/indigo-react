@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Row from '../../core/Row';
+import {Row} from '@tlon/indigo-core';
 
 import {LayoutProps, PositionProps, SpaceProps} from 'styled-system';
 

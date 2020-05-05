@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
-import {Theme} from '../../../shared/theme/index';
+import {Theme} from '@tlon/indigo-tokens';
 
 type Props = SpaceProps &
   TypographyProps & {

@@ -12,8 +12,6 @@ import {
   compose,
 } from 'styled-system';
 
-import {isDef} from '../../../shared/util';
-
 type Props = ColorProps &
   LayoutProps &
   SpaceProps &
@@ -25,7 +23,7 @@ type Props = ColorProps &
 
 const Text = styled.div<Props>`
   color: ${p => {
-    if (isDef(p.color)) return p.color;
+    if (typeof p.color !== 'undefined') return p.color;
     if (p.gray) return p.theme.colors.gray5;
     return p.theme.colors.black;
   }};

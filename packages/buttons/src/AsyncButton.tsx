@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {SpaceProps} from 'styled-system';
+import {Spinner} from '@tlon/indigo-core';
+
 import Button from './Button';
-import Spinner from '../../core/src/Spinner';
-// import Spinner from '@tlon/indigo-core';
 
 type Props = SpaceProps & {
   sm?: boolean;
