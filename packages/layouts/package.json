@@ -5,6 +5,8 @@
   "files": [
     "dist"
   ],
+  "module": "dist/indigo-layouts.esm.js",
+  "typings": "dist/packages/layouts/src/index.d.ts",
   "scripts": {
     "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
     "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",

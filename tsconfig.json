@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types", "test"],
+  "include": ["src"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
@@ -29,7 +29,9 @@
       "@tlon/indigo-forms": ["forms/src"],
       "@tlon/indigo-layouts": ["layouts/src"],
       "@tlon/indigo-textEditor": ["textEditor/src"],
-      "@tlon/indigo-utils": ["utils/src"]
+      "@tlon/indigo-utils": ["utils/src"],
+      "@tlon/indigo-docs": ["docs/src"],
+      "@tlon/indigo-react": ["indigo/src"]
     },
     "jsx": "react",
     "esModuleInterop": true

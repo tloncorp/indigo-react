@@ -1,11 +1,12 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
+  "module": "dist/indigo-react.esm.js",
+  "typings": "dist/packages/indigo/src/index.d.ts",
   "scripts": {
     "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
     "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
@@ -25,11 +26,8 @@
     "@tlon/indigo-forms": ">= 1",
     "@tlon/indigo-layouts": ">= 1",
     "@tlon/indigo-textEditor": ">= 1",
-    "@tlon/indigo-views": ">= 1"
+    "@tlon/indigo-utils": ">= 1"
   },
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "formik": "^2.1.4"
-  }
+  "license": "MIT"
 }
