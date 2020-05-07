@@ -1,5 +1,5 @@
 {
-  "name": "@tlon/indigo-textEditor",
+  "name": "@tlon/indigo-text-editor",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -22,10 +22,5 @@
     "react-markdown": "^4.3.1"
   },
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "codemirror": "^5.53.2",
-    "react-codemirror2": "^7.1.0",
-    "react-markdown": "^4.3.1"
-  }
+  "license": "MIT"
 }

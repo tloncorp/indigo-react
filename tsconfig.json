@@ -28,7 +28,7 @@
       "@tlon/indigo-core": ["core/src"],
       "@tlon/indigo-forms": ["forms/src"],
       "@tlon/indigo-layouts": ["layouts/src"],
-      "@tlon/indigo-textEditor": ["textEditor/src"],
+      "@tlon/indigo-text-editor": ["text-editor/src"],
       "@tlon/indigo-utils": ["utils/src"],
       "@tlon/indigo-docs": ["docs/src"],
       "@tlon/indigo-react": ["indigo/src"]
