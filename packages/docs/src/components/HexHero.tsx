@@ -1,11 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import {
-  Img,
   Row,
   Col,
-  Box,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 // import hero from '../assets/Hero.png'
 
 const size = 60

@@ -1,20 +1,17 @@
 import * as React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   useRouteMatch,
+//   useParams
+// } from "react-router-dom";
 
 import {
-  Box,
   Row,
-  Button,
-  Icon,
   Text,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 
 export default class Catalog extends React.Component {
   render() {

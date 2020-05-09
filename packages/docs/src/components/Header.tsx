@@ -3,15 +3,22 @@ import * as React from 'react'
 import {
   Box,
   Row,
-  Button,
-  IconButton,
+
   Icon,
   Text,
+} from "@tlon/indigo-core";
+
+import {
+  Button,
+  IconButton,
+} from '@tlon/indigo-buttons'
+
+import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-controls";
 
 const Header = ({ actions, data }) => (
   <Row expand height='9' alignItems='center' justifyContent='space-between' px='7'>

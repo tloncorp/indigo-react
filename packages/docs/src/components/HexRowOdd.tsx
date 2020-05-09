@@ -2,9 +2,11 @@ import * as React from 'react'
 import {
   Box,
   Row,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 
-const size =
+const sequence = (num:number) => Array.from(Array(num), (_, i) => i);
+
+const size = 32
 
 const HexRowOdd = ({num, size, color}) => (
   <Row px='7'>

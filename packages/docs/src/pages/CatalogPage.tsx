@@ -1,12 +1,9 @@
 import * as React from "react";
 
 import {
-  Box,
   Row,
-  Button,
-  Icon,
   Text
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 
 // const sequence = num => Array.from(Array(num), (_, i) => i);
 

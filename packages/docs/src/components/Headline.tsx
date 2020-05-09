@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
   Text,
   Row,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 
 const Headline = ({intro, copy}) => (
   <Row expand alignItems='center' minHeight='13'>

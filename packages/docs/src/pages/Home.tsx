@@ -1,34 +1,24 @@
 import * as React from "react";
 
 import {
-  Box,
-  Row,
   Rule,
-  Text,
   Col,
-  Center,
-  ItemRow,
-  Space,
-  Code,
-  Icon,
-  Anchor,
-  BackgroundImage,
-  styleAnchor,
-  Svg,
-  Img,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
+
+import {
+  TwoUp,
+  FourUp,
+  Max,
+} from '@tlon/indigo-layouts'
 
 import Headline from '../components/Headline'
 import Subheading from '../components/Subheading'
-import TwoUp from '../components/TwoUp'
-import FourUp from '../components/FourUp'
 import CopyBlock from '../components/CopyBlock'
 import Footer from '../components/Footer'
-import Limiter from '../components/Limiter'
 import HexHero from '../components/HexHero'
 
-const duri = svg => `data:image/svg+xml;base64,${btoa(svg)}`
-const sequence = (num:number) => Array.from(Array(num), (_, i) => i);
+// const duri = svg => `data:image/svg+xml;base64,${btoa(svg)}`
+// const sequence = (num:number) => Array.from(Array(num), (_, i) => i);
 
 // const Item = props => (
 //   <Box p='7' py='10'>
@@ -67,13 +57,13 @@ export default class Home extends React.Component {
         <Rule/>
           <HexHero />
         <Rule/>
-        <Limiter>
+        <Max>
           <Headline
             intro={'Indigo '}
             copy={'is a design system built and maintained by Tlon, the company creating Urbit, an operating system that powers a new, peer-to-peer internet. It is designed for maximum consistency, simplicity and legibility. It’s 100% open source and licensed under MIT.'} />
-        </Limiter>
+        </Max>
         <Rule/>
-        <Limiter>
+        <Max>
           <Col py='9'>
             <Subheading headline='Design' />
             <TwoUp pb='7'>
@@ -85,9 +75,9 @@ export default class Home extends React.Component {
                 copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.' />
             </TwoUp>
           </Col>
-        </Limiter>
+        </Max>
         <Rule/>
-        <Limiter>
+        <Max>
           <Col py='9'>
             <Subheading headline='Development' />
             <FourUp pb='7'>
@@ -105,7 +95,7 @@ export default class Home extends React.Component {
                 copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.' />
             </FourUp>
             </Col>
-          </Limiter>
+          </Max>
         <Rule/>
         <Footer />
       </Col>

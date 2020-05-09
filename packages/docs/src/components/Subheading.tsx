@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Row, Text } from "@tlon/indigo-react";
+import { Row, Text } from "@tlon/indigo-core";
 
 const Subheading = ({ headline, ...props }) => (
   <Row p='7'>

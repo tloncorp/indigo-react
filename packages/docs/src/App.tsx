@@ -5,14 +5,15 @@ import {
   color,
   ColorProps
 } from 'styled-system';
-import { cssReset, light, dark, inverted, paperLight, paperDark, Box, IconButton, Row, Text } from "@tlon/indigo-react";
+import { cssReset } from "@tlon/indigo-utils";
+import { light, dark, inverted, paperDark, paperLight } from "@tlon/indigo-tokens";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
 import Header from './components/Header'
 
-import Sandbox from './pages/Sandbox'
+// import Sandbox from './pages/Sandbox'
 
 const Style = createGlobalStyle`
   ${cssReset}
@@ -135,7 +136,6 @@ export default class App extends React.Component {
           <Router>
             <div>
               <Route exact path="/" component={Home} />
-              <Route exact path="/sandbox" component={Sandbox} />
               <Route exact path="/catalog" component={Catalog} />
               <Route path={`/catalog/:componentId`} component={CatalogPage}/>
               {

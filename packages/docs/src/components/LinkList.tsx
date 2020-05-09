@@ -4,7 +4,7 @@ import {
   Text,
   Row,
   Col,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 
 const LinkList = ({ title, items, ...props }) => (
   <Col {...props} p='7'>

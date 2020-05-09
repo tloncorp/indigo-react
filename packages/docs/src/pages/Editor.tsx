@@ -1,15 +1,15 @@
 import * as React from "react";
 
 import {
-  Box,
   Row,
-  Button,
-  Icon,
+  Rule,
+} from "@tlon/indigo-core";
+
+import {
   MarkdownEditor,
   MarkdownRenderer,
   JSEditor,
-  Rule,
-} from "@tlon/indigo-react";
+} from '@tlon/indigo-text-editor';
 
 // const sequence = num => Array.from(Array(num), (_, i) => i);
 

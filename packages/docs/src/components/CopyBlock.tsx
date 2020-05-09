@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
   Text,
   Col,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
 
 const CopyBlock = ({title, copy}) => (
   <Col px='7'>

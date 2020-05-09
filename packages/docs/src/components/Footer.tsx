@@ -1,32 +1,34 @@
 import * as React from 'react'
 
 import {
-  Box,
   Row,
   Col,
-  Button,
-  IconButton,
   Icon,
   Text,
   Img,
   Rule,
-} from "@tlon/indigo-react";
+} from "@tlon/indigo-core";
+import {
+  EightUp
+} from '@tlon/indigo-layouts'
+import {
+  Button
+} from "@tlon/indigo-buttons";
 import LinkList from './LinkList'
-import EightUp from './EightUp'
-import icon from '../assets/icon.png'
+// import icon from '../assets/icon.png'
 
 const Footer = (props) => (
   <Col expand>
-    <Row wide justifyContent='space-between' p='7'>
+    <Row expand justifyContent='space-between' p='7'>
 
       <Row alignItems='center'>
-        <Img width='7' src={icon} />
+        <Img width='7' src={''} />
         <Text fontSize='4' bold pl='4'>Indigo</Text>
       </Row>
 
       <Row alignItems='center'>
         <Text mr='2' gray>Theme:</Text>
-        <Button narrow>
+        <Button narrow onClick={() => {}}>
           Light
           <Icon ml='2' icon='ChevronSouth' />
         </Button>
