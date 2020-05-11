@@ -8,14 +8,11 @@
     "npm": ">=5"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "force-bootstrap": "lerna exec npm install",
-    "build": "lerna run build",
-    "start": "lerna run start --stream",
-    "start:docs": "lerna run start:docs --stream",
-    "esbuild": "lerna run esbuild",
-    "esbuild:prod": "lerna run esbuild:prod",
-    "test": "tsdx test --passWithNoTests",
+    "esbuild": "esbuild packages/index.tsx --bundle --outdir=dist",
+    "esbuild:prod": "esbuild packages/index.tsx --bundle --minify --outdir=dist",
+    "build": "tsdx build --entry packages/index.tsx --verbose ",
+    "start": "tsdx watch --entry packages/index.tsx --verbose ",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsdx lint",
     "lint:fix": "tsdx lint src --fix",
     "deploy": "gh-pages -d docs/dist"
@@ -47,7 +44,8 @@
     "gh-pages": "^1.2.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.0",
-    "lerna": "^3.20.2",
+    "markdown-to-jsx": "^6.11.1",
+    "marked": "^1.0.0",
     "parcel": "^1.12.4",
     "react": "^16.13.1",
     "react-codemirror2": "^7.1.0",
@@ -86,5 +84,8 @@
     "trailingComma": "es5",
     "useTabs": false
   },
-  "name": "indigo-react"
+  "name": "indigo-react",
+  "dependencies": {
+    "@types/marked": "^0.7.4"
+  }
 }

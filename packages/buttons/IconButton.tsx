@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import {space, SpaceProps} from 'styled-system';
 import {Theme} from '@tlon/indigo-tokens';
-import {Icon} from '@tlon/indigo-core';
+import {Icon} from '../core/index';
 
 type Props = SpaceProps & {
   sm?: boolean;

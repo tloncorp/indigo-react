@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {SpaceProps} from 'styled-system';
-import {Spinner} from '@tlon/indigo-core';
+import {Spinner} from '../core/index';
 
 import Button from './Button';
 

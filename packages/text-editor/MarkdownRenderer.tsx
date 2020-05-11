@@ -1,8 +1,44 @@
 import * as React from 'react';
-import ReactMarkdown from 'react-markdown';
+import MarkdownToJsx from 'markdown-to-jsx';
+// import { Box } from '../core/index';
 import styled from 'styled-components';
 
-const MarkdownRenderer = styled(ReactMarkdown)`
+// type Props = {
+//   md: string;
+// }
+
+// const Markdown = ({md, ...props}:Props) => {
+//   // marked.setOptions({
+//   //   renderer: new marked.Renderer(),
+//   //   // highlight: function(code, language) {
+//   //   //   const hljs = require('highlight.js');
+//   //   //   const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+//   //   //   return hljs.highlight(validLanguage, code).value;
+//   //   // },
+//   //   pedantic: false,
+//   //   gfm: true,
+//   //   breaks: false,
+//   //   sanitize: false,
+//   //   smartLists: true,
+//   //   smartypants: false,
+//   //   xhtml: false
+//   // });
+
+//   // const html = marked(md)
+
+//   return (
+//     <MarkdownToJsx {...props}>
+//     {  }
+//     </MarkdownToJsx>
+//   )
+// }
+
+// MarkdownRenderer.defaultProps = {
+//   md: '',
+// }
+
+
+const Markdown = styled(MarkdownToJsx)`
   width: 100%;
 
   * {
@@ -149,13 +185,13 @@ const MarkdownRenderer = styled(ReactMarkdown)`
 `;
 
 MarkdownRenderer.defaultProps = {
-  source: '',
+  children: '',
   className: '',
-  escapeHtml: false,
-  skipHtml: false,
-  sourcePos: false,
-  rawSourcePos: false,
-  includeNodeIndex: false,
+  // escapeHtml: false,
+  // skipHtml: false,
+  // sourcePos: false,
+  // rawSourcePos: false,
+  // includeNodeIndex: false,
   renderers: {
     code: p => (
       <pre>

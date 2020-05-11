@@ -8,13 +8,12 @@ import InputLabel from './InputLabel';
 import InputCaption from './InputCaption';
 import ErrorMessage from './ErrorMessage';
 
-import {Box, Icon} from '@tlon/indigo-core';
+import {Box, Icon} from '../core/index';
 
 type Props = LayoutProps &
   SpaceProps & {
     caption?: string;
     label: string;
-    name: string;
     id: string;
     disabled?: boolean;
   };
@@ -109,9 +108,10 @@ const Indicator = styled.div<InternalProps>`
   left: 0px;
   height: 16px;
   width: 16px;
-  border-radius: 50%;
+  border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
   border-style: solid;
+
   ${p => {
     if (p.disabled) return disabledBox(p);
     if (p.checked) return onBox(p);
@@ -121,21 +121,21 @@ const Indicator = styled.div<InternalProps>`
   }};
 `;
 
-const Radio = ({label, caption, name, id, disabled, ...props}: Props) => {
-  const [field, meta] = useField({name, id, value: id, type: 'radio'});
+const Checkbox = ({label, caption, id, disabled, ...props}: Props) => {
+  const [field, meta] = useField({name: id, type: 'checkbox'});
   return (
     <Box {...props}>
-      <Label disabled={disabled} htmlFor={id} {...props}>
+      <Label disabled={disabled} htmlFor={id}>
         <InputLabel>{label}</InputLabel>
-        {caption ? <InputCaption>{caption}</InputCaption> : null}
-        <HiddenInput {...field} value={id} name={name} id={id} disabled={disabled} type="radio" />
+        {caption ? <InputCaption pt="1">{caption}</InputCaption> : null}
+        <HiddenInput {...field} value={id} name={id} id={id} disabled={disabled} type="checkbox" />
         <Indicator
           hasError={meta.touched && meta.error !== undefined}
           checked={field.checked}
           disabled={disabled}
         >
           {field.checked ? (
-            <Icon position="absolute" top="0px" left="0px" size="14px" icon="Bullet" />
+            <Icon position="absolute" top="0px" left="0px" size="14px" icon="CheckmarkBold" />
           ) : null}
         </Indicator>
         <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
@@ -144,4 +144,4 @@ const Radio = ({label, caption, name, id, disabled, ...props}: Props) => {
   );
 };
 
-export default Radio;
+export default Checkbox;

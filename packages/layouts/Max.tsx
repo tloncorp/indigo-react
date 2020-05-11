@@ -6,7 +6,7 @@ import {
   SpaceProps,
 } from 'styled-system';
 
-import {Row, Center} from '@tlon/indigo-core';
+import {Row, Center} from '../core/index';
 
 type Props =
   FlexboxProps &
