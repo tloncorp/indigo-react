@@ -184,7 +184,7 @@ const Markdown = styled(MarkdownToJsx)`
   }
 `;
 
-MarkdownRenderer.defaultProps = {
+Markdown.defaultProps = {
   children: '',
   className: '',
   // escapeHtml: false,
@@ -192,13 +192,13 @@ MarkdownRenderer.defaultProps = {
   // sourcePos: false,
   // rawSourcePos: false,
   // includeNodeIndex: false,
-  renderers: {
-    code: p => (
-      <pre>
-        <span>{p.value}</span>
-      </pre>
-    ),
-  },
+  // renderers: {
+  //   code: p => (
+  //     <pre>
+  //       <span>{p.value}</span>
+  //     </pre>
+  //   ),
+  // },
 };
 
-export default MarkdownRenderer;
+export default Markdown;
