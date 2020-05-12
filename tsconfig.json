@@ -1,5 +1,5 @@
 {
-  "include": ["packages"],
+  "include": ["src"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
@@ -13,7 +13,6 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
-    "allowSyntheticDefaultImports": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
@@ -21,17 +20,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "baseUrl": "./packages",
+    "baseUrl": "./",
     "paths": {
-      "@tlon/indigo-buttons": ["buttons/src"],
-      "@tlon/indigo-controls": ["controls/src"],
-      "@tlon/indigo-core": ["core/src"],
-      "@tlon/indigo-forms": ["forms/src"],
-      "@tlon/indigo-layouts": ["layouts/src"],
-      "@tlon/indigo-text-editor": ["text-editor/src"],
-      "@tlon/indigo-utils": ["utils/src"],
-      "@tlon/indigo-docs": ["docs/src"],
-      "@tlon/indigo-react": ["indigo/src"]
+      "*": ["src/*", "node_modules/*"]
     },
     "jsx": "react",
     "esModuleInterop": true
