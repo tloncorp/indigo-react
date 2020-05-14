@@ -327,6 +327,7 @@ type InnerProps = PositionProps &
 
 type Props = InnerProps & {
   icon: string;
+  narrow?: boolean;
 };
 
 const Svg = styled.svg<InnerProps>`
@@ -342,7 +343,7 @@ const Icon = ({icon, fill = 'black', ...rest}: Props) => {
   const IconComponent = iconList[icon];
   return (
     // @ts-ignore
-    <Svg {...rest} fill={fill} viewBox="0 0 16 16">
+    <Svg {...rest} fill={fill} viewBox={"0 0 16 16"}>
       <IconComponent />
     </Svg>
   );

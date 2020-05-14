@@ -13,25 +13,8 @@ import {
 import LinkList from './LinkList'
 // import icon from '../assets/icon.png'
 
-const Footer = (props) => (
-  <Col expand>
-    <Row expand justifyContent='space-between' p='7'>
-
-      <Row alignItems='center'>
-        <Img width='7' src={''} />
-        <Text fontSize='4' bold pl='4'>Indigo</Text>
-      </Row>
-
-      <Row alignItems='center'>
-        <Text mr='2' gray>Theme:</Text>
-        <Button narrow onClick={() => {}}>
-          Light
-          <Icon ml='2' icon='ChevronSouth' />
-        </Button>
-      </Row>
-
-    </Row>
-
+const FooterNav = (props) => (
+  <Col expand px='4' py='7'>
     <EightUp>
       <LinkList
         title='Design Guidance'
@@ -56,12 +39,7 @@ const Footer = (props) => (
           {title:'Source Code', to:'/'},
         ]} />
     </EightUp>
-    <Rule />
-    <Row p='7'>
-      <Text gray>Copyright © 2020 Tlon Inc.</Text>
-    </Row>
-
   </Col>
 )
 
-export default Footer;
+export default FooterNav;

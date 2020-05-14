@@ -11,13 +11,15 @@ import * as React from "react";
 import {
   Row,
   Text,
+  Rule
 } from "@tlon/indigo-react";
 
 export default class Catalog extends React.Component {
   render() {
     // let match = useRouteMatch();
     return (
-      <Row flexWrap='wrap'>
+      <Row flexWrap='wrap' minHeight='100vh'>
+        <Rule />
         <Text>Catalog</Text>
 
       </Row>

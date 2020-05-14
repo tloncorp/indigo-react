@@ -1,7 +1,7 @@
 {
   "include": ["src"],
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "importHelpers": true,
@@ -20,7 +20,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "*": ["src/*", "node_modules/*"]
     },

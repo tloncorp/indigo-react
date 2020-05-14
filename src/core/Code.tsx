@@ -17,6 +17,7 @@ import {
 type Props = BorderProps & ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
 const Code = styled.code<Props>`
+  border-radius: ${p => p.theme.radii[2]};
   ${compose(color, layout, space, typography, border)}
 `;
 

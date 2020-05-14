@@ -4,12 +4,12 @@ import {Theme} from '@tlon/indigo-tokens';
 
 type Props = SpaceProps &
   TypographyProps & {
-    sm?: boolean;
-    wide?: boolean;
-    narrow?: boolean;
-    border?: boolean;
-    caution?: boolean;
-    primary?: boolean;
+    sm: boolean;
+    wide: boolean;
+    narrow: boolean;
+    border: boolean;
+    caution: boolean;
+    primary: boolean;
     onClick: (e: React.MouseEvent<HTMLElement>) => void;
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
@@ -215,7 +215,12 @@ const Button = styled.button<Props>`
 
 Button.defaultProps = {
   fontSize: 2,
+  sm: false,
+  wide: false,
+  narrow: false,
+  border: false,
+  caution: false,
+  primary: false,
 };
 
 export default Button;
-export {Props, BoxInput};

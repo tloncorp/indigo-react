@@ -7,17 +7,18 @@ import {
 import { useWindowSize } from '../hooks'
 import { 
   isOdd,
-  sequence,
-  randomInt
+  sequence
 } from '../utils'
 
-const adj = 0.867
+const hexAdj = 0.867
 
 const styles = [
   ['blue1', 'blue1'],
+  
   ['green1', 'green1'],
   ['yellow1', 'yellow1'],
   ['red1', 'red1'],
+  ['gray3', 'gray3'],
   ['white', 'black'],
   ['white', 'black'],
   ['white', 'black'],
@@ -36,18 +37,9 @@ const styles = [
   ['white', 'black'],
 ]
 
-const randomStyle = (p) => {
-  const i = randomInt(0, styles.length-1)
-  const bg = styles[i][0]
-  const br = styles[i][1]
-  return `
-    background-color: ${p.theme.colors[bg]};
-    border-color: ${p.theme.colors[br]};
-  `
-}
-
 type DiscProps = {
   diameter: number
+  styleIndex: number,
 }
 
 const Disc = styled.div<DiscProps>`
@@ -60,32 +52,36 @@ const Disc = styled.div<DiscProps>`
   border-radius: 100%;
   border-style: solid;
   border-width: 1px;
-  ${
-    p => randomStyle(p)
-  }
+  background-color: ${p => {
+    const c = styles[p.styleIndex][0]
+    return p.theme.colors[c]
+  }};
+
+  border-color: ${p => {
+    const c = styles[p.styleIndex][1]
+    return p.theme.colors[c]
+  }};
 `
 
-const HexRowOdd = ({ num, diameter, i }) => (
-  <Row position='relative' style={{transform: `translateY(${(i * diameter * adj)}px)`}}>
-    <Row style={{transform: `translateX(${(diameter / 2)}px)`}} position='absolute'>
-      { sequence(num - 1).map(_ => <Disc diameter={diameter} />) }
-    </Row>
-  </Row>
-)
+const HexRow = ({ isOdd, length, diameter, rowIndex, styleMatrixRow }) => {
+  const x = isOdd ? diameter / 2 : 0
+  const y = rowIndex * diameter * hexAdj
+  length = isOdd ? length - 1 : length
 
-const HexRowEven = ({ num, diameter, i }) => (
-  <Row position='relative' style={{transform: `translateY(${(i * diameter * adj)}px)`}}>
-    <Row position='absolute'>
-      { sequence(num).map(_ => <Disc diameter={diameter} />) }
+  return (
+    <Row height='0' style={{ transform: `translate(${x}px, ${y}px)`}}> 
+      { sequence(length).map((_, j) => <Disc diameter={diameter} styleIndex={styleMatrixRow[j]}/>) }
     </Row>
-  </Row>
-)
+  )
+}
 
-const HexHero = (props) => {
+const HexHero = ({ matrix }) => {
   const width = useWindowSize().width || 0
-  const cols = width > 1024
+  const cols = width >= 2048
+    ? 32
+    : width >= 1024
     ? 22
-    : width  > 768
+    : width  >= 768
     ? 12
     : 8
   const rows = 11
@@ -93,12 +89,10 @@ const HexHero = (props) => {
 
   return (
     <Row expand py='8' px='7' alignItems='center'>
-      <Col height={(diameter * rows * adj) + 'px'}>
+      <Col height={(diameter * rows * hexAdj) + 'px'}>
       {
-        sequence(rows).map((_, i) => (
-          isOdd(i)
-            ? <HexRowOdd i={i} num={cols} diameter={diameter}/>
-            : <HexRowEven i={i} num={cols} diameter={diameter}/>
+        matrix === null ? null : sequence(rows).map((_, i) => (
+          <HexRow isOdd={isOdd(i)} rowIndex={i} styleMatrixRow={matrix[i]} length={cols} diameter={diameter}/>
         ))
       }
       </Col>

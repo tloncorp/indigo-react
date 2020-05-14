@@ -24,4 +24,3 @@ AsyncButton.propTypes = {
 };
 
 export default AsyncButton;
-export {Props};

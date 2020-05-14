@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import {
@@ -16,6 +15,7 @@ import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
 import FooterNav from './components/FooterNav'
 import Copyright from './components/Copyright'
+
 
 import { sequence, randomInt } from './utils'
 import { useLockBodyScroll, usePrefersDarkMode } from './hooks'
@@ -98,59 +98,107 @@ const MenuOverlayController = ({data, actions}) => {
   }
 }
 
-const matrix = generate2dMatrix(64, 64, () => randomInt(0, 19));
 
-const themeOptions = {
-  indigo: {
-    key: 'indigo',
-    title: 'Indigo',
-    theme: [light, dark]
-  },
-  paper: {
-    key: 'paper',
-    title: 'Paper',
-    theme: [paperLight, paperDark]
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      theme: light,
+      themeName: 'Light',
+      menuOpen: false,
+      loading: false,
+      matrix: null,
+    };
+    this.setTheme = this.setTheme.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this)
   }
-}
 
-const App = () => {
 
-    const prefersDarkMode = usePrefersDarkMode()
-    const [menuOpen, setMenu] = useState(false);
-    const [themeKey, setTheme] = useState(themeOptions.indigo.key);
-    const [themeTitle, setThemeTitle] = useState(themeOptions.indigo.title);
-    const [isDark, setDarkMode] = useState(prefersDarkMode)
+  componentDidMount() {
+    // generate a matrix for the hexagonal grid hero graphic
+    const matrix = generate2dMatrix(64, 64, () => randomInt(0, 19));
+    this.setState({ matrix });
+    //  console.log(matrix)
+    // window.addEventListener('keydown', (e) => {
+    //   if (e.keyCode === 68) this.toggleDark()
+    //   return
+    // })
+  }
+
+  toggleDark() {
+    this.setState({ dark: !this.state.dark })
+  }
+
+  toggleLoading() {
+    this.setState({ loading: !this.state.loading })
+  }
+
+  setTheme(name:string) {
+    if (name === 'light') this.setState({
+      theme: light,
+      themeName: 'Light'
+    })
+    if (name === 'dark') this.setState({
+      theme: dark,
+      themeName: 'Dark'
+    })
+    if (name === 'inverted') this.setState({
+      theme: inverted,
+      themeName: 'Inverted'
+    })
+    if (name === 'paperLight') this.setState({
+      theme: paperLight,
+      themeName: 'Paper Light'
+    })
+    if (name === 'paperDark') this.setState({
+      theme: paperDark,
+      themeName: 'Paper Dark'
+    })
+  }
+
+  toggleMenu() {
+    this.setState({ menuOpen: !this.state.menuOpen })
+  }
+
+
+  render() {
+    const { state } = this
+
+    const darkmode = usePrefersDarkMode()
+
+    console.log(darkmode)
 
     const actions = {
-      setTheme:  (themeKey) => {
-        setTheme(themeKey)
-        setThemeTitle(themeOptions[themeKey].title)
-      },
-      toggleDarkMode: () => setDarkMode(!isDark),
-      darkModeOn: () => setDarkMode(true),
-      darkModeOff: () => setDarkMode(false),
-      toggleMenu: () => setMenu(!menuOpen),
-      closeMenu: () => setMenu(false),
-      openMenu: () => setMenu(true),
+      setTheme: this.setTheme,
+      toggleMenu: this.toggleMenu,
     }
 
     const data = {
-      themeKey,
-      themeOptions,
-      themeTitle,
-      menuOpen
+      themeName: this.state.themeName,
+      menuOpen: this.state.menuOpen,
     }
 
     return (
       <ThemeProvider
-        theme={themeOptions[themeKey].theme[isDark ? 1 : 0] }>
+        theme={this.state.theme }>
         <Style/>
         <Root>
+          {
+            // <Row alignItems='center' position='absolute' top='4' left='4'>
+            //   <IconButton icon='Color' md p='0' onClick={() => this.toggleDark()}/>
+            //  </Row>
+          }
+          
+
+
+          
+
+
           <Router>
             <Header actions={actions} data={data} />
             <MenuOverlayController actions={actions} data={data} />
             <div>
-              <Route exact path="/" render={() => <Home matrix={matrix}/>} />
+              <Route exact path="/" render={() => <Home matrix={state.matrix}/>} />
               <Route exact path="/catalog" component={Catalog} />
               <Route path={`/catalog/:componentId`} component={CatalogPage}/>
               {
@@ -159,6 +207,7 @@ const App = () => {
                 // <Route exact path='/viewtest' component={ViewTest} />
                 // <Route exact path='/editor' component={Editor} />
               }
+
             </div>
           </Router>
           <Rule />
@@ -169,5 +218,4 @@ const App = () => {
       </ThemeProvider>
     );
   }
-
-export default App
+}

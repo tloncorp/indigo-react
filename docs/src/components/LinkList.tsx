@@ -7,7 +7,7 @@ import {
 } from "@tlon/indigo-react";
 
 const LinkList = ({ title, items, ...props }) => (
-  <Col {...props} p='7'>
+  <Col {...props} p='4'>
     <Text bold fontSize='4'>{title}</Text>
     {
       items.map((item, index) => (

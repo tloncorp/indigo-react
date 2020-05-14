@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": false,
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "jsx": "react",
     "moduleResolution": "node",
@@ -15,9 +15,7 @@
     "lib": ["es2015", "es2016", "dom"],
     "types": ["node"],
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths" : {
-      "@tlon/indigo-react": ["../dist"]
-    }
+    "baseUrl": "."
+
   }
 }

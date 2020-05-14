@@ -114,8 +114,4 @@ const IconButton = ({icon, size, ...props}: Props) => (
   </Button>
 );
 
-IconButton.defaultProps = {
-  onClick: () => {},
-};
-
 export default IconButton;

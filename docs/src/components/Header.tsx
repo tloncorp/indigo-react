@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useLocation } from "react-router-dom";
 
 import {
   Box,
@@ -11,56 +12,55 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Img,
 } from "@tlon/indigo-react";
 
-const Header = ({ actions, data }) => (
-  <Row expand height='9' alignItems='center' justifyContent='space-between' px='7'>
+import Breadcrumbs from "./Breadcrumbs";
+import favicon from '../assets/Favicon.png'
 
+const Header = ({ actions, data }) => {
+  const pathname = useLocation().pathname
+  return (
+  <Row expand height='9' alignItems='center' justifyContent='space-between' px='7' backgroundColor='white'>
+    
     <Row alignItems='center'>
-      <Button mr='7' narrow fontSize='4'>
+      <Row mr='4' alignItems='center'>
+          <Text fontSize='4' bold >Indigo</Text>
+        </Row>
+      <Button mr='7' narrow fontSize='4' onClick={actions.toggleMenu}>
         Menu
         <Icon ml='2' size='5' icon='ChevronSouth' />
       </Button>
-      <Button narrow>Home</Button>
+      {
+        pathname === '/'
+          ? null
+          : <Breadcrumbs pathname={pathname} />
+      }
     </Row>
 
     <Row alignItems='center'>
       <Text mr='2' fontSize='4' gray>Theme:</Text>
       <Menu>
         <MenuButton narrow fontSize='4'>
-          { data.themeName }
+          { data.themeTitle }
           <Icon ml='2' size='5' icon='ChevronSouth' />
         </MenuButton>
         <MenuList>
           <MenuItem
-            onSelect={() => actions.setTheme('dark')}
+            onSelect={() => actions.setTheme(data.themeOptions.indigo.key)}
             fontSize='4'>
-            Dark
+            {data.themeOptions.indigo.title}
           </MenuItem>
           <MenuItem
-            onSelect={() => actions.setTheme('inverted')}
+            onSelect={() => actions.setTheme(data.themeOptions.paper.key)}
             fontSize='4'>
-            Inverted
-          </MenuItem>
-          <MenuItem
-            onSelect={() => actions.setTheme('light')}
-            fontSize='4'>
-            Light
-          </MenuItem>
-          <MenuItem
-            onSelect={() => actions.setTheme('paperLight')}
-            fontSize='4'>
-            Paper Light
-          </MenuItem>
-          <MenuItem
-            onSelect={() => actions.setTheme('paperDark')}
-            fontSize='4'>
-            Paper Dark
+            {data.themeOptions.paper.title}
           </MenuItem>
         </MenuList>
       </Menu>
     </Row>
   </Row>
-)
+  )
+}
 
 export default Header;

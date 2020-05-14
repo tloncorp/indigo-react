@@ -5,12 +5,12 @@ import {Theme} from '@tlon/indigo-tokens';
 
 type Props = SpaceProps &
   TypographyProps & {
-    sm?: boolean;
-    wide?: boolean;
-    narrow?: boolean;
-    border?: boolean;
-    caution?: boolean;
-    primary?: boolean;
+    sm: boolean;
+    wide: boolean;
+    narrow: boolean;
+    border: boolean;
+    caution: boolean;
+    primary: boolean;
     onClick: (e: React.MouseEvent<HTMLElement>) => void;
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
@@ -215,7 +215,13 @@ const StyledMenuButton = styled(MenuButton)<Props>`
   `;
 
 StyledMenuButton.defaultProps = {
-  fontSize: '2',
+  fontSize: 2,
+  sm: false,
+  wide: false,
+  narrow: false,
+  border: false,
+  caution: false,
+  primary: false,
 };
 
 export default StyledMenuButton;

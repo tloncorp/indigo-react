@@ -10,48 +10,21 @@ import {
 import Headline from '../components/Headline'
 import Subheading from '../components/Subheading'
 import CopyBlock from '../components/CopyBlock'
-import Footer from '../components/Footer'
 import HexHero from '../components/HexHero'
+import LibraryBlock from '../components/LibraryBlock'
 
-// const duri = svg => `data:image/svg+xml;base64,${btoa(svg)}`
-// const sequence = (num:number) => Array.from(Array(num), (_, i) => i);
+type Props = {
+  matrix: null | number[][]
+}
 
-// const Item = props => (
-//   <Box p='7' py='10'>
-//     <Space pb='2'>
-//       <Row alignItems='baseline' flexWrap='wrap'>
-//         <Text fontSize='4' mr='2'>{props.title}</Text>
-//         <Code borderRadius='2' mr='2' fontSize='3'>{props.version}</Code>
-//         <Code borderRadius='2'  fontSize='3'>{props.stage}</Code>
-//       </Row>
-//       <Text fontSize='4' gray>{props.description}</Text>
-//       <Col>
-//         {
-//           props.links.map(link => (
-//             <Anchor target='_blank' gray fontSize='4' my='1' href={link[1]}>
-//               <Row alignItems='center'>
-//                 {link[0]}
-//               </Row>
-//             </Anchor>
-//           ))
-//         }
-//       </Col>
-//     </Space>
-//   </Box>
-// );
-//
-// const Footer = () => (
-//   <Row p='7'>
-//     <Text gray fontSize='3'>Copyright © 2020 Tlon Inc.</Text>
-//   </Row>
-// )
-
-export default class Home extends React.Component {
+export default class Home extends React.Component<Props> {
   render() {
+    const { props } = this
+
     return (
       <Col expand>
         <Rule/>
-          <HexHero />
+          <HexHero matrix={props.matrix}/>
         <Rule/>
         <Max>
           <Headline
@@ -76,24 +49,29 @@ export default class Home extends React.Component {
         <Max>
           <Col py='9'>
             <Subheading headline='Development' />
-            <FourUp pb='7'>
-              <CopyBlock
-                title='Design Language'
-                copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.' />
-              <CopyBlock
-                title='User Interface Guidelines'
-                copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.' />
-              <CopyBlock
-                title='Design Language'
-                copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.' />
-              <CopyBlock
-                title='User Interface Guidelines'
-                copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.' />
-            </FourUp>
+            <TwoUp pb='7'>
+              <LibraryBlock
+                title='Indigo React'
+                version='1.3.7'
+                copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.'
+                links={[
+                  {text: 'NPM', to:''},
+                  {text: 'Source', to:''},
+                  {text: 'Component Catalog', to:''},
+                ]}/>
+              <LibraryBlock
+                title='Indigo Tokens'
+                version='1.3.7'
+                copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.'
+                links={[
+                  {text: 'NPM', to:''},
+                  {text: 'Source', to:''},
+                  {text: 'Theme Options', to:''},
+                ]}/>
+            </TwoUp>
             </Col>
           </Max>
-        <Rule/>
-        <Footer />
+
       </Col>
     )
   }
