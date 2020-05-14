@@ -7,6 +7,7 @@ import Col from './Col';
 import Icon from './Icon';
 import IconNarrow from './IconNarrow'
 import ItemRow from './ItemRow';
+import Measure from './Measure';
 import Row from './Row';
 import Rule from './Rule';
 import Space from './Space';
@@ -26,6 +27,7 @@ export {
   Icon,
   IconNarrow,
   ItemRow,
+  Measure,
   Row,
   Rule,
   Space,

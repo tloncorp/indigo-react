@@ -4,13 +4,13 @@ import {Theme} from '@tlon/indigo-tokens';
 
 type Props = SpaceProps &
   TypographyProps & {
-    sm: boolean;
-    wide: boolean;
-    narrow: boolean;
-    border: boolean;
-    caution: boolean;
-    primary: boolean;
-    onClick: (e: React.MouseEvent<HTMLElement>) => void;
+    sm?: boolean;
+    wide?: boolean;
+    narrow?: boolean;
+    border?: boolean;
+    caution?: boolean;
+    primary?: boolean;
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
 

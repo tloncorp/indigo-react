@@ -16,11 +16,11 @@ import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
 import FooterNav from './components/FooterNav'
 import Copyright from './components/Copyright'
+import ScrollToTop from './components/ScrollToTop'
 
 import { sequence, randomInt } from './utils'
 import { useLockBodyScroll, usePrefersDarkMode } from './hooks'
 
-// import Sandbox from './pages/Sandbox'
 const Style = createGlobalStyle`
   ${cssReset}
   html {
@@ -147,24 +147,27 @@ const App = () => {
         <Style/>
         <Root>
           <Router>
-            <Header actions={actions} data={data} />
-            <MenuOverlayController actions={actions} data={data} />
-            <div>
-              <Route exact path="/" render={() => <Home matrix={matrix}/>} />
-              <Route exact path="/catalog" component={Catalog} />
-              <Route path={`/catalog/:componentId`} component={CatalogPage}/>
-              {
-                // <Route exact path="/sandbox" component={Sandbox} />
-                // <Route exact path="/buttons" component={Buttons} />
-                // <Route exact path='/viewtest' component={ViewTest} />
-                // <Route exact path='/editor' component={Editor} />
-              }
-            </div>
-          </Router>
-          <Rule />
-          <FooterHeading />
-          <FooterNav />
-          <Copyright />
+            <ScrollToTop>
+              <Header actions={actions} data={data} />
+              <MenuOverlayController actions={actions} data={data} />
+              <div>
+                <Route exact path="/" render={() => <Home matrix={matrix}/>} />
+                <Route exact path="/catalog" component={Catalog} />
+                <Route path={`/catalog/:componentId`} component={CatalogPage}/>
+                {
+                  // <Route exact path="/sandbox" component={Sandbox} />
+                  // <Route exact path="/buttons" component={Buttons} />
+                  // <Route exact path='/viewtest' component={ViewTest} />
+                  // <Route exact path='/editor' component={Editor} />
+                }
+              </div>
+              </ScrollToTop>
+            </Router>
+            <Rule />
+            <FooterHeading />
+            <FooterNav />
+            <Rule />
+            <Copyright />
         </Root>
       </ThemeProvider>
     );

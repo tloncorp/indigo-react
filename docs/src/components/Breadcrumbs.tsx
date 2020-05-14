@@ -94,9 +94,9 @@ const Breadcrumbs = ({pathname}) => {
         if (pathname === "/") return null;
         return (
           <React.Fragment>
-            <IconNarrow px='1' fill="gray" size="20px" icon="ChevronEast" />
+            <IconNarrow fill="gray" height='5' width='3' icon="ChevronEast" />
             <BreadcrumbLink fontSize='4' gray={pathTokenArray.length-1 === index ? false : true} to={`/${token}`}>
-              {token.charAt(0).toUpperCase() + token.slice(1)}
+              { token.charAt(0).toUpperCase() + token.slice(1) }
             </BreadcrumbLink>
           </React.Fragment>
         )

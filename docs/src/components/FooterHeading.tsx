@@ -19,13 +19,6 @@ const FooterHeading = (props) => (
         <Text fontSize='4' bold pl='4'>Indigo</Text>
       </Row>
 
-      <Row alignItems='center'>
-        <Text mr='2' gray>Theme:</Text>
-        <Button narrow onClick={() => {}}>
-          Light
-          <Icon ml='2' icon='ChevronSouth' />
-        </Button>
-      </Row>
 
     </Row>
   </Col>

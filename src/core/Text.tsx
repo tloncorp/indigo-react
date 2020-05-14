@@ -40,6 +40,9 @@ const Text = styled.div<Props>`
 Text.defaultProps = {
   lineHeight: 'short',
   fontSize: 2,
+  gray: false,
+  bold: false,
+  mono: false,
 };
 
 export default Text;

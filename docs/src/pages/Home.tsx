@@ -13,6 +13,8 @@ import CopyBlock from '../components/CopyBlock'
 import HexHero from '../components/HexHero'
 import LibraryBlock from '../components/LibraryBlock'
 
+import { links } from '../constants'
+
 type Props = {
   matrix: null | number[][]
 }
@@ -55,18 +57,18 @@ export default class Home extends React.Component<Props> {
                 version='1.3.7'
                 copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.'
                 links={[
-                  {text: 'NPM', to:''},
-                  {text: 'Source', to:''},
-                  {text: 'Component Catalog', to:''},
+                  {text: 'NPM', to:links.reactNPM},
+                  {text: 'Source', to:links.reactGithub},
+                  {text: 'Component Catalog', to:'/catalog'},
                 ]}/>
               <LibraryBlock
                 title='Indigo Tokens'
                 version='1.3.7'
                 copy='Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.'
                 links={[
-                  {text: 'NPM', to:''},
-                  {text: 'Source', to:''},
-                  {text: 'Theme Options', to:''},
+                  {text: 'NPM', to:links.tokensNPM},
+                  {text: 'Source', to:links.tokensGithub},
+                  {text: 'Theme Options', to:'/themes'},
                 ]}/>
             </TwoUp>
             </Col>

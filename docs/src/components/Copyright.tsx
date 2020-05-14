@@ -8,7 +8,8 @@ import {
 const Copyright = () => (
   <Col expand>
     <Row p='7'>
-      <Text gray>Copyright © 2020 Tlon Inc.</Text>
+      <Text gray mr='4'>Copyright © 2020 Tlon Inc.</Text>
+      <Text gray>Terms of Service</Text>
     </Row>
   </Col>
 )
