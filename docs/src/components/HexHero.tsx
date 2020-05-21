@@ -13,28 +13,28 @@ import {
 const hexAdj = 0.867
 
 const styles = [
-  ['blue1', 'blue1'],
-  
-  ['green1', 'green1'],
-  ['yellow1', 'yellow1'],
-  ['red1', 'red1'],
-  ['gray3', 'gray3'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
-  ['white', 'black'],
+  ['green', 'green6'],
+  ['yellow', 'yellow7'],
+  ['red', 'red7'],
+  ['blue', 'blue6'],
+  ['gray3', 'gray5'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+  ['white', 'gray2'],
+
 ]
 
 type DiscProps = {
@@ -77,14 +77,20 @@ const HexRow = ({ isOdd, length, diameter, rowIndex, styleMatrixRow }) => {
 
 const HexHero = ({ matrix }) => {
   const width = useWindowSize().width || 0
-  const cols = width >= 2048
+  const cols = width >= 2000
     ? 32
     : width >= 1024
     ? 22
     : width  >= 768
     ? 12
     : 8
-  const rows = 11
+    const rows = width >= 2000
+    ? 11
+    : width >= 1024
+    ? 10
+    : width  >= 768
+    ? 10
+    : 10
   const diameter = Math.floor(((width - 32 - 32) / cols))
 
   return (

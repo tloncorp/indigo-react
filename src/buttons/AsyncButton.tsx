@@ -19,7 +19,7 @@ const AsyncButton = ({loading, children, ...props}: Props) => (
   <Button {...props}>{loading ? <Spinner loading={loading} /> : children}</Button>
 );
 
-AsyncButton.propTypes = {
+AsyncButton.defaultProps = {
   loading: false,
 };
 

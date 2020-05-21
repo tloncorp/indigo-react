@@ -1,9 +1,40 @@
 const fs = require('fs')
 const path = require('path')
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 const ts = require('typescript')
 
+const pkg = require('../../package.json')
+const ignore = ['.DS_Store', 'util', 'index.tsx', 'index.ts']
+const base = __dirname + '/../../src'
+
+function generateFilenames(base) {
+  return fs
+    .readdirSync(base)
+    // Filter files like DS_Store
+    .filter(obj => !ignore.includes(obj))
+    // Weakly filter files
+    .filter(obj => !obj.includes('.'))
+    .reduce((acc, dir) => {
+      const filepaths = fs
+        .readdirSync(base + '/' + dir)
+        // Filter files like DS_Store
+        .filter(obj => !ignore.includes(obj))
+        .map(filename => base + '/' + dir + '/' + filename)
+      return [...acc, ...filepaths]
+    }, [])
+}
+
+const _out = {
+  props: [],
+  imports: [],
+  defaultExport: '',
+  namedExports: [],
+  defaultExportTypePair: {},
+}
+
 /** Generate documentation for all classes in a set of .ts files */
-function generateDocumentation(
+function parseFile(
   fileNames,
   options
 ) {
@@ -13,40 +44,21 @@ function generateDocumentation(
   // Get the checker, we will use it to find more about classes
   let checker = program.getTypeChecker();
 
-  // const mem = {
-  //   defaultProps: {
-  //
-  //   },
-  //   exports: {
-  //
-  //   }
-  // }
-
-  const output = {
-    props: [],
-    imports: [],
-    defaultExport: '',
-    namedExports: [],
-    meta: {
-      filesize: 0,
-      loc: 0,
-    }
-  }
+  // Copy the output object
+  const out = {..._out}
 
   // Visit every sourceFile in the program
   for (const sourceFile of program.getSourceFiles()) {
     if (!sourceFile.isDeclarationFile) {
-      // Walk the tree to search for classes
+      // Walk the tree
       ts.forEachChild(sourceFile, visit);
     }
   }
 
-  // print out the doc
-  fs.writeFileSync("doc.json", JSON.stringify(output, undefined, 2));
+  // return the filled output object
+  return out
 
-  return;
 
-  /** visit nodes finding exported classes */
   function visit(node) {
     // Only consider exported nodes
     if (!isNodeExported(node)) {
@@ -54,32 +66,45 @@ function generateDocumentation(
       return;
     }
 
+    console.log(ts.isVariableStatement(node))
+
     if (ts.isClassDeclaration(node) && node.name) {
       // This is a top level class, get its symbol
       let symbol = checker.getSymbolAtLocation(node.name);
       if (symbol) {
-        output.props.push(serializeClass(symbol));
+        out.props.push(serializeClass(symbol));
       }
     } else if (ts.isVariableStatement(node)) {
+      // ts.getTypeAtLocation
+      const name = node.declarationList.declarations[0].name
+
+      console.log( checker.getTypeAtLocation(name))
+      // checker.getType
+      // checker.getTypeArguments
+
+
       // Since this is a statement, we need to retrieve the name like so
-      // let name = node.declarationList.declarations[0].name
-      // let symbol = checker.getSymbolAtLocation(name);
-      // if (symbol) {
-      //   console.log(symbol)
-      // }
-      //
+      // const defaultExportTypePair = node.declarationList.declarations.map(declaration => {
+      //   const name = declaration.name.text
+      //   const types = declaration.initializer.parameters
+      //     .filter(param => param.type.kind === 169)
+      //     .map(n => n.type.typeName.escapedText);
+      //   return {[name]: types}
+      // })
+      // out.defaultExportTypePair = defaultExportTypePair
+
     } else if (ts.isExportDeclaration(node)) {
-      output.namedExports = node.exportClause.elements.map(element => element.name.escapedText)
+      out.namedExports = node.exportClause.elements.map(element => element.name.escapedText)
 
     } else if (ts.isExportAssignment(node)) {
 
-      output.defaultExport = node.expression.escapedText
+      out.defaultExport = node.expression.escapedText
 
     } else if (ts.isTypeAliasDeclaration(node)) {
       // Since this is a statement, we need to retrieve the name like so
       let type = checker.getTypeAtLocation(node.name)
       if (type) {
-        output.props.push(serializeType(type));
+        out.props.push(serializeType(type));
       }
       // No need to walk any further, class expressions/inner declarations
       // cannot be exported
@@ -102,8 +127,10 @@ function generateDocumentation(
   }
 
   function serializeType(type) {
+    if (type.types === undefined) return []
     let types = type.types.map(
       type => {
+        if (type.symbol === undefined) return {}
         if (type.symbol.escapedName === "__type") {
           return {
             name: null,
@@ -173,7 +200,68 @@ function generateDocumentation(
   }
 }
 
-generateDocumentation([__dirname + '/tsxtest.tsx'], {
-  target: ts.ScriptTarget.ES5,
-  module: ts.ModuleKind.CommonJS
-});
+const trim = (index) => {
+  const defaultExport = index.defaultExport
+
+
+  return index
+}
+
+// const getLoc = (path) => {
+//   var exec = require('child_process').exec;
+//   let out = ''
+//   exec(`wc ${path}`, function (error, res) {
+//     out = res
+//   });
+//   return out
+// }
+
+async function getLoc(path) {
+  try {
+    const { stdout, stderr } = await exec(`wc -l ${path} | awk '{print $1}'`);
+    if (stderr) console.error(stderr)
+    return parseInt(stdout.replace('\n','')) + 1;
+  
+  } catch (e) {
+    console.error(e); // should contain code (exit code) and signal (that caused the termination).
+  }
+}
+
+const getSize = path => {
+  const stats = fs.statSync(path);
+  const fileSizeInBytes = stats.size;
+  const fileSizeInMegabytes = fileSizeInBytes / 1000.0;
+  return fileSizeInMegabytes
+}
+
+// Calls parseFile once on each fileName
+const generate = (sourcePaths) => {
+  const tsOptions = {
+    target: ts.ScriptTarget.ES5,
+    module: ts.ModuleKind.CommonJS
+  }
+
+  const promises = sourcePaths.map((filepath) => {
+    const index = parseFile([filepath], tsOptions)
+    // const trimmedIndex = trim(index)
+
+    const dict = {
+      index: index,
+      // loc: await getLoc(filepath),
+      size: getSize(filepath),
+      unit: 'kb',
+      version: pkg.version,
+      time: new Date(),
+    }
+    // Write output file to disk
+    fs.writeFileSync(`./outs/${index.defaultExport}.doc.json`, JSON.stringify(dict, null, '  '))
+  })
+  
+}
+
+// Generate list of sourcefiles to parse later in generate()
+const sourcePaths = generateFilenames(base)
+const testPath = [sourcePaths[0]]
+
+// entrypoint into program
+generate(testPath)

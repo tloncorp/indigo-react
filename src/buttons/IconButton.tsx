@@ -30,14 +30,14 @@ const defaultBox = (p: BoxInput) => `
   }
 
   &:focus {
-    border-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
   }
 
   &:active {
-    border-color: ${p.theme.colors.blue1};
-    background-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
+    background-color: ${p.theme.colors.primary};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -63,14 +63,14 @@ const cautionBox = (p: BoxInput) => `
   }
 
   &:focus {
-    border-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
   }
 
   &:active {
-    border-color: ${p.theme.colors.blue1};
-    background-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
+    background-color: ${p.theme.colors.primary};
     color: ${p.theme.colors.white};
   }
 

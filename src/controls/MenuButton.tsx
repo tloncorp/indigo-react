@@ -54,29 +54,29 @@ const defaultBox = (p: BoxInput) => `
 const cautionBox = (p: BoxInput) => `
     border-color: ${p.theme.colors.white};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.red1};
+    color: ${p.theme.colors.caution};
     * {
-      fill: ${p.theme.colors.red1};
+      fill: ${p.theme.colors.caution};
     }
 
     &:hover {
       border-color: ${p.theme.colors.red0};
       background-color: ${p.theme.colors.red0};
       * {
-        fill: ${p.theme.colors.red1};
+        fill: ${p.theme.colors.caution};
       }
     }
 
     &:focus {
-      border-color: ${p.theme.colors.red1};
+      border-color: ${p.theme.colors.caution};
       * {
-        fill: ${p.theme.colors.red1};
+        fill: ${p.theme.colors.caution};
       }
     }
 
     &:active {
-      border-color: ${p.theme.colors.red1};
-      background-color: ${p.theme.colors.red1};
+      border-color: ${p.theme.colors.caution};
+      background-color: ${p.theme.colors.caution};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -129,28 +129,28 @@ const defaultBoxBordered = (p: BoxInput) => `
   `;
 
 const cautionBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.red1};
+    border-color: ${p.theme.colors.caution};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.red1};
+    color: ${p.theme.colors.caution};
     * {
-      fill: ${p.theme.colors.red1};
+      fill: ${p.theme.colors.caution};
     }
 
     &:hover {
       background-color: ${p.theme.colors.red0};
       * {
-        fill: ${p.theme.colors.red1};
+        fill: ${p.theme.colors.caution};
       }
     }
 
     &:focus {
       * {
-        fill: ${p.theme.colors.red1};
+        fill: ${p.theme.colors.caution};
       }
     }
 
     &:active {
-      background-color: ${p.theme.colors.red1};
+      background-color: ${p.theme.colors.caution};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};

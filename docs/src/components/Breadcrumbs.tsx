@@ -6,7 +6,7 @@ import {
   Row,
   Col,
   Text,
-  IconNarrow
+  Icon
 } from "@tlon/indigo-react";
 
 const BreadcrumbLink = styled(RouterLink)`
@@ -73,12 +73,6 @@ const BreadcrumbRow = styled(Row)`
 
   padding: ${p => p.theme.space[1]}px;
 
-  &:hover {
-    border-color: ${p => p.theme.colors.gray0};
-  }
-
-
-
 `
 
 const Breadcrumbs = ({pathname}) => {
@@ -93,12 +87,12 @@ const Breadcrumbs = ({pathname}) => {
       {pathTokenArray.map((token, index) => {
         if (pathname === "/") return null;
         return (
-          <React.Fragment>
-            <IconNarrow fill="gray" height='5' width='3' icon="ChevronEast" />
+          <>
+            <Icon fill="gray" size='5' icon="ChevronEast" />
             <BreadcrumbLink fontSize='4' gray={pathTokenArray.length-1 === index ? false : true} to={`/${token}`}>
               { token.charAt(0).toUpperCase() + token.slice(1) }
             </BreadcrumbLink>
-          </React.Fragment>
+          </>
         )
       })}
     </BreadcrumbRow>

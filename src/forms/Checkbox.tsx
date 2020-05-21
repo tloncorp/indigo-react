@@ -51,27 +51,27 @@ const onBox = (p: BoxInput) => `
 `;
 
 const offBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.red1};
+  border-color: ${p.theme.colors.caution};
   background-color: ${p.theme.colors.red0};
   * {
     fill:  ${p.theme.colors.white};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.red1};
+    border-color: ${p.theme.colors.caution};
   }
 
   ${HiddenInput}:focus ~ & {
     background-color: ${p.theme.colors.white};
     * {
-      fill:  ${p.theme.colors.red1};
+      fill:  ${p.theme.colors.caution};
     }
   }
 `;
 
 const onBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.red1};
-  background-color: ${p.theme.colors.red1};
+  border-color: ${p.theme.colors.caution};
+  background-color: ${p.theme.colors.caution};
   * {
     fill:  ${p.theme.colors.white};
   }

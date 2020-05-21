@@ -6,6 +6,13 @@ const links = {
     tokensGithub: 'https://github.com/urbit/indigo-tokens',
 }
 
+// const url = process.env === 'DEVELOPMENT'
+//     ? 'localhost:1234'
+//     : 'indigo.urbit.org'
+
+const baseurl = 'localhost:1234'
+
 export {
     links,
+    baseurl,
 }

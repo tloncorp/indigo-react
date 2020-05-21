@@ -32,7 +32,7 @@ const defaultBox = (p: BoxInput) => `
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
-  caret-color: ${p.theme.colors.blue1};
+  caret-color: ${p.theme.colors.primary};
 
   &:hover {}
 
@@ -41,16 +41,16 @@ const defaultBox = (p: BoxInput) => `
   }
 
   &:focus {
-    border-color: ${p.theme.colors.blue1};
+    border-color: ${p.theme.colors.primary};
   }
 `;
 
 const errorBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.red1};
+  border-color: ${p.theme.colors.caution};
   background-color: ${p.theme.colors.red0};
-  color: ${p.theme.colors.red1};
+  color: ${p.theme.colors.caution};
 
-  caret-color: ${p.theme.colors.red1};
+  caret-color: ${p.theme.colors.caution};
 
   &:hover {}
 

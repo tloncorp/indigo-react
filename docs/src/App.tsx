@@ -7,7 +7,7 @@ import {
   ColorProps
 } from 'styled-system';
 import { cssReset, Box, Rule } from "@tlon/indigo-react";
-import { light, dark, inverted, paperDark, paperLight } from "@tlon/indigo-tokens";
+import { light, dark, inverted, paperDark, paperLight, Theme } from "@tlon/indigo-tokens";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
@@ -24,7 +24,7 @@ import { useLockBodyScroll, usePrefersDarkMode } from './hooks'
 const Style = createGlobalStyle`
   ${cssReset}
   html {
-    background-color: ${p => p.theme.colors.white};
+    background-color: ${(p:{theme: Theme}) => p.theme.colors.white};
   }
 
   strong {
@@ -120,11 +120,12 @@ const App = () => {
     const [themeKey, setTheme] = useState(themeOptions.indigo.key);
     const [themeTitle, setThemeTitle] = useState(themeOptions.indigo.title);
     const [isDark, setDarkMode] = useState(prefersDarkMode)
+    const [componentCursor, setComponentCursor] = useState(null)
 
     const actions = {
-      setTheme:  (themeKey) => {
-        setTheme(themeKey)
-        setThemeTitle(themeOptions[themeKey].title)
+      setTheme:  (key) => {
+        setTheme(key)
+        setThemeTitle(themeOptions[key].title)
       },
       toggleDarkMode: () => setDarkMode(!isDark),
       darkModeOn: () => setDarkMode(true),
@@ -132,6 +133,8 @@ const App = () => {
       toggleMenu: () => setMenu(!menuOpen),
       closeMenu: () => setMenu(false),
       openMenu: () => setMenu(true),
+      setComponentCursor: (key) => setComponentCursor(key),
+      resetComponentCursor: () => setComponentCursor(null),
     }
 
     const data = {
@@ -141,9 +144,13 @@ const App = () => {
       menuOpen
     }
 
+    const theme = themeOptions[themeKey].theme[isDark ? 1 : 0]
+
+    theme.colors.primary = theme.colors.gray6
+
     return (
       <ThemeProvider
-        theme={themeOptions[themeKey].theme[isDark ? 1 : 0] }>
+        theme={ theme }>
         <Style/>
         <Root>
           <Router>

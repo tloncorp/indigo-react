@@ -22,7 +22,7 @@ const StyledMenuItem = styled(MenuItem)<Props>`
   font-family: ${p => p.theme.fonts.sans};
 
   &:hover {
-    background-color: ${p => p.theme.colors.blue1};
+    background-color: ${p => p.theme.colors.primary};
     color: ${p => p.theme.colors.white};
     outline: none;
   }

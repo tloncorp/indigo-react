@@ -35,9 +35,11 @@ type Props = BackgroundProps &
   SpaceProps &
   TypographyProps & {};
 
-export default styled.div<Props>`
+const Box = styled.div<Props>`
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
   ${compose(background, border, color, flexbox, grid, layout, position, shadow, space, typography)}
 `;
+
+export default Box
