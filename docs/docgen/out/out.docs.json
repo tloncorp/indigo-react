@@ -1,8 +1,6 @@
 [
     {
-        "time": "2020-05-22T00:50:53.087Z",
         "types": [
-            null,
             {
                 "name": "m",
                 "isOptional": true,
@@ -181,7 +179,9 @@
                 "name": "fontSize",
                 "isOptional": true,
                 "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
-                "parentName": "Props"
+                "parentName": "Props",
+                "text": "2",
+                "kind": 8
             },
             {
                 "name": "fontWeight",
@@ -217,37 +217,43 @@
                 "name": "sm",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "Props"
+                "parentName": "Props",
+                "kind": 91
             },
             {
                 "name": "wide",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "Props"
+                "parentName": "Props",
+                "kind": 91
             },
             {
                 "name": "narrow",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "Props"
+                "parentName": "Props",
+                "kind": 91
             },
             {
                 "name": "border",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "Props"
+                "parentName": "Props",
+                "kind": 91
             },
             {
                 "name": "caution",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "Props"
+                "parentName": "Props",
+                "kind": 91
             },
             {
                 "name": "primary",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "Props"
+                "parentName": "Props",
+                "kind": 91
             },
             {
                 "name": "onClick",
@@ -439,7 +445,9 @@
                 "name": "fontSize",
                 "isOptional": true,
                 "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "text": "2",
+                "kind": 8
             },
             {
                 "name": "fontWeight",
@@ -475,37 +483,43 @@
                 "name": "sm",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "kind": 91
             },
             {
                 "name": "wide",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "kind": 91
             },
             {
                 "name": "narrow",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "kind": 91
             },
             {
                 "name": "border",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "kind": 91
             },
             {
                 "name": "caution",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "kind": 91
             },
             {
                 "name": "primary",
                 "isOptional": true,
                 "type": "boolean",
-                "parentName": "BoxInput"
+                "parentName": "BoxInput",
+                "kind": 91
             },
             {
                 "name": "onClick",
@@ -524,45 +538,6 @@
                 "isOptional": false,
                 "type": "{ fonts: { sans: string; mono: string; }; fontSizes: number[]; fontWeights: { thin: number; regular: number; bold: number; }; lineHeights: { min: number; short: number; regular: number; tall: number; }; borders: string[]; ... 5 more ...; colors: { ...; }; }",
                 "parentName": "BoxInput"
-            }
-        ],
-        "name": "Button",
-        "defaultProps": [
-            null,
-            {
-                "leftExpression": "Button",
-                "leftName": "defaultProps",
-                "properties": [
-                    {
-                        "name": "fontSize",
-                        "text": "2",
-                        "kind": 8
-                    },
-                    {
-                        "name": "sm",
-                        "kind": 91
-                    },
-                    {
-                        "name": "wide",
-                        "kind": 91
-                    },
-                    {
-                        "name": "narrow",
-                        "kind": 91
-                    },
-                    {
-                        "name": "border",
-                        "kind": 91
-                    },
-                    {
-                        "name": "caution",
-                        "kind": 91
-                    },
-                    {
-                        "name": "primary",
-                        "kind": 91
-                    }
-                ]
             }
         ]
     }

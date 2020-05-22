@@ -2,10 +2,14 @@ import * as ts from "typescript";
 import * as fs from "fs";
 import { outputDirectory } from './config';
 
+type DefaultPropsEntryProperties = {
+  name: string, text?: string, kind: number
+}
+
 type DefaultPropsEntry = {
   leftExpression:  string,
   leftName:  string,
-  properties:  {name: string, text?: string, kind: number},
+  properties:  DefaultPropsEntryProperties[],
 }
 
 type TypeEntry = {
@@ -19,7 +23,10 @@ type Entry = {
   types: TypeEntry[],
   defaultProps: DefaultPropsEntry[],
   name: string,
-  time: Date
+  time: Date,
+  exports?: string[],
+  defaultExport?: string,
+  typeNameOfDefaultExport?: string,
 }
 
 type Entries = Entry[]
@@ -40,12 +47,11 @@ const generate = (sourcePaths:string[]) => {
   sourcePaths.forEach(filepath => {
     parseFile([filepath], tsOptions)
     // const trimmedIndex = trim(index)
-
-    // Write output file to disk
-    // fs.writeFileSync(`${outputDirectory}/out.doc.json`, JSON.stringify(dict, null, '  '))
   })
 
-  fs.writeFileSync(`${outputDirectory}/out.docs.json`, JSON.stringify(entries, undefined, 4));
+  const linkedEntries = entries.map(_entry => link(_entry))
+
+  fs.writeFileSync(`${outputDirectory}/out.docs.json`, JSON.stringify(linkedEntries, undefined, 4));
 }
 
 /** Generate documentation for all classes in a set of .ts files */
@@ -147,65 +153,34 @@ const visit = (node: ts.Node, checker: ts.TypeChecker):void => {
     return
   }
 
+  if (ts.isExportDeclaration(node)) {
+    // @ts-ignore
+    entry.exports = node.exportClause.elements
+    // @ts-ignore
+      .map(element => element.name.escapedText)
+  }
 
+  if (ts.isExportAssignment(node)) {
+    // @ts-ignore
+    entry.defaultExport = node.expression.escapedText
+  }
 
   if (ts.isClassDeclaration(node) && node.name) {
-    // This is a top level class, get its symbol
-    // let symbol = checker.getSymbolAtLocation(node.name);
-    // if (symbol) {
-    //   entry.props.push(serializeClass(symbol, checker));
-    // }
     // No need to walk any further, class expressions/inner declarations
     // cannot be exported
-  } else if (ts.isModuleDeclaration(node)) {
+  }
+  
+  if (ts.isModuleDeclaration(node)) {
     // This is a namespace, visit its children
     return ts.forEachChild(node, () => visit(node, checker));
   }
 
   return undefined
-
 }
-
-
-/** Serialize a symbol into a json object */
-// const serializeSymbol = (symbol: ts.Symbol, checker: ts.TypeChecker): Entry => {
-//   return {
-//     name: symbol.getName(),
-//     documentation: ts.displayPartsToString(symbol.getDocumentationComment(checker)),
-//     type: checker.typeToString(
-//       checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration)
-//     )
-//   };
-// }
-
-/** Serialize a class symbol information */
-// const serializeClass = (symbol: ts.Symbol, checker: ts.TypeChecker) => {
-//   let details = serializeSymbol(symbol, checker);
-
-//   // Get the construct signatures
-//   let constructorType = checker.getTypeOfSymbolAtLocation(
-//     symbol,
-//     symbol.valueDeclaration
-//   );
-//   details.constructors = constructorType
-//     .getConstructSignatures()
-//     .map(signature => serializeSignature(signature, checker));
-//   return details;
-// }
-
-/** Serialize a signature (call or construct) */
-// const serializeSignature = (signature: ts.Signature, checker: ts.TypeChecker) => {
-//   return {
-//     parameters: signature.parameters.map(param => serializeSymbol(param, checker)),
-//     returnType: checker.typeToString(signature.getReturnType()),
-//     documentation: ts.displayPartsToString(signature.getDocumentationComment(checker))
-//   };
-// }
 
 /** True if this is visible outside this file, false otherwise */
 const isNodeExported = (node: ts.Node): boolean => {
   // node as ts.Declaration
-
   return (
     // @ts-ignore
     (ts.getCombinedModifierFlags(node) & ts.ModifierFlags.Export) !== 0 ||
@@ -213,32 +188,45 @@ const isNodeExported = (node: ts.Node): boolean => {
   );
 }
 
-// const serializeType = (type:ts.TypeAliasDeclaration, checker:ts.TypeChecker) => {
-//   if (type.types === undefined) return []
-//   let types = type.types.map(
-//     type => {
-//       if (type.symbol === undefined) return {}
-//       if (type.symbol.escapedName === "__type") {
-//         return {
-//           name: null,
-//           types: checker.getAugmentedPropertiesOfType(type)
-//             .map(serializeSymbol),
-//         }
-//       } else {
-//         return {
-//           name: type.symbol.escapedName,
-//           types: checker.getAugmentedPropertiesOfType(type)
-//             .map(serializeSymbol)
-//         }
-//       }
-//     }
-//   )
-
-//   return {
-//     assignment: type.aliasSymbol.escapedName,
-//     types: types
-//   }
+// type Entry = {
+//   types: TypeEntry[],
+//   defaultProps: DefaultPropsEntry[],
+//   name: string,
+//   time: Date,
+//   exports?: string[],
+//   defaultExport?: string
 // }
 
+const link = (_entry:Entry) => {
+
+  // _entry.types.map(t => console.log(t))
+  
+   const sanitizedTypes = _entry.types
+    // for some reason there is a null value in this array
+    // .map(type => console.log(type))
+    .filter((type) => typeof type !== 'undefined')
+    .filter((type) => typeof type.parentName !== 'undefined')
+    .filter((type) => type.parentName === _entry.typeNameOfDefaultExport)
+
+    const match = entry.defaultProps
+      .filter((defaultProp) => typeof defaultProp !== 'undefined')
+      .filter(defaultProp => defaultProp.leftExpression === _entry.name)[0]
+
+    // console.log(match)
+
+    const linkedTypes = sanitizedTypes.map(type => {
+      const defaultPropProperties = match.properties
+        .filter(prop => prop.name === type.name)[0]
+      return {
+        ...type,
+        ...defaultPropProperties,
+      }
+    })
+
+  return {
+    // ..._entry,
+    types: linkedTypes,
+  }
+}
 
 export default generate
