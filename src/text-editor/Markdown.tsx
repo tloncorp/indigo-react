@@ -1,8 +1,8 @@
 // import * as React from 'react';
 // @ts-ignore
-import MarkdownToJsx from 'markdown-to-jsx';
+import MarkdownToJsx from "markdown-to-jsx";
 // import { Box } from '../core/index';
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // type Props = {
 //   md: string;
@@ -44,7 +44,7 @@ const Markdown = styled(MarkdownToJsx)`
   * {
     color: ${p => p.theme.colors.black};
     font-size: 12px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     line-height: 1.5;
   }
 
@@ -106,7 +106,7 @@ const Markdown = styled(MarkdownToJsx)`
   pre,
   code {
     padding: 1px 2px;
-    font-family: 'Source Code Pro', mono;
+    font-family: "Source Code Pro", mono;
     background-color: ${p => p.theme.colors.gray0};
     border-radius: 2px;
   }
@@ -116,7 +116,7 @@ const Markdown = styled(MarkdownToJsx)`
   }
 
   pre span {
-    font-family: 'Source Code Pro', mono;
+    font-family: "Source Code Pro", mono;
   }
 
   ul > li {
@@ -185,8 +185,8 @@ const Markdown = styled(MarkdownToJsx)`
 `;
 
 Markdown.defaultProps = {
-  children: '',
-  className: '',
+  children: "",
+  className: ""
   // escapeHtml: false,
   // skipHtml: false,
   // sourcePos: false,

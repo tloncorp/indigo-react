@@ -1,3 +1,3 @@
 import { Disclosure } from "@reach/disclosure";
 
-export default Disclosure
+export default Disclosure;

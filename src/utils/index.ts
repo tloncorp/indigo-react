@@ -1,3 +1,3 @@
-import cssReset from './cssReset';
+import cssReset from "./cssReset";
 
-export {cssReset};
+export { cssReset };

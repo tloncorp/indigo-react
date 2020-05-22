@@ -1,8 +1,8 @@
-import * as React from 'react';
-import {SpaceProps} from 'styled-system';
-import {Spinner} from '../core/index';
+import * as React from "react";
+import { SpaceProps } from "styled-system";
+import { Spinner } from "../core/index";
 
-import Button from './Button';
+import Button from "./Button";
 
 type Props = SpaceProps & {
   sm?: boolean;
@@ -14,13 +14,15 @@ type Props = SpaceProps & {
   children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
 };
 
-const AsyncButton = ({loading, children, ...props}: Props) => (
+const AsyncButton = ({ loading, children, ...props }: Props) => (
   // @ts-ignore
-  <Button {...props}>{loading ? <Spinner loading={loading} /> : children}</Button>
+  <Button {...props}>
+    {loading ? <Spinner loading={loading} /> : children}
+  </Button>
 );
 
 AsyncButton.defaultProps = {
-  loading: false,
+  loading: false
 };
 
 export default AsyncButton;

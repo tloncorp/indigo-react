@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   layout,
@@ -7,10 +7,10 @@ import {
   SpaceProps,
   background,
   BackgroundProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
-type Props = LayoutProps & SpaceProps & BackgroundProps & {src: string};
+type Props = LayoutProps & SpaceProps & BackgroundProps & { src: string };
 
 const BackgroundImg = styled.div<Props>`
   background-image: url(${(p: Props) => p.src});
@@ -18,11 +18,11 @@ const BackgroundImg = styled.div<Props>`
 `;
 
 BackgroundImg.defaultProps = {
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  width: '100%',
-  height: '100%',
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  width: "100%",
+  height: "100%"
 };
 
 export default BackgroundImg;

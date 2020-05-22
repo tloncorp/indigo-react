@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
-import {Theme} from '@tlon/indigo-tokens';
+import styled from "styled-components";
+import { space, SpaceProps, typography, TypographyProps } from "styled-system";
+import { Theme } from "@tlon/indigo-tokens";
 
 type Props = SpaceProps &
   TypographyProps & {
@@ -14,7 +14,7 @@ type Props = SpaceProps &
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
 
-type BoxInput = Props & {theme: Theme};
+type BoxInput = Props & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.white};
@@ -182,7 +182,7 @@ const Button = styled.button<Props>`
 
   min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
 
-  width: ${p => (p.wide ? '100%' : 'auto')};
+  width: ${p => (p.wide ? "100%" : "auto")};
 
   padding: ${p => {
     if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
@@ -220,7 +220,7 @@ Button.defaultProps = {
   narrow: false,
   border: false,
   caution: false,
-  primary: false,
+  primary: false
 };
 
 export default Button;

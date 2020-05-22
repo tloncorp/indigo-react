@@ -1,6 +1,6 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import {Text} from '../core/index';
+import * as React from "react";
+import styled from "styled-components";
+import { Text } from "../core/index";
 
 type OuterProps = {
   selected?: boolean;
@@ -22,11 +22,12 @@ const Outer = styled.button<OuterProps>`
   padding: 8px 16px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: ${p => (p.selected ? p.theme.colors.black : p.theme.colors.gray2)};
+  border-bottom-color: ${p =>
+    p.selected ? p.theme.colors.black : p.theme.colors.gray2};
   line-height: 1.2;
 `;
 
-const Tab = ({title, selected, onClick}: Props) => (
+const Tab = ({ title, selected, onClick }: Props) => (
   <Outer selected={selected} onClick={onClick}>
     <Text gray={!selected}>{title}</Text>
   </Outer>

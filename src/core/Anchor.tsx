@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   color,
@@ -10,8 +10,8 @@ import {
   typography,
   TypographyProps,
   compose,
-  system,
-} from 'styled-system';
+  system
+} from "styled-system";
 
 type Props = ColorProps &
   LayoutProps &
@@ -30,16 +30,17 @@ const Anchor = styled.a<Props>`
     color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
   }
   color: ${p => {
-    if (typeof p.color !== 'undefined') return p.color;
+    if (typeof p.color !== "undefined") return p.color;
     if (p.gray) return p.theme.colors.gray5;
     return p.theme.colors.black;
   }};
-  font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
+  font-weight: ${p =>
+    p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
   ${system({
     textDecoration: {
-      property: 'textDecoration',
-    },
+      property: "textDecoration"
+    }
   })}
   outline: none;
 
@@ -59,7 +60,7 @@ const Anchor = styled.a<Props>`
 `;
 
 Anchor.defaultProps = {
-  textDecoration: 'underline',
+  textDecoration: "underline"
 };
 
 export default Anchor;

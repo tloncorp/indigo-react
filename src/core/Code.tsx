@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   space,
@@ -11,10 +11,14 @@ import {
   LayoutProps,
   border,
   BorderProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
-type Props = BorderProps & ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
+type Props = BorderProps &
+  ColorProps &
+  LayoutProps &
+  SpaceProps &
+  TypographyProps & {};
 
 const Code = styled.code<Props>`
   border-radius: ${p => p.theme.radii[2]};
@@ -22,17 +26,17 @@ const Code = styled.code<Props>`
 `;
 
 Code.defaultProps = {
-  fontFamily: 'mono',
-  bg: 'gray0',
+  fontFamily: "mono",
+  bg: "gray0",
   // border: '1px solid',
   // borderColor: 'gray1',
-  color: 'black',
+  color: "black",
   fontSize: 2,
   padding: 1,
-  paddingTop: '2px',
-  paddingBottom: '2px',
-  lineHeight: 'short',
+  paddingTop: "2px",
+  paddingBottom: "2px",
+  lineHeight: "short"
 };
 
 export default Code;
-export {Props};
+export { Props };

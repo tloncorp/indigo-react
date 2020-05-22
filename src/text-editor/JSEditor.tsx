@@ -1,8 +1,11 @@
 // import * as React from 'react'
-import {Controlled as CodeMirror, IControlledCodeMirror} from 'react-codemirror2';
-import styled from 'styled-components';
-import 'codemirror/mode/jsx/jsx';
-import 'codemirror/addon/edit/closebrackets';
+import {
+  Controlled as CodeMirror,
+  IControlledCodeMirror
+} from "react-codemirror2";
+import styled from "styled-components";
+import "codemirror/mode/jsx/jsx";
+import "codemirror/addon/edit/closebrackets";
 
 type Props = IControlledCodeMirror;
 
@@ -15,7 +18,7 @@ const JSEditor = styled(CodeMirror)<Props>`
   line-height: 20px;
 
   * {
-    font-family: 'Source Code Pro';
+    font-family: "Source Code Pro";
   }
 
   .CodeMirror {
@@ -155,11 +158,11 @@ const JSEditor = styled(CodeMirror)<Props>`
 `;
 
 JSEditor.defaultProps = {
-  value: '',
+  value: "",
   options: {
-    value: '',
-    mode: 'jsx',
-    theme: 'u',
+    value: "",
+    mode: "jsx",
+    theme: "u",
     lineNumbers: true,
     lineSeparators: null,
     indentUnit: 1,
@@ -168,14 +171,14 @@ JSEditor.defaultProps = {
     indentWithTabs: false,
     electricChars: true,
     specialChars: /[\u0000-\u001f\u007f-\u009f\u00ad\u061c\u200b-\u200f\u2028\u2029\ufeff\ufff9-\ufffc]/,
-    direction: 'ltr',
+    direction: "ltr",
     // Host OS specific
     // rtlMoveVisually
-    keyMap: 'default',
+    keyMap: "default",
     lineWrapping: true,
     firstLineNumber: 1,
     fixedGutter: true,
-    scrollbarStyle: 'null',
+    scrollbarStyle: "null",
     coverGutterNextToScrollbar: false,
     // Host OS specific
     // inputStyle
@@ -202,9 +205,9 @@ JSEditor.defaultProps = {
     spellcheck: true,
     autocorrect: false,
     autocapitalize: false,
-    autoCloseBrackets: true,
-  },
+    autoCloseBrackets: true
+  }
 };
 
 export default JSEditor;
-export {Props};
+export { Props };

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   color,
   ColorProps,
@@ -8,8 +8,8 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
 type Props = LayoutProps & ColorProps & SpaceProps & TypographyProps;
 
@@ -18,11 +18,11 @@ const ErrorMessage = styled.p<Props>`
 `;
 
 ErrorMessage.defaultProps = {
-  color: 'caution',
+  color: "caution",
   fontSize: 2,
-  lineHeight: 'short',
+  lineHeight: "short",
   marginTop: 1,
-  minHeight: 4,
+  minHeight: 4
 };
 
 export default ErrorMessage;

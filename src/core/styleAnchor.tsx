@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   color,
@@ -9,8 +9,8 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
 type Props = ColorProps &
   LayoutProps &
@@ -32,7 +32,8 @@ const styleAnchor = (elem: any) => styled(elem)<Props>`
 
   color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
 
-  font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
+  font-weight: ${p =>
+    p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};
 
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import {space, SpaceProps} from 'styled-system';
-import {Theme} from '@tlon/indigo-tokens';
-import {Icon} from '../core/index';
+import * as React from "react";
+import styled from "styled-components";
+import { space, SpaceProps } from "styled-system";
+import { Theme } from "@tlon/indigo-tokens";
+import { Icon } from "../core/index";
 
 type Props = SpaceProps & {
   sm?: boolean;
@@ -16,7 +16,7 @@ type Props = SpaceProps & {
   onClick?: Function;
 };
 
-type BoxInput = Props & {theme: Theme};
+type BoxInput = Props & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
   border-color: ${p.border ? p.theme.colors.black : p.theme.colors.white};
@@ -107,7 +107,7 @@ const Button = styled.button<Props>`
   ${space}
 `;
 
-const IconButton = ({icon, size, ...props}: Props) => (
+const IconButton = ({ icon, size, ...props }: Props) => (
   // @ts-ignore
   <Button {...props}>
     <Icon icon={icon} size={size} />

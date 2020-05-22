@@ -2,7 +2,10 @@
   "name": "indigo-react-scripts",
   "version": "1.0.0",
   "description": "",
-  "main": "gen.ts",
+  "main": "dist/gen.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "tsc gen.ts --m commonjs  && node gen.js",
     "build": "tsdx build",

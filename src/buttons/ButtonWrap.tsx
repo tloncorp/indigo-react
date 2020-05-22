@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   border,
@@ -13,8 +13,8 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
 type Props = BorderProps &
   ColorProps &

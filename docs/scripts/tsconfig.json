@@ -1,5 +1,5 @@
 {
-  "include": ["gen.ts"],
+  "include": ["./gen.ts"],
   "compilerOptions": {
     "target": "es6",
     "module": "CommonJS",

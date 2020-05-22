@@ -1,6 +1,13 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import {space, layout, position, LayoutProps, SpaceProps, PositionProps} from 'styled-system';
+import * as React from "react";
+import styled from "styled-components";
+import {
+  space,
+  layout,
+  position,
+  LayoutProps,
+  SpaceProps,
+  PositionProps
+} from "styled-system";
 
 const NullIcon = () => (
   <path
@@ -11,8 +18,12 @@ const NullIcon = () => (
 );
 
 const ChevronEast = () => (
-  <path fillRule="evenodd" clipRule="evenodd" d="M2.20711 12.3471L1.5 11.64L5.14645 7.99357L1.5 4.34712L2.20711 3.64001L6.56066 7.99357L2.20711 12.3471Z" />
-)
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M2.20711 12.3471L1.5 11.64L5.14645 7.99357L1.5 4.34712L2.20711 3.64001L6.56066 7.99357L2.20711 12.3471Z"
+  />
+);
 
 const Blank = () => <path />;
 
@@ -23,7 +34,7 @@ type IconList = {
 const iconList: IconList = {
   NullIcon,
   ChevronEast,
-  Blank,
+  Blank
 };
 
 type InnerProps = PositionProps &
@@ -46,7 +57,7 @@ const Svg = styled.svg<InnerProps>`
   ${position};
 `;
 
-const IconNarrow = ({icon, fill = 'black', ...rest}: Props) => {
+const IconNarrow = ({ icon, fill = "black", ...rest }: Props) => {
   const IconComponent = iconList[icon];
   return (
     // @ts-ignore
@@ -57,10 +68,10 @@ const IconNarrow = ({icon, fill = 'black', ...rest}: Props) => {
 };
 
 IconNarrow.defaultProps = {
-  icon: 'NullIcon',
-  fill: 'black',
+  icon: "NullIcon",
+  fill: "black",
   height: 4,
-  width: 2,
+  width: 2
 };
 
 export default IconNarrow;

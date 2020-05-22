@@ -16,7 +16,7 @@
     "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
     "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint --fix"
   },
   "peerDependencies": {
     "@reach/disclosure": "^0.10.2",

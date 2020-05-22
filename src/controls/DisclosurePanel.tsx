@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import { DisclosurePanel } from "@reach/disclosure";
 
 const StyledDisclosurePanel = styled(DisclosurePanel)`
-    outline: none;
-`
+  outline: none;
+`;
 
-export default StyledDisclosurePanel
+export default StyledDisclosurePanel;

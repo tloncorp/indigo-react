@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import {typography, TypographyProps} from 'styled-system';
+import styled from "styled-components";
+import { typography, TypographyProps } from "styled-system";
 
 // import { SpaceProps } from 'styled-system';
-import {MenuItem} from '@reach/menu-button';
+import { MenuItem } from "@reach/menu-button";
 
 type Props = TypographyProps;
 
@@ -31,7 +31,7 @@ const StyledMenuItem = styled(MenuItem)<Props>`
 `;
 
 StyledMenuItem.defaultProps = {
-  fontSize: 2,
+  fontSize: 2
 };
 
 export default StyledMenuItem;

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { DisclosureButton } from '@reach/disclosure';
-import {space, SpaceProps, typography, TypographyProps} from 'styled-system';
+import styled from "styled-components";
+import { DisclosureButton } from "@reach/disclosure";
+import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 
 type Props = SpaceProps &
   TypographyProps & {
@@ -13,7 +13,6 @@ type Props = SpaceProps &
     onClick?: (e: React.MouseEvent<HTMLElement>) => void;
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
-
 
 const Button = styled(DisclosureButton)<Props>`
     box-style: border
@@ -31,8 +30,8 @@ const Button = styled(DisclosureButton)<Props>`
     width: 100%;
 
     padding: ${p => {
-        if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
-        return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+      if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+      return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
     }};
 
     &:before {
@@ -65,10 +64,10 @@ const Button = styled(DisclosureButton)<Props>`
 
     ${space}
     ${typography}
-`
+`;
 
 Button.defaultProps = {
-    border: false,
-}
+  border: false
+};
 
-export default Button
+export default Button;

@@ -1,6 +1,13 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import {space, layout, position, LayoutProps, SpaceProps, PositionProps} from 'styled-system';
+import * as React from "react";
+import styled from "styled-components";
+import {
+  space,
+  layout,
+  position,
+  LayoutProps,
+  SpaceProps,
+  PositionProps
+} from "styled-system";
 
 const NullIcon = () => (
   <path
@@ -210,7 +217,9 @@ const CheckmarkBold = () => (
   />
 );
 
-const Minus = () => <path fillRule="evenodd" clipRule="evenodd" d="M13.5 8.5H2.5V7.5H13.5V8.5Z" />;
+const Minus = () => (
+  <path fillRule="evenodd" clipRule="evenodd" d="M13.5 8.5H2.5V7.5H13.5V8.5Z" />
+);
 
 const X = () => (
   <path
@@ -235,7 +244,11 @@ const Circle = () => (
 );
 
 const Ellipsis = () => (
-  <path fillRule="evenodd" clipRule="evenodd" d="M2 7H4V9H2V7ZM7 7H9V9H7V7ZM14 7H12V9H14V7Z" />
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M2 7H4V9H2V7ZM7 7H9V9H7V7ZM14 7H12V9H14V7Z"
+  />
 );
 
 const Star = () => (
@@ -316,7 +329,7 @@ const iconList: IconList = {
   CreateGroup,
   X,
   Color,
-  Blank,
+  Blank
 };
 
 type InnerProps = PositionProps &
@@ -339,7 +352,7 @@ const Svg = styled.svg<InnerProps>`
   ${position};
 `;
 
-const Icon = ({icon, fill = 'black', ...rest}: Props) => {
+const Icon = ({ icon, fill = "black", ...rest }: Props) => {
   const IconComponent = iconList[icon];
   return (
     // @ts-ignore
@@ -350,9 +363,9 @@ const Icon = ({icon, fill = 'black', ...rest}: Props) => {
 };
 
 Icon.defaultProps = {
-  icon: 'NullIcon',
-  fill: 'black',
-  size: 4,
+  icon: "NullIcon",
+  fill: "black",
+  size: 4
 };
 
 export default Icon;

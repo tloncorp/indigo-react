@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   border,
@@ -11,8 +11,8 @@ import {
   FlexboxProps,
   LayoutProps,
   PositionProps,
-  SpaceProps,
-} from 'styled-system';
+  SpaceProps
+} from "styled-system";
 
 type Props = BorderProps &
   FlexboxProps &
@@ -29,13 +29,13 @@ const Rule = styled.div<Props>`
   box-sizing: border-box;
 
   height: ${p => {
-    if (p.vertical) return 'auto';
-    return '0px';
+    if (p.vertical) return "auto";
+    return "0px";
   }};
 
   width: ${p => {
-    if (p.vertical) return '0px';
-    return '100%';
+    if (p.vertical) return "0px";
+    return "100%";
   }};
 
   border-width: 0px;
@@ -43,22 +43,22 @@ const Rule = styled.div<Props>`
   border-style: solid;
 
   border-top-width: ${p => {
-    if (p.vertical) return '0px';
-    return '1px';
+    if (p.vertical) return "0px";
+    return "1px";
   }};
 
   border-left-width: ${p => {
-    if (p.vertical) return '1px';
-    return '0px';
+    if (p.vertical) return "1px";
+    return "0px";
   }};
 
   ${compose(border, flexbox, layout, position, space)}
 `;
 
 Rule.defaultProps = {
-  borderColor: 'gray1',
-  vertical: false,
+  borderColor: "gray1",
+  vertical: false
 };
 
 export default Rule;
-export {Props};
+export { Props };

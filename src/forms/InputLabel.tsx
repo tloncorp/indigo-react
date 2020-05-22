@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   color,
   ColorProps,
@@ -8,8 +8,8 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
 type Props = ColorProps & LayoutProps & SpaceProps & TypographyProps & {};
 
@@ -22,11 +22,11 @@ const InputLabel = styled.label<Props>`
 `;
 
 InputLabel.defaultProps = {
-  lineHeight: 'short',
+  lineHeight: "short",
   fontSize: 2,
   margin: 0,
   fontWeight: 400,
-  color: 'black',
+  color: "black"
 };
 
 export default InputLabel;

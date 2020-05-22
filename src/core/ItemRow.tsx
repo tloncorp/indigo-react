@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Box from './Box';
+import * as React from "react";
+import Box from "./Box";
 
 import {
   BorderProps,
@@ -7,8 +7,8 @@ import {
   LayoutProps,
   PositionProps,
   SpaceProps,
-  GridProps,
-} from 'styled-system';
+  GridProps
+} from "styled-system";
 
 // GridTemplateColumns, GTC for short
 type GTC = string | number | (string | number | null)[];
@@ -25,7 +25,8 @@ type Props = BorderProps &
     children?: JSX.Element | JSX.Element[];
   };
 
-const px = (n: string | number | null) => (typeof n === 'number' ? n + 'px' : n);
+const px = (n: string | number | null) =>
+  typeof n === "number" ? n + "px" : n;
 
 const widthToColumns = (p: GTC): GTC => {
   if (Array.isArray(p)) {
@@ -49,12 +50,19 @@ const countToColumns = (p: GTC): GTC => {
 
 const ItemRow = (props: Props) => {
   const gtc =
-    typeof props.width === 'undefined'
+    typeof props.width === "undefined"
       ? countToColumns(props.columns)
       : widthToColumns(props.width);
 
-  return <Box display="grid" gridGap={props.gap} gridTemplateColumns={gtc} {...props} />;
+  return (
+    <Box
+      display="grid"
+      gridGap={props.gap}
+      gridTemplateColumns={gtc}
+      {...props}
+    />
+  );
 };
 
 export default ItemRow;
-export {Props};
+export { Props };

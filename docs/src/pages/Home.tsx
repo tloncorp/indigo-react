@@ -5,6 +5,8 @@ import {
   TwoUp,
   FourUp,
   Max,
+  Row,
+  Text,
 } from "@tlon/indigo-react";
 
 import Headline from '../components/Headline'
@@ -29,13 +31,18 @@ export default class Home extends React.Component<Props> {
           <HexHero matrix={props.matrix}/>
         <Rule/>
         <Max>
-          <Headline
-            intro={'Indigo '}
-            copy={'is a design system built and maintained by Tlon, the company creating Urbit, an operating system that powers a new, peer-to-peer internet. It is designed for maximum consistency, simplicity and legibility. It’s 100% open source and licensed under MIT.'} />
+          <Row expand alignItems='center' minHeight='13'>
+            <Row maxWidth='14' p='7' py={['7','9','11']}>
+              <Text bold gray fontSize='6'>
+                <Text bold fontSize='6' pr='1'>Indigo</Text>
+                is a design system built and maintained by Tlon, the company creating Urbit, an operating system that powers a new, peer-to-peer internet. It is designed for maximum consistency, simplicity and legibility. It’s 100% open source and licensed under MIT.
+              </Text>
+            </Row>
+          </Row>
         </Max>
         <Rule/>
         <Max>
-          <Col py='9'>
+          <Col py={['7','9','11']}>
             <Subheading headline='Design' />
             <TwoUp pb='7'>
               <CopyBlock
@@ -49,7 +56,7 @@ export default class Home extends React.Component<Props> {
         </Max>
         <Rule/>
         <Max>
-          <Col py='9'>
+          <Col py={['7','9','11']}>
             <Subheading headline='Development' />
             <TwoUp pb='7'>
               <LibraryBlock

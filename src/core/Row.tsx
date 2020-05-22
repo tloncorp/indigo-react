@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   border,
@@ -13,8 +13,8 @@ import {
   PositionProps,
   space,
   SpaceProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
 type Props = BorderProps &
   ColorProps &
@@ -29,16 +29,16 @@ type Props = BorderProps &
 const Row = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
-  width: ${p => (p.expand ? '100%' : 'auto')};
-  flex-wrap: ${p => (p.wrap ? 'wrap' : 'nowrap')};
+  width: ${p => (p.expand ? "100%" : "auto")};
+  flex-wrap: ${p => (p.wrap ? "wrap" : "nowrap")};
   ${compose(border, color, flexbox, layout, position, space)}
 `;
 
 Row.defaultProps = {
   // minWidth: 0,
   expand: false,
-  wrap: false,
+  wrap: false
 };
 
 export default Row;
-export {Props};
+export { Props };

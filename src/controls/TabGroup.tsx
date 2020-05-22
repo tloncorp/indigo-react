@@ -1,8 +1,8 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import {Row} from '../core/index';
+import * as React from "react";
+import styled from "styled-components";
+import { Row } from "../core/index";
 
-import {LayoutProps, PositionProps, SpaceProps} from 'styled-system';
+import { LayoutProps, PositionProps, SpaceProps } from "styled-system";
 
 type Props = LayoutProps &
   PositionProps &
@@ -29,7 +29,7 @@ const End = styled.div`
   line-height: 1.2;
 `;
 
-const TabGroup = ({children, ...props}: Props) => (
+const TabGroup = ({ children, ...props }: Props) => (
   <Row width="100%" {...props}>
     <Cap>{` `}</Cap>
     {children}

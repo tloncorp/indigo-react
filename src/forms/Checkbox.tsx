@@ -1,14 +1,14 @@
-import * as React from 'react';
-import {LayoutProps, SpaceProps} from 'styled-system';
-import styled from 'styled-components';
-import {useField} from 'formik';
-import {Theme} from '@tlon/indigo-tokens';
+import * as React from "react";
+import { LayoutProps, SpaceProps } from "styled-system";
+import styled from "styled-components";
+import { useField } from "formik";
+import { Theme } from "@tlon/indigo-tokens";
 
-import InputLabel from './InputLabel';
-import InputCaption from './InputCaption';
-import ErrorMessage from './ErrorMessage';
+import InputLabel from "./InputLabel";
+import InputCaption from "./InputCaption";
+import ErrorMessage from "./ErrorMessage";
 
-import {Box, Icon} from '../core/index';
+import { Box, Icon } from "../core/index";
 
 type Props = LayoutProps &
   SpaceProps & {
@@ -24,7 +24,7 @@ type InternalProps = {
   hasError?: boolean;
 };
 
-type BoxInput = InternalProps & {theme: Theme};
+type BoxInput = InternalProps & { theme: Theme };
 
 const offBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.gray2};
@@ -99,7 +99,7 @@ const Label = styled.label<InternalProps>`
   position: relative;
   padding: 0px;
   padding-left: 24px;
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')}};
+  cursor: ${p => (p.disabled ? "not-allowed" : "pointer")}};
 `;
 
 const Indicator = styled.div<InternalProps>`
@@ -121,24 +121,39 @@ const Indicator = styled.div<InternalProps>`
   }};
 `;
 
-const Checkbox = ({label, caption, id, disabled, ...props}: Props) => {
-  const [field, meta] = useField({name: id, type: 'checkbox'});
+const Checkbox = ({ label, caption, id, disabled, ...props }: Props) => {
+  const [field, meta] = useField({ name: id, type: "checkbox" });
   return (
     <Box {...props}>
       <Label disabled={disabled} htmlFor={id}>
         <InputLabel>{label}</InputLabel>
         {caption ? <InputCaption pt="1">{caption}</InputCaption> : null}
-        <HiddenInput {...field} value={id} name={id} id={id} disabled={disabled} type="checkbox" />
+        <HiddenInput
+          {...field}
+          value={id}
+          name={id}
+          id={id}
+          disabled={disabled}
+          type="checkbox"
+        />
         <Indicator
           hasError={meta.touched && meta.error !== undefined}
           checked={field.checked}
           disabled={disabled}
         >
           {field.checked ? (
-            <Icon position="absolute" top="0px" left="0px" size="14px" icon="CheckmarkBold" />
+            <Icon
+              position="absolute"
+              top="0px"
+              left="0px"
+              size="14px"
+              icon="CheckmarkBold"
+            />
           ) : null}
         </Indicator>
-        <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
+        <ErrorMessage>
+          {meta.touched && meta.error ? meta.error : null}
+        </ErrorMessage>
       </Label>
     </Box>
   );

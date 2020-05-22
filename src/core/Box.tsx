@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   background,
@@ -21,8 +21,8 @@ import {
   PositionProps,
   ShadowProps,
   SpaceProps,
-  TypographyProps,
-} from 'styled-system';
+  TypographyProps
+} from "styled-system";
 
 type Props = BackgroundProps &
   BorderProps &
@@ -39,7 +39,18 @@ const Box = styled.div<Props>`
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  ${compose(background, border, color, flexbox, grid, layout, position, shadow, space, typography)}
+  ${compose(
+    background,
+    border,
+    color,
+    flexbox,
+    grid,
+    layout,
+    position,
+    shadow,
+    space,
+    typography
+  )}
 `;
 
-export default Box
+export default Box;

@@ -1,14 +1,14 @@
-import * as React from 'react';
-import {useField} from 'formik';
-import styled from 'styled-components';
-import {LayoutProps, SpaceProps} from 'styled-system';
-import {Theme} from '@tlon/indigo-tokens';
+import * as React from "react";
+import { useField } from "formik";
+import styled from "styled-components";
+import { LayoutProps, SpaceProps } from "styled-system";
+import { Theme } from "@tlon/indigo-tokens";
 
-import InputLabel from './InputLabel';
-import InputCaption from './InputCaption';
-import ErrorMessage from './ErrorMessage';
+import InputLabel from "./InputLabel";
+import InputCaption from "./InputCaption";
+import ErrorMessage from "./ErrorMessage";
 
-import {Box} from '../core/index';
+import { Box } from "../core/index";
 
 type Props = LayoutProps &
   SpaceProps & {
@@ -26,7 +26,7 @@ type StyledProps = {
   hasSuccess?: boolean;
 };
 
-type BoxInput = StyledProps & {theme: Theme};
+type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.gray2};
@@ -96,7 +96,16 @@ const StyledTextArea = styled.textarea<StyledProps>`
   }
 `;
 
-const TextArea = ({label, rows, cols, caption, disabled, id, placeholder, ...props}: Props) => {
+const TextArea = ({
+  label,
+  rows,
+  cols,
+  caption,
+  disabled,
+  id,
+  placeholder,
+  ...props
+}: Props) => {
   const [field, meta] = useField(id);
   return (
     <Box {...props}>
@@ -111,13 +120,15 @@ const TextArea = ({label, rows, cols, caption, disabled, id, placeholder, ...pro
         placeholder={placeholder}
         {...field}
       />
-      <ErrorMessage>{meta.touched && meta.error ? meta.error : null}</ErrorMessage>
+      <ErrorMessage>
+        {meta.touched && meta.error ? meta.error : null}
+      </ErrorMessage>
     </Box>
   );
 };
 
 TextArea.defaultProps = {
-  rows: 8,
+  rows: 8
 };
 
 export default TextArea;

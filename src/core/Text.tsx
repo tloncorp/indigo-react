@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import {
   color,
@@ -9,8 +9,8 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
-  compose,
-} from 'styled-system';
+  compose
+} from "styled-system";
 
 type Props = ColorProps &
   LayoutProps &
@@ -23,12 +23,13 @@ type Props = ColorProps &
 
 const Text = styled.div<Props>`
   color: ${p => {
-    if (typeof p.color !== 'undefined') return p.color;
+    if (typeof p.color !== "undefined") return p.color;
     if (p.gray) return p.theme.colors.gray5;
     return p.theme.colors.black;
   }};
 
-  font-weight: ${p => (p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular)};
+  font-weight: ${p =>
+    p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};
 
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
 
@@ -38,12 +39,12 @@ const Text = styled.div<Props>`
 `;
 
 Text.defaultProps = {
-  lineHeight: 'short',
+  lineHeight: "short",
   fontSize: 2,
   gray: false,
   bold: false,
-  mono: false,
+  mono: false
 };
 
 export default Text;
-export {Props};
+export { Props };
