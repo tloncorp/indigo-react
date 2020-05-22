@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MenuButton } from "@reach/menu-button";
+import { MenuButton as _MenuButton } from "@reach/menu-button";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 import { Theme } from "@tlon/indigo-tokens";
 
@@ -167,7 +167,7 @@ const disabledBoxBordered = (p: BoxInput) => `
     }
   `;
 
-const StyledMenuButton = styled(MenuButton)<Props>`
+const MenuButton = styled(_MenuButton)<Props>`
     box-style: border
     border: 0;
     outline: none;
@@ -214,7 +214,7 @@ const StyledMenuButton = styled(MenuButton)<Props>`
     ${typography}
   `;
 
-StyledMenuButton.defaultProps = {
+MenuButton.defaultProps = {
   fontSize: 2,
   sm: false,
   wide: false,
@@ -224,4 +224,4 @@ StyledMenuButton.defaultProps = {
   primary: false
 };
 
-export default StyledMenuButton;
+export default MenuButton;

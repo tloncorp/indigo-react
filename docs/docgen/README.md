@@ -1,27 +1,23 @@
-# TSDX Bootstrap
+# Scripts
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+These are scripts that generate JSON used in `indigo-react` component documentation.
 
-## Local Development
+## Helpful Resources
 
-Below is a list of commands you will probably find useful.
+[Compiler typings](https://github.com/microsoft/TypeScript/blob/7c14aff09383f3814d7aae1406b5b2707b72b479/lib/typescript.d.ts#L78)
 
-### `npm start` or `yarn start`
+[AST viewer (with indigo source code)](https://ts-ast-viewer.com/#code/JYWwDg9gTgLgBAKjgQwM5wEoFNkGN4BmUEIcA5FDvmQNwBQokscA3gMph5YAKxYqAXzhES5VDACeAGywATALSoJ4rCFp0G4aPABCAVxgwIAO2HFSZAHQB6fYZPrG2uB2DHjWKGdFWb45DB6qNau7p7qdJJgWHC8EPxwALwunLg8fOgAZKx0cHCoIAD8AFxwAEYQEDLIxvR5AO7Aslgl5ZXVtblwuMgGwCatFVU4nXlgUKDIUBKD7SN1cCYAwlLAuADWrQBiesb4-aNwUhDIsm4A5rPDNQu4ABbAUrKUxq0AUmwAGpYAojIgWGM8AAPnAPt8-qpATAANoAXTgoPEE2M50RcAAFMiLsDwb9-tCAJTw+gCeh0XAmcRwACCSj2diMpmSGJYx1OFwANN0Hk8XtzLILxvFBKU4vxCUkAHyYrrWaxwAACMFQ8mA52M0CwXQAPIyTKxBZZhfwBFK2Sczqi4IU4DrQh4vOyredEhaOaihNYZaV7o9noCBDrbAYmVK6ITyXQ6RIGaGTMa+AAVCTRdDJFhdPLOi7FAjIKSoLCcugCDRYAAeTHgzXzeik8BjcfsnUr1dYsQycDJQA)
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+[Compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API)
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+[Compiler Typechecker Source Code](https://raw.githubusercontent.com/microsoft/TypeScript/master/src/compiler/checker.ts)
 
-Your library will be rebuilt if you make edits.
+[Compiler Breaking Changes](https://github.com/microsoft/TypeScript/wiki/API-Breaking-Changes)
 
-### `npm run build` or `yarn build`
+[Compiler Architectural Overview](https://github.com/microsoft/TypeScript/wiki/Architectural-Overview)
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+[In the parser - how node traversal works](https://github.com/microsoft/TypeScript/blob/eac073894b172ec719ca7f28b0b94fc6e6e7d4cf/src/compiler/parser.ts#L77)
 
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
 
-### `npm test` or `yarn test`
-
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+## Not 100% related but very interesting
+[Core TS Compiler Helpers](https://github.com/microsoft/TypeScript/blob/master/src/compiler/core.ts)

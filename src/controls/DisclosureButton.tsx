@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DisclosureButton } from "@reach/disclosure";
+import { DisclosureButton as _DisclosureButton } from "@reach/disclosure";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 
 type Props = SpaceProps &
@@ -14,7 +14,7 @@ type Props = SpaceProps &
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
 
-const Button = styled(DisclosureButton)<Props>`
+const DisclosureButton = styled(_DisclosureButton)<Props>`
     box-style: border
     border: 0;
     outline: none;
@@ -66,8 +66,8 @@ const Button = styled(DisclosureButton)<Props>`
     ${typography}
 `;
 
-Button.defaultProps = {
+DisclosureButton.defaultProps = {
   border: false
 };
 
-export default Button;
+export default DisclosureButton;

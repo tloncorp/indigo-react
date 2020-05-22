@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { typography, TypographyProps } from "styled-system";
-
-// import { SpaceProps } from 'styled-system';
-import { MenuItem } from "@reach/menu-button";
+import { MenuItem as _MenuItem } from "@reach/menu-button";
 
 type Props = TypographyProps;
 
-const StyledMenuItem = styled(MenuItem)<Props>`
+const MenuItem = styled(_MenuItem)<Props>`
   cursor: pointer;
   display: block;
   font-family: inherit;
@@ -30,8 +28,8 @@ const StyledMenuItem = styled(MenuItem)<Props>`
   ${typography}
 `;
 
-StyledMenuItem.defaultProps = {
+MenuItem.defaultProps = {
   fontSize: 2
 };
 
-export default StyledMenuItem;
+export default MenuItem;

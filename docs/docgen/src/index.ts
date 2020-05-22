@@ -21,10 +21,8 @@ function generateFilenames(sourceDirectory:string) {
 }
 
 // Generate list of sourcefiles to parse later in generate()
-
-
 const sourcePaths = generateFilenames(sourceDirectory)
-const testPath = [sourcePaths[1]]
+// const testPath = [sourcePaths[2]]
 
-console.log('Running...', testPath)
-generate(testPath)
+console.log('Running...', sourcePaths.length)
+generate(sourcePaths)

@@ -23,7 +23,7 @@ type Props = BorderProps &
   SpaceProps &
   TypographyProps & {};
 
-const Button = styled.button<Props>`
+const ButtonWrap = styled.button<Props>`
   border: 0;
   outline: none;
   cursor: pointer;
@@ -33,4 +33,4 @@ const Button = styled.button<Props>`
   ${compose(space, layout, color, border, flexbox, typography)};
 `;
 
-export default Button;
+export default ButtonWrap;

@@ -2,14 +2,16 @@ import * as ts from "typescript";
 import * as fs from "fs";
 import { outputDirectory } from './config';
 
-type DefaultPropsEntryProperties = {
-  name: string, text?: string, kind: number
-}
+const {version} = JSON.parse(
+  fs.readFileSync(__dirname + '/../../../package.json', 'utf8')
+)
+
+type DefaultPropsEntryProperties = {name: string, text?: string, kind: number} 
 
 type DefaultPropsEntry = {
   leftExpression:  string,
   leftName:  string,
-  properties:  DefaultPropsEntryProperties[],
+  properties:  {[key: string]: DefaultPropsEntryProperties},
 }
 
 type TypeEntry = {
@@ -21,19 +23,47 @@ type TypeEntry = {
 
 type Entry = {
   types: TypeEntry[],
-  defaultProps: DefaultPropsEntry[],
   name: string,
   time: Date,
-  exports?: string[],
-  defaultExport?: string,
-  typeNameOfDefaultExport?: string,
 }
 
 type Entries = Entry[]
 
-const entry = {
-  time: new Date(),
+let entry = {
+  types: [],
+  name: '',
+  time: new Date,
 } as Entry
+
+const entryDefault = {
+  types: [],
+  name: '',
+  time: new Date,
+} as Entry
+
+type Mem = {
+  defaultExport: string
+  typeNamesOfDefaultExport: string[]
+  exports: string[]
+  defaultProps: {[key: string]: DefaultPropsEntry }
+  declarationTypePairs: {[key: string]: string }
+}
+
+const memDefault = {
+  defaultExport: '',
+  typeNamesOfDefaultExport: [],
+  exports: [],
+  defaultProps: {},
+  declarationTypePairs: {},
+} as Mem
+
+let mem = {
+  defaultExport: '',
+  typeNamesOfDefaultExport: [],
+  exports: [],
+  defaultProps: {},
+  declarationTypePairs: {},
+} as Mem
 
 let entries = [] as Entries
 
@@ -45,13 +75,23 @@ const generate = (sourcePaths:string[]) => {
   }
 
   sourcePaths.forEach(filepath => {
+    console.log(filepath)
+
     parseFile([filepath], tsOptions)
-    // const trimmedIndex = trim(index)
+    
+    const linkedEntry = entries.map(_entry => merge(mem, _entry))[0]
+    
+    fs.writeFileSync(`${outputDirectory}/${linkedEntry.name}.docs.json`, JSON.stringify(linkedEntry, undefined, 4));
+
+    mem = {...memDefault}
+    entry = {...entryDefault}
+    entries = []
+
   })
 
-  const linkedEntries = entries.map(_entry => link(_entry))
+  // const linkedEntries = entries.map(_entry => merge(mem, _entry))
 
-  fs.writeFileSync(`${outputDirectory}/out.docs.json`, JSON.stringify(linkedEntries, undefined, 4));
+  // fs.writeFileSync(`${outputDirectory}/out.docs.json`, JSON.stringify(linkedEntries, undefined, 4));
 }
 
 /** Generate documentation for all classes in a set of .ts files */
@@ -86,34 +126,71 @@ const visit = (node: ts.Node, checker: ts.TypeChecker):void => {
 
   if (ts.isExpressionStatement(node)) {
     // @ts-ignore
-    const leftExpression = node.expression.left.expression.escapedText
+    const leftExpression = node.expression.left.expression.escapedText as string
     // @ts-ignore
-    const leftName = node.expression.left.name.escapedText
+    const leftName = node.expression.left.name.escapedText as string
     // @ts-ignore
     const rightProperties = node.expression.right.properties
-      .map((property: ts.PropertyAssignment) => ({
-        // @ts-ignore
-        name: property.name.escapedText,
-        // @ts-ignore
-        text: property.initializer.text,
-        kind: property.initializer.kind,
-      }))
+      .reduce((acc:{[key: string]: DefaultPropsEntryProperties}, property: ts.PropertyAssignment) => {
+        const newEntry = {
+          // @ts-ignore
+          name: property.name.escapedText as string,
+          // @ts-ignore
+          text: property.initializer.text,
+          kind: property.initializer.kind,
+        }as DefaultPropsEntryProperties
+
+        acc[newEntry.name] = newEntry
+        return acc
+      }, {})
 
     const serializedExpression = {
       leftExpression: leftExpression,
       leftName: leftName,
       properties: rightProperties,
-    } as DefaultPropsEntry
+    }
 
     if (leftName === 'defaultProps') {
-      entry.defaultProps = [...entry.defaultProps, serializedExpression]
+      mem.defaultProps = {
+        ...mem.defaultProps,
+        [serializedExpression.leftExpression]: serializedExpression
+      }
     }
   }
 
   if (ts.isVariableStatement(node)) {
+    if (node.declarationList.declarations[0].initializer === undefined) return
+    if (node.declarationList.declarations[0].name === undefined) return
+
     // @ts-ignore
     const name = node.declarationList.declarations[0].name.escapedText
+    let typeNames = [] as string[]
+    
+    // Tagged Template Expression
+    // @ts-ignore
+    if (node.declarationList.declarations[0].initializer.kind === 198) {
+      // @ts-ignore
+      const _typeNames = node.declarationList.declarations[0].initializer.typeArguments
+        // @ts-ignore
+        .map(typeReference => typeReference.typeName.escapedText)
+      typeNames = [...typeNames, ..._typeNames]
+    }
+
+    // Arrow Function
+    if (node.declarationList.declarations[0].initializer.kind === 202) {
+      // @ts-ignore
+      const _typeNames = node.declarationList.declarations[0].initializer.parameters
+        // @ts-ignore
+        .map(parameter => parameter.type.typeName.escapedText)
+      typeNames = [...typeNames, ..._typeNames]
+    }
+
     entry.name = name
+
+    mem.declarationTypePairs = {
+      ...mem.declarationTypePairs,
+      [name]: typeNames,
+    } 
   }
 
   // Look for type alias definitions. Once found, get the properties of the definition and serialize to <TypeEntry>
@@ -148,21 +225,20 @@ const visit = (node: ts.Node, checker: ts.TypeChecker):void => {
 
       return serializedType
     })
-
     entry.types = [...entry.types, ...serializations]
     return
   }
 
   if (ts.isExportDeclaration(node)) {
     // @ts-ignore
-    entry.exports = node.exportClause.elements
+    mem.exports = node.exportClause.elements
     // @ts-ignore
       .map(element => element.name.escapedText)
   }
 
   if (ts.isExportAssignment(node)) {
     // @ts-ignore
-    entry.defaultExport = node.expression.escapedText
+    mem.defaultExport = node.expression.escapedText
   }
 
   if (ts.isClassDeclaration(node) && node.name) {
@@ -197,35 +273,43 @@ const isNodeExported = (node: ts.Node): boolean => {
 //   defaultExport?: string
 // }
 
-const link = (_entry:Entry) => {
+const merge = (_mem:Mem, _entry:Entry) => {
+  // console.log(_mem)
 
-  // _entry.types.map(t => console.log(t))
-  
-   const sanitizedTypes = _entry.types
-    // for some reason there is a null value in this array
-    // .map(type => console.log(type))
-    .filter((type) => typeof type !== 'undefined')
-    .filter((type) => typeof type.parentName !== 'undefined')
-    .filter((type) => type.parentName === _entry.typeNameOfDefaultExport)
+  const declarationTypePairOfDefaultExport = _mem.declarationTypePairs[_mem.defaultExport][0]
 
-    const match = entry.defaultProps
-      .filter((defaultProp) => typeof defaultProp !== 'undefined')
-      .filter(defaultProp => defaultProp.leftExpression === _entry.name)[0]
+  // Remove types that do not belong to the default export
+  const typesOfDefaultExport = _entry.types
+    .filter(type => type.parentName === declarationTypePairOfDefaultExport)
 
-    // console.log(match)
 
-    const linkedTypes = sanitizedTypes.map(type => {
-      const defaultPropProperties = match.properties
-        .filter(prop => prop.name === type.name)[0]
+  // If there are no defaultProps to merge into entry, just return the entry
+  if (typeof _mem.defaultProps[_mem.defaultExport] === 'undefined') {
+    return {
+      types: typesOfDefaultExport,
+      name: _entry.name,
+      time: _entry.time,
+      version,
+    } 
+  }
+
+  const defaultPropsOfDefaultExport = _mem.defaultProps[_mem.defaultExport].properties
+    
+  // Add defaultProps information to each type if avalible
+  const typesWithDefaults = typesOfDefaultExport
+    .map(type => {
+      const defaultInfo = defaultPropsOfDefaultExport[type.name]
       return {
         ...type,
-        ...defaultPropProperties,
+        ...defaultInfo,
       }
     })
 
   return {
-    // ..._entry,
-    types: linkedTypes,
+    types: typesWithDefaults,
+    name: _entry.name,
+    time: _entry.time,
+    version,
   }
 }
 

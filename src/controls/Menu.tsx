@@ -1,10 +1,11 @@
-// import * as React from 'react';
 import styled from "styled-components";
-
-// import { SpaceProps } from 'styled-system';
 import { Menu } from "@reach/menu-button";
 
-const StyledMenu = styled(Menu)`
+type Props = {
+  children: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
+}
+
+const StyledMenu = styled(Menu)<Props>`
   display: block;
   position: absolute;
   font-family: "Inter UI";

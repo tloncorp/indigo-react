@@ -1,10 +1,12 @@
-// import * as React from 'react';
 import styled from "styled-components";
+import { MenuList  as _MenuList } from "@reach/menu-button";
 
-// import { SpaceProps } from 'styled-system';
-import { MenuList } from "@reach/menu-button";
+type Props = {
+  children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
+  portal: boolean
+}
 
-const StyledMenuList = styled(MenuList)`
+const MenuList = styled(_MenuList)<Props>`
   width: 200px;
   padding: 0;
   outline: none;
@@ -18,4 +20,4 @@ const StyledMenuList = styled(MenuList)`
   border-radius: ${p => p.theme.radii[2]}px;
 `;
 
-export default StyledMenuList;
+export default MenuList;
