@@ -35,7 +35,6 @@ const Row = styled.div<Props>`
 `;
 
 Row.defaultProps = {
-  // minWidth: 0,
   expand: false,
   wrap: false
 };
