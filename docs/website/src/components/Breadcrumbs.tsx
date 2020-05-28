@@ -4,8 +4,6 @@ import { color, layout, space, typography, compose } from "styled-system";
 import { Link as RouterLink } from "react-router-dom";
 import {
   Row,
-  Col,
-  Text,
   Icon
 } from "@tlon/indigo-react";
 
@@ -28,13 +26,13 @@ const BreadcrumbLink = styled(RouterLink)`
     color: ${p => p.theme.colors.black};
   }
 
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
   border-style: solid;
 
   padding: ${p => {
-    return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
-    // return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+    // return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
   }};
 
 
@@ -63,39 +61,25 @@ const defaultBox = (p) => `
   }
 `;
 
-const BreadcrumbRow = styled(Row)`
-  border-radius: ${p => p.theme.radii[2]}px;
-  border-width: 1px;
-  border-style: solid;
-
-  border-color: ${p => p.theme.colors.white};
-
-
-  padding: ${p => p.theme.space[1]}px;
-
-`
-
 const Breadcrumbs = ({pathname}) => {
 
   const pathTokenArray = pathname.slice(1).split("/");
 
   return (
-    <BreadcrumbRow alignItems="center">
-      <BreadcrumbLink fontSize='4' gray to="/">
+    <Row alignItems="center">
+      <BreadcrumbLink gray to="/">
         Home
       </BreadcrumbLink>
       {pathTokenArray.map((token, index) => {
         if (pathname === "/") return null;
-        return (
-          <div key={`BreadcrumbLink:${index}`}>
-            <Icon key={`BreadcrumbIcon:${index}`} fill="gray" size='5' icon="ChevronEast" />
-            <BreadcrumbLink key={`BreadcrumbLink:${index}`}fontSize='4' gray={pathTokenArray.length-1 === index ? false : true} to={`/${token}`}>
+        return [
+            <Icon key={`BreadcrumbIcon:${index}`} fill="gray" icon="ChevronEast" />,
+            <BreadcrumbLink key={`BreadcrumbLink:${index}`} gray={pathTokenArray.length-1 === index ? false : true} to={`/${token}`}>
               { token.charAt(0).toUpperCase() + token.slice(1) }
             </BreadcrumbLink>
-          </div>
-        )
+        ]
       })}
-    </BreadcrumbRow>
+    </Row>
   );
 };
 

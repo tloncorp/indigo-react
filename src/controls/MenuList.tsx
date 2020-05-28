@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import { MenuList  as _MenuList } from "@reach/menu-button";
+import { MenuList  as _MenuList, MenuListProps } from "@reach/menu-button";
 
-type Props = {
-  children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
-  portal: boolean
-}
+type Props = MenuListProps
 
 const MenuList = styled(_MenuList)<Props>`
   width: 200px;

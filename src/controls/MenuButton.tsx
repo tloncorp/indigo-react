@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { MenuButton as _MenuButton } from "@reach/menu-button";
+import { MenuButton as _MenuButton, MenuButtonProps } from "@reach/menu-button";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 import { Theme } from "@tlon/indigo-tokens";
 
-type Props = SpaceProps &
+type Props = MenuButtonProps & SpaceProps &
   TypographyProps & {
     sm: boolean;
     wide: boolean;
@@ -11,8 +11,6 @@ type Props = SpaceProps &
     border: boolean;
     caution: boolean;
     primary: boolean;
-    onClick: (e: React.MouseEvent<HTMLElement>) => void;
-    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
 
 type BoxInput = Props & { theme: Theme };

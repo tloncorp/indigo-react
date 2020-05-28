@@ -8,6 +8,9 @@ const stdout = (content:string | Uint8Array) => {
     // process.stdout.write("\n"); // end the line
 }
 
-export { 
+const capitalizeFirstLetter = (s:string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+export {
+    capitalizeFirstLetter,
     stdout
 }

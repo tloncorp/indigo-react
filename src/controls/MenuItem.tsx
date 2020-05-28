@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { typography, TypographyProps } from "styled-system";
-import { MenuItem as _MenuItem } from "@reach/menu-button";
+import { MenuItem as _MenuItem, MenuItemProps } from "@reach/menu-button";
 
-type Props = TypographyProps;
+type Props = MenuItemProps & TypographyProps;
 
 const MenuItem = styled(_MenuItem)<Props>`
-  cursor: pointer;
+  cursor: pointer;s
   display: block;
   font-family: inherit;
   text-decoration: initial;

@@ -1,0 +1,75 @@
+{
+    "types": [
+        {
+            "name": "children",
+            "isOptional": false,
+            "type": "any",
+            "parentName": "Props"
+        },
+        {
+            "name": "onSelect",
+            "isOptional": false,
+            "type": "any",
+            "parentName": "Props"
+        },
+        {
+            "name": "index",
+            "isOptional": true,
+            "type": "any",
+            "parentName": "Props"
+        },
+        {
+            "name": "valueText",
+            "isOptional": true,
+            "type": "any",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontFamily",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontSize",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props",
+            "text": "2",
+            "kind": 8
+        },
+        {
+            "name": "fontWeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "lineHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "letterSpacing",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "textAlign",
+            "isOptional": true,
+            "type": "ResponsiveValue<TextAlignProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        }
+    ],
+    "name": "MenuItem",
+    "time": "2020-05-28T19:14:07.964Z",
+    "version": "1.1.13"
+}

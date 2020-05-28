@@ -1,5 +1,12 @@
 import * as React from "react";
+import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import {
+  LiveProvider,
+  LiveEditor,
+  LiveError,
+  LivePreview
+} from 'react-live'
 
 import {
   Row,
@@ -10,134 +17,120 @@ import {
   Center,
   Box,
 } from "@tlon/indigo-react";
-import { checkPropTypes } from "prop-types";
+import * as indigo from '@tlon/indigo-react'
 import { isOdd } from "../utils";
-import { url } from '../constants';
+import { assetUrl } from '../constants';
 
+const parseKind = k => {
+  if (k === 91) return 'false'
+  return k
+}
 
-// const sequence = num => Array.from(Array(num), (_, i) => i);
+const TableHeading = ({children, ...props}) => (
+  <Col p='2' {...props}><Text bold gray>{children}</Text></Col>
+)
 
-const Table = ({component}) => component.props.map(prop => {
-  const assignment = prop.assignment
-  return (
-    <Col expand>
-        <Row p='2' px='7'><Text bold>{assignment}</Text></Row>
+const TableData = ({children, ...props}) => (
+  <Col p='2' {...props}><Text>{children}</Text></Col>
+)
 
+const Table = ({rows}) => (
+  <Col expand>
+    <Row>
+      <TableData p='3'>{''}</TableData>
+      <TableHeading width='10%'>Name</TableHeading>
+      <TableHeading width='10%'>Optional</TableHeading>
+      <TableHeading width='10%'>Default Value</TableHeading>
+      <TableHeading width='70%'>Type</TableHeading>
+      <TableData p='3'>{''}</TableData>
+    </Row>
     {
-      prop.types.map(type => {
-      const name = type.name
-      return (
-        <Col>
-        <Row p='2' px='7' pl='7'><Text bold>{name || 'Other'}</Text></Row>
-        <Row p='2' px='7' pl='7'>
-          <Col width='25%'>
-            <Text gray bold>Name</Text>
-          </Col>
-          <Col width='25%'>
-            <Text gray bold>Optional</Text>
-          </Col>
-          <Col width='25%'>
-            <Text gray bold>Typing</Text>
-          </Col>
-          <Col width='25%'>
-            <Text gray bold>Default Value</Text>
-          </Col>
+      rows.map((row, index) => (
+        <Row backgroundColor={isOdd(index) ? 'white' : 'gray0'}>
+          <TableData p='3'>{''}</TableData>
+          <TableData width='10%'>{row.name}</TableData>
+          <TableData width='10%'>{row.isOptional.toString()}</TableData>
+          <TableData width='10%'>{row.text || parseKind(row.kind)}</TableData>
+          <TableData width='70%'>{row.type}</TableData>
+          <TableData p='3'>{''}</TableData>
         </Row>
-        {
-          type.types.map((innerType, index) => {
-            const innerName = innerType.name
-            return (
-              <Row p='2' px='7' pl='7' backgroundColor={isOdd(index) ? 'white' : 'gray0'}>
-                <Col width='25%'>
-                  <Text mono>{innerType.name}</Text>
-                </Col>
-                <Col width='25%'>
-                  <Text mono>{innerType.optional.toString()}</Text>
-                </Col>
-                <Col width='25%'>
-                  <Text mono>{innerType.type}</Text>
-                </Col>
-                <Col width='25%'>
-                  <Text mono>undefined</Text>
-                </Col>
-              </Row>
-            )
-          })
-        }
-        </Col>
-      )
-    })
-  }
+      ))
+    }
   </Col>
-  )
-})
+)
 
-const fetchProperties = (catagory, key) => {
-  return fetch(`${url}/data/props/${catagory}/${key}.props.json`)
+const fetchProperties = (id:string) => {
+  return fetch(`${assetUrl}/data/properties/${id}.json`)
   .then(response => response.json())
   .catch(err => console.error(err))
 }
 
-const fetchMetadata = (catagory, key) => {
-  console.log(`${url}/data/metadata/${catagory}/${key}.metadata.json`)
-  return fetch(`${url}/data/metadata/${catagory}/${key}.metadata.json`)
+const fetchMetadata = (id:string) => {
+  return fetch(`${assetUrl}/data/metadata/${id}.json`)
   .then(response => response.json())
   .catch(err => console.error(err))
 }
 
-const fetchComponentData = (catagory, key) => {
+const fetchComponentData = (id) => {
   return Promise.all([
-    fetchProperties(catagory, key),
-    fetchMetadata(catagory, key)
+    fetchProperties(id),
+    fetchMetadata(id)
   ]).then(([properties, metadata]) => {
     return {properties, metadata};
   })
 }
 
 
-
 const CatalogPage = () => {
 
-  const key = 'Button'
-  const catagory = 'buttons'
+    let { componentId } = useParams();
 
-  // const promise = fetchComponentData(catagory, key);
+    const promise = fetchComponentData(componentId);
 
-    // const [user, setUser] = useState(null);
-    // const [posts, setPosts] = useState(null);
+    const [properties, setProperties] = useState(null);
+    const [metadata, setMetadata] = useState(null);
 
     useEffect(() => {
-      fetchComponentData(catagory, key).then(data => {
-        console.log(data)
-        // setUser(data.user);
-        // setPosts(data.posts);
+      promise.then(res => {
+        setProperties(res.properties);
+        setMetadata(res.metadata);
       });
     }, []);
-
-    // let { componentId } = useParams();
-    // const component = components.button
-
-
-    // const properties = React.lazy(() => import(`../data/properties/${catagory}/${component}.props.json`)); // Lazy-loaded
-
-    // console.log(properties)
 
     return (
       <Col expand minHeight='100vh'>
         <Rule />
 
         <Col p='7'>
-          <Text fontSize='5' bold>{component.name}</Text>
+          <Text bold fontSize='4'>{componentId}</Text>
         </Col>
-
-        <TwoUp>
-          <Col p='7' pr='4'><Box borderRadius='4' border='1px solid silver'><Center height='13'>Example</Center></Box></Col>
-          <Col p='7' pl='4'><Box borderRadius='4' border='1px solid silver'><Center height='13'>Code</Center></Box></Col>
-        </TwoUp>
+        <Row p='7'>
+          <Row expand height='13' p='4' border='1px solid silver' borderRadius='3'>
+          <LiveProvider scope={indigo} code="<Button border>Hello World!</Button>">
+            <Col width='50%'>
+              <LiveEditor />
+              <LiveError />
+            </Col>
+            <Rule vertical />
+            <Col width='50%'>
+              <Center height='100%'><LivePreview /></Center>
+            </Col>
+            
+          </LiveProvider>
+          </Row>
+        </Row>
 
         <Row>
           <Text bold fontSize='4' p='4' px='7'>Properties</Text>
         </Row>
+        {
+          properties !== null
+            ? <Table rows={properties.types} />
+            : null
+        }
+
       </Col>
     )
 }
+
+export default CatalogPage

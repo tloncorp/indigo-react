@@ -1,8 +1,8 @@
 import * as React from "react";
+import { useEffect}  from 'react'
 import { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import styled from 'styled-components'
-
 import {
   Row,
   Text,
@@ -15,7 +15,7 @@ import {
   DisclosurePanel
 } from "@tlon/indigo-react";
 
-import { baseurl } from '../constants'
+import { assetUrl } from '../constants'
 
 // @ts-ignore
 import button from '../assets/componentImages/button.png'
@@ -27,8 +27,27 @@ const LinkWrap = styled(RouterLink)`
   text-decoration: none;
 `
 
-export default class Catalog extends React.Component {
-  render() {
+
+const fetchManifest = () => {
+  return fetch(`${assetUrl}/data/manifest.json`)
+  .then(response => response.json())
+  .catch(err => console.error(err))
+}
+
+const Catalog = () => {
+
+  const promise = fetchManifest();
+
+  const [manifest, setManifest] = useState(null);
+
+  useEffect(() => {
+    promise.then(manifest => {
+      setManifest(manifest);
+    });
+  }, []);
+
+  console.log(manifest)
+
     return (
       <Col expand minHeight='100vh'>
         <Rule />
@@ -40,42 +59,17 @@ export default class Catalog extends React.Component {
         </Col>
         <Rule />
         {
-          sections.map(section => <ComponentSection section={section} />)
+          manifest !== null
+            ? manifest.map(section => <ComponentSection section={section} />)
+            : null
         }
       </Col>
     )
-  }
 }
 
-const sections = [
-  {
-    title: 'Buttons',
-    components: [
-      {title: 'AsyncButton', key:'asyncButton'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-    ]
-  },
-  {
-    title: 'Controls',
-    components: [
-      {title: 'AsyncButton', key:'asyncButton'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-      {title: 'Button', key:'button'},
-    ]
-  },
-]
 
 const ComponentSection = ({section}) => {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   return (
     <React.Fragment>
@@ -83,13 +77,15 @@ const ComponentSection = ({section}) => {
       <Col p='4'>
         <DisclosureButton>
           <Row>
-            <Text bold fontSize='4'>{section.title}</Text>
+            <Text bold fontSize='4'>{section.name}</Text>
           </Row>
         </DisclosureButton>
         <DisclosurePanel>
           <Row wrap>
             {
-              section.components.map(component => <ComponentTile component={component} />)
+              section !== null
+                ? section.components.map(name => <ComponentTile name={name} />)
+                : null
             }
           </Row>
         </DisclosurePanel>
@@ -122,22 +118,24 @@ HoverBox.defaultProps = {
   backgroundColor: 'gray0',
 }
 
-const ComponentTile = ({component}) => (
-  <Col width='25%' p='4'>
-    <LinkWrap to={`catalog/${component.key}`}>
+const ComponentTile = ({name}) => (
+  <Col width='20%' p='4'>
+    <LinkWrap to={`catalog/${name}`}>
       <HoverBox 
-        borderRadius='4'
+        borderRadius='3'
         mb='2' 
         width='100%'
         pb='66%'
         backgroundColor='gray0'
-        backgroundImage={`url(${tileImages[component.key]})`}
+        backgroundImage={`url(${tileImages[name]})`}
         backgroundSize='contain'
         backgroundPosition='center'
         backgroundRepeat='no-repeat'
         >
       </HoverBox>
-      <Text fontSize='4'>{component.title}</Text>
+      <Text fontSize='4'>{name}</Text>
     </LinkWrap>
   </Col>
 )
+
+export default Catalog

@@ -7,13 +7,15 @@ const ignore = [
     'cssReset.ts'
 ]
 const sourceDirectory = __dirname + '/../../../src'
-const outputDirectory = __dirname + '/../../website/public/data/properties'
-const metadataDirectory = __dirname + '/../../website/public/data/metadata'
+const outputDirectory = __dirname + '/../../website/public/data'
+const propertyDirectory = outputDirectory + '/properties'
+const metadataDirectory = outputDirectory + '/metadata'
 
 
 export {
     ignore,
     sourceDirectory,
     outputDirectory,
+    propertyDirectory,
     metadataDirectory,
 }

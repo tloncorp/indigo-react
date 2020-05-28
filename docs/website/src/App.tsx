@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from 'react'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import {
   color,
@@ -12,6 +12,8 @@ import { light, dark, inverted, paperDark, paperLight, Theme } from "@tlon/indig
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
+import NoMatch from "./pages/NoMatch"
+
 import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
 import FooterNav from './components/FooterNav'
@@ -101,9 +103,9 @@ const MenuOverlayController = ({data, actions}) => {
 const matrix = generate2dMatrix(64, 64, () => randomInt(0, 19));
 
 const themeOptions = {
-  indigo: {
-    key: 'indigo',
-    title: 'Indigo',
+  default: {
+    key: 'default',
+    title: 'Default',
     theme: [light, dark]
   },
   paper: {
@@ -117,8 +119,8 @@ const App = () => {
 
     const prefersDarkMode = usePrefersDarkMode()
     const [menuOpen, setMenu] = useState(false);
-    const [themeKey, setTheme] = useState(themeOptions.indigo.key);
-    const [themeTitle, setThemeTitle] = useState(themeOptions.indigo.title);
+    const [themeKey, setTheme] = useState(themeOptions.default.key);
+    const [themeTitle, setThemeTitle] = useState(themeOptions.default.title);
     const [isDark, setDarkMode] = useState(prefersDarkMode)
     const [componentCursor, setComponentCursor] = useState(null)
 
@@ -158,15 +160,18 @@ const App = () => {
               <Header actions={actions} data={data} />
               <MenuOverlayController actions={actions} data={data} />
               <div>
-                <Route exact path="/" render={() => <Home matrix={matrix}/>} />
-                <Route exact path="/catalog" component={Catalog} />
-                <Route path={`/catalog/:componentId`} component={CatalogPage}/>
-                {
-                  // <Route exact path="/sandbox" component={Sandbox} />
-                  // <Route exact path="/buttons" component={Buttons} />
-                  // <Route exact path='/viewtest' component={ViewTest} />
-                  // <Route exact path='/editor' component={Editor} />
-                }
+                <Switch>
+                  <Route exact path="/" render={() => <Home matrix={matrix}/>} />
+                  <Route exact path="/catalog" component={Catalog} />
+                  <Route path={`/catalog/:componentId`} component={CatalogPage}/>
+                  <Route path='*' component={NoMatch} />
+                  {
+                    // <Route exact path="/sandbox" component={Sandbox} />
+                    // <Route exact path="/buttons" component={Buttons} />
+                    // <Route exact path='/viewtest' component={ViewTest} />
+                    // <Route exact path='/editor' component={Editor} />
+                  }
+                </Switch>
               </div>
               </ScrollToTop>
             </Router>

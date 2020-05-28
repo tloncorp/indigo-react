@@ -1,0 +1,37 @@
+{
+    "types": [
+        {
+            "name": "children",
+            "isOptional": false,
+            "type": "any",
+            "parentName": "Props"
+        },
+        {
+            "name": "defaultOpen",
+            "isOptional": true,
+            "type": "boolean",
+            "parentName": "Props"
+        },
+        {
+            "name": "id",
+            "isOptional": true,
+            "type": "any",
+            "parentName": "Props"
+        },
+        {
+            "name": "onChange",
+            "isOptional": true,
+            "type": "() => void",
+            "parentName": "Props"
+        },
+        {
+            "name": "open",
+            "isOptional": true,
+            "type": "boolean",
+            "parentName": "Props"
+        }
+    ],
+    "name": "Disclosure",
+    "time": "2020-05-28T19:14:07.964Z",
+    "version": "1.1.13"
+}

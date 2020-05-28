@@ -1,14 +1,12 @@
 import styled from "styled-components";
-import { Menu } from "@reach/menu-button";
+import { Menu as _Menu, MenuProps } from "@reach/menu-button";
 
-type Props = {
-  children: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
-}
+type Props = MenuProps
 
-const StyledMenu = styled(Menu)<Props>`
+const Menu = styled(_Menu)<Props>`
   display: block;
   position: absolute;
   font-family: "Inter UI";
 `;
 
-export default StyledMenu;
+export default Menu;

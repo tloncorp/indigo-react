@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { DisclosureButton as _DisclosureButton } from "@reach/disclosure";
+import { DisclosureButton as _DisclosureButton, DisclosureButtonProps } from "@reach/disclosure";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 
-type Props = SpaceProps &
+type Props = DisclosureButtonProps & SpaceProps &
   TypographyProps & {
     sm?: boolean;
     wide?: boolean;
@@ -10,8 +10,6 @@ type Props = SpaceProps &
     border?: boolean;
     caution?: boolean;
     primary?: boolean;
-    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
 
 const DisclosureButton = styled(_DisclosureButton)<Props>`

@@ -1,0 +1,703 @@
+{
+    "types": [
+        {
+            "name": "background",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "backgroundImage",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "backgroundSize",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "backgroundPosition",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "backgroundRepeat",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "border",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderX",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderY",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderTopWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderBottomWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderLeftWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderRightWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderTopStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<BorderTopStyleProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderBottomStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<BorderTopStyleProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderLeftStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<BorderTopStyleProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderRightStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<BorderTopStyleProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderTopColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderBottomColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderLeftColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderRightColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderRadius",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderTopLeftRadius",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderTopRightRadius",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderBottomLeftRadius",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderBottomRightRadius",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderTop",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderRight",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderBottom",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "borderLeft",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "color",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "bg",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "backgroundColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "opacity",
+            "isOptional": true,
+            "type": "ResponsiveValue<GlobalsNumber, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "alignItems",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "alignContent",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "justifyItems",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "justifyContent",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "flexWrap",
+            "isOptional": true,
+            "type": "ResponsiveValue<FlexWrapProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "flexDirection",
+            "isOptional": true,
+            "type": "ResponsiveValue<FlexDirectionProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "flex",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "flexGrow",
+            "isOptional": true,
+            "type": "ResponsiveValue<GlobalsNumber, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "flexShrink",
+            "isOptional": true,
+            "type": "ResponsiveValue<GlobalsNumber, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "flexBasis",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "justifySelf",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "alignSelf",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "order",
+            "isOptional": true,
+            "type": "ResponsiveValue<GlobalsNumber, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridGap",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridColumnGap",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridRowGap",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridColumn",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridRow",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridAutoFlow",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridAutoColumns",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridAutoRows",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridTemplateColumns",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridTemplateRows",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridTemplateAreas",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "gridArea",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "width",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "height",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "minWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "minHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "maxWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "maxHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "display",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "verticalAlign",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "size",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "overflow",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "overflowX",
+            "isOptional": true,
+            "type": "ResponsiveValue<OverflowXProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "overflowY",
+            "isOptional": true,
+            "type": "ResponsiveValue<OverflowXProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "position",
+            "isOptional": true,
+            "type": "ResponsiveValue<PositionProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "zIndex",
+            "isOptional": true,
+            "type": "ResponsiveValue<ZIndexProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "top",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "right",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "bottom",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "left",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "boxShadow",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "textShadow",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "m",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "margin",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mt",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginTop",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mr",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginRight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mb",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginBottom",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "ml",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginLeft",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mx",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginX",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "my",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginY",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "p",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "padding",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pt",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingTop",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pr",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingRight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pb",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingBottom",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pl",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingLeft",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "px",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingX",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "py",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingY",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontFamily",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontSize",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontWeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "lineHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "letterSpacing",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "textAlign",
+            "isOptional": true,
+            "type": "ResponsiveValue<TextAlignProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        }
+    ],
+    "name": "Box",
+    "time": "2020-05-28T19:14:07.964Z",
+    "version": "1.1.13"
+}

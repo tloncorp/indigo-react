@@ -3,7 +3,7 @@ import * as fs from "fs";
 import * as path from 'path';
 import { ParsedPath } from 'path'
 import { stdout } from './util'
-import { outputDirectory } from './config';
+import { propertyDirectory } from './config';
 import {
   DefaultPropsEntryProperties,
   Entry,
@@ -60,13 +60,13 @@ const generateProperties = (sourcePaths:ParsedPath[]) => {
       base
     } = parsedPath
 
-    const splitDir = dir.split(path.sep)
+    // const splitDir = dir.split(path.sep)
 
     // Get the name of the file's immediate directory. This will be the name of the component category
-    const componentCategory = splitDir[splitDir.length - 1]
+    // const componentCategory = splitDir[splitDir.length - 1]
     
     // Join the output root with the component category name
-    const outputDir = path.join(outputDirectory, componentCategory)
+    // const outputDir = path.join(propertyDirectory, componentCategory)
 
     // The main method. Accepts a file, collects attributes from it and adds those attributes to the global entries and mem
     parseFile(
@@ -80,9 +80,9 @@ const generateProperties = (sourcePaths:ParsedPath[]) => {
     // Again join the output directory with the filename and extension for the full output path
     const outputPath = path.format({
       root: '/',
-      dir: outputDir,
+      dir: propertyDirectory,
       name: completeEntry.name,
-      ext: '.props.json'
+      ext: '.json'
     })
 
     // Print the name of the current file task
@@ -92,8 +92,8 @@ const generateProperties = (sourcePaths:ParsedPath[]) => {
     const outputData = JSON.stringify(completeEntry, undefined, 4)
 
     // Check if the output directory exists. If not, create it.
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir);
+    if (!fs.existsSync(propertyDirectory)) {
+      fs.mkdirSync(propertyDirectory);
     }
     
     // Write the file to disk

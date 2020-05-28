@@ -24,12 +24,9 @@ const Header = ({ actions, data }) => {
   <Row expand height='9' alignItems='center' justifyContent='space-between' px='7' backgroundColor='white'>
     
     <Row alignItems='center'>
-      <Row mr='4' alignItems='center'>
-          <Text fontSize='4' bold >Indigo</Text>
-        </Row>
-      <Button mr='7' narrow fontSize='4' onClick={actions.toggleMenu}>
-        Menu
-        <Icon ml='2' size='5' icon='ChevronSouth' />
+      <Button mr='7' narrow onClick={actions.toggleMenu}>
+        <Text bold >Indigo</Text>
+        <Icon ml='2' icon='ChevronSouth' />
       </Button>
       {
         pathname === '/'
@@ -39,21 +36,19 @@ const Header = ({ actions, data }) => {
     </Row>
 
     <Row alignItems='center'>
-      <Text mr='2' fontSize='4' gray>Theme:</Text>
+      <Text mr='2' gray>Theme:</Text>
       <Menu>
-        <MenuButton narrow fontSize='4'>
+        <MenuButton narrow >
           { data.themeTitle }
-          <Icon ml='2' size='5' icon='ChevronSouth' />
+          <Icon ml='2' icon='ChevronSouth' />
         </MenuButton>
         <MenuList>
           <MenuItem
-            onSelect={() => actions.setTheme(data.themeOptions.indigo.key)}
-            fontSize='4'>
-            {data.themeOptions.indigo.title}
+            onSelect={() => actions.setTheme(data.themeOptions.default.key)}>
+            {data.themeOptions.default.title}
           </MenuItem>
           <MenuItem
-            onSelect={() => actions.setTheme(data.themeOptions.paper.key)}
-            fontSize='4'>
+            onSelect={() => actions.setTheme(data.themeOptions.paper.key)}>
             {data.themeOptions.paper.title}
           </MenuItem>
         </MenuList>
