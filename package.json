@@ -1,30 +1,25 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Tlon's design language",
   "author": "tlon",
   "license": "MIT",
   "repository": "urbit/indigo-react",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "main": "dist/index.js",
-  "module": "dist/indigo-react.esm.js",
-  "private": false,
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
-  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "lint:fix": "tsdx lint src --fix",
-    "deploy": "gh-pages -d example/dist"
+    "lint": "tsdx lint --fix"
   },
   "peerDependencies": {
+    "@reach/disclosure": "^0.10.2",
     "@reach/menu-button": "^0.1.18",
     "prop-types": "^15.5.4",
     "react": ">= 16",
@@ -32,53 +27,33 @@
     "styled-components": ">= 4",
     "styled-system": ">=5",
     "formik": ">=2",
-    "react-codemirror2": ">= 7.1.0"
+    "react-codemirror2": ">= 7.1.0",
+    "@styled-system/css": "^5.1.5"
   },
   "devDependencies": {
-    "@types/jest": "^24.9.0",
+    "@reach/disclosure": "^0.10.2",
+    "@reach/menu-button": "^0.10.2",
+    "@styled-system/css": "^5.1.5",
+    "@tlon/indigo-tokens": "^1.3.0",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^4.4.2",
     "@types/styled-system": "^5.1.4",
+    "@types/styled-system__css": "^5.0.5",
     "@types/yup": "^0.26.30",
     "codemirror": "^5.52.2",
     "eslint": "^6.8.0",
     "formik": "^2.1.4",
-    "gh-pages": "^1.2.0",
-    "husky": "^4.2.0",
+    "markdown-to-jsx": "^6.11.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^16.13.0",
     "react-codemirror2": "^7.1.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.0",
     "react-markdown": "^4.3.1",
-    "styled-components": "^5.0.1",
+    "styled-components": "^5.1.1",
     "styled-system": "^5.1.4",
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
     "typescript": "^3.7.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "bracketSpacing": false,
-    "jsxBracketSameLine": false,
-    "jsxSingleQuote": false,
-    "printWidth": 100,
-    "proseWrap": "always",
-    "quoteProps": "as-needed",
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
-  "dependencies": {
-    "@reach/menu-button": "^0.10.0",
-    "@styled-system/css": "^5.1.5",
-    "@types/styled-system__css": "^5.0.5"
   }
 }

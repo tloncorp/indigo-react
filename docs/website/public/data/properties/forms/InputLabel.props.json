@@ -1,0 +1,323 @@
+{
+    "types": [
+        {
+            "name": "color",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props",
+            "text": "black",
+            "kind": 10
+        },
+        {
+            "name": "bg",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "backgroundColor",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "opacity",
+            "isOptional": true,
+            "type": "ResponsiveValue<GlobalsNumber, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "width",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "height",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "minWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "minHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "maxWidth",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "maxHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "display",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "verticalAlign",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "size",
+            "isOptional": true,
+            "type": "ResponsiveValue<TLengthStyledSystem, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "overflow",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "overflowX",
+            "isOptional": true,
+            "type": "ResponsiveValue<OverflowXProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "overflowY",
+            "isOptional": true,
+            "type": "ResponsiveValue<OverflowXProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "m",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "margin",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props",
+            "text": "0",
+            "kind": 8
+        },
+        {
+            "name": "mt",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginTop",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mr",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginRight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mb",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginBottom",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "ml",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginLeft",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "mx",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginX",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "my",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "marginY",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "p",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "padding",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pt",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingTop",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pr",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingRight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pb",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingBottom",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "pl",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingLeft",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "px",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingX",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "py",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "paddingY",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontFamily",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontSize",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props",
+            "text": "2",
+            "kind": 8
+        },
+        {
+            "name": "fontWeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props",
+            "text": "400",
+            "kind": 8
+        },
+        {
+            "name": "lineHeight",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props",
+            "text": "short",
+            "kind": 10
+        },
+        {
+            "name": "letterSpacing",
+            "isOptional": true,
+            "type": "ResponsiveValue<string | number | symbol, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "fontStyle",
+            "isOptional": true,
+            "type": "ResponsiveValue<string, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        },
+        {
+            "name": "textAlign",
+            "isOptional": true,
+            "type": "ResponsiveValue<TextAlignProperty, Required<Theme<TLengthStyledSystem>>>",
+            "parentName": "Props"
+        }
+    ],
+    "name": "InputLabel",
+    "time": "2020-05-27T21:35:59.619Z",
+    "version": "1.1.8"
+}
