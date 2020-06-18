@@ -6,8 +6,8 @@ import {
 
 const CopyBlock = ({title, copy}) => (
   <Col px='7'>
-    <Text fontSize='2' pb='2'>{title}</Text>
-    <Text fontSize='2' gray>{copy}</Text>
+    <Text fontSize='1' pb='2'>{title}</Text>
+    <Text fontSize='1' gray>{copy}</Text>
   </Col>
 )
 

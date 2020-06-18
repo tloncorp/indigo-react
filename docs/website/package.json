@@ -5,19 +5,20 @@
   "homepage": "https://urbit.github.io/indigo-react",
   "main": "index.js",
   "dependencies": {
-    "@tlon/indigo-light": "^1.0.0",
+    "@tlon/indigo-light": "^1.0.1",
     "@tlon/indigo-react": "file:../..",
     "codemirror": "^5.52.2",
     "react-live": "^2.2.2",
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
-    "styled-components": "^5.1.1",
     "styled-system": "^5.1.5",
     "yup": "^0.28.1"
   },
   "alias": {
     "styled-components": "../../node_modules/styled-components",
     "formik": "../../node_modules/formik",
+    "react": "../../node_modules/react",
+    "react-dom": "../../node_modules/react-dom/profiling",
     "scheduler/tracing": "../../node_modules/scheduler/tracing-profiling",
     "@reach/menu-button": "../../node_modules/@reach/menu-button",
     "@reach/disclosure": "../../node_modules/@reach/disclosure"

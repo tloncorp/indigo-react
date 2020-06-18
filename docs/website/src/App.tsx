@@ -150,8 +150,6 @@ const App = () => {
     // const theme = themeOptions[themeKey].theme[isDark ? 1 : 0]
 
     // theme.colors.highlight = theme.colors.gray
-    console.log(theme)
-
     return (
       <ThemeProvider
         theme={ theme }>
@@ -177,6 +175,7 @@ const App = () => {
               </div>
               </ScrollToTop>
             </Router>
+
             <Rule />
             <FooterHeading />
             <FooterNav />
