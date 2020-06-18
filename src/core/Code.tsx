@@ -21,15 +21,15 @@ type Props = BorderProps &
   TypographyProps & {};
 
 const Code = styled.code<Props>`
-  border-radius: ${p => p.theme.radii[2]};
+  border-radius: ${p => p.theme.radii[1]};
   ${compose(color, layout, space, typography, border)}
 `;
 
 Code.defaultProps = {
   fontFamily: "mono",
-  bg: "lightGray",
+  bg: "gray",
   // border: '1px solid',
-  // borderColor: 'lightGray',
+  // borderColor: 'gray',
   color: "black",
   fontSize: 0,
   padding: 1,

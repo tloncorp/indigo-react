@@ -24,8 +24,8 @@ const defaultBox = (p: BoxInput) => `
   color: ${p.theme.colors.black};
 
   &:hover {
-    border-color: ${p.border ? p.theme.colors.lightGray : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.lightGray};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.gray};
     color: ${p.theme.colors.black};
   }
 
@@ -46,8 +46,8 @@ const defaultBox = (p: BoxInput) => `
 
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.lightGray : p.theme.colors.white};
-    background-color: ${p.theme.colors.lightGray};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.theme.colors.gray};
     color: ${p.theme.colors.gray};
     * {
       fill: ${p.theme.colors.gray};
@@ -57,8 +57,8 @@ const defaultBox = (p: BoxInput) => `
 
 const cautionBox = (p: BoxInput) => `
   &:hover {
-    border-color: ${p.border ? p.theme.colors.lightGray : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.lightGray : p.theme.colors.lightGray};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.border ? p.theme.colors.gray : p.theme.colors.gray};
     color: ${p.theme.colors.black};
   }
 
@@ -76,8 +76,8 @@ const cautionBox = (p: BoxInput) => `
 
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.lightGray : p.theme.colors.white};
-    background-color: ${p.theme.colors.lightGray};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.theme.colors.gray};
     color: ${p.theme.colors.gray};
   }
 `;
@@ -100,7 +100,7 @@ const Button = styled.button<Props>`
     return `${p.theme.space[2]}px`;
   }};
 
-  border-radius: ${p => p.theme.radii[2]}px;
+  border-radius: ${p => p.theme.radii[1]}px;
 
   ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
 

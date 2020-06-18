@@ -346,7 +346,7 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
     height: 100%;
   }
 
-  .CodeMirror-selected { background:${p => p.theme.colors.lightGray} !important; }
+  .CodeMirror-selected { background:${p => p.theme.colors.gray} !important; }
 
   .cm-s-u span { font-family: "Source Code Pro"}
   .cm-s-u span.cm-meta { color: ${p => p.theme.colors.gray}; }
@@ -364,7 +364,7 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
   .cm-s-u span.cm-operator { color: ${p => p.theme.colors.black}; }
   .cm-s-u span.cm-comment { color: ${p =>
     p.theme.colors.black}; background-color: ${p =>
-  p.theme.colors.lightGray}; padding: 2px; border-radius: 2px;}
+  p.theme.colors.gray}; padding: 2px; border-radius: 2px;}
   .cm-s-u span.cm-string { color: ${p => p.theme.colors.gray} }
   .cm-s-u span.cm-string-2 { color: ${p => p.theme.colors.gray}; }
   .cm-s-u span.cm-qualifier { color: ${p => p.theme.colors.gray} }
@@ -387,7 +387,7 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
 
   .CodeMirror-hints.u {
     color: ${p => p.theme.colors.gray};;
-    background-color: ${p => p.theme.colors.lightGray}; !important;
+    background-color: ${p => p.theme.colors.gray}; !important;
   }
 
   .CodeMirror-hints.u .CodeMirror-hint-active {

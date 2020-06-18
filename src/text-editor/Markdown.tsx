@@ -107,7 +107,7 @@ const Markdown = styled(MarkdownToJsx)`
   code {
     padding: 1px 2px;
     font-family: "Source Code Pro", mono;
-    background-color: ${p => p.theme.colors.lightGray};
+    background-color: ${p => p.theme.colors.gray};
     border-radius: 2px;
   }
 
@@ -135,7 +135,7 @@ const Markdown = styled(MarkdownToJsx)`
     min-width: 120px;
     border-style: solid;
     border-width: 1px;
-    border-color: ${p => p.theme.colors.lightGray};
+    border-color: ${p => p.theme.colors.gray};
     padding: 8px;
   }
 
@@ -151,7 +151,7 @@ const Markdown = styled(MarkdownToJsx)`
   hr {
     border: none;
     height: 1px;
-    background-color: ${p => p.theme.colors.lightGray};
+    background-color: ${p => p.theme.colors.gray};
     margin: 8px 0px;
   }
 
@@ -176,7 +176,7 @@ const Markdown = styled(MarkdownToJsx)`
 
   blockquote {
     padding-left: 8px;
-    border-left: 4px solid ${p => p.theme.colors.lightGray};
+    border-left: 4px solid ${p => p.theme.colors.gray};
   }
 
   blockquote p {

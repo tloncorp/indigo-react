@@ -28,16 +28,21 @@ type StyledProps = {
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.lightGray};
+  border-color: ${p.theme.colors.gray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
   caret-color: ${p.theme.colors.highlight};
+  
 
   &:hover {}
 
+  ::placeholder {
+    color: ${p.theme.colors.gray};
+  }
+
   ::selection {
-    background-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.gray};
   }
 
   &:focus {
@@ -46,11 +51,11 @@ const defaultBox = (p: BoxInput) => `
 `;
 
 const errorBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.error};
   background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.caution};
+  color: ${p.theme.colors.error};
 
-  caret-color: ${p.theme.colors.caution};
+  caret-color: ${p.theme.colors.error};
 
   &:hover {}
 
@@ -64,7 +69,7 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.lightGray};
+  border-color: ${p.theme.colors.gray};
   background-color: ${p.theme.colors.lightGray};
   color: ${p.theme.colors.gray};
 
@@ -83,15 +88,15 @@ const StyledInput = styled.input<StyledProps>`
   margin-top: ${p => p.theme.space[1]}px;
 
   padding: ${p => {
-    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+    return `${p.theme.space[2]}px`;
   }};
 
   width: 100%;
 
-  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-size: ${p => p.theme.fontSizes[0]}px;
   line-height: 1.2;
 
-  border-radius: ${p => p.theme.radii[2]}px;
+  border-radius: ${p => p.theme.radii[1]}px;
 
   ${p => {
     if (p.disabled) return disabledBox(p);

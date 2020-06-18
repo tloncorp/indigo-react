@@ -12,7 +12,6 @@ import {
   Checkbox,
   Row,
   Spinner,
-  AsyncButton,
   TextArea,
   Tab,
   TabGroup,
@@ -82,7 +81,7 @@ const Sandbox: React.FC<Props> = (props) => {
   };
 
   return (
-    <Box maxWidth='400px' m='9'>
+    <Box maxWidth='400px' m='7'>
     <TabGroup>
       <Tab selected={tab === 0} title='Chat' onClick={() => setTab(0)}/>
       <Tab selected={tab === 1} title='About' onClick={() => setTab(1)}/>
@@ -177,13 +176,6 @@ const Sandbox: React.FC<Props> = (props) => {
 
             <Row>
               <Button wide mr='4' caution>Cancel</Button>
-              <AsyncButton
-                wide 
-                type="submit"
-                primary
-                loading={props.loading}>
-                Submit
-              </AsyncButton>
             </Row>
           </Space>
         </Form>

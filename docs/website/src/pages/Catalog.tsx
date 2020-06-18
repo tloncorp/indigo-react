@@ -104,9 +104,9 @@ const tileImages = {
 const HoverBox = styled(Box)`
   border-style: solid;
   border-width: 1px;
-  border-color: ${p => p.theme.colors.lightGray};
+  border-color: ${p => p.theme.colors.gray};
   &:hover {
-    border-color: ${p => p.theme.colors.lightGray};
+    border-color: ${p => p.theme.colors.gray};
   }
 `
 
@@ -115,7 +115,7 @@ HoverBox.defaultProps = {
   mb: '2',
   width: '100%',
   pb: '66%',
-  backgroundColor: 'lightGray',
+  backgroundColor: 'gray',
 }
 
 const ComponentTile = ({name}) => (
@@ -126,7 +126,7 @@ const ComponentTile = ({name}) => (
         mb='2' 
         width='100%'
         pb='66%'
-        backgroundColor='lightGray'
+        backgroundColor='gray'
         backgroundImage={`url(${tileImages[name]})`}
         backgroundSize='contain'
         backgroundPosition='center'

@@ -12,6 +12,7 @@
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
     "styled-system": "^5.1.5",
+    "urbit-ob": "^5.0.0",
     "yup": "^0.28.1"
   },
   "alias": {

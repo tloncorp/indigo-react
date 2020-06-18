@@ -27,7 +27,7 @@ type InternalProps = {
 type BoxInput = InternalProps & { theme: Theme };
 
 const offBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.lightGray};
+  border-color: ${p.theme.colors.gray};
   background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
@@ -51,34 +51,34 @@ const onBox = (p: BoxInput) => `
 `;
 
 const offBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.error};
   background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.caution};
+    border-color: ${p.theme.colors.error};
   }
 
   ${HiddenInput}:focus ~ & {
     background-color: ${p.theme.colors.white};
     * {
-      fill:  ${p.theme.colors.caution};
+      fill:  ${p.theme.colors.error};
     }
   }
 `;
 
 const onBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.error};
+  background-color: ${p.theme.colors.error};
   * {
     fill:  ${p.theme.colors.white};
   }
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.lightGray};
+  border-color: ${p.theme.colors.gray};
   background-color: ${p.theme.colors.lightGray};
   * {
     fill:  ${p.theme.colors.gray};
@@ -104,11 +104,11 @@ const Label = styled.label<InternalProps>`
 
 const Indicator = styled.div<InternalProps>`
   position: absolute;
-  top: ${p => (p.theme.fontSizes[2] - 12) / 2}px;
+  top: ${p => (p.theme.fontSizes[0] - 12) / 2}px;
   left: 0px;
   height: 16px;
   width: 16px;
-  border-radius: ${p => p.theme.radii[2]}px;
+  border-radius: ${p => p.theme.radii[1]}px;
   border-width: 1px;
   border-style: solid;
 

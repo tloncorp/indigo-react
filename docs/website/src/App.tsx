@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
 import NoMatch from "./pages/NoMatch"
+import Sandbox from "./pages/Sandbox2"
 
 import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
@@ -57,7 +58,6 @@ type RootProps = ColorProps & {}
 
 const Root = styled.div<RootProps>`
   font-family: ${p => p.theme.fonts.sans};
-  line-height: ${p => p.theme.lineHeights.regular};
   ${color};
 `;
 
@@ -77,7 +77,7 @@ const MenuOverlay = ({data, actions}) => {
   return (
     <Visibility hidden={false}>
       <Box
-        backgroundColor='lightGray'
+        backgroundColor='gray'
         width='100vw' 
         height='calc(100vh - 64px)' 
         position='relative' 
@@ -161,12 +161,13 @@ const App = () => {
               <MenuOverlayController actions={actions} data={data} />
               <div>
                 <Switch>
+                  <Route exact path="/" component={Sandbox} />
+
                   <Route exact path="/" render={() => <Home matrix={matrix}/>} />
                   <Route exact path="/catalog" component={Catalog} />
                   <Route path={`/catalog/:componentId`} component={CatalogPage}/>
                   <Route path='*' component={NoMatch} />
                   {
-                    // <Route exact path="/sandbox" component={Sandbox} />
                     // <Route exact path="/buttons" component={Buttons} />
                     // <Route exact path='/viewtest' component={ViewTest} />
                     // <Route exact path='/editor' component={Editor} />

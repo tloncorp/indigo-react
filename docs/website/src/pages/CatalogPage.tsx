@@ -46,7 +46,7 @@ const Table = ({rows}) => (
     </Row>
     {
       rows.map((row, index) => (
-        <Row backgroundColor={isOdd(index) ? 'white' : 'lightGray'}>
+        <Row backgroundColor={isOdd(index) ? 'white' : 'gray'}>
           <TableData p='3'>{''}</TableData>
           <TableData width='10%'>{row.name}</TableData>
           <TableData width='10%'>{row.isOptional.toString()}</TableData>

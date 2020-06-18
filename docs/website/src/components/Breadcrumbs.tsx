@@ -26,7 +26,7 @@ const BreadcrumbLink = styled(RouterLink)`
     color: ${p => p.theme.colors.black};
   }
 
-  border-radius: ${p => p.theme.radii[2]}px;
+  border-radius: ${p => p.theme.radii[1]}px;
   border-width: 1px;
   border-style: solid;
 
@@ -51,8 +51,8 @@ const defaultBox = (p) => `
   background-color: ${p.theme.colors.white};
 
   &:hover {
-    border-color: ${p.theme.colors.lightGray};
-    background-color: ${p.theme.colors.lightGray};
+    border-color: ${p.theme.colors.gray};
+    background-color: ${p.theme.colors.gray};
   }
 
   &:focus {

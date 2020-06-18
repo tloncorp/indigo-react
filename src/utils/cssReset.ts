@@ -22,9 +22,8 @@ const cssReset = `
     font-weight: normal;
   }
   body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.2;
+
   }
   ol, ul {
     list-style: none;

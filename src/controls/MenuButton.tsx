@@ -24,8 +24,8 @@ const defaultBox = (p: BoxInput) => `
     }
 
     &:hover {
-      border-color: ${p.theme.colors.lightGray};
-      background-color: ${p.theme.colors.lightGray};
+      border-color: ${p.theme.colors.gray};
+      background-color: ${p.theme.colors.gray};
       * {
         fill: ${p.theme.colors.black};
       }
@@ -52,29 +52,29 @@ const defaultBox = (p: BoxInput) => `
 const cautionBox = (p: BoxInput) => `
     border-color: ${p.theme.colors.white};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.caution};
+    color: ${p.theme.colors.error};
     * {
-      fill: ${p.theme.colors.caution};
+      fill: ${p.theme.colors.error};
     }
 
     &:hover {
       border-color: ${p.theme.colors.white};
       background-color: ${p.theme.colors.white};
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.error};
       }
     }
 
     &:focus {
-      border-color: ${p.theme.colors.caution};
+      border-color: ${p.theme.colors.error};
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.error};
       }
     }
 
     &:active {
-      border-color: ${p.theme.colors.caution};
-      background-color: ${p.theme.colors.caution};
+      border-color: ${p.theme.colors.error};
+      background-color: ${p.theme.colors.error};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -85,8 +85,8 @@ const cautionBox = (p: BoxInput) => `
 const disabledBox = (p: BoxInput) => `
     &:disabled {
       cursor: not-allowed;
-      border-color: ${p.theme.colors.lightGray};
-      background-color: ${p.theme.colors.lightGray};
+      border-color: ${p.theme.colors.gray};
+      background-color: ${p.theme.colors.gray};
       color: ${p.theme.colors.gray};
     }
   `;
@@ -94,7 +94,7 @@ const disabledBox = (p: BoxInput) => `
 // Bordered
 
 const defaultBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.lightGray};
+    border-color: ${p.theme.colors.gray};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
     * {
@@ -102,7 +102,7 @@ const defaultBoxBordered = (p: BoxInput) => `
     }
 
     &:hover {
-      background-color: ${p.theme.colors.lightGray};
+      background-color: ${p.theme.colors.gray};
       * {
         fill: ${p.theme.colors.black};
       }
@@ -127,28 +127,28 @@ const defaultBoxBordered = (p: BoxInput) => `
   `;
 
 const cautionBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.caution};
+    border-color: ${p.theme.colors.error};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.caution};
+    color: ${p.theme.colors.error};
     * {
-      fill: ${p.theme.colors.caution};
+      fill: ${p.theme.colors.error};
     }
 
     &:hover {
       background-color: ${p.theme.colors.white};
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.error};
       }
     }
 
     &:focus {
       * {
-        fill: ${p.theme.colors.caution};
+        fill: ${p.theme.colors.error};
       }
     }
 
     &:active {
-      background-color: ${p.theme.colors.caution};
+      background-color: ${p.theme.colors.error};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -159,8 +159,8 @@ const cautionBoxBordered = (p: BoxInput) => `
 const disabledBoxBordered = (p: BoxInput) => `
     &:disabled {
       cursor: not-allowed;
-      border-color: ${p.theme.colors.lightGray};
-      background-color: ${p.theme.colors.lightGray};
+      border-color: ${p.theme.colors.gray};
+      background-color: ${p.theme.colors.gray};
       color: ${p.theme.colors.gray};
     }
   `;
@@ -188,11 +188,11 @@ const MenuButton = styled(_MenuButton)<Props>`
       return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
     }};
 
-    border-radius: ${p => p.theme.radii[2]}px;
+    border-radius: ${p => p.theme.radii[1]}px;
     border-width: 1px;
     border-style: solid;
 
-    border-color: ${p => (p.border ? p.theme.lightGray : p.theme.white)};
+    border-color: ${p => (p.border ? p.theme.gray : p.theme.white)};
     background-color: ${p => p.theme.white};
     color: ${p => p.theme.black};
 

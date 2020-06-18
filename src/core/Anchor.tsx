@@ -51,8 +51,8 @@ const Anchor = styled.a<Props>`
   }
 
   &:focus {
-    background-color: ${p => p.theme.colors.lightGray};
-    box-shadow: ${p => `0px 0px 0px 2px ${p.theme.colors.lightGray}`};
+    background-color: ${p => p.theme.colors.gray};
+    box-shadow: ${p => `0px 0px 0px 2px ${p.theme.colors.gray}`};
     color: ${p => p.theme.colors.black};
   }
 

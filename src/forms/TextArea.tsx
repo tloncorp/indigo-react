@@ -29,7 +29,7 @@ type StyledProps = {
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.lightGray};
+  border-color: ${p.theme.colors.gray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
@@ -43,11 +43,11 @@ const defaultBox = (p: BoxInput) => `
 `;
 
 const errorBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.error};
   background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.caution};
+  color: ${p.theme.colors.error};
 
-  caret-color: ${p.theme.colors.caution};
+  caret-color: ${p.theme.colors.error};
 
   &:hover {}
 
@@ -57,8 +57,8 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.lightGray};
-  background-color: ${p.theme.colors.lightGray};
+  border-color: ${p.theme.colors.gray};
+  background-color: ${p.theme.colors.gray};
   color: ${p.theme.colors.gray};
 
   &:hover {}
@@ -80,10 +80,10 @@ const StyledTextArea = styled.textarea<StyledProps>`
   resize: vertical;
   min-height: ${p => p.theme.sizes[7]}px;
 
-  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-size: ${p => p.theme.fontSizes[0]}px;
   line-height: ${p => p.theme.lineHeights.short};
 
-  border-radius: ${p => p.theme.radii[2]}px;
+  border-radius: ${p => p.theme.radii[1]}px;
 
   ${p => {
     if (p.disabled) return disabledBox(p);
