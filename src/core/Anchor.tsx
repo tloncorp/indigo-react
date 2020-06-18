@@ -27,11 +27,11 @@ const Anchor = styled.a<Props>`
   cursor: pointer;
   display: inline-block;
   &:visited {
-    color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
+    color: ${p => (p.gray ? p.theme.colors.gray : p.theme.colors.black)};
   }
   color: ${p => {
     if (typeof p.color !== "undefined") return p.color;
-    if (p.gray) return p.theme.colors.gray5;
+    if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};
   font-weight: ${p =>
@@ -51,8 +51,8 @@ const Anchor = styled.a<Props>`
   }
 
   &:focus {
-    background-color: ${p => p.theme.colors.gray0};
-    box-shadow: ${p => `0px 0px 0px 2px ${p.theme.colors.gray0}`};
+    background-color: ${p => p.theme.colors.lightGray};
+    box-shadow: ${p => `0px 0px 0px 2px ${p.theme.colors.lightGray}`};
     color: ${p => p.theme.colors.black};
   }
 

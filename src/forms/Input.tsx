@@ -2,7 +2,7 @@ import * as React from "react";
 import { useField } from "formik";
 import styled from "styled-components";
 import { LayoutProps, SpaceProps } from "styled-system";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 
 import InputLabel from "./InputLabel";
 import InputCaption from "./InputCaption";
@@ -28,26 +28,26 @@ type StyledProps = {
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
-  caret-color: ${p.theme.colors.primary};
+  caret-color: ${p.theme.colors.highlight};
 
   &:hover {}
 
   ::selection {
-    background-color: ${p.theme.colors.blue0};
+    background-color: ${p.theme.colors.lightGray};
   }
 
   &:focus {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.highlight};
   }
 `;
 
 const errorBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.red0};
+  background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.caution};
 
   caret-color: ${p.theme.colors.caution};
@@ -55,7 +55,7 @@ const errorBox = (p: BoxInput) => `
   &:hover {}
 
   ::selection {
-    background-color: ${p.theme.colors.red0};
+    background-color: ${p.theme.colors.white};
   }
 
   &:focus {
@@ -64,9 +64,9 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
-  background-color: ${p.theme.colors.gray0};
-  color: ${p.theme.colors.gray5};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.lightGray};
+  color: ${p.theme.colors.gray};
 
   &:hover {}
 

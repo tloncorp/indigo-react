@@ -8,12 +8,12 @@ const list = [
 const Sourcelist = ({listItems}) => {
   return (
     <Col display='relative'>
-      <Row height='8' top='0' position='sticky' backgroundColor='white' borderBottom='1px solid silver' borderBottomColor='gray1' px='4' alignItems='center'>
+      <Row height='8' top='0' position='sticky' backgroundColor='white' borderBottom='1px solid silver' borderBottomColor='lightGray' px='4' alignItems='center'>
         <Text>Title</Text>
       </Row>
       {
         listItems.map(item =>
-          <Row height='96px' p='4' borderBottom='1px solid silver' borderBottomColor='gray1'>
+          <Row height='96px' p='4' borderBottom='1px solid silver' borderBottomColor='lightGray'>
             <Text>{item}</Text>
           </Row>
         )
@@ -52,7 +52,7 @@ export default class ViewTest extends React.Component {
           sideBarContents={
             <Sourcelist listItems={list} />
           }>
-          <Row borderBottom='1px solid silver' borderBottomColor='gray1' height='8' width='100%' px='4' alignItems='center'>
+          <Row borderBottom='1px solid silver' borderBottomColor='lightGray' height='8' width='100%' px='4' alignItems='center'>
             <IconButton
               sm
               onClick={() => this.toggleSidebar()}

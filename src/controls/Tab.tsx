@@ -23,7 +23,7 @@ const Outer = styled.button<OuterProps>`
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: ${p =>
-    p.selected ? p.theme.colors.black : p.theme.colors.gray2};
+    p.selected ? p.theme.colors.black : p.theme.colors.lightGray};
   line-height: 1.2;
 `;
 

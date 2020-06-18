@@ -23,7 +23,7 @@ const InputLabel = styled.label<Props>`
 
 InputLabel.defaultProps = {
   lineHeight: "short",
-  fontSize: 2,
+  fontSize: 0,
   margin: 0,
   fontWeight: 400,
   color: "black"

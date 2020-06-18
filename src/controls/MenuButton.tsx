@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MenuButton as _MenuButton, MenuButtonProps } from "@reach/menu-button";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 
 type Props = MenuButtonProps & SpaceProps &
   TypographyProps & {
@@ -20,19 +20,19 @@ const defaultBox = (p: BoxInput) => `
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
     * {
-      fill: ${p.theme.colors.gray5};
+      fill: ${p.theme.colors.gray};
     }
 
     &:hover {
-      border-color: ${p.theme.colors.gray0};
-      background-color: ${p.theme.colors.gray0};
+      border-color: ${p.theme.colors.lightGray};
+      background-color: ${p.theme.colors.lightGray};
       * {
         fill: ${p.theme.colors.black};
       }
     }
 
     &:focus {
-      border-color: ${p.theme.colors.primary};
+      border-color: ${p.theme.colors.highlight};
       background-color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.black};
@@ -40,8 +40,8 @@ const defaultBox = (p: BoxInput) => `
     }
 
     &:active {
-      border-color: ${p.theme.colors.primary};
-      background-color: ${p.theme.colors.primary};
+      border-color: ${p.theme.colors.highlight};
+      background-color: ${p.theme.colors.highlight};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -58,8 +58,8 @@ const cautionBox = (p: BoxInput) => `
     }
 
     &:hover {
-      border-color: ${p.theme.colors.red0};
-      background-color: ${p.theme.colors.red0};
+      border-color: ${p.theme.colors.white};
+      background-color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.caution};
       }
@@ -85,31 +85,31 @@ const cautionBox = (p: BoxInput) => `
 const disabledBox = (p: BoxInput) => `
     &:disabled {
       cursor: not-allowed;
-      border-color: ${p.theme.colors.gray0};
-      background-color: ${p.theme.colors.gray0};
-      color: ${p.theme.colors.gray5};
+      border-color: ${p.theme.colors.lightGray};
+      background-color: ${p.theme.colors.lightGray};
+      color: ${p.theme.colors.gray};
     }
   `;
 
 // Bordered
 
 const defaultBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.gray2};
+    border-color: ${p.theme.colors.lightGray};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
     * {
-      fill: ${p.theme.colors.gray5};
+      fill: ${p.theme.colors.gray};
     }
 
     &:hover {
-      background-color: ${p.theme.colors.gray0};
+      background-color: ${p.theme.colors.lightGray};
       * {
         fill: ${p.theme.colors.black};
       }
     }
 
     &:focus {
-      border-color: ${p.theme.colors.primary};
+      border-color: ${p.theme.colors.highlight};
       background-color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.black};
@@ -117,8 +117,8 @@ const defaultBoxBordered = (p: BoxInput) => `
     }
 
     &:active {
-      border-color: ${p.theme.colors.primary};
-      background-color: ${p.theme.colors.primary};
+      border-color: ${p.theme.colors.highlight};
+      background-color: ${p.theme.colors.highlight};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -135,7 +135,7 @@ const cautionBoxBordered = (p: BoxInput) => `
     }
 
     &:hover {
-      background-color: ${p.theme.colors.red0};
+      background-color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.caution};
       }
@@ -159,9 +159,9 @@ const cautionBoxBordered = (p: BoxInput) => `
 const disabledBoxBordered = (p: BoxInput) => `
     &:disabled {
       cursor: not-allowed;
-      border-color: ${p.theme.colors.gray2};
-      background-color: ${p.theme.colors.gray0};
-      color: ${p.theme.colors.gray5};
+      border-color: ${p.theme.colors.lightGray};
+      background-color: ${p.theme.colors.lightGray};
+      color: ${p.theme.colors.gray};
     }
   `;
 
@@ -192,7 +192,7 @@ const MenuButton = styled(_MenuButton)<Props>`
     border-width: 1px;
     border-style: solid;
 
-    border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
+    border-color: ${p => (p.border ? p.theme.lightGray : p.theme.white)};
     background-color: ${p => p.theme.white};
     color: ${p => p.theme.black};
 
@@ -213,7 +213,7 @@ const MenuButton = styled(_MenuButton)<Props>`
   `;
 
 MenuButton.defaultProps = {
-  fontSize: 2,
+  fontSize: 0,
   sm: false,
   wide: false,
   narrow: false,

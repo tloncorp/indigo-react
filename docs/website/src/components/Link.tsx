@@ -5,7 +5,7 @@ import { color, layout, space, typography, compose } from "styled-system";
 const Link = styled(RouterLink)`
   color: ${p => {
     if (typeof p.color !== 'undefined') return p.color;
-    if (p.gray) return p.theme.colors.gray5;
+    if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};
 
@@ -27,7 +27,7 @@ const Link = styled(RouterLink)`
 
 Link.defaultProps = {
   lineHeight: "short",
-  fontSize: 2
+  fontSize: 0
 };
 
 export default Link;

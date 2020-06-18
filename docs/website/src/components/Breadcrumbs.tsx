@@ -10,7 +10,7 @@ import {
 const BreadcrumbLink = styled(RouterLink)`
   color: ${p => {
     if (typeof p.color !== 'undefined') return p.color;
-    if (p.gray) return p.theme.colors.gray5;
+    if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};
 
@@ -43,7 +43,7 @@ const BreadcrumbLink = styled(RouterLink)`
 
 BreadcrumbLink.defaultProps = {
   lineHeight: "short",
-  fontSize: 2
+  fontSize: 0
 };
 
 const defaultBox = (p) => `
@@ -51,12 +51,12 @@ const defaultBox = (p) => `
   background-color: ${p.theme.colors.white};
 
   &:hover {
-    border-color: ${p.theme.colors.gray0};
-    background-color: ${p.theme.colors.gray0};
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.lightGray};
   }
 
   &:focus {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.highlight};
     background-color: ${p.theme.colors.white};
   }
 `;

@@ -2,7 +2,7 @@ import * as React from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
 import styled from "styled-components";
 import { useField } from "formik";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 
 import InputLabel from "./InputLabel";
 import InputCaption from "./InputCaption";
@@ -28,24 +28,24 @@ type InternalProps = {
 type BoxInput = InternalProps & { theme: Theme };
 
 const offBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.gray5};
+    border-color: ${p.theme.colors.gray};
   }
 
   ${HiddenInput}:focus ~ & {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.highlight};
   }
 `;
 
 const onBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.primary};
-  background-color: ${p.theme.colors.primary};
+  border-color: ${p.theme.colors.highlight};
+  background-color: ${p.theme.colors.highlight};
   * {
     fill:  ${p.theme.colors.white};
   }
@@ -53,7 +53,7 @@ const onBox = (p: BoxInput) => `
 
 const offBoxCaution = (p: BoxInput) => `
   border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.red0};
+  background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
   }
@@ -79,10 +79,10 @@ const onBoxCaution = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
-  background-color: ${p.theme.colors.gray0};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.lightGray};
   * {
-    fill:  ${p.theme.colors.gray5};
+    fill:  ${p.theme.colors.gray};
   }
 `;
 

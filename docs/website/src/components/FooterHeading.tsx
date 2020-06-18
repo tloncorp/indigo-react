@@ -16,7 +16,7 @@ const FooterHeading = (props) => (
 
       <Row alignItems='center'>
         <Img width='7' src={favicon} />
-        <Text fontSize='4' bold pl='4'>Indigo</Text>
+        <Text fontSize='2' bold pl='4'>Indigo</Text>
       </Row>
 
 

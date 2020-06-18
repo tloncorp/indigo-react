@@ -15,7 +15,7 @@ const Outer = styled.div<Props>`
 
   border-width: 1px;
   border-style: solid;
-  border-color: ${p => p.theme.colors.gray2};
+  border-color: ${p => p.theme.colors.lightGray};
   border-radius: 50%;
 
   animation: ${p => (p.loading ? "spin 750ms linear infinite" : "")};

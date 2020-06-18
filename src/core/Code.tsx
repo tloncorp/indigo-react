@@ -27,11 +27,11 @@ const Code = styled.code<Props>`
 
 Code.defaultProps = {
   fontFamily: "mono",
-  bg: "gray0",
+  bg: "lightGray",
   // border: '1px solid',
-  // borderColor: 'gray1',
+  // borderColor: 'lightGray',
   color: "black",
-  fontSize: 2,
+  fontSize: 0,
   padding: 1,
   paddingTop: "2px",
   paddingBottom: "2px",

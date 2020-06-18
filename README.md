@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Text fontSize='4'>Urbit</Text>
+        <Text fontSize='2'>Urbit</Text>
       </ThemeProvider>
     );
   }
@@ -91,7 +91,7 @@ const Text = styled.div<Props>`
 Text.defaultProps = {
   lineHeight: 'short',
   fontWeight: 400,
-  fontSize: 2,
+  fontSize: 0,
 };
 
 export default Text;
@@ -137,7 +137,7 @@ In `<Text>`, you might have noticed the `defaultProps` for `fontSize` was set to
 Text.defaultProps = {
   lineHeight: 'short',
   fontWeight: 400,
-  fontSize: 2,
+  fontSize: 0,
 };
 
 export default Text;

@@ -7,7 +7,8 @@ import {
   ColorProps
 } from 'styled-system';
 import { cssReset, Box, Rule } from "@tlon/indigo-react";
-import { light, dark, inverted, paperDark, paperLight, Theme } from "@tlon/indigo-tokens";
+import theme, { Theme } from "@tlon/indigo-light";
+// import { light, Theme } from "./theme/index";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
@@ -76,7 +77,7 @@ const MenuOverlay = ({data, actions}) => {
   return (
     <Visibility hidden={false}>
       <Box
-        backgroundColor='gray0'
+        backgroundColor='lightGray'
         width='100vw' 
         height='calc(100vh - 64px)' 
         position='relative' 
@@ -106,12 +107,12 @@ const themeOptions = {
   default: {
     key: 'default',
     title: 'Default',
-    theme: [light, dark]
+    theme: [theme, theme]
   },
   paper: {
     key: 'paper',
     title: 'Paper',
-    theme: [paperLight, paperDark]
+    theme: [theme, theme]
   }
 }
 
@@ -146,9 +147,10 @@ const App = () => {
       menuOpen
     }
 
-    const theme = themeOptions[themeKey].theme[isDark ? 1 : 0]
+    // const theme = themeOptions[themeKey].theme[isDark ? 1 : 0]
 
-    theme.colors.primary = theme.colors.gray6
+    // theme.colors.highlight = theme.colors.gray
+    console.log(theme)
 
     return (
       <ThemeProvider
