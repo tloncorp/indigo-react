@@ -21,23 +21,14 @@ const defaultBox = (p: BoxInput) => `
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
   * {
-    fill: ${p.theme.colors.gray};
+    fill: ${p.theme.colors.lightGray};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.lightGray};
-    background-color: ${p.theme.colors.lightGray};
+    border-color: ${p.theme.colors.white};
+    background-color: ${p.theme.colors.washedGray};
     * {
       fill: ${p.theme.colors.black};
-    }
-  }
-
-  &:active {
-    border-color: ${p.theme.colors.gray};
-    background-color: ${p.theme.colors.gray};
-    color: ${p.theme.colors.white};
-    * {
-      fill: ${p.theme.colors.white};
     }
   }
 `;
@@ -45,22 +36,22 @@ const defaultBox = (p: BoxInput) => `
 const cautionBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.white};
   background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.error};
+  color: ${p.theme.colors.red};
   * {
-    fill: ${p.theme.colors.error};
+    fill: ${p.theme.colors.red};
   }
 
   &:hover {
     border-color: ${p.theme.colors.white};
-    background-color: rgba(255,65,54,0.1);
+    background-color:${p.theme.colors.washedRed};
     * {
-      fill: ${p.theme.colors.error};
+      fill: ${p.theme.colors.red};
     }
   }
 
   &:active {
-    border-color: ${p.theme.colors.error};
-    background-color: ${p.theme.colors.error};
+    border-color: ${p.theme.colors.red};
+    background-color: ${p.theme.colors.red};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -71,20 +62,20 @@ const cautionBox = (p: BoxInput) => `
 const disabledBox = (p: BoxInput) => `
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.theme.colors.gray};
-    background-color: ${p.theme.colors.lightGray};
-    color: ${p.theme.colors.gray};
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.lightGray};
   }
 `;
 
 // Bordered
 
 const defaultBoxBordered = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
   * {
-    fill: ${p.theme.colors.gray};
+    fill: ${p.theme.colors.lightGray};
   }
 
   &:hover {
@@ -94,11 +85,11 @@ const defaultBoxBordered = (p: BoxInput) => `
   }
 
   &:active {
-    border-color: ${p.theme.colors.gray};
-    background-color: ${p.theme.colors.gray};
-    color: ${p.theme.colors.white};
+    border-color: ${p.theme.colors.washedGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.black};
     * {
-      fill: ${p.theme.colors.white};
+      fill: ${p.theme.colors.black};
     }
   }
 `;
@@ -106,20 +97,20 @@ const defaultBoxBordered = (p: BoxInput) => `
 const primaryBoxBordered = (p: BoxInput) => `
   border-color: rgba(0,142,255,0.5);
   background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.highlight};
+  color: ${p.theme.colors.blue};
   * {
-    fill: rgba(0,142,255,0.5);
+    fill: ${p.theme.colors.lightBlue};
   }
 
   &:hover {
     * {
-      fill: ${p.theme.colors.highlight};
+      fill: ${p.theme.colors.blue};
     }
   }
 
   &:active {
-    border-color: ${p.theme.colors.highlight};
-    background-color: ${p.theme.colors.highlight};
+    border-color: ${p.theme.colors.blue};
+    background-color: ${p.theme.colors.blue};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -130,22 +121,22 @@ const primaryBoxBordered = (p: BoxInput) => `
 const primaryBox = (p: BoxInput) => `
 border-color: ${p.theme.colors.white};
 background-color: ${p.theme.colors.white};
-color: ${p.theme.colors.highlight};
+color: ${p.theme.colors.blue};
 * {
-  fill: ${p.theme.colors.gray};
+  fill: ${p.theme.colors.lightGray};
 }
 
 &:hover {
-  border-color: ${p.theme.colors.lightGray};
-  background-color: rgba(0,142,255,0.1);
+  border-color: ${p.theme.colors.white};
+  background-color: ${p.theme.colors.washedBlue};
   * {
     fill: ${p.theme.colors.black};
   }
 }
 
 &:active {
-  border-color: ${p.theme.colors.highlight};
-  background-color: ${p.theme.colors.highlight};
+  border-color: ${p.theme.colors.blue};
+  background-color: ${p.theme.colors.blue};
   color: ${p.theme.colors.white};
   * {
     fill: ${p.theme.colors.white};
@@ -156,7 +147,7 @@ color: ${p.theme.colors.highlight};
 const cautionBoxBordered = (p: BoxInput) => `
   border-color: rgba(255,65,54,0.5);
   background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.error};
+  color: ${p.theme.colors.red};
   * {
     fill: rgba(255,65,54,0.5);
   }
@@ -164,12 +155,12 @@ const cautionBoxBordered = (p: BoxInput) => `
   &:hover {
     background-color: ${p.theme.colors.white};
     * {
-      fill: ${p.theme.colors.error};
+      fill: ${p.theme.colors.red};
     }
   }
   
   &:active {
-    background-color: ${p.theme.colors.error};
+    background-color: ${p.theme.colors.red};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -180,9 +171,9 @@ const cautionBoxBordered = (p: BoxInput) => `
 const disabledBoxBordered = (p: BoxInput) => `
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.theme.colors.gray};
-    background-color: ${p.theme.colors.lightGray};
-    color: ${p.theme.colors.gray};
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.lightGray};
   }
 `;
 
@@ -217,7 +208,7 @@ const Button = styled.button<Props>`
   border-width: 1px;
   border-style: solid;
 
-  border-color: ${p => (p.border ? p.theme.gray : p.theme.white)};
+  border-color: ${p => (p.border ? p.theme.lightGray : p.theme.white)};
   background-color: ${p => p.theme.white};
   color: ${p => p.theme.black};
 

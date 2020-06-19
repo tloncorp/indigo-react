@@ -38,40 +38,40 @@ const offBox = (p: BoxInput) => `
   }
 
   ${HiddenInput}:focus ~ & {
-    border-color: ${p.theme.colors.highlight};
+    border-color: ${p.theme.colors.blue};
   }
 `;
 
 const onBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.highlight};
-  background-color: ${p.theme.colors.highlight};
+  border-color: ${p.theme.colors.blue};
+  background-color: ${p.theme.colors.blue};
   * {
     fill:  ${p.theme.colors.white};
   }
 `;
 
 const offBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.error};
+  border-color: ${p.theme.colors.red};
   background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.error};
+    border-color: ${p.theme.colors.red};
   }
 
   ${HiddenInput}:focus ~ & {
     background-color: ${p.theme.colors.white};
     * {
-      fill:  ${p.theme.colors.error};
+      fill:  ${p.theme.colors.red};
     }
   }
 `;
 
 const onBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.error};
-  background-color: ${p.theme.colors.error};
+  border-color: ${p.theme.colors.red};
+  background-color: ${p.theme.colors.red};
   * {
     fill:  ${p.theme.colors.white};
   }
@@ -79,7 +79,7 @@ const onBoxCaution = (p: BoxInput) => `
 
 const disabledBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.gray};
-  background-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.washedGray};
   * {
     fill:  ${p.theme.colors.gray};
   }

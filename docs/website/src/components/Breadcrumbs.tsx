@@ -56,7 +56,7 @@ const defaultBox = (p) => `
   }
 
   &:focus {
-    border-color: ${p.theme.colors.highlight};
+    border-color: ${p.theme.colors.blue};
     background-color: ${p.theme.colors.white};
   }
 `;

@@ -11,10 +11,10 @@ import styled from "styled-components";
 // const Markdown = ({md, ...props}:Props) => {
 //   // marked.setOptions({
 //   //   renderer: new marked.Renderer(),
-//   //   // highlight: function(code, language) {
-//   //   //   const hljs = require('highlight.js');
+//   //   // blue: function(code, language) {
+//   //   //   const hljs = require('blue.js');
 //   //   //   const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
-//   //   //   return hljs.highlight(validLanguage, code).value;
+//   //   //   return hljs.blue(validLanguage, code).value;
 //   //   // },
 //   //   pedantic: false,
 //   //   gfm: true,

@@ -239,7 +239,7 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
     z-index: 2;
     position: relative;
     overflow: visible;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-blue-color: transparent;
     -webkit-font-variant-ligatures: contextual;
     font-variant-ligatures: contextual;
   }
@@ -440,7 +440,7 @@ MarkdownEditor.defaultProps = {
     workDelay: 300,
     pollInterval: 100,
     addModeClass: false,
-    maxHighlightLength: 10000,
+    maxblueLength: 10000,
     viewportMargin: 10,
     spellcheck: true,
     autocorrect: false,

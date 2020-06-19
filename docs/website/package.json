@@ -5,7 +5,7 @@
   "homepage": "https://urbit.github.io/indigo-react",
   "main": "index.js",
   "dependencies": {
-    "@tlon/indigo-light": "^1.0.1",
+    "@tlon/indigo-light": "^1.0.2",
     "@tlon/indigo-react": "file:../..",
     "codemirror": "^5.52.2",
     "react-live": "^2.2.2",

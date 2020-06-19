@@ -32,7 +32,7 @@ const defaultBox = (p: BoxInput) => `
     }
 
     &:focus {
-      border-color: ${p.theme.colors.highlight};
+      border-color: ${p.theme.colors.blue};
       background-color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.black};
@@ -40,8 +40,8 @@ const defaultBox = (p: BoxInput) => `
     }
 
     &:active {
-      border-color: ${p.theme.colors.highlight};
-      background-color: ${p.theme.colors.highlight};
+      border-color: ${p.theme.colors.blue};
+      background-color: ${p.theme.colors.blue};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -52,29 +52,29 @@ const defaultBox = (p: BoxInput) => `
 const cautionBox = (p: BoxInput) => `
     border-color: ${p.theme.colors.white};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.error};
+    color: ${p.theme.colors.red};
     * {
-      fill: ${p.theme.colors.error};
+      fill: ${p.theme.colors.red};
     }
 
     &:hover {
       border-color: ${p.theme.colors.white};
       background-color: ${p.theme.colors.white};
       * {
-        fill: ${p.theme.colors.error};
+        fill: ${p.theme.colors.red};
       }
     }
 
     &:focus {
-      border-color: ${p.theme.colors.error};
+      border-color: ${p.theme.colors.red};
       * {
-        fill: ${p.theme.colors.error};
+        fill: ${p.theme.colors.red};
       }
     }
 
     &:active {
-      border-color: ${p.theme.colors.error};
-      background-color: ${p.theme.colors.error};
+      border-color: ${p.theme.colors.red};
+      background-color: ${p.theme.colors.red};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -109,7 +109,7 @@ const defaultBoxBordered = (p: BoxInput) => `
     }
 
     &:focus {
-      border-color: ${p.theme.colors.highlight};
+      border-color: ${p.theme.colors.blue};
       background-color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.black};
@@ -117,8 +117,8 @@ const defaultBoxBordered = (p: BoxInput) => `
     }
 
     &:active {
-      border-color: ${p.theme.colors.highlight};
-      background-color: ${p.theme.colors.highlight};
+      border-color: ${p.theme.colors.blue};
+      background-color: ${p.theme.colors.blue};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
@@ -127,28 +127,28 @@ const defaultBoxBordered = (p: BoxInput) => `
   `;
 
 const cautionBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.error};
+    border-color: ${p.theme.colors.red};
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.error};
+    color: ${p.theme.colors.red};
     * {
-      fill: ${p.theme.colors.error};
+      fill: ${p.theme.colors.red};
     }
 
     &:hover {
       background-color: ${p.theme.colors.white};
       * {
-        fill: ${p.theme.colors.error};
+        fill: ${p.theme.colors.red};
       }
     }
 
     &:focus {
       * {
-        fill: ${p.theme.colors.error};
+        fill: ${p.theme.colors.red};
       }
     }
 
     &:active {
-      background-color: ${p.theme.colors.error};
+      background-color: ${p.theme.colors.red};
       color: ${p.theme.colors.white};
       * {
         fill: ${p.theme.colors.white};
