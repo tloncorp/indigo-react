@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useField } from "formik";
 import styled from "styled-components";
-import { LayoutProps, SpaceProps } from "styled-system";
+import { typography, TypographyProps, LayoutProps, SpaceProps } from "styled-system";
 import { Theme } from "@tlon/indigo-light";
 
 import InputLabel from "./InputLabel";
@@ -10,7 +10,7 @@ import ErrorMessage from "./ErrorMessage";
 
 import { Box } from "../core/index";
 
-type Props = LayoutProps &
+type Props = TypographyProps & LayoutProps &
   SpaceProps & {
     caption?: string;
     placeholder?: string;
@@ -23,12 +23,13 @@ type Props = LayoutProps &
 type StyledProps = {
   hasError?: boolean;
   hasSuccess?: boolean;
+  fontFamily?: any;
 };
 
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
@@ -42,7 +43,8 @@ const defaultBox = (p: BoxInput) => `
   }
 
   ::selection {
-    background-color: ${p.theme.colors.gray};
+    background-color: ${p.theme.colors.blue};
+    color: ${p.theme.colors.white};
   }
 
   &:focus {
@@ -60,7 +62,8 @@ const errorBox = (p: BoxInput) => `
   &:hover {}
 
   ::selection {
-    background-color: ${p.theme.colors.white};
+    background-color: ${p.theme.colors.red};
+    color: ${p.theme.colors.white};
   }
 
   &:focus {
@@ -69,9 +72,9 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.washedGray};
-  color: ${p.theme.colors.gray};
+  color: ${p.theme.colors.lightGray};
 
   &:hover {}
 
@@ -107,6 +110,8 @@ const StyledInput = styled.input<StyledProps>`
   &:disabled {
     cursor: not-allowed;
   }
+
+  ${typography}
 `;
 
 const Input = ({
@@ -116,6 +121,7 @@ const Input = ({
   disabled,
   id,
   placeholder,
+  fontFamily,
   ...props
 }: Props) => {
   const [field, meta] = useField(id);
@@ -128,6 +134,7 @@ const Input = ({
         type={type}
         disabled={disabled}
         placeholder={placeholder}
+        fontFamily={fontFamily ? fontFamily : 'sans'}
         {...field}
       />
       <ErrorMessage>

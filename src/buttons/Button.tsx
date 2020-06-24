@@ -90,7 +90,7 @@ const defaultBoxBordered = (p: BoxInput) => `
     color: ${p.theme.colors.black};
     * {
       fill: ${p.theme.colors.black};
-    }
+    }Â
   }
 `;
 

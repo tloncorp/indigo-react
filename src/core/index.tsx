@@ -7,7 +7,6 @@ import Col from "./Col";
 import Icon from "./Icon";
 import Row from "./Row";
 import Rule from "./Rule";
-import Spinner from "./Spinner";
 import Img from "./Img";
 import styleAnchor from "./styleAnchor";
 import Svg from "./Svg";
@@ -23,7 +22,6 @@ export {
   Icon,
   Row,
   Rule,
-  Spinner,
   Img,
   styleAnchor,
   Svg,

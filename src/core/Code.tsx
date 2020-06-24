@@ -27,7 +27,7 @@ const Code = styled.code<Props>`
 
 Code.defaultProps = {
   fontFamily: "mono",
-  bg: "gray",
+  bg: "washedGray",
   // border: '1px solid',
   // borderColor: 'gray',
   color: "black",

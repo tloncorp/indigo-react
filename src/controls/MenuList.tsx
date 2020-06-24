@@ -11,7 +11,7 @@ const MenuList = styled(_MenuList)<Props>`
   padding-top: 8px;
   padding-bottom: 8px;
 
-  border: 1px solid ${p => p.theme.colors.gray};
+  border: 1px solid ${p => p.theme.colors.lightGray};
   background-color: ${p => p.theme.colors.white};
 
   border-radius: ${p => p.theme.radii[1]}px;

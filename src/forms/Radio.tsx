@@ -28,14 +28,10 @@ type InternalProps = {
 type BoxInput = InternalProps & { theme: Theme };
 
 const offBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
-  }
-
-  &:hover {
-    border-color: ${p.theme.colors.gray};
   }
 
   ${HiddenInput}:focus ~ & {
@@ -58,10 +54,6 @@ const offBoxCaution = (p: BoxInput) => `
     fill:  ${p.theme.colors.white};
   }
 
-  &:hover {
-    border-color: ${p.theme.colors.red};
-  }
-
   ${HiddenInput}:focus ~ & {
     background-color: ${p.theme.colors.white};
     * {
@@ -79,10 +71,10 @@ const onBoxCaution = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.washedGray};
   * {
-    fill:  ${p.theme.colors.gray};
+    fill:  ${p.theme.colors.lightGray};
   }
 `;
 

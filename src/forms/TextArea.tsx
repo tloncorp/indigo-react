@@ -29,7 +29,7 @@ type StyledProps = {
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
@@ -57,9 +57,9 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray};
-  background-color: ${p.theme.colors.gray};
-  color: ${p.theme.colors.gray};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.washedGray};
+  color: ${p.theme.colors.lightGray};
 
   &:hover {}
 
@@ -69,6 +69,7 @@ const disabledBox = (p: BoxInput) => `
 const StyledTextArea = styled.textarea<StyledProps>`
   outline: none;
   box-sizing: border-box;
+  font-family: 'Inter';
 
   border-width: 1px;
   border-style: solid;

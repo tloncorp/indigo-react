@@ -29,19 +29,24 @@ const Anchor = styled.a<Props>`
   &:visited {
     color: ${p => (p.gray ? p.theme.colors.gray : p.theme.colors.black)};
   }
+
   color: ${p => {
     if (typeof p.color !== "undefined") return p.color;
     if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};
+
   font-weight: ${p =>
     p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};
+
   font-family: ${p => (p.mono ? p.theme.fonts.mono : p.theme.fonts.sans)};
+  
   ${system({
     textDecoration: {
       property: "textDecoration"
     }
   })}
+
   outline: none;
 
   border-radius: 4px;
@@ -50,17 +55,12 @@ const Anchor = styled.a<Props>`
     color: ${p => p.theme.colors.black};
   }
 
-  &:focus {
-    background-color: ${p => p.theme.colors.gray};
-    box-shadow: ${p => `0px 0px 0px 2px ${p.theme.colors.gray}`};
-    color: ${p => p.theme.colors.black};
-  }
-
   ${compose(color, layout, space, typography)};
 `;
 
 Anchor.defaultProps = {
-  textDecoration: "underline"
+  textDecoration: "underline",
+  fontSize:0,
 };
 
 export default Anchor;

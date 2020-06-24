@@ -8,13 +8,9 @@ import {
   Radio,
   InputLabel,
   Box,
-  Space,
   Checkbox,
   Row,
-  Spinner,
   TextArea,
-  Tab,
-  TabGroup,
 } from "@tlon/indigo-react";
 import * as Yup from 'yup';
 import { Formik, Form } from 'formik'
@@ -82,19 +78,9 @@ const Sandbox: React.FC<Props> = (props) => {
 
   return (
     <Box maxWidth='400px' m='7'>
-    <TabGroup>
-      <Tab selected={tab === 0} title='Chat' onClick={() => setTab(0)}/>
-      <Tab selected={tab === 1} title='About' onClick={() => setTab(1)}/>
-      <Tab selected={tab === 2} title='Settings' onClick={() => setTab(2)}/>
-    </TabGroup>
-
-
-
-      <Space py='2'>
         <Text>Form Example</Text>
 
         <Text gray>Cryptography or cryptology (from Ancient Greek: κρυπτός, romanized: kryptós "hidden, secret"; and γράφειν graphein, "to write", or -λογία -logia, "study", respectively) is the practice and study of techniques for secure communication in the presence of third parties called adversaries.</Text>
-      </ Space>
       <Formik
         initialValues={initialValues}
         validationSchema={SignupSchema}
@@ -106,7 +92,6 @@ const Sandbox: React.FC<Props> = (props) => {
           }, 400);
         }}>
         <Form>
-          <Space my='2'>
             <Input
               label="First Name"
               id="firstName"
@@ -156,6 +141,7 @@ const Sandbox: React.FC<Props> = (props) => {
             </Box>
 
             <Input
+              fontFamily='mono'
               label="Urbit ID"
               id="urbitid"
               placeholder="~"
@@ -175,9 +161,8 @@ const Sandbox: React.FC<Props> = (props) => {
             />
 
             <Row>
-              <Button wide mr='4' caution>Cancel</Button>
+              <Button wide mr='4'>Cancel</Button>
             </Row>
-          </Space>
         </Form>
     </Formik>
 
@@ -193,12 +178,6 @@ const Sandbox: React.FC<Props> = (props) => {
       <Button sm mt="2">sm</Button>
 
       <Icon mt="2" />
-
-
-      <Spinner loading={true} />
-
-
-
 
     </Box>
   );

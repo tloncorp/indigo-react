@@ -1,36 +1,34 @@
-import * as React from "react";
 import styled from "styled-components";
-import { Text } from "../core/index";
+import { Tab as _Tab, TabProps } from "@reach/tabs";
 
-type OuterProps = {
-  selected?: boolean;
-};
+type Props = TabProps
 
-type Props = OuterProps & {
-  title: string;
-  onClick: (e: React.MouseEvent<HTMLElement>) => void;
-};
-
-const Outer = styled.button<OuterProps>`
+const Tab = styled(_Tab)<Props>`
+  font-family: "Inter";
   border: 0;
   outline: none;
   cursor: pointer;
   user-select: none;
+  font-size: ${p => p.theme.fontSizes[0]}px;
 
   background-color: ${p => p.theme.colors.white};
 
   padding: 8px 16px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: ${p =>
-    p.selected ? p.theme.colors.black : p.theme.colors.gray};
   line-height: 1.2;
+
+  &[aria-selected=true] {
+    border-bottom-color: ${p => p.theme.colors.black};
+    color: ${p => p.theme.colors.black};
+  }
+
+  &[aria-selected=false] {
+    border-bottom-color: ${p => p.theme.colors.lightGray};
+    color: ${p => p.theme.colors.lightGray};
+  }
 `;
 
-const Tab = ({ title, selected, onClick }: Props) => (
-  <Outer selected={selected} onClick={onClick}>
-    <Text gray={!selected}>{title}</Text>
-  </Outer>
-);
+
 
 export default Tab;

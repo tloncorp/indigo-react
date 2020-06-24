@@ -16,154 +16,115 @@ type Props = MenuButtonProps & SpaceProps &
 type BoxInput = Props & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.white};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.black};
+  * {
+    fill: ${p.theme.colors.lightGray};
+  }
+
+  &:hover {
     border-color: ${p.theme.colors.white};
-    background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.black};
+    background-color: ${p.theme.colors.washedGray};
     * {
-      fill: ${p.theme.colors.gray};
+      fill: ${p.theme.colors.black};
     }
-
-    &:hover {
-      border-color: ${p.theme.colors.gray};
-      background-color: ${p.theme.colors.gray};
-      * {
-        fill: ${p.theme.colors.black};
-      }
-    }
-
-    &:focus {
-      border-color: ${p.theme.colors.blue};
-      background-color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.black};
-      }
-    }
-
-    &:active {
-      border-color: ${p.theme.colors.blue};
-      background-color: ${p.theme.colors.blue};
-      color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.white};
-      }
-    }
-  `;
+  }
+`;
 
 const cautionBox = (p: BoxInput) => `
+  border-color: ${p.theme.colors.white};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red};
+  * {
+    fill: ${p.theme.colors.red};
+  }
+
+  &:hover {
     border-color: ${p.theme.colors.white};
-    background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.red};
+    background-color:${p.theme.colors.washedRed};
     * {
       fill: ${p.theme.colors.red};
     }
+  }
 
-    &:hover {
-      border-color: ${p.theme.colors.white};
-      background-color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.red};
-      }
+  &:active {
+    border-color: ${p.theme.colors.red};
+    background-color: ${p.theme.colors.red};
+    color: ${p.theme.colors.white};
+    * {
+      fill: ${p.theme.colors.white};
     }
-
-    &:focus {
-      border-color: ${p.theme.colors.red};
-      * {
-        fill: ${p.theme.colors.red};
-      }
-    }
-
-    &:active {
-      border-color: ${p.theme.colors.red};
-      background-color: ${p.theme.colors.red};
-      color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.white};
-      }
-    }
-  `;
+  }
+`;
 
 const disabledBox = (p: BoxInput) => `
-    &:disabled {
-      cursor: not-allowed;
-      border-color: ${p.theme.colors.gray};
-      background-color: ${p.theme.colors.gray};
-      color: ${p.theme.colors.gray};
-    }
-  `;
+  &:disabled {
+    cursor: not-allowed;
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.lightGray};
+  }
+`;
 
 // Bordered
 
 const defaultBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.gray};
-    background-color: ${p.theme.colors.white};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.black};
+  * {
+    fill: ${p.theme.colors.lightGray};
+  }
+
+  &:hover {
+    * {
+      fill: ${p.theme.colors.black};
+    }
+  }
+
+  &:active {
+    border-color: ${p.theme.colors.washedGray};
+    background-color: ${p.theme.colors.washedGray};
     color: ${p.theme.colors.black};
     * {
-      fill: ${p.theme.colors.gray};
-    }
-
-    &:hover {
-      background-color: ${p.theme.colors.gray};
-      * {
-        fill: ${p.theme.colors.black};
-      }
-    }
-
-    &:focus {
-      border-color: ${p.theme.colors.blue};
-      background-color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.black};
-      }
-    }
-
-    &:active {
-      border-color: ${p.theme.colors.blue};
-      background-color: ${p.theme.colors.blue};
-      color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.white};
-      }
-    }
-  `;
+      fill: ${p.theme.colors.black};
+    }Â
+  }
+`;
 
 const cautionBoxBordered = (p: BoxInput) => `
-    border-color: ${p.theme.colors.red};
+  border-color: rgba(255,65,54,0.5);
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red};
+  * {
+    fill: rgba(255,65,54,0.5);
+  }
+
+  &:hover {
     background-color: ${p.theme.colors.white};
-    color: ${p.theme.colors.red};
     * {
       fill: ${p.theme.colors.red};
     }
-
-    &:hover {
-      background-color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.red};
-      }
+  }
+  
+  &:active {
+    background-color: ${p.theme.colors.red};
+    color: ${p.theme.colors.white};
+    * {
+      fill: ${p.theme.colors.white};
     }
-
-    &:focus {
-      * {
-        fill: ${p.theme.colors.red};
-      }
-    }
-
-    &:active {
-      background-color: ${p.theme.colors.red};
-      color: ${p.theme.colors.white};
-      * {
-        fill: ${p.theme.colors.white};
-      }
-    }
-  `;
+  }
+`;
 
 const disabledBoxBordered = (p: BoxInput) => `
-    &:disabled {
-      cursor: not-allowed;
-      border-color: ${p.theme.colors.gray};
-      background-color: ${p.theme.colors.gray};
-      color: ${p.theme.colors.gray};
-    }
-  `;
+  &:disabled {
+    cursor: not-allowed;
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.lightGray};
+  }
+`;
 
 const MenuButton = styled(_MenuButton)<Props>`
     box-style: border
