@@ -21,7 +21,7 @@ type Props = BorderProps &
   TypographyProps & {};
 
 const Code = styled.code<Props>`
-  border-radius: ${p => p.theme.radii[1]};
+  border-radius: ${p => p.theme.radii[2]};
   ${compose(color, layout, space, typography, border)}
 `;
 

@@ -26,7 +26,7 @@ const BreadcrumbLink = styled(RouterLink)`
     color: ${p => p.theme.colors.black};
   }
 
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
   border-style: solid;
 

@@ -100,7 +100,7 @@ const Button = styled.button<Props>`
     return `${p.theme.space[2]}px`;
   }};
 
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
 
   ${p => (p.caution ? cautionBox(p) : defaultBox(p))}
 

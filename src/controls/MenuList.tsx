@@ -14,7 +14,7 @@ const MenuList = styled(_MenuList)<Props>`
   border: 1px solid ${p => p.theme.colors.lightGray};
   background-color: ${p => p.theme.colors.white};
 
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
 `;
 
 export default MenuList;

@@ -100,7 +100,7 @@ const Indicator = styled.div<InternalProps>`
   left: 0px;
   height: 16px;
   width: 16px;
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
   border-style: solid;
 

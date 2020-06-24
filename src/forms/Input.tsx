@@ -99,7 +99,7 @@ const StyledInput = styled.input<StyledProps>`
   font-size: ${p => p.theme.fontSizes[0]}px;
   line-height: 1.2;
 
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
 
   ${p => {
     if (p.disabled) return disabledBox(p);

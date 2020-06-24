@@ -84,7 +84,7 @@ const StyledTextArea = styled.textarea<StyledProps>`
   font-size: ${p => p.theme.fontSizes[0]}px;
   line-height: ${p => p.theme.lineHeights.short};
 
-  border-radius: ${p => p.theme.radii[1]}px;
+  border-radius: ${p => p.theme.radii[2]}px;
 
   ${p => {
     if (p.disabled) return disabledBox(p);
