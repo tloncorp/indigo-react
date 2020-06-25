@@ -7,12 +7,14 @@ import {
   ColorProps
 } from 'styled-system';
 import { cssReset, Box, Rule } from "@tlon/indigo-react";
-import { light, dark, inverted, paperDark, paperLight, Theme } from "@tlon/indigo-tokens";
+import theme, { Theme } from "@tlon/indigo-light";
+// import { light, Theme } from "./theme/index";
 
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
 import NoMatch from "./pages/NoMatch"
+import Sandbox from "./pages/Sandbox"
 
 import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
@@ -56,7 +58,6 @@ type RootProps = ColorProps & {}
 
 const Root = styled.div<RootProps>`
   font-family: ${p => p.theme.fonts.sans};
-  line-height: ${p => p.theme.lineHeights.regular};
   ${color};
 `;
 
@@ -76,7 +77,7 @@ const MenuOverlay = ({data, actions}) => {
   return (
     <Visibility hidden={false}>
       <Box
-        backgroundColor='gray0'
+        backgroundColor='gray'
         width='100vw' 
         height='calc(100vh - 64px)' 
         position='relative' 
@@ -106,12 +107,12 @@ const themeOptions = {
   default: {
     key: 'default',
     title: 'Default',
-    theme: [light, dark]
+    theme: [theme, theme]
   },
   paper: {
     key: 'paper',
     title: 'Paper',
-    theme: [paperLight, paperDark]
+    theme: [theme, theme]
   }
 }
 
@@ -146,10 +147,9 @@ const App = () => {
       menuOpen
     }
 
-    const theme = themeOptions[themeKey].theme[isDark ? 1 : 0]
+    // const theme = themeOptions[themeKey].theme[isDark ? 1 : 0]
 
-    theme.colors.primary = theme.colors.gray6
-
+    // theme.colors.blue = theme.colors.gray
     return (
       <ThemeProvider
         theme={ theme }>
@@ -161,12 +161,13 @@ const App = () => {
               <MenuOverlayController actions={actions} data={data} />
               <div>
                 <Switch>
+                  <Route exact path="/" component={Sandbox} />
+
                   <Route exact path="/" render={() => <Home matrix={matrix}/>} />
                   <Route exact path="/catalog" component={Catalog} />
                   <Route path={`/catalog/:componentId`} component={CatalogPage}/>
                   <Route path='*' component={NoMatch} />
                   {
-                    // <Route exact path="/sandbox" component={Sandbox} />
                     // <Route exact path="/buttons" component={Buttons} />
                     // <Route exact path='/viewtest' component={ViewTest} />
                     // <Route exact path='/editor' component={Editor} />
@@ -175,6 +176,7 @@ const App = () => {
               </div>
               </ScrollToTop>
             </Router>
+
             <Rule />
             <FooterHeading />
             <FooterNav />

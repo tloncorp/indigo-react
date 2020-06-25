@@ -11,10 +11,10 @@ import styled from "styled-components";
 // const Markdown = ({md, ...props}:Props) => {
 //   // marked.setOptions({
 //   //   renderer: new marked.Renderer(),
-//   //   // highlight: function(code, language) {
-//   //   //   const hljs = require('highlight.js');
+//   //   // blue: function(code, language) {
+//   //   //   const hljs = require('blue.js');
 //   //   //   const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
-//   //   //   return hljs.highlight(validLanguage, code).value;
+//   //   //   return hljs.blue(validLanguage, code).value;
 //   //   // },
 //   //   pedantic: false,
 //   //   gfm: true,
@@ -92,7 +92,7 @@ const Markdown = styled(MarkdownToJsx)`
     padding-bottom: 8px;
     font-weight: 600;
     font-size: 12px;
-    color: ${p => p.theme.colors.gray5};
+    color: ${p => p.theme.colors.gray};
   }
 
   h4 {
@@ -100,14 +100,14 @@ const Markdown = styled(MarkdownToJsx)`
     padding-bottom: 8px;
     font-weight: 600;
     font-size: 12px;
-    color: ${p => p.theme.colors.gray5};
+    color: ${p => p.theme.colors.gray};
   }
 
   pre,
   code {
     padding: 1px 2px;
     font-family: "Source Code Pro", mono;
-    background-color: ${p => p.theme.colors.gray0};
+    background-color: ${p => p.theme.colors.gray};
     border-radius: 2px;
   }
 
@@ -135,7 +135,7 @@ const Markdown = styled(MarkdownToJsx)`
     min-width: 120px;
     border-style: solid;
     border-width: 1px;
-    border-color: ${p => p.theme.colors.gray2};
+    border-color: ${p => p.theme.colors.gray};
     padding: 8px;
   }
 
@@ -151,7 +151,7 @@ const Markdown = styled(MarkdownToJsx)`
   hr {
     border: none;
     height: 1px;
-    background-color: ${p => p.theme.colors.gray2};
+    background-color: ${p => p.theme.colors.gray};
     margin: 8px 0px;
   }
 
@@ -176,7 +176,7 @@ const Markdown = styled(MarkdownToJsx)`
 
   blockquote {
     padding-left: 8px;
-    border-left: 4px solid ${p => p.theme.colors.gray0};
+    border-left: 4px solid ${p => p.theme.colors.gray};
   }
 
   blockquote p {

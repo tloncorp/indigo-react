@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useField } from "formik";
 import styled from "styled-components";
-import { LayoutProps, SpaceProps } from "styled-system";
-import { Theme } from "@tlon/indigo-tokens";
+import { typography, TypographyProps, LayoutProps, SpaceProps } from "styled-system";
+import { Theme } from "@tlon/indigo-light";
 
 import InputLabel from "./InputLabel";
 import InputCaption from "./InputCaption";
@@ -10,7 +10,7 @@ import ErrorMessage from "./ErrorMessage";
 
 import { Box } from "../core/index";
 
-type Props = LayoutProps &
+type Props = TypographyProps & LayoutProps &
   SpaceProps & {
     caption?: string;
     placeholder?: string;
@@ -23,39 +23,47 @@ type Props = LayoutProps &
 type StyledProps = {
   hasError?: boolean;
   hasSuccess?: boolean;
+  fontFamily?: any;
 };
 
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
-  caret-color: ${p.theme.colors.primary};
+  caret-color: ${p.theme.colors.blue};
+  
 
   &:hover {}
 
+  ::placeholder {
+    color: ${p.theme.colors.gray};
+  }
+
   ::selection {
-    background-color: ${p.theme.colors.blue0};
+    background-color: ${p.theme.colors.blue};
+    color: ${p.theme.colors.white};
   }
 
   &:focus {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
   }
 `;
 
 const errorBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.red0};
-  color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.red};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red};
 
-  caret-color: ${p.theme.colors.caution};
+  caret-color: ${p.theme.colors.red};
 
   &:hover {}
 
   ::selection {
-    background-color: ${p.theme.colors.red0};
+    background-color: ${p.theme.colors.red};
+    color: ${p.theme.colors.white};
   }
 
   &:focus {
@@ -64,9 +72,9 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
-  background-color: ${p.theme.colors.gray0};
-  color: ${p.theme.colors.gray5};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.washedGray};
+  color: ${p.theme.colors.lightGray};
 
   &:hover {}
 
@@ -83,12 +91,12 @@ const StyledInput = styled.input<StyledProps>`
   margin-top: ${p => p.theme.space[1]}px;
 
   padding: ${p => {
-    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+    return `${p.theme.space[2]}px`;
   }};
 
   width: 100%;
 
-  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-size: ${p => p.theme.fontSizes[0]}px;
   line-height: 1.2;
 
   border-radius: ${p => p.theme.radii[2]}px;
@@ -102,6 +110,8 @@ const StyledInput = styled.input<StyledProps>`
   &:disabled {
     cursor: not-allowed;
   }
+
+  ${typography}
 `;
 
 const Input = ({
@@ -111,6 +121,7 @@ const Input = ({
   disabled,
   id,
   placeholder,
+  fontFamily,
   ...props
 }: Props) => {
   const [field, meta] = useField(id);
@@ -123,6 +134,7 @@ const Input = ({
         type={type}
         disabled={disabled}
         placeholder={placeholder}
+        fontFamily={fontFamily ? fontFamily : 'sans'}
         {...field}
       />
       <ErrorMessage>

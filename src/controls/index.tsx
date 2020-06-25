@@ -5,16 +5,23 @@ import Menu from "./Menu";
 import MenuButton from "./MenuButton";
 import MenuItem from "./MenuItem";
 import MenuList from "./MenuList";
+import Tabs from "./Tabs";
+import TabList from "./TabList";
 import Tab from "./Tab";
-import TabGroup from "./TabGroup";
+import TabPanels from "./TabPanels";
+import TabPanel from "./TabPanel";
+
 
 export {
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Tabs,
+  TabList,
+  TabPanels,
+  TabPanel,
   Tab,
-  TabGroup,
   Disclosure,
   DisclosureButton,
   DisclosurePanel

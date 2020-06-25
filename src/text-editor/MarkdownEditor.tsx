@@ -239,7 +239,7 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
     z-index: 2;
     position: relative;
     overflow: visible;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-blue-color: transparent;
     -webkit-font-variant-ligatures: contextual;
     font-variant-ligatures: contextual;
   }
@@ -346,15 +346,15 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
     height: 100%;
   }
 
-  .CodeMirror-selected { background:${p => p.theme.colors.blue0} !important; }
+  .CodeMirror-selected { background:${p => p.theme.colors.gray} !important; }
 
   .cm-s-u span { font-family: "Source Code Pro"}
-  .cm-s-u span.cm-meta { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-number { color: ${p => p.theme.colors.gray5}; }
+  .cm-s-u span.cm-meta { color: ${p => p.theme.colors.gray}; }
+  .cm-s-u span.cm-number { color: ${p => p.theme.colors.gray}; }
   .cm-s-u span.cm-keyword { line-height: 1em; font-weight: bold; color: ${p =>
-    p.theme.colors.gray5}; }
+    p.theme.colors.gray}; }
   .cm-s-u span.cm-atom { font-weight: bold; color: ${p =>
-    p.theme.colors.gray5}; }
+    p.theme.colors.gray}; }
   .cm-s-u span.cm-def { color: ${p => p.theme.colors.black}; }
   .cm-s-u span.cm-variable { color: ${p => p.theme.colors.black}; }
   .cm-s-u span.cm-variable-2 { color: ${p => p.theme.colors.black}; }
@@ -364,35 +364,35 @@ const MarkdownEditor = styled(CodeMirror)<Props>`
   .cm-s-u span.cm-operator { color: ${p => p.theme.colors.black}; }
   .cm-s-u span.cm-comment { color: ${p =>
     p.theme.colors.black}; background-color: ${p =>
-  p.theme.colors.gray0}; padding: 2px; border-radius: 2px;}
-  .cm-s-u span.cm-string { color: ${p => p.theme.colors.gray7} }
-  .cm-s-u span.cm-string-2 { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-qualifier { color: ${p => p.theme.colors.gray7} }
+  p.theme.colors.gray}; padding: 2px; border-radius: 2px;}
+  .cm-s-u span.cm-string { color: ${p => p.theme.colors.gray} }
+  .cm-s-u span.cm-string-2 { color: ${p => p.theme.colors.gray}; }
+  .cm-s-u span.cm-qualifier { color: ${p => p.theme.colors.gray} }
   .cm-s-u span.cm-error { color: ${p => p.theme.colors.red} }
-  .cm-s-u span.cm-attribute { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-tag { color: ${p => p.theme.colors.gray5}; }
+  .cm-s-u span.cm-attribute { color: ${p => p.theme.colors.gray}; }
+  .cm-s-u span.cm-tag { color: ${p => p.theme.colors.gray}; }
   .cm-s-u span.cm-link { color: ${p =>
-    p.theme.colors.gray7}; text-decoration: none;}
+    p.theme.colors.gray}; text-decoration: none;}
   .cm-s-u .CodeMirror-activeline-background { background: ${p =>
-    p.theme.colors.gray5}; }
+    p.theme.colors.gray}; }
   .cm-s-u .CodeMirror-cursor {
     border-left: 2px solid ${p => p.theme.colors.blue1};
   }
 
-  .cm-s-u span.cm-builtin { color: ${p => p.theme.colors.gray5}; }
-  .cm-s-u span.cm-bracket { color: ${p => p.theme.colors.gray5}; }
+  .cm-s-u span.cm-builtin { color: ${p => p.theme.colors.gray}; }
+  .cm-s-u span.cm-bracket { color: ${p => p.theme.colors.gray}; }
 
   .cm-s-u .CodeMirror-matchingbracket { outline:1px solid ${p =>
-    p.theme.colors.gray5}; color:${p => p.theme.colors.black}; !important; }
+    p.theme.colors.gray}; color:${p => p.theme.colors.black}; !important; }
 
   .CodeMirror-hints.u {
-    color: ${p => p.theme.colors.gray7};;
-    background-color: ${p => p.theme.colors.blue0}; !important;
+    color: ${p => p.theme.colors.gray};;
+    background-color: ${p => p.theme.colors.gray}; !important;
   }
 
   .CodeMirror-hints.u .CodeMirror-hint-active {
     background-color: ${p => p.theme.colors.blue}; !important;
-    color: ${p => p.theme.colors.gray7}; !important;
+    color: ${p => p.theme.colors.gray}; !important;
   }
 
 `;
@@ -440,7 +440,7 @@ MarkdownEditor.defaultProps = {
     workDelay: 300,
     pollInterval: 100,
     addModeClass: false,
-    maxHighlightLength: 10000,
+    maxblueLength: 10000,
     viewportMargin: 10,
     spellcheck: true,
     autocorrect: false,

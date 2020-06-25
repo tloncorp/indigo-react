@@ -52,9 +52,9 @@ const Catalog = () => {
       <Col expand minHeight='100vh'>
         <Rule />
         <Col p='7'>
-          <Text fontSize='5' bold>Component Catalog</Text>
+          <Text fontSize='1' bold>Component Catalog</Text>
           <Measure mt='4'>
-            <Text gray fontSize='4'>Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.</Text>
+            <Text gray fontSize='2'>Reusable, dynamic components for designing interfaces. Has high parity with Indigo implementations.</Text>
           </Measure>
         </Col>
         <Rule />
@@ -77,7 +77,7 @@ const ComponentSection = ({section}) => {
       <Col p='4'>
         <DisclosureButton>
           <Row>
-            <Text bold fontSize='4'>{section.name}</Text>
+            <Text bold fontSize='2'>{section.name}</Text>
           </Row>
         </DisclosureButton>
         <DisclosurePanel>
@@ -104,9 +104,9 @@ const tileImages = {
 const HoverBox = styled(Box)`
   border-style: solid;
   border-width: 1px;
-  border-color: ${p => p.theme.colors.gray0};
+  border-color: ${p => p.theme.colors.gray};
   &:hover {
-    border-color: ${p => p.theme.colors.gray2};
+    border-color: ${p => p.theme.colors.gray};
   }
 `
 
@@ -115,7 +115,7 @@ HoverBox.defaultProps = {
   mb: '2',
   width: '100%',
   pb: '66%',
-  backgroundColor: 'gray0',
+  backgroundColor: 'gray',
 }
 
 const ComponentTile = ({name}) => (
@@ -126,14 +126,14 @@ const ComponentTile = ({name}) => (
         mb='2' 
         width='100%'
         pb='66%'
-        backgroundColor='gray0'
+        backgroundColor='gray'
         backgroundImage={`url(${tileImages[name]})`}
         backgroundSize='contain'
         backgroundPosition='center'
         backgroundRepeat='no-repeat'
         >
       </HoverBox>
-      <Text fontSize='4'>{name}</Text>
+      <Text fontSize='2'>{name}</Text>
     </LinkWrap>
   </Col>
 )

@@ -2,7 +2,7 @@ import * as React from "react";
 import { LayoutProps, SpaceProps } from "styled-system";
 import styled from "styled-components";
 import { useField } from "formik";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 
 import InputLabel from "./InputLabel";
 import InputCaption from "./InputCaption";
@@ -27,61 +27,53 @@ type InternalProps = {
 type BoxInput = InternalProps & { theme: Theme };
 
 const offBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
   }
 
-  &:hover {
-    border-color: ${p.theme.colors.gray5};
-  }
-
   ${HiddenInput}:focus ~ & {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
   }
 `;
 
 const onBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.primary};
-  background-color: ${p.theme.colors.primary};
+  border-color: ${p.theme.colors.blue};
+  background-color: ${p.theme.colors.blue};
   * {
     fill:  ${p.theme.colors.white};
   }
 `;
 
 const offBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.red0};
+  border-color: ${p.theme.colors.red};
+  background-color: ${p.theme.colors.white};
   * {
     fill:  ${p.theme.colors.white};
-  }
-
-  &:hover {
-    border-color: ${p.theme.colors.caution};
   }
 
   ${HiddenInput}:focus ~ & {
     background-color: ${p.theme.colors.white};
     * {
-      fill:  ${p.theme.colors.caution};
+      fill:  ${p.theme.colors.red};
     }
   }
 `;
 
 const onBoxCaution = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.red};
+  background-color: ${p.theme.colors.red};
   * {
     fill:  ${p.theme.colors.white};
   }
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
-  background-color: ${p.theme.colors.gray0};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.washedGray};
   * {
-    fill:  ${p.theme.colors.gray5};
+    fill:  ${p.theme.colors.lightGray};
   }
 `;
 
@@ -104,7 +96,7 @@ const Label = styled.label<InternalProps>`
 
 const Indicator = styled.div<InternalProps>`
   position: absolute;
-  top: ${p => (p.theme.fontSizes[2] - 12) / 2}px;
+  top: ${p => (p.theme.fontSizes[0] - 12) / 2}px;
   left: 0px;
   height: 16px;
   width: 16px;

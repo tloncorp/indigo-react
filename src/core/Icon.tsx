@@ -365,7 +365,7 @@ const Icon = ({ icon, fill = "black", ...rest }: Props) => {
 Icon.defaultProps = {
   icon: "NullIcon",
   fill: "black",
-  size: 4
+  size: 3
 };
 
 export default Icon;

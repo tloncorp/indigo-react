@@ -23,10 +23,10 @@ const InputCaption = styled.label<Props>`
 
 InputCaption.defaultProps = {
   lineHeight: "short",
-  fontSize: 2,
+  fontSize: 0,
   margin: 0,
   fontWeight: 400,
-  color: "gray6"
+  color: "gray"
 };
 
 export default InputCaption;

@@ -16,7 +16,7 @@ const Cap = styled.div`
   padding: 8px 0px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: ${p => p.theme.colors.gray2};
+  border-bottom-color: ${p => p.theme.colors.gray};
   line-height: 1.2;
 `;
 
@@ -25,7 +25,7 @@ const End = styled.div`
   padding: 8px 0px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: ${p => p.theme.colors.gray2};
+  border-bottom-color: ${p => p.theme.colors.gray};
   line-height: 1.2;
 `;
 

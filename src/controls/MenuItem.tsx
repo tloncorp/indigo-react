@@ -20,7 +20,7 @@ const MenuItem = styled(_MenuItem)<Props>`
   font-family: ${p => p.theme.fonts.sans};
 
   &:hover {
-    background-color: ${p => p.theme.colors.primary};
+    background-color: ${p => p.theme.colors.blue};
     color: ${p => p.theme.colors.white};
     outline: none;
   }
@@ -29,7 +29,7 @@ const MenuItem = styled(_MenuItem)<Props>`
 `;
 
 MenuItem.defaultProps = {
-  fontSize: 2
+  fontSize: 0
 };
 
 export default MenuItem;

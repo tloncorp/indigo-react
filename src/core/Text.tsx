@@ -23,8 +23,9 @@ type Props = ColorProps &
 
 const Text = styled.div<Props>`
   color: ${p => {
+    console.log(p)
     if (typeof p.color !== "undefined") return p.color;
-    if (p.gray) return p.theme.colors.gray5;
+    if (p.gray) return p.theme.colors.gray;
     return p.theme.colors.black;
   }};
 
@@ -40,7 +41,7 @@ const Text = styled.div<Props>`
 
 Text.defaultProps = {
   lineHeight: "short",
-  fontSize: 2,
+  fontSize: 0,
   gray: false,
   bold: false,
   mono: false

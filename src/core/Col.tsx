@@ -22,7 +22,7 @@ type Props = BorderProps &
   LayoutProps &
   PositionProps &
   SpaceProps & {
-    expand?: boolean;
+    collapse?: boolean;
     wrap?: boolean;
   };
 
@@ -30,14 +30,13 @@ const Col = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: ${p => (p.expand ? "100%" : "auto")};
+  width: ${p => (p.collapse ? "auto" : "100%")};
   flex-wrap: ${p => (p.wrap ? "wrap" : "nowrap")};
   ${compose(border, color, flexbox, layout, position, space)}
 `;
 
 Col.defaultProps = {
-  // minWidth: 0,
-  expand: false,
+  collapse: false,
   wrap: false
 };
 

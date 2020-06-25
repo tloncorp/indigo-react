@@ -8,11 +8,11 @@ import {
 
 const LinkList = ({ title, items, ...props }) => (
   <Col {...props} p='4'>
-    <Text bold fontSize='2'>{title}</Text>
+    <Text bold fontSize='0'>{title}</Text>
     {
       items.map((item, index) => (
         <Row>
-          <Text pt='2' fontSize='2' gray>
+          <Text pt='1' fontSize='0' gray>
             {item.title}
           </Text>
         </Row>

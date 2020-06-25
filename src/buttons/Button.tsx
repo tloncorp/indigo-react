@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 
 type Props = SpaceProps &
   TypographyProps & {
@@ -8,7 +8,7 @@ type Props = SpaceProps &
     wide?: boolean;
     narrow?: boolean;
     border?: boolean;
-    caution?: boolean;
+    error?: boolean;
     primary?: boolean;
     onClick?: (e: React.MouseEvent<HTMLElement>) => void;
     children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
@@ -21,31 +21,14 @@ const defaultBox = (p: BoxInput) => `
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
   * {
-    fill: ${p.theme.colors.gray5};
+    fill: ${p.theme.colors.lightGray};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.gray0};
-    background-color: ${p.theme.colors.gray0};
+    border-color: ${p.theme.colors.white};
+    background-color: ${p.theme.colors.washedGray};
     * {
       fill: ${p.theme.colors.black};
-    }
-  }
-
-  &:focus {
-    border-color: ${p.theme.colors.primary};
-    background-color: ${p.theme.colors.white};
-    * {
-      fill: ${p.theme.colors.black};
-    }
-  }
-
-  &:active {
-    border-color: ${p.theme.colors.primary};
-    background-color: ${p.theme.colors.primary};
-    color: ${p.theme.colors.white};
-    * {
-      fill: ${p.theme.colors.white};
     }
   }
 `;
@@ -53,29 +36,22 @@ const defaultBox = (p: BoxInput) => `
 const cautionBox = (p: BoxInput) => `
   border-color: ${p.theme.colors.white};
   background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.caution};
+  color: ${p.theme.colors.red};
   * {
-    fill: ${p.theme.colors.caution};
+    fill: ${p.theme.colors.red};
   }
 
   &:hover {
-    border-color: ${p.theme.colors.red0};
-    background-color: ${p.theme.colors.red0};
+    border-color: ${p.theme.colors.white};
+    background-color:${p.theme.colors.washedRed};
     * {
-      fill: ${p.theme.colors.caution};
-    }
-  }
-
-  &:focus {
-    border-color: ${p.theme.colors.caution};
-    * {
-      fill: ${p.theme.colors.caution};
+      fill: ${p.theme.colors.red};
     }
   }
 
   &:active {
-    border-color: ${p.theme.colors.caution};
-    background-color: ${p.theme.colors.caution};
+    border-color: ${p.theme.colors.red};
+    background-color: ${p.theme.colors.red};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -86,40 +62,55 @@ const cautionBox = (p: BoxInput) => `
 const disabledBox = (p: BoxInput) => `
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.theme.colors.gray0};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.lightGray};
   }
 `;
 
 // Bordered
 
 const defaultBoxBordered = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
   * {
-    fill: ${p.theme.colors.gray5};
+    fill: ${p.theme.colors.lightGray};
   }
 
   &:hover {
-    background-color: ${p.theme.colors.gray0};
-    * {
-      fill: ${p.theme.colors.black};
-    }
-  }
-
-  &:focus {
-    border-color: ${p.theme.colors.primary};
-    background-color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.black};
     }
   }
 
   &:active {
-    border-color: ${p.theme.colors.primary};
-    background-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.washedGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.black};
+    * {
+      fill: ${p.theme.colors.black};
+    }Â
+  }
+`;
+
+const primaryBoxBordered = (p: BoxInput) => `
+  border-color: rgba(0,142,255,0.5);
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.blue};
+  * {
+    fill: ${p.theme.colors.lightBlue};
+  }
+
+  &:hover {
+    * {
+      fill: ${p.theme.colors.blue};
+    }
+  }
+
+  &:active {
+    border-color: ${p.theme.colors.blue};
+    background-color: ${p.theme.colors.blue};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -127,29 +118,49 @@ const defaultBoxBordered = (p: BoxInput) => `
   }
 `;
 
-const cautionBoxBordered = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.white};
-  color: ${p.theme.colors.caution};
+const primaryBox = (p: BoxInput) => `
+border-color: ${p.theme.colors.white};
+background-color: ${p.theme.colors.white};
+color: ${p.theme.colors.blue};
+* {
+  fill: ${p.theme.colors.lightGray};
+}
+
+&:hover {
+  border-color: ${p.theme.colors.white};
+  background-color: ${p.theme.colors.washedBlue};
   * {
-    fill: ${p.theme.colors.caution};
+    fill: ${p.theme.colors.black};
+  }
+}
+
+&:active {
+  border-color: ${p.theme.colors.blue};
+  background-color: ${p.theme.colors.blue};
+  color: ${p.theme.colors.white};
+  * {
+    fill: ${p.theme.colors.white};
+  }
+}
+`;
+
+const cautionBoxBordered = (p: BoxInput) => `
+  border-color: rgba(255,65,54,0.5);
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red};
+  * {
+    fill: rgba(255,65,54,0.5);
   }
 
   &:hover {
-    background-color: ${p.theme.colors.red0};
+    background-color: ${p.theme.colors.white};
     * {
-      fill: ${p.theme.colors.caution};
+      fill: ${p.theme.colors.red};
     }
   }
-
-  &:focus {
-    * {
-      fill: ${p.theme.colors.caution};
-    }
-  }
-
+  
   &:active {
-    background-color: ${p.theme.colors.caution};
+    background-color: ${p.theme.colors.red};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -160,9 +171,9 @@ const cautionBoxBordered = (p: BoxInput) => `
 const disabledBoxBordered = (p: BoxInput) => `
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.theme.colors.gray2};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
+    border-color: ${p.theme.colors.lightGray};
+    background-color: ${p.theme.colors.washedGray};
+    color: ${p.theme.colors.lightGray};
   }
 `;
 
@@ -179,32 +190,38 @@ const Button = styled.button<Props>`
   text-align: center;
   vertical-align: middle;
   line-height: 1.2;
+  font-weight: 500;
 
   min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
 
   width: ${p => (p.wide ? "100%" : "auto")};
 
+  height:32px;
+
   padding: ${p => {
-    if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
-    return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+    // if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
+    // return `${p.theme.space[0]}px ${p.theme.space[4]}px`;
+    return `${p.theme.space[0]}px ${p.theme.space[2]}px`;
   }};
 
   border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
   border-style: solid;
 
-  border-color: ${p => (p.border ? p.theme.gray1 : p.theme.white)};
+  border-color: ${p => (p.border ? p.theme.lightGray : p.theme.white)};
   background-color: ${p => p.theme.white};
   color: ${p => p.theme.black};
 
   ${p => {
     if (p.border) {
       if (p.disabled) return disabledBoxBordered(p);
-      if (p.caution) return cautionBoxBordered(p);
+      if (p.error) return cautionBoxBordered(p);
+      if (p.primary) return primaryBoxBordered(p);
       return defaultBoxBordered(p);
     } else {
       if (p.disabled) return disabledBox(p);
-      if (p.caution) return cautionBox(p);
+      if (p.error) return cautionBox(p);
+      if (p.primary) return primaryBox(p);
       return defaultBox(p);
     }
   }}
@@ -214,12 +231,12 @@ const Button = styled.button<Props>`
 `;
 
 Button.defaultProps = {
-  fontSize: 2,
+  fontSize: 0,
   sm: false,
   wide: false,
   narrow: false,
   border: false,
-  caution: false,
+  error: false,
   primary: false
 };
 

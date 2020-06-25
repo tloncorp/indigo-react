@@ -27,10 +27,10 @@ const styleAnchor = (elem: any) => styled(elem)<Props>`
   cursor: pointer;
 
   &:visited {
-    color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
+    color: ${p => (p.gray ? p.theme.colors.gray : p.theme.colors.black)};
   }
 
-  color: ${p => (p.gray ? p.theme.colors.gray5 : p.theme.colors.black)};
+  color: ${p => (p.gray ? p.theme.colors.gray : p.theme.colors.black)};
 
   font-weight: ${p =>
     p.bold ? p.theme.fontWeights.bold : p.theme.fontWeights.regular};

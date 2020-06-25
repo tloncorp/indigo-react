@@ -4,7 +4,6 @@ import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 
 type Props = DisclosureButtonProps & SpaceProps &
   TypographyProps & {
-    sm?: boolean;
     wide?: boolean;
     narrow?: boolean;
     border?: boolean;
@@ -13,7 +12,7 @@ type Props = DisclosureButtonProps & SpaceProps &
   };
 
 const DisclosureButton = styled(_DisclosureButton)<Props>`
-    box-style: border
+    box-style: border-box;
     border: 0;
     outline: none;
     cursor: pointer;
@@ -27,15 +26,16 @@ const DisclosureButton = styled(_DisclosureButton)<Props>`
 
     width: 100%;
 
+    font-family: "Inter";
+
+
     padding: ${p => {
-      if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
-      return `${p.theme.space[2]}px ${p.theme.space[3]}px`;
+      return `${p.theme.space[2]}px ${p.theme.space[0]}px`;
     }};
 
     &:before {
         width: 16px;
         height: 16px;
-        padding-left: 8px;
         content: ' ';
         background-size: contain;
         background-repeat: no-repeat;
@@ -57,15 +57,16 @@ const DisclosureButton = styled(_DisclosureButton)<Props>`
 
     border-width: 0px;
 
-    background-color: ${p => p.theme.white};
-    color: ${p => p.theme.black};
+    background-color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.black};
 
     ${space}
     ${typography}
 `;
 
 DisclosureButton.defaultProps = {
-  border: false
+  border: false,
+  fontSize: 0,
 };
 
 export default DisclosureButton;

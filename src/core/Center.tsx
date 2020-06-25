@@ -15,14 +15,14 @@ import {
 type Props = FlexboxProps &
   LayoutProps &
   PositionProps &
-  SpaceProps & { expand?: boolean };
+  SpaceProps & { collapse?: boolean };
 
 const Center = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${p => (p.expand ? "100%" : "auto")};
+  width: ${p => (p.collapse ? "auto" : "100%")};
   ${compose(flexbox, layout, position, space)}
 `;
 

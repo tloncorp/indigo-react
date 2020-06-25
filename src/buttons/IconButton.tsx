@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 import { Icon } from "../core/index";
 
 type Props = SpaceProps & {
@@ -24,20 +24,20 @@ const defaultBox = (p: BoxInput) => `
   color: ${p.theme.colors.black};
 
   &:hover {
-    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.gray0};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.border ? p.theme.colors.white : p.theme.colors.gray};
     color: ${p.theme.colors.black};
   }
 
   &:focus {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
   }
 
   &:active {
-    border-color: ${p.theme.colors.primary};
-    background-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
+    background-color: ${p.theme.colors.blue};
     color: ${p.theme.colors.white};
     * {
       fill: ${p.theme.colors.white};
@@ -46,39 +46,39 @@ const defaultBox = (p: BoxInput) => `
 
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.theme.colors.gray};
+    color: ${p.theme.colors.gray};
     * {
-      fill: ${p.theme.colors.gray5};
+      fill: ${p.theme.colors.gray};
     }
   }
 `;
 
 const cautionBox = (p: BoxInput) => `
   &:hover {
-    border-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.white};
-    background-color: ${p.border ? p.theme.colors.gray1 : p.theme.colors.gray0};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.border ? p.theme.colors.gray : p.theme.colors.gray};
     color: ${p.theme.colors.black};
   }
 
   &:focus {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
     background-color: ${p.theme.colors.white};
     color: ${p.theme.colors.black};
   }
 
   &:active {
-    border-color: ${p.theme.colors.primary};
-    background-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
+    background-color: ${p.theme.colors.blue};
     color: ${p.theme.colors.white};
   }
 
   &:disabled {
     cursor: not-allowed;
-    border-color: ${p.border ? p.theme.colors.gray2 : p.theme.colors.white};
-    background-color: ${p.theme.colors.gray0};
-    color: ${p.theme.colors.gray5};
+    border-color: ${p.border ? p.theme.colors.gray : p.theme.colors.white};
+    background-color: ${p.theme.colors.gray};
+    color: ${p.theme.colors.gray};
   }
 `;
 

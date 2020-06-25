@@ -46,7 +46,7 @@ const Table = ({rows}) => (
     </Row>
     {
       rows.map((row, index) => (
-        <Row backgroundColor={isOdd(index) ? 'white' : 'gray0'}>
+        <Row backgroundColor={isOdd(index) ? 'white' : 'gray'}>
           <TableData p='3'>{''}</TableData>
           <TableData width='10%'>{row.name}</TableData>
           <TableData width='10%'>{row.isOptional.toString()}</TableData>
@@ -102,7 +102,7 @@ const CatalogPage = () => {
         <Rule />
 
         <Col p='7'>
-          <Text bold fontSize='4'>{componentId}</Text>
+          <Text bold fontSize='2'>{componentId}</Text>
         </Col>
         <Row p='7'>
           <Row expand height='13' p='4' border='1px solid silver' borderRadius='3'>
@@ -121,7 +121,7 @@ const CatalogPage = () => {
         </Row>
 
         <Row>
-          <Text bold fontSize='4' p='4' px='7'>Properties</Text>
+          <Text bold fontSize='2' p='4' px='7'>Properties</Text>
         </Row>
         {
           properties !== null

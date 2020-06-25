@@ -200,7 +200,7 @@ JSEditor.defaultProps = {
     workDelay: 300,
     pollInterval: 100,
     addModeClass: false,
-    maxHighlightLength: 10000,
+    maxblueLength: 10000,
     viewportMargin: 10,
     spellcheck: true,
     autocorrect: false,

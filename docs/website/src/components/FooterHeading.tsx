@@ -15,8 +15,8 @@ const FooterHeading = (props) => (
     <Row expand justifyContent='space-between' p='7'>
 
       <Row alignItems='center'>
-        <Img width='7' src={favicon} />
-        <Text fontSize='4' bold pl='4'>Indigo</Text>
+        <Img width='4' src={favicon} />
+        <Text fontSize='0' bold pl='2'>Indigo</Text>
       </Row>
 
 

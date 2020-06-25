@@ -2,7 +2,7 @@ import * as React from "react";
 import { useField } from "formik";
 import styled from "styled-components";
 import { LayoutProps, SpaceProps } from "styled-system";
-import { Theme } from "@tlon/indigo-tokens";
+import { Theme } from "@tlon/indigo-light";
 
 import InputLabel from "./InputLabel";
 import InputCaption from "./InputCaption";
@@ -29,25 +29,25 @@ type StyledProps = {
 type BoxInput = StyledProps & { theme: Theme };
 
 const defaultBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
+  border-color: ${p.theme.colors.lightGray};
   background-color: ${p.theme.colors.white};
   color: ${p.theme.colors.black};
 
-  caret-color: ${p.theme.colors.primary};
+  caret-color: ${p.theme.colors.blue};
 
   &:hover {}
 
   &:focus {
-    border-color: ${p.theme.colors.primary};
+    border-color: ${p.theme.colors.blue};
   }
 `;
 
 const errorBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.caution};
-  background-color: ${p.theme.colors.red0};
-  color: ${p.theme.colors.caution};
+  border-color: ${p.theme.colors.red};
+  background-color: ${p.theme.colors.white};
+  color: ${p.theme.colors.red};
 
-  caret-color: ${p.theme.colors.caution};
+  caret-color: ${p.theme.colors.red};
 
   &:hover {}
 
@@ -57,9 +57,9 @@ const errorBox = (p: BoxInput) => `
 `;
 
 const disabledBox = (p: BoxInput) => `
-  border-color: ${p.theme.colors.gray2};
-  background-color: ${p.theme.colors.gray0};
-  color: ${p.theme.colors.gray5};
+  border-color: ${p.theme.colors.lightGray};
+  background-color: ${p.theme.colors.washedGray};
+  color: ${p.theme.colors.lightGray};
 
   &:hover {}
 
@@ -69,6 +69,7 @@ const disabledBox = (p: BoxInput) => `
 const StyledTextArea = styled.textarea<StyledProps>`
   outline: none;
   box-sizing: border-box;
+  font-family: 'Inter';
 
   border-width: 1px;
   border-style: solid;
@@ -80,7 +81,7 @@ const StyledTextArea = styled.textarea<StyledProps>`
   resize: vertical;
   min-height: ${p => p.theme.sizes[7]}px;
 
-  font-size: ${p => p.theme.fontSizes[2]}px;
+  font-size: ${p => p.theme.fontSizes[0]}px;
   line-height: ${p => p.theme.lineHeights.short};
 
   border-radius: ${p => p.theme.radii[2]}px;
