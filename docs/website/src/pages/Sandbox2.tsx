@@ -23,7 +23,25 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
+  ColumnView,
+  Sidebar,
+  SidebarButton,
 } from "@tlon/indigo-react";
+
+const ModuleContext = ({ children}) => {
+
+  const popout = false
+
+  return (
+      <Row height={popout ? '100vh' : 'calc(100% - 45px)'} p={popout ? '0' : '3'} pt='0'>
+          <Col border='1px solid' borderColor={popout ? 'white' : 'washedGray'} pt='0'>
+              {
+                  children
+              }
+      </Col>
+  </Row>
+  )
+}
 
 
 
@@ -94,6 +112,19 @@ const Sandbox: React.FC = () => {
 
       <Anchor href='www.urbit.org'>Urbit</Anchor>
       <Code>Here is some Code</Code>
+
+      <ModuleContext>
+        <ColumnView>
+          <Sidebar>
+            <Text>Sidebar</Text>
+          </Sidebar>
+          <Col>
+            <SidebarButton>sidebar button</SidebarButton>
+          </Col>
+        </ColumnView>
+      </ModuleContext>
+
+      
     </Col>
   );
 };

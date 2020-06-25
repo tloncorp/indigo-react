@@ -14,7 +14,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
 import NoMatch from "./pages/NoMatch"
-import Sandbox from "./pages/Sandbox"
+import Sandbox from "./pages/Sandbox2"
 
 import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
