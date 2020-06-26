@@ -178,7 +178,7 @@ const disabledBoxBordered = (p: BoxInput) => `
 `;
 
 const Button = styled.button<Props>`
-  box-style: border
+  box-style: border-box;
   border: 0;
   outline: none;
   cursor: pointer;

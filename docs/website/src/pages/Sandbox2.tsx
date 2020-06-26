@@ -30,15 +30,15 @@ import {
 
 const ModuleContext = ({ children}) => {
 
-  const popout = false
+  const popout = true
 
   return (
       <Row height={popout ? '100vh' : 'calc(100% - 45px)'} p={popout ? '0' : '3'} pt='0'>
-          <Col border='1px solid' borderColor={popout ? 'white' : 'washedGray'} pt='0'>
+          <Row border='1px solid' borderColor={popout ? 'white' : 'washedGray'} pt='0'>
               {
                   children
               }
-      </Col>
+      </Row>
   </Row>
   )
 }
@@ -118,8 +118,8 @@ const Sandbox: React.FC = () => {
           <Sidebar>
             <Text>Sidebar</Text>
           </Sidebar>
-          <Col>
-            <SidebarButton>sidebar button</SidebarButton>
+          <Col height='100%' width='100%'>
+            <SidebarButton><Icon mr='1' icon='ChevronWest'/></SidebarButton>
           </Col>
         </ColumnView>
       </ModuleContext>
