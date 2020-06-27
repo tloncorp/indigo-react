@@ -16,7 +16,7 @@ npm install --save @tlon/indigo-react
 Install peer dependencies
 
 ```
-npm install --save @tlon/indigo-tokens styled-components styled-system react react-dom
+npm install --save @tlon/indigo-light styled-components styled-system react react-dom @reach/disclosure @reach/menu-button @reach/tabs markdown-to-jsx
 ```
 
 If you need forms, install `formik` and `yup`

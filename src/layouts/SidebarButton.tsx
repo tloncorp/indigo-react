@@ -1,17 +1,16 @@
 import styled from "styled-components";
-import { space, SpaceProps, typography, TypographyProps } from "styled-system";
+import { DisclosureButton as _DisclosureButton, DisclosureButtonProps } from "@reach/disclosure";
+import { compose, space, SpaceProps, display, DisplayProps } from "styled-system";
 import { Theme } from "@tlon/indigo-light";
 
-type Props = SpaceProps &
-  TypographyProps & {
+type Props = DisclosureButtonProps & SpaceProps &
+  DisplayProps & {
     sm?: boolean;
     wide?: boolean;
     narrow?: boolean;
     border?: boolean;
     error?: boolean;
     primary?: boolean;
-    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
   };
 
 type BoxInput = Props & { theme: Theme };
@@ -177,7 +176,7 @@ const disabledBoxBordered = (p: BoxInput) => `
   }
 `;
 
-const Button = styled.button<Props>`
+const SidebarButton = styled(_DisclosureButton)<Props>`
   box-style: border-box;
   border: 0;
   outline: none;
@@ -191,18 +190,13 @@ const Button = styled.button<Props>`
   vertical-align: middle;
   line-height: 1.2;
   font-weight: 500;
+  font-size: ${p => p.theme.fontSizes[0]}px;
 
   min-width: ${p => (p.narrow ? 0 : p.theme.sizes[10])}px;
 
-  width: ${p => (p.wide ? "100%" : "auto")};
+  width: ${p => (p.wide ? "100%" : "32px")};
 
   height:32px;
-
-  padding: ${p => {
-    // if (p.sm) return `${p.theme.space[1]}px ${p.theme.space[2]}px`;
-    // return `${p.theme.space[0]}px ${p.theme.space[4]}px`;
-    return `${p.theme.space[0]}px ${p.theme.space[2]}px`;
-  }};
 
   border-radius: ${p => p.theme.radii[2]}px;
   border-width: 1px;
@@ -225,19 +219,17 @@ const Button = styled.button<Props>`
       return defaultBox(p);
     }
   }}
+  ${compose(space, display)};
 
-  ${space}
-  ${typography}
 `;
 
-Button.defaultProps = {
-  fontSize: 0,
+SidebarButton.defaultProps = {
   sm: false,
   wide: false,
-  narrow: false,
+  narrow: true,
   border: false,
   error: false,
   primary: false
 };
 
-export default Button;
+export default SidebarButton;
