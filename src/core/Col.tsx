@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import css from '@styled-system/css'
 
 import {
   border,
@@ -13,7 +14,6 @@ import {
   PositionProps,
   space,
   SpaceProps,
-  compose
 } from "styled-system";
 
 type Props = BorderProps &
@@ -23,22 +23,14 @@ type Props = BorderProps &
   PositionProps &
   SpaceProps & {
     collapse?: boolean;
-    wrap?: boolean;
   };
 
-const Col = styled.div<Props>`
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  width: ${p => (p.collapse ? "auto" : "100%")};
-  flex-wrap: ${p => (p.wrap ? "wrap" : "nowrap")};
-  ${compose(border, color, flexbox, layout, position, space)}
-`;
-
-Col.defaultProps = {
-  collapse: false,
-  wrap: false
-};
+const Col = styled.div(({ collapse = false }:Props) => css({
+  boxSizing: 'border-box',
+  display: 'flex',
+  flexDirection: 'column',
+  width: collapse ? "auto" : "100%",
+}), border, color, flexbox, layout, position, space);
 
 export default Col;
 export { Props };

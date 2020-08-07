@@ -40,6 +40,16 @@ const cssReset = `
     border-collapse: collapse;
     border-spacing: 0;
   }
+  button {
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    user-select: none;
+    margin: 0px;
+    padding: 0px;
+  }
 `;
 
 export default cssReset;

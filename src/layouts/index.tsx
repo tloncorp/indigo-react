@@ -4,5 +4,6 @@ import TwoUp from "./TwoUp";
 import ColumnView from "./ColumnView"
 import Sidebar from "./Sidebar"
 import SidebarButton from "./SidebarButton"
+import Layout from './Layout'
 
-export { EightUp, FourUp, TwoUp, ColumnView, Sidebar, SidebarButton };
+export { EightUp, FourUp, TwoUp, ColumnView, Sidebar, SidebarButton, Layout };

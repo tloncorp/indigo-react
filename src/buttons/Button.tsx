@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import css from '@styled-system/css'
+
 import {
   border,
   BorderProps,
@@ -15,12 +17,8 @@ import {
   compose
 } from "styled-system";
 import { 
-  pad,
-  height,
-  radius,
   container,
   button,
-  concat,
 } from '../tokens'
 import { Theme } from "@tlon/indigo-light";
 
@@ -36,49 +34,28 @@ type Props =
     disabled?: boolean;
     destructive?: boolean;
     onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-    children?: JSX.Element | JSX.Element[] | string | (string | JSX.Element)[];
-    theme: Theme
   };
 
+const stateColor = (primary:boolean, destructive:boolean, disabled:boolean) => {
+  if (destructive && disabled && primary) return button.state.destructivePrimaryDisabled
+  if (primary && disabled) return button.state.primaryDisabled
+  if (destructive && disabled) return button.state.destructiveDisabled
+  if (destructive && primary) return button.state.destructivePrimary
+  if (destructive) return button.state.destructive
+  if (primary) return button.state.primary
+  if (disabled) return button.state.defaultDisabled
+  return button.state.default
+}
 
-const Button = styled.button<Props>`
-  /* Reset default button style */
-  ${button.reset}
-
-  /* Text */
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1.333333;
-  font-weight: 500;
-
-  /* Width */
-  width: auto;
-
-  /* Border */
-  border: 1px solid;
-
-  /* Tokens */
-  ${({theme}:Props) => concat(container.center, height.base4, radius.base2, pad.baseX)(theme)}
-
-  /* State */
-  ${(p:Props) => {
-    if (p.destructive && p.disabled && p.primary) return button.color.destructivePrimaryDisabled(p.theme)
-    if (p.primary && p.disabled) return button.color.primaryDisabled(p.theme)
-    if (p.destructive && p.disabled) return button.color.destructiveDisabled(p.theme)
-    if (p.destructive && p.primary) return button.color.destructivePrimary(p.theme)
-    if (p.destructive) return button.color.destructive(p.theme)
-    if (p.primary) return button.color.primary(p.theme)
-    if (p.disabled) return button.color.defaultDisabled(p.theme)
-    return button.color.default(p.theme)
-  }}
-
-  ${compose(space, typography, color, layout, flexbox, border)}
-`;
-
-Button.defaultProps = {
-  disabled: false,
-  destructive: false,
-  primary: false
-};
+const Button = styled.button(({ primary=false, destructive=false, disabled=false, }:Props) => css({
+  width: 'auto',
+  border: '1px solid',
+  height: 5,
+  borderRadius: 2,
+  px: 2,
+  ...button.text,
+  ...container.center,
+  ...stateColor(primary, destructive, disabled)
+}), space, typography, color, layout, flexbox, border);
 
 export default Button;

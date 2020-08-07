@@ -25,6 +25,8 @@ import {
   ColumnView,
   Sidebar,
   SidebarButton,
+  Action,
+  Layout,
 } from "@tlon/indigo-react";
 
 const ModuleContext = ({ children}) => {
@@ -52,20 +54,24 @@ const Sandbox: React.FC = () => {
         <Text>Sandbox: Buttons</Text>
       </Row>
 
-      <Row mt='4'>
+      <Row>
+      <Layout width='100%' py='2' px='3' pitch='3'>
         <Button width='100%' primary>Primary</Button>
         <Button width='100%' primary disabled>Primary</Button>
 
         <Button width='100%'>Button</Button>
         <Button width='100%' disabled>Button</Button>
+        </Layout>
       </Row>
 
-      <Row mt='4'>
+      <Row>
+      <Layout width='100%' py='2' px='3' pitch='3'>
         <Button width='100%' destructive>Button</Button>
-        <Button width='100%' destructive disabled>Button</Button>
+        <Button width='100%' destructive disabled onClick={() => console.log('hi')}>Button</Button>
 
         <Button width='100%' primary destructive>Button</Button>
         <Button width='100%' primary destructive disabled>Button</Button>
+        </Layout>
       </Row>
 
       <Row mt='4'>
@@ -80,6 +86,14 @@ const Sandbox: React.FC = () => {
         <Button destructive mr='2'>Create Repository</Button>
         <Button destructive mr='2'><Icon mr='1' icon='ChevronSouth'/>Select Channel</Button>
         <Button destructive mr='2'>Select Color<Icon mr='1' icon='ChevronSouth'/></Button>
+      </Row>
+
+      <Row>
+        <Layout p='3' pitch='3'>
+          <Action>Action</Action>
+          <Action disabled>Action</Action>
+          <Action destructive>Action</Action>
+        </Layout>
       </Row>
 
       <Row py='4'>
@@ -132,7 +146,6 @@ const Sandbox: React.FC = () => {
         </ColumnView>
       </ModuleContext>
 
-      
     </Col>
   );
 };

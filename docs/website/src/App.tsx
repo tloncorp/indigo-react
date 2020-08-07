@@ -157,8 +157,11 @@ const App = () => {
         <Root>
           <Router>
             <ScrollToTop>
-              <Header actions={actions} data={data} />
-              <MenuOverlayController actions={actions} data={data} />
+              {
+              // <Header actions={actions} data={data} />
+              // <MenuOverlayController actions={actions} data={data} />
+              }
+
               <div>
                 <Switch>
                   <Route exact path="/" component={Test} />
@@ -176,12 +179,14 @@ const App = () => {
               </div>
               </ScrollToTop>
             </Router>
+                    {
+                                  // <Rule />
+                                  // <FooterHeading />
+                                  // <FooterNav />
+                                  // <Rule />
+                                  // <Copyright />
+                    }
 
-            <Rule />
-            <FooterHeading />
-            <FooterNav />
-            <Rule />
-            <Copyright />
         </Root>
       </ThemeProvider>
     );
