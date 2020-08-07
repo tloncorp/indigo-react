@@ -16,6 +16,10 @@ import {
   compose
 } from "styled-system";
 
+import { 
+  button,
+} from '../tokens'
+
 type Props = BorderProps &
   ColorProps &
   FlexboxProps &
@@ -23,14 +27,9 @@ type Props = BorderProps &
   SpaceProps &
   TypographyProps & {};
 
-const ButtonWrap = styled.button<Props>`
-  border: 0;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  margin: 0px;
-  padding: 0px;
+const BaseButton = styled.button<Props>`
+  ${button.reset}
   ${compose(space, layout, color, border, flexbox, typography)};
 `;
 
-export default ButtonWrap;
+export default BaseButton;

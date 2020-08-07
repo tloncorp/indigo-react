@@ -13,7 +13,6 @@ import {
   Row,
   Anchor,
   Col,
-  Spinner,
   TextArea,
   Tabs,
   TabList,
@@ -48,30 +47,39 @@ const ModuleContext = ({ children}) => {
 const Sandbox: React.FC = () => {
 
   return (
-    <Col m='7'>
+    <Col m='7' width='auto' maxWidth='100vw'>
       <Row py='4'>
         <Text>Sandbox: Buttons</Text>
       </Row>
 
       <Row mt='4'>
-        <Button mr='2'>Comment</Button>
-        <Button mr='2' border>Create Repository</Button>
-        <Button mr='2' border><Icon mr='1' icon='ChevronSouth'/>Select Channel</Button>
-        <Button mr='2' border>Select Color<Icon mr='1' icon='ChevronSouth'/></Button>
+        <Button width='100%' primary>Primary</Button>
+        <Button width='100%' primary disabled>Primary</Button>
+
+        <Button width='100%'>Button</Button>
+        <Button width='100%' disabled>Button</Button>
+      </Row>
+
+      <Row mt='4'>
+        <Button width='100%' destructive>Button</Button>
+        <Button width='100%' destructive disabled>Button</Button>
+
+        <Button width='100%' primary destructive>Button</Button>
+        <Button width='100%' primary destructive disabled>Button</Button>
       </Row>
 
       <Row mt='4'>
         <Button primary mr='2'>Comment</Button>
-        <Button primary mr='2' border>Create Repository</Button>
-        <Button primary mr='2' border><Icon mr='1' icon='ChevronSouth'/>Select Channel</Button>
-        <Button primary mr='2' border>Select Color<Icon mr='1' icon='ChevronSouth'/></Button>
+        <Button primary mr='2' >Create Repository</Button>
+        <Button primary mr='2' ><Icon mr='1' icon='ChevronSouth'/>Select Channel</Button>
+        <Button primary mr='2' >Select Color<Icon mr='1' icon='ChevronSouth'/></Button>
       </Row>
 
       <Row mt='4'>
-        <Button error mr='2'>Comment</Button>
-        <Button error mr='2' border>Create Repository</Button>
-        <Button error mr='2' border><Icon mr='1' icon='ChevronSouth'/>Select Channel</Button>
-        <Button error mr='2' border>Select Color<Icon mr='1' icon='ChevronSouth'/></Button>
+        <Button destructive mr='2'>Comment</Button>
+        <Button destructive mr='2'>Create Repository</Button>
+        <Button destructive mr='2'><Icon mr='1' icon='ChevronSouth'/>Select Channel</Button>
+        <Button destructive mr='2'>Select Color<Icon mr='1' icon='ChevronSouth'/></Button>
       </Row>
 
       <Row py='4'>

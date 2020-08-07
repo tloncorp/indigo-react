@@ -1,6 +1,4 @@
-// import AsycButton from "./AsyncButton";
 import Button from "./Button";
-import ButtonWrap from "./ButtonWrap";
-import IconButton from "./IconButton";
+import BaseButton from "./BaseButton";
 
-export { Button, ButtonWrap, IconButton };
+export { Button, BaseButton };

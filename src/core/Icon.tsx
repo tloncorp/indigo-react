@@ -352,7 +352,7 @@ const Svg = styled.svg<InnerProps>`
   ${position};
 `;
 
-const Icon = ({ icon, fill = "black", ...rest }: Props) => {
+const Icon = ({ icon, fill, ...rest }: Props) => {
   const IconComponent = iconList[icon];
   return (
     // @ts-ignore
@@ -364,7 +364,7 @@ const Icon = ({ icon, fill = "black", ...rest }: Props) => {
 
 Icon.defaultProps = {
   icon: "NullIcon",
-  fill: "black",
+  fill: "inherit",
   size: 3
 };
 

@@ -21,7 +21,7 @@ type Props = ColorProps &
     mono?: boolean;
   };
 
-const Text = styled.div<Props>`
+const Body = styled.div<Props>`
   color: ${p => {
     if (typeof p.color !== "undefined") return p.color;
     if (p.gray) return p.theme.colors.gray;
@@ -38,13 +38,13 @@ const Text = styled.div<Props>`
   ${compose(color, layout, space, typography)};
 `;
 
-Text.defaultProps = {
-  lineHeight: "min",
+Body.defaultProps = {
+  lineHeight: "short",
   fontSize: 0,
   gray: false,
   bold: false,
   mono: false
 };
 
-export default Text;
+export default Body;
 export { Props };

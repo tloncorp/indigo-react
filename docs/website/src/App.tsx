@@ -14,7 +14,7 @@ import Home from "./pages/Home";
 import Catalog from "./pages/Catalog"
 import CatalogPage from "./pages/CatalogPage"
 import NoMatch from "./pages/NoMatch"
-import Sandbox from "./pages/Sandbox2"
+import Test from "./pages/Test"
 
 import Header from './components/Header'
 import FooterHeading from './components/FooterHeading'
@@ -161,7 +161,7 @@ const App = () => {
               <MenuOverlayController actions={actions} data={data} />
               <div>
                 <Switch>
-                  <Route exact path="/" component={Sandbox} />
+                  <Route exact path="/" component={Test} />
 
                   <Route exact path="/" render={() => <Home matrix={matrix}/>} />
                   <Route exact path="/catalog" component={Catalog} />
