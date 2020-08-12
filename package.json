@@ -1,62 +1,47 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.1.16",
-  "description": "Tlon's design language",
-  "author": "tlon",
-  "license": "MIT",
-  "repository": "urbit/indigo-react",
-  "types": "dist/index.d.ts",
+  "version": "1.2.0",
+  "description": "Tlon's design system",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "tsdx watch --verbose",
-    "build": "tsdx build",
-    "esbuild": "esbuild src/index.tsx --bundle --outdir=dist",
-    "esbuild:prod": "esbuild src/index.tsx --bundle --minify --outdir=dist",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint --fix"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "esbuild": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --sourcemap",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --minify --sourcemap",
+    "clear": "rm -rf dist",
+    "reset": "rm -rf node_modules package-lock.json && npm install",
+    "build": "npm run tsc && npm run esbuild",
+    "build:prod": "npm run tsc && npm run esbuild:prod",
+    "format": "prettier --write ./src/*"
+  },
+  "author": "Gavin Atkinson",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "tslib": "^2.0.1"
   },
   "peerDependencies": {
-    "@reach/disclosure": "^0.10.2",
-    "@reach/menu-button": "^0.1.18",
-    "@reach/tabs": "^0.1.18",
-    "prop-types": "^15.5.4",
-    "react": ">= 16",
-    "react-dom": ">= 16",
-    "styled-components": ">= 4",
-    "styled-system": ">=5",
-    "formik": ">=2",
-    "react-codemirror2": ">= 7.1.0",
-    "@styled-system/css": "^5.1.5"
+    "styled-components": "^5.1.1",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "@reach/disclosure": "^0.10.2",
-    "@reach/menu-button": "^0.10.2",
-    "@reach/tabs": "^0.10.4",
     "@styled-system/css": "^5.1.5",
-    "@tlon/indigo-light": "^1.0.2",
-    "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5",
-    "@types/styled-components": "^4.4.2",
+    "@tlon/indigo-light": "^1.0.3",
+    "@types/styled-components": "^5.1.2",
     "@types/styled-system": "^5.1.10",
-    "@types/styled-system__css": "^5.0.5",
-    "@types/yup": "^0.26.30",
-    "codemirror": "^5.52.2",
-    "esbuild": "^0.6.17",
-    "eslint": "^6.8.0",
-    "formik": "^2.1.4",
-    "markdown-to-jsx": "^6.11.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0",
-    "react-codemirror2": "^7.1.0",
-    "react-dom": "^16.13.0",
-    "react-markdown": "^4.3.1",
+    "@types/styled-system__css": "^5.0.13",
+    "esbuild": "^0.6.18",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "styled-components": "^5.1.1",
-    "styled-system": "^5.1.4",
-    "tsdx": "^0.12.3",
-    "tslib": "^1.10.0",
-    "typescript": "^3.7.5"
+    "styled-system": "^5.1.5",
+    "typescript": "^3.9.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

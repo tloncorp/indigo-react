@@ -1,30 +1,28 @@
 {
-  "include": ["src"],
   "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
+    // Signifies which target of JavaScript should be emitted?
+    "target": "ES5",
+    // What module format should be emitted?
+    "module": "ES2015",
+    // Output destination
+    "outDir": "dist",
+    // This lib uses JSX, so support it
+    "jsx": "react",
+    // Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
+    "esModuleInterop": true,
+    // Don't typecheck libraries in node_modules
+    "skipLibCheck": true,
+    // Export type declarations and only type declrations. No extra source files to dist
+    "emitDeclarationOnly": true,
     "declaration": true,
-    "sourceMap": true,
-    "rootDir": "./",
+    // Enables --noImplicitAny, --noImplicitThis, --alwaysStrict, --strictBindCallApply, --strictNullChecks, --strictFunctionTypes and --strictPropertyInitialization.
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    // Minor style enforcements
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["src/*", "node_modules/*"]
-    },
-    "jsx": "react",
-    "esModuleInterop": true
-  }
+    // The following can be turned off in development to make prototyping easier.
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "files": ["src/index.tsx"]
 }
