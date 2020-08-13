@@ -37,7 +37,7 @@ export type BoxProps = BackgroundProps &
   TextAlignProps &
   TypographyProps;
 
-export const Box = styled.div<BoxProps>(
+export const Box = styled.div<React.PropsWithChildren<BoxProps>>(
   {
     position: "relative",
   },

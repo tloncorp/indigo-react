@@ -1,13 +1,13 @@
 import * as React from "react";
-import Indicator from "./Indicator";
-import { Box, BoxProps } from "./Box";
-import Icon from "./Icon";
+import { Indicator } from "./Indicator";
+import { Box } from "./Box";
+import { Icon } from "./Icon";
 
-export type StatelessCheckboxProps = BoxProps & {
+export type StatelessCheckboxProps = {
   selected: boolean;
   hasError: boolean;
   disabled: boolean;
-};
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export const StatelessCheckbox = ({
   selected,
@@ -19,7 +19,12 @@ export const StatelessCheckbox = ({
 }: StatelessCheckboxProps) => {
   return (
     <Box display="flex" onClick={onChange} p="3" {...props}>
-      <Indicator selected={selected} disabled={disabled} hasError={hasError}>
+      <Indicator
+        selected={selected}
+        disabled={disabled}
+        hasError={hasError}
+        mr="2"
+      >
         <Icon icon={selected ? "CheckmarkBold" : "NullIcon"} />
       </Indicator>
       {children}

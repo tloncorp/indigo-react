@@ -22,11 +22,10 @@ export type CenterProps = BorderProps &
   PositionProps &
   SpaceProps;
 
-const Center = styled.div<CenterProps>`
+export const Center = styled.div<CenterProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   ${compose(border, color, flexbox, layout, position, space)}
 `;
 Center.displayName = "Center";
-export default Center;

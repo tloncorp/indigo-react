@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseTextArea = styled.textarea<
+export const BaseTextArea = styled.textarea<
   React.PropsWithChildren<BaseTextAreaProps>
 >(styleProps);
 
 BaseTextArea.displayName = "BaseTextArea";
-export default BaseTextArea;

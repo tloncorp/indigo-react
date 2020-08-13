@@ -18,7 +18,7 @@ import {
 
 import { indicator } from "./tokens";
 
-type IndicatorProps = BorderProps &
+export type IndicatorProps = BorderProps &
   ColorProps &
   FlexboxProps &
   LayoutProps &
@@ -59,10 +59,9 @@ const style = ({
 
 const styleProps = [border, color, flexbox, layout, position, space];
 
-const Indicator = styled.div<React.PropsWithChildren<IndicatorProps>>(
+export const Indicator = styled.div<React.PropsWithChildren<IndicatorProps>>(
   style,
   ...styleProps
 );
 
 Indicator.displayName = "Indicator";
-export default Indicator;

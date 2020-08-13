@@ -28,6 +28,7 @@
   "devDependencies": {
     "@styled-system/css": "^5.1.5",
     "@tlon/indigo-light": "^1.0.3",
+    "@types/react": "^16.9.46",
     "@types/styled-components": "^5.1.2",
     "@types/styled-system": "^5.1.10",
     "@types/styled-system__css": "^5.0.13",

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 // Used to set browser default css to new defaults to accomodate Indigo
-const Reset = createGlobalStyle`
+export const Reset = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -68,4 +68,3 @@ html, body, div, span, applet, object, iframe,
   }
 `;
 Reset.displayName = "CSSReset";
-export default Reset;

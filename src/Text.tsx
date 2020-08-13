@@ -15,7 +15,7 @@ import {
   flexbox,
 } from "styled-system";
 
-type TextProps = React.HTMLProps<HTMLParagraphElement> &
+export type TextProps = React.HTMLProps<HTMLParagraphElement> &
   FlexboxProps &
   LayoutProps &
   SpaceProps &
@@ -40,7 +40,9 @@ const style = ({ gray = false, bold = false, mono = false }: TextProps) =>
 
 const styleProps = [border, color, flexbox, layout, space, typography];
 
-const Text = styled.p<React.PropsWithChildren<TextProps>>(style, ...styleProps);
+export const Text = styled.p<React.PropsWithChildren<TextProps>>(
+  style,
+  ...styleProps
+);
 
 Text.displayName = "Text";
-export default Text;

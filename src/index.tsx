@@ -1,49 +1,53 @@
+/**
+ * Box
+ */
 export { Box, BoxProps } from "./Box";
-import Anchor from "./Anchor";
-import Text from "./Text";
-import Button from "./Button";
-import Row from "./Row";
-import Col from "./Col";
-import Inline from "./Inline";
-import BaseAnchor from "./BaseAnchor";
-import BaseButton from "./BaseButton";
-import BaseImage from "./BaseImage";
-import BaseInput from "./BaseInput";
-import BaseTextArea from "./BaseTextArea";
-import BaseLabel from "./BaseLabel";
-import Label from "./Label";
-import Action from "./Action";
-import Icon from "./Icon";
-import Center from "./Center";
-import Reset from "./Reset";
-import BaseCode from "./BaseCode";
-import Rule from "./Rule";
-import Indicator from "./Indicator";
-// export {StatelessCheckbox, StatelessCheckboxProps} from './StatelessCheckbox'
-import _light from "./themes/light";
 
-export {
-  // Box,
-  Anchor,
-  Button,
-  Text,
-  Row,
-  Col,
-  Inline,
-  BaseButton,
-  BaseAnchor,
-  BaseImage,
-  BaseInput,
-  BaseTextArea,
-  BaseLabel,
-  Label,
-  Action,
-  Icon,
-  Center,
-  Reset,
-  BaseCode,
-  Rule,
-  // StatelessCheckbox,
-  Indicator,
-  _light,
-};
+/**
+ * Text + Type + Icons
+ */
+export { Text, TextProps } from "./Text";
+export { Label, LabelProps } from "./Label";
+export { Icon, IconProps } from "./Icon";
+
+/**
+ * Layout
+ */
+export { Row, RowProps } from "./Row";
+export { Col, ColProps } from "./Col";
+export { Inline, InlineProps } from "./Inline";
+export { Center, CenterProps } from "./Center";
+export { Rule, RuleProps } from "./Rule";
+
+/**
+ * Buttons + Anchors
+ */
+export { Action, ActionProps } from "./Action";
+export { Anchor, AnchorProps } from "./Anchor";
+export { Button, ButtonProps } from "./Button";
+
+/**
+ * Base Components
+ */
+export { BaseAnchor, BaseAnchorProps } from "./BaseAnchor";
+export { BaseButton, BaseButtonProps } from "./BaseButton";
+export { BaseImage, BaseImageProps } from "./BaseImage";
+export { BaseInput, BaseInputProps } from "./BaseInput";
+export { BaseTextArea, BaseTextAreaProps } from "./BaseTextArea";
+export { BaseLabel, BaseLabelProps } from "./BaseLabel";
+export { BaseCode, BaseCodeProps } from "./BaseCode";
+
+/**
+ * Statelss Forms
+ */
+export { Indicator, IndicatorProps } from "./Indicator";
+export { StatelessCheckbox, StatelessCheckboxProps } from "./StatelessCheckbox";
+
+/**
+ * Utility
+ */
+export { Reset } from "./Reset";
+/**
+ * Test Themes
+ */
+export { light as _light } from "./themes/light";

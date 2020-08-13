@@ -45,10 +45,9 @@ const style = ({ destructive = false, disabled = false }: ActionProps) =>
 
 const styleProps = [border, color, flexbox, layout, space, typography];
 
-const Action = styled.button<React.PropsWithChildren<ActionProps>>(
+export const Action = styled.button<React.PropsWithChildren<ActionProps>>(
   style,
   ...styleProps
 );
 
 Action.displayName = "Action";
-export default Action;

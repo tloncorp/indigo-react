@@ -85,7 +85,7 @@ const util = {
   black: "#000000",
 };
 
-const theme = {
+export const light = {
   colors: {
     white: base.white,
     black: base.black,
@@ -179,6 +179,5 @@ const theme = {
   breakpoints: ["768px", "1024px", "1440px", "2200px"],
 };
 
-export type Theme = typeof theme;
+export type Theme = typeof light;
 export const styled = baseStyled as ThemedStyledInterface<Theme>;
-export default theme;

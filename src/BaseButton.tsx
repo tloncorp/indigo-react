@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseButton = styled.button<React.PropsWithChildren<BaseButtonProps>>(
-  styleProps
-);
+export const BaseButton = styled.button<
+  React.PropsWithChildren<BaseButtonProps>
+>(styleProps);
 
 BaseButton.displayName = "BaseButton";
-export default BaseButton;

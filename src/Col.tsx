@@ -38,7 +38,9 @@ const style = ({ pitch }: ColProps) =>
 
 const styleProps = [border, color, flexbox, layout, position, space];
 
-const Col = styled.div<React.PropsWithChildren<ColProps>>(style, ...styleProps);
+export const Col = styled.div<React.PropsWithChildren<ColProps>>(
+  style,
+  ...styleProps
+);
 
 Col.displayName = "Col";
-export default Col;

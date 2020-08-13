@@ -15,7 +15,7 @@ import {
   FlexboxProps,
 } from "styled-system";
 
-type LabelProps = BorderProps &
+export type LabelProps = BorderProps &
   FlexboxProps &
   ColorProps &
   LayoutProps &
@@ -41,10 +41,9 @@ const style = ({ gray = false, bold = false, mono = false }: LabelProps) =>
 
 const styleProps = [border, color, flexbox, layout, space, typography];
 
-const Label = styled.div<React.PropsWithChildren<LabelProps>>(
+export const Label = styled.div<React.PropsWithChildren<LabelProps>>(
   style,
   ...styleProps
 );
 
 Label.displayName = "Label";
-export default Label;

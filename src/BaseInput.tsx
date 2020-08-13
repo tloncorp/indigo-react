@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseInput = styled.input<React.PropsWithChildren<BaseInputProps>>(
+export const BaseInput = styled.input<React.PropsWithChildren<BaseInputProps>>(
   styleProps
 );
 
 BaseInput.displayName = "BaseInput";
-export default BaseInput;

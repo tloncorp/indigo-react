@@ -15,7 +15,7 @@ import {
   SpaceProps,
 } from "styled-system";
 
-type RuleProps = BorderProps &
+export type RuleProps = BorderProps &
   ColorProps &
   FlexboxProps &
   LayoutProps &
@@ -37,10 +37,9 @@ const style = ({ vertical = false }: RuleProps) =>
 
 const styleProps = [border, color, flexbox, layout, position, space];
 
-const Rule = styled.div<React.PropsWithChildren<RuleProps>>(
+export const Rule = styled.div<React.PropsWithChildren<RuleProps>>(
   style,
   ...styleProps
 );
 
 Rule.displayName = "Rule";
-export default Rule;

@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseAnchor = styled.a<React.PropsWithChildren<BaseAnchorProps>>(
+export const BaseAnchor = styled.a<React.PropsWithChildren<BaseAnchorProps>>(
   styleProps
 );
 
 BaseAnchor.displayName = "BaseAnchor";
-export default BaseAnchor;

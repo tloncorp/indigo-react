@@ -35,7 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseSVG = styled.svg<React.PropsWithChildren<BaseSVGProps>>(styleProps);
+export const BaseSVG = styled.svg<React.PropsWithChildren<BaseSVGProps>>(
+  styleProps
+);
 
 BaseSVG.displayName = "BaseSVG";
-export default BaseSVG;

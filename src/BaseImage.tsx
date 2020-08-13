@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseImage = styled.img<React.PropsWithChildren<BaseImageProps>>(
+export const BaseImage = styled.img<React.PropsWithChildren<BaseImageProps>>(
   styleProps
 );
 
 BaseImage.displayName = "BaseImage";
-export default BaseImage;

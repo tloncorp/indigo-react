@@ -47,9 +47,8 @@ const styleProps = [
   position,
 ];
 
-const BackgroundImage = styled.div<
+export const BackgroundImage = styled.div<
   React.PropsWithChildren<BackgroundImageProps>
 >(style, ...styleProps);
 
 BackgroundImage.displayName = "BackgroundImage";
-export default BackgroundImage;

@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseLabel = styled.label<React.PropsWithChildren<BaseLabelProps>>(
+export const BaseLabel = styled.label<React.PropsWithChildren<BaseLabelProps>>(
   styleProps
 );
 
 BaseLabel.displayName = "BaseLabel";
-export default BaseLabel;

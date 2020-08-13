@@ -62,10 +62,9 @@ const variation = ({
 
 const system = [border, color, flexbox, layout, space, typography];
 
-const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
+export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
   variation,
   ...system
 );
 
 Button.displayName = "Button";
-export default Button;

@@ -19,7 +19,7 @@ import iconIndex from "./iconIndex";
 
 type IconIndex = typeof iconIndex;
 
-type SVGProps = React.SVGProps<SVGElement> &
+export type IconProps = React.SVGProps<SVGElement> &
   ColorProps &
   PositionProps &
   LayoutProps &
@@ -27,8 +27,8 @@ type SVGProps = React.SVGProps<SVGElement> &
   FlexboxProps &
   BorderProps;
 
-const SVG: React.FunctionComponent<SVGProps> = styled.svg(
-  ({ color }: SVGProps) =>
+const SVG: React.FunctionComponent<IconProps> = styled.svg(
+  ({ color }: IconProps) =>
     css({
       "& > *": {
         fill: typeof color === "undefined" ? "inherit" : color || "black",
@@ -44,11 +44,13 @@ const SVG: React.FunctionComponent<SVGProps> = styled.svg(
   position
 );
 
-const Icon = ({ icon, ...props }: SVGProps & { icon: keyof IconIndex }) => (
+export const Icon = ({
+  icon,
+  ...props
+}: IconProps & { icon: keyof IconIndex }) => (
   <SVG {...props} viewBox={"0 0 16 16"}>
     {iconIndex[icon]()}
   </SVG>
 );
 
 Icon.displayName = "Icon";
-export default Icon;

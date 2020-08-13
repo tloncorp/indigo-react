@@ -37,7 +37,9 @@ const style = ({ pitch }: RowProps) =>
 
 const styleProps = [border, color, flexbox, layout, position, space];
 
-const Row = styled.div<React.PropsWithChildren<RowProps>>(style, ...styleProps);
+export const Row = styled.div<React.PropsWithChildren<RowProps>>(
+  style,
+  ...styleProps
+);
 
 Row.displayName = "Row";
-export default Row;

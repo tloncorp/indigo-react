@@ -51,10 +51,9 @@ const style = ({
 
 const styleProps = [border, color, flexbox, layout, space, typography];
 
-const Anchor = styled.a<React.PropsWithChildren<AnchorProps>>(
+export const Anchor = styled.a<React.PropsWithChildren<AnchorProps>>(
   style,
   ...styleProps
 );
 
 Anchor.displayName = "Anchor";
-export default Anchor;

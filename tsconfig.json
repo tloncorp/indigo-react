@@ -20,7 +20,7 @@
     // Minor style enforcements
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    // The following can be turned off in development to make prototyping easier.
+    // The following can be set to false in development to make prototyping easier.
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },

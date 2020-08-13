@@ -35,9 +35,8 @@ const styleProps = compose(
   position
 );
 
-const BaseCode = styled.code<React.PropsWithChildren<BaseCodeProps>>(
+export const BaseCode = styled.code<React.PropsWithChildren<BaseCodeProps>>(
   styleProps
 );
 
 BaseCode.displayName = "BaseCode";
-export default BaseCode;
