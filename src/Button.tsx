@@ -44,7 +44,7 @@ const stateStyle = (
   return button.state.default;
 };
 
-const variation = ({
+const style = ({
   primary = false,
   destructive = false,
   disabled = false,
@@ -63,7 +63,7 @@ const variation = ({
 const system = [border, color, flexbox, layout, space, typography];
 
 export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
-  variation,
+  style,
   ...system
 );
 

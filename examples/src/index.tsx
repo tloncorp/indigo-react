@@ -15,7 +15,10 @@ import {
   Action,
   Icon,
   Indicator,
-  // StatelessCheckbox,
+  StatelessCheckbox,
+  StatelessRadioButton,
+  StatelessToggleSwitch,
+  ErrorLabel,
   Label,
   _light as light,
 } from "ui";
@@ -23,7 +26,9 @@ import { ThemeProvider } from "styled-components";
 
 const App = () => {
   const [isChecked, toggleCheck] = useState(false);
+  const [isSelected, toggleSelected] = useState(false);
   const [isSubmitting, toggleSubmitting] = useState(false);
+  const [hasError, toggleHasError] = useState(false);
 
   // light.radii = [0, 0, 0, 0]
   // // light.colors.black = 'white'
@@ -41,11 +46,74 @@ const App = () => {
           <Text gray>Gray</Text>
           <Anchor href="http://google.com">Hi its a link</Anchor>
         </Inline>
-        {
-          //   <StatelessCheckbox selected={isChecked} onChange={() => toggleCheck(!isChecked)}>
-          //   <Label>Label</Label>
-          // </StatelessCheckbox>
-        }
+
+        <Box>
+          <StatelessToggleSwitch
+            selected={isSelected}
+            p="2"
+            onChange={() => toggleSelected(!isSelected)}
+          >
+            <Label mb="2">Toggle Switch</Label>
+          </StatelessToggleSwitch>
+
+          <StatelessToggleSwitch
+            selected={isSelected}
+            disabled
+            p="2"
+            onChange={() => toggleSelected(!isSelected)}
+          >
+            <Label mb="2">Toggle Switch</Label>
+          </StatelessToggleSwitch>
+
+          <StatelessToggleSwitch
+            selected={isSelected}
+            hasError
+            p="2"
+            onChange={() => toggleSelected(!isSelected)}
+          >
+            <Label mb="2">Toggle Switch</Label>
+          </StatelessToggleSwitch>
+        </Box>
+
+        <StatelessCheckbox
+          selected={isChecked}
+          hasError={hasError}
+          onChange={() => {
+            toggleHasError(!hasError);
+            toggleCheck(!isChecked);
+          }}
+        >
+          <Label mb="2">Has Error</Label>
+          <Label gray mb="2">
+            Description
+          </Label>
+          <ErrorLabel hasError={hasError}>Error Message</ErrorLabel>
+        </StatelessCheckbox>
+
+        <StatelessCheckbox
+          selected={isChecked}
+          onChange={() => toggleCheck(!isChecked)}
+        >
+          <Label mb="1">Label</Label>
+          <Label gray>Description</Label>
+        </StatelessCheckbox>
+
+        <StatelessCheckbox
+          p="2"
+          selected={isChecked}
+          disabled
+          onChange={() => toggleCheck(!isChecked)}
+        >
+          <Label>Label</Label>
+        </StatelessCheckbox>
+
+        <StatelessRadioButton
+          selected={isChecked}
+          onChange={() => toggleCheck(!isChecked)}
+        >
+          <Label>Label</Label>
+        </StatelessRadioButton>
+
         <Row pitch="3">
           <Indicator selected={true} hasError={false} disabled={false} />
           <Indicator selected={false} hasError={false} disabled={false} />

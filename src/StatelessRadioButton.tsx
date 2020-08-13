@@ -4,20 +4,20 @@ import { Box } from "./Box";
 import { Icon } from "./Icon";
 import { Col } from "./Col";
 
-export type StatelessCheckboxProps = {
+export type StatelessRadioButtonProps = {
   selected: boolean;
   hasError: boolean;
   disabled: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export const StatelessCheckbox = ({
+export const StatelessRadioButton = ({
   selected,
   disabled,
   hasError,
   onChange,
   children,
   ...props
-}: StatelessCheckboxProps) => {
+}: StatelessRadioButtonProps) => {
   return (
     <Box display="flex" onClick={onChange} {...props} cursor="pointer">
       <Indicator
@@ -25,12 +25,13 @@ export const StatelessCheckbox = ({
         disabled={disabled}
         hasError={hasError}
         mr="3"
+        borderRadius="999px"
       >
-        <Icon icon={selected ? "CheckmarkBold" : "Blank"} />
+        <Icon icon={selected ? "Bullet" : "Blank"} />
       </Indicator>
       <Col>{children}</Col>
     </Box>
   );
 };
 
-StatelessCheckbox.displayName = "StatelessCheckbox";
+StatelessRadioButton.displayName = "StatelessRadioButton";

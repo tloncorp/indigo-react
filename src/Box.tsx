@@ -12,6 +12,7 @@ import {
   space,
   typography,
   compose,
+  system,
   BackgroundProps,
   BorderProps,
   ColorProps,
@@ -25,7 +26,12 @@ import {
   TextAlignProps,
 } from "styled-system";
 
-export type BoxProps = BackgroundProps &
+type SystemProps = {
+  cursor?: string;
+};
+
+export type BoxProps = SystemProps &
+  BackgroundProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
@@ -52,7 +58,10 @@ export const Box = styled.div<React.PropsWithChildren<BoxProps>>(
     textAlign,
     background,
     opacity,
-    typography
+    typography,
+    system({
+      cursor: true,
+    })
   )
 );
 

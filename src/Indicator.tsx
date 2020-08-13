@@ -34,10 +34,8 @@ const stateStyle = (
   hasError: boolean,
   selected: boolean
 ) => {
-  if (selected && disabled && hasError) return indicator.state.offDisabledError;
   if (selected && disabled) return indicator.state.onDisabled;
   if (selected && hasError) return indicator.state.onError;
-  if (disabled && hasError) return indicator.state.onDisabledError;
   if (selected) return indicator.state.on;
   if (disabled) return indicator.state.offDisabled;
   if (hasError) return indicator.state.offError;
@@ -54,6 +52,10 @@ const style = ({
     border: "1px solid",
     height: 3,
     borderRadius: 2,
+    cursor: "pointer",
+    "& > *": {
+      transform: "translate(-1px,-1px)",
+    },
     ...stateStyle(disabled, hasError, selected),
   } as SystemStyleObject);
 

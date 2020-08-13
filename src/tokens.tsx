@@ -144,15 +144,80 @@ const indicator = {
       backgroundColor: "washedGray",
       borderColor: "lightGray",
     },
-    offDisabledError: {
-      "*": { fill: "transparent" },
-      backgroundColor: "washedRed",
-      borderColor: "lightRed",
+  } as SystemStyleObjects,
+};
+
+const selectorDefaults = {
+  display: "block",
+  position: "absolute",
+  padding: "6px",
+  borderRadius: "999px",
+  // top: '1px',
+  // left: '1px',
+  border: "1px solid",
+  // content property `' '` must be wrapped in quotes.
+  content: "' '",
+};
+
+const toggleSwitch = {
+  states: {
+    selected: {
+      backgroundColor: "blue",
+      borderColor: "transparent",
+      "&::before": {
+        // Note that `border-color` must come after `border`.
+        ...selectorDefaults,
+        backgroundColor: "white",
+        borderColor: "transparent",
+        transform: "translateX(8px)",
+      },
     },
-    onDisabledError: {
-      "*": { fill: "lightRed" },
-      backgroundColor: "washedRed",
-      borderColor: "lightRed",
+    default: {
+      backgroundColor: "lightGray",
+      borderColor: "transparent",
+      "&::before": {
+        ...selectorDefaults,
+        borderColor: "transparent",
+        backgroundColor: "white",
+      },
+    },
+    selectedDisabled: {
+      backgroundColor: "lightGray",
+      borderColor: "transparent",
+      "&::before": {
+        ...selectorDefaults,
+        backgroundColor: "scales.white70",
+        borderColor: "transparent",
+        transform: "translateX(8px)",
+      },
+    },
+    hasErrorSelected: {
+      backgroundColor: "red",
+      borderColor: "transparent",
+      "&::before": {
+        ...selectorDefaults,
+        backgroundColor: "white",
+        borderColor: "transparent",
+        transform: "translateX(8px)",
+      },
+    },
+    hasError: {
+      backgroundColor: "red",
+      borderColor: "transparent",
+      "&::before": {
+        ...selectorDefaults,
+        borderColor: "transparent",
+        backgroundColor: "white",
+      },
+    },
+    disabled: {
+      backgroundColor: "lightGray",
+      borderColor: "transparent",
+      "&::before": {
+        ...selectorDefaults,
+        borderColor: "transparent",
+        backgroundColor: "scales.white70",
+      },
     },
   } as SystemStyleObjects,
 };
@@ -168,4 +233,5 @@ export {
   // Types
   SystemStyleProp,
   // Utils
+  toggleSwitch,
 };
