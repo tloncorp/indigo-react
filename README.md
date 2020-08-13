@@ -2,37 +2,41 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@tlon/indigo-react?style=flat)](https://www.npmjs.com/package/@tlon/indigo-react)
 
-Indigo React is a component library for implementing the [Indigo Design System](https://www.figma.com/community/file/822953707012850361/Indigo-(alpha)).
+Indigo React is a component library for implementing the [Indigo Design System](<https://www.figma.com/community/file/822953707012850361/Indigo-(alpha)>).
 
 ## Quick Start
+
 1. Install the library
+
 ```bash
 $ npm install --save @tlon/indigo-react
 ```
 
 2. Install peer dependencies
+
 ```bash
 $ npm install --save @tlon/indigo-light styled-components styled-system react react-dom @reach/disclosure @reach/menu-button @reach/tabs markdown-to-jsx
 ```
 
 3. Install a theme
+
 ```bash
 $ npm install --save @tlon/indigo-light @tlon/indigo-dark
 ```
-
 
 ## Basic Usage
 
 ```js
 import * as React from "react";
-import { Text } from '@tlon/indigo-react';
-import light from '@tlon/indigo-light';
+import { Text, Reset } from "@tlon/indigo-react";
+import light from "@tlon/indigo-light";
 
 class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={light}>
-        <Text fontSize='2'>Urbit</Text>
+        <Reset />
+        <Text fontSize="2">Indigo!</Text>
       </ThemeProvider>
     );
   }

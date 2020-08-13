@@ -28,9 +28,11 @@ type SVGProps = React.SVGProps<SVGElement> &
   BorderProps;
 
 const SVG: React.FunctionComponent<SVGProps> = styled.svg(
-  ({ color = "black" }: SVGProps) =>
+  ({ color }: SVGProps) =>
     css({
-      "& > *": { fill: color },
+      "& > *": {
+        fill: typeof color === "undefined" ? "inherit" : color || "black",
+      },
       width: 3,
       height: 3,
     } as SystemStyleObject),

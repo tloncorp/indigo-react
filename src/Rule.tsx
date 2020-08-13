@@ -15,8 +15,7 @@ import {
   SpaceProps,
 } from "styled-system";
 
-type RuleProps = React.HTMLProps<HTMLDivElement> &
-  BorderProps &
+type RuleProps = BorderProps &
   ColorProps &
   FlexboxProps &
   LayoutProps &

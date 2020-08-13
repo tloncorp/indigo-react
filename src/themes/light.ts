@@ -179,9 +179,6 @@ const theme = {
   breakpoints: ["768px", "1024px", "1440px", "2200px"],
 };
 
-/**
- * @see https://www.styled-components.com/docs/api#typescript
- */
 export type Theme = typeof theme;
 export const styled = baseStyled as ThemedStyledInterface<Theme>;
 export default theme;

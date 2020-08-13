@@ -112,12 +112,59 @@ const action = {
   } as SystemStyleObjects,
 };
 
+const indicator = {
+  state: {
+    on: {
+      "*": { fill: "white" },
+      backgroundColor: "blue",
+      borderColor: "blue",
+    },
+    off: {
+      "*": { fill: "transparent" },
+      backgroundColor: "white",
+      borderColor: "lightGray",
+    },
+    onError: {
+      "*": { fill: "white" },
+      backgroundColor: "red",
+      borderColor: "red",
+    },
+    offError: {
+      "*": { fill: "transparent" },
+      backgroundColor: "washedRed",
+      borderColor: "red",
+    },
+    offDisabled: {
+      "*": { fill: "transparent" },
+      backgroundColor: "washedGray",
+      borderColor: "lightGray",
+    },
+    onDisabled: {
+      "*": { fill: "lightGray" },
+      backgroundColor: "washedGray",
+      borderColor: "lightGray",
+    },
+    offDisabledError: {
+      "*": { fill: "transparent" },
+      backgroundColor: "washedRed",
+      borderColor: "lightRed",
+    },
+    onDisabledError: {
+      "*": { fill: "lightRed" },
+      backgroundColor: "washedRed",
+      borderColor: "lightRed",
+    },
+  } as SystemStyleObjects,
+};
+
 export {
   // Core patterns
   container,
   // UI Patterns
   button,
   action,
+  // Used for radio and checkbox
+  indicator,
   // Types
   SystemStyleProp,
   // Utils

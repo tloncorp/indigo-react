@@ -4,7 +4,8 @@ import {
   border,
   color,
   flexbox,
-  grid,
+  textAlign,
+  opacity,
   layout,
   position,
   shadow,
@@ -15,40 +16,44 @@ import {
   BorderProps,
   ColorProps,
   FlexboxProps,
-  GridProps,
   LayoutProps,
   PositionProps,
   ShadowProps,
   SpaceProps,
   TypographyProps,
+  OpacityProps,
+  TextAlignProps,
 } from "styled-system";
 
 export type BoxProps = BackgroundProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
-  GridProps &
   LayoutProps &
   PositionProps &
   ShadowProps &
   SpaceProps &
-  TypographyProps & {};
+  OpacityProps &
+  TextAlignProps &
+  TypographyProps;
 
-const Box = styled.div<BoxProps>`
-  margin: 0;
-  min-width: 0;
-  ${compose(
-    background,
-    border,
-    color,
-    flexbox,
-    grid,
+export const Box = styled.div<BoxProps>(
+  {
+    position: "relative",
+  },
+  compose(
+    space,
     layout,
+    color,
+    border,
     position,
     shadow,
-    space,
+    flexbox,
+    textAlign,
+    background,
+    opacity,
     typography
-  )}
-`;
+  )
+);
+
 Box.displayName = "Box";
-export default Box;

@@ -1,4 +1,4 @@
-import Box from "./Box";
+export { Box, BoxProps } from "./Box";
 import Anchor from "./Anchor";
 import Text from "./Text";
 import Button from "./Button";
@@ -18,12 +18,12 @@ import Center from "./Center";
 import Reset from "./Reset";
 import BaseCode from "./BaseCode";
 import Rule from "./Rule";
-import UncontrolledCheckbox from "./UncontrolledCheckbox";
-
-import light from "./theme/index";
+import Indicator from "./Indicator";
+// export {StatelessCheckbox, StatelessCheckboxProps} from './StatelessCheckbox'
+import _light from "./themes/light";
 
 export {
-  Box,
+  // Box,
   Anchor,
   Button,
   Text,
@@ -43,6 +43,7 @@ export {
   Reset,
   BaseCode,
   Rule,
-  UncontrolledCheckbox,
-  light,
+  // StatelessCheckbox,
+  Indicator,
+  _light,
 };
