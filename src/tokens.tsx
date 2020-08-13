@@ -222,16 +222,37 @@ const toggleSwitch = {
   } as SystemStyleObjects,
 };
 
+const textInput = {
+  state: {
+    default: {
+      borderColor: "lightGray",
+      color: "black",
+      backgroundColor: "white",
+    },
+    disabled: {
+      borderColor: "lightGray",
+      color: "gray",
+      backgroundColor: "washedGray",
+    },
+    hasError: {
+      borderColor: "red",
+      color: "red",
+      backgroundColor: "washedRed",
+    },
+  },
+};
+
 export {
   // Core patterns
   container,
   // UI Patterns
   button,
   action,
+  textInput,
+  toggleSwitch,
   // Used for radio and checkbox
   indicator,
   // Types
   SystemStyleProp,
   // Utils
-  toggleSwitch,
 };

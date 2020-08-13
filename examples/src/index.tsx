@@ -15,9 +15,10 @@ import {
   Action,
   Icon,
   Indicator,
-  StatelessCheckbox,
-  StatelessRadioButton,
-  StatelessToggleSwitch,
+  StatelessCheckboxField,
+  StatelessRadioButtonField,
+  StatelessToggleSwitchField,
+  StatelessTextInputField,
   ErrorLabel,
   Label,
   _light as light,
@@ -29,11 +30,7 @@ const App = () => {
   const [isSelected, toggleSelected] = useState(false);
   const [isSubmitting, toggleSubmitting] = useState(false);
   const [hasError, toggleHasError] = useState(false);
-
-  // light.radii = [0, 0, 0, 0]
-  // // light.colors.black = 'white'
-  // // light.colors.white = 'black'
-  // // light.fontSizes[0] = 16
+  const [textInputValue, updateTextInput] = useState("");
 
   return (
     <ThemeProvider theme={light}>
@@ -48,34 +45,61 @@ const App = () => {
         </Inline>
 
         <Box>
-          <StatelessToggleSwitch
+          <StatelessTextInputField
+            placeholder="Placeholder"
+            value={textInputValue}
+            onChange={(e) => updateTextInput(e.target.value)}
+          >
+            <Label mb="2">Toggle Switch</Label>
+            <Label gray mb="2">
+              Description
+            </Label>
+          </StatelessTextInputField>
+
+          <StatelessTextInputField
+            hasError
+            placeholder="Placeholder"
+            value={textInputValue}
+            onChange={(e) => updateTextInput(e.target.value)}
+          />
+          <StatelessTextInputField
+            disabled
+            placeholder="Placeholder"
+            value={textInputValue}
+            onChange={(e) => updateTextInput(e.target.value)}
+          />
+
+          <StatelessToggleSwitchField
             selected={isSelected}
             p="2"
             onChange={() => toggleSelected(!isSelected)}
           >
-            <Label mb="2">Toggle Switch</Label>
-          </StatelessToggleSwitch>
+            <Label>Toggle Switch</Label>
+          </StatelessToggleSwitchField>
 
-          <StatelessToggleSwitch
+          <StatelessToggleSwitchField
             selected={isSelected}
             disabled
             p="2"
             onChange={() => toggleSelected(!isSelected)}
           >
-            <Label mb="2">Toggle Switch</Label>
-          </StatelessToggleSwitch>
+            <Label>Toggle Switch</Label>
+          </StatelessToggleSwitchField>
 
-          <StatelessToggleSwitch
+          <StatelessToggleSwitchField
             selected={isSelected}
             hasError
             p="2"
             onChange={() => toggleSelected(!isSelected)}
           >
             <Label mb="2">Toggle Switch</Label>
-          </StatelessToggleSwitch>
+            <Label gray mb="2">
+              Description
+            </Label>
+          </StatelessToggleSwitchField>
         </Box>
 
-        <StatelessCheckbox
+        <StatelessCheckboxField
           selected={isChecked}
           hasError={hasError}
           onChange={() => {
@@ -88,31 +112,31 @@ const App = () => {
             Description
           </Label>
           <ErrorLabel hasError={hasError}>Error Message</ErrorLabel>
-        </StatelessCheckbox>
+        </StatelessCheckboxField>
 
-        <StatelessCheckbox
+        <StatelessCheckboxField
           selected={isChecked}
           onChange={() => toggleCheck(!isChecked)}
         >
           <Label mb="1">Label</Label>
           <Label gray>Description</Label>
-        </StatelessCheckbox>
+        </StatelessCheckboxField>
 
-        <StatelessCheckbox
+        <StatelessCheckboxField
           p="2"
           selected={isChecked}
           disabled
           onChange={() => toggleCheck(!isChecked)}
         >
           <Label>Label</Label>
-        </StatelessCheckbox>
+        </StatelessCheckboxField>
 
-        <StatelessRadioButton
+        <StatelessRadioButtonField
           selected={isChecked}
           onChange={() => toggleCheck(!isChecked)}
         >
           <Label>Label</Label>
-        </StatelessRadioButton>
+        </StatelessRadioButtonField>
 
         <Row pitch="3">
           <Indicator selected={true} hasError={false} disabled={false} />

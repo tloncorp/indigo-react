@@ -66,5 +66,8 @@ html, body, div, span, applet, object, iframe,
     height: auto;
     width: 100%;
   }
+  * {
+    outline: none;
+  }
 `;
 Reset.displayName = "CSSReset";

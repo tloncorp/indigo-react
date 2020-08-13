@@ -24,9 +24,9 @@ export type IndicatorProps = BorderProps &
   LayoutProps &
   PositionProps &
   SpaceProps & {
-    disabled: boolean;
-    selected: boolean;
-    hasError: boolean;
+    disabled?: boolean;
+    selected?: boolean;
+    hasError?: boolean;
   };
 
 const stateStyle = (
