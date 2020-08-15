@@ -34,6 +34,7 @@ const style = ({
     height: "16px",
     border: "1px solid",
     borderRadius: "999px",
+    cursor: "pointer",
     ...stateStyle(selected, hasError, disabled),
   } as SystemStyleObject);
 

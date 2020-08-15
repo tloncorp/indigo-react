@@ -19,12 +19,14 @@
   "license": "ISC",
   "devDependencies": {
     "@types/react-dom": "^16.9.8",
+    "@types/yup": "^0.29.5",
     "parcel": "^1.12.4",
     "typescript": "^3.9.7"
   },
   "dependencies": {
     "@tlon/indigo-light": "^1.0.4",
     "react-dom": "^16.13.1",
-    "ui": "file:.."
+    "ui": "file:..",
+    "yup": "^0.29.3"
   }
 }

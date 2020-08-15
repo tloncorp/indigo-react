@@ -36,12 +36,13 @@ const style = ({ gray = false, bold = false, mono = false }: LabelProps) =>
     fontSize: 0,
     pointerEvents: "none",
     userSelect: "none",
+    verticalAlign: "middle",
     width: "100%",
   } as SystemStyleObject);
 
 const styleProps = [border, color, flexbox, layout, space, typography];
 
-export const Label = styled.div<React.PropsWithChildren<LabelProps>>(
+export const Label = styled.label<React.PropsWithChildren<LabelProps>>(
   style,
   ...styleProps
 );

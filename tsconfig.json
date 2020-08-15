@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
     // Signifies which target of JavaScript should be emitted?
-    "target": "ES5",
+    "target": "ES2015",
     // What module format should be emitted?
     "module": "ES2015",
+    // See: https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Module%20Resolution.md
+    "moduleResolution": "node",
     // Output destination
     "outDir": "dist",
     // This lib uses JSX, so support it
@@ -12,10 +14,10 @@
     "esModuleInterop": true,
     // Don't typecheck libraries in node_modules
     "skipLibCheck": true,
-    // Export type declarations and only type declrations. No extra source files to dist
+    // Export type declarations and only type declrations. No extra source files to dist.
     "emitDeclarationOnly": true,
     "declaration": true,
-    // Enables --noImplicitAny, --noImplicitThis, --alwaysStrict, --strictBindCallApply, --strictNullChecks, --strictFunctionTypes and --strictPropertyInitialization.
+    // Enables --noImplicitAny, --dnoImplicitThis, --alwaysStrict, --strictBindCallApply, --strictNullChecks, --strictFunctionTypes and --strictPropertyInitialization.
     "strict": true,
     // Minor style enforcements
     "noImplicitReturns": true,
