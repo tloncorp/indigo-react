@@ -73,7 +73,7 @@ const button = {
       backgroundColor: "white",
       color: "red",
       "*": { fill: "red" },
-      borderColor: "lightRed",
+      borderColor: "red",
     },
     destructiveDisabled: {
       backgroundColor: "washedRed",

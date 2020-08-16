@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Theme } from "./themes/light";
 
 // Used to set browser default css to new defaults to accomodate Indigo
 export const Reset = createGlobalStyle`
@@ -25,6 +26,9 @@ html, body, div, span, applet, object, iframe,
     font-weight: normal;
     font-size: 12px;
     font-family: Inter;
+  }
+  html, body {
+    background-color: ${(p: { theme: Theme }) => p.theme.colors.white};
   }
   body {
     line-height: 1.3334;

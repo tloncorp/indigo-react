@@ -19,6 +19,9 @@ export { Col, ColProps } from "./Col";
 export { Inline, InlineProps } from "./Inline";
 export { Center, CenterProps } from "./Center";
 export { Rule, RuleProps } from "./Rule";
+export { AspectRatio, AspectRatioProps } from "./AspectRatio";
+export { TwoUp, TwoUpProps } from "./TwoUp";
+export { FourUp, FourUpProps } from "./FourUp";
 
 /**
  * Buttons + Anchors
@@ -91,4 +94,5 @@ export { Reset } from "./Reset";
  * Test Themes
  */
 export { light as _light } from "./themes/light";
+export { dark as _dark } from "./themes/dark";
 export { Theme } from "./themes/light";

@@ -35,7 +35,9 @@ import {
   ManagedRadioButtonField,
   Form,
   _light as light,
+  _dark as dark,
   Theme,
+  TwoUp,
 } from "ui";
 import { ThemeProvider } from "styled-components";
 
@@ -177,9 +179,11 @@ const App = () => {
     myStory: "",
   };
 
+  const [theme, chooseTheme] = useState(dark);
+
   return (
-    <ThemeProvider theme={light}>
-      <Reset />
+    <ThemeProvider theme={theme}>
+      <Reset theme={theme} />
       <Col p={p}>
         <Row p={p}>
           <Text>{"Indigo Examples"}</Text>
@@ -197,10 +201,10 @@ const App = () => {
           </Row>
         </Row>
         <Row p={p}>
-          <ThemeColors theme={light} />
+          <ThemeColors theme={theme} />
         </Row>
-        <Row>
-          <Col p={p} width="50%">
+        <TwoUp>
+          <Col p={p}>
             <Rule />
             <Text py="2">{"<Text />"}</Text>
             <Text>Default</Text>
@@ -222,7 +226,7 @@ const App = () => {
             </Inline>
           </Col>
 
-          <Col p={p} width="50%">
+          <Col p={p}>
             <Rule />
             <Text py="2">{"<Action />"}</Text>
             <Box>
@@ -234,7 +238,7 @@ const App = () => {
               </Action>
             </Box>
           </Col>
-        </Row>
+        </TwoUp>
 
         <Row>
           <Col p={p} width="50%">
@@ -247,16 +251,27 @@ const App = () => {
               onClick={() => console.log("Primary Button")}
             />
             <Button
+              primary
+              mb="2"
+              onClick={() => console.log("Primary Button")}
+            >
+              {" "}
+              Button With Icon
+              <Icon ml="2" icon="Smiley" />
+            </Button>
+            <Button
               destructive
               mb="2"
-              children="Destructive"
               onClick={() => console.log("Destructive")}
-            />
+            >
+              Destructive Button With Icon
+              <Icon ml="2" icon="X" />
+            </Button>
             <Button
               primary
               destructive
               mb="2"
-              children="Primary Button (Destructive)"
+              children="Destructive Primary Button"
               onClick={() => console.log("Primary Button (Destructive)")}
             />
             <Button

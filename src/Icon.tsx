@@ -25,7 +25,7 @@ export const Icon = ({
   icon,
   ...props
 }: IconProps & { icon: keyof IconIndex }) => (
-  <SVG {...props} viewBox={"0 0 16 16"}>
+  <SVG color="black" {...props} viewBox={"0 0 16 16"}>
     {iconIndex[icon]()}
   </SVG>
 );
