@@ -1,26 +1,10 @@
 import styled from "styled-components";
+import { ColorProps, color } from "styled-system";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "styled-system";
+import { StructuralProps, structureStyle } from "./systemHelpers";
 
-export type RuleProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps & {
+export type RuleProps = ColorProps &
+  StructuralProps & {
     vertical?: boolean;
   };
 
@@ -35,11 +19,10 @@ const style = ({ vertical = false }: RuleProps) =>
     borderColor: "lightGray",
   } as SystemStyleObject);
 
-const styleProps = [border, color, flexbox, layout, position, space];
-
 export const Rule = styled.div<React.PropsWithChildren<RuleProps>>(
   style,
-  ...styleProps
+  color,
+  ...structureStyle
 );
 
 Rule.displayName = "Rule";

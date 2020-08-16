@@ -1,31 +1,16 @@
 import styled from "styled-components";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-  compose,
-} from "styled-system";
+import { structureStyle, StructuralProps } from "./systemHelpers";
 
-export type CenterProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps;
+export type CenterProps = StructuralProps;
 
-export const Center = styled.div<CenterProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ${compose(border, color, flexbox, layout, position, space)}
-`;
+export const Center = styled.div<React.PropsWithChildren<StructuralProps>>(
+  {
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  ...structureStyle
+);
+
 Center.displayName = "Center";

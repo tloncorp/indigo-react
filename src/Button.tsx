@@ -1,32 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-} from "styled-system";
-import { container, button } from "./tokens";
+import { container, button } from "./systemTokens";
+import { CommonStyleProps, commonStyle } from "./systemHelpers";
 
-export type ButtonProps = FlexboxProps &
-  LayoutProps &
-  SpaceProps &
-  ColorProps &
-  BorderProps &
-  TypographyProps & {
-    primary?: boolean;
-    disabled?: boolean;
-    destructive?: boolean;
-  };
+export type ButtonProps = CommonStyleProps & {
+  primary?: boolean;
+  disabled?: boolean;
+  destructive?: boolean;
+};
 
 const stateStyle = (
   primary: boolean,
@@ -60,11 +42,9 @@ const style = ({
     ...stateStyle(primary, destructive, disabled),
   } as SystemStyleObject);
 
-const system = [border, color, flexbox, layout, space, typography];
-
 export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
   style,
-  ...system
+  ...commonStyle
 );
 
 Button.displayName = "Button";

@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Indicator } from "./Indicator";
-import { SpaceProps } from "styled-system";
 import { Icon } from "./Icon";
+import { StructuralProps } from "./systemHelpers";
 
-export type RadioButtonProps = SpaceProps & {
+export type RadioButtonProps = StructuralProps & {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
+  name: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const RadioButton = ({
@@ -14,6 +15,7 @@ export const RadioButton = ({
   disabled,
   hasError,
   onChange,
+  name,
   children,
   ...props
 }: RadioButtonProps) => {

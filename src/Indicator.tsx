@@ -1,33 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "styled-system";
 
-import { indicator } from "./tokens";
+import { indicator } from "./systemTokens";
+import { commonStyle, CommonStyleProps } from "./systemHelpers";
 
-export type IndicatorProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps & {
-    disabled?: boolean;
-    selected?: boolean;
-    hasError?: boolean;
-  };
+export type IndicatorProps = CommonStyleProps & {
+  disabled?: boolean;
+  selected?: boolean;
+  hasError?: boolean;
+};
 
 const stateStyle = (
   disabled: boolean,
@@ -59,11 +41,9 @@ const style = ({
     ...stateStyle(disabled, hasError, selected),
   } as SystemStyleObject);
 
-const styleProps = [border, color, flexbox, layout, position, space];
-
 export const Indicator = styled.div<React.PropsWithChildren<IndicatorProps>>(
   style,
-  ...styleProps
+  ...commonStyle
 );
 
 Indicator.displayName = "Indicator";

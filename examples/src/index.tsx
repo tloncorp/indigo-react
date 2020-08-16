@@ -30,6 +30,7 @@ import {
   Rule,
   ManagedForm,
   ManagedCheckboxField,
+  ManagedRadioButtonField,
   Form,
   _light as light,
   Theme,
@@ -39,7 +40,8 @@ import { ThemeProvider } from "styled-components";
 interface ManagedFormValues {
   firstName: string;
   lastName: string;
-  isagree: boolean;
+  iagree: boolean;
+  color: "blue" | "green";
 }
 
 const ManagedFormSchema = Yup.object().shape({
@@ -61,8 +63,7 @@ const ManagedFormSchema = Yup.object().shape({
   //   .min(2, 'Too Short!')
   //   .max(50, 'Too Long!')
   //   .required('Required'),
-  // color: Yup.string()
-  //   .oneOf(['blue', 'green']),
+  color: Yup.string().oneOf(["blue", "green"]),
   // urbitid: Yup.string()
   //   .test(
   //     'is-patp',
@@ -90,7 +91,7 @@ const p = "4";
 
 const enumerateColors = (theme: Theme) =>
   Object.entries(theme.colors).map(([k, v]) => {
-    if (k === "scales" || k === "util") return <div />;
+    if (k === "scales" || k === "util") return null;
     return (
       <Box
         key={(k + " " + v) as string}
@@ -167,6 +168,7 @@ const App = () => {
     firstName: "",
     lastName: "",
     iagree: false,
+    color: "blue",
   };
 
   return (
@@ -360,6 +362,7 @@ const App = () => {
 
             <RadioButton
               mb="2"
+              name="radioGroup1"
               selected={defaultRadioButtonIsSelected}
               onClick={() =>
                 defaultRadioButtonIsSelectedToggle(
@@ -369,16 +372,18 @@ const App = () => {
             />
             <RadioButton
               mb="2"
+              name="radioGroup1"
               selected={errorRadioButtonIsSelected}
               hasError
               onClick={() =>
                 errorRadioButtonIsSelectedToggle(!errorRadioButtonIsSelected)
               }
             />
-            <RadioButton mb="2" selected={false} disabled />
-            <RadioButton mb="2" selected={true} disabled />
+            <RadioButton name="radioGroup1" mb="2" selected={false} disabled />
+            <RadioButton name="radioGroup1" mb="2" selected={true} disabled />
 
             <StatelessRadioButtonField
+              name="radioGroup1"
               p="2"
               selected={statelessRadioButtonIndex === 0}
               hasError={checkboxErrorTriggerSelected}
@@ -396,6 +401,7 @@ const App = () => {
             </StatelessRadioButtonField>
 
             <StatelessRadioButtonField
+              name="radioGroup1"
               p="2"
               selected={statelessRadioButtonIndex === 1}
               hasError={checkboxErrorTriggerSelected}
@@ -533,10 +539,36 @@ const App = () => {
                   placeholder="Seal"
                 />
                 <ManagedCheckboxField
+                  p="3"
                   label="I agree"
                   caption="Responsibility or liability for the frequency of provision and accuracy of the BBA LIBOR rate or any use made of the BBA LIBOR rate by the subscriber, whether or not arising from the negligence of any of BBAE or the Suppliers."
                   id="iagree"
                 />
+                <Box>
+                  <Label mb="2">Favorite Color</Label>
+                  <ManagedRadioButtonField
+                    mb="2"
+                    label="Green"
+                    id="green"
+                    name="color"
+                    caption="Select if your favorite color is green."
+                  />
+                  <ManagedRadioButtonField
+                    mb="2"
+                    label="Blue"
+                    id="blue"
+                    name="color"
+                    caption="Select if your favorite color is blue."
+                  />
+                  <ManagedRadioButtonField
+                    mb="2"
+                    id="dog"
+                    name="color"
+                    label="Dog"
+                    caption="Dog is not a color"
+                    disabled
+                  />
+                </Box>
               </Form>
             </ManagedForm>
           </Col>

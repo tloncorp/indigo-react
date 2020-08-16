@@ -284,8 +284,8 @@ const Smiley = () => (
     <circle cx="5" cy="6" r="1" />
     <circle cx="11" cy="6" r="1" />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M3.61157 9C4.0663 11.004 5.85848 12.5 8.00006 12.5C10.1417 12.5 11.9338 11.004 12.3886 9H11.3551C10.9248 10.4457 9.58557 11.5 8.00006 11.5C6.41455 11.5 5.07528 10.4457 4.645 9H3.61157Z"
     />
   </>

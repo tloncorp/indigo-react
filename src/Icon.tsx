@@ -1,31 +1,12 @@
 import * as React from "react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import styled from "styled-components";
-import {
-  space,
-  layout,
-  position,
-  border,
-  color,
-  flexbox,
-  LayoutProps,
-  SpaceProps,
-  PositionProps,
-  ColorProps,
-  BorderProps,
-  FlexboxProps,
-} from "styled-system";
 import iconIndex from "./iconIndex";
+import { commonStyle, CommonStyleProps } from "./systemHelpers";
 
 type IconIndex = typeof iconIndex;
 
-export type IconProps = React.SVGProps<SVGElement> &
-  ColorProps &
-  PositionProps &
-  LayoutProps &
-  SpaceProps &
-  FlexboxProps &
-  BorderProps;
+export type IconProps = React.SVGProps<SVGElement> & CommonStyleProps;
 
 const SVG: React.FunctionComponent<IconProps> = styled.svg(
   ({ color }: IconProps) =>
@@ -35,13 +16,9 @@ const SVG: React.FunctionComponent<IconProps> = styled.svg(
       },
       width: 3,
       height: 3,
+      flexShrink: 0,
     } as SystemStyleObject),
-  space,
-  color,
-  layout,
-  flexbox,
-  border,
-  position
+  ...commonStyle
 );
 
 export const Icon = ({

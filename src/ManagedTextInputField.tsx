@@ -1,10 +1,11 @@
 import * as React from "react";
 import { useField } from "formik";
 
-import { Box, BoxProps } from "./Box";
+import { Box } from "./Box";
 import { StatelessTextInputField } from "./StatelessTextInputField";
 import { ErrorLabel } from "./ErrorLabel";
 import { Label } from "./Label";
+import { StructuralProps } from "./systemHelpers";
 
 export type ManagedTextInputFieldProps = {
   hasError?: boolean;
@@ -16,7 +17,7 @@ export type ManagedTextInputFieldProps = {
   type?: string;
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLInputElement> &
-  BoxProps;
+  StructuralProps;
 
 export const ManagedTextInputField = ({
   disabled,

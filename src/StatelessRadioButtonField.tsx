@@ -1,14 +1,16 @@
 import * as React from "react";
 import { RadioButton } from "./RadioButton";
-import { Box, BoxProps } from "./Box";
+import { Box } from "./Box";
 import { Col } from "./Col";
+import { StructuralProps } from "./systemHelpers";
 
 export type StatelessRadioButtonFieldProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
+  name: string;
 } & React.HTMLAttributes<HTMLDivElement> &
-  BoxProps;
+  StructuralProps;
 
 export const StatelessRadioButtonField = ({
   selected,
@@ -16,11 +18,13 @@ export const StatelessRadioButtonField = ({
   hasError,
   onChange,
   children,
+  name,
   ...props
 }: StatelessRadioButtonFieldProps) => {
   return (
     <Box display="flex" onClick={onChange} {...props} cursor="pointer">
       <RadioButton
+        name={name}
         selected={selected}
         disabled={disabled}
         hasError={hasError}

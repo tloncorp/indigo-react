@@ -1,31 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "styled-system";
-import { textInput } from "./tokens";
+import { textInput } from "./systemTokens";
+import { StructuralProps, structureStyle } from "./systemHelpers";
 
-export type StatelessTextInputFieldProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps & {
-    hasError?: boolean;
-    disabled?: boolean;
-  } & React.HTMLAttributes<HTMLInputElement>;
+export type StatelessTextInputFieldProps = StructuralProps & {
+  hasError?: boolean;
+  disabled?: boolean;
+} & React.HTMLAttributes<HTMLInputElement>;
 
 const stateStyle = (hasError: boolean, disabled: boolean) => {
   if (hasError) return textInput.state.hasError;
@@ -51,9 +33,10 @@ const style = ({
 
 export const StatelessTextInputField = styled.input<
   React.PropsWithChildren<StatelessTextInputFieldProps>
->(style, border, color, flexbox, layout, position, space);
+>(style, ...structureStyle);
 
 StatelessTextInputField.defaultProps = {
   type: "text",
 };
+
 StatelessTextInputField.displayName = "TextInput";

@@ -1,32 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-  ResponsiveValue,
-  ThemeValue,
-  RequiredTheme,
-} from "styled-system";
+import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
+import { AllSystemProps, allSystemStyle } from "./systemHelpers";
 
-export type RowProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps & {
-    pitch?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-  };
+export type RowProps = AllSystemProps & {
+  pitch?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+};
 
 const style = ({ pitch }: RowProps) =>
   css({
@@ -35,11 +15,9 @@ const style = ({ pitch }: RowProps) =>
     "& :first-child": typeof pitch === "undefined" ? {} : { marginLeft: 0 },
   } as SystemStyleObject);
 
-const styleProps = [border, color, flexbox, layout, position, space];
-
 export const Row = styled.div<React.PropsWithChildren<RowProps>>(
   style,
-  ...styleProps
+  ...allSystemStyle
 );
 
 Row.displayName = "Row";

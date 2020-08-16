@@ -1,10 +1,9 @@
 import * as React from "react";
-import { SpaceProps } from "styled-system";
-
 import { Indicator } from "./Indicator";
 import { Icon } from "./Icon";
+import { StructuralProps } from "./systemHelpers";
 
-export type CheckboxProps = SpaceProps & {
+export type CheckboxProps = StructuralProps & {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;

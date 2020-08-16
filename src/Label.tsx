@@ -1,30 +1,12 @@
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  color,
-  ColorProps,
-  layout,
-  LayoutProps,
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-  border,
-  BorderProps,
-  flexbox,
-  FlexboxProps,
-} from "styled-system";
+import { commonStyle, CommonStyleProps } from "./systemHelpers";
 
-export type LabelProps = BorderProps &
-  FlexboxProps &
-  ColorProps &
-  LayoutProps &
-  SpaceProps &
-  TypographyProps & {
-    gray?: boolean;
-    bold?: boolean;
-    mono?: boolean;
-  };
+export type LabelProps = CommonStyleProps & {
+  gray?: boolean;
+  bold?: boolean;
+  mono?: boolean;
+};
 
 const style = ({ gray = false, bold = false, mono = false }: LabelProps) =>
   css({
@@ -40,11 +22,9 @@ const style = ({ gray = false, bold = false, mono = false }: LabelProps) =>
     width: "100%",
   } as SystemStyleObject);
 
-const styleProps = [border, color, flexbox, layout, space, typography];
-
 export const Label = styled.label<React.PropsWithChildren<LabelProps>>(
   style,
-  ...styleProps
+  ...commonStyle
 );
 
 Label.displayName = "Label";

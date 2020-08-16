@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import { space, SpaceProps } from "styled-system";
-import { toggleSwitch } from "./tokens";
+import { toggleSwitch } from "./systemTokens";
+import { StructuralProps, structureStyle } from "./systemHelpers";
 
-export type ToggleSwitchProps = SpaceProps & {
+export type ToggleSwitchProps = StructuralProps & {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
@@ -40,6 +40,6 @@ const style = ({
 
 export const ToggleSwitch = styled.div<
   React.PropsWithChildren<ToggleSwitchProps>
->(style, space);
+>(style, ...structureStyle);
 
 ToggleSwitch.displayName = "ToggleSwitch";

@@ -1,18 +1,20 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useField } from "formik";
+
 import { BaseLabel } from "./BaseLabel";
 import { Label } from "./Label";
 import { ErrorLabel } from "./ErrorLabel";
-import { Checkbox } from "./Checkbox";
+import { RadioButton } from "./RadioButton";
 import { Box } from "./Box";
 import { Col } from "./Col";
 import { StructuralProps } from "./systemHelpers";
 
-type ManagedCheckboxFieldProps = StructuralProps & {
+type ManagedRadioButtonFieldProps = StructuralProps & {
   caption?: string;
   label: string;
   id: string;
+  name: string;
   disabled?: boolean;
 };
 
@@ -25,14 +27,16 @@ const HiddenInput = styled.input`
   margin: 0px;
 `;
 
-export const ManagedCheckboxField = ({
+export const ManagedRadioButtonField = ({
   label,
   caption,
   id,
   disabled,
+  name,
   ...props
-}: ManagedCheckboxFieldProps) => {
-  const [field, meta] = useField({ name: id, type: "checkbox" });
+}: ManagedRadioButtonFieldProps) => {
+  // This differs slightly from MangaedCheckboxField
+  const [field, meta] = useField({ name, id, value: id, type: "radio" });
   return (
     <Box {...props}>
       <BaseLabel
@@ -41,8 +45,9 @@ export const ManagedCheckboxField = ({
         flexDirection="row"
         cursor="pointer"
       >
-        <Checkbox
+        <RadioButton
           mr="3"
+          name={name}
           hasError={meta.touched && meta.error !== undefined}
           selected={field.checked}
           disabled={disabled}
@@ -57,10 +62,10 @@ export const ManagedCheckboxField = ({
           <HiddenInput
             {...field}
             value={id}
-            name={id}
+            name={name}
             id={id}
             disabled={disabled}
-            type="checkbox"
+            type="radio"
           />
           <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
             {meta.error}

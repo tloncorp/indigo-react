@@ -1,42 +1,11 @@
 import styled from "styled-components";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-  position,
-  PositionProps,
-  compose,
-} from "styled-system";
+import { compose } from "styled-system";
+import { allSystemStyle, AllSystemProps } from "./systemHelpers";
 
-export type BaseAnchorProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  SpaceProps &
-  PositionProps &
-  TypographyProps;
-
-const styleProps = compose(
-  space,
-  layout,
-  color,
-  border,
-  flexbox,
-  typography,
-  position
-);
+export type BaseAnchorProps = AllSystemProps;
 
 export const BaseAnchor = styled.a<React.PropsWithChildren<BaseAnchorProps>>(
-  styleProps
+  compose(...allSystemStyle)
 );
 
 BaseAnchor.displayName = "BaseAnchor";

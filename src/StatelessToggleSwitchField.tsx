@@ -1,14 +1,15 @@
 import * as React from "react";
-import { Box, BoxProps } from "./Box";
+import { Box } from "./Box";
 import { Col } from "./Col";
 import { ToggleSwitch } from "./ToggleSwitch";
+import { StructuralProps } from "./systemHelpers";
 
 export type StatelessToggleSwitchFieldProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
 } & React.HTMLAttributes<HTMLDivElement> &
-  BoxProps;
+  StructuralProps;
 
 export const StatelessToggleSwitchField = ({
   selected,

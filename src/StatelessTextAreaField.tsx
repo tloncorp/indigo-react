@@ -1,31 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "styled-system";
-import { textInput } from "./tokens";
+import { textInput } from "./systemTokens";
+import { StructuralProps, structureStyle } from "./systemHelpers";
 
-export type StatelessTextAreaFieldProps = BorderProps &
-  ColorProps &
-  FlexboxProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps & {
-    hasError?: boolean;
-    disabled?: boolean;
-  } & React.HTMLAttributes<HTMLTextAreaElement>;
+export type StatelessTextAreaFieldProps = StructuralProps & {
+  hasError?: boolean;
+  disabled?: boolean;
+} & React.HTMLAttributes<HTMLTextAreaElement>;
 
 const stateStyle = (hasError: boolean, disabled: boolean) => {
   if (hasError) return textInput.state.hasError;
@@ -50,7 +32,7 @@ const style = ({
 
 export const StatelessTextAreaField = styled.textarea<
   React.PropsWithChildren<StatelessTextAreaFieldProps>
->(style, border, color, flexbox, layout, position, space);
+>(style, ...structureStyle);
 
 StatelessTextAreaField.defaultProps = {
   cols: 8,

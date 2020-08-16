@@ -79,6 +79,7 @@ export { Form } from "./Form";
 export { ManagedForm } from "./ManagedForm";
 export { ManagedTextInputField } from "./ManagedTextInputField";
 export { ManagedCheckboxField } from "./ManagedCheckboxField";
+export { ManagedRadioButtonField } from "./ManagedRadioButtonField";
 /**
  * Utility
  */
