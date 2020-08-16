@@ -22,6 +22,8 @@ import {
   StatelessTextInputField,
   StatelessTextAreaField,
   ManagedTextInputField,
+  ManagedToggleSwitchField,
+  ManagedTextAreaField,
   ErrorLabel,
   Label,
   Checkbox,
@@ -41,7 +43,9 @@ interface ManagedFormValues {
   firstName: string;
   lastName: string;
   iagree: boolean;
+  myStory: string;
   color: "blue" | "green";
+  toggleSwitch: boolean;
 }
 
 const ManagedFormSchema = Yup.object().shape({
@@ -169,6 +173,8 @@ const App = () => {
     lastName: "",
     iagree: false,
     color: "blue",
+    toggleSwitch: false,
+    myStory: "",
   };
 
   return (
@@ -544,6 +550,19 @@ const App = () => {
                   caption="Responsibility or liability for the frequency of provision and accuracy of the BBA LIBOR rate or any use made of the BBA LIBOR rate by the subscriber, whether or not arising from the negligence of any of BBAE or the Suppliers."
                   id="iagree"
                 />
+                <ManagedTextAreaField
+                  p="3"
+                  label="My Story..."
+                  id="myStory"
+                  caption="Everyone has a story to tell..."
+                  placeholder="Back in my day"
+                />
+                <ManagedToggleSwitchField
+                  p="3"
+                  id="toggleSwitch"
+                  label="Setting 1"
+                  caption="Turning this on will turn the toggle switch on."
+                />
                 <Box>
                   <Label mb="2">Favorite Color</Label>
                   <ManagedRadioButtonField
@@ -569,6 +588,9 @@ const App = () => {
                     disabled
                   />
                 </Box>
+                <Button primary type="submit">
+                  Submit
+                </Button>
               </Form>
             </ManagedForm>
           </Col>

@@ -78,8 +78,11 @@ export { RadioButton, RadioButtonProps } from "./RadioButton";
 export { Form } from "./Form";
 export { ManagedForm } from "./ManagedForm";
 export { ManagedTextInputField } from "./ManagedTextInputField";
+export { ManagedTextAreaField } from "./ManagedTextAreaField";
 export { ManagedCheckboxField } from "./ManagedCheckboxField";
 export { ManagedRadioButtonField } from "./ManagedRadioButtonField";
+export { ManagedToggleSwitchField } from "./ManagedToggleSwitchField";
+
 /**
  * Utility
  */

@@ -31,6 +31,7 @@ const style = ({
   css({
     position: "relative",
     width: "24px",
+    flexShrink: "0",
     height: "16px",
     border: "1px solid",
     borderRadius: "999px",

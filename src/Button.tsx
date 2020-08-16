@@ -36,6 +36,7 @@ const style = ({
     border: "1px solid",
     height: 5,
     borderRadius: 2,
+    overflow: "hidden",
     px: 3,
     ...button.text,
     ...container.center,

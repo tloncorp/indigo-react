@@ -2,12 +2,12 @@ import * as React from "react";
 import { useField } from "formik";
 
 import { Box } from "./Box";
-import { StatelessTextInputField } from "./StatelessTextInputField";
+import { StatelessTextAreaField } from "./StatelessTextAreaField";
 import { ErrorLabel } from "./ErrorLabel";
 import { Label } from "./Label";
 import { StructuralProps } from "./systemHelpers";
 
-export type ManagedTextInputFieldProps = {
+export type ManagedTextAreaFieldProps = {
   hasError?: boolean;
   disabled?: boolean;
   placeholder?: string;
@@ -19,7 +19,7 @@ export type ManagedTextInputFieldProps = {
   React.HTMLAttributes<HTMLInputElement> &
   StructuralProps;
 
-export const ManagedTextInputField = ({
+export const ManagedTextAreaField = ({
   disabled,
   hasError,
   placeholder,
@@ -29,7 +29,7 @@ export const ManagedTextInputField = ({
   children,
   type,
   ...props
-}: ManagedTextInputFieldProps) => {
+}: ManagedTextAreaFieldProps) => {
   const [field, meta] = useField(id);
 
   return (
@@ -40,8 +40,7 @@ export const ManagedTextInputField = ({
           {caption}
         </Label>
       ) : null}
-      <StatelessTextInputField
-        type={type || "text"}
+      <StatelessTextAreaField
         mt="2"
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
@@ -55,4 +54,4 @@ export const ManagedTextInputField = ({
   );
 };
 
-ManagedTextInputField.displayName = "ManagedTextInputField";
+ManagedTextAreaField.displayName = "ManagedTextAreaField";

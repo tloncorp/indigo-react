@@ -37,6 +37,7 @@ const style = ({ destructive = false, disabled = false }: ActionProps) =>
   css({
     width: "auto",
     border: "none",
+    overflow: "hidden",
     height: 3,
     ...button.text,
     ...container.center,
