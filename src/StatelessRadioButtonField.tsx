@@ -2,7 +2,7 @@ import * as React from "react";
 import { RadioButton } from "./RadioButton";
 import { Box } from "./Box";
 import { Col } from "./Col";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
 export type StatelessRadioButtonFieldProps = {
   selected?: boolean;
@@ -10,7 +10,7 @@ export type StatelessRadioButtonFieldProps = {
   disabled?: boolean;
   name: string;
 } & React.HTMLAttributes<HTMLDivElement> &
-  StructuralProps;
+  StructureProps;
 
 export const StatelessRadioButtonField = ({
   selected,

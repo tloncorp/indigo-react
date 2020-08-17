@@ -5,7 +5,7 @@ import { Box } from "./Box";
 import { StatelessTextInputField } from "./StatelessTextInputField";
 import { ErrorLabel } from "./ErrorLabel";
 import { Label } from "./Label";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
 export type ManagedTextInputFieldProps = {
   hasError?: boolean;
@@ -17,7 +17,7 @@ export type ManagedTextInputFieldProps = {
   type?: string;
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLInputElement> &
-  StructuralProps;
+  StructureProps;
 
 export const ManagedTextInputField = ({
   disabled,

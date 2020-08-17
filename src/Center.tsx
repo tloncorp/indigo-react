@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { structureStyle, StructuralProps } from "./systemHelpers";
+import { structureStyle, StructureProps } from "./systemHelpers";
 
-export type CenterProps = StructuralProps;
+export type CenterProps = StructureProps;
 
-export const Center = styled.div<React.PropsWithChildren<StructuralProps>>(
+export const Center = styled.div<React.PropsWithChildren<StructureProps>>(
   {
     position: "relative",
     display: "flex",

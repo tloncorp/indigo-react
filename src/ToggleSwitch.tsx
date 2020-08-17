@@ -2,9 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { toggleSwitch } from "./systemTokens";
-import { StructuralProps, structureStyle } from "./systemHelpers";
+import { StructureProps, structureStyle } from "./systemHelpers";
 
-export type ToggleSwitchProps = StructuralProps & {
+export type ToggleSwitchProps = StructureProps & {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;

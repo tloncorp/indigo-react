@@ -7,9 +7,9 @@ import { ErrorLabel } from "./ErrorLabel";
 import { ToggleSwitch } from "./ToggleSwitch";
 import { Box } from "./Box";
 import { Col } from "./Col";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
-type ManagedToggleSwitchFieldProps = StructuralProps & {
+type ManagedToggleSwitchFieldProps = StructureProps & {
   caption?: string;
   label: string;
   id: string;

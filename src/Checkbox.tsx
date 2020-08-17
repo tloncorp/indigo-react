@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Indicator } from "./Indicator";
 import { Icon } from "./Icon";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
-export type CheckboxProps = StructuralProps & {
+export type CheckboxProps = StructureProps & {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;

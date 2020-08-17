@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Indicator } from "./Indicator";
 import { Icon } from "./Icon";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
-export type RadioButtonProps = StructuralProps & {
+export type RadioButtonProps = StructureProps & {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;

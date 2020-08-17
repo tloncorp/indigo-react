@@ -2,14 +2,14 @@ import * as React from "react";
 import { Checkbox } from "./Checkbox";
 import { Box } from "./Box";
 import { Col } from "./Col";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
 export type StatelessCheckboxFieldProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
 } & React.HTMLAttributes<HTMLDivElement> &
-  StructuralProps;
+  StructureProps;
 
 export const StatelessCheckboxField = ({
   selected,

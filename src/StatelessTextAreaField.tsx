@@ -2,9 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { textInput } from "./systemTokens";
-import { StructuralProps, structureStyle } from "./systemHelpers";
+import { StructureProps, structureStyle } from "./systemHelpers";
 
-export type StatelessTextAreaFieldProps = StructuralProps & {
+export type StatelessTextAreaFieldProps = StructureProps & {
   hasError?: boolean;
   disabled?: boolean;
 } & React.HTMLAttributes<HTMLTextAreaElement>;

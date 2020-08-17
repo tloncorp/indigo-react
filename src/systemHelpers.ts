@@ -87,7 +87,7 @@ export const cosmeticStyle = [
   }),
 ];
 
-export type StructuralProps = BorderProps &
+export type StructureProps = BorderProps &
   FlexboxProps &
   LayoutProps &
   PositionProps &

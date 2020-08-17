@@ -8,9 +8,9 @@ import { ErrorLabel } from "./ErrorLabel";
 import { RadioButton } from "./RadioButton";
 import { Box } from "./Box";
 import { Col } from "./Col";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
-type ManagedRadioButtonFieldProps = StructuralProps & {
+type ManagedRadioButtonFieldProps = StructureProps & {
   caption?: string;
   label: string;
   id: string;

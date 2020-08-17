@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { ColorProps, color } from "styled-system";
 import css, { SystemStyleObject } from "@styled-system/css";
-import { StructuralProps, structureStyle } from "./systemHelpers";
+import { StructureProps, structureStyle } from "./systemHelpers";
 
 export type RuleProps = ColorProps &
-  StructuralProps & {
+  StructureProps & {
     vertical?: boolean;
   };
 

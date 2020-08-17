@@ -7,9 +7,9 @@ import { ErrorLabel } from "./ErrorLabel";
 import { Checkbox } from "./Checkbox";
 import { Box } from "./Box";
 import { Col } from "./Col";
-import { StructuralProps } from "./systemHelpers";
+import { StructureProps } from "./systemHelpers";
 
-type ManagedCheckboxFieldProps = StructuralProps & {
+type ManagedCheckboxFieldProps = StructureProps & {
   caption?: string;
   label: string;
   id: string;
