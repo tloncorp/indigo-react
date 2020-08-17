@@ -38,6 +38,12 @@ import {
   _dark as dark,
   Theme,
   TwoUp,
+  DisclosureBox,
+  DisclosureButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "ui";
 import { ThemeProvider } from "styled-components";
 
@@ -169,6 +175,8 @@ const App = () => {
     statelessTextAreaFieldValue,
     statelessTextAreaFieldOnChange,
   ] = useState("");
+
+  const [disclosureBoxOpen, disclosureBoxToggle] = useState(false);
 
   const initialValues: ManagedFormValues = {
     firstName: "",
@@ -630,6 +638,46 @@ const App = () => {
               borderColor="blue"
               color="blue"
             />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col p={p} width="50%">
+            <Rule />
+            <Text py="2">{"<DisclosureBox />, <DisclosureButton />"}</Text>
+
+            <DisclosureButton
+              isOpen={disclosureBoxOpen}
+              onClick={() => disclosureBoxToggle(!disclosureBoxOpen)}
+            >
+              <Text>Extra Stuff</Text>
+            </DisclosureButton>
+            <DisclosureBox isOpen={disclosureBoxOpen}>
+              <Text>Hello</Text>
+            </DisclosureBox>
+          </Col>
+          <Col p={p} width="50%">
+            <Rule />
+            <Text py="2">{"<Menu />, <MenuButton />"}</Text>
+            <Box>
+              <Menu>
+                <MenuButton>
+                  <Icon mr="2" icon="ChevronSouth" />
+                  MenuButton
+                </MenuButton>
+                <MenuList>
+                  <MenuItem onClick={() => console.log("Command 1")}>
+                    Command 1
+                  </MenuItem>
+                  <MenuItem onClick={() => console.log("Command 2")}>
+                    Command 2
+                  </MenuItem>
+                  <MenuItem onClick={() => console.log("Command 3")}>
+                    Command 3
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
           </Col>
         </Row>
       </Col>
