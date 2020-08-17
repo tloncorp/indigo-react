@@ -87,13 +87,15 @@ export const cosmeticStyle = [
   }),
 ];
 
-export type StructuralProps = FlexboxProps &
+export type StructuralProps = BorderProps &
+  FlexboxProps &
   LayoutProps &
   PositionProps &
   SpaceProps &
   OverflowProps;
 
 export const structureStyle = [
+  border,
   flexbox,
   layout,
   position,
