@@ -4,10 +4,10 @@ import css, { SystemStyleObject } from "@styled-system/css";
 import { textInput } from "./systemTokens";
 import { StructureProps, structureStyle } from "./systemHelpers";
 
-export type StatelessTextAreaFieldProps = StructureProps & {
+export type StatelessTextInputProps = StructureProps & {
   hasError?: boolean;
   disabled?: boolean;
-} & React.HTMLAttributes<HTMLTextAreaElement>;
+} & React.HTMLAttributes<HTMLInputElement>;
 
 const stateStyle = (hasError: boolean, disabled: boolean) => {
   if (hasError) return textInput.state.hasError;
@@ -18,24 +18,25 @@ const stateStyle = (hasError: boolean, disabled: boolean) => {
 const style = ({
   hasError = false,
   disabled = false,
-}: StatelessTextAreaFieldProps) =>
+}: StatelessTextInputProps) =>
   css({
     boxSizing: "border-box",
     width: "100%",
-    p: 2,
+    height: 5,
+    px: 2,
+    display: "flex",
+    alignItems: "center",
     border: "1px solid",
     borderRadius: 2,
-    resize: "vertical",
-    minHeight: 5,
     ...stateStyle(hasError, disabled),
   } as SystemStyleObject);
 
-export const StatelessTextAreaField = styled.textarea<
-  React.PropsWithChildren<StatelessTextAreaFieldProps>
+export const StatelessTextInput = styled.input<
+  React.PropsWithChildren<StatelessTextInputProps>
 >(style, ...structureStyle);
 
-StatelessTextAreaField.defaultProps = {
-  cols: 8,
+StatelessTextInput.defaultProps = {
+  type: "text",
 };
 
-StatelessTextAreaField.displayName = "StatelessTextAreaField";
+StatelessTextInput.displayName = "TextInput";

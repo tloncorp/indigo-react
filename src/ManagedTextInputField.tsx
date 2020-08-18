@@ -2,7 +2,7 @@ import * as React from "react";
 import { useField } from "formik";
 
 import { Box } from "./Box";
-import { StatelessTextInputField } from "./StatelessTextInputField";
+import { StatelessTextInput } from "./StatelessTextInput";
 import { ErrorLabel } from "./ErrorLabel";
 import { Label } from "./Label";
 import { StructureProps } from "./systemHelpers";
@@ -40,7 +40,7 @@ export const ManagedTextInputField = ({
           {caption}
         </Label>
       ) : null}
-      <StatelessTextInputField
+      <StatelessTextInput
         type={type || "text"}
         mt="2"
         disabled={disabled}

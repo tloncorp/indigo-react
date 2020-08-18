@@ -67,14 +67,6 @@ export {
   StatelessToggleSwitchField,
   StatelessToggleSwitchFieldProps,
 } from "./StatelessToggleSwitchField";
-export {
-  StatelessTextInputField,
-  StatelessTextInputFieldProps,
-} from "./StatelessTextInputField";
-export {
-  StatelessTextAreaField,
-  StatelessTextAreaFieldProps,
-} from "./StatelessTextAreaField";
 
 /**
  * Form Parts
@@ -85,12 +77,17 @@ export { Indicator, IndicatorProps } from "./Indicator";
 export { Checkbox, CheckboxProps } from "./Checkbox";
 export { ToggleSwitch, ToggleSwitchProps } from "./ToggleSwitch";
 export { RadioButton, RadioButtonProps } from "./RadioButton";
+export {
+  StatelessTextInput,
+  StatelessTextInputProps,
+} from "./StatelessTextInput";
+export { StatelessTextArea, StatelessTextAreaProps } from "./StatelessTextArea";
 
 /**
  * Managed Fields
  */
-export { Form } from "./Form";
 export { ManagedForm } from "./ManagedForm";
+export { FormController } from "./FormController";
 export { ManagedTextInputField } from "./ManagedTextInputField";
 export { ManagedTextAreaField } from "./ManagedTextAreaField";
 export { ManagedCheckboxField } from "./ManagedCheckboxField";

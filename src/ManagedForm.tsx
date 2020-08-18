@@ -1,14 +1,14 @@
-import { Formik } from "formik";
+import { Form as FormikForm } from "formik";
 import styled from "styled-components";
 import { compose } from "styled-system";
-import { CommonStyleProps, commonStyle } from "./systemHelpers";
+import { structureStyle, StructureProps } from "./systemHelpers";
 
-export type ManagedFormProps = CommonStyleProps;
+type ManagedFormProps = StructureProps;
 
-export const ManagedForm = styled(Formik)<
+export const ManagedForm = styled(FormikForm)<
   React.PropsWithChildren<ManagedFormProps>
 >`
-  ${compose(...commonStyle)}
+  ${compose(...structureStyle)}
 `;
 
 ManagedForm.displayName = "ManagedForm";

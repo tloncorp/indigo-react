@@ -2,7 +2,7 @@ import * as React from "react";
 import { useField } from "formik";
 
 import { Box } from "./Box";
-import { StatelessTextAreaField } from "./StatelessTextAreaField";
+import { StatelessTextArea } from "./StatelessTextArea";
 import { ErrorLabel } from "./ErrorLabel";
 import { Label } from "./Label";
 import { StructureProps } from "./systemHelpers";
@@ -40,7 +40,7 @@ export const ManagedTextAreaField = ({
           {caption}
         </Label>
       ) : null}
-      <StatelessTextAreaField
+      <StatelessTextArea
         mt="2"
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
