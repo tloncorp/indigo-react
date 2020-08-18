@@ -1,0 +1,15 @@
+
+# Changelog
+
+- 1.2.0 (2020-08-17)
+
+    * Renames BackgroundImg to BackgroundImage
+    * Renames Img to Image
+    * Adds top and bottom caps on Menu
+    * Removes props on MenuButton. It now has same optional props as Button.
+    * Renames Disclosure to DisclosureBox
+    * Disclosure Box now does not use Reach UI
+    * Adds cursor prop
+    * Generally expands prop options on components
+    * New Components: Action, AspectRatio, BaseForm, BaseAnchor, BaseButton, BaseCode, BaseImage, BaseInput, BaseLabel, BaseSVG, BaseTextArea, Checkbox, RadioButton, Indicator, ToggleSwitch, ErrorLabel, Inline, ManagedCheckboxField, ManagedForm, FormController, ManagedRadioButtonField, ManagedTextInputField, ManagedToggleSwitchField, Reset, StatelessCheckboxField, StatelessTextArea, StatelessTextInput and StatelessToggleSwitchField
+    * New Icons: Smiley, Heart, XSmall, PlusSmall, Weather, Clock, Chat, Links, Publish, Groups, Gear, LeapArrow, Home, TrashCan
