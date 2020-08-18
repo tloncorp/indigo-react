@@ -53,6 +53,10 @@ Many of these props have corrosponding styling shortcuts, drawn from the provide
 
 Take a look at the [theme](https://www.github.com/urbit/indigo-light) to get a sense for which style values can be accessed from styled props.
 
+## Development
+
+See [DEVELOPMENT.md](https://github.com/urbit/indigo-react/blob/master/DEVELOPMENT.md) for example cases of component patterns used to create Indigo.
+
 ### Related
 
 | Library      | Github                                    | NPM                                              |

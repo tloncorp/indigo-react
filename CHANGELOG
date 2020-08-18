@@ -10,6 +10,8 @@
     * Renames Disclosure to DisclosureBox
     * Disclosure Box now does not use Reach UI
     * Adds cursor prop
+    * Adds /examples
+    * CSS Reset is now a component called Resest, instead of a string
     * Generally expands prop options on components
     * New Components: Action, AspectRatio, BaseForm, BaseAnchor, BaseButton, BaseCode, BaseImage, BaseInput, BaseLabel, BaseSVG, BaseTextArea, Checkbox, RadioButton, Indicator, ToggleSwitch, ErrorLabel, Inline, ManagedCheckboxField, ManagedForm, FormController, ManagedRadioButtonField, ManagedTextInputField, ManagedToggleSwitchField, Reset, StatelessCheckboxField, StatelessTextArea, StatelessTextInput and StatelessToggleSwitchField
     * New Icons: Smiley, Heart, XSmall, PlusSmall, Weather, Clock, Chat, Links, Publish, Groups, Gear, LeapArrow, Home, TrashCan
