@@ -19,8 +19,8 @@ import {
   StatelessCheckboxField,
   StatelessRadioButtonField,
   StatelessToggleSwitchField,
-  StatelessTextInputField,
-  StatelessTextAreaField,
+  StatelessTextInput,
+  StatelessTextArea,
   ManagedTextInputField,
   ManagedToggleSwitchField,
   ManagedTextAreaField,
@@ -30,10 +30,10 @@ import {
   RadioButton,
   ToggleSwitch,
   Rule,
-  ManagedForm,
+  FormController,
   ManagedCheckboxField,
   ManagedRadioButtonField,
-  Form,
+  ManagedForm,
   _light as light,
   _dark as dark,
   Theme,
@@ -499,14 +499,14 @@ const App = () => {
               <Label gray mt="2">
                 Note that the entire area of the field is a clickable area.
               </Label>
-              <StatelessTextInputField
+              <StatelessTextInput
                 mt="2"
                 value={statelessTextInputFieldValue}
                 onChange={(e: React.FormEvent<HTMLInputElement>) =>
                   statelessTextInputFieldOnChange(inputTargetVal(e))
                 }
                 hasError={checkboxErrorTriggerSelected}
-              ></StatelessTextInputField>
+              ></StatelessTextInput>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
                 Error Message
               </ErrorLabel>
@@ -521,7 +521,7 @@ const App = () => {
               <Label gray mt="2">
                 Note that the entire area of the field is a clickable area.
               </Label>
-              <StatelessTextAreaField
+              <StatelessTextArea
                 mt="2"
                 rows={8}
                 value={statelessTextAreaFieldValue}
@@ -529,7 +529,7 @@ const App = () => {
                   statelessTextAreaFieldOnChange(textAreaTargetVal(e))
                 }
                 hasError={checkboxErrorTriggerSelected}
-              ></StatelessTextAreaField>
+              ></StatelessTextArea>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
                 Error Message
               </ErrorLabel>
@@ -541,7 +541,7 @@ const App = () => {
           <Col p={p} width="50%">
             <Rule />
             <Text py="2">{"<ManagedForm />"}</Text>
-            <ManagedForm
+            <FormController
               initialValues={initialValues}
               validationSchema={ManagedFormSchema}
               onSubmit={(values, { setSubmitting }) => {
@@ -551,7 +551,7 @@ const App = () => {
                 }, 400);
               }}
             >
-              <Form display="flex" flexDirection="column">
+              <ManagedForm display="flex" flexDirection="column">
                 <Text p="3">My Managed Form</Text>
                 <ManagedTextInputField
                   p="3"
@@ -614,8 +614,8 @@ const App = () => {
                 <Button primary type="submit">
                   Submit
                 </Button>
-              </Form>
-            </ManagedForm>
+              </ManagedForm>
+            </FormController>
           </Col>
 
           <Col p={p} width="50%">
@@ -666,13 +666,13 @@ const App = () => {
                   MenuButton
                 </MenuButton>
                 <MenuList>
-                  <MenuItem onClick={() => console.log("Command 1")}>
+                  <MenuItem onSelect={() => console.log("Command 1")}>
                     Command 1
                   </MenuItem>
-                  <MenuItem onClick={() => console.log("Command 2")}>
+                  <MenuItem onSelect={() => console.log("Command 2")}>
                     Command 2
                   </MenuItem>
-                  <MenuItem onClick={() => console.log("Command 3")}>
+                  <MenuItem onSelect={() => console.log("Command 3")}>
                     Command 3
                   </MenuItem>
                 </MenuList>
