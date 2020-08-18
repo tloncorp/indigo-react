@@ -152,8 +152,6 @@ const selectorDefaults = {
   position: "absolute",
   padding: "6px",
   borderRadius: "999px",
-  // top: '1px',
-  // left: '1px',
   border: "1px solid",
   // content property `' '` must be wrapped in quotes.
   content: "' '",
