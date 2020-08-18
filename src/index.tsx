@@ -51,6 +51,7 @@ export { BaseInput, BaseInputProps } from "./BaseInput";
 export { BaseTextArea, BaseTextAreaProps } from "./BaseTextArea";
 export { BaseLabel, BaseLabelProps } from "./BaseLabel";
 export { BaseCode, BaseCodeProps } from "./BaseCode";
+export { BaseForm, BaseFormProps } from "./BaseForm";
 
 /**
  * Stateless Fields
