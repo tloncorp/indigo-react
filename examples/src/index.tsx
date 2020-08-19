@@ -44,7 +44,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-} from "ui";
+} from "local-indigo-react";
 import { ThemeProvider } from "styled-components";
 
 interface ManagedFormValues {

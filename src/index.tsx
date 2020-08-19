@@ -26,7 +26,7 @@ export { FourUp, FourUpProps } from "./FourUp";
 /**
  * Buttons + Anchors
  */
-export { Action, ActionProps } from "./Action";
+export { Action, ActionProps } from "./Action/Action";
 export { Anchor, AnchorProps } from "./Anchor";
 export { Button, ButtonProps } from "./Button";
 

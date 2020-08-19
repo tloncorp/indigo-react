@@ -14,7 +14,7 @@ import {
   typography,
   TypographyProps,
 } from "styled-system";
-import { container, action, button } from "./systemTokens";
+import { container, action, button } from "../systemTokens";
 
 export type ActionProps = FlexboxProps &
   LayoutProps &
