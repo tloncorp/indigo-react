@@ -7,7 +7,7 @@ export type ContinuousProgressBarProps = CommonStyleProps & {
   percentage?: number;
 };
 
-const style = ({ percentage }: ContinuousProgressBarProps) =>
+const style = ({ percentage = 0 }: ContinuousProgressBarProps) =>
   css({
     display: "flex",
     width: "100%",
@@ -25,7 +25,7 @@ const style = ({ percentage }: ContinuousProgressBarProps) =>
       content: "' '",
       height: "100%",
       borderRight: "1px solid",
-      borderRightColor: "white",
+      borderRightColor: percentage < 1 ? "transparent" : "white",
       transition: "width 200ms",
     },
   } as SystemStyleObject);

@@ -82,5 +82,6 @@ html, body, div, span, applet, object, iframe,
       to {
         transform: rotate(360deg);
       }
+  }
 `;
 Reset.displayName = "CSSReset";

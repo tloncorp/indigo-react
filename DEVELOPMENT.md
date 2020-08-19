@@ -106,7 +106,10 @@ TwoUp.displayName = "TwoUp";
 ## Scripts
 
 `npm run build` Builds the library with `esbuild` and constructs typings with `tsc`
+
 `npm run esbuild` Builds the library with `esbuild` but skips generating typings. Typings take a long time to generate, so if you havn't changed your type definitons, this can rapidly speed up iteration time for visual polish tasks.
+
+`npm run reset` Removes node_modules and package-lock.json and npm installs fresh
 
 ### Related
 

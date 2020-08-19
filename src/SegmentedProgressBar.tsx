@@ -70,7 +70,7 @@ export const SegmentedProgressBar = ({
   return (
     <Background {...props}>
       {sequence(segments).map((_, index: number) => (
-        <Segment active={index < current} />
+        <Segment key={"segment" + index} active={index < current} />
       ))}
     </Background>
   );
