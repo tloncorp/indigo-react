@@ -104,6 +104,7 @@ export {
   SegmentedProgressBar,
   SegmentedProgressBarProps,
 } from "./SegmentedProgressBar";
+export { LoadingSpinner, LoadingSpinnerProps } from "./LoadingSpinner";
 /**
  * Utility
  */

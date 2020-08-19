@@ -46,7 +46,9 @@ import {
   MenuItem,
   ContinuousProgressBar,
   SegmentedProgressBar,
+  LoadingSpinner,
 } from "local-indigo-react";
+import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
 
 interface ManagedFormValues {
@@ -189,10 +191,13 @@ const App = () => {
     myStory: "",
   };
 
-  const [theme, chooseTheme] = useState(dark);
+  const [theme, chooseTheme] = useState(light);
 
   return (
     <ThemeProvider theme={theme}>
+      {
+        // <Text>{JSON.stringify(css({color:'blue'})(theme))}</Text>
+      }
       <Reset theme={theme} />
       <Col p={p}>
         <Row p={p}>
@@ -702,7 +707,20 @@ const App = () => {
           </Col>
           <Col p={p} width="50%">
             <Rule />
-            <Text py="2">{"<Menu />, <MenuButton />"}</Text>
+            <Text py="2">{"<LoadingSpinner />, <MenuButton />"}</Text>
+            <Box>
+              <Box p="2">
+                <LoadingSpinner />
+              </Box>
+
+              <Box p="2" backgroundColor="black">
+                <LoadingSpinner light />
+              </Box>
+
+              <Box p="2" backgroundColor="white">
+                <LoadingSpinner dark />
+              </Box>
+            </Box>
           </Col>
         </Row>
       </Col>

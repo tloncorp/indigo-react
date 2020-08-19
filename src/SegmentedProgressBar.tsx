@@ -76,4 +76,6 @@ export const SegmentedProgressBar = ({
   );
 };
 
+Background.displayName = "Background";
+Segment.displayName = "Segment";
 SegmentedProgressBar.displayName = "SegmentedProgressBar";
