@@ -1,6 +1,9 @@
 
 # Changelog
 
+- 1.2.1 (2020-08-18)
+    * Adds SegmentedProgressBar, ContinuousProgressBar
+
 - 1.2.0 (2020-08-17)
 
     * Renames BackgroundImg to BackgroundImage

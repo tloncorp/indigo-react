@@ -44,7 +44,9 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-} from "ui";
+  ContinuousProgressBar,
+  SegmentedProgressBar,
+} from "local-indigo-react";
 import { ThemeProvider } from "styled-components";
 
 interface ManagedFormValues {
@@ -653,7 +655,7 @@ const App = () => {
               <Text>Extra Stuff</Text>
             </DisclosureButton>
             <DisclosureBox isOpen={disclosureBoxOpen}>
-              <Text>Hello</Text>
+              <Text pl="2">Hello</Text>
             </DisclosureBox>
           </Col>
           <Col p={p} width="50%">
@@ -661,9 +663,9 @@ const App = () => {
             <Text py="2">{"<Menu />, <MenuButton />"}</Text>
             <Box>
               <Menu>
-                <MenuButton>
-                  <Icon mr="2" icon="ChevronSouth" />
+                <MenuButton width="100%" justifyContent="space-between">
                   MenuButton
+                  <Icon ml="2" icon="ChevronSouth" />
                 </MenuButton>
                 <MenuList>
                   <MenuItem onSelect={() => console.log("Command 1")}>
@@ -678,6 +680,29 @@ const App = () => {
                 </MenuList>
               </Menu>
             </Box>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col p={p} width="50%">
+            <Rule />
+            <Text py="2">
+              {"<ContinuousProgressBar />, <SegmentedProgressBar />"}
+            </Text>
+
+            <ContinuousProgressBar mb="2" percentage={10} />
+            <ContinuousProgressBar mb="2" percentage={33} />
+            <ContinuousProgressBar mb="2" percentage={50} />
+            <ContinuousProgressBar mb="2" percentage={75} />
+            <ContinuousProgressBar mb="2" percentage={100} />
+            <ContinuousProgressBar mb="4" percentage={0} />
+
+            <SegmentedProgressBar mb="2" segments={4} current={2} />
+            <SegmentedProgressBar mb="2" segments={8} current={2} />
+          </Col>
+          <Col p={p} width="50%">
+            <Rule />
+            <Text py="2">{"<Menu />, <MenuButton />"}</Text>
           </Col>
         </Row>
       </Col>
