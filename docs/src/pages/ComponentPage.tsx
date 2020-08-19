@@ -2,11 +2,14 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Text } from "local-indigo-react";
+import * as indigo from "local-indigo-react";
 import { baseURL } from "../constants";
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+
 // import { snippet } from '../../../src/Action/docs'
 
 const fetchProperties = (id: string) => {
-  return fetch(`${baseURL}/data/${id}.json`)
+  return fetch(`${baseURL}/componentData/${id}.json`)
     .then((response) => response.json())
     .catch((err) => console.error(err, `${baseURL}/components/${id}.json`));
 };
@@ -22,7 +25,10 @@ export const ComponentPage = () => {
 
   const promise = fetchComponentData(id);
 
-  const [properties, setProperties] = useState(undefined);
+  const [properties, setProperties] = useState({
+    displayName: "",
+    snippet: "",
+  });
   // const [metadata, setMetadata] = useState(null);
 
   useEffect(() => {
@@ -33,13 +39,14 @@ export const ComponentPage = () => {
 
   return (
     <Col>
-      <Text>{id || ""}</Text>
-      {typeof properties !== "undefined" ? (
-        <>
-          <Text>{properties.displayName}</Text>
-          <Text>{properties.snippet}</Text>
-        </>
-      ) : null}
+      <Text>{properties.displayName}</Text>
+      <Text>{properties.snippet}</Text>
+
+      <LiveProvider scope={indigo} code={properties.snippet || ""}>
+        <LiveEditor />
+        <LiveError />
+        <LivePreview />
+      </LiveProvider>
     </Col>
   );
 };

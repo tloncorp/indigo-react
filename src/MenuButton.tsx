@@ -38,12 +38,13 @@ const style = ({
   disabled = false,
 }: MenuButtonProps) =>
   css({
-    width: "auto",
+    width: "100%",
+    justifyContent: "space-between",
     border: "1px solid",
     height: 5,
     borderRadius: 2,
     overflow: "hidden",
-    px: 3,
+    px: 2,
     ...button.text,
     ...container.center,
     ...stateStyle(primary, destructive, disabled),

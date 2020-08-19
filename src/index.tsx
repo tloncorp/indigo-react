@@ -96,6 +96,16 @@ export { ManagedRadioButtonField } from "./ManagedRadioButtonField";
 export { ManagedToggleSwitchField } from "./ManagedToggleSwitchField";
 
 /**
+ * Indication
+ */
+
+export { ContinuousProgressBar } from "./ContinuousProgressBar";
+export {
+  SegmentedProgressBar,
+  SegmentedProgressBarProps,
+} from "./SegmentedProgressBar";
+export { LoadingSpinner, LoadingSpinnerProps } from "./LoadingSpinner";
+/**
  * Utility
  */
 export { Reset } from "./Reset";

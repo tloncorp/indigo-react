@@ -16,7 +16,7 @@
     "react": "../node_modules/react"
   },
   "author": "Gavin Atkinson",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/react-dom": "^16.9.8",
     "@types/yup": "^0.29.5",
@@ -26,6 +26,8 @@
   "dependencies": {
     "@tlon/indigo-light": "^1.0.4",
     "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "styled-system": "^5.1.5",
     "local-indigo-react": "file:..",
     "yup": "^0.29.3"
   }

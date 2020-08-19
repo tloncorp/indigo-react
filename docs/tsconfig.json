@@ -6,7 +6,6 @@
     "outDir": "dist",
     "jsx": "react",
     "skipLibCheck": true,
-    // "declaration": true,
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
