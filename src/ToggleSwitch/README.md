@@ -1,4 +1,4 @@
-    # Action
+    # ToggleSwitch
 
     ## Purpose
 

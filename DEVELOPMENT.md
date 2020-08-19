@@ -12,7 +12,7 @@ Creating a basic theme-aware component with dynamic properties from scratch.
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 // commonStyle includes all commonly used styled-system props
-import { commonStyle, CommonStyleProps } from "./systemHelpers";
+import { commonStyle, CommonStyleProps } from "../systemHelpers";
 
 // Define property types and export typing
 export type LabelProps = CommonStyleProps & {
@@ -54,7 +54,7 @@ Creating a styled component from an existing component, like one sourced from a 
 import { Form as FormikForm } from "formik";
 import styled from "styled-components";
 import { compose } from "styled-system";
-import { structureStyle, StructureProps } from "./systemHelpers";
+import { structureStyle, StructureProps } from "../systemHelpers";
 
 // Create and export property typing.
 type ManagedFormProps = StructureProps;
@@ -73,9 +73,9 @@ This is a component made from several styled components imported from Indigo.
 
 ```tsx
 import * as React from "react";
-import { CommonStyleProps } from "./systemHelpers";
-import { Row } from "./Row";
-import { Col } from "./Col";
+import { CommonStyleProps } from "../systemHelpers";
+import { Row } from "../Row/Row";
+import { Col } from "../Col/Col";
 
 // Create and export the main component typing
 export type TwoUpProps = CommonStyleProps &

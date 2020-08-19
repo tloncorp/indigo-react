@@ -1,4 +1,4 @@
-    # Action
+    # Indicator
 
     ## Purpose
 

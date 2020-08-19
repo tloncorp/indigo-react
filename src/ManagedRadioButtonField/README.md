@@ -1,4 +1,4 @@
-    # Action
+    # ManagedRadioButtonField
 
     ## Purpose
 

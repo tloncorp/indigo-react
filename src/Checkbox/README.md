@@ -1,4 +1,4 @@
-    # Action
+    # Checkbox
 
     ## Purpose
 

@@ -1,2 +1,1 @@
-const snippet = "<Action>Action</Action>";
-export default snippet;
+export const snippet = "<Action> </Action>";

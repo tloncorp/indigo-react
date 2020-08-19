@@ -1,4 +1,4 @@
-    # Action
+    # Inline
 
     ## Purpose
 

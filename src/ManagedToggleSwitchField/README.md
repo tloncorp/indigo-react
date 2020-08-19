@@ -1,4 +1,4 @@
-    # Action
+    # ManagedToggleSwitchField
 
     ## Purpose
 

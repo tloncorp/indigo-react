@@ -1,4 +1,4 @@
-    # Action
+    # StatelessToggleSwitchField
 
     ## Purpose
 
