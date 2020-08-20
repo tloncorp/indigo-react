@@ -1,0 +1,6 @@
+{
+  "id": "managedRadioButtonField",
+  "displayName": "ManagedRadioButtonField",
+  "snippet": "<ManagedRadioButtonField> </ManagedRadioButtonField>",
+  "props": []
+}

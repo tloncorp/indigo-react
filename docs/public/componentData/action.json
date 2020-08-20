@@ -1,6 +1,6 @@
 {
   "id": "action",
   "displayName": "Action",
-  "snippet": "<Action>Action</Action>",
+  "snippet": "<Action> </Action>",
   "props": []
 }

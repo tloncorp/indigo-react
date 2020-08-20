@@ -1,0 +1,6 @@
+{
+  "id": "errorLabel",
+  "displayName": "ErrorLabel",
+  "snippet": "<ErrorLabel> </ErrorLabel>",
+  "props": []
+}

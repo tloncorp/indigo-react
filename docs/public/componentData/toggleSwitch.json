@@ -1,0 +1,6 @@
+{
+  "id": "toggleSwitch",
+  "displayName": "ToggleSwitch",
+  "snippet": "<ToggleSwitch> </ToggleSwitch>",
+  "props": []
+}

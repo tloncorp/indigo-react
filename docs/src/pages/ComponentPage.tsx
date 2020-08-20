@@ -1,17 +1,15 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Col, Text } from "local-indigo-react";
+import { useParams, Link } from "react-router-dom";
+import { Col, Text, TwoUp, Center } from "local-indigo-react";
 import * as indigo from "local-indigo-react";
 import { baseURL } from "../constants";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
-// import { snippet } from '../../../src/Action/docs'
-
 const fetchProperties = (id: string) => {
   return fetch(`${baseURL}/componentData/${id}.json`)
     .then((response) => response.json())
-    .catch((err) => console.error(err, `${baseURL}/components/${id}.json`));
+    .catch((err) => console.error(err));
 };
 
 const fetchComponentData = (id: string) => {
@@ -25,11 +23,7 @@ export const ComponentPage = () => {
 
   const promise = fetchComponentData(id);
 
-  const [properties, setProperties] = useState({
-    displayName: "",
-    snippet: "",
-  });
-  // const [metadata, setMetadata] = useState(null);
+  const [properties, setProperties] = useState();
 
   useEffect(() => {
     promise.then((res) => {
@@ -37,16 +31,26 @@ export const ComponentPage = () => {
     });
   }, []);
 
-  return (
-    <Col>
-      <Text>{properties.displayName}</Text>
-      <Text>{properties.snippet}</Text>
+  if (typeof properties !== "undefined") {
+    return (
+      <Col>
+        <Link to="/">{"<- Index"}</Link>
+        <Text>{properties!.displayName}</Text>
 
-      <LiveProvider scope={indigo} code={properties.snippet || ""}>
-        <LiveEditor />
-        <LiveError />
-        <LivePreview />
-      </LiveProvider>
-    </Col>
-  );
+        <LiveProvider scope={indigo} code={properties!.snippet || ""}>
+          <TwoUp>
+            <Col>
+              <LiveEditor />
+              <LiveError />
+            </Col>
+            <Center>
+              <LivePreview />
+            </Center>
+          </TwoUp>
+        </LiveProvider>
+      </Col>
+    );
+  } else {
+    return <Text>Loading...</Text>;
+  }
 };

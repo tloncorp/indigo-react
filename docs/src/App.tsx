@@ -12,10 +12,13 @@ export const App = () => {
     <ThemeProvider theme={light}>
       <Reset />
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/component/:id" component={ComponentPage} />
-        </Switch>
+        <Col p="3">
+          <Text pb="3">Indigo Documentation</Text>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/component/:id" component={ComponentPage} />
+          </Switch>
+        </Col>
       </Router>
     </ThemeProvider>
   );

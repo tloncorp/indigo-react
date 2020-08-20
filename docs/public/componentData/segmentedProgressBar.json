@@ -1,0 +1,6 @@
+{
+  "id": "segmentedProgressBar",
+  "displayName": "SegmentedProgressBar",
+  "snippet": "<SegmentedProgressBar> </SegmentedProgressBar>",
+  "props": []
+}

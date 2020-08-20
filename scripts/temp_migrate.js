@@ -1,11 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-// {
-//     "id": "action",
-//     "displayName": "Action",
-//     "snippet": "<Action>Action</Action>",
-//     "props": []
-//   }
+
 const src = __dirname + "/../src";
 
 const exclude = [
@@ -18,7 +13,7 @@ const exclude = [
 
 const include = [".tsx"];
 
-const basicDocTs = (name) => `export const snippet = '<${name}> </${name}>';`;
+const basicDocjson = (name) => `{ snippet: '<${name}> </${name}>' }`;
 const basicReadme = (name) => `
     # ${name}
 
@@ -45,20 +40,20 @@ const sourceFiles = fs
   .filter((parsedPath) => include.includes(parsedPath.ext))
   .filter((parsedPath) => !exclude.includes(parsedPath.base));
 
-sourceFiles.map((parsedPath) => fs.mkdirSync(src + "/" + parsedPath.name));
+// sourceFiles.map((parsedPath) => fs.mkdirSync(src + "/" + parsedPath.name));
 
 sourceFiles.map((parsedPath) => {
   const oldPath = src + "/" + parsedPath.base;
   const newPath = src + "/" + parsedPath.name + "/" + parsedPath.base;
   //   console.log(oldPath, newPath);
-  fs.renameSync(oldPath, newPath, function (err) {
-    if (err) throw err;
-    //   console.log('Successfully renamed - AKA moved!')
-  });
+  // fs.renameSync(oldPath, newPath, function (err) {
+  //   if (err) throw err;
+  //   //   console.log('Successfully renamed - AKA moved!')
+  // });
   const readmePath = src + "/" + parsedPath.name + "/" + "README.md";
-  const docsTsPath = src + "/" + parsedPath.name + "/" + "docs.ts";
-  fs.writeFileSync(readmePath, basicReadme(parsedPath.name), "utf8");
-  fs.writeFileSync(docsTsPath, basicDocTs(parsedPath.name), "utf8");
+  const docsTsPath = src + "/" + parsedPath.name + "/" + "docs.json";
+  // fs.writeFileSync(readmePath, basicReadme(parsedPath.name), "utf8");
+  fs.writeFileSync(docsTsPath, basicDocjson(parsedPath.name), "utf8");
 });
 
 // console.log(sourceFiles)
