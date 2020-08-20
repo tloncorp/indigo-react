@@ -1,13 +1,18 @@
 
 # Changelog
 
+- 1.2.2 (2020-08-20)
+    * Adds ActionAnchor
+    * Reorganizes library files to accomodate better documentation
+    * Adds scripts which generate basic documentation for docs site
+    * Adds skeleton of a docs site
+
 - 1.2.1 (2020-08-18)
     * Adds SegmentedProgressBar, ContinuousProgressBar
     * Adds LoadingSpinner
     * Gives MenuButton correct x pad and justify-between
 
 - 1.2.0 (2020-08-17)
-
     * Renames BackgroundImg to BackgroundImage
     * Renames Img to Image
     * Adds top and bottom caps on Menu

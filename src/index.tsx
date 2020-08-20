@@ -10,6 +10,7 @@ export { Text, TextProps } from "./Text/Text";
 export { Label, LabelProps } from "./Label/Label";
 export { ErrorLabel, ErrorLabelProps } from "./ErrorLabel/ErrorLabel";
 export { Icon, IconProps } from "./Icon/Icon";
+
 /**
  * Layout
  */
@@ -26,8 +27,10 @@ export { FourUp, FourUpProps } from "./FourUp/FourUp";
  * Buttons + Anchors
  */
 export { Action, ActionProps } from "./Action/Action";
-export { Anchor, AnchorProps } from "./Anchor/Anchor";
+export { ActionAnchor, ActionAnchorProps } from "./ActionAnchor/ActionAnchor";
 export { Button, ButtonProps } from "./Button/Button";
+export { ButtonAnchor, ButtonAnchorProps } from "./ButtonAnchor/ButtonAnchor";
+export { Anchor, AnchorProps } from "./Anchor/Anchor";
 
 /**
  * Controls

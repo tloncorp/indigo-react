@@ -47,6 +47,8 @@ import {
   ContinuousProgressBar,
   SegmentedProgressBar,
   LoadingSpinner,
+  ButtonAnchor,
+  ActionAnchor,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -722,6 +724,11 @@ const App = () => {
               </Box>
             </Box>
           </Col>
+        </Row>
+
+        <Row>
+          <ButtonAnchor href="http://urbit.org">ButtonAnchor</ButtonAnchor>
+          <ActionAnchor href="http://urbit.org">ActionAnchor</ActionAnchor>
         </Row>
       </Col>
     </ThemeProvider>

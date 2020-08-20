@@ -35,9 +35,9 @@ export const ComponentPage = () => {
     return (
       <Col>
         <Link to="/">{"<- Index"}</Link>
-        <Text>{properties!.displayName}</Text>
+        <Text>{properties.displayName}</Text>
 
-        <LiveProvider scope={indigo} code={properties!.snippet || ""}>
+        <LiveProvider scope={indigo} code={properties.snippet || ""}>
           <TwoUp>
             <Col>
               <LiveEditor />

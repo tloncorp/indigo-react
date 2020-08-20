@@ -87,6 +87,7 @@ const button = {
     verticalAlign: "middle",
     lineHeight: 1.333334,
     fontWeight: 400,
+    userSelect: "none",
     //   fontSize: 0, // Applied by <Reset />
   } as SystemStyleObject,
 };

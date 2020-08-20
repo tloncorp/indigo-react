@@ -11,7 +11,7 @@ export type MenuListProps = ReachMenuListProps & CommonStyleProps;
 
 const style = () =>
   css({
-    width: "200px",
+    // width: "200px",
     padding: 0,
     outline: "none",
     mt: "1px",
