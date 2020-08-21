@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Icon, Inline, Label } from "../index";
+import { Icon, Label, Box } from "../index";
 import { CommonStyleProps } from "../systemHelpers";
 
 export type ErrorLabelProps = CommonStyleProps & {
@@ -11,7 +11,7 @@ export const ErrorLabel = ({
   children,
   ...props
 }: ErrorLabelProps & React.HTMLAttributes<HTMLDivElement>) => (
-  <Inline display={hasError ? "flex" : "none"} {...props}>
+  <Box display={hasError ? "flex" : "none"} {...props}>
     <Icon
       mr="2"
       backgroundColor="red"
@@ -20,7 +20,7 @@ export const ErrorLabel = ({
       borderRadius="999px"
     />
     <Label color="red">{children}</Label>
-  </Inline>
+  </Box>
 );
 
 ErrorLabel.displayName = "ErrorLabel";

@@ -1,6 +1,6 @@
 {
   "id": "aspectRatio",
   "displayName": "AspectRatio",
-  "snippet": "<AspectRatio> </AspectRatio>",
+  "snippet": "<AspectRatio aspectRatio={50} bg='blue'/>",
   "props": []
 }

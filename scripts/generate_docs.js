@@ -29,15 +29,16 @@ function lowercaseFirstLetter(string) {
 }
 
 sourceFiles.map((parsedPath) => {
-  const componentDocsJSON = JSON.parse(
-    fs.readFileSync(src + "/" + parsedPath.base + "/" + "docs.json")
+  const componentExampleJs = fs.readFileSync(
+    src + "/" + parsedPath.base + "/" + "docs.js",
+    { encoding: "utf8" }
   );
   const id = lowercaseFirstLetter(parsedPath.base);
   const displayName = parsedPath.base;
   const data = {
     id,
     displayName,
-    ...componentDocsJSON,
+    snippet: componentExampleJs,
     props: [],
   };
 

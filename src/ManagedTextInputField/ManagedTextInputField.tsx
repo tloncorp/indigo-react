@@ -5,7 +5,7 @@ import { Box } from "../Box/Box";
 import { StatelessTextInput } from "../StatelessTextInput/StatelessTextInput";
 import { ErrorLabel } from "../ErrorLabel/ErrorLabel";
 import { Label } from "../Label/Label";
-import { StructureProps } from "../systemHelpers";
+import { CommonStyleProps } from "../systemHelpers";
 
 export type ManagedTextInputFieldProps = {
   hasError?: boolean;
@@ -17,7 +17,7 @@ export type ManagedTextInputFieldProps = {
   type?: string;
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLInputElement> &
-  StructureProps;
+  CommonStyleProps;
 
 export const ManagedTextInputField = ({
   disabled,
@@ -28,6 +28,10 @@ export const ManagedTextInputField = ({
   id,
   children,
   type,
+  fontFamily,
+  borderColor,
+  color,
+  fontWeight,
   ...props
 }: ManagedTextInputFieldProps) => {
   const [field, meta] = useField(id);
@@ -41,6 +45,10 @@ export const ManagedTextInputField = ({
         </Label>
       ) : null}
       <StatelessTextInput
+        borderColor={borderColor}
+        color={color}
+        fontWeight={fontWeight}
+        fontFamily={fontFamily}
         type={type || "text"}
         mt="2"
         disabled={disabled}

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Col, Text, TwoUp, Center } from "local-indigo-react";
-import * as indigo from "local-indigo-react";
+import { Col, Text } from "local-indigo-react";
 import { baseURL } from "../constants";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import { ComponentPreview } from "../components/ComponentPreview";
+import { ComponentProperties } from "../types";
 
 const fetchProperties = (id: string) => {
   return fetch(`${baseURL}/componentData/${id}.json`)
@@ -13,9 +13,11 @@ const fetchProperties = (id: string) => {
 };
 
 const fetchComponentData = (id: string) => {
-  return Promise.resolve(fetchProperties(id)).then((properties) => {
-    return properties;
-  });
+  return Promise.resolve(fetchProperties(id)).then(
+    (properties: ComponentProperties) => {
+      return properties;
+    }
+  );
 };
 
 export const ComponentPage = () => {
@@ -23,31 +25,18 @@ export const ComponentPage = () => {
 
   const promise = fetchComponentData(id);
 
-  const [properties, setProperties] = useState();
+  const [properties, setProperties] = useState<ComponentProperties>();
 
   useEffect(() => {
-    promise.then((res) => {
-      setProperties(res);
-    });
+    promise.then((properties) => setProperties(properties));
   }, []);
 
-  if (typeof properties !== "undefined") {
+  if (properties?.displayName) {
     return (
       <Col>
         <Link to="/">{"<- Index"}</Link>
         <Text>{properties.displayName}</Text>
-
-        <LiveProvider scope={indigo} code={properties.snippet || ""}>
-          <TwoUp>
-            <Col>
-              <LiveEditor />
-              <LiveError />
-            </Col>
-            <Center>
-              <LivePreview />
-            </Center>
-          </TwoUp>
-        </LiveProvider>
+        <ComponentPreview properties={properties} />
       </Col>
     );
   } else {

@@ -13,12 +13,13 @@ const style = ({ gray = false, bold = false, mono = false }: LabelProps) =>
     fontWeight: bold ? "bold" : "regular",
     color: gray ? "gray" : "black",
     fontFamily: mono ? "mono" : "sans",
-    display: "block",
     lineHeight: "short",
     fontSize: 0,
     pointerEvents: "none",
     userSelect: "none",
     verticalAlign: "middle",
+    display: "flex",
+    alignItems: "center",
     width: "100%",
   } as SystemStyleObject);
 

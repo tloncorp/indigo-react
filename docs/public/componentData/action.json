@@ -1,6 +1,6 @@
 {
   "id": "action",
   "displayName": "Action",
-  "snippet": "<Action> </Action>",
+  "snippet": "<Action onClick={() => console.log('Action')}>Action</Action>",
   "props": []
 }

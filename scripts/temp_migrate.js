@@ -13,7 +13,9 @@ const exclude = [
 
 const include = [".tsx"];
 
-const basicDocjson = (name) => `{ snippet: '<${name}> </${name}>' }`;
+const excludeExt = [".json", ".md"];
+
+const basicDocjs = (name) => `<${name}> </${name}>`;
 const basicReadme = (name) => `
     # ${name}
 
@@ -37,23 +39,37 @@ const basicReadme = (name) => `
 const sourceFiles = fs
   .readdirSync(src)
   .map((sourcePath) => path.parse(sourcePath))
-  .filter((parsedPath) => include.includes(parsedPath.ext))
-  .filter((parsedPath) => !exclude.includes(parsedPath.base));
+  // .filter((parsedPath) => include.includes(parsedPath.ext))
+  .filter((parsedPath) => !exclude.includes(parsedPath.base))
+  .filter((parsedPath) => !excludeExt.includes(parsedPath.ext));
 
 // sourceFiles.map((parsedPath) => fs.mkdirSync(src + "/" + parsedPath.name));
 
+console.log(sourceFiles);
+
 sourceFiles.map((parsedPath) => {
-  const oldPath = src + "/" + parsedPath.base;
-  const newPath = src + "/" + parsedPath.name + "/" + parsedPath.base;
+  // const oldPath = src + "/" + parsedPath.base;
+  // const newPath = src + "/" + parsedPath.name + "/" + parsedPath.base;
   //   console.log(oldPath, newPath);
   // fs.renameSync(oldPath, newPath, function (err) {
   //   if (err) throw err;
   //   //   console.log('Successfully renamed - AKA moved!')
   // });
-  const readmePath = src + "/" + parsedPath.name + "/" + "README.md";
-  const docsTsPath = src + "/" + parsedPath.name + "/" + "docs.json";
+  // const readmePath = src + "/" + parsedPath.name + "/" + "README.md";
+  const docsJsonPath = src + "/" + parsedPath.name + "/" + "docs.json";
+
+  const docsJsPath = src + "/" + parsedPath.name + "/" + "docs.js";
+
+  if (fs.existsSync(docsJsonPath)) {
+    fs.unlinkSync(docsJsonPath);
+  }
   // fs.writeFileSync(readmePath, basicReadme(parsedPath.name), "utf8");
-  fs.writeFileSync(docsTsPath, basicDocjson(parsedPath.name), "utf8");
+
+  if (fs.existsSync(docsJsPath)) {
+    // do something
+  } else {
+    fs.writeFileSync(docsJsPath, basicDocjs(parsedPath.name), "utf8");
+  }
 });
 
 // console.log(sourceFiles)

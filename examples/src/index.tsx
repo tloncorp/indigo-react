@@ -10,7 +10,7 @@ import {
   Anchor,
   Row,
   Col,
-  Inline,
+  Paragraph,
   BaseButton,
   BaseAnchor,
   Action,
@@ -118,8 +118,10 @@ const enumerateColors = (theme: Theme) =>
         borderColor="washedGray"
         borderRadius="2"
         width="12.5%"
+        px="2"
+        display="flex"
+        alignItems="center"
         height="5"
-        p="2"
         backgroundColor={v as string}
       >
         <Text color={k === "black" ? "white" : "black"}>{k}</Text>
@@ -224,23 +226,32 @@ const App = () => {
           <Col p={p}>
             <Rule />
             <Text py="2">{"<Text />"}</Text>
-            <Text>Default</Text>
-            <Text mono>Monospace</Text>
-            <Text bold>Bold</Text>
-            <Text gray>Gray</Text>
-            <Anchor href="http://urbit.org">http://www.urbit.org</Anchor>
-            <Anchor target="_blank" href="http://urbit.org">
-              Link to new Tab
-            </Anchor>
 
-            <Inline>
-              <Text>A </Text>
-              <Text color="green">bunch </Text>
-              <Text mono>of </Text>
-              <Text bold>inlined </Text>
-              <Text gray>text </Text>
-              <Anchor href="http://urbit.org">elements</Anchor>
-            </Inline>
+            <Col>
+              <Text>Default</Text>
+              <Text mono>Monospace</Text>
+              <Text bold>Bold</Text>
+              <Text gray>Gray</Text>
+              <Anchor href="http://urbit.org">http://www.urbit.org</Anchor>
+              <Anchor target="_blank" href="http://urbit.org">
+                Link to new Tab
+              </Anchor>
+            </Col>
+            <Box>
+              <Paragraph>
+                <Text>A </Text>
+                <Text color="green">bunch </Text>
+                <Text mono>of </Text>
+                <Text bold>inlined </Text>
+                <Text gray>
+                  If we haven’t seen them before, we can optionally register
+                  them for a new account. We then invalidate the token so it
+                  can’t be used again (though it was going to expire after 15
+                  minutes, anyways).
+                </Text>
+                <Anchor href="http://urbit.org">elements</Anchor>
+              </Paragraph>
+            </Box>
           </Col>
 
           <Col p={p}>

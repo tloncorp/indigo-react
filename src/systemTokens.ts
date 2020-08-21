@@ -85,10 +85,12 @@ const button = {
   text: {
     textAlign: "center",
     verticalAlign: "middle",
-    lineHeight: 1.333334,
+    lineHeight: "short",
     fontWeight: 400,
     userSelect: "none",
-    //   fontSize: 0, // Applied by <Reset />
+    fontSize: 0,
+    fontFamily: "sans",
+    textDecoration: "none",
   } as SystemStyleObject,
 };
 
@@ -111,6 +113,16 @@ const action = {
       "*": { fill: "lightRed" },
     },
   } as SystemStyleObjects,
+  text: {
+    textAlign: "left",
+    verticalAlign: "middle",
+    lineHeight: "short",
+    fontWeight: 400,
+    userSelect: "none",
+    fontSize: 0,
+    fontFamily: "sans",
+    textDecoration: "none",
+  } as SystemStyleObject,
 };
 
 const indicator = {
@@ -238,7 +250,15 @@ const textInput = {
       color: "red",
       backgroundColor: "washedRed",
     },
-  },
+  } as SystemStyleObjects,
+  text: {
+    textAlign: "left",
+    lineHeight: "short",
+    fontWeight: 400,
+    fontSize: 0,
+    fontFamily: "sans",
+    textDecoration: "none",
+  } as SystemStyleObject,
 };
 
 export {

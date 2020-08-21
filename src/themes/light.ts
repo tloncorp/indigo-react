@@ -91,7 +91,7 @@ export const light = {
     black: base.black,
 
     gray: scales.black60,
-    lightGray: scales.black30,
+    lightGray: scales.black20,
     washedGray: scales.black05,
 
     red: base.red,
@@ -132,14 +132,14 @@ export const light = {
   fontWeights: {
     thin: 300,
     regular: 400,
-    bold: 600,
+    bold: 500,
   },
   // line-height
   lineHeights: {
     min: 1.2,
-    short: 1.333334,
+    short: 1.33334,
     regular: 1.5,
-    tall: 1.666667,
+    tall: 1.66667,
   },
   // border, border-top, border-right, border-bottom, border-left
   borders: ["none", "1px solid"],

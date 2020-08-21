@@ -24,19 +24,11 @@ html, body, div, span, applet, object, iframe,
     vertical-align: baseline;
     box-sizing: border-box;
     font-weight: normal;
-    font-size: 12px;
-    font-family: Inter;
   }
   html, body {
     background-color: ${(p: { theme: Theme }) => p.theme.colors.white};
   }
-  body {
-    line-height: 1.3334;
-  }
-  * {
-    font-size: 12px;
-    font-family: Inter;
-  }
+
   ol, ul {
     list-style: none;
   }

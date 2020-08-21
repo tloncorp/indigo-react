@@ -2,7 +2,7 @@ import * as React from "react";
 import { useField } from "formik";
 import { Box, StatelessTextArea, ErrorLabel, Label } from "../index";
 
-import { StructureProps } from "../systemHelpers";
+import { CommonStyleProps } from "../systemHelpers";
 
 export type ManagedTextAreaFieldProps = {
   hasError?: boolean;
@@ -14,7 +14,7 @@ export type ManagedTextAreaFieldProps = {
   type?: string;
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLInputElement> &
-  StructureProps;
+  CommonStyleProps;
 
 export const ManagedTextAreaField = ({
   disabled,
@@ -25,6 +25,10 @@ export const ManagedTextAreaField = ({
   id,
   children,
   type,
+  fontFamily,
+  borderColor,
+  color,
+  fontWeight,
   ...props
 }: ManagedTextAreaFieldProps) => {
   const [field, meta] = useField(id);
@@ -38,6 +42,10 @@ export const ManagedTextAreaField = ({
         </Label>
       ) : null}
       <StatelessTextArea
+        borderColor={borderColor}
+        color={color}
+        fontWeight={fontWeight}
+        fontFamily={fontFamily}
         mt="2"
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
