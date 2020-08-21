@@ -1,0 +1,40 @@
+{
+  "name": "indigo-docs",
+  "version": "1.0.0",
+  "description": "Documentation site for Indigo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./public/index.html NODE_ENV='development'",
+    "tsc": "tsc -noEmit",
+    "reset": "rm -rf node_modules package-lock.json && npm install"
+  },
+  "alias": {
+    "styled-components": "../node_modules/styled-components",
+    "styled-system": "../node_modules/styled-system",
+    "@styled-system/css": "../node_modules/@styled-system/css",
+    "react": "../node_modules/react"
+  },
+  "author": "Gavin Atkinson",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react-dom": "^16.9.8",
+    "@types/yup": "^0.29.5",
+    "parcel": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@tlon/indigo-light": "^1.0.4",
+    "@types/react-router-dom": "^5.1.5",
+    "local-indigo-react": "file:..",
+    "react-dom": "^16.13.1",
+    "react-live": "^2.2.2",
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.29.3"
+  },
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
+  }
+}

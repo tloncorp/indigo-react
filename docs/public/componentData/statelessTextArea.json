@@ -1,0 +1,6 @@
+{
+  "id": "statelessTextArea",
+  "displayName": "StatelessTextArea",
+  "snippet": "<StatelessTextArea> </StatelessTextArea>",
+  "props": []
+}

@@ -2,7 +2,9 @@
 
 There are a few ways of making new components for Indigo. Let's cover some of the core patterns.
 
-## Single Element Component with dynamic properties
+## Component Patterns
+
+### Single Element Component with dynamic properties
 
 Creating a basic theme-aware component with dynamic properties from scratch.
 
@@ -10,7 +12,7 @@ Creating a basic theme-aware component with dynamic properties from scratch.
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 // commonStyle includes all commonly used styled-system props
-import { commonStyle, CommonStyleProps } from "./systemHelpers";
+import { commonStyle, CommonStyleProps } from "../systemHelpers";
 
 // Define property types and export typing
 export type LabelProps = CommonStyleProps & {
@@ -52,7 +54,7 @@ Creating a styled component from an existing component, like one sourced from a 
 import { Form as FormikForm } from "formik";
 import styled from "styled-components";
 import { compose } from "styled-system";
-import { structureStyle, StructureProps } from "./systemHelpers";
+import { structureStyle, StructureProps } from "../systemHelpers";
 
 // Create and export property typing.
 type ManagedFormProps = StructureProps;
@@ -65,15 +67,15 @@ export const ManagedForm = styled(FormikForm)<
 ManagedForm.displayName = "ManagedForm";
 ```
 
-## Composite React Component
+### Composite React Component
 
 This is a component made from several styled components imported from Indigo.
 
 ```tsx
 import * as React from "react";
-import { CommonStyleProps } from "./systemHelpers";
-import { Row } from "./Row";
-import { Col } from "./Col";
+import { CommonStyleProps } from "../systemHelpers";
+import { Row } from "../Row/Row";
+import { Col } from "../Col/Col";
 
 // Create and export the main component typing
 export type TwoUpProps = CommonStyleProps &
@@ -100,6 +102,14 @@ export const TwoUp = ({ children, ...props }: TwoUpProps) => (
 
 TwoUp.displayName = "TwoUp";
 ```
+
+## Scripts
+
+`npm run build` Builds the library with `esbuild` and constructs typings with `tsc`
+
+`npm run esbuild` Builds the library with `esbuild` but skips generating typings. Typings take a long time to generate, so if you havn't changed your type definitons, this can rapidly speed up iteration time for visual polish tasks.
+
+`npm run reset` Removes node_modules and package-lock.json and npm installs fresh
 
 ### Related
 

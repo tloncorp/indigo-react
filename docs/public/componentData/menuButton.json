@@ -1,0 +1,6 @@
+{
+  "id": "menuButton",
+  "displayName": "MenuButton",
+  "snippet": "<MenuButton> </MenuButton>",
+  "props": []
+}

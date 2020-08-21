@@ -1,57 +1,66 @@
 /**
  * Box
  */
-export { Box, BoxProps } from "./Box";
+export { Box, BoxProps } from "./Box/Box";
 
 /**
  * Text + Type + Icons
  */
-export { Text, TextProps } from "./Text";
-export { Label, LabelProps } from "./Label";
-export { Icon, IconProps } from "./Icon";
-export { ErrorLabel, ErrorLabelProps } from "./ErrorLabel";
+export { Text, TextProps } from "./Text/Text";
+export { Label, LabelProps } from "./Label/Label";
+export { ErrorLabel, ErrorLabelProps } from "./ErrorLabel/ErrorLabel";
+export { Icon, IconProps } from "./Icon/Icon";
 
 /**
  * Layout
  */
-export { Row, RowProps } from "./Row";
-export { Col, ColProps } from "./Col";
-export { Inline, InlineProps } from "./Inline";
-export { Center, CenterProps } from "./Center";
-export { Rule, RuleProps } from "./Rule";
-export { AspectRatio, AspectRatioProps } from "./AspectRatio";
-export { TwoUp, TwoUpProps } from "./TwoUp";
-export { FourUp, FourUpProps } from "./FourUp";
+export { Row, RowProps } from "./Row/Row";
+export { Col, ColProps } from "./Col/Col";
+export { Inline, InlineProps } from "./Inline/Inline";
+export { Center, CenterProps } from "./Center/Center";
+export { Rule, RuleProps } from "./Rule/Rule";
+export { AspectRatio, AspectRatioProps } from "./AspectRatio/AspectRatio";
+export { TwoUp, TwoUpProps } from "./TwoUp/TwoUp";
+export { FourUp, FourUpProps } from "./FourUp/FourUp";
 
 /**
  * Buttons + Anchors
  */
-export { Action, ActionProps } from "./Action";
-export { Anchor, AnchorProps } from "./Anchor";
-export { Button, ButtonProps } from "./Button";
+export { Action, ActionProps } from "./Action/Action";
+export { ActionAnchor, ActionAnchorProps } from "./ActionAnchor/ActionAnchor";
+export { Button, ButtonProps } from "./Button/Button";
+export { ButtonAnchor, ButtonAnchorProps } from "./ButtonAnchor/ButtonAnchor";
+export { Anchor, AnchorProps } from "./Anchor/Anchor";
 
 /**
  * Controls
  */
-export { DisclosureBox, DisclosureBoxProps } from "./DisclosureBox";
-export { DisclosureButton, DisclosureButtonProps } from "./DisclosureButton";
+export {
+  DisclosureBox,
+  DisclosureBoxProps,
+} from "./DisclosureBox/DisclosureBox";
+export {
+  DisclosureButton,
+  DisclosureButtonProps,
+} from "./DisclosureButton/DisclosureButton";
 // These create a lot of extra tsc build time burden. You can temporarily disable them to speed up your dev build.
-export { Menu, MenuProps } from "./Menu";
-export { MenuButton, MenuButtonProps } from "./MenuButton";
-export { MenuItem, MenuItemProps } from "./MenuItem";
-export { MenuList, MenuListProps } from "./MenuList";
+export { Menu, MenuProps } from "./Menu/Menu";
+export { MenuButton, MenuButtonProps } from "./MenuButton/MenuButton";
+export { MenuItem, MenuItemProps } from "./MenuItem/MenuItem";
+export { MenuList, MenuListProps } from "./MenuList/MenuList";
 
 /**
  * Base Components
  */
-export { BaseAnchor, BaseAnchorProps } from "./BaseAnchor";
-export { BaseButton, BaseButtonProps } from "./BaseButton";
-export { BaseImage, BaseImageProps } from "./BaseImage";
-export { BaseInput, BaseInputProps } from "./BaseInput";
-export { BaseTextArea, BaseTextAreaProps } from "./BaseTextArea";
-export { BaseLabel, BaseLabelProps } from "./BaseLabel";
-export { BaseCode, BaseCodeProps } from "./BaseCode";
-export { BaseForm, BaseFormProps } from "./BaseForm";
+export { BaseAnchor, BaseAnchorProps } from "./BaseAnchor/BaseAnchor";
+export { BaseButton, BaseButtonProps } from "./BaseButton/BaseButton";
+export { BaseImage, BaseImageProps } from "./BaseImage/BaseImage";
+export { BaseInput, BaseInputProps } from "./BaseInput/BaseInput";
+export { BaseTextArea, BaseTextAreaProps } from "./BaseTextArea/BaseTextArea";
+export { BaseLabel, BaseLabelProps } from "./BaseLabel/BaseLabel";
+export { BaseCode, BaseCodeProps } from "./BaseCode/BaseCode";
+export { BaseForm, BaseFormProps } from "./BaseForm/BaseForm";
+export { BaseSVG, BaseSVGProps } from "./BaseSVG/BaseSVG";
 
 /**
  * Stateless Fields
@@ -59,46 +68,63 @@ export { BaseForm, BaseFormProps } from "./BaseForm";
 export {
   StatelessCheckboxField,
   StatelessCheckboxFieldProps,
-} from "./StatelessCheckboxField";
+} from "./StatelessCheckboxField/StatelessCheckboxField";
 export {
   StatelessRadioButtonField,
   StatelessRadioButtonFieldProps,
-} from "./StatelessRadioButtonField";
+} from "./StatelessRadioButtonField/StatelessRadioButtonField";
 export {
   StatelessToggleSwitchField,
   StatelessToggleSwitchFieldProps,
-} from "./StatelessToggleSwitchField";
+} from "./StatelessToggleSwitchField/StatelessToggleSwitchField";
 
 /**
  * Form Parts
  */
-export { Indicator, IndicatorProps } from "./Indicator";
-// export { TextInput, TextInputProps } from "./StatelessTextInputField";
-// export { TextArea, TextAreaProps } from "./StatelessTextAreaField";
-export { Checkbox, CheckboxProps } from "./Checkbox";
-export { ToggleSwitch, ToggleSwitchProps } from "./ToggleSwitch";
-export { RadioButton, RadioButtonProps } from "./RadioButton";
+export { Indicator, IndicatorProps } from "./Indicator/Indicator";
+// export { TextInput, TextInputProps } from "./StatelessTextInputField/StatelessTextInputField";
+// export { TextArea, TextAreaProps } from "./StatelessTextAreaField/StatelessTextAreaField";
+export { Checkbox, CheckboxProps } from "./Checkbox/Checkbox";
+export { ToggleSwitch, ToggleSwitchProps } from "./ToggleSwitch/ToggleSwitch";
+export { RadioButton, RadioButtonProps } from "./RadioButton/RadioButton";
 export {
   StatelessTextInput,
   StatelessTextInputProps,
-} from "./StatelessTextInput";
-export { StatelessTextArea, StatelessTextAreaProps } from "./StatelessTextArea";
+} from "./StatelessTextInput/StatelessTextInput";
+export {
+  StatelessTextArea,
+  StatelessTextAreaProps,
+} from "./StatelessTextArea/StatelessTextArea";
 
 /**
  * Managed Fields
  */
-export { ManagedForm } from "./ManagedForm";
-export { FormController } from "./FormController";
-export { ManagedTextInputField } from "./ManagedTextInputField";
-export { ManagedTextAreaField } from "./ManagedTextAreaField";
-export { ManagedCheckboxField } from "./ManagedCheckboxField";
-export { ManagedRadioButtonField } from "./ManagedRadioButtonField";
-export { ManagedToggleSwitchField } from "./ManagedToggleSwitchField";
+export { ManagedForm } from "./ManagedForm/ManagedForm";
+export { FormController } from "./FormController/FormController";
+export { ManagedTextInputField } from "./ManagedTextInputField/ManagedTextInputField";
+export { ManagedTextAreaField } from "./ManagedTextAreaField/ManagedTextAreaField";
+export { ManagedCheckboxField } from "./ManagedCheckboxField/ManagedCheckboxField";
+export { ManagedRadioButtonField } from "./ManagedRadioButtonField/ManagedRadioButtonField";
+export { ManagedToggleSwitchField } from "./ManagedToggleSwitchField/ManagedToggleSwitchField";
+
+/**
+ * Indication
+ */
+export { ContinuousProgressBar } from "./ContinuousProgressBar/ContinuousProgressBar";
+export {
+  SegmentedProgressBar,
+  SegmentedProgressBarProps,
+} from "./SegmentedProgressBar/SegmentedProgressBar";
+export {
+  LoadingSpinner,
+  LoadingSpinnerProps,
+} from "./LoadingSpinner/LoadingSpinner";
 
 /**
  * Utility
  */
-export { Reset } from "./Reset";
+export { Reset } from "./Reset/Reset";
+
 /**
  * Test Themes
  */
