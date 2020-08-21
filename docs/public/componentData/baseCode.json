@@ -1,6 +1,6 @@
 {
   "id": "baseCode",
   "displayName": "BaseCode",
-  "snippet": "<BaseCode> </BaseCode>",
+  "snippet": "<BaseCode>BaseCode</BaseCode>",
   "props": []
 }

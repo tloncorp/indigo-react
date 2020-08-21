@@ -10,13 +10,14 @@ export { Text, TextProps } from "./Text/Text";
 export { Label, LabelProps } from "./Label/Label";
 export { ErrorLabel, ErrorLabelProps } from "./ErrorLabel/ErrorLabel";
 export { Icon, IconProps } from "./Icon/Icon";
+export { Image, ImageProps } from "./Image/Image";
 
 /**
  * Layout
  */
 export { Row, RowProps } from "./Row/Row";
 export { Col, ColProps } from "./Col/Col";
-export { Inline, InlineProps } from "./Inline/Inline";
+export { Paragraph, ParagraphProps } from "./Paragraph/Paragraph";
 export { Center, CenterProps } from "./Center/Center";
 export { Rule, RuleProps } from "./Rule/Rule";
 export { AspectRatio, AspectRatioProps } from "./AspectRatio/AspectRatio";
@@ -26,11 +27,11 @@ export { FourUp, FourUpProps } from "./FourUp/FourUp";
 /**
  * Buttons + Anchors
  */
-export { Action, ActionProps } from "./Action/Action";
+export { Action, ActionProps, asAction } from "./Action/Action";
 export { ActionAnchor, ActionAnchorProps } from "./ActionAnchor/ActionAnchor";
-export { Button, ButtonProps } from "./Button/Button";
+export { Button, ButtonProps, asButton } from "./Button/Button";
 export { ButtonAnchor, ButtonAnchorProps } from "./ButtonAnchor/ButtonAnchor";
-export { Anchor, AnchorProps } from "./Anchor/Anchor";
+export { Anchor, AnchorProps, asAnchor } from "./Anchor/Anchor";
 
 /**
  * Controls
@@ -124,6 +125,18 @@ export {
  * Utility
  */
 export { Reset } from "./Reset/Reset";
+export {
+  AllSystemProps,
+  allSystemStyle,
+  CosmeticProps,
+  cosmeticStyle,
+  StructureProps,
+  structureStyle,
+  commonStyle,
+  CommonStyleProps,
+  TypographicProps,
+  typographicStyle,
+} from "./systemHelpers";
 
 /**
  * Test Themes

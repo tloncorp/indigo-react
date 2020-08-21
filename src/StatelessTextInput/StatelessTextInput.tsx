@@ -2,9 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { textInput } from "../systemTokens";
-import { StructureProps, structureStyle } from "../systemHelpers";
+import { CommonStyleProps, commonStyle } from "../systemHelpers";
 
-export type StatelessTextInputProps = StructureProps & {
+export type StatelessTextInputProps = CommonStyleProps & {
   hasError?: boolean;
   disabled?: boolean;
 } & React.HTMLAttributes<HTMLInputElement>;
@@ -28,12 +28,13 @@ const style = ({
     alignItems: "center",
     border: "1px solid",
     borderRadius: 2,
+    ...textInput.text,
     ...stateStyle(hasError, disabled),
   } as SystemStyleObject);
 
 export const StatelessTextInput = styled.input<
   React.PropsWithChildren<StatelessTextInputProps>
->(style, ...structureStyle);
+>(style, ...commonStyle);
 
 StatelessTextInput.defaultProps = {
   type: "text",

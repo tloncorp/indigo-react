@@ -13,13 +13,12 @@ const style = ({ gray = false, bold = false, mono = false }: TextProps) =>
     fontWeight: bold ? "bold" : "regular",
     color: gray ? "gray" : "black",
     fontFamily: mono ? "mono" : "sans",
-    display: "inline",
     lineHeight: "short",
     minHeight: "3",
     fontSize: 0,
   } as SystemStyleObject);
 
-export const Text = styled.p<React.PropsWithChildren<TextProps>>(
+export const Text = styled.span<React.PropsWithChildren<TextProps>>(
   style,
   ...allSystemStyle
 );

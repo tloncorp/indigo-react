@@ -56,4 +56,7 @@ export const Anchor = styled.a<React.PropsWithChildren<AnchorProps>>(
   ...styleProps
 );
 
+export const asAnchor = (component: React.FC) =>
+  styled(component)<React.PropsWithChildren<AnchorProps>>(style, ...styleProps);
+
 Anchor.displayName = "Anchor";

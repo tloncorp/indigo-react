@@ -1,6 +1,6 @@
 {
   "id": "baseAnchor",
   "displayName": "BaseAnchor",
-  "snippet": "<BaseAnchor> </BaseAnchor>",
+  "snippet": "<BaseAnchor target='_blank' href='https://github.com/urbit/indigo-react'>Indigo React</BaseAnchor>",
   "props": []
 }

@@ -48,4 +48,10 @@ export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
   ...commonStyle
 );
 
+export const asButton = (component: React.FC) =>
+  styled(component)<React.PropsWithChildren<ButtonProps>>(
+    style,
+    ...commonStyle
+  );
+
 Button.displayName = "Button";

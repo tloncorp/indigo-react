@@ -2,9 +2,9 @@ import * as React from "react";
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { textInput } from "../systemTokens";
-import { StructureProps, structureStyle } from "../systemHelpers";
+import { CommonStyleProps, commonStyle } from "../systemHelpers";
 
-export type StatelessTextAreaProps = StructureProps & {
+export type StatelessTextAreaProps = CommonStyleProps & {
   hasError?: boolean;
   disabled?: boolean;
 } & React.HTMLAttributes<HTMLTextAreaElement>;
@@ -27,12 +27,13 @@ const style = ({
     borderRadius: 2,
     resize: "vertical",
     minHeight: 5,
+    ...textInput.text,
     ...stateStyle(hasError, disabled),
   } as SystemStyleObject);
 
 export const StatelessTextArea = styled.textarea<
   React.PropsWithChildren<StatelessTextAreaProps>
->(style, ...structureStyle);
+>(style, ...commonStyle);
 
 StatelessTextArea.defaultProps = {
   cols: 8,

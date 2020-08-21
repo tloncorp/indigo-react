@@ -132,14 +132,14 @@ export const dark = {
   fontWeights: {
     thin: 300,
     regular: 400,
-    bold: 600,
+    bold: 500,
   },
   // line-height
   lineHeights: {
     min: 1.2,
-    short: 1.333333,
+    short: 1.33334,
     regular: 1.5,
-    tall: 1.666666,
+    tall: 1.66667,
   },
   // border, border-top, border-right, border-bottom, border-left
   borders: ["none", "1px solid"],

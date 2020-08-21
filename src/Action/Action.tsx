@@ -1,30 +1,12 @@
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
-import {
-  border,
-  BorderProps,
-  color,
-  ColorProps,
-  flexbox,
-  FlexboxProps,
-  layout,
-  LayoutProps,
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-} from "styled-system";
-import { container, action, button } from "../systemTokens";
+import { commonStyle, CommonStyleProps } from "../systemHelpers";
+import { action } from "../systemTokens";
 
-export type ActionProps = FlexboxProps &
-  LayoutProps &
-  SpaceProps &
-  ColorProps &
-  BorderProps &
-  TypographyProps & {
-    disabled?: boolean;
-    destructive?: boolean;
-  };
+export type ActionProps = CommonStyleProps & {
+  disabled?: boolean;
+  destructive?: boolean;
+};
 
 const stateColor = (destructive: boolean, disabled: boolean) => {
   if (destructive && disabled) return action.state.destructiveDisabled;
@@ -39,16 +21,19 @@ const style = ({ destructive = false, disabled = false }: ActionProps) =>
     border: "none",
     overflow: "hidden",
     height: 3,
-    ...button.text,
-    ...container.center,
+    ...action.text,
     ...stateColor(destructive, disabled),
   } as SystemStyleObject);
 
-const styleProps = [border, color, flexbox, layout, space, typography];
-
 export const Action = styled.button<React.PropsWithChildren<ActionProps>>(
   style,
-  ...styleProps
+  ...commonStyle
 );
+
+export const asAction = (component: React.FC) =>
+  styled(component)<React.PropsWithChildren<ActionProps>>(
+    style,
+    ...commonStyle
+  );
 
 Action.displayName = "Action";

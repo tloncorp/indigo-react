@@ -1,7 +1,8 @@
 {
-  "componentCount": 52,
+  "componentCount": 54,
   "components": [
     { "id": "action", "displayName": "Action" },
+    { "id": "actionAnchor", "displayName": "ActionAnchor" },
     { "id": "anchor", "displayName": "Anchor" },
     { "id": "aspectRatio", "displayName": "AspectRatio" },
     { "id": "backgroundImage", "displayName": "BackgroundImage" },
@@ -16,6 +17,7 @@
     { "id": "baseTextArea", "displayName": "BaseTextArea" },
     { "id": "box", "displayName": "Box" },
     { "id": "button", "displayName": "Button" },
+    { "id": "buttonAnchor", "displayName": "ButtonAnchor" },
     { "id": "center", "displayName": "Center" },
     { "id": "checkbox", "displayName": "Checkbox" },
     { "id": "col", "displayName": "Col" },

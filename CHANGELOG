@@ -1,5 +1,12 @@
 
 # Changelog
+- 1.2.2 (2020-08-21)
+    * Adds asButton, asAnchor and asAction functions.
+    * Action horizontal text alignment now left and container is no longer a flexbox.
+    * Label has fixed height and uses flexbox.
+    * TextArea and TextInput accept fontFamily, fontWeight, color, backgroundColor, borderColor
+    * Text is now a span so that it can be nested inside the Paragraph component
+    * Inline is now Paragraph and is a p tag
 
 - 1.2.1 (2020-08-20)
     * Adds SegmentedProgressBar, ContinuousProgressBar
