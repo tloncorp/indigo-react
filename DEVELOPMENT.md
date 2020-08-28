@@ -1,5 +1,13 @@
 # Development
 
+## Getting Started
+
+`npm install`
+
+`npm install -g typescript` if you have never install TS
+
+`npm run build`
+
 There are a few ways of making new components for Indigo. Let's cover some of the core patterns.
 
 ## Component Patterns
