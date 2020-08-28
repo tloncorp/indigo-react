@@ -1,5 +1,8 @@
 
 # Changelog
+- 1.2.3 (2020-8-28)
+    * Drop minification from release build process because it causes issues downstream.
+
 - 1.2.2 (2020-08-21)
     * Adds asButton, asAnchor and asAction functions.
     * Action horizontal text alignment now left and container is no longer a flexbox.
