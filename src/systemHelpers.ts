@@ -3,6 +3,7 @@ import {
   border,
   color,
   flexbox,
+  grid,
   textAlign,
   opacity,
   layout,
@@ -15,6 +16,7 @@ import {
   BorderProps,
   ColorProps,
   FlexboxProps,
+  GridProps,
   LayoutProps,
   PositionProps,
   ShadowProps,
@@ -34,6 +36,7 @@ export type AllSystemProps = SystemProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
+  GridProps &
   LayoutProps &
   PositionProps &
   ShadowProps &
@@ -48,6 +51,7 @@ export const allSystemStyle = [
   border,
   color,
   flexbox,
+  grid,
   textAlign,
   opacity,
   layout,
@@ -64,13 +68,23 @@ export type CommonStyleProps = SystemProps &
   BorderProps &
   ColorProps &
   FlexboxProps &
+  GridProps &
   LayoutProps &
   SpaceProps &
   TypographyProps;
 
-export const commonStyle = [border, color, flexbox, layout, space, typography];
+export const commonStyle = [
+  border,
+  color,
+  flexbox,
+  grid,
+  layout,
+  space,
+  typography,
+];
 
-export type CosmeticProps = BackgroundProps &
+export type CosmeticProps = SystemProps &
+  BackgroundProps &
   BorderProps &
   ColorProps &
   ShadowProps &
@@ -87,8 +101,10 @@ export const cosmeticStyle = [
   }),
 ];
 
-export type StructureProps = BorderProps &
+export type StructureProps = SystemProps &
+  BorderProps &
   FlexboxProps &
+  GridProps &
   LayoutProps &
   PositionProps &
   SpaceProps &
@@ -97,6 +113,7 @@ export type StructureProps = BorderProps &
 export const structureStyle = [
   border,
   flexbox,
+  grid,
   layout,
   position,
   space,

@@ -1,14 +1,14 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "React implementation of Tlon's design system, Indigo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "esbuild": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --sourcemap",
-    "esbuild:prod": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --minify --sourcemap",
+    "esbuild": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --sourcemap",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom  --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --sourcemap",
     "clear": "rm -rf dist",
     "reset": "rm -rf node_modules package-lock.json && npm install",
     "build": "npm run tsc && npm run esbuild",
@@ -34,14 +34,14 @@
     "@types/styled-components": "^5.1.2",
     "@types/styled-system": "^5.1.10",
     "@types/styled-system__css": "^5.0.13",
-    "esbuild": "^0.6.18",
+    "esbuild": "^0.6.28",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   },
   "husky": {
     "hooks": {
