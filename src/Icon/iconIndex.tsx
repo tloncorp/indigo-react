@@ -364,6 +364,46 @@ const TrashCan = () => (
   />
 );
 
+const Boot = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M3.64648 4.35359L1.64648 2.35359L2.35359 1.64648L4.35359 3.64648L3.64648 4.35359Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.6465 3.64648L13.6465 1.64648L14.3536 2.35359L12.3536 4.35359L11.6465 3.64648Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.3536 11.6465L14.3536 13.6465L13.6465 14.3536L11.6465 12.3536L12.3536 11.6465Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4.35359 12.3536L2.35359 14.3536L1.64648 13.6465L3.64648 11.6465L4.35359 12.3536Z"
+    />
+    <path fillRule="evenodd" clipRule="evenodd" d="M3 8.5H0V7.5H3V8.5Z" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M16 8.5H13V7.5H16V8.5Z" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M8.5 13V16H7.5V13H8.5Z" />
+    <path fillRule="evenodd" clipRule="evenodd" d="M7.5 3V0H8.5V3H7.5Z" />
+  </>
+);
+
+const Upload = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M7.5 3.9645L4.11092 7.35359L3.40381 6.64648L8 2.05029L12.5962 6.64648L11.8891 7.35359L8.5 3.9645L8.5 11.2427L7.5 11.2427V3.9645Z"
+    />
+    <rect x="3" y="13" width="10" height="1" />
+  </>
+);
+
 const iconIndex = {
   NullIcon,
   ChevronNorth,
@@ -420,6 +460,8 @@ const iconIndex = {
   LeapArrow,
   Home,
   TrashCan,
+  Boot,
+  Upload,
 };
 
 export default iconIndex;

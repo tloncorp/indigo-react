@@ -1,5 +1,12 @@
 
 # Changelog
+- 1.2.4 (2020-9-1)
+    * Adds boot and upload icon
+    * Adds CSS grid props
+    * Fixes cursor typings
+    * TwoUp can apply gutter spacing
+    * Removes FourUp
+
 - 1.2.3 (2020-8-28)
     * Drop minification from release build process because it causes issues downstream.
 

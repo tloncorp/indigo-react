@@ -1,25 +1,43 @@
 import * as React from "react";
-import { CommonStyleProps } from "../systemHelpers";
+import styled from "styled-components";
+import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
+import { AllSystemProps } from "../systemHelpers";
+import css, { SystemStyleObject } from "@styled-system/css";
+
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 
-export type TwoUpProps = CommonStyleProps &
+type TwoUpChildProps = {
+  xPitch: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+  yPitch: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+  index: number;
+};
+
+export type TwoUpProps = AllSystemProps &
   React.HTMLAttributes<HTMLDivElement> & {
     children: React.ReactNodeArray;
+    xPitch: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+    yPitch: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
   };
 
-type ChildProps = CommonStyleProps & React.HTMLAttributes<HTMLDivElement>;
+export type RowProps = AllSystemProps & {
+  pitch?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+};
 
-const Child = ({ children, ...props }: ChildProps) => (
-  <Col width={["100%", "100%", "50%"]} {...props}>
-    {children || <div />}
-  </Col>
-);
+const style = ({ xPitch = 0, yPitch = 0, index }: TwoUpChildProps) =>
+  css({
+    mb: index === 0 ? [yPitch, yPitch, 0] : 0,
+    pr: index === 0 ? [0, 0, xPitch] : 0,
+    pl: index === 1 ? [0, 0, xPitch] : 0,
+    width: ["100%", "100%", "50%"],
+  } as SystemStyleObject);
 
-export const TwoUp = ({ children, ...props }: TwoUpProps) => (
-  <Row flexDirection={["column", "row", "row"]} flexWrap="wrap" {...props}>
-    <Child>{children[0] || <div />}</Child>
-    <Child>{children[1] || <div />}</Child>
+const Child = styled(Col)(style);
+
+export const TwoUp = ({ children, xPitch, yPitch, ...props }: TwoUpProps) => (
+  <Row flexDirection={["column", "column", "row"]} flexWrap="wrap" {...props}>
+    <Child xPitch={xPitch} yPitch={yPitch} index={0} children={children[0]} />
+    <Child xPitch={xPitch} yPitch={yPitch} index={1} children={children[1]} />
   </Row>
 );
 

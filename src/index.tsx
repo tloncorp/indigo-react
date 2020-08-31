@@ -22,7 +22,6 @@ export { Center, CenterProps } from "./Center/Center";
 export { Rule, RuleProps } from "./Rule/Rule";
 export { AspectRatio, AspectRatioProps } from "./AspectRatio/AspectRatio";
 export { TwoUp, TwoUpProps } from "./TwoUp/TwoUp";
-export { FourUp, FourUpProps } from "./FourUp/FourUp";
 
 /**
  * Buttons + Anchors
