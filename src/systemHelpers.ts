@@ -73,9 +73,18 @@ export type CommonStyleProps = SystemProps &
   SpaceProps &
   TypographyProps;
 
-export const commonStyle = [border, color, flexbox, grid, layout, space, typography];
+export const commonStyle = [
+  border,
+  color,
+  flexbox,
+  grid,
+  layout,
+  space,
+  typography,
+];
 
-export type CosmeticProps = BackgroundProps &
+export type CosmeticProps = SystemProps &
+  BackgroundProps &
   BorderProps &
   ColorProps &
   ShadowProps &
@@ -92,7 +101,8 @@ export const cosmeticStyle = [
   }),
 ];
 
-export type StructureProps = BorderProps &
+export type StructureProps = SystemProps &
+  BorderProps &
   FlexboxProps &
   GridProps &
   LayoutProps &
