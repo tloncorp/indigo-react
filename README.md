@@ -18,6 +18,12 @@ $ npm install --save @tlon/indigo-react
 $ npm install --save @tlon/indigo-light styled-components styled-system react react-dom @reach/disclosure @reach/menu-button @reach/tabs markdown-to-jsx
 ```
 
+If you are using Typescript, install the type definitions for several of these libraries.
+
+```bash
+$ npm install --save @types/styled-components @types/styled-system @types/styled-system__css
+```
+
 3. Install a theme
 
 ```bash
@@ -28,6 +34,7 @@ $ npm install --save @tlon/indigo-light @tlon/indigo-dark
 
 ```js
 import * as React from "react";
+import { ThemeProvider } from "styled-system";
 import { Text, Reset } from "@tlon/indigo-react";
 import light from "@tlon/indigo-light";
 
