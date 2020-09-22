@@ -7,25 +7,26 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "esbuild": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --sourcemap",
-    "esbuild:prod": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom  --external:styled-system --external:styled-components --external:@styled-system/css --outdir=dist --format=esm --splitting --sourcemap",
+    "esbuild": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom --external:styled-system --external:styled-components --external:@styled-system/css --external:formik --outdir=dist --format=esm --splitting --sourcemap",
+    "esbuild:prod": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom  --external:styled-system --external:styled-components --external:@styled-system/css --external:formik --outdir=dist --format=esm --splitting --sourcemap",
     "clear": "rm -rf dist",
     "reset": "rm -rf node_modules package-lock.json && npm install",
     "build": "npm run tsc && npm run esbuild",
     "build:prod": "npm run tsc && npm run esbuild:prod",
-    "format": "prettier --write ./src/*"
+    "format": "prettier --write ./src/*",
+    "prepare": "npm run build"
   },
   "author": "Gavin Atkinson",
   "license": "MIT",
   "dependencies": {
     "@reach/menu-button": "^0.10.5",
-    "formik": "^2.1.5",
     "react": "^16.13.1",
     "tslib": "^2.0.1"
   },
   "peerDependencies": {
     "styled-components": "^5.1.1",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "formik": "^2.1.5"
   },
   "devDependencies": {
     "@styled-system/css": "^5.1.5",
@@ -41,7 +42,8 @@
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "formik": "^2.1.5"
   },
   "husky": {
     "hooks": {

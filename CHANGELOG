@@ -1,5 +1,10 @@
 
 # Changelog
+- 1.2.5 (2020-9-22)
+    * ManagedTextInputField and ManagedTextAreaField removes own vertical margin when no label or title is given
+    * Icon accepts a stroke prop
+    * Formik is now not bundled, and should be installed as a peer dep
+
 - 1.2.4 (2020-9-1)
     * Adds boot and upload icon
     * Adds CSS grid props
