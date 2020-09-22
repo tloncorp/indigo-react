@@ -46,7 +46,7 @@ export const ManagedTextAreaField = ({
         color={color}
         fontWeight={fontWeight}
         fontFamily={fontFamily}
-        mt="2"
+        mt={caption || label ? 2 : 0}
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}
