@@ -6,13 +6,14 @@ import { commonStyle, CommonStyleProps } from "../systemHelpers";
 
 type IconIndex = typeof iconIndex;
 
-export type IconProps = React.SVGProps<SVGElement> & CommonStyleProps;
+export type IconProps = React.SVGProps<SVGElement> & CommonStyleProps & { stroke?: string };
 
 const SVG: React.FunctionComponent<IconProps> = styled.svg(
-  ({ color }: IconProps) =>
+  ({ color, stroke }: IconProps) =>
     css({
       "& > *": {
         fill: typeof color === "undefined" ? "inherit" : color || "black",
+        stroke: typeof stroke === "undefined" ? "inherit" : stroke || "black",
       },
       width: 3,
       height: 3,
