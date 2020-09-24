@@ -5,15 +5,15 @@ import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
 import { AllSystemProps, allSystemStyle } from "../systemHelpers";
 
 export type ColProps = AllSystemProps & {
-  pitch?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+  gy?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
 };
 
-const style = ({ pitch }: ColProps) =>
+const style = ({ gy }: ColProps) =>
   css({
     display: "flex",
     flexDirection: "column",
-    "& > *": typeof pitch === "undefined" ? {} : { marginTop: pitch },
-    "& :first-child": typeof pitch === "undefined" ? {} : { marginTop: 0 },
+    "& > *": typeof gy === "undefined" ? {} : { marginTop: gy },
+    "& :first-child": typeof gy === "undefined" ? {} : { marginTop: 0 },
   } as SystemStyleObject);
 
 export const Col = styled.div<React.PropsWithChildren<ColProps>>(

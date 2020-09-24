@@ -5,14 +5,14 @@ import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
 import { AllSystemProps, allSystemStyle } from "../systemHelpers";
 
 export type RowProps = AllSystemProps & {
-  pitch?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+  gapX?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
 };
 
-const style = ({ pitch }: RowProps) =>
+const style = ({ gapX }: RowProps) =>
   css({
     display: "flex",
-    "& > *": typeof pitch === "undefined" ? {} : { marginLeft: pitch },
-    "& :first-child": typeof pitch === "undefined" ? {} : { marginLeft: 0 },
+    "& > *": typeof gapX === "undefined" ? {} : { marginLeft: gapX },
+    "& :first-child": typeof gapX === "undefined" ? {} : { marginLeft: 0 },
   } as SystemStyleObject);
 
 export const Row = styled.div<React.PropsWithChildren<RowProps>>(
