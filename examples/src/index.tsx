@@ -49,6 +49,7 @@ import {
   LoadingSpinner,
   ButtonAnchor,
   ActionAnchor,
+  FourUp,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -222,6 +223,20 @@ const App = () => {
         <Row p={p}>
           <ThemeColors theme={theme} />
         </Row>
+        <FourUp gap="4">
+          <Text>0</Text>
+          <Text>1</Text>
+          <Text>2</Text>
+          <Text>3</Text>
+        </FourUp>
+        <Row>
+          <Col width={"50%"}>
+            <Text> </Text>
+          </Col>
+          <Col width={"50%"}>
+            <Text> </Text>
+          </Col>
+        </Row>
         <TwoUp>
           <Col p={p}>
             <Rule />
@@ -354,6 +369,15 @@ const App = () => {
           <Col p={p} width="50%">
             <Rule />
             <Text py="2">{"<Checkbox />"}</Text>
+            <Row mt="2" alignItems="flex-end">
+              <Checkbox
+                mb="2"
+                selected={defaultCheckboxIsSelected}
+                onClick={() =>
+                  defaultCheckboxIsSelectedToggle(!defaultCheckboxIsSelected)
+                }
+              />
+            </Row>
             <Checkbox
               mb="2"
               selected={defaultCheckboxIsSelected}
@@ -579,6 +603,11 @@ const App = () => {
                   id="firstName"
                   caption="Please enter your first name."
                   placeholder="Felicia"
+                />
+                <ManagedTextInputField
+                  p="3"
+                  id="firstName"
+                  placeholder="Test"
                 />
                 <ManagedTextInputField
                   p="3"

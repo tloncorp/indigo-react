@@ -1,5 +1,10 @@
 
 # Changelog
+- 1.2.6 (2020-9-23)
+    * Adds FourUp
+    * Implements FourUp and TwoUp with css grid
+    * Row and Col 'pitch' prop now gapX and gapY respectively
+
 - 1.2.5 (2020-9-22)
     * ManagedTextInputField and ManagedTextAreaField removes own vertical margin when no label or title is given
     * Icon accepts a stroke prop
