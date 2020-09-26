@@ -679,6 +679,8 @@ const App = () => {
             <Icon icon="ArrowSouth" />
             <Icon icon="ArrowExternal" />
             <Icon icon="Smiley" />
+            <Icon icon="Upload" />
+            <Icon icon="Boot" />
 
             <Icon
               size={7}

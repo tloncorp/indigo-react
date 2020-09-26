@@ -14,7 +14,7 @@ import {
   typography,
   TypographyProps,
 } from "styled-system";
-import { container, action, button } from "../systemTokens";
+import { action, button } from "../systemTokens";
 
 export type ActionAnchorProps = FlexboxProps &
   LayoutProps &
@@ -41,7 +41,6 @@ const style = ({ destructive = false, disabled = false }: ActionAnchorProps) =>
     height: 3,
     textDecoration: "none",
     ...button.text,
-    ...container.center,
     ...stateColor(destructive, disabled),
   } as SystemStyleObject);
 
