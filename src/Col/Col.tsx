@@ -5,15 +5,15 @@ import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
 import { AllSystemProps, allSystemStyle } from "../systemHelpers";
 
 export type ColProps = AllSystemProps & {
-  gy?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
+  gapY?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
 };
 
-const style = ({ gy }: ColProps) =>
+const style = ({ gapY }: ColProps) =>
   css({
     display: "flex",
     flexDirection: "column",
-    "& > *": typeof gy === "undefined" ? {} : { marginTop: gy },
-    "& :first-child": typeof gy === "undefined" ? {} : { marginTop: 0 },
+    "& > *": typeof gapY === "undefined" ? {} : { marginTop: gapY },
+    "& :first-child": typeof gapY === "undefined" ? {} : { marginTop: 0 },
   } as SystemStyleObject);
 
 export const Col = styled.div<React.PropsWithChildren<ColProps>>(
