@@ -1,5 +1,10 @@
 
 # Changelog
+- 1.2.7 (2020-9-25)
+    * Fixes gy prop on col, which should have been gapY
+    * Revises Boot and Download Icons
+    * ActionAnchor is no longer centered
+
 - 1.2.6 (2020-9-23)
     * Adds FourUp
     * Implements FourUp and TwoUp with css grid
