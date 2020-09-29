@@ -379,6 +379,14 @@ const Upload = () => (
   </>
 );
 
+const Menu = () => (
+  <>
+    <path d="M4 8H12" fillRule="evenodd" clipRule="evenodd" />
+    <path d="M12 5H4" fillRule="evenodd" clipRule="evenodd" />
+    <path d="M4 11H12"  fillRule="evenodd" clipRule="evenodd" />
+  </>
+)
+
 const iconIndex = {
   NullIcon,
   ChevronNorth,
@@ -437,6 +445,7 @@ const iconIndex = {
   TrashCan,
   Boot,
   Upload,
+  Menu
 };
 
 export default iconIndex;
