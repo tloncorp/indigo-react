@@ -30,7 +30,14 @@ export const ManagedRadioButtonField = ({
   ...props
 }: ManagedRadioButtonFieldProps) => {
   // This differs slightly from MangaedCheckboxField
-  const [field, meta] = useField({ name, id, value: id, type: "radio" });
+  const [field, meta, { setTouched }] = useField({ name, id, value: id, type: "radio" });
+
+  // Chrome and Safari do not send blur events properly
+  const onChange = React.useCallback((e: React.ChangeEvent) => {
+    field.onChange(e);
+    setTouched(true);
+  }, [field.onChange, setTouched]);
+
   return (
     <Box {...props}>
       <BaseLabel
@@ -55,6 +62,7 @@ export const ManagedRadioButtonField = ({
           ) : null}
           <HiddenInput
             {...field}
+            onChange={onChange}
             value={id}
             name={name}
             id={id}
