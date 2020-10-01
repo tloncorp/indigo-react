@@ -98,18 +98,22 @@ const action = {
   state: {
     default: {
       color: "blue",
+      background: "white",
       "*": { fill: "blue" },
     },
     defaultDisabled: {
       color: "lightGray",
+      background: "white",
       "*": { fill: "lightGray" },
     },
     destructive: {
       color: "red",
+      background: "white",
       "*": { fill: "red" },
     },
     destructiveDisabled: {
       color: "lightRed",
+      background: "white",
       "*": { fill: "lightRed" },
     },
   } as SystemStyleObjects,
