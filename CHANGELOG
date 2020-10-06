@@ -1,5 +1,10 @@
 
 # Changelog
+- 1.2.8 (2020-10-6)
+    * Adds Badge
+    * Adds several icons
+    * Updates several icons
+
 - 1.2.7 (2020-9-25)
     * Fixes gy prop on col, which should have been gapY
     * Revises Boot and Download Icons
