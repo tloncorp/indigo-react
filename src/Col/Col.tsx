@@ -13,7 +13,7 @@ const style = ({ gapY }: ColProps) =>
     display: "flex",
     flexDirection: "column",
     "& > *": typeof gapY === "undefined" ? {} : { marginTop: gapY },
-    "& :first-child": typeof gapY === "undefined" ? {} : { marginTop: 0 },
+    "&:first-child": typeof gapY === "undefined" ? {} : { marginTop: 0 },
   } as SystemStyleObject);
 
 export const Col = styled.div<React.PropsWithChildren<ColProps>>(
