@@ -50,6 +50,7 @@ import {
   ButtonAnchor,
   ActionAnchor,
   FourUp,
+  _iconIndex,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -681,6 +682,15 @@ const App = () => {
             <Icon icon="Smiley" />
             <Icon icon="Upload" />
             <Icon icon="Boot" />
+
+            {Object.keys(_iconIndex).map((icon) => {
+              return (
+                <Row>
+                  <Icon icon={icon} mr="4" />
+                  <Text>{icon}</Text>
+                </Row>
+              );
+            })}
 
             <Icon
               size={7}
