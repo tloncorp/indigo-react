@@ -11,8 +11,8 @@ export type RowProps = AllSystemProps & {
 const style = ({ gapX }: RowProps) =>
   css({
     display: "flex",
-    "& > *": typeof gapX === "undefined" ? {} : { marginLeft: gapX },
-    "& :first-child": typeof gapX === "undefined" ? {} : { marginLeft: 0 },
+    "& > *": typeof gapX === "undefined" ? {} : { marginRight: gapX },
+    "&:last-child": typeof gapX === "undefined" ? {} : { marginRight: 0 },
   } as SystemStyleObject);
 
 export const Row = styled.div<React.PropsWithChildren<RowProps>>(

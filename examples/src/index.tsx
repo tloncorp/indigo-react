@@ -51,6 +51,7 @@ import {
   ActionAnchor,
   FourUp,
   _iconIndex,
+  Badge,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -252,6 +253,9 @@ const App = () => {
               <Anchor target="_blank" href="http://urbit.org">
                 Link to new Tab
               </Anchor>
+              <div>
+                <Badge>Badge</Badge>
+              </div>
             </Col>
             <Box>
               <Paragraph>
@@ -266,6 +270,7 @@ const App = () => {
                   minutes, anyways).
                 </Text>
                 <Anchor href="http://urbit.org">elements</Anchor>
+                <Badge>Badge</Badge>
               </Paragraph>
             </Box>
           </Col>
@@ -274,6 +279,7 @@ const App = () => {
             <Rule />
             <Text py="2">{"<Action />"}</Text>
             <Box>
+              <Badge>Badge</Badge>
               <Action>Action</Action>
               <Action disabled>Disabled Action</Action>
               <Action destructive>Destructive Action</Action>

@@ -1,14 +1,19 @@
 import * as React from "react";
-import { Text } from "../index";
+import { Text, TextProps } from "../index";
 
-const Badge = (props) => (
+type BadgeProps = TextProps;
+
+export const Badge = (props: BadgeProps) => (
   <Text
     backgroundColor="scales.black50"
+    // @ts-ignore
     color="white"
-    p="1"
-    borderRadius="2"
+    height="20px"
+    px="8px"
+    py="2.5px"
+    borderRadius="1"
+    flex="0"
+    verticalAlign="middle"
     {...props}
   />
 );
-
-export default Badge;

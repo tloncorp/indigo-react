@@ -402,7 +402,7 @@ const TrashCan = () => (
   />
 );
 
-const Hamburger = () => (
+const Menu = () => (
   <>
     <path fillRule="evenodd" clipRule="evenodd" d="M14 8.5H2V7.5H14V8.5Z" />
     <path fillRule="evenodd" clipRule="evenodd" d="M2 2.5H14V3.5H2V2.5Z" />
@@ -535,7 +535,7 @@ export const iconIndex = {
   Dojo,
   Inbox,
   Adjust,
-  Hamburger,
+  Menu,
   NullIcon,
   ChevronNorth,
   ChevronSouth,
