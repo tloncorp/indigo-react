@@ -29,6 +29,8 @@ import {
 
 export type SystemProps = {
   cursor?: string;
+  textOverflow?: string;
+  whiteSpace?: string;
 };
 
 export type AllSystemProps = SystemProps &
@@ -130,5 +132,7 @@ export const typographicStyle = [
   typography,
   system({
     cursor: true,
+    textOverflow: true,
+    whiteSpace: true,
   }),
 ];

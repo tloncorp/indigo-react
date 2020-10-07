@@ -246,6 +246,10 @@ const App = () => {
 
             <Col>
               <Text>Default</Text>
+              <Text maxWidth="20px" textOverflow="ellipsis">
+                asdfghjkl;qwertyuiop[zxcvbnm,.
+              </Text>
+
               <Text mono>Monospace</Text>
               <Text bold>Bold</Text>
               <Text gray>Gray</Text>
