@@ -40,8 +40,8 @@ export const ManagedRadioButtonField = ({
   // Chrome and Safari do not send blur events properly
   const onChange = React.useCallback(
     (e: React.ChangeEvent) => {
-      field.onChange(e);
       setTouched(true);
+      field.onChange(e);
     },
     [field.onChange, setTouched]
   );
