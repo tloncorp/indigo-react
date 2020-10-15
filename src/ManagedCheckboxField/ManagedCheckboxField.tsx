@@ -27,19 +27,21 @@ export const ManagedCheckboxField = ({
   disabled,
   ...props
 }: ManagedCheckboxFieldProps) => {
-  const [field, meta, { setTouched }] = useField({
+  const [field, meta] = useField({
     name: id,
     type: "checkbox",
   });
 
   // Chrome and Safari do not send blur events properly
-  const onChange = React.useCallback(
-    (e: React.ChangeEvent) => {
-      field.onChange(e);
-      setTouched(true);
-    },
-    [field.onChange, setTouched]
-  );
+  // const onChange = React.useCallback(
+  //   (e: React.ChangeEvent) => {
+  //     field.onChange(e);
+  //     setTouched(true);
+  //   },
+  //   [field.onChange, setTouched]
+  // );
+
+  console.log(meta.error, meta.touched);
 
   return (
     <Box {...props}>
@@ -64,7 +66,7 @@ export const ManagedCheckboxField = ({
           ) : null}
           <HiddenInput
             {...field}
-            onChange={onChange}
+            // onChange={onChange}
             value={id}
             name={id}
             id={id}

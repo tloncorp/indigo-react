@@ -52,6 +52,7 @@ import {
   FourUp,
   _iconIndex,
   Badge,
+  OnBlurFormController,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -596,6 +597,34 @@ const App = () => {
           <Col p={p} width="50%">
             <Rule />
             <Text py="2">{"<ManagedForm />"}</Text>
+
+            <OnBlurFormController
+              initialValues={initialValues}
+              validationSchema={ManagedFormSchema}
+              onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  setSubmitting(false);
+                }, 400);
+              }}
+            >
+              <ManagedForm>
+                <Text p="3">My Managed Form</Text>
+                <ManagedTextInputField
+                  p="3"
+                  label="First Name"
+                  id="firstName"
+                  caption="Please enter your first name."
+                  placeholder="Felicia"
+                />
+                <ManagedCheckboxField
+                  p="3"
+                  label="I agree"
+                  caption="Responsibility or liability for the frequency of provision and accuracy of the BBA LIBOR rate or any use made of the BBA LIBOR rate by the subscriber, whether or not arising from the negligence of any of BBAE or the Suppliers."
+                  id="iagree"
+                />
+              </ManagedForm>
+            </OnBlurFormController>
             <FormController
               initialValues={initialValues}
               validationSchema={ManagedFormSchema}
@@ -607,6 +636,12 @@ const App = () => {
               }}
             >
               <ManagedForm display="flex" flexDirection="column">
+                <ManagedToggleSwitchField
+                  p="3"
+                  id="toggleSwitch"
+                  label="Setting 1"
+                  caption="Turning this on will turn the toggle switch on."
+                />
                 <Text p="3">My Managed Form</Text>
                 <ManagedTextInputField
                   p="3"

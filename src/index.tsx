@@ -102,6 +102,7 @@ export {
  * Managed Fields
  */
 export { ManagedForm } from "./ManagedForm/ManagedForm";
+export { OnBlurFormController } from "./OnBlurFormController/OnBlurFormController";
 export { FormController } from "./FormController/FormController";
 export { ManagedTextInputField } from "./ManagedTextInputField/ManagedTextInputField";
 export { ManagedTextAreaField } from "./ManagedTextAreaField/ManagedTextAreaField";
