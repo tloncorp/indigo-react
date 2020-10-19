@@ -3,6 +3,8 @@
 - 1.2.9 (2020-10-7)
     * Adds textOverflow and whiteSpace to AllSystemProps and TypographyProps
     * Adds more icons
+    * Adds Badge
+    * Resolves onBlur behavior from 1.2.8
 
 - 1.2.8 (2020-10-6)
     * Adds Badge
