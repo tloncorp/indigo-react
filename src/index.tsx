@@ -9,7 +9,7 @@ export { Box, BoxProps } from "./Box/Box";
 export { Text, TextProps } from "./Text/Text";
 export { Label, LabelProps } from "./Label/Label";
 export { ErrorLabel, ErrorLabelProps } from "./ErrorLabel/ErrorLabel";
-export { Icon, IconProps } from "./Icon/Icon";
+export { Icon, IconProps, IconIndex } from "./Icon/Icon";
 export { iconIndex as _iconIndex } from "./Icon/iconIndex";
 export { Image, ImageProps } from "./Image/Image";
 export { Badge } from "./Badge/Badge";
