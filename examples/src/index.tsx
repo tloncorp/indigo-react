@@ -246,6 +246,10 @@ const App = () => {
 
             <Col>
               <Text>Default</Text>
+              <Text maxWidth="20px" textOverflow="ellipsis">
+                asdfghjkl;qwertyuiop[zxcvbnm,.
+              </Text>
+
               <Text mono>Monospace</Text>
               <Text bold>Bold</Text>
               <Text gray>Gray</Text>
@@ -592,6 +596,7 @@ const App = () => {
           <Col p={p} width="50%">
             <Rule />
             <Text py="2">{"<ManagedForm />"}</Text>
+
             <FormController
               initialValues={initialValues}
               validationSchema={ManagedFormSchema}
@@ -603,6 +608,12 @@ const App = () => {
               }}
             >
               <ManagedForm display="flex" flexDirection="column">
+                <ManagedToggleSwitchField
+                  p="3"
+                  id="toggleSwitch"
+                  label="Setting 1"
+                  caption="Turning this on will turn the toggle switch on."
+                />
                 <Text p="3">My Managed Form</Text>
                 <ManagedTextInputField
                   p="3"

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { iconIndex } from "./iconIndex";
 import { commonStyle, CommonStyleProps } from "../systemHelpers";
 
-type IconIndex = typeof iconIndex;
+export type IconIndex = typeof iconIndex;
 
 export type IconProps = React.SVGProps<SVGElement> &
   CommonStyleProps & { stroke?: string };

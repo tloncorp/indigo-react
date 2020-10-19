@@ -29,6 +29,9 @@ import {
 
 export type SystemProps = {
   cursor?: string;
+  textOverflow?: string;
+  whiteSpace?: string;
+  textTransform?: string;
 };
 
 export type AllSystemProps = SystemProps &
@@ -122,7 +125,13 @@ export const structureStyle = [
   }),
 ];
 
-export type TypographicProps = ColorProps & TextAlignProps & TypographyProps;
+export type TypographicProps = ColorProps &
+  TextAlignProps &
+  TypographyProps & {
+    textOverflow?: string;
+    whiteSpace?: string;
+    textTransform?: string;
+  };
 
 export const typographicStyle = [
   color,
@@ -130,5 +139,8 @@ export const typographicStyle = [
   typography,
   system({
     cursor: true,
+    textOverflow: true,
+    whiteSpace: true,
+    textTransform: true,
   }),
 ];
