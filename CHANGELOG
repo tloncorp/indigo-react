@@ -1,5 +1,14 @@
 
 # Changelog
+1.2.12 (2020-10-29)
+    * Fixes spaces icon
+
+-1.2.11 (2020-10-29)
+    * Spaces Icon
+    * Add Users Icon
+    * fixes white space etc on Text
+    * Smaller triangle icons
+
 - 1.2.10 (2020-10-7)
     * Exports IconIndex
     * Adds textTransform to AllSystemProps and TypographyProps

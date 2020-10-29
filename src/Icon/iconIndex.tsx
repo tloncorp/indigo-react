@@ -260,13 +260,13 @@ const Star = () => (
   <path d="M8 3L9.46946 5.97746L12.7553 6.45492L10.3776 8.77254L10.9389 12.0451L8 10.5L5.06107 12.0451L5.62236 8.77254L3.24472 6.45492L6.53054 5.97746L8 3Z" />
 );
 
-const TriangleEast = () => <path d="M12 8L6 11.4641L6 4.5359L12 8Z" />;
+const TriangleEast = () => <path d="M12 8L5 12L5 4L12 8Z" />;
 
-const TriangleSouth = () => <path d="M8 12L4.5359 6L11.4641 6L8 12Z" />;
+const TriangleSouth = () => <path d="M8 12L4 5L12 5L8 12Z" />;
 
-const TriangleWest = () => <path d="M4 8L10 4.5359L10 11.4641L4 8Z" />;
+const TriangleWest = () => <path d="M4 8L11 12L11 4L4 8Z" />;
 
-const TriangleNorth = () => <path d="M8 4L11.4641 10H4.5359L8 4Z" />;
+const TriangleNorth = () => <path d="M8 4L4 11L12 11L8 4Z" />;
 
 const CreateGroup = () => (
   <path
@@ -715,6 +715,51 @@ const Info = () => (
   </>
 );
 
+const Spaces = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 3H3L3 6H6V3ZM3 2C2.44772 2 2 2.44772 2 3V6C2 6.55228 2.44772 7 3 7H6C6.55228 7 7 6.55228 7 6V3C7 2.44772 6.55228 2 6 2H3Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M13 3H10L10 6H13V3ZM10 2C9.44772 2 9 2.44772 9 3V6C9 6.55228 9.44772 7 10 7H13C13.5523 7 14 6.55228 14 6V3C14 2.44772 13.5523 2 13 2H10Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M13 10H10L10 13H13V10ZM10 9C9.44772 9 9 9.44772 9 10V13C9 13.5523 9.44772 14 10 14H13C13.5523 14 14 13.5523 14 13V10C14 9.44772 13.5523 9 13 9H10Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 10H3L3 13H6V10ZM3 9C2.44772 9 2 9.44772 2 10V13C2 13.5523 2.44772 14 3 14H6C6.55228 14 7 13.5523 7 13V10C7 9.44772 6.55228 9 6 9H3Z"
+    />
+  </>
+);
+
+const InviteUsers = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8 10H5C3.89543 10 3 10.8954 3 12V13H10V12C10 10.8954 9.10457 10 8 10ZM5 9C3.34315 9 2 10.3431 2 12V14H11V12C11 10.3431 9.65685 9 8 9H5Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6.5 7C7.88071 7 9 5.88071 9 4.5C9 3.11929 7.88071 2 6.5 2C5.11929 2 4 3.11929 4 4.5C4 5.88071 5.11929 7 6.5 7ZM6.5 8C8.433 8 10 6.433 10 4.5C10 2.567 8.433 1 6.5 1C4.567 1 3 2.567 3 4.5C3 6.433 4.567 8 6.5 8Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 7V5H13V7H15V8H13V10H12V8H10V7H12Z"
+    />
+  </>
+);
+
 export const iconIndex = {
   Info,
   Server,
@@ -799,4 +844,6 @@ export const iconIndex = {
   Boot,
   Upload,
   Node,
+  Spaces,
+  InviteUsers,
 };
