@@ -260,13 +260,13 @@ const Star = () => (
   <path d="M8 3L9.46946 5.97746L12.7553 6.45492L10.3776 8.77254L10.9389 12.0451L8 10.5L5.06107 12.0451L5.62236 8.77254L3.24472 6.45492L6.53054 5.97746L8 3Z" />
 );
 
-const TriangleEast = () => <path d="M12 8L6 11.4641L6 4.5359L12 8Z" />;
+const TriangleEast = () => <path d="M12 8L5 12L5 4L12 8Z" />;
 
-const TriangleSouth = () => <path d="M8 12L4.5359 6L11.4641 6L8 12Z" />;
+const TriangleSouth = () => <path d="M8 12L4 5L12 5L8 12Z" />;
 
-const TriangleWest = () => <path d="M4 8L10 4.5359L10 11.4641L4 8Z" />;
+const TriangleWest = () => <path d="M4 8L11 12L11 4L4 8Z" />;
 
-const TriangleNorth = () => <path d="M8 4L11.4641 10H4.5359L8 4Z" />;
+const TriangleNorth = () => <path d="M8 4L4 11L12 11L8 4Z" />;
 
 const CreateGroup = () => (
   <path
@@ -715,6 +715,35 @@ const Info = () => (
   </>
 );
 
+const Spaces = () => (
+  <>
+    <rect x="2.5" y="2.5" width="4" height="4" rx="0.5" />
+    <rect x="9.5" y="2.5" width="4" height="4" rx="0.5" />
+    <rect x="9.5" y="9.5" width="4" height="4" rx="0.5" />
+    <rect x="2.5" y="9.5" width="4" height="4" rx="0.5" />
+  </>
+);
+
+const InviteUsers = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8 10H5C3.89543 10 3 10.8954 3 12V13H10V12C10 10.8954 9.10457 10 8 10ZM5 9C3.34315 9 2 10.3431 2 12V14H11V12C11 10.3431 9.65685 9 8 9H5Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6.5 7C7.88071 7 9 5.88071 9 4.5C9 3.11929 7.88071 2 6.5 2C5.11929 2 4 3.11929 4 4.5C4 5.88071 5.11929 7 6.5 7ZM6.5 8C8.433 8 10 6.433 10 4.5C10 2.567 8.433 1 6.5 1C4.567 1 3 2.567 3 4.5C3 6.433 4.567 8 6.5 8Z"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 7V5H13V7H15V8H13V10H12V8H10V7H12Z"
+    />
+  </>
+);
+
 export const iconIndex = {
   Info,
   Server,
@@ -799,4 +828,6 @@ export const iconIndex = {
   Boot,
   Upload,
   Node,
+  Spaces,
+  InviteUsers,
 };

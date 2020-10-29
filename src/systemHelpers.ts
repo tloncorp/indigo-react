@@ -64,6 +64,9 @@ export const allSystemStyle = [
   typography,
   system({
     cursor: true,
+    textOverflow: true,
+    whiteSpace: true,
+    textTransform: true,
   }),
 ];
 
