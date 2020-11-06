@@ -1,5 +1,8 @@
 
 # Changelog
+1.2.13 (2020-10-29)
+    * Disables svg fill property target in Button
+
 1.2.12 (2020-10-29)
     * Fixes spaces icon
 
