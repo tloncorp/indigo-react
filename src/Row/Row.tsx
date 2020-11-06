@@ -8,10 +8,14 @@ export type RowProps = AllSystemProps & {
   gapX?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
 };
 
+// Some browsers do not honour minimum height for nested flex children
+// so we disable flexShrink by default
+const flexChild = { flexShrink: 0 };
+
 const style = ({ gapX }: RowProps) =>
   css({
     display: "flex",
-    "& > *": typeof gapX === "undefined" ? {} : { marginRight: gapX },
+    "& > *": typeof gapX === "undefined" ? flexChild : { ...flexChild, marginRight: gapX },
     "& > :last-child": typeof gapX === "undefined" ? {} : { marginRight: 0 },
   } as SystemStyleObject);
 
