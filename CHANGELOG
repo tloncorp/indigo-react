@@ -1,5 +1,9 @@
 
 # Changelog
+1.2.14 (2020-11-11)
+    * Adds LargeBullet for notification badge
+    * Adds flex:0 to row and col for cross-browser compatibility
+
 1.2.13 (2020-10-29)
     * Disables svg fill property target in Button
 
