@@ -8,11 +8,15 @@ export type ColProps = AllSystemProps & {
   gapY?: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
 };
 
+// Some browsers do not honour minimum height for nested flex children
+// so we disable flexShrink by default
+const flexChild = { flexShrink: 0 };
+
 const style = ({ gapY }: ColProps) =>
   css({
     display: "flex",
     flexDirection: "column",
-    "& > *": typeof gapY === "undefined" ? {} : { marginTop: gapY },
+    "& > *": typeof gapY === "undefined" ? flexChild : { ...flexChild, marginTop: gapY },
     "& > :first-child": typeof gapY === "undefined" ? {} : { marginTop: 0 },
   } as SystemStyleObject);
 
