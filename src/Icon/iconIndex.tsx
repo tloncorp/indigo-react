@@ -240,6 +240,8 @@ const ExclaimationMark = () => (
 
 const Bullet = () => <circle cx="8" cy="8" r="3" />;
 
+const LargeBullet = () => <circle cx="8" cy="8" r="5" />;
+
 const Circle = () => (
   <path
     fillRule="evenodd"
@@ -816,6 +818,7 @@ export const iconIndex = {
   ExclaimationMark,
   ExclaimationMarkBold,
   Bullet,
+  LargeBullet,
   Circle,
   Ellipsis,
   Star,
