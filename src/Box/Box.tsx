@@ -5,9 +5,6 @@ import { allSystemStyle, AllSystemProps } from "../systemHelpers";
 export type BoxProps = AllSystemProps;
 
 export const Box = styled.div<React.PropsWithChildren<BoxProps>>(
-  {
-    position: "relative",
-  },
   compose(...allSystemStyle)
 );
 
