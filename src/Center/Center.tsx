@@ -5,7 +5,6 @@ export type CenterProps = StructureProps;
 
 export const Center = styled.div<React.PropsWithChildren<StructureProps>>(
   {
-    position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
