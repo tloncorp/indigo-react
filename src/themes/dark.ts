@@ -2,7 +2,7 @@ import baseStyled, { ThemedStyledInterface } from "styled-components";
 
 const base = {
   white: "rgba(255,255,255,1)",
-  black: "rgba(0,0,0,1)",
+  black: "rgba(26,26,26,1)",
   red: "rgba(255,65,54,1)",
   yellow: "rgba(255,199,0,1)",
   green: "rgba(0,159,101,1)",
