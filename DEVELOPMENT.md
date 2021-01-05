@@ -20,7 +20,7 @@ Creating a basic theme-aware component with dynamic properties from scratch.
 import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 // commonStyle includes all commonly used styled-system props
-import { commonStyle, CommonStyleProps } from "../systemHelpers";
+import { commonStyle, CommonStyleProps } from "./system/unions";
 
 // Define property types and export typing
 export type LabelProps = CommonStyleProps & {
@@ -37,7 +37,7 @@ const style = ({ gray = false, bold = false, mono = false }: LabelProps) =>
     fontFamily: mono ? "mono" : "sans",
     display: "block",
     lineHeight: "short",
-    fontSize: 0,
+    fontSize: 1,
     pointerEvents: "none",
     userSelect: "none",
     verticalAlign: "middle",
@@ -62,7 +62,7 @@ Creating a styled component from an existing component, like one sourced from a 
 import { Form as FormikForm } from "formik";
 import styled from "styled-components";
 import { compose } from "styled-system";
-import { structureStyle, StructureProps } from "../systemHelpers";
+import { structureStyle, StructureProps } from "./system/unions";
 
 // Create and export property typing.
 type ManagedFormProps = StructureProps;
@@ -81,7 +81,7 @@ This is a component made from several styled components imported from Indigo.
 
 ```tsx
 import * as React from "react";
-import { CommonStyleProps } from "../systemHelpers";
+import { CommonStyleProps } from "./system/unions";
 import { Row } from "../Row/Row";
 import { Col } from "../Col/Col";
 

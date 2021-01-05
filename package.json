@@ -1,6 +1,6 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.2.15",
+  "version": "1.2.16",
   "description": "React implementation of Tlon's design system, Indigo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,18 +32,18 @@
     "@styled-system/css": "^5.1.5",
     "@tlon/indigo-light": "^1.0.3",
     "@types/react": "^16.9.46",
-    "@types/styled-components": "^5.1.2",
+    "@types/styled-components": "^5.1.7",
     "@types/styled-system": "^5.1.10",
-    "@types/styled-system__css": "^5.0.13",
+    "@types/styled-system__css": "^5.0.14",
     "esbuild": "^0.6.28",
+    "formik": "^2.1.5",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.2.1",
     "styled-system": "^5.1.5",
-    "typescript": "^4.0.2",
-    "formik": "^2.1.5"
+    "typescript": "^4.0.2"
   },
   "husky": {
     "hooks": {

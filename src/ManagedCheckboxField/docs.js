@@ -1,1 +1,0 @@
-<ManagedCheckboxField> </ManagedCheckboxField>;

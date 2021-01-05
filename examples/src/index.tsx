@@ -420,7 +420,7 @@ const App = () => {
               }}
             >
               <Label>Checkbox Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -480,7 +480,7 @@ const App = () => {
               }}
             >
               <Label>Radio Button Field Label 1</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -498,7 +498,7 @@ const App = () => {
               }}
             >
               <Label>Radio Button Field Label 2</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 We are exclusive.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -538,7 +538,7 @@ const App = () => {
               }}
             >
               <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -555,7 +555,7 @@ const App = () => {
 
             <Col p="2">
               <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <StatelessTextInput
@@ -577,7 +577,7 @@ const App = () => {
 
             <Col p="2">
               <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <StatelessTextArea
