@@ -52,6 +52,10 @@ import {
   FourUp,
   _iconIndex,
   Badge,
+  H1,
+  H2,
+  H3,
+  H4,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -231,6 +235,14 @@ const App = () => {
           <Text>2</Text>
           <Text>3</Text>
         </FourUp>
+        <Row p={p}>
+          <Col>
+            <H1>Heading 1</H1>
+            <H2>Heading 2</H2>
+            <H3>Heading 3</H3>
+            <H4>Heading 4</H4>
+          </Col>
+        </Row>
         <Row>
           <Col width={"50%"}>
             <Text> </Text>

@@ -15,6 +15,7 @@ const style = () =>
     display: "flex",
     alignItems: "center",
     px: 4,
+    fontFamily: "sans",
     height: "24px",
     backgroundColor: "white",
     borderLeft: "1px solid",

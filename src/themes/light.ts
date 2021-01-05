@@ -134,7 +134,8 @@ export const light = {
   fontWeights: {
     thin: 300,
     regular: 400,
-    bold: 500,
+    medium: 500,
+    bold: 600,
   },
   // line-height
   lineHeights: {

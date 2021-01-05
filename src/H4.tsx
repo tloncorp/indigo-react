@@ -2,23 +2,23 @@ import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { AllSystemProps, allSystemStyle } from "./system/unions";
 
-export type H2Props = AllSystemProps & {
+export type H4Props = AllSystemProps & {
   mono?: boolean;
 };
 
-const style = ({ mono = false }: H2Props) =>
+const style = ({ mono = false }: H4Props) =>
   css({
     fontWeight: "bold",
     color: "black",
     fontFamily: mono ? "mono" : "sans",
-    lineHeight: "min",
+    lineHeight: "short",
     // minHeight: "3",
-    fontSize: 3,
+    fontSize: 1,
   } as SystemStyleObject);
 
-export const H2 = styled.span<React.PropsWithChildren<H2Props>>(
+export const H4 = styled.span<React.PropsWithChildren<H4Props>>(
   style,
   ...allSystemStyle
 );
 
-H2.displayName = "H2";
+H4.displayName = "H4";

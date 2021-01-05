@@ -2,11 +2,11 @@ import styled from "styled-components";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { AllSystemProps, allSystemStyle } from "./system/unions";
 
-export type TextProps = AllSystemProps & {
+export type H1Props = AllSystemProps & {
   mono?: boolean;
 };
 
-const style = ({ mono = false }: TextProps) =>
+const style = ({ mono = false }: H1Props) =>
   css({
     fontWeight: "bold",
     color: "black",
@@ -16,9 +16,9 @@ const style = ({ mono = false }: TextProps) =>
     fontSize: 4,
   } as SystemStyleObject);
 
-export const Text = styled.span<React.PropsWithChildren<TextProps>>(
+export const H1 = styled.span<React.PropsWithChildren<H1Props>>(
   style,
   ...allSystemStyle
 );
 
-Text.displayName = "Text";
+H1.displayName = "H1";

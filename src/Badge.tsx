@@ -9,7 +9,7 @@ export const Badge = (props: BadgeProps) => (
     // @ts-ignore
     color="white"
     height="20px"
-    px="8px"
+    px="6px"
     py="2.5px"
     borderRadius="1"
     flex="0"

@@ -7,6 +7,10 @@ export { Box, BoxProps } from "./Box";
  * Text + Type + Icons
  */
 export { Text, TextProps } from "./Text";
+export { H1, H1Props } from "./H1";
+export { H2, H2Props } from "./H2";
+export { H3, H3Props } from "./H3";
+export { H4, H4Props } from "./H4";
 export { Label, LabelProps } from "./Label";
 export { ErrorLabel, ErrorLabelProps } from "./ErrorLabel";
 export { Icon, IconProps, IconIndex } from "./Icon";
