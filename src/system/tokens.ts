@@ -36,50 +36,70 @@ const button = {
     primary: {
       backgroundColor: "blue",
       color: "white",
+      "&:hover": {
+        backgroundColor: "darkBlue",
+      },
       // "*": { fill: "white" },
-      borderColor: "blue",
+      // borderColor: "blue",
     },
     primaryDisabled: {
       backgroundColor: "washedBlue",
       color: "lightBlue",
       // "*": { fill: "lightBlue" },
-      borderColor: "lightBlue",
+      // borderColor: "lightBlue",
     },
     default: {
-      backgroundColor: "white",
+      backgroundColor: "washedGray",
       color: "black",
+      "&:hover": {
+        backgroundColor: "lightGray",
+      },
+      "&:focus-visible": {
+        outline: "2px solid",
+        outlineColor: "lightBlue",
+      },
       // "*": { fill: "black" },
-      borderColor: "lightGray",
+      // borderColor: "lightGray",
     },
     defaultDisabled: {
       backgroundColor: "washedGray",
       color: "lightGray",
       // "*": { fill: "lightGray" },
-      borderColor: "lightGray",
+      // borderColor: "lightGray",
     },
-    destructivePrimary: {
+    // destructivePrimary: {
+    //   backgroundColor: "red",
+    //   color: "white",
+    //   '&:hover': {
+    //     backgroundColor: "darkRed",
+    //   }
+    //   // "*": { fill: "white" },
+    //   // borderColor: "red",
+    // },
+    // destructivePrimaryDisabled: {
+    //   backgroundColor: "washedRed",
+    //   color: "lightRed",
+    //   // "*": { fill: "lightRed" },
+    //   // borderColor: "lightRed",
+    // },
+    destructive: {
       backgroundColor: "red",
       color: "white",
-      // "*": { fill: "white" },
-      borderColor: "red",
-    },
-    destructivePrimaryDisabled: {
-      backgroundColor: "washedRed",
-      color: "lightRed",
-      // "*": { fill: "lightRed" },
-      borderColor: "lightRed",
-    },
-    destructive: {
-      backgroundColor: "white",
-      color: "red",
+      "&:hover": {
+        backgroundColor: "darkRed",
+      },
+      // '&:focus-visible': {
+      //   outline: '2px solid',
+      //   outlineColor: 'lightRed'
+      // }
       // "*": { fill: "red" },
-      borderColor: "red",
+      // borderColor: "red",
     },
     destructiveDisabled: {
       backgroundColor: "washedRed",
       color: "lightRed",
       // "*": { fill: "lightRed" },
-      borderColor: "lightRed",
+      // borderColor: "lightRed",
     },
   } as SystemStyleObjects,
   text: {
@@ -98,22 +118,28 @@ const action = {
   state: {
     default: {
       color: "blue",
-      background: "white",
+      // background: "white",
+      "&:hover": {
+        color: "darkBlue",
+      },
       // "*": { fill: "blue" },
     },
     defaultDisabled: {
       color: "lightGray",
-      background: "white",
+      // background: "white",
       // "*": { fill: "lightGray" },
     },
     destructive: {
       color: "red",
-      background: "white",
+      // background: "white",
+      "&:hover": {
+        color: "darkRed",
+      },
       // "*": { fill: "red" },
     },
     destructiveDisabled: {
       color: "lightRed",
-      background: "white",
+      // background: "white",
       // "*": { fill: "lightRed" },
     },
   } as SystemStyleObjects,
@@ -240,17 +266,30 @@ const toggleSwitch = {
 const textInput = {
   state: {
     default: {
-      borderColor: "lightGray",
+      border: "none",
       color: "black",
-      backgroundColor: "white",
+      backgroundColor: "washedGray",
+      // '&:focus': {
+      //   backgroundColor: "washedBlue",
+      // },
+      "&:focus": {
+        // boxShadow: `0px 0px 0px 2px ${p => p.theme.colors.lightBlue}`,
+        // boxShadowColor: 'lightBlue',
+        // // outline: '2px solid',
+        // // outlineColor: 'lightBlue',
+        // // outlineRadius: '4px',
+        backgroundColor: "washedBlue",
+      },
     },
     disabled: {
-      borderColor: "lightGray",
+      border: "none",
+      // borderColor: "lightGray",
       color: "gray",
       backgroundColor: "washedGray",
     },
     hasError: {
-      borderColor: "red",
+      border: "none",
+      // borderColor: "red",
       color: "red",
       backgroundColor: "washedRed",
     },

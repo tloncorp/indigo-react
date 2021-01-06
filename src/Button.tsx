@@ -15,11 +15,11 @@ const stateStyle = (
   destructive: boolean,
   disabled: boolean
 ) => {
-  if (destructive && primary && disabled)
-    return button.state.destructivePrimaryDisabled;
+  // if (destructive && primary && disabled)
+  //   return button.state.destructivePrimaryDisabled;
   if (primary && disabled) return button.state.primaryDisabled;
   if (destructive && disabled) return button.state.destructiveDisabled;
-  if (destructive && primary) return button.state.destructivePrimary;
+  // if (destructive && primary) return button.state.destructivePrimary;
   if (destructive) return button.state.destructive;
   if (primary) return button.state.primary;
   if (disabled) return button.state.defaultDisabled;
@@ -33,7 +33,6 @@ const style = ({
 }: ButtonProps) =>
   css({
     width: "auto",
-    border: "1px solid",
     height: 5,
     borderRadius: 2,
     overflow: "hidden",

@@ -26,7 +26,7 @@ const style = ({
     px: 2,
     display: "flex",
     alignItems: "center",
-    border: "1px solid",
+    // border: "1px solid",
     borderRadius: 2,
     ...textInput.text,
     ...stateStyle(hasError, disabled),

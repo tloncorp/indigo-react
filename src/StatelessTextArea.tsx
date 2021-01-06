@@ -23,7 +23,7 @@ const style = ({
     boxSizing: "border-box",
     width: "100%",
     p: 2,
-    border: "1px solid",
+    // border: "1px solid",
     borderRadius: 2,
     resize: "vertical",
     minHeight: 5,

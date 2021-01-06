@@ -33,7 +33,6 @@ const style = ({
 }: ButtonAnchorProps) =>
   css({
     width: "auto",
-    border: "1px solid",
     height: 5,
     borderRadius: 2,
     overflow: "hidden",

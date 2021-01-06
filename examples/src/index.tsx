@@ -327,7 +327,7 @@ const App = () => {
             >
               {" "}
               Button With Icon
-              <Icon ml="2" icon="Smiley" />
+              <Icon ml="2" icon="Smiley" color="white" />
             </Button>
             <Button
               destructive
@@ -337,13 +337,6 @@ const App = () => {
               Destructive Button With Icon
               <Icon ml="2" icon="X" />
             </Button>
-            <Button
-              primary
-              destructive
-              mb="2"
-              children="Destructive Primary Button"
-              onClick={() => console.log("Primary Button (Destructive)")}
-            />
             <Button
               primary
               disabled
@@ -359,6 +352,11 @@ const App = () => {
             />
 
             <Box>
+              <Button
+                mb="2"
+                children="Button"
+                onClick={() => console.log("Button")}
+              />
               <Button
                 primary
                 mb="2"
