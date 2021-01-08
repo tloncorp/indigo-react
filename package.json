@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "tsc": "tsc",
     "esbuild": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom --external:styled-system --external:styled-components --external:@styled-system/css --external:formik --outdir=dist --format=esm --splitting --sourcemap",
     "esbuild:prod": "esbuild src/index.tsx --bundle --external:react --external:react-is --external:react-dom  --external:styled-system --external:styled-components --external:@styled-system/css --external:formik --outdir=dist --format=esm --splitting --sourcemap",
@@ -19,6 +19,7 @@
   "author": "Gavin Atkinson",
   "license": "MIT",
   "dependencies": {
+    "@babel/preset-typescript": "^7.12.7",
     "@reach/menu-button": "^0.10.5",
     "react": "^16.13.1",
     "tslib": "^2.0.1"
@@ -29,7 +30,12 @@
     "formik": "^2.1.5"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "@styled-system/css": "^5.1.5",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.0",
     "@tlon/indigo-light": "^1.0.3",
     "@types/react": "^16.9.46",
     "@types/styled-components": "^5.1.7",
@@ -38,6 +44,9 @@
     "esbuild": "^0.6.28",
     "formik": "^2.1.5",
     "husky": "^4.2.5",
+    "jest": "^26.6.3",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom-fifteen": "^1.0.2",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "react-dom": "^16.13.1",

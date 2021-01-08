@@ -34,17 +34,17 @@ const container = {
 const button = {
   state: {
     primary: {
-      backgroundColor: "blue",
-      color: "white",
+      backgroundColor: "washedGray",
+      color: "blue",
       "&:hover": {
-        backgroundColor: "darkBlue",
+        backgroundColor: "lightBlue",
       },
       // "*": { fill: "white" },
       // borderColor: "blue",
     },
     primaryDisabled: {
-      backgroundColor: "washedBlue",
-      color: "lightBlue",
+      backgroundColor: "lightGray",
+      color: "gray",
       // "*": { fill: "lightBlue" },
       // borderColor: "lightBlue",
     },
@@ -83,10 +83,10 @@ const button = {
     //   // borderColor: "lightRed",
     // },
     destructive: {
-      backgroundColor: "red",
-      color: "white",
+      backgroundColor: "washedGray",
+      color: "red",
       "&:hover": {
-        backgroundColor: "darkRed",
+        backgroundColor: "lightRed",
       },
       // '&:focus-visible': {
       //   outline: '2px solid',
@@ -117,10 +117,20 @@ const button = {
 const action = {
   state: {
     default: {
+      color: "black",
+      // background: "white",
+      "&:hover": {
+        color: "black",
+        backgroundColor: "washedGray",
+      },
+      // "*": { fill: "blue" },
+    },
+    primary: {
       color: "blue",
       // background: "white",
       "&:hover": {
-        color: "darkBlue",
+        color: "blue",
+        backgroundColor: "washedBlue",
       },
       // "*": { fill: "blue" },
     },
@@ -133,7 +143,8 @@ const action = {
       color: "red",
       // background: "white",
       "&:hover": {
-        color: "darkRed",
+        // color: "darkRed",
+        backgroundColor: "washedRed",
       },
       // "*": { fill: "red" },
     },

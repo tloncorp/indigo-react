@@ -47,8 +47,6 @@ import {
   ContinuousProgressBar,
   SegmentedProgressBar,
   LoadingSpinner,
-  ButtonAnchor,
-  ActionAnchor,
   FourUp,
   _iconIndex,
   Badge,
@@ -59,6 +57,7 @@ import {
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
 interface ManagedFormValues {
   firstName: string;
@@ -215,7 +214,7 @@ const App = () => {
           <Text>{"Indigo Examples"}</Text>
         </Row>
         <Row p={p}>
-          <Row pitch="2">
+          <Row gapX="2">
             <Text>Tools:</Text>
             <Anchor href="https://github.com/urbit/indigo-react">Github</Anchor>
             <Anchor href="https://www.figma.com/file/H1RAHV4KscSTnvrIiL0z8C/Indigo?node-id=1%3A6">
@@ -299,8 +298,11 @@ const App = () => {
             <Rule />
             <Text py="2">{"<Action />"}</Text>
             <Box>
-              <Badge>Badge</Badge>
+              <Action as="a" href="https://tlon.io">
+                Action as anchor
+              </Action>
               <Action>Action</Action>
+              <Action primary>Action</Action>
               <Action disabled>Disabled Action</Action>
               <Action destructive>Destructive Action</Action>
               <Action destructive disabled>
@@ -315,6 +317,7 @@ const App = () => {
             <Rule />
             <Text py="2">{"<Button />"}</Text>
             <Button
+              width="100%"
               primary
               mb="2"
               children="Primary Button"
@@ -327,7 +330,7 @@ const App = () => {
             >
               {" "}
               Button With Icon
-              <Icon ml="2" icon="Smiley" color="white" />
+              <Icon ml="2" icon="Smiley" color="blue" />
             </Button>
             <Button
               destructive
@@ -335,7 +338,7 @@ const App = () => {
               onClick={() => console.log("Destructive")}
             >
               Destructive Button With Icon
-              <Icon ml="2" icon="X" />
+              <Icon ml="2" icon="X" color="red" />
             </Button>
             <Button
               primary
@@ -809,10 +812,7 @@ const App = () => {
           </Col>
         </Row>
 
-        <Row>
-          <ButtonAnchor href="http://urbit.org">ButtonAnchor</ButtonAnchor>
-          <ActionAnchor href="http://urbit.org">ActionAnchor</ActionAnchor>
-        </Row>
+        <Row></Row>
       </Col>
     </ThemeProvider>
   );

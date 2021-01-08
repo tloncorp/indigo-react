@@ -27,7 +27,7 @@ const levels = [
 
 const base = {
   white: "#FFF",
-  black: "#000",
+  black: "#262626",
   red: "#f44336",
   yellow: "#ffc107",
   green: "#4caf50",
@@ -59,7 +59,7 @@ const scales = levels.reduce((acc, level) => {
   return { ...acc, ...newCols };
 }, {});
 
-console.log(scales);
+// console.log(scales);
 
 // const scales = {
 //   white05: "rgba(255,255,255,0.05)",
@@ -142,7 +142,7 @@ export const light = {
     white: base.white,
     black: base.black,
 
-    gray: "rgba(0,0,0,0.75)",
+    gray: "rgba(0,0,0,0.60)",
     lightGray: "rgba(0,0,0,0.15)",
     // @ts-ignore
     washedGray: scales.black05,

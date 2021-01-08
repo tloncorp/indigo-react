@@ -44,6 +44,7 @@ const style = ({
     fontFamily: mono ? "mono" : "sans",
     lineHeight: "short",
     fontSize: 1,
+    width: "fit-content",
     "&:visited": {
       color: color || gray ? "gray" : "black",
     },
@@ -55,8 +56,5 @@ export const Anchor = styled.a<React.PropsWithChildren<AnchorProps>>(
   style,
   ...styleProps
 );
-
-export const asAnchor = (component: React.FC) =>
-  styled(component)<React.PropsWithChildren<AnchorProps>>(style, ...styleProps);
 
 Anchor.displayName = "Anchor";

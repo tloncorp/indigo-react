@@ -32,7 +32,6 @@ const style = ({
   disabled = false,
 }: ButtonProps) =>
   css({
-    width: "auto",
     height: 5,
     borderRadius: 2,
     overflow: "hidden",
@@ -46,11 +45,5 @@ export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
   style,
   ...commonStyle
 );
-
-export const asButton = (component: React.FC) =>
-  styled(component)<React.PropsWithChildren<ButtonProps>>(
-    style,
-    ...commonStyle
-  );
 
 Button.displayName = "Button";

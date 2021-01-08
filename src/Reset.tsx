@@ -48,7 +48,7 @@ html, body, div, span, applet, object, iframe,
     border-collapse: collapse;
     border-spacing: 0;
   }
-  button {
+  button, a {
     box-sizing: border-box;
     border: 0;
     outline: none;
@@ -78,6 +78,10 @@ html, body, div, span, applet, object, iframe,
       to {
         transform: rotate(360deg);
       }
+  }
+
+  button {
+    transition: 50ms;
   }
 `;
 Reset.displayName = "CSSReset";
