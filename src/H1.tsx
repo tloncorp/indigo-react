@@ -12,7 +12,6 @@ const style = ({ mono = false }: H1Props) =>
     color: "black",
     fontFamily: mono ? "mono" : "sans",
     lineHeight: "short",
-    // minHeight: "3",
     fontSize: 4,
   } as SystemStyleObject);
 

@@ -47,8 +47,6 @@ import {
   ContinuousProgressBar,
   SegmentedProgressBar,
   LoadingSpinner,
-  ButtonAnchor,
-  ActionAnchor,
   FourUp,
   _iconIndex,
   Badge,
@@ -809,11 +807,6 @@ const App = () => {
               </Box>
             </Box>
           </Col>
-        </Row>
-
-        <Row>
-          <ButtonAnchor href="http://urbit.org">ButtonAnchor</ButtonAnchor>
-          <ActionAnchor href="http://urbit.org">ActionAnchor</ActionAnchor>
         </Row>
       </Col>
     </ThemeProvider>

@@ -12,7 +12,6 @@ const style = ({ mono = false }: H2Props) =>
     color: "black",
     fontFamily: mono ? "mono" : "sans",
     lineHeight: "min",
-    // minHeight: "3",
     fontSize: 3,
   } as SystemStyleObject);
 
