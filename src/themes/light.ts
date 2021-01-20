@@ -122,17 +122,20 @@ export const light = {
   // font-size
   fontSizes: [
     12, // 0
-    16, // 1
-    24, // 2
-    32, // 3
-    48, // 4
-    64, // 5
+    14, // 1
+    16, // 2
+    20, // 3
+    24, // 4
+    32, // 5
+    48, // 6
+    64, // 7
   ],
   // 	font-weight
   fontWeights: {
     thin: 300,
     regular: 400,
-    bold: 500,
+    medium: 500,
+    bold: 600,
   },
   // line-height
   lineHeights: {

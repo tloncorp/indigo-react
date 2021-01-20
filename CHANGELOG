@@ -1,5 +1,9 @@
 
 # Changelog
+1.2.16 (2021-1-11)
+    * Updates all elements to use new typography
+    * Removes AnchorButton and ActionAnchor because they are redundant given 'as' prop
+
 1.2.15 (2020-11-11)
     * Removes position:relative from <Box>
     * Removes flex:0 to row and col

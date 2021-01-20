@@ -17,7 +17,7 @@ const style = () =>
     alignItems: "center",
     fontFamily: "sans",
     color: "gray",
-    fontSize: 0,
+    fontSize: 1,
     textDecoration: "none",
     borderRight: "1px solid",
     borderRightColor: "lightGray",

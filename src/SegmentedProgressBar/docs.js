@@ -1,1 +1,0 @@
-<SegmentedProgressBar> </SegmentedProgressBar>;

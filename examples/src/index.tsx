@@ -47,11 +47,13 @@ import {
   ContinuousProgressBar,
   SegmentedProgressBar,
   LoadingSpinner,
-  ButtonAnchor,
-  ActionAnchor,
   FourUp,
   _iconIndex,
   Badge,
+  H1,
+  H2,
+  H3,
+  H4,
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -231,6 +233,14 @@ const App = () => {
           <Text>2</Text>
           <Text>3</Text>
         </FourUp>
+        <Row p={p}>
+          <Col>
+            <H1>Heading 1</H1>
+            <H2>Heading 2</H2>
+            <H3>Heading 3</H3>
+            <H4>Heading 4</H4>
+          </Col>
+        </Row>
         <Row>
           <Col width={"50%"}>
             <Text> </Text>
@@ -420,7 +430,7 @@ const App = () => {
               }}
             >
               <Label>Checkbox Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -480,7 +490,7 @@ const App = () => {
               }}
             >
               <Label>Radio Button Field Label 1</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -498,7 +508,7 @@ const App = () => {
               }}
             >
               <Label>Radio Button Field Label 2</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 We are exclusive.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -538,7 +548,7 @@ const App = () => {
               }}
             >
               <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
@@ -555,7 +565,7 @@ const App = () => {
 
             <Col p="2">
               <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <StatelessTextInput
@@ -577,7 +587,7 @@ const App = () => {
 
             <Col p="2">
               <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="2">
+              <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
               <StatelessTextArea
@@ -797,11 +807,6 @@ const App = () => {
               </Box>
             </Box>
           </Col>
-        </Row>
-
-        <Row>
-          <ButtonAnchor href="http://urbit.org">ButtonAnchor</ButtonAnchor>
-          <ActionAnchor href="http://urbit.org">ActionAnchor</ActionAnchor>
         </Row>
       </Col>
     </ThemeProvider>
