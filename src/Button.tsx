@@ -8,13 +8,18 @@ export type ButtonProps = CommonStyleProps & {
   primary?: boolean;
   disabled?: boolean;
   destructive?: boolean;
+  hideDisabled?: boolean;
 };
 
 const stateStyle = (
   primary: boolean,
   destructive: boolean,
-  disabled: boolean
+  disabled: boolean,
+  hideDisabled: boolean
 ) => {
+  if(hideDisabled) {
+    disabled = false;
+  }
   if (destructive && primary && disabled)
     return button.state.destructivePrimaryDisabled;
   if (primary && disabled) return button.state.primaryDisabled;
@@ -30,6 +35,7 @@ const style = ({
   primary = false,
   destructive = false,
   disabled = false,
+  hideDisabled = false
 }: ButtonProps) =>
   css({
     width: "auto",
@@ -40,7 +46,7 @@ const style = ({
     px: 3,
     ...button.text,
     ...container.center,
-    ...stateStyle(primary, destructive, disabled),
+    ...stateStyle(primary, destructive, disabled, hideDisabled),
   } as SystemStyleObject);
 
 export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(

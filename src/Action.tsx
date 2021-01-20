@@ -6,23 +6,35 @@ import { action } from "./system/tokens";
 export type ActionProps = CommonStyleProps & {
   disabled?: boolean;
   destructive?: boolean;
+  hideDisabled?: boolean;
 };
 
-const stateColor = (destructive: boolean, disabled: boolean) => {
+const stateColor = (
+  destructive: boolean,
+  disabled: boolean,
+  hideDisabled: boolean
+) => {
+  if (hideDisabled) {
+    disabled = false;
+  }
   if (destructive && disabled) return action.state.destructiveDisabled;
   if (destructive) return action.state.destructive;
   if (disabled) return action.state.defaultDisabled;
   return action.state.default;
 };
 
-const style = ({ destructive = false, disabled = false }: ActionProps) =>
+const style = ({
+  destructive = false,
+  disabled = false,
+  hideDisabled = false,
+}: ActionProps) =>
   css({
     width: "auto",
     border: "none",
     overflow: "hidden",
     height: 3,
     ...action.text,
-    ...stateColor(destructive, disabled),
+    ...stateColor(destructive, disabled, hideDisabled),
   } as SystemStyleObject);
 
 export const Action = styled.button<React.PropsWithChildren<ActionProps>>(
