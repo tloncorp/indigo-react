@@ -762,6 +762,28 @@ const InviteUsers = () => (
   </>
 );
 
+const Tutorial = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clip-rule="evenodd"
+      d="M7 5V7H6V5H7ZM7 10.5V14H6V10.5H7Z"
+    />
+
+    <path
+      fillRule="evenodd"
+      clip-rule="evenodd"
+      d="M2.79289 5L0.292894 2.5L2.79289 -3.57851e-06L11 -3.8147e-06L11 5L2.79289 5ZM10 4L10 0.999996L3.20711 0.999996L1.70711 2.5L3.20711 4L10 4Z"
+    />
+
+    <path
+      fillRule="evenodd"
+      clip-rule="evenodd"
+      d="M2 6L10.2071 6L12.7071 8.5L10.2071 11H2L2 6ZM3 7L3 10H9.79289L11.2929 8.5L9.79289 7L3 7Z"
+    />
+  </>
+);
+
 export const iconIndex = {
   Info,
   Server,
@@ -849,4 +871,5 @@ export const iconIndex = {
   Node,
   Spaces,
   InviteUsers,
+  Tutorial,
 };
