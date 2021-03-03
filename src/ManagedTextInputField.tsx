@@ -15,6 +15,7 @@ export type ManagedTextInputFieldProps = {
   label?: string;
   caption?: string;
   type?: string;
+  autoFocus?: boolean;
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLInputElement> &
   CommonStyleProps;
@@ -32,6 +33,7 @@ export const ManagedTextInputField = ({
   borderColor,
   color,
   fontWeight,
+  autoFocus,
   ...props
 }: ManagedTextInputFieldProps) => {
   const [field, meta] = useField(id);
@@ -54,6 +56,7 @@ export const ManagedTextInputField = ({
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         {...field}
       />
       <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
