@@ -12,6 +12,7 @@ export type ManagedTextAreaFieldProps = {
   label?: string;
   caption?: string;
   type?: string;
+  autoFocus?: boolean;
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLInputElement> &
   CommonStyleProps;
@@ -29,6 +30,7 @@ export const ManagedTextAreaField = ({
   borderColor,
   color,
   fontWeight,
+  autoFocus,
   ...props
 }: ManagedTextAreaFieldProps) => {
   const [field, meta] = useField(id);
@@ -50,6 +52,7 @@ export const ManagedTextAreaField = ({
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         {...field}
       />
       <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
