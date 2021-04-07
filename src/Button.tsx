@@ -44,6 +44,7 @@ const style = ({
     borderRadius: 2,
     overflow: "hidden",
     px: 3,
+    backgroundColor: "white",
     ...button.text,
     ...container.center,
     ...stateStyle(primary, destructive, disabled, hideDisabled),

@@ -28,12 +28,7 @@ export const Icon = ({
   icon,
   ...props
 }: IconProps & { icon: keyof IconIndex }) => {
-  const InnerIcon = iconIndex[icon];
-
-  if (typeof InnerIcon === "undefined")
-    throw Error(
-      `Prop 'icon' on <Icon/> has value ${icon}. Key must exist in the Indigo React iconIndex`
-    );
+  const InnerIcon = iconIndex[icon] ?? iconIndex.NullIcon;
 
   return (
     <SVG color="black" {...props} viewBox={"0 0 16 16"}>

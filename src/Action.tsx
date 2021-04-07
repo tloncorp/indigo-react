@@ -33,6 +33,7 @@ const style = ({
     border: "none",
     overflow: "hidden",
     height: 3,
+    backgroundColor: "white",
     ...action.text,
     ...stateColor(destructive, disabled, hideDisabled),
   } as SystemStyleObject);
