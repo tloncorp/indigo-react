@@ -73,10 +73,16 @@ html, body, div, span, applet, object, iframe,
   @keyframes loadingSpinnerRotation {
     from {
         transform: rotate(0deg);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        
       }
     
       to {
         transform: rotate(360deg);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+
       }
   }
 `;

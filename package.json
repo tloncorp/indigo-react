@@ -21,7 +21,6 @@
   "dependencies": {
     "@reach/menu-button": "^0.10.5",
     "react": "^16.13.1",
-    "tsc": "^1.20150623.0",
     "tslib": "^2.0.1"
   },
   "peerDependencies": {
@@ -44,7 +43,7 @@
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.1",
     "styled-system": "^5.1.5",
-    "typescript": "^4.0.2"
+    "typescript": "^4.2.4"
   },
   "husky": {
     "hooks": {
