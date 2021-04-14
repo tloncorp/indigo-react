@@ -813,6 +813,7 @@ export const iconIndex = {
   ArrowSouthEast,
   ArrowSouthWest,
   ArrowNorthWest,
+  ArrowExpand,
   WestCarat,
   EastCarat,
   Upload,

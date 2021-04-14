@@ -25,11 +25,11 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@tlon/indigo-light": "^1.0.4",
+    "@tlon/indigo-light": "^1.0.7",
+    "local-indigo-react": "file:..",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5",
-    "local-indigo-react": "file:..",
     "yup": "^0.29.3"
   }
 }
