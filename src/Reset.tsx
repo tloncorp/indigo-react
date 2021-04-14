@@ -69,21 +69,5 @@ html, body, div, span, applet, object, iframe,
   * {
     outline: none;
   }
-
-  @keyframes loadingSpinnerRotation {
-    from {
-        transform: rotate(0deg);
-        -webkit-transform-origin: center center;
-        transform-origin: center center;
-        
-      }
-    
-      to {
-        transform: rotate(360deg);
-        -webkit-transform-origin: center center;
-        transform-origin: center center;
-
-      }
-  }
 `;
 Reset.displayName = "CSSReset";
