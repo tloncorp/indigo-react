@@ -784,6 +784,16 @@ const AddUser = () => (
   </>
 );
 
+const Delete = () => (
+  <>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M10 3H6V4H10V3ZM11 4V3V2H10H6H5V3V4H4H2V5L3 5V13C3 13.5523 3.44772 14 4 14H12C12.5523 14 13 13.5523 13 13V5H14V4H12H11ZM12 5H11H10H6H5H4V13H12V5ZM6 7H7V11H6V7ZM10 7H9V11H10V7Z"
+    />
+  </>
+);
+
 const Bug = () => (
   <>
     <path
@@ -909,4 +919,5 @@ export const iconIndex = {
   Node,
   NullIcon,
   Bug,
+  Delete,
 };
