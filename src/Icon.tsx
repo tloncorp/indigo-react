@@ -28,7 +28,7 @@ export const Icon = ({
   icon,
   ...props
 }: IconProps & { icon: keyof IconIndex }) => {
-  const InnerIcon = iconIndex[icon] ?? iconIndex.NullIcon;
+  const InnerIcon = iconIndex[icon] || iconIndex.NullIcon;
 
   return (
     <SVG color="black" {...props} viewBox={"0 0 16 16"}>
