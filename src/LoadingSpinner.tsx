@@ -12,9 +12,6 @@ export type LoadingSpinnerProps = {
 
 const Foreground = styled.path(({ foreground }: LoadingSpinnerProps) =>
   css({
-    // animation: "loadingSpinnerRotation 750ms linear infinite",
-    transformBox: " fill-box",
-    transformOrigin: "50%",
     fill: foreground,
   } as SystemStyleObject)
 );

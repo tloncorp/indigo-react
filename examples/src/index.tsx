@@ -798,6 +798,10 @@ const App = () => {
                 <LoadingSpinner />
               </Box>
 
+              <Button>
+                <LoadingSpinner />
+              </Button>
+
               <Box p="2" backgroundColor="black">
                 <LoadingSpinner light />
               </Box>
