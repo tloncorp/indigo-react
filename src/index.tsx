@@ -20,6 +20,9 @@ export { Badge } from "./Badge";
 /**
  * Layout
  */
+export { Ol, OlProps } from "./Ol";
+export { Ul, UlProps } from "./Ul";
+export { Li, LiProps } from "./Li";
 export { Row, RowProps } from "./Row";
 export { Col, ColProps } from "./Col";
 export { Paragraph, ParagraphProps } from "./Paragraph";

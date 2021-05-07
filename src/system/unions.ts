@@ -147,3 +147,8 @@ export const typographicStyle = [
     textTransform: true,
   }),
 ];
+
+export const listStyle = [...allSystemStyle, system({ listStyle: true })];
+export type ListProps = AllSystemProps & {
+  listStyle?: string;
+}
