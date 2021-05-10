@@ -56,7 +56,10 @@ import {
   H4,
   Li,
   Ol,
-  Ul
+  Ul,
+  Table,
+  Tr,
+  Td
 } from "local-indigo-react";
 import css, { SystemStyleObject } from "@styled-system/css";
 import { ThemeProvider } from "styled-components";
@@ -834,6 +837,27 @@ const App = () => {
             </Box>
           </Col>
         </Row>
+        <Row>
+          <Col p={p} width="100%">
+            <Rule />
+            <Text py="2">
+              {"<Table />, <Tr />, <Td />"}
+            </Text>
+            <Table>
+              <Tr>
+                <Td><Text>Foo</Text></Td>
+                <Td><Text>Bar</Text></Td>
+                <Td><Text>Baz</Text></Td>
+              </Tr>
+              <Tr>
+                <Td><Text>Hoon</Text></Td>
+                <Td><Text>Zuse</Text></Td>
+                <Td><Text>Arvo</Text></Td>
+              </Tr>
+            </Table>
+          </Col>
+        </Row>
+
       </Col>
     </ThemeProvider>
   );
