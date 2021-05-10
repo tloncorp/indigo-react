@@ -31,6 +31,9 @@ export { Rule, RuleProps } from "./Rule";
 export { AspectRatio, AspectRatioProps } from "./AspectRatio";
 export { TwoUp, TwoUpProps } from "./TwoUp";
 export { FourUp, FourUpProps } from "./FourUp";
+export { Table, TableProps } from "./Table";
+export { Tr, TrProps } from "./Tr";
+export { Td, TdProps } from "./Td";
 
 /**
  * Buttons + Anchors
