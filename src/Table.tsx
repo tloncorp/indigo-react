@@ -8,9 +8,10 @@ export type TableProps = AllSystemProps &
 
 const style = () =>
   css({
-    border: "1px solid",
+    borderLeft: "1px solid",
+    borderTop: "1px solid",
     borderColor: "lightGray",
-    borderCollapse: true,
+    borderCollapse: "separate",
   } as SystemStyleObject);
 
 export const Table = styled.table<React.PropsWithChildren<TableProps>>(

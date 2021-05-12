@@ -9,8 +9,10 @@ export type TdProps = AllSystemProps &
 const style = () =>
   css({
     p: 1,
-    border: "1px solid",
-    borderColor: "lightGray",
+    borderRight: "1px solid",
+    borderBottom: "1px solid",
+    borderRightColor: "lightGray",
+    borderBottomColor: "lightGray",
   } as SystemStyleObject);
 
 export const Td = styled.td<React.PropsWithChildren<TdProps>>(

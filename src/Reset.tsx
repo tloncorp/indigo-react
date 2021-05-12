@@ -36,6 +36,11 @@ html, body, div, span, applet, object, iframe,
   ol, ul {
     list-style: none;
   }
+
+  li {
+    margin-left: 32px;
+  }
+
   blockquote, q {
     quotes: none;
   }
