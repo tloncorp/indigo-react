@@ -836,6 +836,16 @@ const Bug = () => (
   </>
 );
 
+const Pause = () => (
+  <>
+    <path 
+      fillRule="evenodd" 
+      clipRule="evenodd" 
+      d="M2 0H0V8H2V0ZM6 0H4V8H6V0Z"
+    />
+  </>
+);
+
 export const iconIndex = {
   Visible,
   Hidden,
@@ -920,4 +930,5 @@ export const iconIndex = {
   NullIcon,
   Bug,
   Delete,
+  Pause,
 };
