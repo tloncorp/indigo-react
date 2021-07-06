@@ -9,25 +9,25 @@ Indigo React is a component library for implementing the [Indigo Design System](
 1. Install the library
 
 ```bash
-$ npm install --save @tlon/indigo-react
+npm install --save @tlon/indigo-react
 ```
 
 2. Install peer dependencies
 
 ```bash
-$ npm install --save @tlon/indigo-light styled-components styled-system react react-dom @reach/disclosure @reach/menu-button @reach/tabs markdown-to-jsx
+npm install --save @tlon/indigo-light styled-components styled-system react react-dom @reach/disclosure @reach/menu-button @reach/tabs markdown-to-jsx formik
 ```
 
 If you are using Typescript, install the type definitions for several of these libraries.
 
 ```bash
-$ npm install --save @types/styled-components @types/styled-system @types/styled-system__css
+npm install --save @types/styled-components @types/styled-system @types/styled-system__css
 ```
 
 3. Install a theme
 
 ```bash
-$ npm install --save @tlon/indigo-light @tlon/indigo-dark
+npm install --save @tlon/indigo-light @tlon/indigo-dark
 ```
 
 ## Basic Usage
