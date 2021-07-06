@@ -1,6 +1,6 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.2.24",
+  "version": "1.2.25",
   "descrip tion": "React implementation of Tlon's design system, Indigo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
