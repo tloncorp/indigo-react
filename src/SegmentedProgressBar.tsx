@@ -37,12 +37,12 @@ const backgroundStyle = () =>
     },
   } as SystemStyleObject);
 
-const Background = styled.div<React.PropsWithChildren<{}>>(
+const Background = styled.div<React.PropsWithChildren<CommonStyleProps>>(
   backgroundStyle,
   ...commonStyle
 );
 
-export type SegmentedProgressBarProps = {
+export type SegmentedProgressBarProps = CommonStyleProps & {
   segments?: number;
   current?: number;
 };
@@ -53,7 +53,7 @@ export const SegmentedProgressBar = ({
   ...props
 }: SegmentedProgressBarProps) => {
   return (
-    <Background {...props}>
+    <Background {...(props as any)}>
       {sequence(segments).map((_, index: number) => (
         <Segment key={"segment" + index} active={index < current} />
       ))}

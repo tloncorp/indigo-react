@@ -1,5 +1,6 @@
+import classNames from "classnames";
 import * as React from "react";
-import { Checkbox, Box, Col } from "./index";
+import { Checkbox } from "./index";
 import { StructureProps } from "./system/unions";
 
 export type StatelessCheckboxFieldProps = {
@@ -14,19 +15,24 @@ export const StatelessCheckboxField = ({
   disabled,
   hasError,
   onChange,
+  className,
   children,
   ...props
 }: StatelessCheckboxFieldProps) => {
   return (
-    <Box display="flex" onClick={onChange} {...props} cursor="pointer">
+    <div
+      className={classNames("flex cursor-pointer", className)}
+      onClick={onChange}
+      {...props}
+    >
       <Checkbox
         selected={selected}
         disabled={disabled}
         hasError={hasError}
         mr="3"
       />
-      <Col>{children}</Col>
-    </Box>
+      <div className="flex flex-col">{children}</div>
+    </div>
   );
 };
 

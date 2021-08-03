@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useField } from "formik";
 
-import { Box } from "./Box";
 import { StatelessTextInput } from "./StatelessTextInput";
 import { ErrorLabel } from "./ErrorLabel";
 import { Label } from "./Label";
 import { CommonStyleProps } from "./system/unions";
+import classNames from "classnames";
 
 export type ManagedTextInputFieldProps = {
   hasError?: boolean;
@@ -28,6 +28,7 @@ export const ManagedTextInputField = ({
   caption,
   id,
   children,
+  className,
   type,
   fontFamily,
   borderColor,
@@ -39,7 +40,7 @@ export const ManagedTextInputField = ({
   const [field, meta] = useField(id);
 
   return (
-    <Box display="flex" flexDirection="column" {...props}>
+    <div className={classNames("flex flex-col", className)} {...props}>
       <Label htmlFor={id}>{label}</Label>
       {caption ? (
         <Label mt="2" gray>
@@ -59,10 +60,10 @@ export const ManagedTextInputField = ({
         autoFocus={autoFocus}
         {...field}
       />
-      <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
+      <ErrorLabel className="mt-2" hasError={!!(meta.touched && meta.error)}>
         {meta.error}
       </ErrorLabel>
-    </Box>
+    </div>
   );
 };
 

@@ -1,17 +1,21 @@
+import classNames from "classnames";
 import * as React from "react";
-import { Icon, Label, Box } from "./index";
-import { CommonStyleProps } from "./system/unions";
+import { Icon, Label } from "./index";
 
-export type ErrorLabelProps = CommonStyleProps & {
+export type ErrorLabelProps = React.HTMLAttributes<HTMLDivElement> & {
   hasError?: boolean;
 };
 
 export const ErrorLabel = ({
   hasError,
+  className,
   children,
   ...props
 }: ErrorLabelProps & React.HTMLAttributes<HTMLDivElement>) => (
-  <Box display={hasError ? "flex" : "none"} {...props}>
+  <div
+    className={classNames(hasError ? "flex" : "hidden", className)}
+    {...props}
+  >
     <Icon
       mr="2"
       backgroundColor="red"
@@ -20,7 +24,7 @@ export const ErrorLabel = ({
       borderRadius="999px"
     />
     <Label color="red">{children}</Label>
-  </Box>
+  </div>
 );
 
 ErrorLabel.displayName = "ErrorLabel";

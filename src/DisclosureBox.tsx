@@ -1,25 +1,33 @@
 import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { AllSystemProps, allSystemStyle } from "./system/unions";
+import type * as Polymorphic from "@radix-ui/react-polymorphic";
+import classnames from "classnames";
 
-export type DisclosureBoxProps = AllSystemProps & {
+export type DisclosureBoxProps = {
   isOpen?: boolean;
 };
 
-const style = ({ isOpen }: DisclosureBoxProps) =>
-  css({
-    display: isOpen ? "flex" : "none",
-    flexDirection: "column",
-    visibility: isOpen ? "visible" : "hidden",
-    borderLeft: isOpen ? "1px solid" : "none",
-    borderColor: isOpen ? "lightGray" : "transparent",
-    padding: 2,
-    mx: 3,
-  } as SystemStyleObject);
+type PolymorphicDisclosureBox = Polymorphic.ForwardRefComponent<
+  "div",
+  DisclosureBoxProps
+>;
 
-export const DisclosureBox = styled.div<
-  React.PropsWithChildren<DisclosureBoxProps>
->(style, ...allSystemStyle);
+export const DisclosureBox: PolymorphicDisclosureBox = React.forwardRef(
+  (
+    { as: Comp = "div", isOpen, className, children, ...props },
+    forwardedRef
+  ) => (
+    <Comp
+      className={classnames(
+        "flex-col p-2 mx-4 border-l border-solid border-gray-200",
+        isOpen ? "flex" : "hidden",
+        className
+      )}
+      {...props}
+      ref={forwardedRef}
+    >
+      {children}
+    </Comp>
+  )
+);
 
 DisclosureBox.displayName = "DisclosureBox";

@@ -1,10 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useField } from "formik";
-import { BaseLabel, Label, ErrorLabel, Checkbox, Box, Col } from "./index";
-import { StructureProps } from "./system/unions";
+import { BaseLabel, Label, ErrorLabel, Checkbox } from "./index";
 
-type ManagedCheckboxFieldProps = StructureProps & {
+type ManagedCheckboxFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
   label: string;
   id: string;
@@ -42,7 +41,7 @@ export const ManagedCheckboxField = ({
   );
 
   return (
-    <Box {...props}>
+    <div {...props}>
       <BaseLabel
         htmlFor={id}
         display="flex"
@@ -55,7 +54,7 @@ export const ManagedCheckboxField = ({
           selected={field.checked}
           disabled={disabled}
         />
-        <Col>
+        <div className="flex flex-col">
           <Label>{label}</Label>
           {caption ? (
             <Label gray mt="1">
@@ -71,11 +70,14 @@ export const ManagedCheckboxField = ({
             disabled={disabled}
             type="checkbox"
           />
-          <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
+          <ErrorLabel
+            className="mt-2"
+            hasError={!!(meta.touched && meta.error)}
+          >
             {meta.error}
           </ErrorLabel>
-        </Col>
+        </div>
       </BaseLabel>
-    </Box>
+    </div>
   );
 };

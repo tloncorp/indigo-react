@@ -1,64 +1,43 @@
-import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { container, button } from "./system/tokens";
-import { CommonStyleProps, commonStyle } from "./system/unions";
+import React, { HTMLAttributes } from "react";
+import type * as Polymorphic from "@radix-ui/react-polymorphic";
+import classnames from "classnames";
 
-export type ButtonProps = CommonStyleProps & {
-  primary?: boolean;
-  disabled?: boolean;
-  destructive?: boolean;
-  hideDisabled?: boolean;
+type ButtonVariant =
+  | "default"
+  | "primary"
+  | "destructive"
+  | "destructive-primary";
+
+export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+  variant?: ButtonVariant;
 };
 
-const stateStyle = (
-  primary: boolean,
-  destructive: boolean,
-  disabled: boolean,
-  hideDisabled: boolean
-) => {
-  if(hideDisabled) {
-    disabled = false;
-  }
-  if (destructive && primary && disabled)
-    return button.state.destructivePrimaryDisabled;
-  if (primary && disabled) return button.state.primaryDisabled;
-  if (destructive && disabled) return button.state.destructiveDisabled;
-  if (destructive && primary) return button.state.destructivePrimary;
-  if (destructive) return button.state.destructive;
-  if (primary) return button.state.primary;
-  if (disabled) return button.state.defaultDisabled;
-  return button.state.default;
+type PolymorphicButton = Polymorphic.ForwardRefComponent<"button", ButtonProps>;
+
+const variants: Record<ButtonVariant, string> = {
+  default:
+    "text-black bg-white border-gray-200 disabled:text-gray-200 disabled:bg-gray-100",
+  primary:
+    "text-white border-blue-400 bg-blue-400 disabled:text-blue-200 disabled:border-blue-200 disabled:bg-blue-100",
+  destructive:
+    "text-red-300 border-red-300 bg-white disabled:text-red-200 disabled:border-red-200 disabled:bg-red-100",
+  "destructive-primary":
+    "text-white border-red-300 bg-red-300 disabled:text-red-200 disabled:border-red-200 disabled:bg-red-100",
 };
 
-const style = ({
-  primary = false,
-  destructive = false,
-  disabled = false,
-  hideDisabled = false
-}: ButtonProps) =>
-  css({
-    width: "auto",
-    border: "1px solid",
-    height: 5,
-    borderRadius: 2,
-    overflow: "hidden",
-    px: 3,
-    backgroundColor: "white",
-    ...button.text,
-    ...container.center,
-    ...stateStyle(primary, destructive, disabled, hideDisabled),
-  } as SystemStyleObject);
-
-export const Button = styled.button<React.PropsWithChildren<ButtonProps>>(
-  style,
-  ...commonStyle
+export const Button: PolymorphicButton = React.forwardRef(
+  (
+    { as: Comp = "button", variant = "default", className, children, ...props },
+    forwardedRef
+  ) => (
+    <Comp
+      className={classnames("button", variants[variant], className)}
+      {...props}
+      ref={forwardedRef}
+    >
+      {children}
+    </Comp>
+  )
 );
-
-export const asButton = (component: React.FC) =>
-  styled(component)<React.PropsWithChildren<ButtonProps>>(
-    style,
-    ...commonStyle
-  );
 
 Button.displayName = "Button";

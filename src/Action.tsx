@@ -1,52 +1,37 @@
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { commonStyle, CommonStyleProps } from "./system/unions";
-import { action } from "./system/tokens";
+import React from "react";
+import type * as Polymorphic from "@radix-ui/react-polymorphic";
+import classnames from "classnames";
 
-export type ActionProps = CommonStyleProps & {
-  disabled?: boolean;
+export interface ActionProps {
   destructive?: boolean;
-  hideDisabled?: boolean;
+}
+
+type PolymorphicAction = Polymorphic.ForwardRefComponent<"button", ActionProps>;
+
+type ActionStates = "default" | "destructive";
+
+const variants: Record<ActionStates, string> = {
+  default: "text-blue-400 disabled:text-gray-200",
+  destructive: "text-red-300 disabled:text-red-200",
 };
 
-const stateColor = (
-  destructive: boolean,
-  disabled: boolean,
-  hideDisabled: boolean
-) => {
-  if (hideDisabled) {
-    disabled = false;
-  }
-  if (destructive && disabled) return action.state.destructiveDisabled;
-  if (destructive) return action.state.destructive;
-  if (disabled) return action.state.defaultDisabled;
-  return action.state.default;
-};
-
-const style = ({
-  destructive = false,
-  disabled = false,
-  hideDisabled = false,
-}: ActionProps) =>
-  css({
-    width: "auto",
-    border: "none",
-    overflow: "hidden",
-    height: 3,
-    backgroundColor: "white",
-    ...action.text,
-    ...stateColor(destructive, disabled, hideDisabled),
-  } as SystemStyleObject);
-
-export const Action = styled.button<React.PropsWithChildren<ActionProps>>(
-  style,
-  ...commonStyle
+export const Action: PolymorphicAction = React.forwardRef(
+  (
+    { as: Comp = "button", destructive = false, className, children, ...props },
+    forwardedRef
+  ) => (
+    <Comp
+      className={classnames(
+        "action",
+        variants[destructive ? "destructive" : "default"],
+        className
+      )}
+      {...props}
+      ref={forwardedRef}
+    >
+      {children}
+    </Comp>
+  )
 );
-
-export const asAction = (component: React.FC) =>
-  styled(component)<React.PropsWithChildren<ActionProps>>(
-    style,
-    ...commonStyle
-  );
 
 Action.displayName = "Action";

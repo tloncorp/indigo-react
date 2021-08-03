@@ -1,10 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useField } from "formik";
-import { ToggleSwitch, BaseLabel, Label, ErrorLabel, Box, Col } from "./index";
-import { StructureProps } from "./system/unions";
+import { ToggleSwitch, BaseLabel, Label, ErrorLabel } from "./index";
 
-type ManagedToggleSwitchFieldProps = StructureProps & {
+type ManagedToggleSwitchFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
   label: string;
   id: string;
@@ -29,7 +28,7 @@ export const ManagedToggleSwitchField = ({
 }: ManagedToggleSwitchFieldProps) => {
   const [field, meta] = useField({ name: id, type: "checkbox" });
   return (
-    <Box {...props}>
+    <div {...props}>
       <BaseLabel
         htmlFor={id}
         display="flex"
@@ -42,7 +41,7 @@ export const ManagedToggleSwitchField = ({
           selected={field.checked}
           disabled={disabled}
         />
-        <Col>
+        <div className="flex flex-col">
           <Label>{label}</Label>
           {caption ? (
             <Label gray mt="1">
@@ -57,11 +56,14 @@ export const ManagedToggleSwitchField = ({
             disabled={disabled}
             type="checkbox"
           />
-          <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
+          <ErrorLabel
+            className="mt-2"
+            hasError={!!(meta.touched && meta.error)}
+          >
             {meta.error}
           </ErrorLabel>
-        </Col>
+        </div>
       </BaseLabel>
-    </Box>
+    </div>
   );
 };

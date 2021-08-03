@@ -3,16 +3,11 @@ import { useState } from "react";
 import * as ReactDOM from "react-dom";
 import * as Yup from "yup";
 import {
-  Box,
   Text,
   Button,
   Reset,
-  Anchor,
   Row,
-  Col,
   Paragraph,
-  BaseButton,
-  BaseAnchor,
   Action,
   Icon,
   Indicator,
@@ -49,19 +44,12 @@ import {
   LoadingSpinner,
   FourUp,
   _iconIndex,
-  Badge,
-  H1,
-  H2,
-  H3,
-  H4,
   Li,
-  Ol,
-  Ul,
   Table,
   Tr,
-  Td
-} from "local-indigo-react";
-import css, { SystemStyleObject } from "@styled-system/css";
+  Td,
+  IconIndex,
+} from "./index";
 import { ThemeProvider } from "styled-components";
 
 interface ManagedFormValues {
@@ -122,27 +110,21 @@ const enumerateColors = (theme: Theme) =>
   Object.entries(theme.colors).map(([k, v]) => {
     if (k === "scales" || k === "util") return null;
     return (
-      <Box
+      <div
+        className="flex items-center h-8 px-2 border border-gray-100 rounded"
         key={(k + " " + v) as string}
-        m="2"
-        border="1"
-        borderColor="washedGray"
-        borderRadius="2"
-        width="12.5%"
-        px="2"
-        display="flex"
-        alignItems="center"
-        height="5"
-        backgroundColor={v as string}
+        style={{ backgroundColor: v as string }}
       >
         <Text color={k === "black" ? "white" : "black"}>{k}</Text>
-      </Box>
+      </div>
     );
   });
 
 type ThemeColorsProps = { theme: Theme };
 const ThemeColors = ({ theme }: ThemeColorsProps) => (
-  <Row flexWrap="wrap">{enumerateColors(theme)}</Row>
+  <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 w-full">
+    {enumerateColors(theme)}
+  </div>
 );
 
 const App = () => {
@@ -214,53 +196,61 @@ const App = () => {
         // <Text>{JSON.stringify(css({color:'blue'})(theme))}</Text>
       }
       <Reset theme={theme} />
-      <Col p={p}>
+      <div className="flex flex-col p-6 font-sans text-sm">
         <Row p={p}>
           <Text>{"Indigo Examples"}</Text>
         </Row>
         <Row p={p}>
-          <Row pitch="2">
+          <Row gapX="2">
             <Text>Tools:</Text>
-            <Anchor href="https://github.com/urbit/indigo-react">Github</Anchor>
-            <Anchor href="https://www.figma.com/file/H1RAHV4KscSTnvrIiL0z8C/Indigo?node-id=1%3A6">
+            <a className="anchor" href="https://github.com/urbit/indigo-react">
+              Github
+            </a>
+            <a
+              className="anchor"
+              href="https://www.figma.com/file/H1RAHV4KscSTnvrIiL0z8C/Indigo?node-id=1%3A6"
+            >
               Figma
-            </Anchor>
-            <Anchor href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh">
+            </a>
+            <a
+              className="anchor"
+              href="https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh"
+            >
               Pesticide for Chrome
-            </Anchor>
+            </a>
           </Row>
         </Row>
         <Row p={p}>
           <ThemeColors theme={theme} />
         </Row>
-        <FourUp gap="4">
+        <FourUp className="gap-6">
           <Text>0</Text>
           <Text>1</Text>
           <Text>2</Text>
           <Text>3</Text>
         </FourUp>
         <Row p={p}>
-          <Col>
-            <H1>Heading 1</H1>
-            <H2>Heading 2</H2>
-            <H3>Heading 3</H3>
-            <H4>Heading 4</H4>
-          </Col>
+          <div className="flex flex-col">
+            <span className="h1">Heading 1</span>
+            <span className="h2">Heading 2</span>
+            <span className="h3">Heading 3</span>
+            <span className="h4">Heading 4</span>
+          </div>
         </Row>
         <Row>
-          <Col width={"50%"}>
+          <div className="flex flex-col w-1/2">
             <Text> </Text>
-          </Col>
-          <Col width={"50%"}>
+          </div>
+          <div className="flex flex-col w-1/2">
             <Text> </Text>
-          </Col>
+          </div>
         </Row>
         <TwoUp>
-          <Col p={p}>
+          <div className="flex flex-col p-6">
             <Rule />
             <Text py="2">{"<Text />"}</Text>
 
-            <Col>
+            <div className="flex flex-col space-y-2">
               <Text>Default</Text>
               <Text
                 overflow="hidden"
@@ -273,15 +263,17 @@ const App = () => {
               <Text mono>Monospace</Text>
               <Text bold>Bold</Text>
               <Text gray>Gray</Text>
-              <Anchor href="http://urbit.org">http://www.urbit.org</Anchor>
-              <Anchor target="_blank" href="http://urbit.org">
+              <a className="anchor" href="http://urbit.org">
+                http://www.urbit.org
+              </a>
+              <a className="anchor" target="_blank" href="http://urbit.org">
                 Link to new Tab
-              </Anchor>
+              </a>
               <div>
-                <Badge>Badge</Badge>
+                <span className="badge">Badge</span>
               </div>
-            </Col>
-            <Box>
+            </div>
+            <div>
               <Paragraph>
                 <Text>A </Text>
                 <Text color="green">bunch </Text>
@@ -293,59 +285,73 @@ const App = () => {
                   can’t be used again (though it was going to expire after 15
                   minutes, anyways).
                 </Text>
-                <Anchor href="http://urbit.org">elements</Anchor>
-                <Badge>Badge</Badge>
+                <a className="anchor" href="http://urbit.org">
+                  elements
+                </a>
+                <span className="badge">Badge</span>
               </Paragraph>
-            </Box>
-          </Col>
+            </div>
+          </div>
 
-          <Col p={p}>
+          <div className="flex flex-col p-6">
             <Rule />
             <Text py="2">{"<Action />"}</Text>
-            <Box>
-              <Badge>Badge</Badge>
+            <div>
+              <span className="badge">Badge</span>
               <Action>Action</Action>
               <Action disabled>Disabled Action</Action>
               <Action destructive>Destructive Action</Action>
               <Action destructive disabled>
                 Desctructive + Disabled Action
               </Action>
-            </Box>
-          </Col>
+            </div>
+          </div>
         </TwoUp>
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<Ol />"}</Text>
-            <Ol>
-              <Li><Text>First</Text></Li>
-              <Li><Text>Second</Text></Li>
-              <Li><Text>Third</Text></Li>
-            </Ol>
-          </Col>
-           <Col p={p} width="50%">
+            <ol className="list-decimal">
+              <Li>
+                <Text>First</Text>
+              </Li>
+              <Li>
+                <Text>Second</Text>
+              </Li>
+              <Li>
+                <Text>Third</Text>
+              </Li>
+            </ol>
+          </div>
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<Ul />"}</Text>
-            <Ul>
-              <Li><Text>Foo</Text></Li>
-              <Li><Text>Bar</Text></Li>
-              <Li><Text>Baz</Text></Li>
-            </Ul>
-          </Col>
+            <ul className="list-disc">
+              <Li>
+                <Text>Foo</Text>
+              </Li>
+              <Li>
+                <Text>Bar</Text>
+              </Li>
+              <Li>
+                <Text>Baz</Text>
+              </Li>
+            </ul>
+          </div>
         </Row>
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<Button />"}</Text>
             <Button
-              primary
-              mb="2"
+              variant="primary"
+              className="mb-2"
               children="Primary Button"
               onClick={() => console.log("Primary Button")}
             />
             <Button
-              primary
-              mb="2"
+              variant="primary"
+              className="mb-2"
               onClick={() => console.log("Primary Button")}
             >
               {" "}
@@ -353,70 +359,63 @@ const App = () => {
               <Icon ml="2" icon="Smiley" />
             </Button>
             <Button
-              destructive
-              mb="2"
+              variant="destructive"
+              className="mb-2"
               onClick={() => console.log("Destructive")}
             >
               Destructive Button With Icon
               <Icon ml="2" icon="X" />
             </Button>
             <Button
-              primary
-              destructive
-              mb="2"
+              variant="destructive-primary"
+              className="mb-2"
               children="Destructive Primary Button"
               onClick={() => console.log("Primary Button (Destructive)")}
             />
             <Button
-              primary
+              variant="primary"
               disabled
-              mb="2"
+              className="mb-2"
               children="Primary Button (Disabled)"
               onClick={() => console.log("Primary Button (Disabled)")}
             />
             <Button
               disabled
-              mb="2"
+              className="mb-2"
               children="Primary Button"
               onClick={() => console.log("Disabled Button")}
             />
 
-            <Box>
+            <div className="space-y-2">
               <Button
-                primary
-                mb="2"
+                variant="primary"
                 children="Primary Button"
                 onClick={() => console.log("Primary Button")}
               />
               <Button
-                destructive
-                mb="2"
+                variant="destructive"
                 children="Destructive"
                 onClick={() => console.log("Destructive")}
               />
               <Button
-                primary
-                destructive
-                mb="2"
+                variant="destructive-primary"
                 children="Primary Button (Destructive)"
                 onClick={() => console.log("Primary Button (Destructive)")}
               />
               <Button
-                primary
+                variant="primary"
                 disabled
-                mb="2"
                 children="Primary Button (Disabled)"
                 onClick={() => console.log("Primary Button (Disabled)")}
               />
               <Button
                 disabled
-                mb="2"
                 children="Primary Button"
                 onClick={() => console.log("Disabled Button")}
               />
-            </Box>
-          </Col>
-          <Col p={p} width="50%">
+            </div>
+          </div>
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<Checkbox />"}</Text>
             <Row mt="2" alignItems="flex-end">
@@ -447,7 +446,7 @@ const App = () => {
             <Checkbox mb="2" selected={true} disabled />
 
             <StatelessCheckboxField
-              p="2"
+              className="p-2"
               selected={statelessCheckboxSelected}
               hasError={checkboxErrorTriggerSelected}
               onChange={() => {
@@ -458,13 +457,16 @@ const App = () => {
               <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
-              <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
+              <ErrorLabel
+                className="mt-2"
+                hasError={checkboxErrorTriggerSelected}
+              >
                 Error Message
               </ErrorLabel>
             </StatelessCheckboxField>
 
             <StatelessCheckboxField
-              p="2"
+              className="p-2"
               selected={checkboxErrorTriggerSelected}
               hasError={false}
               onChange={() => {
@@ -475,11 +477,11 @@ const App = () => {
             >
               <Label mb="2">Trigger Error Above</Label>
             </StatelessCheckboxField>
-          </Col>
+          </div>
         </Row>
 
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<RadioButton />"}</Text>
 
@@ -507,7 +509,7 @@ const App = () => {
 
             <StatelessRadioButtonField
               name="radioGroup1"
-              p="2"
+              className="p-2"
               selected={statelessRadioButtonIndex === 0}
               hasError={checkboxErrorTriggerSelected}
               onChange={() => {
@@ -518,14 +520,17 @@ const App = () => {
               <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
-              <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
+              <ErrorLabel
+                className="mt-2"
+                hasError={checkboxErrorTriggerSelected}
+              >
                 Error Message
               </ErrorLabel>
             </StatelessRadioButtonField>
 
             <StatelessRadioButtonField
               name="radioGroup1"
-              p="2"
+              className="p-2"
               selected={statelessRadioButtonIndex === 1}
               hasError={checkboxErrorTriggerSelected}
               onChange={() => {
@@ -536,12 +541,15 @@ const App = () => {
               <Label gray mt="1">
                 We are exclusive.
               </Label>
-              <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
+              <ErrorLabel
+                className="mt-2"
+                hasError={checkboxErrorTriggerSelected}
+              >
                 Error Message
               </ErrorLabel>
             </StatelessRadioButtonField>
-          </Col>
-          <Col p={p} width="50%">
+          </div>
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<ToggleSwitch />"}</Text>
 
@@ -565,7 +573,7 @@ const App = () => {
             <ToggleSwitch mb="2" selected={false} disabled />
             <ToggleSwitch mb="2" selected={true} disabled />
             <StatelessToggleSwitchField
-              p="2"
+              className="p-2"
               selected={statelessToggleSwitchSelected}
               hasError={checkboxErrorTriggerSelected}
               onChange={() => {
@@ -576,19 +584,22 @@ const App = () => {
               <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
               </Label>
-              <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
+              <ErrorLabel
+                className="mt-2"
+                hasError={checkboxErrorTriggerSelected}
+              >
                 Error Message
               </ErrorLabel>
             </StatelessToggleSwitchField>
-          </Col>
+          </div>
         </Row>
 
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<TextInput />"}</Text>
 
-            <Col p="2">
+            <div className="flex flex-col p-2">
               <Label>Toggle Switch Field Label</Label>
               <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
@@ -601,16 +612,19 @@ const App = () => {
                 }
                 hasError={checkboxErrorTriggerSelected}
               ></StatelessTextInput>
-              <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
+              <ErrorLabel
+                className="mt-2"
+                hasError={checkboxErrorTriggerSelected}
+              >
                 Error Message
               </ErrorLabel>
-            </Col>
-          </Col>
-          <Col p={p} width="50%">
+            </div>
+          </div>
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<TextArea />"}</Text>
 
-            <Col p="2">
+            <div className="flex flex-col p-2">
               <Label>Toggle Switch Field Label</Label>
               <Label gray mt="1">
                 Note that the entire area of the field is a clickable area.
@@ -624,15 +638,18 @@ const App = () => {
                 }
                 hasError={checkboxErrorTriggerSelected}
               ></StatelessTextArea>
-              <ErrorLabel mt="2" hasError={checkboxErrorTriggerSelected}>
+              <ErrorLabel
+                className="mt-2"
+                hasError={checkboxErrorTriggerSelected}
+              >
                 Error Message
               </ErrorLabel>
-            </Col>
-          </Col>
+            </div>
+          </div>
         </Row>
 
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<ManagedForm />"}</Text>
 
@@ -648,83 +665,83 @@ const App = () => {
             >
               <ManagedForm display="flex" flexDirection="column">
                 <ManagedToggleSwitchField
-                  p="3"
+                  className="p-4"
                   id="toggleSwitch"
                   label="Setting 1"
                   caption="Turning this on will turn the toggle switch on."
                 />
                 <Text p="3">My Managed Form</Text>
                 <ManagedTextInputField
-                  p="3"
+                  className="p-4"
                   label="First Name"
                   id="firstName"
                   caption="Please enter your first name."
                   placeholder="Felicia"
                 />
                 <ManagedTextInputField
-                  p="3"
+                  className="p-4"
                   id="firstName"
                   placeholder="Test"
                 />
                 <ManagedTextInputField
-                  p="3"
+                  className="p-4"
                   label="Favorite Animal"
                   id="lastName"
                   caption="Everyone has a favorite animal..."
                   placeholder="Seal"
                 />
                 <ManagedCheckboxField
-                  p="3"
+                  className="p-4"
                   label="I agree"
                   caption="Responsibility or liability for the frequency of provision and accuracy of the BBA LIBOR rate or any use made of the BBA LIBOR rate by the subscriber, whether or not arising from the negligence of any of BBAE or the Suppliers."
                   id="iagree"
                 />
                 <ManagedTextAreaField
-                  p="3"
+                  className="p-4"
                   label="My Story..."
                   id="myStory"
                   caption="Everyone has a story to tell..."
                   placeholder="Back in my day"
                 />
                 <ManagedToggleSwitchField
-                  p="3"
+                  className="p-4"
                   id="toggleSwitch"
                   label="Setting 1"
                   caption="Turning this on will turn the toggle switch on."
                 />
-                <Box>
+                <div className="p-4">
                   <Label mb="2">Favorite Color</Label>
                   <ManagedRadioButtonField
-                    mb="2"
+                    className="mb-2"
                     label="Green"
                     id="green"
                     name="color"
                     caption="Select if your favorite color is green."
                   />
                   <ManagedRadioButtonField
-                    mb="2"
+                    className="mb-2"
                     label="Blue"
                     id="blue"
                     name="color"
                     caption="Select if your favorite color is blue."
                   />
                   <ManagedRadioButtonField
-                    mb="2"
+                    className="mb-2"
                     id="dog"
                     name="color"
                     label="Dog"
                     caption="Dog is not a color"
                     disabled
                   />
-                </Box>
-                <Button primary type="submit">
+                </div>
+                <Button variant="primary" type="submit">
                   Submit
                 </Button>
               </ManagedForm>
             </FormController>
-          </Col>
+          </div>
 
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             {
               // TODO: Enumerate icons
             }
@@ -737,9 +754,9 @@ const App = () => {
             <Icon icon="ArrowExternal" />
             <Icon icon="Smiley" />
             <Icon icon="Upload" />
-            <Icon icon="Boot" />
+            <Icon icon="BootNode" />
 
-            {Object.keys(_iconIndex).map((icon) => {
+            {(Object.keys(_iconIndex) as (keyof IconIndex)[]).map((icon) => {
               return (
                 <Row>
                   <Icon icon={icon} mr="4" />
@@ -755,11 +772,11 @@ const App = () => {
               borderColor="blue"
               color="blue"
             />
-          </Col>
+          </div>
         </Row>
 
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<DisclosureBox />, <DisclosureButton />"}</Text>
 
@@ -772,13 +789,13 @@ const App = () => {
             <DisclosureBox isOpen={disclosureBoxOpen}>
               <Text pl="2">Hello</Text>
             </DisclosureBox>
-          </Col>
-          <Col p={p} width="50%">
+          </div>
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<Menu />, <MenuButton />"}</Text>
-            <Box>
+            <div>
               <Menu>
-                <MenuButton width="100%" justifyContent="space-between">
+                <MenuButton>
                   MenuButton
                   <Icon ml="2" icon="ChevronSouth" />
                 </MenuButton>
@@ -794,12 +811,12 @@ const App = () => {
                   </MenuItem>
                 </MenuList>
               </Menu>
-            </Box>
-          </Col>
+            </div>
+          </div>
         </Row>
 
         <Row>
-          <Col p={p} width="50%">
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">
               {"<ContinuousProgressBar />, <SegmentedProgressBar />"}
@@ -814,51 +831,60 @@ const App = () => {
 
             <SegmentedProgressBar mb="2" segments={4} current={2} />
             <SegmentedProgressBar mb="2" segments={8} current={2} />
-          </Col>
-          <Col p={p} width="50%">
+          </div>
+          <div className="flex flex-col w-1/2 p-6">
             <Rule />
             <Text py="2">{"<LoadingSpinner />, <MenuButton />"}</Text>
-            <Box>
-              <Box p="2">
+            <div>
+              <div className="p-2">
                 <LoadingSpinner />
-              </Box>
+              </div>
 
               <Button>
                 <LoadingSpinner />
               </Button>
 
-              <Box p="2" backgroundColor="black">
+              <div className="p-2 bg-black">
                 <LoadingSpinner light />
-              </Box>
+              </div>
 
-              <Box p="2" backgroundColor="white">
+              <div className="p-2 bg-white">
                 <LoadingSpinner dark />
-              </Box>
-            </Box>
-          </Col>
+              </div>
+            </div>
+          </div>
         </Row>
         <Row>
-          <Col p={p} width="100%">
+          <div className="flex flex-col w-full p-6">
             <Rule />
-            <Text py="2">
-              {"<Table />, <Tr />, <Td />"}
-            </Text>
+            <Text py="2">{"<Table />, <Tr />, <Td />"}</Text>
             <Table>
               <Tr>
-                <Td><Text>Foo</Text></Td>
-                <Td><Text>Bar</Text></Td>
-                <Td><Text>Baz</Text></Td>
+                <Td>
+                  <Text>Foo</Text>
+                </Td>
+                <Td>
+                  <Text>Bar</Text>
+                </Td>
+                <Td>
+                  <Text>Baz</Text>
+                </Td>
               </Tr>
               <Tr>
-                <Td><Text>Hoon</Text></Td>
-                <Td><Text>Zuse</Text></Td>
-                <Td><Text>Arvo</Text></Td>
+                <Td>
+                  <Text>Hoon</Text>
+                </Td>
+                <Td>
+                  <Text>Zuse</Text>
+                </Td>
+                <Td>
+                  <Text>Arvo</Text>
+                </Td>
               </Tr>
             </Table>
-          </Col>
+          </div>
         </Row>
-
-      </Col>
+      </div>
     </ThemeProvider>
   );
 };

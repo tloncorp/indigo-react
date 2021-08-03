@@ -4,7 +4,7 @@ type SystemStyleObjects = {
   [key: string]: SystemStyleObject;
 };
 
-type SystemStyleProp =
+export type SystemStyleProp =
   | string
   | string[]
   | number[]
@@ -28,104 +28,6 @@ const container = {
   centerY: {
     display: "flex",
     justifyContent: "center",
-  } as SystemStyleObject,
-};
-
-const button = {
-  state: {
-    primary: {
-      backgroundColor: "blue",
-      color: "white",
-      // "*": { fill: "white" },
-      borderColor: "blue",
-    },
-    primaryDisabled: {
-      backgroundColor: "washedBlue",
-      color: "lightBlue",
-      // "*": { fill: "lightBlue" },
-      borderColor: "lightBlue",
-    },
-    default: {
-      backgroundColor: "white",
-      color: "black",
-      // "*": { fill: "black" },
-      borderColor: "lightGray",
-    },
-    defaultDisabled: {
-      backgroundColor: "washedGray",
-      color: "lightGray",
-      // "*": { fill: "lightGray" },
-      borderColor: "lightGray",
-    },
-    destructivePrimary: {
-      backgroundColor: "red",
-      color: "white",
-      // "*": { fill: "white" },
-      borderColor: "red",
-    },
-    destructivePrimaryDisabled: {
-      backgroundColor: "washedRed",
-      color: "lightRed",
-      // "*": { fill: "lightRed" },
-      borderColor: "lightRed",
-    },
-    destructive: {
-      backgroundColor: "white",
-      color: "red",
-      // "*": { fill: "red" },
-      borderColor: "red",
-    },
-    destructiveDisabled: {
-      backgroundColor: "washedRed",
-      color: "lightRed",
-      // "*": { fill: "lightRed" },
-      borderColor: "lightRed",
-    },
-  } as SystemStyleObjects,
-  text: {
-    textAlign: "center",
-    verticalAlign: "middle",
-    lineHeight: "short",
-    fontWeight: 500,
-    userSelect: "none",
-    fontSize: 1,
-    fontFamily: "sans",
-    textDecoration: "none",
-  } as SystemStyleObject,
-};
-
-const action = {
-  state: {
-    default: {
-      color: "blue",
-      background: "white",
-      // "*": { fill: "blue" },
-    },
-    defaultDisabled: {
-      color: "lightGray",
-      background: "white",
-      // "*": { fill: "lightGray" },
-    },
-    destructive: {
-      color: "red",
-      background: "white",
-      // "*": { fill: "red" },
-    },
-    destructiveDisabled: {
-      color: "lightRed",
-      background: "white",
-      // "*": { fill: "lightRed" },
-    },
-  } as SystemStyleObjects,
-  text: {
-    textAlign: "left",
-    verticalAlign: "middle",
-    lineHeight: "short",
-    fontWeight: 500,
-    userSelect: "none",
-    fontSize: 1,
-    fontFamily: "sans",
-    textDecoration: "none",
   } as SystemStyleObject,
 };
 
@@ -269,13 +171,9 @@ export {
   // Core patterns
   container,
   // UI Patterns
-  button,
-  action,
   textInput,
   toggleSwitch,
   // Used for radio and checkbox
   indicator,
-  // Types
-  SystemStyleProp,
   // Utils
 };

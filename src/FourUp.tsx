@@ -1,60 +1,21 @@
-import * as React from "react";
-import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
-import { AllSystemProps } from "./system/unions";
-import { Col } from "./Col";
-import { Box } from "./Box";
+import classnames from "classnames";
+import React, { FunctionComponent, HTMLAttributes } from "react";
 
-export type FourUpProps = AllSystemProps &
-  React.HTMLAttributes<HTMLDivElement> & {
-    children: React.ReactNodeArray;
-    gx: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-    gy: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-    gap: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-  };
+export type FourUpProps = HTMLAttributes<HTMLDivElement>;
 
-const cells = [
-  {
-    gridColumn: ["1 / 2", "1 / 2", "1 / 2"],
-    gridRow: ["1 / 3", "1 / 2", "1 / 2"],
-  },
-  {
-    gridColumn: ["1 / 2", "2 / 3", "2 / 3"],
-    gridRow: ["2 / 3", "1 / 2", "1 / 2"],
-  },
-  {
-    gridColumn: ["1 / 2", "1 / 2", "3 / 4"],
-    gridRow: ["3 / 5", "2 / 3", "1 / 2"],
-  },
-  {
-    gridColumn: ["1 / 2", "2 / 3", "4 / 5"],
-    gridRow: ["4 / 5", "2 / 3", "1 / 2"],
-  },
-];
-
-export const FourUp = ({
+export const FourUp: FunctionComponent<FourUpProps> = ({
   children,
-  gap = 0,
-  gx,
-  gy,
+  className,
   ...props
-}: FourUpProps) => {
-  const fourChildren = children.slice(0, 4) as React.ReactNodeArray;
-
-  return (
-    // @ts-ignore
-    <Box
-      display="grid"
-      gridColumnGap={gx || gap}
-      gridRowGap={gy || gap}
-      gridTemplateColumns={["1fr", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
-      gridTemplateRows={["repeat(4, 1fr)", "repeat(2, 1fr)", "1fr"]}
-      {...props}
-    >
-      {fourChildren.map((child, index) => (
-        <Col {...cells[index]}>{child}</Col>
-      ))}
-    </Box>
-  );
-};
+}) => (
+  <div
+    className={classnames("grid grid-flow-col grid-cols-4", className)}
+    {...props}
+  >
+    {children &&
+      Array.isArray(children) &&
+      children.map((child) => <div className="flex flex-col">{child}</div>)}
+  </div>
+);
 
 FourUp.displayName = "FourUp";

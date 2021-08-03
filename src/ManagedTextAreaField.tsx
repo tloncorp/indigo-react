@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useField } from "formik";
-import { Box, StatelessTextArea, ErrorLabel, Label } from "./index";
+import { StatelessTextArea, ErrorLabel, Label } from "./index";
 
 import { CommonStyleProps } from "./system/unions";
+import classNames from "classnames";
 
 export type ManagedTextAreaFieldProps = {
   hasError?: boolean;
@@ -36,7 +37,7 @@ export const ManagedTextAreaField = ({
   const [field, meta] = useField(id);
 
   return (
-    <Box display="flex" flexDirection="column" {...props}>
+    <div className={classNames("flex flex-col", classNames)} {...props}>
       <Label htmlFor={id}>{label}</Label>
       {caption ? (
         <Label mt="2" gray>
@@ -55,10 +56,10 @@ export const ManagedTextAreaField = ({
         autoFocus={autoFocus}
         {...field}
       />
-      <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
+      <ErrorLabel className="mt-2" hasError={!!(meta.touched && meta.error)}>
         {meta.error}
       </ErrorLabel>
-    </Box>
+    </div>
   );
 };
 
