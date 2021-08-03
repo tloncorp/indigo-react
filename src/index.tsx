@@ -3,18 +3,15 @@ import "./styles/main.css";
 /**
  * Text + Type + Icons
  */
-export * from "./Text";
-export * from "./Label";
 export * from "./ErrorLabel";
 export * from "./Icon";
 export { iconIndex as _iconIndex } from "./iconIndex";
 export * from "./Image";
+
 /**
  * Layout
  */
-export * from "./Li";
 export * from "./Row";
-export * from "./Paragraph";
 export * from "./Rule";
 export * from "./TwoUp";
 export * from "./FourUp";
@@ -45,7 +42,6 @@ export * from "./MenuList";
 export * from "./BaseImage";
 export * from "./BaseInput";
 export * from "./BaseTextArea";
-export * from "./BaseLabel";
 export * from "./BaseCode";
 export * from "./BaseForm";
 export * from "./BaseSVG";

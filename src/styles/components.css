@@ -13,3 +13,7 @@
 .button {
   @apply flex items-center justify-center w-auto h-8 px-4 font-sans font-medium leading-snug border border-solid rounded overflow-hidden no-underline select-none;
 }
+
+.icon-svg > * {
+  fill: currentColor;
+}

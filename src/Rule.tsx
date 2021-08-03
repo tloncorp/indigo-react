@@ -1,28 +1,24 @@
-import styled from "styled-components";
-import { ColorProps, color } from "styled-system";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { StructureProps, structureStyle } from "./system/unions";
+import classNames from "classnames";
+import React, { HTMLAttributes } from "react";
 
-export type RuleProps = ColorProps &
-  StructureProps & {
-    vertical?: boolean;
-  };
+export type RuleProps = HTMLAttributes<HTMLHRElement> & {
+  vertical?: boolean;
+};
 
-const style = ({ vertical = false }: RuleProps) =>
-  css({
-    height: vertical ? "auto" : 0,
-    width: vertical ? 0 : "100%",
-    borderWidth: 0,
-    borderStyle: "solid",
-    borderTopWidth: vertical ? 0 : "1px",
-    borderLeftWidth: vertical ? "1px" : 0,
-    borderColor: "lightGray",
-  } as SystemStyleObject);
-
-export const Rule = styled.div<React.PropsWithChildren<RuleProps>>(
-  style,
-  color,
-  ...structureStyle
+export const Rule = ({
+  className,
+  vertical = false,
+  ...props
+}: RuleProps): JSX.Element => (
+  <hr
+    className={classNames(
+      "border-solid border-gray-200",
+      vertical && "h-auto border-l",
+      !vertical && "w-full border-t",
+      className
+    )}
+    {...props}
+  />
 );
 
 Rule.displayName = "Rule";

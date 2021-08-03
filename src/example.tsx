@@ -3,11 +3,9 @@ import { useState } from "react";
 import * as ReactDOM from "react-dom";
 import * as Yup from "yup";
 import {
-  Text,
   Button,
   Reset,
   Row,
-  Paragraph,
   Action,
   Icon,
   Indicator,
@@ -20,7 +18,6 @@ import {
   ManagedToggleSwitchField,
   ManagedTextAreaField,
   ErrorLabel,
-  Label,
   Checkbox,
   RadioButton,
   ToggleSwitch,
@@ -44,7 +41,6 @@ import {
   LoadingSpinner,
   FourUp,
   _iconIndex,
-  Li,
   Table,
   Tr,
   Td,
@@ -111,11 +107,11 @@ const enumerateColors = (theme: Theme) =>
     if (k === "scales" || k === "util") return null;
     return (
       <div
-        className="flex items-center h-8 px-2 border border-gray-100 rounded"
+        className="flex items-center h-8 px-2 border border-solid border-gray-100 rounded"
         key={(k + " " + v) as string}
         style={{ backgroundColor: v as string }}
       >
-        <Text color={k === "black" ? "white" : "black"}>{k}</Text>
+        <span className={k === "black" ? "text-white" : "text-black"}>{k}</span>
       </div>
     );
   });
@@ -192,17 +188,13 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      {
-        // <Text>{JSON.stringify(css({color:'blue'})(theme))}</Text>
-      }
-      <Reset theme={theme} />
       <div className="flex flex-col p-6 font-sans text-sm">
         <Row p={p}>
-          <Text>{"Indigo Examples"}</Text>
+          <span>{"Indigo Examples"}</span>
         </Row>
         <Row p={p}>
           <Row gapX="2">
-            <Text>Tools:</Text>
+            <span>Tools:</span>
             <a className="anchor" href="https://github.com/urbit/indigo-react">
               Github
             </a>
@@ -221,13 +213,14 @@ const App = () => {
           </Row>
         </Row>
         <Row p={p}>
+          <Rule vertical className="mr-4" />
           <ThemeColors theme={theme} />
         </Row>
         <FourUp className="gap-6">
-          <Text>0</Text>
-          <Text>1</Text>
-          <Text>2</Text>
-          <Text>3</Text>
+          <span>0</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
         </FourUp>
         <Row p={p}>
           <div className="flex flex-col">
@@ -239,30 +232,25 @@ const App = () => {
         </Row>
         <Row>
           <div className="flex flex-col w-1/2">
-            <Text> </Text>
+            <span> </span>
           </div>
           <div className="flex flex-col w-1/2">
-            <Text> </Text>
+            <span> </span>
           </div>
         </Row>
         <TwoUp>
           <div className="flex flex-col p-6">
             <Rule />
-            <Text py="2">{"<Text />"}</Text>
+            <span className="py-2">{"<Text />"}</span>
 
             <div className="flex flex-col space-y-2">
-              <Text>Default</Text>
-              <Text
-                overflow="hidden"
-                whiteSpace="nowrap"
-                maxWidth="50px"
-                textOverflow="ellipsis"
-              >
+              <span>Default</span>
+              <span className="max-w-[50px] truncate">
                 asdfghjkl;qwertyuiop[zxcvbnm,.dsfgsdhsfhfg
-              </Text>
-              <Text mono>Monospace</Text>
-              <Text bold>Bold</Text>
-              <Text gray>Gray</Text>
+              </span>
+              <span className="font-mono">Monospace</span>
+              <span className="font-bold">Bold</span>
+              <span className="text-gray-500">Gray</span>
               <a className="anchor" href="http://urbit.org">
                 http://www.urbit.org
               </a>
@@ -274,28 +262,28 @@ const App = () => {
               </div>
             </div>
             <div>
-              <Paragraph>
-                <Text>A </Text>
-                <Text color="green">bunch </Text>
-                <Text mono>of </Text>
-                <Text bold>inlined </Text>
-                <Text gray>
+              <p>
+                <span>A </span>
+                <span className="text-green-300">bunch </span>
+                <span className="font-mono">of </span>
+                <span className="font-bold">inlined </span>
+                <span className="text-gray-500">
                   If we haven’t seen them before, we can optionally register
                   them for a new account. We then invalidate the token so it
                   can’t be used again (though it was going to expire after 15
                   minutes, anyways).
-                </Text>
+                </span>
                 <a className="anchor" href="http://urbit.org">
                   elements
                 </a>
                 <span className="badge">Badge</span>
-              </Paragraph>
+              </p>
             </div>
           </div>
 
           <div className="flex flex-col p-6">
             <Rule />
-            <Text py="2">{"<Action />"}</Text>
+            <span className="py-2">{"<Action />"}</span>
             <div>
               <span className="badge">Badge</span>
               <Action>Action</Action>
@@ -310,39 +298,39 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<Ol />"}</Text>
+            <span className="py-2">{"<Ol />"}</span>
             <ol className="list-decimal">
-              <Li>
-                <Text>First</Text>
-              </Li>
-              <Li>
-                <Text>Second</Text>
-              </Li>
-              <Li>
-                <Text>Third</Text>
-              </Li>
+              <li>
+                <span>First</span>
+              </li>
+              <li>
+                <span>Second</span>
+              </li>
+              <li>
+                <span>Third</span>
+              </li>
             </ol>
           </div>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<Ul />"}</Text>
+            <span className="py-2">{"<Ul />"}</span>
             <ul className="list-disc">
-              <Li>
-                <Text>Foo</Text>
-              </Li>
-              <Li>
-                <Text>Bar</Text>
-              </Li>
-              <Li>
-                <Text>Baz</Text>
-              </Li>
+              <li>
+                <span>Foo</span>
+              </li>
+              <li>
+                <span>Bar</span>
+              </li>
+              <li>
+                <span>Baz</span>
+              </li>
             </ul>
           </div>
         </Row>
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<Button />"}</Text>
+            <span className="py-2">{"<Button />"}</span>
             <Button
               variant="primary"
               className="mb-2"
@@ -356,7 +344,7 @@ const App = () => {
             >
               {" "}
               Button With Icon
-              <Icon ml="2" icon="Smiley" />
+              <Icon icon="Smiley" className="ml-2" />
             </Button>
             <Button
               variant="destructive"
@@ -364,7 +352,7 @@ const App = () => {
               onClick={() => console.log("Destructive")}
             >
               Destructive Button With Icon
-              <Icon ml="2" icon="X" />
+              <Icon icon="X" className="ml-2" />
             </Button>
             <Button
               variant="destructive-primary"
@@ -417,7 +405,7 @@ const App = () => {
           </div>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<Checkbox />"}</Text>
+            <span className="py-2">{"<Checkbox />"}</span>
             <Row mt="2" alignItems="flex-end">
               <Checkbox
                 mb="2"
@@ -453,10 +441,10 @@ const App = () => {
                 statelessCheckboxToggle(!statelessCheckboxSelected);
               }}
             >
-              <Label>Checkbox Field Label</Label>
-              <Label gray mt="1">
+              <label className="label">Checkbox Field label</label>
+              <span className="label mt-1 text-gray-500">
                 Note that the entire area of the field is a clickable area.
-              </Label>
+              </span>
               <ErrorLabel
                 className="mt-2"
                 hasError={checkboxErrorTriggerSelected}
@@ -475,7 +463,7 @@ const App = () => {
                 );
               }}
             >
-              <Label mb="2">Trigger Error Above</Label>
+              <label className="label mb-2">Trigger Error Above</label>
             </StatelessCheckboxField>
           </div>
         </Row>
@@ -483,7 +471,7 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<RadioButton />"}</Text>
+            <span className="py-2">{"<RadioButton />"}</span>
 
             <RadioButton
               mb="2"
@@ -516,10 +504,10 @@ const App = () => {
                 statelessRadioButtonSelect(0);
               }}
             >
-              <Label>Radio Button Field Label 1</Label>
-              <Label gray mt="1">
+              <label className="label">Radio Button Field label 1</label>
+              <span className="label mt-1 text-gray-500">
                 Note that the entire area of the field is a clickable area.
-              </Label>
+              </span>
               <ErrorLabel
                 className="mt-2"
                 hasError={checkboxErrorTriggerSelected}
@@ -537,10 +525,10 @@ const App = () => {
                 statelessRadioButtonSelect(1);
               }}
             >
-              <Label>Radio Button Field Label 2</Label>
-              <Label gray mt="1">
+              <label className="label">Radio Button Field label 2</label>
+              <span className="label mt-1 text-gray-500">
                 We are exclusive.
-              </Label>
+              </span>
               <ErrorLabel
                 className="mt-2"
                 hasError={checkboxErrorTriggerSelected}
@@ -551,7 +539,7 @@ const App = () => {
           </div>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<ToggleSwitch />"}</Text>
+            <span className="py-2">{"<ToggleSwitch />"}</span>
 
             <ToggleSwitch
               mb="2"
@@ -580,10 +568,10 @@ const App = () => {
                 statelessToggleSwitchToggle(!statelessToggleSwitchSelected);
               }}
             >
-              <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="1">
+              <label className="label">Toggle Switch Field label</label>
+              <span className="label mt-1 text-gray-500">
                 Note that the entire area of the field is a clickable area.
-              </Label>
+              </span>
               <ErrorLabel
                 className="mt-2"
                 hasError={checkboxErrorTriggerSelected}
@@ -597,14 +585,17 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<TextInput />"}</Text>
+            <span className="py-2">{"<TextInput />"}</span>
 
             <div className="flex flex-col p-2">
-              <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="1">
+              <label htmlFor="textinput" className="label">
+                Text Input Field label
+              </label>
+              <span className="label mt-1 text-gray-500">
                 Note that the entire area of the field is a clickable area.
-              </Label>
+              </span>
               <StatelessTextInput
+                id="textinput"
                 mt="2"
                 value={statelessTextInputFieldValue}
                 onChange={(e: React.FormEvent<HTMLInputElement>) =>
@@ -622,14 +613,17 @@ const App = () => {
           </div>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<TextArea />"}</Text>
+            <span className="py-2">{"<TextArea />"}</span>
 
             <div className="flex flex-col p-2">
-              <Label>Toggle Switch Field Label</Label>
-              <Label gray mt="1">
+              <label htmlFor="textarea" className="label">
+                TextArea Field label
+              </label>
+              <span className="label mt-1 text-gray-500">
                 Note that the entire area of the field is a clickable area.
-              </Label>
+              </span>
               <StatelessTextArea
+                id="textarea"
                 mt="2"
                 rows={8}
                 value={statelessTextAreaFieldValue}
@@ -651,7 +645,7 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<ManagedForm />"}</Text>
+            <span className="py-2">{"<ManagedForm />"}</span>
 
             <FormController
               initialValues={initialValues}
@@ -664,13 +658,7 @@ const App = () => {
               }}
             >
               <ManagedForm display="flex" flexDirection="column">
-                <ManagedToggleSwitchField
-                  className="p-4"
-                  id="toggleSwitch"
-                  label="Setting 1"
-                  caption="Turning this on will turn the toggle switch on."
-                />
-                <Text p="3">My Managed Form</Text>
+                <span className="p-4">My Managed Form</span>
                 <ManagedTextInputField
                   className="p-4"
                   label="First Name"
@@ -709,8 +697,8 @@ const App = () => {
                   label="Setting 1"
                   caption="Turning this on will turn the toggle switch on."
                 />
-                <div className="p-4">
-                  <Label mb="2">Favorite Color</Label>
+                <fieldset className="m-4">
+                  <legend className="mb-2">Favorite Color</legend>
                   <ManagedRadioButtonField
                     className="mb-2"
                     label="Green"
@@ -733,7 +721,7 @@ const App = () => {
                     caption="Dog is not a color"
                     disabled
                   />
-                </div>
+                </fieldset>
                 <Button variant="primary" type="submit">
                   Submit
                 </Button>
@@ -746,7 +734,7 @@ const App = () => {
               // TODO: Enumerate icons
             }
             <Rule />
-            <Text py="2">{"<Icon />"}</Text>
+            <span className="py-2">{"<Icon />"}</span>
             <Icon color="red" icon="ArrowEast" />
             <Icon icon="ArrowWest" />
             <Icon icon="ArrowNorth" />
@@ -759,18 +747,15 @@ const App = () => {
             {(Object.keys(_iconIndex) as (keyof IconIndex)[]).map((icon) => {
               return (
                 <Row>
-                  <Icon icon={icon} mr="4" />
-                  <Text>{icon}</Text>
+                  <Icon icon={icon} className="mr-6" />
+                  <span>{icon}</span>
                 </Row>
               );
             })}
 
             <Icon
-              size={7}
               icon="ArrowEast"
-              border="1px solid"
-              borderColor="blue"
-              color="blue"
+              className="h-16 w-16 text-blue-400 border border-solid border-blue-400"
             />
           </div>
         </Row>
@@ -778,26 +763,28 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<DisclosureBox />, <DisclosureButton />"}</Text>
+            <span className="py-2">
+              {"<DisclosureBox />, <DisclosureButton />"}
+            </span>
 
             <DisclosureButton
               isOpen={disclosureBoxOpen}
               onClick={() => disclosureBoxToggle(!disclosureBoxOpen)}
             >
-              <Text>Extra Stuff</Text>
+              <span>Extra Stuff</span>
             </DisclosureButton>
             <DisclosureBox isOpen={disclosureBoxOpen}>
-              <Text pl="2">Hello</Text>
+              <span className="pl-2">Hello</span>
             </DisclosureBox>
           </div>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<Menu />, <MenuButton />"}</Text>
+            <span className="py-2">{"<Menu />, <MenuButton />"}</span>
             <div>
               <Menu>
                 <MenuButton>
                   MenuButton
-                  <Icon ml="2" icon="ChevronSouth" />
+                  <Icon icon="ChevronSouth" className="ml-2" />
                 </MenuButton>
                 <MenuList>
                   <MenuItem onSelect={() => console.log("Command 1")}>
@@ -818,9 +805,9 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">
+            <span className="py-2">
               {"<ContinuousProgressBar />, <SegmentedProgressBar />"}
-            </Text>
+            </span>
 
             <ContinuousProgressBar mb="2" percentage={10} />
             <ContinuousProgressBar mb="2" percentage={33} />
@@ -834,7 +821,7 @@ const App = () => {
           </div>
           <div className="flex flex-col w-1/2 p-6">
             <Rule />
-            <Text py="2">{"<LoadingSpinner />, <MenuButton />"}</Text>
+            <span className="py-2">{"<LoadingSpinner />, <MenuButton />"}</span>
             <div>
               <div className="p-2">
                 <LoadingSpinner />
@@ -857,28 +844,28 @@ const App = () => {
         <Row>
           <div className="flex flex-col w-full p-6">
             <Rule />
-            <Text py="2">{"<Table />, <Tr />, <Td />"}</Text>
+            <span className="py-2">{"<Table />, <Tr />, <Td />"}</span>
             <Table>
               <Tr>
                 <Td>
-                  <Text>Foo</Text>
+                  <span>Foo</span>
                 </Td>
                 <Td>
-                  <Text>Bar</Text>
+                  <span>Bar</span>
                 </Td>
                 <Td>
-                  <Text>Baz</Text>
+                  <span>Baz</span>
                 </Td>
               </Tr>
               <Tr>
                 <Td>
-                  <Text>Hoon</Text>
+                  <span>Hoon</span>
                 </Td>
                 <Td>
-                  <Text>Zuse</Text>
+                  <span>Zuse</span>
                 </Td>
                 <Td>
-                  <Text>Arvo</Text>
+                  <span>Arvo</span>
                 </Td>
               </Tr>
             </Table>

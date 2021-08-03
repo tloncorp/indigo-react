@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useField } from "formik";
-import { ToggleSwitch, BaseLabel, Label, ErrorLabel } from "./index";
+import { ToggleSwitch, ErrorLabel } from "./index";
 
 type ManagedToggleSwitchFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
@@ -9,15 +9,6 @@ type ManagedToggleSwitchFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   id: string;
   disabled?: boolean;
 };
-
-// Hide this input completely
-const HiddenInput = styled.input`
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  margin: 0px;
-`;
 
 export const ManagedToggleSwitchField = ({
   label,
@@ -29,12 +20,7 @@ export const ManagedToggleSwitchField = ({
   const [field, meta] = useField({ name: id, type: "checkbox" });
   return (
     <div {...props}>
-      <BaseLabel
-        htmlFor={id}
-        display="flex"
-        flexDirection="row"
-        cursor="pointer"
-      >
+      <label htmlFor={id} className="flex cursor-pointer">
         <ToggleSwitch
           mr="2"
           hasError={meta.touched && meta.error !== undefined}
@@ -42,19 +28,18 @@ export const ManagedToggleSwitchField = ({
           disabled={disabled}
         />
         <div className="flex flex-col">
-          <Label>{label}</Label>
+          <span className="label">{label}</span>
           {caption ? (
-            <Label gray mt="1">
-              {caption}
-            </Label>
+            <span className="label mt-1 text-gray-500">{caption}</span>
           ) : null}
-          <HiddenInput
+          <input
             {...field}
             value={id}
             name={id}
             id={id}
             disabled={disabled}
             type="checkbox"
+            className="sr-only"
           />
           <ErrorLabel
             className="mt-2"
@@ -63,7 +48,7 @@ export const ManagedToggleSwitchField = ({
             {meta.error}
           </ErrorLabel>
         </div>
-      </BaseLabel>
+      </label>
     </div>
   );
 };

@@ -3,7 +3,6 @@ import { useField } from "formik";
 
 import { StatelessTextInput } from "./StatelessTextInput";
 import { ErrorLabel } from "./ErrorLabel";
-import { Label } from "./Label";
 import { CommonStyleProps } from "./system/unions";
 import classNames from "classnames";
 
@@ -41,11 +40,11 @@ export const ManagedTextInputField = ({
 
   return (
     <div className={classNames("flex flex-col", className)} {...props}>
-      <Label htmlFor={id}>{label}</Label>
+      <label htmlFor={id} className="label">
+        {label}
+      </label>
       {caption ? (
-        <Label mt="2" gray>
-          {caption}
-        </Label>
+        <span className="label mt-2 text-gray-500">{caption}</span>
       ) : null}
       <StatelessTextInput
         borderColor={borderColor}

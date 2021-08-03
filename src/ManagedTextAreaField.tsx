@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useField } from "formik";
-import { StatelessTextArea, ErrorLabel, Label } from "./index";
+import { StatelessTextArea, ErrorLabel } from "./index";
 
 import { CommonStyleProps } from "./system/unions";
 import classNames from "classnames";
@@ -32,17 +32,18 @@ export const ManagedTextAreaField = ({
   color,
   fontWeight,
   autoFocus,
+  className,
   ...props
 }: ManagedTextAreaFieldProps) => {
   const [field, meta] = useField(id);
 
   return (
-    <div className={classNames("flex flex-col", classNames)} {...props}>
-      <Label htmlFor={id}>{label}</Label>
+    <div className={classNames("flex flex-col", className)} {...props}>
+      <label htmlFor={id} className="label">
+        {label}
+      </label>
       {caption ? (
-        <Label mt="2" gray>
-          {caption}
-        </Label>
+        <span className="label mt-2 text-gray-500">{caption}</span>
       ) : null}
       <StatelessTextArea
         borderColor={borderColor}

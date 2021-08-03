@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import * as React from "react";
-import { Icon, Label } from "./index";
+import { Icon } from "./index";
 
 export type ErrorLabelProps = React.HTMLAttributes<HTMLDivElement> & {
   hasError?: boolean;
@@ -17,13 +17,10 @@ export const ErrorLabel = ({
     {...props}
   >
     <Icon
-      mr="2"
-      backgroundColor="red"
-      color="white"
       icon="ExclaimationMarkBold"
-      borderRadius="999px"
+      className="mr-2 text-white bg-red-300 rounded-full"
     />
-    <Label color="red">{children}</Label>
+    <span className="label text-red-300">{children}</span>
   </div>
 );
 

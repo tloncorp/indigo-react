@@ -1,7 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
 import { useField } from "formik";
-import { BaseLabel, Label, ErrorLabel, Checkbox } from "./index";
+import { ErrorLabel, Checkbox } from "./index";
 
 type ManagedCheckboxFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
@@ -9,15 +8,6 @@ type ManagedCheckboxFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   id: string;
   disabled?: boolean;
 };
-
-// Hide this input completely
-const HiddenInput = styled.input`
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  margin: 0px;
-`;
 
 export const ManagedCheckboxField = ({
   label,
@@ -42,12 +32,7 @@ export const ManagedCheckboxField = ({
 
   return (
     <div {...props}>
-      <BaseLabel
-        htmlFor={id}
-        display="flex"
-        flexDirection="row"
-        cursor="pointer"
-      >
+      <label htmlFor={id} className="flex cursor-pointer">
         <Checkbox
           mr="3"
           hasError={meta.touched && meta.error !== undefined}
@@ -55,13 +40,11 @@ export const ManagedCheckboxField = ({
           disabled={disabled}
         />
         <div className="flex flex-col">
-          <Label>{label}</Label>
+          <span className="label">{label}</span>
           {caption ? (
-            <Label gray mt="1">
-              {caption}
-            </Label>
+            <span className="label mt-1 text-gray-500">{caption}</span>
           ) : null}
-          <HiddenInput
+          <input
             {...field}
             onChange={onChange}
             value={id}
@@ -69,6 +52,7 @@ export const ManagedCheckboxField = ({
             id={id}
             disabled={disabled}
             type="checkbox"
+            className="sr-only"
           />
           <ErrorLabel
             className="mt-2"
@@ -77,7 +61,7 @@ export const ManagedCheckboxField = ({
             {meta.error}
           </ErrorLabel>
         </div>
-      </BaseLabel>
+      </label>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
 import { useField } from "formik";
-import { BaseLabel, Label, ErrorLabel, RadioButton } from "./index";
+import { ErrorLabel, RadioButton } from "./index";
 
 type ManagedRadioButtonFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
@@ -10,15 +9,6 @@ type ManagedRadioButtonFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   name: string;
   disabled?: boolean;
 };
-
-// Hide this input completely
-const HiddenInput = styled.input`
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  margin: 0px;
-`;
 
 export const ManagedRadioButtonField = ({
   label,
@@ -47,12 +37,7 @@ export const ManagedRadioButtonField = ({
 
   return (
     <div {...props}>
-      <BaseLabel
-        htmlFor={id}
-        display="flex"
-        flexDirection="row"
-        cursor="pointer"
-      >
+      <label htmlFor={id} className="flex cursor-pointer">
         <RadioButton
           mr="3"
           name={name}
@@ -61,13 +46,11 @@ export const ManagedRadioButtonField = ({
           disabled={disabled}
         />
         <div className="flex flex-col">
-          <Label>{label}</Label>
+          <span className="label">{label}</span>
           {caption ? (
-            <Label gray mt="1">
-              {caption}
-            </Label>
+            <span className="label mt-1 text-gray-500">{caption}</span>
           ) : null}
-          <HiddenInput
+          <input
             {...field}
             onChange={onChange}
             value={id}
@@ -75,6 +58,7 @@ export const ManagedRadioButtonField = ({
             id={id}
             disabled={disabled}
             type="radio"
+            className="sr-only"
           />
           <ErrorLabel
             className="mt-2"
@@ -83,7 +67,7 @@ export const ManagedRadioButtonField = ({
             {meta.error}
           </ErrorLabel>
         </div>
-      </BaseLabel>
+      </label>
     </div>
   );
 };
