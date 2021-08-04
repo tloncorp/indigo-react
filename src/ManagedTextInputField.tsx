@@ -43,6 +43,7 @@ export const ManagedTextInputField = ({
         <span className="label mt-2 text-gray-500">{caption}</span>
       ) : null}
       <StatelessTextInput
+        id={id}
         className={classNames((caption || label) && "mt-2", inputClass)}
         type={type || "text"}
         disabled={disabled}

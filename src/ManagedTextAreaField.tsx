@@ -39,6 +39,7 @@ export const ManagedTextAreaField = ({
         <span className="label mt-2 text-gray-500">{caption}</span>
       ) : null}
       <StatelessTextArea
+        id={id}
         className={classNames((caption || label) && "mt-2", textareaClass)}
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
