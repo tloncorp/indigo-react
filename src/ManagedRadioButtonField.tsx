@@ -39,7 +39,7 @@ export const ManagedRadioButtonField = ({
     <div {...props}>
       <label htmlFor={id} className="flex cursor-pointer">
         <RadioButton
-          mr="3"
+          className="mr-4"
           name={name}
           hasError={meta.touched && meta.error !== undefined}
           selected={field.checked}

@@ -30,7 +30,7 @@ export const StatelessRadioButtonField = ({
         selected={selected}
         disabled={disabled}
         hasError={hasError}
-        mr="3"
+        className="mr-4"
       />
       <div className="flex flex-col">{children}</div>
     </div>

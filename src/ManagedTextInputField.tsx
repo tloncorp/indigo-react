@@ -3,7 +3,6 @@ import { useField } from "formik";
 
 import { StatelessTextInput } from "./StatelessTextInput";
 import { ErrorLabel } from "./ErrorLabel";
-import { CommonStyleProps } from "./system/unions";
 import classNames from "classnames";
 
 export type ManagedTextInputFieldProps = {
@@ -15,9 +14,9 @@ export type ManagedTextInputFieldProps = {
   caption?: string;
   type?: string;
   autoFocus?: boolean;
+  inputClass?: string;
 } & React.HTMLAttributes<HTMLDivElement> &
-  React.HTMLAttributes<HTMLInputElement> &
-  CommonStyleProps;
+  React.HTMLAttributes<HTMLInputElement>;
 
 export const ManagedTextInputField = ({
   disabled,
@@ -28,11 +27,8 @@ export const ManagedTextInputField = ({
   id,
   children,
   className,
+  inputClass,
   type,
-  fontFamily,
-  borderColor,
-  color,
-  fontWeight,
   autoFocus,
   ...props
 }: ManagedTextInputFieldProps) => {
@@ -47,12 +43,8 @@ export const ManagedTextInputField = ({
         <span className="label mt-2 text-gray-500">{caption}</span>
       ) : null}
       <StatelessTextInput
-        borderColor={borderColor}
-        color={color}
-        fontWeight={fontWeight}
-        fontFamily={fontFamily}
+        className={classNames((caption || label) && "mt-2", inputClass)}
         type={type || "text"}
-        mt={caption || label ? 2 : 0}
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}

@@ -22,5 +22,3 @@ export const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
 );
 
 MenuButton.displayName = "MenuButton";
-
-export default MenuButton;

@@ -1,9 +1,44 @@
-body {
-  @apply font-sans font-normal text-sm leading-snug text-black bg-white;
+* {
+  @apply outline-none;
 }
 
-* {
-  -webkit-font-smoothing: antialiased;
+body {
+  @apply font-sans font-normal text-sm leading-snug antialiased text-black bg-white;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+li {
+  margin-left: 32px;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  @apply border-collapse;
+}
+
+table,
+td {
+  @apply border border-solid border-gray-200;
+}
+
+td {
+  @apply p-1;
 }
 
 .h1 {

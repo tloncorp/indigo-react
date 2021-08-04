@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled from "styled-components";
 import { useField } from "formik";
 import { ToggleSwitch, ErrorLabel } from "./index";
 
@@ -22,7 +21,7 @@ export const ManagedToggleSwitchField = ({
     <div {...props}>
       <label htmlFor={id} className="flex cursor-pointer">
         <ToggleSwitch
-          mr="2"
+          className="mr-2"
           hasError={meta.touched && meta.error !== undefined}
           selected={field.checked}
           disabled={disabled}

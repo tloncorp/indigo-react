@@ -1,14 +1,12 @@
 import * as React from "react";
 import { ToggleSwitch } from "./ToggleSwitch";
-import { StructureProps } from "./system/unions";
 import classnames from "classnames";
 
 export type StatelessToggleSwitchFieldProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
-} & React.HTMLAttributes<HTMLDivElement> &
-  StructureProps;
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export const StatelessToggleSwitchField = ({
   selected,
@@ -29,7 +27,7 @@ export const StatelessToggleSwitchField = ({
         selected={selected}
         disabled={disabled}
         hasError={hasError}
-        mr="2"
+        className="mr-2"
       />
       <div className="flex flex-col">{children}</div>
     </div>

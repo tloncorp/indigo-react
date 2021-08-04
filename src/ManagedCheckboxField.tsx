@@ -34,7 +34,7 @@ export const ManagedCheckboxField = ({
     <div {...props}>
       <label htmlFor={id} className="flex cursor-pointer">
         <Checkbox
-          mr="3"
+          className="mr-4"
           hasError={meta.touched && meta.error !== undefined}
           selected={field.checked}
           disabled={disabled}

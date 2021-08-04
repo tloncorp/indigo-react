@@ -1,43 +1,33 @@
 import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { textInput } from "./system/tokens";
-import { CommonStyleProps, commonStyle } from "./system/unions";
+import classNames from "classnames";
 
-export type StatelessTextInputProps = CommonStyleProps & {
+export type StatelessTextInputProps = {
   hasError?: boolean;
   disabled?: boolean;
-} & React.HTMLAttributes<HTMLInputElement>;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
 const stateStyle = (hasError: boolean, disabled: boolean) => {
-  if (hasError) return textInput.state.hasError;
-  if (disabled) return textInput.state.disabled;
-  return textInput.state.default;
+  if (hasError) return "text-red-300 border-red-300 bg-red-100";
+  if (disabled) return "text-gray-500 border-gray-200 bg-gray-100";
+  return "text-black border-gray-200 bg-white";
 };
 
-const style = ({
+export const StatelessTextInput = ({
+  className,
+  type = "text",
   hasError = false,
   disabled = false,
-}: StatelessTextInputProps) =>
-  css({
-    boxSizing: "border-box",
-    width: "100%",
-    height: 5,
-    px: 2,
-    display: "flex",
-    alignItems: "center",
-    border: "1px solid",
-    borderRadius: 2,
-    ...textInput.text,
-    ...stateStyle(hasError, disabled),
-  } as SystemStyleObject);
-
-export const StatelessTextInput = styled.input<
-  React.PropsWithChildren<StatelessTextInputProps>
->(style, ...commonStyle);
-
-StatelessTextInput.defaultProps = {
-  type: "text",
-};
+  ...props
+}: StatelessTextInputProps) => (
+  <input
+    type={type}
+    className={classNames(
+      "flex items-center w-full h-8 px-2 border border-solid rounded",
+      stateStyle(hasError, disabled),
+      className
+    )}
+    {...props}
+  />
+);
 
 StatelessTextInput.displayName = "TextInput";

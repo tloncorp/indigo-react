@@ -1,66 +1,51 @@
 import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { CommonStyleProps, commonStyle } from "./system/unions";
-import { sequence } from "./util";
+import classNames from "classnames";
 
-export type ContinuousProgressBarProps = CommonStyleProps & {
-  percentage?: number;
-};
-
-type SegmentProps = {
-  active: boolean;
-};
-
-const segmentStyle = ({ active }: SegmentProps) =>
-  css({
-    flexGrow: 1,
-    backgroundColor: active ? "blue" : "transparent",
-    content: "' '",
-    height: "100%",
-    borderRight: "1px solid",
-    borderRightColor: "white",
-  } as SystemStyleObject);
-
-const Segment = styled.div<React.PropsWithChildren<SegmentProps>>(segmentStyle);
-
-const backgroundStyle = () =>
-  css({
-    display: "flex",
-    width: "100%",
-    height: 1,
-    backgroundColor: "lightGray",
-    borderRadius: 3,
-    overflow: "hidden",
-    "& :last-child": {
-      borderRightColor: "transparent",
-    },
-  } as SystemStyleObject);
-
-const Background = styled.div<React.PropsWithChildren<CommonStyleProps>>(
-  backgroundStyle,
-  ...commonStyle
-);
-
-export type SegmentedProgressBarProps = CommonStyleProps & {
+export type SegmentedProgressBarProps = React.HTMLAttributes<HTMLDivElement> & {
   segments?: number;
   current?: number;
 };
 
+function sequence(num: number) {
+  return Array.from(Array(num), (_, i) => i);
+}
+
 export const SegmentedProgressBar = ({
   segments = 1,
   current = 0,
+  className,
   ...props
 }: SegmentedProgressBarProps) => {
   return (
-    <Background {...(props as any)}>
+    <div
+      className={classNames(
+        "flex w-full h-1 divide-x divide-white bg-gray-200 rounded-lg overflow-hidden",
+        className
+      )}
+      {...props}
+    >
       {sequence(segments).map((_, index: number) => (
-        <Segment key={"segment" + index} active={index < current} />
+        <div
+          key={"segment" + index}
+          className={classNames(
+            "flex-1 h-full",
+            index < current && "bg-blue-400"
+          )}
+        />
       ))}
-    </Background>
+      <progress
+        value={current}
+        aria-valuemin={0}
+        aria-valuenow={current}
+        aria-valuemax={segments}
+        max={segments}
+        tabIndex={0}
+        className="sr-only"
+      >
+        {current}/{segments}
+      </progress>
+    </div>
   );
 };
 
-Background.displayName = "Background";
-Segment.displayName = "Segment";
 SegmentedProgressBar.displayName = "SegmentedProgressBar";

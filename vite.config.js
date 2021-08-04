@@ -8,6 +8,9 @@ const resolvePath = (str) => path.resolve(__dirname, str);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [reactRefresh()],
+  optimizeDeps: {
+    include: ["./tailwind.config.js"],
+  },
   build: {
     cssCodeSplit: false,
     lib: {
@@ -16,22 +19,12 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "styled-components",
-        "styled-system",
-        "@styled-system/css",
-        "formik",
-      ],
+      external: ["react", "react-dom", "formik"],
       output: {
         globals: {
           react: "React",
           "react-dom": "reactDom",
-          "styled-components": "styled",
           formik: "formik",
-          "styled-system": "system",
-          "@styled-system/css": "css",
         },
       },
       plugins: [

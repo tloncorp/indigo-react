@@ -1,14 +1,12 @@
 import classNames from "classnames";
 import * as React from "react";
 import { Checkbox } from "./index";
-import { StructureProps } from "./system/unions";
 
 export type StatelessCheckboxFieldProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
-} & React.HTMLAttributes<HTMLDivElement> &
-  StructureProps;
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export const StatelessCheckboxField = ({
   selected,
@@ -29,7 +27,7 @@ export const StatelessCheckboxField = ({
         selected={selected}
         disabled={disabled}
         hasError={hasError}
-        mr="3"
+        className="mr-4"
       />
       <div className="flex flex-col">{children}</div>
     </div>

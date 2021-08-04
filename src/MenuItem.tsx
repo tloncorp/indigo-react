@@ -1,39 +1,21 @@
-import styled from "styled-components";
+import React from "react";
 import {
   MenuItem as ReachMenuItem,
   MenuItemProps as ReachMenuItemProps,
 } from "@reach/menu-button";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { CommonStyleProps, commonStyle } from "./system/unions";
+import classNames from "classnames";
 
-export type MenuItemProps = ReachMenuItemProps & CommonStyleProps;
+export type MenuItemProps = ReachMenuItemProps &
+  React.HTMLAttributes<HTMLDivElement>;
 
-const style = () =>
-  css({
-    cursor: "pointer",
-    textDecoration: "initial",
-    display: "flex",
-    alignItems: "center",
-    px: 4,
-    fontFamily: "sans",
-    height: "24px",
-    backgroundColor: "white",
-    borderLeft: "1px solid",
-    borderLeftColor: "lightGray",
-    borderRight: "1px solid",
-    borderRightColor: "lightGray",
-    color: "black",
-    "&:hover": {
-      backgroundColor: "blue",
-      color: "white",
-      borderLeftColor: "blue",
-      borderRightColor: "blue",
-      outline: "none",
-    },
-  } as SystemStyleObject);
-
-export const MenuItem = styled(ReachMenuItem)<
-  React.PropsWithChildren<MenuItemProps>
->(style, ...commonStyle);
-
-export default MenuItem;
+export const MenuItem = ({ className, children, ...props }: MenuItemProps) => (
+  <ReachMenuItem
+    className={classNames(
+      "flex items-center h-6 px-4 border-l border-r border-solid border-gray-200 cursor-pointer hover:text-white hover:bg-blue-400 hover:border-blue-400",
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </ReachMenuItem>
+);

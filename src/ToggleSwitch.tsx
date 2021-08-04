@@ -1,10 +1,7 @@
 import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { toggleSwitch } from "./system/tokens";
-import { StructureProps, structureStyle } from "./system/unions";
+import classNames from "classnames";
 
-export type ToggleSwitchProps = StructureProps & {
+export type ToggleSwitchProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
@@ -15,32 +12,31 @@ const stateStyle = (
   hasError: boolean,
   disabled: boolean
 ) => {
-  if (selected && disabled) return toggleSwitch.states.selectedDisabled;
-  if (hasError && selected) return toggleSwitch.states.hasErrorSelected;
-  if (hasError) return toggleSwitch.states.hasError;
-  if (disabled) return toggleSwitch.states.disabled;
-  if (selected) return toggleSwitch.states.selected;
-  return toggleSwitch.states.default;
+  if (selected && disabled)
+    return "bg-gray-200 before:opacity-70 before:translate-x-2";
+  if (hasError && selected) return "bg-red-300 before:translate-x-2";
+  if (hasError) return "bg-red-300";
+  if (disabled) return "bg-gray-200 before:opacity-70";
+  if (selected) return "bg-blue-400 before:translate-x-2";
+  return "bg-gray-200";
 };
 
-const style = ({
+export const ToggleSwitch = ({
+  className,
   selected = false,
   hasError = false,
   disabled = false,
-}: ToggleSwitchProps) =>
-  css({
-    position: "relative",
-    width: "24px",
-    flexShrink: "0",
-    height: "16px",
-    border: "1px solid",
-    borderRadius: "999px",
-    cursor: "pointer",
-    ...stateStyle(selected, hasError, disabled),
-  } as SystemStyleObject);
-
-export const ToggleSwitch = styled.div<
-  React.PropsWithChildren<ToggleSwitchProps>
->(style, ...structureStyle);
+  ...props
+}: ToggleSwitchProps) => (
+  <div
+    className={classNames(
+      "flex-none relative w-6 h-4 border border-solid border-transparent rounded-full cursor-pointer",
+      "before:absolute before:block before:p-1.5 before:border before:border-solid before:border-transparent before:bg-white before:rounded-full",
+      stateStyle(selected, hasError, disabled),
+      className
+    )}
+    {...props}
+  />
+);
 
 ToggleSwitch.displayName = "ToggleSwitch";

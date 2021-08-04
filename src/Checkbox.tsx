@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Indicator } from "./Indicator";
 import { Icon } from "./Icon";
-import { StructureProps } from "./system/unions";
+import classNames from "classnames";
 
-export type CheckboxProps = StructureProps & {
+export type CheckboxProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
@@ -13,6 +13,7 @@ export const Checkbox = ({
   selected,
   disabled,
   hasError,
+  className,
   ...props
 }: CheckboxProps) => {
   return (
@@ -20,6 +21,7 @@ export const Checkbox = ({
       selected={selected}
       disabled={disabled}
       hasError={hasError}
+      className={classNames("rounded", className)}
       {...props}
     >
       <Icon icon={selected ? "CheckmarkBold" : "Blank"} />
