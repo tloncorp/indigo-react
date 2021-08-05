@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as ReactDOM from "react-dom";
 import * as Yup from "yup";
 import { Formik } from "formik";
@@ -90,16 +90,10 @@ const textAreaTargetVal = (event: React.FormEvent<HTMLTextAreaElement>) => {
   return element.value;
 };
 
-interface SwatchProps {
-  name: string;
-  color: string;
-}
-
-const Swatch = ({ name, color }: SwatchProps) => (
+const Swatch = ({ name }: { name: string }) => (
   <div
-    className="flex items-center h-8 px-2 border border-solid border-gray-100 rounded"
-    key={(name + " " + color) as string}
-    style={{ backgroundColor: color as string }}
+    className={`flex items-center h-8 px-2 border border-solid border-gray-100 rounded bg-${name}`}
+    key={name}
   >
     <span className={name === "black" ? "text-white" : "text-black"}>
       {name}
@@ -110,16 +104,17 @@ const Swatch = ({ name, color }: SwatchProps) => (
 const ThemeColors = () => (
   <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 w-full">
     {Object.entries(colors).map(([k, v]) => {
-      if (typeof v === "string") return <Swatch name={k} color={v} />;
+      if (typeof v === "string") return <Swatch name={k} />;
 
       return Object.entries(v as Record<string, string>).map(([n, c]) => (
-        <Swatch name={`${k}-${n}`} color={c} />
+        <Swatch name={`${k}-${n}`} />
       ));
     })}
   </div>
 );
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
   // Checkboxes
   const [defaultCheckboxIsSelected, defaultCheckboxIsSelectedToggle] = useState(
     true
@@ -171,6 +166,14 @@ const App = () => {
 
   const [disclosureBoxOpen, disclosureBoxToggle] = useState(false);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   const initialValues: ManagedFormValues = {
     firstName: "",
     lastName: "",
@@ -182,8 +185,14 @@ const App = () => {
 
   return (
     <div className="flex flex-col p-6 font-sans text-sm">
-      <div className="flex p-6">
+      <div className="flex justify-between p-6">
         <span>{"Indigo Examples"}</span>
+        <StatelessToggleSwitchField
+          selected={darkMode}
+          onChange={() => setDarkMode(!darkMode)}
+        >
+          <label className="label">Dark Mode</label>
+        </StatelessToggleSwitchField>
       </div>
       <div className="flex p-6">
         <div className="flex space-x-2">
