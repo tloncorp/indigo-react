@@ -9,7 +9,7 @@ Indigo React is a component library for implementing the [Indigo Design System](
 1. Install the library
 
 ```bash
-$ npm install --save @tlon/indigo-react
+npm install --save @tlon/indigo-react
 ```
 
 2. Install peer dependencies
