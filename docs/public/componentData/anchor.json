@@ -1,6 +1,0 @@
-{
-  "id": "anchor",
-  "displayName": "Anchor",
-  "snippet": "<Anchor target='_blank' href='https://github.com/urbit/indigo-react'>Indigo React</Anchor>",
-  "props": []
-}

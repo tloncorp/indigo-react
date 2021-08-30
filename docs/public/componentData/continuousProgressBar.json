@@ -1,6 +1,0 @@
-{
-  "id": "continuousProgressBar",
-  "displayName": "ContinuousProgressBar",
-  "snippet": "<ContinuousProgressBar> </ContinuousProgressBar>",
-  "props": []
-}

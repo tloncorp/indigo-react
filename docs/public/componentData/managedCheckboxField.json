@@ -1,6 +1,0 @@
-{
-  "id": "managedCheckboxField",
-  "displayName": "ManagedCheckboxField",
-  "snippet": "<ManagedCheckboxField> </ManagedCheckboxField>",
-  "props": []
-}

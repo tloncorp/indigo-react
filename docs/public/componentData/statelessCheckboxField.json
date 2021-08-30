@@ -1,6 +1,0 @@
-{
-  "id": "statelessCheckboxField",
-  "displayName": "StatelessCheckboxField",
-  "snippet": "<StatelessCheckboxField> </StatelessCheckboxField>",
-  "props": []
-}
