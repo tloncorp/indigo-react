@@ -1,6 +1,0 @@
-{
-  "id": "baseButton",
-  "displayName": "BaseButton",
-  "snippet": "<BaseButton onClick={() => console.log('Hello')}>BaseButton</BaseButton>",
-  "props": []
-}

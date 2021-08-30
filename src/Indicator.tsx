@@ -1,11 +1,7 @@
 import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
+import classNames from "classnames";
 
-import { indicator } from "./system/tokens";
-import { commonStyle, CommonStyleProps } from "./system/unions";
-
-export type IndicatorProps = CommonStyleProps & {
+export type IndicatorProps = React.HTMLAttributes<HTMLDivElement> & {
   disabled?: boolean;
   selected?: boolean;
   hasError?: boolean;
@@ -16,34 +12,30 @@ const stateStyle = (
   hasError: boolean,
   selected: boolean
 ) => {
-  if (selected && disabled) return indicator.state.onDisabled;
-  if (selected && hasError) return indicator.state.onError;
-  if (selected) return indicator.state.on;
-  if (disabled) return indicator.state.offDisabled;
-  if (hasError) return indicator.state.offError;
-  return indicator.state.off;
+  if (selected && disabled) return "text-gray-200 border-gray-200 bg-gray-100";
+  if (selected && hasError) return "text-white border-red-300 bg-red-300";
+  if (selected) return "text-white border-blue-400 bg-blue-400";
+  if (disabled) return "text-transparent border-gray-200 bg-gray-100";
+  if (hasError) return "text-transparent border-red-300 bg-red-100";
+  return "text-transparent border-gray-200 bg-white";
 };
 
-const style = ({
-  disabled = false,
-  hasError = false,
+export const Indicator = ({
+  className,
+  children,
   selected = false,
-}: IndicatorProps) =>
-  css({
-    width: 3,
-    border: "1px solid",
-    height: 3,
-    borderRadius: 2,
-    cursor: "pointer",
-    "& > *": {
-      transform: "translate(-1px,-1px)",
-    },
-    ...stateStyle(disabled, hasError, selected),
-  } as SystemStyleObject);
-
-export const Indicator = styled.div<React.PropsWithChildren<IndicatorProps>>(
-  style,
-  ...commonStyle
+  hasError = false,
+  disabled = false,
+}: IndicatorProps) => (
+  <div
+    className={classNames(
+      "indicator w-4 h-4 border border-solid cursor-pointer",
+      stateStyle(disabled, hasError, selected),
+      className
+    )}
+  >
+    {children}
+  </div>
 );
 
 Indicator.displayName = "Indicator";

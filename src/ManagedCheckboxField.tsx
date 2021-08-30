@@ -1,24 +1,13 @@
 import * as React from "react";
-import styled from "styled-components";
 import { useField } from "formik";
-import { BaseLabel, Label, ErrorLabel, Checkbox, Box, Col } from "./index";
-import { StructureProps } from "./system/unions";
+import { ErrorLabel, Checkbox } from "./index";
 
-type ManagedCheckboxFieldProps = StructureProps & {
+type ManagedCheckboxFieldProps = React.HTMLAttributes<HTMLDivElement> & {
   caption?: string;
   label: string;
   id: string;
   disabled?: boolean;
 };
-
-// Hide this input completely
-const HiddenInput = styled.input`
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  margin: 0px;
-`;
 
 export const ManagedCheckboxField = ({
   label,
@@ -42,27 +31,20 @@ export const ManagedCheckboxField = ({
   );
 
   return (
-    <Box {...props}>
-      <BaseLabel
-        htmlFor={id}
-        display="flex"
-        flexDirection="row"
-        cursor="pointer"
-      >
+    <div {...props}>
+      <label htmlFor={id} className="flex cursor-pointer">
         <Checkbox
-          mr="3"
+          className="mr-4"
           hasError={meta.touched && meta.error !== undefined}
           selected={field.checked}
           disabled={disabled}
         />
-        <Col>
-          <Label>{label}</Label>
+        <div className="flex flex-col">
+          <span className="label">{label}</span>
           {caption ? (
-            <Label gray mt="1">
-              {caption}
-            </Label>
+            <span className="label mt-1 text-gray-500">{caption}</span>
           ) : null}
-          <HiddenInput
+          <input
             {...field}
             onChange={onChange}
             value={id}
@@ -70,12 +52,16 @@ export const ManagedCheckboxField = ({
             id={id}
             disabled={disabled}
             type="checkbox"
+            className="sr-only"
           />
-          <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
+          <ErrorLabel
+            className="mt-2"
+            hasError={!!(meta.touched && meta.error)}
+          >
             {meta.error}
           </ErrorLabel>
-        </Col>
-      </BaseLabel>
-    </Box>
+        </div>
+      </label>
+    </div>
   );
 };

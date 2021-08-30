@@ -1,52 +1,21 @@
-import * as React from "react";
-import { ResponsiveValue, ThemeValue, RequiredTheme } from "styled-system";
-import { AllSystemProps } from "./system/unions";
-import { Col } from "./Col";
-import { Box } from "./Box";
+import classnames from "classnames";
+import React, { FunctionComponent, HTMLAttributes } from "react";
 
-export type TwoUpProps = AllSystemProps &
-  React.HTMLAttributes<HTMLDivElement> & {
-    children: React.ReactNodeArray;
-    gapX: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-    gapY: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-    gap: ResponsiveValue<ThemeValue<"space", RequiredTheme>>;
-  };
+export type TwoUpProps = HTMLAttributes<HTMLDivElement>;
 
-const cells = [
-  {
-    gridColumn: ["1 / 2", "1 / 2"],
-    gridRow: ["1 / 2", "1 / 2"],
-  },
-  {
-    gridColumn: ["1 / 2", "2 / 3"],
-    gridRow: ["2 / 3", "1 / 2"],
-  },
-];
-
-export const TwoUp = ({
+export const TwoUp: FunctionComponent<TwoUpProps> = ({
   children,
-  gap = 0,
-  gapX,
-  gapY,
+  className,
   ...props
-}: TwoUpProps) => {
-  const twoChildren = children.slice(0, 2) as React.ReactNodeArray;
-
-  return (
-    // @ts-ignore
-    <Box
-      display="grid"
-      gridColumnGap={gapX || gap}
-      gridRowGap={gapY || gap}
-      gridTemplateColumns={["1fr", "repeat(2, 1fr)"]}
-      gridTemplateRows={["repeat(2, 1fr)", "1fr"]}
-      {...props}
-    >
-      {twoChildren.map((child, index) => (
-        <Col {...cells[index]}>{child}</Col>
-      ))}
-    </Box>
-  );
-};
+}) => (
+  <div
+    className={classnames("grid grid-flow-col grid-cols-2", className)}
+    {...props}
+  >
+    {children &&
+      Array.isArray(children) &&
+      children.map((child) => <div className="flex flex-col">{child}</div>)}
+  </div>
+);
 
 TwoUp.displayName = "TwoUp";

@@ -1,42 +1,33 @@
 import * as React from "react";
-import styled from "styled-components";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { textInput } from "./system/tokens";
-import { CommonStyleProps, commonStyle } from "./system/unions";
+import classNames from "classnames";
 
-export type StatelessTextAreaProps = CommonStyleProps & {
+export type StatelessTextAreaProps = {
   hasError?: boolean;
   disabled?: boolean;
-} & React.HTMLAttributes<HTMLTextAreaElement>;
+} & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const stateStyle = (hasError: boolean, disabled: boolean) => {
-  if (hasError) return textInput.state.hasError;
-  if (disabled) return textInput.state.disabled;
-  return textInput.state.default;
+  if (hasError) return "text-red-300 border-red-300 bg-red-100";
+  if (disabled) return "text-gray-500 border-gray-200 bg-gray-100";
+  return "text-black border-gray-200 bg-white";
 };
 
-const style = ({
+export const StatelessTextArea = ({
+  className,
+  cols = 8,
   hasError = false,
   disabled = false,
-}: StatelessTextAreaProps) =>
-  css({
-    boxSizing: "border-box",
-    width: "100%",
-    p: 2,
-    border: "1px solid",
-    borderRadius: 2,
-    resize: "vertical",
-    minHeight: 5,
-    ...textInput.text,
-    ...stateStyle(hasError, disabled),
-  } as SystemStyleObject);
-
-export const StatelessTextArea = styled.textarea<
-  React.PropsWithChildren<StatelessTextAreaProps>
->(style, ...commonStyle);
-
-StatelessTextArea.defaultProps = {
-  cols: 8,
-};
+  ...props
+}: StatelessTextAreaProps) => (
+  <textarea
+    cols={cols}
+    className={classNames(
+      "w-full min-h-[8] p-2 border border-solid rounded resize-y",
+      stateStyle(hasError, disabled),
+      className
+    )}
+    {...props}
+  />
+);
 
 StatelessTextArea.displayName = "StatelessTextArea";

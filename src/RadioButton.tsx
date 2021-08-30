@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Indicator } from "./Indicator";
 import { Icon } from "./Icon";
-import { StructureProps } from "./system/unions";
+import classNames from "classnames";
 
-export type RadioButtonProps = StructureProps & {
+export type RadioButtonProps = {
   selected?: boolean;
   hasError?: boolean;
   disabled?: boolean;
@@ -16,6 +16,7 @@ export const RadioButton = ({
   hasError,
   onChange,
   name,
+  className,
   children,
   ...props
 }: RadioButtonProps) => {
@@ -24,7 +25,7 @@ export const RadioButton = ({
       selected={selected}
       disabled={disabled}
       hasError={hasError}
-      borderRadius="999px"
+      className={classNames("rounded-full", className)}
       {...props}
     >
       <Icon icon={selected ? "Bullet" : "Blank"} />

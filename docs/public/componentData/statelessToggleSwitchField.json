@@ -1,6 +1,0 @@
-{
-  "id": "statelessToggleSwitchField",
-  "displayName": "StatelessToggleSwitchField",
-  "snippet": "<StatelessToggleSwitchField> </StatelessToggleSwitchField>",
-  "props": []
-}

@@ -2,7 +2,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@tlon/indigo-react?style=flat)](https://www.npmjs.com/package/@tlon/indigo-react)
 
-Indigo React is a component library for implementing the [Indigo Design System](<https://www.figma.com/community/file/822953707012850361/Indigo-(alpha)>). It's built with React, [styled-components](https://styled-components.com) and [styled-system](https://styled-system.com). It also uses [Formik](https://formik.org/) and [Reach-UI](https://reach.tech/).
+Indigo React is a component library for implementing the [Indigo Design System](<https://www.figma.com/community/file/822953707012850361/Indigo-(alpha)>). It's built with React and [Tailwind CSS](https://tailwindcss.com/). It also uses [Formik](https://formik.org/) and [Reach-UI](https://reach.tech/).
 
 ## Quick Start
 
@@ -15,62 +15,74 @@ npm install --save @tlon/indigo-react
 2. Install peer dependencies
 
 ```bash
-npm install --save @tlon/indigo-light styled-components styled-system react react-dom @reach/disclosure @reach/menu-button @reach/tabs markdown-to-jsx formik
+$ npm install --save formik
 ```
 
-If you are using Typescript, install the type definitions for several of these libraries.
+3. Install and Setup Tailwind
 
-```bash
-npm install --save @types/styled-components @types/styled-system @types/styled-system__css
-```
+Tailwind has [significant documentation](https://tailwindcss.com/docs/installation) on how to get it setup in your particular environment.
 
-3. Install a theme
+Once you have Tailwind setup, you can simply import Indigo's `tailwind.config.js` and merge it with your config.
 
-```bash
-npm install --save @tlon/indigo-light @tlon/indigo-dark
+**tailwind.config.js**
+
+```js
+import resolveConfig from "tailwindcss/resolveConfig";
+import indigo from "@tlon/indigo-react/tailwind.config";
+
+module.exports = resolveConfig(
+  {
+    purge: [],
+    theme: {
+      extend: {},
+    },
+    //... rest of your config
+  },
+  indigo
+);
 ```
 
 ## Basic Usage
 
-```js
-import * as React from "react";
-import { ThemeProvider } from "styled-system";
-import { Text, Reset } from "@tlon/indigo-react";
-import light from "@tlon/indigo-light";
+In your main CSS file, you'll need to import both Tailwind and Indigo files:
 
-class App extends React.Component {
-  render() {
-    return (
-      <ThemeProvider theme={light}>
-        <Reset />
-        <Text fontSize="2">Indigo!</Text>
-      </ThemeProvider>
-    );
-  }
-}
+```css
+@import "tailwindcss/base";
+@import "@tlon/indigo-react/base";
+
+@import "tailwindcss/components";
+@import "@tlon/indigo-react/components";
+
+@import "tailwindcss/utilities";
+@import "@tlon/indigo-react/utilities";
 ```
 
-In the above, we are wrapping our application in styled-component's `ThemeProvider` and passing in our `theme` from `@tlon/indigo-light`. In practice, you should rarely need to import the theme.
+**Example Component**
 
-The `<Text />` component accepts a fontSize prop, which is one of many style props provided by `styled-system`. Using VSCode is the best way to see the list of props each component can accept.
+```js
+import React from "react";
+import { Button } from "@tlon/indigo-react";
 
-You can also check out the [styled-system docs](https://styled-system.com/api) for a breakdown of props.
+export const ExampleComponent = () => (
+  <div className="space-y-2">
+    <h2 className="h1">Important Information</h2>
+    <p className="text-gray-500">
+      Here's a block of text explaining something about why you need to save
+    </p>
+    <Button variant="primary">Save</Button>
+  </div>
+);
+```
 
-Many of these props have corrosponding styling shortcuts, drawn from the provided theme, like `@tlon/indigo-light`. These shortcuts are also provided by `styled-system`. To see how props map to values in our theme, check out [styled-system's mapping](https://styled-system.com/table).
+Indigo provides it's own components in addition to the utilities that Tailwind normally provides. A variety of classes have also been added for components that would only have styling applied and no other functionality.
 
-Take a look at the [theme](https://www.github.com/urbit/indigo-light) to get a sense for which style values can be accessed from styled props.
+Above you can see a `<Button>` component used from Indigo, as well as a custom class for making the **Heading 1** style as `h1`. In addition to that we're using standard utilities from Tailwind like `space-y-2` and `text-gray-500`.
+
+Full documentation of the new Tailwind version of Indigo is currently under development.
 
 ## Development
 
 See [DEVELOPMENT.md](https://github.com/urbit/indigo-react/blob/master/DEVELOPMENT.md) for example cases of component patterns used to create Indigo.
-
-### Related
-
-| Library      | Github                                    | NPM                                              |
-| ------------ | ----------------------------------------- | ------------------------------------------------ |
-| indigo-light | https://www.github.com/urbit/indigo-light | https://www.npmjs.com/package/@tlon/indigo-light |
-| indigo-dark  | https://www.github.com/urbit/indigo-dark  | https://www.npmjs.com/package/@tlon/indigo-dark  |
-| indigo-react | https://www.github.com/urbit/indigo-react | https://www.npmjs.com/package/@tlon/indigo-react |
 
 ### License
 

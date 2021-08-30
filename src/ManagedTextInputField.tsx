@@ -1,11 +1,9 @@
 import * as React from "react";
 import { useField } from "formik";
 
-import { Box } from "./Box";
 import { StatelessTextInput } from "./StatelessTextInput";
 import { ErrorLabel } from "./ErrorLabel";
-import { Label } from "./Label";
-import { CommonStyleProps } from "./system/unions";
+import classNames from "classnames";
 
 export type ManagedTextInputFieldProps = {
   hasError?: boolean;
@@ -16,9 +14,9 @@ export type ManagedTextInputFieldProps = {
   caption?: string;
   type?: string;
   autoFocus?: boolean;
+  inputClass?: string;
 } & React.HTMLAttributes<HTMLDivElement> &
-  React.HTMLAttributes<HTMLInputElement> &
-  CommonStyleProps;
+  React.HTMLAttributes<HTMLInputElement>;
 
 export const ManagedTextInputField = ({
   disabled,
@@ -28,41 +26,36 @@ export const ManagedTextInputField = ({
   caption,
   id,
   children,
+  className,
+  inputClass,
   type,
-  fontFamily,
-  borderColor,
-  color,
-  fontWeight,
   autoFocus,
   ...props
 }: ManagedTextInputFieldProps) => {
   const [field, meta] = useField(id);
 
   return (
-    <Box display="flex" flexDirection="column" {...props}>
-      <Label htmlFor={id}>{label}</Label>
+    <div className={classNames("flex flex-col", className)} {...props}>
+      <label htmlFor={id} className="label">
+        {label}
+      </label>
       {caption ? (
-        <Label mt="2" gray>
-          {caption}
-        </Label>
+        <span className="label mt-2 text-gray-500">{caption}</span>
       ) : null}
       <StatelessTextInput
-        borderColor={borderColor}
-        color={color}
-        fontWeight={fontWeight}
-        fontFamily={fontFamily}
+        id={id}
+        className={classNames((caption || label) && "mt-2", inputClass)}
         type={type || "text"}
-        mt={caption || label ? 2 : 0}
         disabled={disabled}
         hasError={meta.touched && meta.error !== undefined}
         placeholder={placeholder}
         autoFocus={autoFocus}
         {...field}
       />
-      <ErrorLabel mt="2" hasError={!!(meta.touched && meta.error)}>
+      <ErrorLabel className="mt-2" hasError={!!(meta.touched && meta.error)}>
         {meta.error}
       </ErrorLabel>
-    </Box>
+    </div>
   );
 };
 

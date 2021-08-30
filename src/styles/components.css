@@ -1,0 +1,23 @@
+.action {
+  @apply w-auto h-4 font-sans font-medium text-sm leading-snug text-left align-middle bg-white border-none no-underline select-none overflow-hidden;
+}
+
+.badge {
+  @apply flex-none h-5 px-1.5 py-0.5 align-middle text-white bg-gray-400 rounded-sm;
+}
+
+.bg-img {
+  @apply w-full h-full bg-cover bg-center bg-no-repeat;
+}
+
+.button {
+  @apply flex items-center justify-center w-auto h-8 px-4 font-sans font-medium leading-snug border border-solid rounded overflow-hidden no-underline select-none disabled:cursor-default;
+}
+
+.icon-svg > * {
+  fill: currentColor;
+}
+
+.indicator > * {
+  transform: translate(-1px, -1px);
+}

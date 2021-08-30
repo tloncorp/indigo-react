@@ -1,58 +1,22 @@
 import * as React from "react";
-import styled from "styled-components";
 import {
   MenuList as ReachMenuList,
   MenuListProps as ReachMenuListProps,
 } from "@reach/menu-button";
-import css, { SystemStyleObject } from "@styled-system/css";
-import { CommonStyleProps, commonStyle } from "./system/unions";
+import classNames from "classnames";
 
-export type MenuListProps = ReachMenuListProps & CommonStyleProps;
+export type MenuListProps = ReachMenuListProps &
+  React.HTMLAttributes<HTMLDivElement>;
 
-const style = () =>
-  css({
-    // width: "200px",
-    padding: 0,
-    outline: "none",
-    mt: "1px",
-    py: 2,
-    border: "none",
-    backgroundColor: "white",
-    borderRadius: 2,
-  } as SystemStyleObject);
-
-const MenuListWrapper = styled(ReachMenuList)<
-  React.PropsWithChildren<MenuListProps>
->(style, ...commonStyle);
-
-const MenuListTopCap = styled.div(() =>
-  css({
-    height: 2,
-    width: "100%",
-    borderTopLeftRadius: 2,
-    borderTopRightRadius: 2,
-    border: "1px solid",
-    borderBottom: "none",
-    borderColor: "lightGray",
-  } as SystemStyleObject)
-);
-
-const MenListBottomCap = styled.div(() =>
-  css({
-    height: 2,
-    width: "100%",
-    borderBottomLeftRadius: 2,
-    borderBottomRightRadius: 2,
-    border: "1px solid",
-    borderTop: "none",
-    borderColor: "lightGray",
-  } as SystemStyleObject)
-);
-
-export const MenuList = ({ children }: MenuListProps) => (
-  <MenuListWrapper>
-    <MenuListTopCap />
+export const MenuList = ({ className, children }: MenuListProps) => (
+  <ReachMenuList
+    className={classNames(
+      "px-0 py-2 mt-1 border-none bg-white rounded",
+      className
+    )}
+  >
+    <div className="w-full h-2 border border-solid border-gray-200 border-b-0 rounded rounded-b-none" />
     {children}
-    <MenListBottomCap />
-  </MenuListWrapper>
+    <div className="w-full h-2 border border-solid border-gray-200 border-t-0 rounded rounded-t-none" />
+  </ReachMenuList>
 );

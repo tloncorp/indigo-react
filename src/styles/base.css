@@ -1,0 +1,66 @@
+* {
+  @apply outline-none;
+}
+
+body {
+  @apply font-sans font-normal text-sm leading-snug antialiased text-black bg-white;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+li {
+  margin-left: 32px;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  @apply border-collapse;
+}
+
+table,
+td {
+  @apply border border-solid border-gray-200;
+}
+
+td {
+  @apply p-1;
+}
+
+.h1 {
+  @apply text-2xl font-semibold leading-snug;
+}
+
+.h2 {
+  @apply text-xl font-semibold leading-tight;
+}
+
+.h3 {
+  @apply text-base font-semibold leading-snug;
+}
+
+.h4 {
+  @apply text-sm font-semibold leading-snug;
+}
+
+.anchor {
+  @apply inline-block text-sm leading-snug underline cursor-pointer;
+}
+
+.label {
+  @apply flex items-center w-full text-sm leading-tight align-middle select-none cursor-pointer;
+}
