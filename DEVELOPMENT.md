@@ -127,6 +127,33 @@ TwoUp.displayName = "TwoUp";
 | indigo-dark  | https://www.github.com/urbit/indigo-dark  | https://www.npmjs.com/package/@tlon/indigo-dark  |
 | indigo-react | https://www.github.com/urbit/indigo-react | https://www.npmjs.com/package/@tlon/indigo-react |
 
+## Icons
+
+To view a gallery of supported Indigo icons, add the following test component to your project:
+```ts
+import { Box, Icon, Text } from '@tlon/indigo-react';
+import { _iconIndex as iconIndex } from '@tlon/indigo-react';
+
+export const Gallery = () => {
+  const iconNames = Object.keys(iconIndex);
+  return (
+    <>
+      {iconNames.map(name => {
+        return (
+          <>
+            <Box p={5} mx={5} border={'solid 1px rgba(0,0,0,0.5)'}>
+              <Text>{name}</Text>&nbsp;
+              <Icon icon={name} height={'24px'} width={'24px'} />
+            </Box>
+          </>
+        );
+      })}
+    </>
+  );
+};
+
+```
+
 ### License
 
 MIT License © [Tlon](https://tlon.io)
