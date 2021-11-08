@@ -1,7 +1,7 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.2.25",
-  "descrip tion": "React implementation of Tlon's design system, Indigo",
+  "version": "1.2.26",
+  "description": "React implementation of Tlon's design system, Indigo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -20,13 +20,14 @@
   "license": "MIT",
   "dependencies": {
     "@reach/menu-button": "^0.10.5",
-    "react": "^16.13.1",
     "tslib": "^2.0.1"
   },
   "peerDependencies": {
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5",
-    "formik": "^2.1.5"
+    "formik": "^2.1.5",
+    "react": "^17",
+    "react-dom": "^17"
   },
   "devDependencies": {
     "@styled-system/css": "^5.1.5",
