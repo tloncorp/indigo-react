@@ -1,6 +1,6 @@
 {
   "name": "@tlon/indigo-react",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "description": "React implementation of Tlon's design system, Indigo",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,13 +19,13 @@
   "author": "Gavin Atkinson",
   "license": "MIT",
   "dependencies": {
-    "@reach/menu-button": "^0.10.5",
     "tslib": "^2.0.1"
   },
   "peerDependencies": {
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5",
     "formik": "^2.1.5",
+    "@reach/menu-button": "^0.17.0",
     "react": "^16.8 || ^17",
     "react-dom": "^16.8 || ^17"
   },
