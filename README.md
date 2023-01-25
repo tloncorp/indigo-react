@@ -1,4 +1,4 @@
-# indigo-react
+# [ARCHIVED] indigo-react
 
 [![npm (scoped)](https://img.shields.io/npm/v/@tlon/indigo-react?style=flat)](https://www.npmjs.com/package/@tlon/indigo-react)
 
